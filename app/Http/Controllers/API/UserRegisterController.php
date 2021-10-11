@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
 class UserRegisterController extends Controller
@@ -14,13 +15,18 @@ class UserRegisterController extends Controller
         $register_data = $request->input('register');
         if(!empty($register_data)){
             foreach($register_data as $data){
-            $user_exist_email = User::where('email', '=', $data['email'])->first();
             $user_exist_phone = User::where('phone_number', '=', $data['phone_number'])->first();
-                if($user_exist_email === null && $user_exist_phone === null){
+                if($user_exist_phone === null){
                     $user = new User;
                     $user->name = $data['name'];
                     $user->phone_number = $data['country_number'] . $data['phone_number'];
                     $user->email = $data['email'];
+                    $user->package = $data['package_name'];
+                    $user->package_status = "Active";
+                    $user->package_start_date = Carbon::now();
+                    $user->package_end_date = Carbon::now()->addYear(1);
+                    $remain = $user->package_end_date->diffIndays($user->package_start_date);
+                    $user->remaining_days = $remain;
                     $user->url = $data['url'];
                     $user->secure_status = $data['secure_status'];
                     $user->save();
@@ -50,22 +56,20 @@ class UserRegisterController extends Controller
     }
 
     public function createPin(Request $request,$user_id = null){
-        $create_pin = $request->input('user_pin');
+        $create_pin = $request->input('pin');
         if(!empty($create_pin)){
-            foreach($create_pin as $pin){
                 // $user_id = $pin['user_id'];
                 $has_user = User::find($user_id);
                 if(!empty($has_user)){
-                    $has_user->password = Hash::make($pin['pin']);
+                    $has_user->password = Hash::make($create_pin);
                     $has_user->save();  
 
                     $messages = [
-                        "Status" => '200 OK',
+                        "status" => '200 OK',
                         "message" => 'Success'
                     ];
                     
                     return $messages;
-                } 
             }
         } else {
             $messages = [

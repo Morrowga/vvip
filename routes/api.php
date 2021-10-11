@@ -22,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
 
 Route::post('pin_create/{user_id}', [App\Http\Controllers\API\UserRegisterController::class, 'createPin']);
+
+Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
