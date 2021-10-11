@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
+
+Route::post('pin_create/{user_id}', [App\Http\Controllers\API\UserRegisterController::class, 'createPin']);
