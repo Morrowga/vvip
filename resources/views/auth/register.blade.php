@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="form-group row">
-                    <div class="col-md-6 offset-md-3">
+                    <div class="col-md-6 offset-md-3">'
                         <input id="email" type="email" placeholder="Enter Your Email"
                             class="form-control @error('email') is-invalid @enderror register-input" name="email"
                             value="{{ old('email') }}" required autocomplete="email">
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="col-md-6 offset-md-3">
-                    <p class="text text-center">Do You Have Account ?</p>
+                    <a href="" class="link">Do You Have Account ?</a>
                 </div>
                 <!-- <div class="form-group row">
                     <div class="col-md-6 offset-md-3">
