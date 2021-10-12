@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('vvip_customers.vvip_main');
+    return view('layouts.frontview');
 });
 
 Auth::routes();
