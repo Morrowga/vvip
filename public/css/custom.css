@@ -65,6 +65,7 @@ body {
     border-bottom-left-radius: 5px !important;
     border-bottom-right-radius: 5px !important;
     background-color: rgb(0,0,0) !important;
+    color: rgb(255,255,255, 0.5)!important;
   }
 
   .hr_bottom{
@@ -116,3 +117,88 @@ svg{
     transform: translate(-50%, -50%);
     position: absolute;
   }
+
+
+  .bg-dark{
+    background-color: rgb(0,0,0) !important;
+  }
+
+
+  .card-custom{
+      height: 500px;
+      border: 2px solid rgb(217,181,81) !important;
+      background-color: rgb(0,0,0) !important;
+      color: #fff;  
+  }
+
+.plan{
+    top: 30% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: "Britannic Bold";
+    letter-spacing: 4px;
+}
+
+.tier{
+    top: 40% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-family: "Britannic Bold";
+    /* letter-spacing: 3px; */
+}
+
+.img-plan{
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.plan_text{
+    top: 60% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 26px;
+    letter-spacing: 3px;
+    font-family: "Britannic Bold";
+}
+
+.plan_text_two{
+    top: 68% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    font-size: 26px;
+    letter-spacing: 3px;
+    font-family: "Britannic Bold";
+}
+
+.plan_btn {
+    top: 85% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 250px;
+    font-weight: bold !important;
+    font-family: "Britannic Bold";
+}
+
+.web_pin{
+border: 2px solid rgb(217,181,81) !important;
+    border-top-right-radius: 5px !important;
+    border-top-left-radius: 5px !important; 
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+    background-color: rgb(0,0,0) !important;
+    color: #fff !important;
+}
+
+
+.pin_btn{
+    background-color: rgb(217,181,81) !important;
+    color: #000 !important;
+    font-family: "Britannic Bold";
+    border-color:  rgb(217,181,81) !important;
+}

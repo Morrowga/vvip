@@ -22,7 +22,7 @@ class UserRegisterController extends Controller
                     $user->phone_number = $data['country_number'] . $data['phone_number'];
                     $user->email = $data['email'];
                     $user->package = $data['package_name'];
-                    $user->package_status = "Active";
+                    $user->package_status = "active";
                     $user->package_start_date = Carbon::now();
                     $user->package_end_date = Carbon::now()->addYear(1);
                     $remain = $user->package_end_date->diffIndays($user->package_start_date);

@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = "/home";
 
     /**
      * Create a new controller instance.
@@ -41,6 +41,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function username(){
+        return 'phone_number';
+    }
+    
     public function loginApi(Request $request){
         $user_data_phone = $request->input('phone_number');
         $user_data_password = $request->input('password');

@@ -11,7 +11,7 @@
                 <div class="form-group row">
 
                     <div class="col-md-6 offset-md-3">
-                        <input id="phone_number" type="text" placeholder="Phone No" class="form-control @error('email') is-invalid @enderror login-input" name="email" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
+                        <input id="phone_number" type="text" placeholder="Phone No" class="form-control @error('phone_number') is-invalid @enderror login-input" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
 
                         @error('phone_number')
                             <span class="invalid-feedback" role="alert">
@@ -24,7 +24,7 @@
                 <div class="form-group row">
 
                     <div class="col-md-6 offset-md-3">
-                        <input id="password" type="password" placeholder="Password or Something" class="form-control @error('password') is-invalid @enderror login-input" name="password" required autocomplete="current-password">
+                        <input id="password" type="password" placeholder="PIN" class="form-control @error('password') is-invalid @enderror login-input" name="password" required autocomplete="current-password">
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">

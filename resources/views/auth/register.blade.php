@@ -12,7 +12,7 @@
                 <div class="form-group row">
 
                     <div class="col-md-6 offset-md-3">
-                        <input id="name" type="text" placeholder="Enter Your Name"
+                        <input id="name" type="text" placeholder="Enter Your Name" onkeyup="annotate()"
                             class="form-control @error('name') is-invalid @enderror register-input" name="name"
                             value="{{ old('name') }}" required autocomplete="name" autofocus>
 
@@ -26,8 +26,8 @@
 
                 <div class="form-group row">
                     <div class="col-md-6 offset-md-3">
-                        <input id="email" type="email" placeholder="Enter Your Phone No"
-                            class="form-control @error('phone_number') is-invalid @enderror register-input" name="email"
+                        <input id="phone" type="text" placeholder="Enter Your Phone No"
+                            class="form-control @error('phone_number') is-invalid @enderror register-input" name="phone_number"
                             value="{{ old('phone_number') }}" required autocomplete="phone_number">
 
                         @error('phone_number')
@@ -59,11 +59,11 @@
                         <p class="pt-2 text">URL</p>
                         <div class="row">
                             <div class="col url">
-                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <input type="radio" name="url_radio" onchange="getCheckedName()" value="" id="url_name" checked>
                                 <label for="html">Name</label><br>
                             </div>
                             <div class="col url">
-                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <input type="radio" name="url_radio" onchange="getCheckedSystem()" value="" id="url_system">
                                 <label for="css">System</label><br>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
                                 <p class="text mt-2">https://vvip9.co/</p>
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control url_input" placeholder="...">
+                                <input type="text" id="url" class="form-control url_input" name="url">
                             </div>
                         </div>
                     </div>
@@ -88,11 +88,11 @@
                         <p class="pt-2 text">Secure</p>
                         <div class="row">
                             <div class="col url">
-                                <input type="radio" id="html" name="fav_language" value="HTML">
+                                <input type="radio" name="secure_status" value="private">
                                 <label for="html">Private</label><br>
                             </div>
                             <div class="col url">
-                                <input type="radio" id="css" name="fav_language" value="CSS">
+                                <input type="radio" name="secure_status" value="public">
                                 <label for="css">Public</label><br>
                             </div>
                         </div>
@@ -109,26 +109,44 @@
                 <div class="col-md-6 offset-md-3">
                     <a href="" class="link">Do You Have Account ?</a>
                 </div>
-                <!-- <div class="form-group row">
-                    <div class="col-md-6 offset-md-3">
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror register-input" name="password" required autocomplete="new-password">
-
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-                    </div>
-
-                <div class="form-group row">
-
-                <div class="col-md-6 offset-md-3">
-                        <input id="password-confirm" type="password" class="form-control register-input" name="password_confirmation" required autocomplete="new-password">
-                    </div>
-                </div> -->
             </form>
         </div>
     </div>
 </div>
+
+@section('script')
+<script>
+
+function annotate(){
+  var random =  Math.floor(1000 + Math.random() * 9000);
+  var typed= document.getElementById("name").value;
+  document.getElementById("url_system").value = typed + random;
+}
+
+function focusText(){
+    var textbox = document.getElementById("url");
+    textbox.focus();    
+}
+
+function getCheckedSystem() {
+  const checkBox = document.getElementById('url_system').checked;
+  if (checkBox === true) {
+        console.log(document.getElementById("url").value = document.getElementById('url_system').value);
+    } else {
+      console.log(false);
+  }
+}
+    
+function getCheckedName(){
+    const checkBoxName = document.getElementById('url_name').checked;
+    if(checkBoxName === true){
+        console.log(document.getElementById("url").value = document.getElementById('url_name').value);
+        var textbox = document.getElementById("url");
+        textbox.focus();    
+    } else {
+        console.log(false);
+    }
+}
+</script>
+@endsection
 @endsection
