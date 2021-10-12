@@ -35,7 +35,7 @@
 @section('script')
 <script>
     let setT = setTimeout(function(){ 
-        let url = "http://localhost:8000/login"
+        let url = "http://vvip9.co/login"
         document.location.href=url;
         window.clearTimeout(setT);
     }, 3000);
