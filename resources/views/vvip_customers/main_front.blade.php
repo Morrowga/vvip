@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <div class="col-md-12">
     <img src="../images/logo.jpeg" alt="" width="130" height="130">
 </div>
@@ -39,3 +42,5 @@
         </div>
     </div>
 </div>
+
+@endsection
