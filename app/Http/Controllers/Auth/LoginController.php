@@ -44,7 +44,7 @@ class LoginController extends Controller
     public function username(){
         return 'phone_number';
     }
-    
+
     public function loginApi(Request $request){
         $user_data_phone = $request->input('phone_number');
         $user_data_password = $request->input('password');
@@ -55,7 +55,7 @@ class LoginController extends Controller
                     if($user_data->package_status === "active"){
                         $messages = [
                             'user_id' => $user_data->id,
-                            'status' => '200 OK',
+                            'status' => '200',
                             'message' => 'Success',
                             'data' => true
                         ];

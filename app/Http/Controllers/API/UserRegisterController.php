@@ -32,14 +32,14 @@ class UserRegisterController extends Controller
                     $user->save();
                     
                     $messages = [
-                        "status" => '200 OK',
+                        "status" => '200',
                         "message" => 'Success',
                         "user_id" => $user->id
                     ];
                     return $messages;
                 }  else {
                     $messages = [
-                        "status" => '500 Internal',
+                        "status" => '500',
                         "message" => 'Data Exist',
                     ];
                     return $messages;
