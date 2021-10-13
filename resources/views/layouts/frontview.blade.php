@@ -26,7 +26,6 @@
 		<!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
-		<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
@@ -153,7 +152,7 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-mobile service-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="fas fa-mobile-alt service-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="service-text">App Development</h4>
                                         <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -464,7 +463,7 @@
                             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-clock-o about-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="far fa-clock about-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="about-text">Since When?</h4>
                                         <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -754,7 +753,6 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 		<!-- <script src="../js/smoothscroll.js"></script> -->
 
 		<!-- Theme JS -->
