@@ -196,7 +196,7 @@
                         <!-- Cta Button -->
                         <div class="extra-space-l"></div>
                         <div class="text-center">
-                    		<a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About</a>
+                    		<a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a>
                         </div>
                     </div> <!-- /.container -->                       
                 </div>
