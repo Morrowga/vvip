@@ -202,3 +202,7 @@ border: 2px solid rgb(217,181,81) !important;
     font-family: "Britannic Bold";
     border-color:  rgb(217,181,81) !important;
 }
+
+.load{
+    margin-top: 120px !important;
+}
