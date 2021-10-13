@@ -1331,3 +1331,8 @@ p.subtitle {
 ::placeholder {
 	color: rgb(253,235,162) !important;
   }
+
+
+  .collapse,.navbar-collapse{
+	background-color: rgba(0, 0, 0) !important;
+  }
