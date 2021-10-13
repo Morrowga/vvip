@@ -237,12 +237,12 @@
                                             <p class="lead"><strong>$49</strong></p>
                                         </div>
                                         <ul class="list-group text-center"> 
-                                            <li class="list-group-item one">Personal Use</li>
-                                            <li class="list-group-item one">Contact System</li>
-                                            <li class="list-group-item one">Personal Social Platform Links</li>
-                                            <li class="list-group-item one">Personnal Deep Link</li>
-                                            <li class="list-group-item one">Business URL</li>
-                                            <li class="list-group-item one">Telephone Call System</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact System</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
+                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default price-btn-one" href="#">Order Now!</a>
@@ -261,15 +261,15 @@
                                             <p class="lead"><strong>$149</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
-                                            <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">Contact & Social System</li>
-                                            <li class="list-group-item">SMS</li>
-                                            <li class="list-group-item">Event</li>
-                                            <li class="list-group-item">Bank / Pay Info</li>
-                                            <li class="list-group-item">Personal Social Platform Links</li>
-                                            <li class="list-group-item">Personnal Deep Link</li>
-                                            <li class="list-group-item">Business URL</li>
-                                            <li class="list-group-item">Telephone Call System</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Contact & Social System</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>SMS</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Event</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Bank / Pay Info</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personal Social Platform Links</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personnal Deep Link</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Business URL</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default" href="#">Order Now!</a>
@@ -289,16 +289,16 @@
                                             <p class="lead"><strong>$199</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
-                                            <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">Contact & Social System</li>
-                                            <li class="list-group-item">SMS</li>
-                                            <li class="list-group-item">Event</li>
-                                            <li class="list-group-item">Bank / Pay Info</li>
-                                            <li class="list-group-item">Personal Social Platform Links</li>
-                                            <li class="list-group-item">Personnal Deep Link</li>
-                                            <li class="list-group-item">Business URL</li>
-                                            <li class="list-group-item">Personal Assistant</li>
-                                            <li class="list-group-item">Telephone Call System</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact & Social System</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>SMS</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Event</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Bank / Pay Info</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Assistant</li>
+                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default" href="#">Order Now!</a>
@@ -711,31 +711,25 @@
             <div class="container justify-content-center d-flex">
             <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
             <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
-            <circle fill="rgb(217,181,81)" stroke="none" cx="6" cy="50" r="6">
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preservefas fa-check fill="rgb(217,181,81)" stroke="none" cx="6" cy="50" r="6">
                 <animate
                 attributeName="opacity"
                 dur="1s"
                 values="0;1;0"
                 repeatCount="indefinite"
-                begin="0.1"/>    
-            </circle>
-            <circle fill="rgb(217,181,81)" stroke="none" cx="26" cy="50" r="6">
+                begin="0.1"/>   fas fa-check fill="rgb(217,181,81)" stroke="none" cx="26" cy="50" r="6">
                 <animate
                 attributeName="opacity"
                 dur="1s"
                 values="0;1;0"
                 repeatCount="indefinite" 
-                begin="0.2"/>       
-            </circle>
-            <circle fill="rgb(217,181,81)" stroke="none" cx="46" cy="50" r="6">
+                begin="0.2"/>      fas fa-check fill="rgb(217,181,81)" stroke="none" cx="46" cy="50" r="6">
                 <animate
                 attributeName="opacity"
                 dur="1s"
                 values="0;1;0"
                 repeatCount="indefinite" 
-                begin="0.3"/>     
-            </circle>
+                begin="0.3"/>    fas fa-check>
             </svg>
             </div>
         </div>
