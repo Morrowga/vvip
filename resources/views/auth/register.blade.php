@@ -7,7 +7,7 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="d-flex justify-content-center">
-                    <img src="../images/4529564-removebg-preview.png" alt="" class="register_logo">
+                    <img src="../images/logo.jpeg" alt="" class="register_logo">
                 </div>
                 <div class="form-group row">
 

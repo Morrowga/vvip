@@ -3,15 +3,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12 text-center">
-            <img src="../images/logo.jpeg" class="text-center" alt="" width="400" height="400">
-        </div>
         <div class="col-md-8 text-center">
+        <img src="../images/logo.jpeg" class="text-center logo" alt="">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 
                 <div class="form-group row">
-
                     <div class="col-md-6 offset-md-3">
                         <input id="phone_number" type="text" placeholder="Phone No" class="form-control @error('phone_number') is-invalid @enderror login-input" name="phone_number" value="{{ old('phone_number') }}" required autocomplete="phone_number" autofocus>
 
