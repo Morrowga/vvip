@@ -342,7 +342,7 @@
 									<i class="fa fa-users fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">6666</span>
-									<p class="lead">Total User</p>
+									<p class="lead">Total Users</p>
 								</div>
 							</div>
 
@@ -351,7 +351,7 @@
 									<i class="fa fa-heart fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">800</span>
-									<p class="lead">Satisfied User</p>
+									<p class="lead">Satisfied Users</p>
 								</div>
 							</div>
 
