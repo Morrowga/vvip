@@ -28,7 +28,7 @@ class UserRegisterController extends Controller
                     if($user_exist_url === null){
                         $user = new User;
                         $user->name = $name;
-                        $user->phone_number = $country_number . $phone;
+                        $user->phone_number = $phone;
                         $user->email = $email;
                         $user->package = $package_name;
                         $user->package_status = "active";
