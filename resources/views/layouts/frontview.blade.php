@@ -754,6 +754,7 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js"></script>
 		<!-- <script src="../js/smoothscroll.js"></script> -->
 
 		<!-- Theme JS -->
