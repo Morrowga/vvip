@@ -113,7 +113,7 @@
                                     <a class="btn btn-blank page-scroll" href="#prices-section" role="button">Register Now</a>
                                 </div>
                                 <div class="item">
-                                    <h1>VVIP NINE</h1>
+                                    <h1 class="logo-text">VVIP NINE</h1>
                                     <p>To the greatest Journey</p>
                                     <div class="extra-space-l"></div>
                                     <a class="btn btn-blank" href="{{ route('login') }}" role="button">ACCOUNT LOGIN</a>

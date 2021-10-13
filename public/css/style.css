@@ -1282,6 +1282,7 @@ p.subtitle {
 
 .logo-text{
 	color: rgb(253,235,162) !important;
+	font-family: "Britannic Bold" !important ;
 }
 
 .about{
@@ -1375,3 +1376,5 @@ p.subtitle {
 	  letter-spacing: 4px !important;
 	  font-size: 18px !important;
   }
+
+  
