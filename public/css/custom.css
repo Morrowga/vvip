@@ -3,7 +3,7 @@
 html,
 body {
     background-color: rgb(0,0,0) !important;
-      overflow-x: hidden;
+      /* overflow-x: hidden; */
       height: 100%;
       position: relative;
 }
@@ -209,7 +209,7 @@ border: 2px solid rgb(217,181,81) !important;
 
 .load{
     margin-top: 120px !important;
-    overflow: auto;
+    overflow: auto !important;
 }
 
 .logo{
