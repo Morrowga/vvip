@@ -348,7 +348,7 @@
 
 							<div class="fact text-center col-md-6 col-sm-6">
 								<div class="fact-inner">
-									<i class="fa fa-heart fa-3x counter-icon" style="color: rgb(207, 47, 35) !important;"></i>
+									<i class="fa fa-heart fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">800</span>
 									<p class="lead">Satisfied Users</p>
@@ -711,7 +711,7 @@
             <div class="container justify-content-center d-flex">
             <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
             <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preservefas fa-check fill="rgb(217,181,81)" stroke="none" cx="6" cy="50" r="6">
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
                 <animate
                 attributeName="opacity"
                 dur="1s"
