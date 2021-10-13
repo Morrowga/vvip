@@ -3,8 +3,10 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+            <img src="../images/logo.jpeg" class="text-center" alt="" width="400" height="400">
+        </div>
         <div class="col-md-8 text-center">
-            <img src="../images/logo.jpeg" class="text-center" alt="" width="500" height="500">
             <form method="POST" action="{{ route('login') }}">
                 @csrf
 

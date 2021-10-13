@@ -1340,4 +1340,5 @@ p.subtitle {
 
   .load{
 	  margin-top: 120px !important;
+	  overflow: auto;
   }
