@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/custom.css">
