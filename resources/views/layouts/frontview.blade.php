@@ -252,7 +252,7 @@
                                     </div>										
                                 </div>
                                 
-                                <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY" data-wow-delay="0.7s">
+                                <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY ml-3" data-wow-delay="0.7s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
                                             <h3 class="package">STANDARD</h3>
@@ -280,7 +280,7 @@
                                     </div>										
                                 </div>
                                 
-                                <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.9s">
+                                <div class="price-box col-sm-6 col-md-4 wow flipInY ml-3" data-wow-delay="0.9s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
                                             <h3 class="package">LUXURY</h3>
