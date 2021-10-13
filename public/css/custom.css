@@ -86,7 +86,6 @@ body {
 }
 
 .login-btn {
-    width: 370px;
     background-color: rgb(217,181,81) !important;
     color: #000 !important;
     font-family: "Britannic Bold";
@@ -216,6 +215,8 @@ border: 2px solid rgb(217,181,81) !important;
     width: 300px !important;
     height: 300px;
 }
+
+* { box-sizing: border-box; }
 
 @media screen and (max-width: 540px) {
     .logo {
