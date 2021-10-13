@@ -113,16 +113,13 @@ section {
 	box-shadow: none;
 }
 .parallax {
+	background: rgb(0,0,0);
 	position: relative;
-	background-position: 0 0;
+	background-position: center !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-webkit-background-size: cover;
   	background-size: cover;
-}
-
-#header {
-	/* height: 98px; */
 }
 
 
@@ -168,21 +165,25 @@ section {
 	transition: all 0.2s ease-in-out;
 }
 .navbar-default .navbar-brand {
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.jpeg);
+	background-position: center;
+	background-size: cover;
+	width: 100px;
+	height: 100px;
 }
 .navbar-shrink .navbar-brand {
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.jpeg);
 }
 .navbar-transparent .navbar-brand {
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.jpeg);
 }
 .navbar-inverse .navbar-brand {
-	background-image: url(../images/logo.png);
+	background-image: url(../images/logo.jpeg);
 }
 
 /* Navbar links */
 .navbar-nav > li > a {
-	padding: 24px 0;
+	padding: 37px 0;
 	margin-left: 25px;
 	text-transform: uppercase;
 	font-size: 13px;
@@ -236,15 +237,15 @@ section {
 .navbar-shrink .navbar-brand {
 	font-size: 20px;
 }
-.navbar-default.navbar-fixed-top.navbar-shrink .container {
-}
+/* .navbar-default.navbar-fixed-top.navbar-shrink .container {
+} */
 .navbar-fixed-top.navbar-shrink .container {
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
 }
 .navbar-default.navbar-fixed-top.navbar-shrink .navbar-nav > li > a {
-	padding-top: 24px;
-	padding-bottom: 24px;
+	padding-top: 37px;
+	padding-bottom: 37px;
 }
 
 /* Navbar transparent */
@@ -320,7 +321,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	margin-bottom: 15px;
 	margin-right: 25px;
 	margin-top: 10px;
-	float:left;
+	float: left !important;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
@@ -418,8 +419,8 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 
 /* ===== Begin progress bar ===== */
-.skill-bar {
-}
+/* .skill-bar {
+} */
 .progress {
 	overflow: visible;
 	height: 25px;
@@ -504,10 +505,10 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 
 /* ===== Begin Portfolio===== */
-.portfolio_area{}
+/* .portfolio_area{}
 .portfolio{}
 .portfoloi_top{}
-.portfoloi_content_area{}
+.portfoloi_content_area{} */
 .portfolio_menu{
 	text-align: center;
 	overflow: hidden;
@@ -530,7 +531,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
     text-decoration: none;
     text-transform: uppercase;
 }
-.portfolio_content{}
+/* .portfolio_content{} */
 .portfolio_single_content{
 	position: relative;
 	top: 0;
@@ -614,7 +615,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	padding: 0;
 	text-transform: uppercase;
 }
-.portfolio_content{}
+/* .portfolio_content{} */
 .portfolio_content{
     margin-top: 36px;
     overflow: hidden;
@@ -631,8 +632,8 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .counter-up .cover {
 	background-color: rgba(0, 7, 11, 0.8);
 }
-.counter-up .fact {
-}
+/* .counter-up .fact {
+} */
 .counter-up .fact.last {
 	border-right: none;
 }
@@ -733,8 +734,8 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 
 /* ===== Begin panels ===== */
-.panel, .panel-heading, .panel-footer  {
-}
+/* .panel, .panel-heading, .panel-footer  {
+} */
 /* ===== End panels ===== */
 
 /* ===== Begin prices ===== */
@@ -1141,3 +1142,11 @@ p.subtitle {
 	transform: rotate(-45deg);
 }
 /* ===== End buttons ===== */
+
+/*customize*/
+.item{
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 2px solid rgb(253,235,162);
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

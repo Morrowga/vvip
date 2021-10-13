@@ -60,7 +60,7 @@
             <header id="header" class="header-main">
 
                 <!-- Begin Navbar -->
-                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
+                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: rgb(0,0,0) !important;"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
 
                   <div class="container">
 
@@ -72,7 +72,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand page-scroll" href="index.html">Unika</a>
+                      <a class="navbar-brand page-scroll" href="/">VVIP</a>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -82,7 +82,7 @@
                             <li><a class="page-scroll" href="#about-section">About</a></li>
                             <li><a class="page-scroll" href="#services-section">Services</a></li>
                             <li><a class="page-scroll" href="#portfolio-section">Works</a></li>
-                            <li><a class="page-scroll" href="#team-section">Team</a></li>                            
+                            <!-- <li><a class="page-scroll" href="#team-section">Team</a></li>                             -->
                             <li><a class="page-scroll" href="#prices-section">Prices</a></li>
                             <li><a class="page-scroll" href="#contact-section">Contact</a></li>
                         </ul>
@@ -98,7 +98,7 @@
             
             
         	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/slider-bg.jpg);">
+			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5">
 				
 				<div class="container">
 					<div class="caption text-center text-white" data-stellar-ratio="0.7">
@@ -132,152 +132,132 @@
                 
                 
                 
-                
-            <!-- Begin about section -->
-			<section id="about-section" class="page bg-style1">
+             <!-- Begin prices section -->
+			<section id="prices-section" class="page">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
-                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h2>About</h2>
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2>Prices</h2>
                             <div class="devider"></div>
-                            <p class="subtitle">little information</p>
+                            <p class="subtitle">That how much</p>
                         </div>
                     </div>
                 </div>
                 <!-- End page header-->
 
-                <!-- Begin rotate box-1 -->
-                <div class="rotate-box-1-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Who We Are?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>What We Do?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Why We Do It?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Since When?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
-                <!-- End rotate box-1 -->
-                
                 <div class="extra-space-l"></div>
-                
-                <!-- Begin page header--> 
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h4>Our Skills</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                
-                <!-- Begin Our Skills -->
-                <div class="our-skills">
-                	<div class="container">
-                    	<div class="row">
-                        
-                        	<div class="col-sm-6">
-                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
-                                    <div class="progress-lebel">
-                                        <h6>Photoshop & Illustrator</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInRight" data-wow-delay="0.2s">
-                                    <div class="progress-lebel">
-                                        <h6>WordPress</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
-                                    <div class="progress-lebel">
-                                        <h6>Html & Css</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInRight" data-wow-delay="0.4s">
-                                    <div class="progress-lebel">
-                                        <h6>Javascript</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
-                <!-- End Our Skill -->
-          </section>
-          <!-- End about section -->
 
-              
+                    <!-- Begin prices -->
+                    <div class="prices">
+                        <div class="container">
+                            <div class="row">
+                                
+                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.3s">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading text-center">
+                                            <i class="fa fa-plug fa-2x"></i>
+                                            <h3>Basic</h3>
+                                        </div>
+                                        <div class="panel-body text-center">
+                                            <p class="lead"><strong>$49</strong></p>
+                                        </div>
+                                        <ul class="list-group text-center">
+                                            <li class="list-group-item">Personal Use</li>
+                                            <li class="list-group-item">3 projects</li>
+                                            <li class="list-group-item">1 GB Disk</li>
+                                            <li class="list-group-item">Custom Domain</li>
+                                            <li class="list-group-item">24/7 Support</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                        </div>
+                                    </div>										
+                                </div>
+
+                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading text-center">
+                                            <i class="fa fa-cog fa-2x"></i>
+                                            <h3>Advanced</h3>
+                                        </div>
+                                        <div class="panel-body text-center">
+                                            <p class="lead"><strong>$99</strong></p>
+                                        </div>
+                                        <ul class="list-group text-center">
+                                            <li class="list-group-item">Personal Use</li>
+                                            <li class="list-group-item">5 projects</li>
+                                            <li class="list-group-item">5 GB Disk</li>
+                                            <li class="list-group-item">Custom Domain</li>
+                                            <li class="list-group-item">24/7 Support</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                        </div>
+                                    </div>										
+                                </div>
+                                
+                                <div class="price-box col-sm-6 price-box-featured col-md-3 wow flipInY" data-wow-delay="0.7s">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading text-center">
+                                            <i class="fa fa-star fa-2x"></i>
+                                            <h3>Professional</h3>
+                                        </div>
+                                        <div class="panel-body text-center">
+                                            <p class="lead"><strong>$149</strong></p>
+                                        </div>
+                                        <ul class="list-group text-center">
+                                            <li class="list-group-item">Personal Use</li>
+                                            <li class="list-group-item">20 Projects</li>
+                                            <li class="list-group-item">20 GB Disk</li>
+                                            <li class="list-group-item">Custom Domain</li>
+                                            <li class="list-group-item">24/7 Support</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                        </div>
+                                        <div class="price-box-ribbon"><strong>Popular</strong></div>
+                                    </div>										
+                                </div>
+                                
+                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.9s">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading text-center">
+                                            <i class="fa fa-plus fa-2x"></i>
+                                            <h3>Ultimate</h3>
+                                        </div>
+                                        <div class="panel-body text-center">
+                                            <p class="lead"><strong>$199</strong></p>
+                                        </div>
+                                        <ul class="list-group text-center">
+                                            <li class="list-group-item">Multi Use</li>
+                                            <li class="list-group-item">Unlimited Projects</li>
+                                            <li class="list-group-item">99 GB Disk</li>
+                                            <li class="list-group-item">Custom Domain</li>
+                                            <li class="list-group-item">24/7 Support</li>
+                                        </ul>
+                                        <div class="panel-footer text-center">
+                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                        </div>
+                                    </div>										
+                                </div>
+                                
+                            </div> <!-- /.row -->
+                        </div> <!-- /.container -->
+                    </div>
+                    <!-- End prices -->
+                    <div class="extra-space-l"></div>
+            </section>
+            <!-- End prices section -->
               
               
           <!-- Begin cta -->
-          <section id="cta-section">
+          <section id="cta-section" hidden>
           	<div class="cta">
             	<div class="container">
                 	<div class="row">
                     
-                    	<div class="col-md-9">
+                    	<!-- <div class="col-md-9">
                         	<h1>Download Our Pdf</h1>
                             <p>Inspired by nature, follow technology, appreciate the classics. You can build modern & professional websites with Unika. The possibilities are just endless.</p>
                         </div>
@@ -286,7 +266,7 @@
                         	<div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
                         <a class="btn btn-default btn-lg" href="http://www.imransdesign.com/" target="_blank" role="button">Download</a>
                         	</div>
-                        </div>
+                        </div> -->
                         
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
@@ -613,7 +593,7 @@
                 
                 
             <!-- Begin team-->
-            <section id="team-section" class="page">
+            <!-- <section id="team-section" class="page">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
@@ -739,7 +719,7 @@
                     </div>
                 </div>
 
-            </section>
+            </section> -->
             <!-- End team-->
                 
                 
@@ -775,124 +755,140 @@
                 
                 
                 
-            <!-- Begin prices section -->
-			<section id="prices-section" class="page">
-
+             <!-- Begin about section -->
+			<section id="about-section" class="page bg-style1">
                 <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Prices</h2>
+                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <h2>About</h2>
                             <div class="devider"></div>
-                            <p class="subtitle">That how much</p>
+                            <p class="subtitle">little information</p>
                         </div>
                     </div>
                 </div>
                 <!-- End page header-->
 
-				<div class="extra-space-l"></div>
+                <!-- Begin rotate box-1 -->
+                <div class="rotate-box-1-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
+                                    <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4>Who We Are?</h4>
+                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
 
-				<!-- Begin prices -->
-				<div class="prices">
-					<div class="container">
-						<div class="row">
-							
-							<div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.3s">
-								<div class="panel panel-default">
-									<div class="panel-heading text-center">
-										<i class="fa fa-plug fa-2x"></i>
-										<h3>Basic</h3>
-									</div>
-									<div class="panel-body text-center">
-										<p class="lead"><strong>$49</strong></p>
-									</div>
-									<ul class="list-group text-center">
-										<li class="list-group-item">Personal Use</li>
-										<li class="list-group-item">3 projects</li>
-										<li class="list-group-item">1 GB Disk</li>
-										<li class="list-group-item">Custom Domain</li>
-										<li class="list-group-item">24/7 Support</li>
-									</ul>
-									<div class="panel-footer text-center">
-										<a class="btn btn-default" href="#">Order Now!</a>
-									</div>
-								</div>										
-							</div>
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
+                                    <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4>What We Do?</h4>
+                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
 
-							<div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
-								<div class="panel panel-default">
-									<div class="panel-heading text-center">
-										<i class="fa fa-cog fa-2x"></i>
-										<h3>Advanced</h3>
-									</div>
-									<div class="panel-body text-center">
-										<p class="lead"><strong>$99</strong></p>
-									</div>
-									<ul class="list-group text-center">
-										<li class="list-group-item">Personal Use</li>
-										<li class="list-group-item">5 projects</li>
-										<li class="list-group-item">5 GB Disk</li>
-										<li class="list-group-item">Custom Domain</li>
-										<li class="list-group-item">24/7 Support</li>
-									</ul>
-									<div class="panel-footer text-center">
-										<a class="btn btn-default" href="#">Order Now!</a>
-									</div>
-								</div>										
-							</div>
-							
-							<div class="price-box col-sm-6 price-box-featured col-md-3 wow flipInY" data-wow-delay="0.7s">
-								<div class="panel panel-default">
-									<div class="panel-heading text-center">
-										<i class="fa fa-star fa-2x"></i>
-										<h3>Professional</h3>
-									</div>
-									<div class="panel-body text-center">
-										<p class="lead"><strong>$149</strong></p>
-									</div>
-									<ul class="list-group text-center">
-										<li class="list-group-item">Personal Use</li>
-										<li class="list-group-item">20 Projects</li>
-										<li class="list-group-item">20 GB Disk</li>
-										<li class="list-group-item">Custom Domain</li>
-										<li class="list-group-item">24/7 Support</li>
-									</ul>
-									<div class="panel-footer text-center">
-										<a class="btn btn-default" href="#">Order Now!</a>
-									</div>
-									<div class="price-box-ribbon"><strong>Popular</strong></div>
-								</div>										
-							</div>
-							
-							<div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.9s">
-								<div class="panel panel-default">
-									<div class="panel-heading text-center">
-										<i class="fa fa-plus fa-2x"></i>
-										<h3>Ultimate</h3>
-									</div>
-									<div class="panel-body text-center">
-										<p class="lead"><strong>$199</strong></p>
-									</div>
-									<ul class="list-group text-center">
-										<li class="list-group-item">Multi Use</li>
-										<li class="list-group-item">Unlimited Projects</li>
-										<li class="list-group-item">99 GB Disk</li>
-										<li class="list-group-item">Custom Domain</li>
-										<li class="list-group-item">24/7 Support</li>
-									</ul>
-									<div class="panel-footer text-center">
-										<a class="btn btn-default" href="#">Order Now!</a>
-									</div>
-								</div>										
-							</div>
-							
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div>
-				<!-- End prices -->
-				<div class="extra-space-l"></div>
-			</section>
-			<!-- End prices section -->
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
+                                    <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4>Why We Do It?</h4>
+                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
+                                    <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4>Since When?</h4>
+                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+                <!-- End rotate box-1 -->
+                
+                <div class="extra-space-l"></div>
+                
+                <!-- Begin page header--> 
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <h4>Our Skills</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+                
+                <!-- Begin Our Skills -->
+                <div class="our-skills">
+                	<div class="container">
+                    	<div class="row">
+                        
+                        	<div class="col-sm-6">
+                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
+                                    <div class="progress-lebel">
+                                        <h6>Photoshop & Illustrator</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="skill-bar wow slideInRight" data-wow-delay="0.2s">
+                                    <div class="progress-lebel">
+                                        <h6>WordPress</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
+                                    <div class="progress-lebel">
+                                        <h6>Html & Css</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="skill-bar wow slideInRight" data-wow-delay="0.4s">
+                                    <div class="progress-lebel">
+                                        <h6>Javascript</h6>
+                                    </div>
+                                    <div class="progress">
+                                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+                                      </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                </div>
+                <!-- End Our Skill -->
+          </section>
+          <!-- End about section -->
                 
                 
                 

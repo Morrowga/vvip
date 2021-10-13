@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('phone_number')->unique();
-            $table->string('url')->unique();
+            $table->string('url');
             $table->string('secure_status')->default('public');
             $table->string('email')->nullable();
             $table->string('package')->nullable();

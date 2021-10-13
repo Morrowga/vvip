@@ -13,39 +13,53 @@ class UserRegisterController extends Controller
 {
 
     public function registerUser(Request $request){
-        $register_data = $request->input('register');
-        if(!empty($register_data)){
-            foreach($register_data as $data){
-            $user_exist_phone = User::where('phone_number', '=', $data['phone_number'])->first();
+        if(!empty($request)){
+            $name = $request->name;
+            $phone_number = $request->phone_number;
+            $email = $request->email;
+            $package_name = $request->package_name;
+            $country_number = $request->country_number;
+            $url = $request->url;
+            $secure_status = $request->secure_status;
+            $phone = $country_number . $phone_number;
+            $user_exist_phone = User::where('phone_number', '=', $phone)->first();
+            $user_exist_url = User::where('url', '=', $url)->first();
                 if($user_exist_phone === null){
-                    $user = new User;
-                    $user->name = $data['name'];
-                    $user->phone_number = $data['country_number'] . $data['phone_number'];
-                    $user->email = $data['email'];
-                    $user->package = $data['package_name'];
-                    $user->package_status = "active";
-                    $user->package_start_date = Carbon::now();
-                    $user->package_end_date = Carbon::now()->addYear(1);
-                    $remain = $user->package_end_date->diffIndays($user->package_start_date);
-                    $user->remaining_days = $remain;
-                    $user->url = $data['url'];
-                    $user->secure_status = $data['secure_status'];
-                    $user->save();
-                    
-                    $messages = [
-                        "status" => '200',
-                        "message" => 'Success',
-                        "user_id" => $user->id
-                    ];
-                    return $messages;
+                    if($user_exist_url === null){
+                        $user = new User;
+                        $user->name = $name;
+                        $user->phone_number = $country_number . $phone;
+                        $user->email = $email;
+                        $user->package = $package_name;
+                        $user->package_status = "active";
+                        $user->package_start_date = Carbon::now();
+                        $user->package_end_date = Carbon::now()->addYear(1);
+                        $remain = $user->package_end_date->diffIndays($user->package_start_date);
+                        $user->remaining_days = $remain;
+                        $user->url = $url;
+                        $user->secure_status = $secure_status;
+                        $user->save();
+                        
+                        $messages = [
+                            "status" => '200',
+                            "message" => 'Success',
+                            "user_id" => $user->id
+                        ];
+                        return $messages;
+                    } else {
+                        $messages = [
+                            "status" => '500',
+                            "message" => 'URL Exist',
+                        ];
+                        return $messages;
+                    }
                 }  else {
                     $messages = [
                         "status" => '500',
-                        "message" => 'Data Exist',
+                        "message" => 'Phone Number Exist',
                     ];
                     return $messages;
                 }
-            }     
         } else {
 
             $messages = [
