@@ -444,7 +444,7 @@
 
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fab fa-diamond about-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="far fa-gem about-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="about-text">What We Do?</h4>
                                         <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
