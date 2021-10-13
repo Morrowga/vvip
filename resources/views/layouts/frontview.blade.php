@@ -80,13 +80,13 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll" href="body">Home</a></li>
-                            <li><a class="page-scroll" href="#services-section">Services</a></li>
+                            <li><a class="page-scroll navli" href="body">Home</a></li>
+                            <li><a class="page-scroll navli" href="#services-section">Services</a></li>
                             <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
                             <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
-                            <li><a class="page-scroll" href="#prices-section">Prices</a></li>
-                            <li><a class="page-scroll" href="#about-section">About</a></li>
-                            <li><a class="page-scroll" href="#contact-section">Contact</a></li>
+                            <li><a class="page-scroll navli" href="#prices-section">Prices</a></li>
+                            <li><a class="page-scroll navli" href="#about-section">About</a></li>
+                            <li><a class="page-scroll navli" href="#contact-section">Contact</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -227,7 +227,7 @@
                             <div class="row">
                                 
                                 <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.3s">
-                                    <div class="panel panel-default">
+                                    <div class="panel panel-default first-price-box">
                                         <div class="panel-heading text-center">
                                             <h3 class="package">NORMAL</h3>
                                             <img src="../images/gold.png" alt="" width="100" height="110">
@@ -237,15 +237,15 @@
                                             <p class="lead"><strong>$49</strong></p>
                                         </div>
                                         <ul class="list-group text-center"> 
-                                            <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">Contact System</li>
-                                            <li class="list-group-item">Personal Social Platform Links</li>
-                                            <li class="list-group-item">Personnal Deep Link</li>
-                                            <li class="list-group-item">Business URL</li>
-                                            <li class="list-group-item">Telephone Call System</li>
+                                            <li class="list-group-item one">Personal Use</li>
+                                            <li class="list-group-item one">Contact System</li>
+                                            <li class="list-group-item one">Personal Social Platform Links</li>
+                                            <li class="list-group-item one">Personnal Deep Link</li>
+                                            <li class="list-group-item one">Business URL</li>
+                                            <li class="list-group-item one">Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                            <a class="btn btn-default price-btn-one" href="#">Order Now!</a>
                                         </div>
                                     </div>										
                                 </div>
@@ -604,7 +604,7 @@
                         
                             <div class="col-sm-6">
                                 <div class="contact-info">
-                                    <h4>Our Address</h4>
+                                    <h4 class="contact">Our Address</h4>
                                     <ul class="contact-address">
 			                            <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; 100 Limpbiscayne Blvd. (North) 17st Floor ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New World Tower New York ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New York, USA, 33148</li>
 			                            <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
@@ -616,7 +616,7 @@
                         
                         	<div class="col-sm-6">
                                 <div class="contact-form">
-                                	<h4>Write to us</h4>
+                                	<h4 class="contact">Write to us</h4>
                                     <form role="form">
                                         <div class="form-group">
                                             <input type="text" class="form-control input-lg" placeholder="Your Name" required>

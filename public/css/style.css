@@ -1286,10 +1286,12 @@ p.subtitle {
 
 .about{
 	color: rgb(253,235,162) !important;
+	font-family: "Britannic Bold" !important ;
 }
 
 .about-text{
 	color: rgba(255,255,255,0.7) !important;
+	font-family: "Britannic Bold" !important ;
 }
 .about-text:hover{
 	color: rgb(253,235,162) !important;
@@ -1321,10 +1323,12 @@ p.subtitle {
 
 .social{
 	color: rgb(253,235,162) !important;
+	font-family: "Britannic Bold" !important ;
 }
 
 .contact{
 	color: rgb(253,235,162) !important;
+	font-family: "Britannic Bold" !important ;
 }
 
 .contact-btn{
@@ -1344,6 +1348,9 @@ p.subtitle {
 	color: rgb(253,235,162) !important;
   }
 
+	.first-price-box{
+		height: 755px !important;
+	}
 
   .collapse,.navbar-collapse{
 	background-color: rgba(0, 0, 0) !important;
@@ -1356,3 +1363,15 @@ p.subtitle {
   }
 
   
+  .price-btn-one{
+	  margin-top: 34px !important;
+  }
+
+  .one{
+	  line-height: 30px !important;
+  }
+
+  .navli{
+	  letter-spacing: 4px !important;
+	  font-size: 18px !important;
+  }
