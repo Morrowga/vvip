@@ -140,6 +140,7 @@ function getCheckedSystem() {
   const checkBox = document.getElementById('url_system').checked;   
   if (checkBox === true) {
         console.log(document.getElementById("url").value = document.getElementById('url_system').value);
+        document.getElementById("url").disabled = true;
     } else {
       console.log(false);
   }
@@ -149,6 +150,7 @@ function getCheckedName(){
     const checkBoxName = document.getElementById('url_name').checked;
     if(checkBoxName === true){
         console.log(document.getElementById("url").value = document.getElementById('url_name').value);
+        document.getElementById("url").disabled = false;
         var textbox = document.getElementById("url");
         textbox.focus();    
     } else {
