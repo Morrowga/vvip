@@ -1,4 +1,4 @@
-@extends('layouts.app')
+<!-- @extends('layouts.app')
 
 @section('content')
 
@@ -35,10 +35,10 @@
 @section('script')
 <script>
     let setT = setTimeout(function(){ 
-        let url = "http://vvip9.co/login"
+        let url = "http://vvip9.co"
         document.location.href=url;
         window.clearTimeout(setT);
     }, 3000);
 </script>
 @endsection
-@endsection
+@endsection -->

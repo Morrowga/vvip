@@ -11,7 +11,7 @@
 
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Unika - Responsive One Page HTML5 Template</title>
+		<title>VVIP 9</title>
 		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
@@ -29,11 +29,14 @@
 		<link rel="stylesheet" href="../js/font-awesome/css/font-awesome.min.css"> <!-- Font Icons -->
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
 
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
+        <link rel="stylesheet" href="../css/custom.css">
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
+        <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
 
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="css/skin/cool-gray.css">
@@ -53,8 +56,9 @@
 	</head>
 
     <body data-spy="scroll" data-target="#main-navbar">
-        <div class="page-loader"></div>  <!-- Display loading image while page loads -->
-    	<div class="body">
+        <!-- <div class="page-loader"></div>   -->
+        <!-- Display loading image while page loads -->
+    	<div class="body" id="main-body" style="display:none;">
         
             <!--========== BEGIN HEADER ==========-->
             <header id="header" class="header-main">
@@ -79,11 +83,11 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll" href="body">Home</a></li>
-                            <li><a class="page-scroll" href="#about-section">About</a></li>
                             <li><a class="page-scroll" href="#services-section">Services</a></li>
-                            <li><a class="page-scroll" href="#portfolio-section">Works</a></li>
-                            <!-- <li><a class="page-scroll" href="#team-section">Team</a></li>                             -->
+                            <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
+                            <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
                             <li><a class="page-scroll" href="#prices-section">Prices</a></li>
+                            <li><a class="page-scroll" href="#about-section">About</a></li>
                             <li><a class="page-scroll" href="#contact-section">Contact</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -98,38 +102,109 @@
             
             
         	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax" data-stellar-background-ratio="0.5">
+			<section id="text-carousel-intro-section" class="parallax intro-parallax">
 				
-				<div class="container">
-					<div class="caption text-center text-white" data-stellar-ratio="0.7">
-
-						<div id="owl-intro-text" class="owl-carousel">
-							<div class="item">
-								<h1>We have Awesome things</h1>
-								<p>Let's make the web beautiful together</p>
-                                <div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
-							</div>
-							<div class="item">
-								<h1>Join with us</h1>
-								<p>To the greatest Journey</p>
-								<div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
-							</div>
-							<div class="item">
-								<h1>I'm Unika</h1>
-								<p>One Page Responsive Theme</p>
-								<div class="extra-space-l"></div>
-								<a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
-							</div>
-						</div>
-
-					</div> <!-- /.caption -->
-				</div> <!-- /.container -->
-
+                    <div class="container">
+                        <div class="caption text-center text-white">
+                            <div id="owl-intro-text" class="owl-carousel">
+                                <div class="item">
+                                    <h1 class="logo-text">VVIP NINE</h1>
+                                    <p>Let's make the web beautiful together</p>
+                                    <div class="extra-space-l"></div>
+                                    <a class="btn btn-blank page-scroll" href="#services-section" role="button">Our Service</a>
+                                    <a class="btn btn-blank page-scroll" href="#prices-section" role="button">Register Now</a>
+                                </div>
+                                <div class="item">
+                                    <h1>VVIP NINE</h1>
+                                    <p>To the greatest Journey</p>
+                                    <div class="extra-space-l"></div>
+                                    <a class="btn btn-blank" href="{{ route('login') }}" role="button">ACCOUNT LOGIN</a>
+                                </div>
+                                <!-- <div class="item">
+                                    <h1>I'm Unika</h1>
+                                    <p>VVIP NINE</p>
+                                    <div class="extra-space-l"></div>
+                                    <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
+                                </div> -->
+                            </div>
+                        </div> <!-- /.caption -->
+                    </div>
 			</section>
 			<!-- End text carousel intro section -->
                 
+
+            <!-- Begin Services -->
+            <section id="services-section" class="page text-center">
+                <!-- Begin page header-->
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2 class="service">Services</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">what we really know how</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End page header-->
+            
+                <!-- Begin roatet box-2 -->
+                <div class="rotate-box-2-wrapper">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
+                                    <span class="rotate-box-icon"><i class="fa fa-mobile service-icon"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4 class="service-text">App Development</h4>
+                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+            
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
+                                    <span class="rotate-box-icon"><i class="fa fa-pie-chart service-icon"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4 class="service-text">Ui Design</h4>
+                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+            
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
+                                    <span class="rotate-box-icon"><i class="fa fa-cloud service-icon"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4 class="service-text">Cloud Hosting</h4>
+                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
+                                    <span class="rotate-box-icon"><i class="fa fa-pencil service-icon"></i></span>
+                                    <div class="rotate-box-info">
+                                        <h4 class="service-text">Coding Pen</h4>
+                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    </div>
+                                </a>
+                            </div>
+                            
+                        </div> <!-- /.row -->
+                    </div> <!-- /.container -->
+                    
+                    <div class="container">
+                        <!-- Cta Button -->
+                        <div class="extra-space-l"></div>
+                        <div class="text-center">
+                    		<a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About</a>
+                        </div>
+                    </div> <!-- /.container -->                       
+                </div>
+                <!-- End rotate-box-2 -->
+            </section>
+            <!-- End Services -->
                 
                 
              <!-- Begin prices section -->
@@ -138,7 +213,7 @@
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Prices</h2>
+                            <h2 class="package">Prices</h2>
                             <div class="devider"></div>
                             <p class="subtitle">That how much</p>
                         </div>
@@ -153,43 +228,23 @@
                         <div class="container">
                             <div class="row">
                                 
-                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.3s">
+                                <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.3s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
-                                            <i class="fa fa-plug fa-2x"></i>
-                                            <h3>Basic</h3>
+                                            <h3 class="package">NORMAL</h3>
+                                            <img src="../images/gold.png" alt="" width="100" height="110">
+                                            <h4 class="package">GOLD</h4>
                                         </div>
                                         <div class="panel-body text-center">
                                             <p class="lead"><strong>$49</strong></p>
                                         </div>
-                                        <ul class="list-group text-center">
+                                        <ul class="list-group text-center"> 
                                             <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">3 projects</li>
-                                            <li class="list-group-item">1 GB Disk</li>
-                                            <li class="list-group-item">Custom Domain</li>
-                                            <li class="list-group-item">24/7 Support</li>
-                                        </ul>
-                                        <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#">Order Now!</a>
-                                        </div>
-                                    </div>										
-                                </div>
-
-                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.5s">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading text-center">
-                                            <i class="fa fa-cog fa-2x"></i>
-                                            <h3>Advanced</h3>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            <p class="lead"><strong>$99</strong></p>
-                                        </div>
-                                        <ul class="list-group text-center">
-                                            <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">5 projects</li>
-                                            <li class="list-group-item">5 GB Disk</li>
-                                            <li class="list-group-item">Custom Domain</li>
-                                            <li class="list-group-item">24/7 Support</li>
+                                            <li class="list-group-item">Contact System</li>
+                                            <li class="list-group-item">Personal Social Platform Links</li>
+                                            <li class="list-group-item">Personnal Deep Link</li>
+                                            <li class="list-group-item">Business URL</li>
+                                            <li class="list-group-item">Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default" href="#">Order Now!</a>
@@ -197,21 +252,26 @@
                                     </div>										
                                 </div>
                                 
-                                <div class="price-box col-sm-6 price-box-featured col-md-3 wow flipInY" data-wow-delay="0.7s">
+                                <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY" data-wow-delay="0.7s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
-                                            <i class="fa fa-star fa-2x"></i>
-                                            <h3>Professional</h3>
+                                            <h3 class="package">STANDARD</h3>
+                                            <img src="../images/diamond.png" alt="" width="100" height="110">
+                                            <h4 class="package">DIAMOND</h4>
                                         </div>
                                         <div class="panel-body text-center">
                                             <p class="lead"><strong>$149</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
                                             <li class="list-group-item">Personal Use</li>
-                                            <li class="list-group-item">20 Projects</li>
-                                            <li class="list-group-item">20 GB Disk</li>
-                                            <li class="list-group-item">Custom Domain</li>
-                                            <li class="list-group-item">24/7 Support</li>
+                                            <li class="list-group-item">Contact & Social System</li>
+                                            <li class="list-group-item">SMS</li>
+                                            <li class="list-group-item">Event</li>
+                                            <li class="list-group-item">Bank / Pay Info</li>
+                                            <li class="list-group-item">Personal Social Platform Links</li>
+                                            <li class="list-group-item">Personnal Deep Link</li>
+                                            <li class="list-group-item">Business URL</li>
+                                            <li class="list-group-item">Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default" href="#">Order Now!</a>
@@ -220,21 +280,27 @@
                                     </div>										
                                 </div>
                                 
-                                <div class="price-box col-sm-6 col-md-3 wow flipInY" data-wow-delay="0.9s">
+                                <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.9s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
-                                            <i class="fa fa-plus fa-2x"></i>
-                                            <h3>Ultimate</h3>
+                                            <h3 class="package">LUXURY</h3>
+                                            <img src="../images/ruby.png" alt="" width="100" height="110">
+                                            <h3 class="package">RUBY</h3>
                                         </div>
                                         <div class="panel-body text-center">
                                             <p class="lead"><strong>$199</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
-                                            <li class="list-group-item">Multi Use</li>
-                                            <li class="list-group-item">Unlimited Projects</li>
-                                            <li class="list-group-item">99 GB Disk</li>
-                                            <li class="list-group-item">Custom Domain</li>
-                                            <li class="list-group-item">24/7 Support</li>
+                                            <li class="list-group-item">Personal Use</li>
+                                            <li class="list-group-item">Contact & Social System</li>
+                                            <li class="list-group-item">SMS</li>
+                                            <li class="list-group-item">Event</li>
+                                            <li class="list-group-item">Bank / Pay Info</li>
+                                            <li class="list-group-item">Personal Social Platform Links</li>
+                                            <li class="list-group-item">Personnal Deep Link</li>
+                                            <li class="list-group-item">Business URL</li>
+                                            <li class="list-group-item">Personal Assistant</li>
+                                            <li class="list-group-item">Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
                                             <a class="btn btn-default" href="#">Order Now!</a>
@@ -249,288 +315,14 @@
                     <div class="extra-space-l"></div>
             </section>
             <!-- End prices section -->
-              
-              
-          <!-- Begin cta -->
-          <section id="cta-section" hidden>
-          	<div class="cta">
-            	<div class="container">
-                	<div class="row">
-                    
-                    	<!-- <div class="col-md-9">
-                        	<h1>Download Our Pdf</h1>
-                            <p>Inspired by nature, follow technology, appreciate the classics. You can build modern & professional websites with Unika. The possibilities are just endless.</p>
-                        </div>
-                        
-                        <div class="col-md-3">
-                        	<div class="cta-btn wow bounceInRight" data-wow-delay="0.4s">
-                        <a class="btn btn-default btn-lg" href="http://www.imransdesign.com/" target="_blank" role="button">Download</a>
-                        	</div>
-                        </div> -->
-                        
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
-            </div>
-          </section>
-          <!-- End cta -->
 
               
-              
-              
-            <!-- Begin Services -->
-            <section id="services-section" class="page text-center">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Services</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">what we really know how</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-            
-                <!-- Begin roatet box-2 -->
-                <div class="rotate-box-2-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-mobile"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>App Development</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-pie-chart"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Ui Design</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-cloud"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Cloud Hosting</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-pencil"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4>Coding Pen</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                    
-                    <div class="container">
-                        <!-- Cta Button -->
-                        <div class="extra-space-l"></div>
-                        <div class="text-center">
-                    		<a class="btn btn-default btn-lg-xl" href="http://www.imransdesign.com/" target="_blank" role="button">Large Button</a>
-                        </div>
-                    </div> <!-- /.container -->                       
-                </div>
-                <!-- End rotate-box-2 -->
-            </section>
-            <!-- End Services -->
-              
-              
-              
-              
-            <!-- Begin testimonials -->
-            <section id="testimonial-section">
-                <div id="testimonial-trigger" class="testimonial text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/testimonial-bg.jpg);">
-                    <div class="cover"></div>
-                    <!-- Begin page header-->
-                    <div class="page-header-wrapper">
-                        <div class="container">
-                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                <h2>Reviews</h2>
-                                <div class="devider"></div>
-                                <p class="subtitle">What people say about us</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End page header-->
-                    <div class="container">
-                        <div class="testimonial-inner center-block text-center">
-                            <div id="owl-testimonial" class="owl-carousel">
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"This was my first experience with that team and outperformed my expectation! They know there stuff and I highly recommend them! A+++".</p>
-                                        <footer><cite title="Source Title">Daryl Hodgeman</cite></footer>
-                                    </blockquote>
-                                </div>
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua."</p>
-                                        <footer><cite title="Source Title">John Doe</cite></footer>
-                                    </blockquote>
-                                </div>
-                                <div class="item">
-                                    <blockquote>
-                                        <p>"Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit".</p>
-                                        <footer><cite title="Source Title">John Doe</cite></footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End testimonials -->
-                
-
-                
-                
-            <!-- Begin Portfolio -->
-            <section id="portfolio-section" class="page bg-style1">
-            	<div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="portfolio">
-                                <!-- Begin page header-->
-                                <div class="page-header-wrapper">
-                                    <div class="container">
-                                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                            <h2>Our Works</h2>
-                                            <div class="devider"></div>
-                                            <p class="subtitle">What we are proud of</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- End page header-->
-                                <div class="portfoloi_content_area" >
-                                    <div class="portfolio_menu" id="filters">
-                                        <ul>
-                                            <li class="active_prot_menu"><a href="#porfolio_menu" data-filter="*">all</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".websites">websites</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".webDesign" >web design</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".appsDevelopment">apps development</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".GraphicDesign">graphic design</a></li>
-                                            <li><a href="#porfolio_menu" data-filter=".responsive">responsive</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="portfolio_content">
-                                        <div class="row"  id="portfolio">
-                                            <div class="col-xs-12 col-sm-4 appsDevelopment">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p1.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Skull Awesome</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p2.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Photo Frame</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 responsive">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p3.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Hand Shots</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 webDesign websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p4.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Night Abstract</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 appsDevelopment websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p5.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Joy of Independence</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p6.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Night Crawlers</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 responsive">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p7.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Last Motel</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 GraphicDesign">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p8.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Dirk Road</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-4 websites">
-                                                <div class="portfolio_single_content">
-                                                    <img src="../images/portfolio/p9.jpg" alt="title"/>
-                                                    <div>
-                                                        <a href="#">Old is Gold</a>
-                                                        <span>Subtitle</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- End portfolio -->
-            
-                
+           
                 
                 
             <!-- Begin counter up -->
             <section id="counter-section">                					
-				<div id="counter-up-trigger" class="counter-up text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
+				<div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
 					<div class="cover"></div>
                     <!-- Begin page header-->
                     <div class="page-header-wrapper">
@@ -547,25 +339,25 @@
 
 						<div class="row">
 
-							<div class="fact text-center col-md-3 col-sm-6">
+							<div class="fact text-center col-md-6 col-sm-6">
 								<div class="fact-inner">
-									<i class="fa fa-users fa-3x"></i>
+									<i class="fa fa-users fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">6666</span>
-									<p class="lead">Clients Worked With</p>
+									<p class="lead">Total User</p>
 								</div>
 							</div>
 
-							<div class="fact text-center col-md-3 col-sm-6">
+							<div class="fact text-center col-md-6 col-sm-6">
 								<div class="fact-inner">
-									<i class="fa fa-leaf fa-3x"></i>
+									<i class="fa fa-heart fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">800</span>
-									<p class="lead">Completed Projects</p>
+									<p class="lead">Satisfied User</p>
 								</div>
 							</div>
 
-							<div class="fact text-center col-md-3 col-sm-6">
+							<!-- <div class="fact text-center col-md-3 col-sm-6">
 								<div class="fact-inner">
 									<i class="fa fa-trophy fa-3x"></i>
                                     <div class="extra-space-l"></div>
@@ -581,7 +373,7 @@
 									<span class="counter">1100</span>
 									<p class="lead">Cups of coffee drinking</p>
 								</div>
-							</div>
+							</div> -->
 
 						</div> <!-- /.row -->
 					</div> <!-- /.container -->
@@ -592,143 +384,10 @@
                 
                 
                 
-            <!-- Begin team-->
-            <!-- <section id="team-section" class="page">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Our Team</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Meat our experts</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                <div class="container">
-                    <div class="row">
-                        <div class="team-items">
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.2s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-male"></i>
-                                                    <p>John Doe</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.3s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-female"></i>
-                                                    <p>Jane Doe</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.4s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-male"></i>
-                                                    <p>John Doe</p>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-    
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.5s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-male"></i>
-                                                    <p>John Doe</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.6s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-male"></i>
-                                                    <p>John Doe</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.7s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-male"></i>
-                                                    <p>John Doe</p>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="team-container wow bounceIn" data-wow-delay="0.8s">
-                                    <div class="team-item">
-                                        <div class="team-triangle">
-                                            <div class="content">
-                                                <img src="../images/team/1.jpg" alt="title"/>
-                                                <div class="team-hover text-center">
-                                                    <i class="fa fa-female"></i>
-                                                    <p>Jane Doe</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                        </div>  
-                    </div>
-                </div>
-
-            </section> -->
-            <!-- End team-->
-                
-                
-                
-                
             <!-- Begin partners -->
-            <section id="partners-section">
+            <!-- <section id="partners-section"> -->
                 <!-- Begin page header-->
-                <div class="page-header-wrapper">
+                <!-- <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                             <h2>Our Partners</h2>
@@ -736,9 +395,9 @@
                             <p class="subtitle">Those who trust us</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End page header-->
-                <div class="container">
+                <!-- <div class="container">
                     <div id="owl-partners" class="owl-carousel">
                         <img src="../images/partners/1.png" alt="img">
                         <img src="../images/partners/2.png" alt="img">
@@ -748,8 +407,8 @@
                         <img src="../images/partners/6.png" alt="img">
                         <img src="../images/partners/7.png" alt="img">
                     </div>
-                </div>
-            </section>
+                </div> -->
+            <!-- </section> -->
             <!-- End partners -->
                 
                 
@@ -761,7 +420,7 @@
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h2>About</h2>
+                            <h2 class="about">About</h2>
                             <div class="devider"></div>
                             <p class="subtitle">little information</p>
                         </div>
@@ -775,40 +434,40 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-users"></i></span>
+                                    <span class="rotate-box-icon"><i class="fa fa-users about-icon"></i></span>
                                     <div class="rotate-box-info">
-                                        <h4>Who We Are?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                        <h4 class="about-text">Who We Are?</h4>
+                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-diamond"></i></span>
+                                    <span class="rotate-box-icon"><i class="fab fa-diamond about-icon"></i></span>
                                     <div class="rotate-box-info">
-                                        <h4>What We Do?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                        <h4 class="about-text">What We Do?</h4>
+                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
                                     </div>
                                 </a>
                             </div>
 
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-heart"></i></span>
+                                    <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                     <div class="rotate-box-info">
-                                        <h4>Why We Do It?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                        <h4 class="about-text">Why We Do It?</h4>
+                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
                                     </div>
                                 </a>
                             </div>
                             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-clock-o"></i></span>
+                                    <span class="rotate-box-icon"><i class="fa fa-clock-o about-icon"></i></span>
                                     <div class="rotate-box-info">
-                                        <h4>Since When?</h4>
-                                        <p>Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                        <h4 class="about-text">Since When?</h4>
+                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
                                     </div>
                                 </a>
                             </div>
@@ -821,17 +480,17 @@
                 <div class="extra-space-l"></div>
                 
                 <!-- Begin page header--> 
-                <div class="page-header-wrapper">
+                <!-- <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
                             <h4>Our Skills</h4>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- End page header-->
                 
                 <!-- Begin Our Skills -->
-                <div class="our-skills">
+                <!-- <div class="our-skills">
                 	<div class="container">
                     	<div class="row">
                         
@@ -883,9 +542,11 @@
                                 </div>
                             </div>
                             
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
+                        </div> -->
+                        <!-- /.row -->
+                    <!-- </div> -->
+                     <!-- /.container -->
+                <!-- </div> -->
                 <!-- End Our Skill -->
           </section>
           <!-- End about section -->
@@ -900,7 +561,7 @@
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Join Us</h2>
+                            <h2 class="social">Join Us</h2>
                             <div class="devider"></div>
                             <p class="subtitle">Follow us on social networks</p>
                         </div>
@@ -910,12 +571,10 @@
                 
                 <div class="container">
                 	<ul class="social-list">
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon"><i class="fa fa-facebook"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon"><i class="fa fa-twitter"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon"><i class="fa fa-google-plus"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.6s"><span class="rotate-box-icon"><i class="fa fa-pinterest-p"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.7s"><span class="rotate-box-icon"><i class="fa fa-tumblr"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.8s"><span class="rotate-box-icon"><i class="fa fa-dribbble"></i></span></a></li>                      
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon fb"><i class="fab fa-facebook"></i></span></a></li>
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon twitter"><i class="fab fa-twitter"></i></span></a></li>
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon instagram"><i class="fab fa-instagram"></i></span></a></li>
+                        <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon telegram"><i class="fab fa-telegram"></i></span></a></li>
                     </ul>
                 </div>
                 
@@ -926,14 +585,14 @@
                 
                 
             <!-- Begin contact section -->
-			<section id="contact-section" class="page text-white parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/map-bg.jpg);">
+			<section id="contact-section" class="page text-white parallax contact-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/map-bg.jpg);">
             <div class="cover"></div>
             
                  <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Contacts</h2>
+                            <h2 class="contact">Contacts</h2>
                             <div class="devider"></div>
                             <p class="subtitle">All to contact us</p>
                         </div>
@@ -953,7 +612,6 @@
 			                            <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
 			                            <li><i class="fa fa-print"></i>&nbsp; 1 -234 -456 -7890</li>
 			                            <li><i class="fa fa-envelope"></i> info@yourdomain.com</li>
-			                            <li><i class="fa fa-skype"></i> Unika-Design</li>
 			                        </ul>
                                 </div>
                             </div>
@@ -974,7 +632,7 @@
                                         <div class="form-group">
                                             <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
                                         </div>
-                                        <button type="submit" class="btn wow bounceInRight" data-wow-delay="0.8s">Send</button>
+                                        <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
                                     </form>
                                 </div>	
                             </div>
@@ -991,7 +649,7 @@
             <!-- Begin footer -->
             <footer class="text-off-white">
             
-                <div class="footer-top">
+                <div class="footer-top" hidden>
                 	<div class="container">
                     	<div class="row wow bounceInLeft" data-wow-delay="0.4s">
 
@@ -1033,13 +691,15 @@
                                 </div>
                             </div>
                             
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
+                        </div>
+                         <!-- /.row -->
+                    </div> 
+                    <!-- /.container -->
                 </div>
                 
                 <div class="footer">
                     <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
-                        <p class="copyright">Copyright &copy; 2015 - Designed By <a href="https://www.behance.net/poljakova" class="theme-author">Veronika Poljakova</a> &amp; Developed by <a href="http://www.imransdesign.com/" class="theme-author">Imransdesign</a></p>
+                        <p class="copyright">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
                     </div>
                 </div>
 
@@ -1048,10 +708,40 @@
 
             <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
                                               
-        </div><!-- body ends -->
-        
-        
-        
+        </div>
+        <div id="loading" style="display:block;">
+            <div class="container justify-content-center d-flex">
+            <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo">
+            <svg version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
+            <circle fill="rgb(217,181,81)" stroke="none" cx="6" cy="50" r="6">
+                <animate
+                attributeName="opacity"
+                dur="1s"
+                values="0;1;0"
+                repeatCount="indefinite"
+                begin="0.1"/>    
+            </circle>
+            <circle fill="rgb(217,181,81)" stroke="none" cx="26" cy="50" r="6">
+                <animate
+                attributeName="opacity"
+                dur="1s"
+                values="0;1;0"
+                repeatCount="indefinite" 
+                begin="0.2"/>       
+            </circle>
+            <circle fill="rgb(217,181,81)" stroke="none" cx="46" cy="50" r="6">
+                <animate
+                attributeName="opacity"
+                dur="1s"
+                values="0;1;0"
+                repeatCount="indefinite" 
+                begin="0.3"/>     
+            </circle>
+            </svg>
+            </div>
+        </div>
+        <!-- body ends -->
         
         <!-- Plugins JS -->
 		<script src="../js/jquery/jquery-1.11.1.min.js"></script>
@@ -1064,12 +754,15 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
-		<script src="../js/smoothscroll.js"></script>
+		<!-- <script src="../js/smoothscroll.js"></script> -->
 
 		<!-- Theme JS -->
 		<script src="../js/theme.js"></script>
-
+        <script>
+        let setT = setTimeout(function(){ 
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("main-body").style.display = "block";
+        }, 2000);
+        </script>
     </body> 
-        
-            
 </html>

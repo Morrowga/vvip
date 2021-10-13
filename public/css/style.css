@@ -9,18 +9,22 @@ Master Stylesheet
 	Version:	1.0	
 
 ---------------------------------------------------------------------------------*/
+@import url(//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold);
 
 html {
 	height: 100% !important;
+	font-family: "Britannic Bold" !important;
 }
 body {
 	position: relative;
 	height: 100%;
 	font-size: 14px;
 	color: #363940;
+	font-family: "Britannic Bold" !important;
 }
 body .body {
 	height: 100%;
+	font-family: "Britannic Bold" !important;
 }
 .cover {
 	position: absolute;
@@ -34,7 +38,7 @@ body .body {
 .page {
   overflow: hidden;
   background-color: #fff;
-  padding: 50px 0;
+  padding: 70px 0;
 }
 * {
 	border-radius: 0 !important;
@@ -74,10 +78,25 @@ p {
 	font: 14px/1.5em "Roboto";
 }
 .navbar-nav > li > a {
-	font-family: "Lato", Helvetica, Arial, sans-serif;
+font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 /* End Fonts */
 
+.page-scroll{
+	font-family: "Britannic Bold" !important;
+	color: rgb(253,235,162) !important;
+}
+
+
+#services-section{
+	font-family: "Britannic Bold" !important;
+}
+
+.subtitle{
+	font-family: "Britannic Bold" !important;
+	color: rgb(253,235,162) !important;
+	font-size: 14px;
+}
 
 section {
 	position: relative;
@@ -96,6 +115,7 @@ section {
 	height: 23px;
 	background: url('../images/devider.png') no-repeat center center;
 	margin: 5px 0 10px;
+	background-color: transparent !important;
 }
 .thumbnail {
 	padding: 15px;
@@ -113,13 +133,24 @@ section {
 	box-shadow: none;
 }
 .parallax {
-	background: rgb(0,0,0);
 	position: relative;
 	background-position: center !important;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	-webkit-background-size: cover;
   	background-size: cover;
+}
+
+.intro-parallax{
+	background: url('https://i.pinimg.com/564x/71/32/08/713208aee5db69d06a981853bf464dce.jpg') center center !important;
+}
+
+.counter-parallax{
+	background: url('https://i.pinimg.com/564x/6f/be/6f/6fbe6f33a51c924fffa10cd4dcf6e763.jpg') center center !important;
+}
+
+.contact-parallax{
+	background: url('../images/map-bg.jpg') center center !important;
 }
 
 
@@ -387,6 +418,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .rotate-box-1 .rotate-box-info {
 	padding-left: 60px;
+	font-family: "Britannic Bold" !important;
 }
 
 /* End rotate box-1 */
@@ -642,6 +674,11 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .counter-up .fact-inner .counter {
 	font-size: 60px;
+	color: rgb(253,235,162) !important;
+}
+
+.counter-icon{
+	color: rgb(253,235,162) !important;
 }
 /* ===== End Counter-Up ===== */
 
@@ -743,12 +780,23 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	position: relative;
 	overflow: hidden;
 	border: none;
+	background-color: rgba(0, 0, 0);
+	color: rgb(253,235,162) !important;
 }
 .prices .panel-body .lead {
 	margin: 0;
 	font-size: 48px;
+	font-family: "Britannic Bold" !important;
+	color: rgb(253,235,162) !important;
 }
+
+.lead{
+	font-family: "Britannic Bold" !important;
+	color: rgb(253,235,162) !important;
+}
+
 .prices .panel-footer {
+	color: rgb(253,235,162) !important;
 	padding: 25px 15px;
 }
 
@@ -756,16 +804,17 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .prices .panel-default .panel-heading {
 	padding-top: 25px;
 	border: none;
+	color: rgb(253,235,162) !important;
 }
 .prices .panel-default .panel-body {
-	background-color: #EEE;
+	background-color: rgba(0, 0, 0);
 }
 .prices .panel-default .list-group-item {
 	color: #222;
 	border: none;
 }
 .prices .panel-default .panel-footer {
-	background-color: #EEE;
+	background-color: rgba(0, 0, 0);
 }
 
 /* price-box-featured */
@@ -808,7 +857,8 @@ ul.social-list {
 }
 ul.social-list li{
 	display: inline-block;
-	margin-right: 20px;
+	/* margin-right: 20px; */
+	margin-left: 20px !important;
 }
 ul.social-list li .rotate-box-1 {
 	margin: 0;
@@ -883,6 +933,7 @@ ul.contact-address li i {
 }
 .footer {
 	padding: 30px 0;
+	background-color: rgba(0, 0, 0) !important;
 }
 .footer a{
 	text-decoration: none;
@@ -987,7 +1038,7 @@ p.subtitle {
 	margin-top: 30px;
 }
 .owl-theme .owl-controls .owl-page span {
-	background: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0) !important;
 	width: 14px;
 	height: 14px;
 	border: 3px solid #fff;
@@ -997,8 +1048,8 @@ p.subtitle {
 	transform: rotate(45deg);
 }
 .owl-theme .owl-controls .owl-page.active span, .owl-theme .owl-controls.clickable .owl-page:hover span {
-	background: rgba(0, 0, 0, 0);
-	border: 3px solid #fff;
+	background: rgba(0, 0, 0);
+	border: 3px solid rgb(253,235,162);
 }
 .owl-buttons {
 	position: absolute;
@@ -1053,10 +1104,22 @@ p.subtitle {
 	transition: all 0.6s ease-in-out;
 }
 
+.btn-default{
+	background-color: rgba(0, 0, 0) !important;
+	border: 2px solid rgb(253,235,162) !important;
+}
+
+.btn-default:hover{
+	background-color: rgb(253,235,162) !important;
+	color: rgba(0, 0, 0) !important;
+	border-color: rgba(0, 0, 0);
+}
+
 /* Button blank */
 .btn-blank {
-	border: 2px solid #fff;
+	border: 2px solid rgb(253,235,162);
 	color: #fff;
+	font-size: 18px;
 	padding: 8px 12px;
 	display: inline-block;
 	vertical-align: middle;
@@ -1075,12 +1138,14 @@ p.subtitle {
 .btn-blank:before {
 	content: "";
 	position: absolute;
+	color: #000 !important;
 	z-index: -1;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: #fff;
+	border-color: rgb(253,235,162);
+	background: rgb(253,235,162);
 	-webkit-transform: scaleY(0);
 	transform: scaleY(0);
 	-webkit-transform-origin: 50% 100%;
@@ -1093,7 +1158,7 @@ p.subtitle {
 	transition-timing-function: ease-out;
 }
 .btn-blank:hover, .btn-blank:focus, .btn-blank:active {
-	color: #333;
+	color: #000 !important; 
 }
 .btn-blank:hover:before, .btn-blank:focus:before, .btn-blank:active:before {
 	-webkit-transform: scaleY(1);
@@ -1122,6 +1187,8 @@ p.subtitle {
 	position: fixed;
 	display: none;
 	bottom: 20px;
+	color: rgb(253,235,162) !important;
+	border-color: rgb(253,235,162) !important;
 	right: 30px;
 	width: 34px;
 	height: 34px;
@@ -1145,8 +1212,122 @@ p.subtitle {
 
 /*customize*/
 .item{
-	background-color: rgba(0, 0, 0, 0.5);
-	border: 2px solid rgb(253,235,162);
+	background: rgba(0, 0, 0,0.8);
+	/* border-top: 2px solid rgb(253,235,162); */
+	/* border-bottom: 2px solid rgb(253,235,162); */
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
+.copyright{
+	color : #fff;
+}
+
+
+.panel.panel-default, .panel-heading, .list-group-item{
+	color: rgb(253,235,162) !important;
+	background-color: rgba(0, 0, 0) !important;
+}
+
+.package {
+	padding-top: 10px !important;
+	font-family: "Britannic Bold" !important ;
+	color: rgb(253,235,162) !important;
+}
+
+.service {
+	padding-top: 10px !important;
+	font-family: "Britannic Bold" !important ;
+	color: rgb(253,235,162) !important;
+}
+
+.service-text{
+	font-family: "Britannic Bold" !important ;
+	color:rgba(255,255,255,0.7)!important;
+	font-size: 18px !important; 
+}
+
+.service-text:hover{
+	color: rgb(253,235,162) !important;
+}
+
+.body, section{
+	background: rgba(0, 0, 0) !important;  /* fallback for old browsers */
+}
+
+
+.rotate-box-icon{
+	background-color: rgba(0, 0, 0) !important; 
+}
+
+
+.service-icon{
+	color: rgb(253,235,162) !important;
+}
+
+.panel,.panel-default{
+	box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important;
+}
+
+.logo-text{
+	color: rgb(253,235,162) !important;
+}
+
+.about{
+	color: rgb(253,235,162) !important;
+}
+
+.about-text{
+	color: rgba(255,255,255,0.7) !important;
+}
+.about-text:hover{
+	color: rgb(253,235,162) !important;
+}
+
+.about-icon{
+	color: rgb(253,235,162) !important;
+}
+
+.fb:hover{
+	background-color: #3B5998 !important;
+	transition-duration: 0.6s !important;
+}
+
+.twitter:hover{
+	background-color: #00ACEE !important;
+	transition-duration: 0.6s !important;	
+}
+
+.instagram:hover{
+	background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+	transition-duration: 0.6s !important;	
+}
+
+.telegram:hover{
+	background-color: #0088cc !important;
+	transition-duration: 0.6s !important;	
+}
+
+.social{
+	color: rgb(253,235,162) !important;
+}
+
+.contact{
+	color: rgb(253,235,162) !important;
+}
+
+.contact-btn{
+	background-color: rgba(0, 0, 0) !important;
+	border-color: rgb(253,235,162) !important;
+	font-size: 18px;
+}
+
+.contact-btn:hover{
+	color: rgba(0, 0, 0) !important;
+	background-color: rgb(253,235,162) !important;
+	transition-duration: 1.5s !important;
+}
+
+
+::placeholder {
+	color: rgb(253,235,162) !important;
+  }
