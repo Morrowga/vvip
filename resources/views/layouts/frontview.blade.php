@@ -348,7 +348,7 @@
 
 							<div class="fact text-center col-md-6 col-sm-6">
 								<div class="fact-inner">
-									<i class="fa fa-heart fa-3x counter-icon" style="color: rgb(207, 47, 35);"></i>
+									<i class="fa fa-heart fa-3x counter-icon" style="color: rgb(207, 47, 35) !important;"></i>
                                     <div class="extra-space-l"></div>
 									<span class="counter">800</span>
 									<p class="lead">Satisfied Users</p>
