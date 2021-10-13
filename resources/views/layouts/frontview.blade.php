@@ -28,7 +28,7 @@
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/custom.css">
@@ -161,7 +161,7 @@
             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-pie-chart service-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="far fa-chart-bar service-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="service-text">Ui Design</h4>
                                         <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -171,7 +171,7 @@
             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-cloud service-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="fas fa-cloud service-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="service-text">Cloud Hosting</h4>
                                         <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -181,7 +181,7 @@
                             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-pencil service-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="fas fa-pencil-alt service-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="service-text">Coding Pen</h4>
                                         <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -442,7 +442,7 @@
 
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fa fa-diamond about-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="fas fa-gem about-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="about-text">What We Do?</h4>
                                         <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -462,7 +462,7 @@
                             
                             <div class="col-md-3 col-sm-6">
                                 <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fa fa-clock-o about-icon"></i></span>
+                                    <span class="rotate-box-icon"><i class="far fa-clock about-icon"></i></span>
                                     <div class="rotate-box-info">
                                         <h4 class="about-text">Since When?</h4>
                                         <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
@@ -569,10 +569,10 @@
                 
                 <div class="container">
                 	<ul class="social-list">
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon fb"><i class="fa fa-facebook"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon twitter"><i class="fa fa-twitter"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon instagram"><i class="fa fa-instagram"></i></span></a></li>
-                        <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon telegram"><i class="fa fa-telegram"></i></span></a></li>
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon fb"><i class="fab fa-facebook"></i></span></a></li>
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon twitter"><i class="fab fa-twitter"></i></span></a></li>
+                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon instagram"><i class="fab fa-instagram"></i></span></a></li>
+                        <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon telegram"><i class="fab fa-telegram"></i></span></a></li>
                     </ul>
                 </div>
                 
