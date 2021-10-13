@@ -82,7 +82,7 @@
     </div>
     <div id="loading" style="display:block;">
             <div class="container justify-content-center d-flex">
-            <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo">
+            <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
             <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
             <circle fill="rgb(217,181,81)" stroke="none" cx="6" cy="50" r="6">
