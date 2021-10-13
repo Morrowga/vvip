@@ -216,3 +216,18 @@ border: 2px solid rgb(217,181,81) !important;
     width: 300px !important;
     height: 300px;
 }
+
+@media screen and (max-width: 540px) {
+    .logo {
+        width: 200px !important;
+        height: 200px !important;
+    }
+}
+
+/* For Tablets */
+@media screen and (min-width: 540px) and (max-width: 780px) {
+    .logo {
+        width: 400px !important;
+        height: 400px !important;
+    }
+}
