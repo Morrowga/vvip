@@ -350,7 +350,7 @@
 								<div class="fact-inner">
 									<i class="fa fa-heart fa-3x counter-icon"></i>
                                     <div class="extra-space-l"></div>
-									<span class="counter">800</span>
+									<span class="counter">6666</span>
 									<p class="lead">Satisfied Users</p>
 								</div>
 							</div>
