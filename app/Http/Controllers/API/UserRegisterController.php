@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
@@ -79,6 +80,39 @@ class UserRegisterController extends Controller
             return $messages;
         }
     }
+
+
+    public function generateCode(){
+        $code = rand(10000000, 99999999);
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "generate_code" => $code
+        ];
+        return $messages;
+    }
+
+    public function package(){
+        if(!empty(Package::get())) {
+            $packages = Package::get();
+            $messages  = [
+                "status" => "200",
+                "message" => "success",
+                "packages" => $packages
+            ];
+
+            return $messages;
+        } else {
+            $messages  = [
+                "status" => "500",
+                "message" => "something went wrong",
+            ];
+
+            return $messages;
+        }
+    }
+
+
     /**
      * Display a listing of the resource.
      *

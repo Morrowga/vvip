@@ -117,11 +117,19 @@
 @section('script')
 <script>
 
-function annotate(){
-  var random =  Math.floor(1000 + Math.random() * 9000);
-  var typed= document.getElementById("name").value;
-  document.getElementById("url_system").value = typed + random;
-}
+// function annotate(){
+//   var random =  Math.floor(1000 + Math.random() * 9000);
+//   var typed= document.getElementById("name").value;
+//   document.getElementById("url_system").value = typed + random;
+// }
+
+$.ajax({
+  url: '/api/generate_code',
+  type: 'get',
+  success: function(response){
+    document.getElementById("url_system").value = response['generate_code'];
+  }
+});
 
 function focusText(){
     var textbox = document.getElementById("url");
@@ -129,7 +137,7 @@ function focusText(){
 }
 
 function getCheckedSystem() {
-  const checkBox = document.getElementById('url_system').checked;
+  const checkBox = document.getElementById('url_system').checked;   
   if (checkBox === true) {
         console.log(document.getElementById("url").value = document.getElementById('url_system').value);
     } else {

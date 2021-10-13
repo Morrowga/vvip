@@ -24,3 +24,7 @@ Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::c
 Route::post('pin_create/{user_id}', [App\Http\Controllers\API\UserRegisterController::class, 'createPin'])->name('pin_create');
 
 Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
+
+Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
+
+Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
