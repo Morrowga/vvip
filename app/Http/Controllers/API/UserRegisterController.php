@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Hash;
 class UserRegisterController extends Controller
 {
 
+    //register for mobile
     public function registerUser(Request $request){
         if(!empty($request)){
             $name = $request->name;
@@ -70,6 +71,7 @@ class UserRegisterController extends Controller
         }
     }
 
+    //pin_create for mobile
     public function createPin(Request $request,$user_id = null){
         $create_pin = $request->input('pin');
         if(!empty($create_pin)){
@@ -95,7 +97,7 @@ class UserRegisterController extends Controller
         }
     }
 
-
+    //generate_code for mobile
     public function generateCode(){
         $code = rand(10000000, 99999999);
         $messages = [
@@ -106,6 +108,7 @@ class UserRegisterController extends Controller
         return $messages;
     }
 
+    //package for mobile
     public function package(){
         if(!empty(Package::get())) {
             $packages = Package::get();

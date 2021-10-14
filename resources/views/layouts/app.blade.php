@@ -23,7 +23,7 @@
     <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div id="app" style="display:none;">
+    <div id="app">
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -80,7 +80,7 @@
         </main>
         
     </div>
-    <div id="loading" style="display:block;">
+    <!-- <div id="loading" style="display:block;">
         <div class="container justify-content-center d-flex">
             <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
             <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -112,16 +112,16 @@
             </svg>
         </div>
     </div>
-        
+         -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     @yield('script')
-    <script>
+    <!-- <script>
         let setT = setTimeout(function(){ 
             document.getElementById("loading").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 2000);
-        </script>
+        </script> -->
 </body>
 </html>

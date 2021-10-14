@@ -12,10 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('layouts.frontview');
-});
+Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
 Auth::routes();
 
@@ -24,7 +21,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/web_pin', [App\Http\Controllers\HomeController::class, 'pin'])->name('pin');
 
-Route::get('/plan', [App\Http\Controllers\HomeController::class, 'plan'])->name('plan');
-
-
 Route::put('/web_pin_create', [App\Http\Controllers\HomeController::class, 'web_pin'])->name('web_pin_create');
+
+
+// Route::post('create', [App\Http\Controllers\HomeController::class, 'createPlan'])->name('package');

@@ -39,6 +39,15 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <!-- <form action="" method="POST" >
+                        @csrf
+                        <input type="file" name="image" class="form-control">
+                        <input type="text" name="plan_name" class="form-control">
+                        <input type="text" name="price" class="form-control">
+                        <input type="text" name="package_name" class="form-control">
+                        <button type="submit" class="btn btn-primary">create</button>
+                    </form> -->
                 </div>
             </div>
         </div>

@@ -229,12 +229,13 @@
                                 <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.3s">
                                     <div class="panel panel-default first-price-box">
                                         <div class="panel-heading text-center">
-                                            <h3 class="package">NORMAL</h3>
+                                            <h3 class="package">{{ $pack_normal->package_name }}</h3>
                                             <img src="../images/gold.png" alt="" width="100" height="110">
                                             <h4 class="package">GOLD</h4>
+                                            <h5 class="package">{{ $pack_normal->plan_name }}</h5>
                                         </div>
                                         <div class="panel-body text-center">
-                                            <p class="lead"><strong>$49</strong></p>
+                                            <p class="lead"><strong>{{ $pack_normal->price }}</strong></p>
                                         </div>
                                         <ul class="list-group text-center"> 
                                             <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
@@ -245,7 +246,7 @@
                                             <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
-                                            <a class="btn btn-default price-btn-one" href="#">Order Now!</a>
+                                            <a class="btn btn-default price-btn-one" href="#" value="{{ $pack_normal->token }}">Order Now!</a>
                                         </div>
                                     </div>										
                                 </div>
@@ -253,12 +254,13 @@
                                 <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY ml-3" data-wow-delay="0.7s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
-                                            <h3 class="package">STANDARD</h3>
+                                            <h3 class="package">{{ $pack_standard->package_name }}</h3>
                                             <img src="../images/diamond.png" alt="" width="100" height="110">
                                             <h4 class="package">DIAMOND</h4>
+                                            <h5 class="package">{{ $pack_standard->plan_name }}</h5>
                                         </div>
                                         <div class="panel-body text-center">
-                                            <p class="lead"><strong>$149</strong></p>
+                                            <p class="lead"><strong>{{ $pack_standard->price }}</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
                                             <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
@@ -272,7 +274,7 @@
                                             <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                            <a class="btn btn-default" href="#" value="{{ $pack_standard->token }}">Order Now!</a>
                                         </div>
                                         <div class="price-box-ribbon"><strong>Popular</strong></div>
                                     </div>										
@@ -281,12 +283,13 @@
                                 <div class="price-box col-sm-6 col-md-4 wow flipInY ml-3" data-wow-delay="0.9s">
                                     <div class="panel panel-default">
                                         <div class="panel-heading text-center">
-                                            <h3 class="package">LUXURY</h3>
+                                            <h3 class="package">{{ $pack_luxury->package_name }}</h3>
                                             <img src="../images/ruby.png" alt="" width="100" height="110">
                                             <h3 class="package">RUBY</h3>
+                                            <h5 class="package">{{ $pack_luxury->plan_name }}</h5>
                                         </div>
                                         <div class="panel-body text-center">
-                                            <p class="lead"><strong>$199</strong></p>
+                                            <p class="lead"><strong>{{ $pack_luxury->price }}</strong></p>
                                         </div>
                                         <ul class="list-group text-center">
                                             <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
@@ -301,13 +304,20 @@
                                             <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
                                         </ul>
                                         <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#">Order Now!</a>
+                                            <a class="btn btn-default" href="#" value="{{ $pack_luxury->token }}">Order Now!</a>
                                         </div>
                                     </div>										
                                 </div>
                                 
                             </div> <!-- /.row -->
                         </div> <!-- /.container -->
+                        <div class="container">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- End prices -->
                     <div class="extra-space-l"></div>
@@ -761,6 +771,7 @@
             document.getElementById("loading").style.display = "none";
             document.getElementById("main-body").style.display = "block";
         }, 2000);
+
         </script>
     </body> 
 </html>

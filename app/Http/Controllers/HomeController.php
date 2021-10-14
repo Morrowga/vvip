@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Package;
 use Auth;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -48,7 +49,15 @@ class HomeController extends Controller
         }
     }
 
-    public function plan(){
-        return view('vvip_customers.select_plan');
-    }
+    // public function createPlan(Request $request){
+    //     $package = new Package();
+    //     $package->image = $request->image;
+    //     $package->plan_name = $request->plan_name;
+    //     $package->price = $request->price;
+    //     $package->token = rand(1000000, 9999999);
+    //     $package->package_name = $request->package_name;
+    //     $package->save();
+
+    //     return back();
+    // }
 }
