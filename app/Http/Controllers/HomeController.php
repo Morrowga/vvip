@@ -30,34 +30,4 @@ class HomeController extends Controller
         return view('home');
     }
 
-    public function pin(){
-        $user = User::find(Auth::user()->id);
-       return view('vvip_customers.create_pin', compact('user'));
-    }
-
-    public function web_pin(Request $request){
-        if (!empty($request->pin)) {
-            // $user_id = $pin['user_id'];
-            $has_user = User::find(Auth::user()->id);
-            if (!empty($has_user)) {
-                $has_user->password = Hash::make($request->pin);
-                $has_user->save();
-                return redirect()->route("home");
-            } else {
-                return "404";
-            }
-        }
-    }
-
-    // public function createPlan(Request $request){
-    //     $package = new Package();
-    //     $package->image = $request->image;
-    //     $package->plan_name = $request->plan_name;
-    //     $package->price = $request->price;
-    //     $package->token = rand(1000000, 9999999);
-    //     $package->package_name = $request->package_name;
-    //     $package->save();
-
-    //     return back();
-    // }
 }

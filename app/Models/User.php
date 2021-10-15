@@ -22,6 +22,11 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone_number',
+        'package',
+        'url',
+        'secure_status',
+        'smart_card_design'
     ];
 
     /**

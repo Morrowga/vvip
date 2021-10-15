@@ -28,7 +28,9 @@
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
+        <link rel="stylesheet" href="https://rvera.github.io/image-picker/image-picker/image-picker.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/custom.css">
@@ -37,7 +39,7 @@
         <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
 
 		<!-- Skin CSS -->
-		<link rel="stylesheet" href="css/skin/cool-gray.css">
+		<link rel="stylesheet" href="../css/skin/cool-gray.css">
         <!-- <link rel="stylesheet" href="css/skin/ice-blue.css"> -->
         <!-- <link rel="stylesheet" href="css/skin/summer-orange.css"> -->
         <!-- <link rel="stylesheet" href="css/skin/fresh-lime.css"> -->
@@ -70,7 +72,7 @@
                     <div class="navbar-header">
                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
+                        <span class="icon-bar" style="margin-top: 13px !important;"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
@@ -80,13 +82,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll navli" href="body">Home</a></li>
-                            <li><a class="page-scroll navli" href="#services-section">Services</a></li>
+                            <li><a class="page-scroll navli" href="/">Home</a></li>
+                            <li><a class="page-scroll navli" href="#services-section">Products</a></li>
                             <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
                             <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
-                            <li><a class="page-scroll navli" href="#prices-section">Prices</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_packages') }}">Packages</a></li>
                             <li><a class="page-scroll navli" href="#about-section">About</a></li>
                             <li><a class="page-scroll navli" href="#contact-section">Contact</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -96,564 +99,7 @@
             </header>
             <!-- ========= END HEADER =========-->
             
-            
-            
-            
-        	<!-- Begin text carousel intro section -->
-			<section id="text-carousel-intro-section" class="parallax intro-parallax">
-				
-                    <div class="container">
-                        <div class="caption text-center text-white">
-                            <div id="owl-intro-text" class="owl-carousel">
-                                <div class="item">
-                                    <h1 class="logo-text">VVIP NINE</h1>
-                                    <p>Let's make the web beautiful together</p>
-                                    <div class="extra-space-l"></div>
-                                    <a class="btn btn-blank page-scroll" href="#services-section" role="button">Our Service</a>
-                                    <a class="btn btn-blank page-scroll" href="#prices-section" role="button">Register Now</a>
-                                </div>
-                                <div class="item">
-                                    <h1 class="logo-text">VVIP NINE</h1>
-                                    <p>To the greatest Journey</p>
-                                    <div class="extra-space-l"></div>
-                                    <a class="btn btn-blank" href="{{ route('login') }}" role="button">ACCOUNT LOGIN</a>
-                                </div>
-                                <!-- <div class="item">
-                                    <h1>I'm Unika</h1>
-                                    <p>VVIP NINE</p>
-                                    <div class="extra-space-l"></div>
-                                    <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
-                                </div> -->
-                            </div>
-                        </div> <!-- /.caption -->
-                    </div>
-			</section>
-			<!-- End text carousel intro section -->
-                
-
-            <!-- Begin Services -->
-            <section id="services-section" class="page text-center">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2 class="service">Services</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">what we really know how</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-            
-                <!-- Begin roatet box-2 -->
-                <div class="rotate-box-2-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-mobile service-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="service-text">App Development</h4>
-                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="far fa-chart-bar service-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="service-text">Ui Design</h4>
-                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fas fa-cloud service-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="service-text">Cloud Hosting</h4>
-                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="fas fa-pencil-alt service-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="service-text">Coding Pen</h4>
-                                        <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                    
-                    <div class="container">
-                        <!-- Cta Button -->
-                        <div class="extra-space-l"></div>
-                        <div class="text-center">
-                    		<a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a>
-                        </div>
-                    </div> <!-- /.container -->                       
-                </div>
-                <!-- End rotate-box-2 -->
-            </section>
-            <!-- End Services -->
-                
-                
-             <!-- Begin prices section -->
-			<section id="prices-section" class="page">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2 class="package">Prices</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">That how much</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-
-                <div class="extra-space-l"></div>
-
-                    <!-- Begin prices -->
-                    <div class="prices">
-                        <div class="container">
-                            <div class="row">
-                                
-                                <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.3s">
-                                    <div class="panel panel-default first-price-box">
-                                        <div class="panel-heading text-center">
-                                            <h3 class="package">{{ $pack_normal->package_name }}</h3>
-                                            <img src="../images/gold.png" alt="" width="100" height="110">
-                                            <h4 class="package">GOLD</h4>
-                                            <h5 class="package">{{ $pack_normal->plan_name }}</h5>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            <p class="lead"><strong>{{ $pack_normal->price }}</strong></p>
-                                        </div>
-                                        <ul class="list-group text-center"> 
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact System</li>
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
-                                            <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
-                                        </ul>
-                                        <div class="panel-footer text-center">
-                                            <a class="btn btn-default price-btn-one" href="#" value="{{ $pack_normal->token }}">Order Now!</a>
-                                        </div>
-                                    </div>										
-                                </div>
-                                
-                                <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY ml-3" data-wow-delay="0.7s">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading text-center">
-                                            <h3 class="package">{{ $pack_standard->package_name }}</h3>
-                                            <img src="../images/diamond.png" alt="" width="100" height="110">
-                                            <h4 class="package">DIAMOND</h4>
-                                            <h5 class="package">{{ $pack_standard->plan_name }}</h5>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            <p class="lead"><strong>{{ $pack_standard->price }}</strong></p>
-                                        </div>
-                                        <ul class="list-group text-center">
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Contact & Social System</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>SMS</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Event</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Bank / Pay Info</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personal Social Platform Links</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personnal Deep Link</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Business URL</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Telephone Call System</li>
-                                        </ul>
-                                        <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#" value="{{ $pack_standard->token }}">Order Now!</a>
-                                        </div>
-                                        <div class="price-box-ribbon"><strong>Popular</strong></div>
-                                    </div>										
-                                </div>
-                                
-                                <div class="price-box col-sm-6 col-md-4 wow flipInY ml-3" data-wow-delay="0.9s">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading text-center">
-                                            <h3 class="package">{{ $pack_luxury->package_name }}</h3>
-                                            <img src="../images/ruby.png" alt="" width="100" height="110">
-                                            <h3 class="package">RUBY</h3>
-                                            <h5 class="package">{{ $pack_luxury->plan_name }}</h5>
-                                        </div>
-                                        <div class="panel-body text-center">
-                                            <p class="lead"><strong>{{ $pack_luxury->price }}</strong></p>
-                                        </div>
-                                        <ul class="list-group text-center">
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact & Social System</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>SMS</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Event</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Bank / Pay Info</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Assistant</li>
-                                            <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
-                                        </ul>
-                                        <div class="panel-footer text-center">
-                                            <a class="btn btn-default" href="#" value="{{ $pack_luxury->token }}">Order Now!</a>
-                                        </div>
-                                    </div>										
-                                </div>
-                                
-                            </div> <!-- /.row -->
-                        </div> <!-- /.container -->
-                        <div class="container">
-                            <div class="card">
-                                <div class="card-body">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End prices -->
-                    <div class="extra-space-l"></div>
-            </section>
-            <!-- End prices section -->
-
-              
-           
-                
-                
-            <!-- Begin counter up -->
-            <section id="counter-section">                					
-				<div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
-					<div class="cover"></div>
-                    <!-- Begin page header-->
-                    <div class="page-header-wrapper">
-                        <div class="container">
-                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                <h2>Some Fun Facts</h2>
-                                <div class="devider"></div>
-                                <p class="subtitle">Before anyone is not told</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End page header-->
-					<div class="container">
-
-						<div class="row">
-
-							<div class="fact text-center col-md-6 col-sm-6">
-								<div class="fact-inner">
-									<i class="fa fa-users fa-3x counter-icon"></i>
-                                    <div class="extra-space-l"></div>
-									<span class="counter">6666</span>
-									<p class="lead">Total Users</p>
-								</div>
-							</div>
-
-							<div class="fact text-center col-md-6 col-sm-6">
-								<div class="fact-inner">
-									<i class="fa fa-heart fa-3x counter-icon"></i>
-                                    <div class="extra-space-l"></div>
-									<span class="counter">6666</span>
-									<p class="lead">Satisfied Users</p>
-								</div>
-							</div>
-
-							<!-- <div class="fact text-center col-md-3 col-sm-6">
-								<div class="fact-inner">
-									<i class="fa fa-trophy fa-3x"></i>
-                                    <div class="extra-space-l"></div>
-									<span class="counter">55</span>
-									<p class="lead">Winning Awards</p>
-								</div>
-							</div>
-
-							<div class="fact last text-center col-md-3 col-sm-6">
-								<div class="fact-inner">
-									<i class="fa fa-coffee fa-3x"></i>
-                                    <div class="extra-space-l"></div>
-									<span class="counter">1100</span>
-									<p class="lead">Cups of coffee drinking</p>
-								</div>
-							</div> -->
-
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div>
-            </section>
-			<!-- End counter up -->
-                
-                
-                
-                
-            <!-- Begin partners -->
-            <!-- <section id="partners-section"> -->
-                <!-- Begin page header-->
-                <!-- <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Our Partners</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Those who trust us</p>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- End page header-->
-                <!-- <div class="container">
-                    <div id="owl-partners" class="owl-carousel">
-                        <img src="../images/partners/1.png" alt="img">
-                        <img src="../images/partners/2.png" alt="img">
-                        <img src="../images/partners/3.png" alt="img">
-                        <img src="../images/partners/4.png" alt="img">
-                        <img src="../images/partners/5.png" alt="img">
-                        <img src="../images/partners/6.png" alt="img">
-                        <img src="../images/partners/7.png" alt="img">
-                    </div>
-                </div> -->
-            <!-- </section> -->
-            <!-- End partners -->
-                
-                
-                
-                
-             <!-- Begin about section -->
-			<section id="about-section" class="page bg-style1">
-                <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h2 class="about">About</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">little information</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-
-                <!-- Begin rotate box-1 -->
-                <div class="rotate-box-1-wrapper">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                                    <span class="rotate-box-icon"><i class="fa fa-users about-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="about-text">Who We Are?</h4>
-                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                    <span class="rotate-box-icon"><i class="fas fa-gem about-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="about-text">What We Do?</h4>
-                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
-                                    <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="about-text">Why We Do It?</h4>
-                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                            <div class="col-md-3 col-sm-6">
-                                <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                    <span class="rotate-box-icon"><i class="far fa-clock about-icon"></i></span>
-                                    <div class="rotate-box-info">
-                                        <h4 class="about-text">Since When?</h4>
-                                        <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                    </div>
-                                </a>
-                            </div>
-                            
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
-                <!-- End rotate box-1 -->
-                
-                <div class="extra-space-l"></div>
-                
-                <!-- Begin page header--> 
-                <!-- <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                            <h4>Our Skills</h4>
-                        </div>
-                    </div>
-                </div> -->
-                <!-- End page header-->
-                
-                <!-- Begin Our Skills -->
-                <!-- <div class="our-skills">
-                	<div class="container">
-                    	<div class="row">
-                        
-                        	<div class="col-sm-6">
-                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.2s">
-                                    <div class="progress-lebel">
-                                        <h6>Photoshop & Illustrator</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInRight" data-wow-delay="0.2s">
-                                    <div class="progress-lebel">
-                                        <h6>WordPress</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInLeft" data-wow-delay="0.4s">
-                                    <div class="progress-lebel">
-                                        <h6>Html & Css</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="col-sm-6">
-                                <div class="skill-bar wow slideInRight" data-wow-delay="0.4s">
-                                    <div class="progress-lebel">
-                                        <h6>Javascript</h6>
-                                    </div>
-                                    <div class="progress">
-                                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                      </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div> -->
-                        <!-- /.row -->
-                    <!-- </div> -->
-                     <!-- /.container -->
-                <!-- </div> -->
-                <!-- End Our Skill -->
-          </section>
-          <!-- End about section -->
-                
-                
-                
-                
-            <!-- Begin social section -->
-			<section id="social-section">
-            
-                 <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2 class="social">Join Us</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Follow us on social networks</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                
-                <div class="container">
-                	<ul class="social-list">
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon fb"><i class="fab fa-facebook"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon twitter"><i class="fab fa-twitter"></i></span></a></li>
-                		<li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon instagram"><i class="fab fa-instagram"></i></span></a></li>
-                        <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon telegram"><i class="fab fa-telegram"></i></span></a></li>
-                    </ul>
-                </div>
-                
-            </section>
-            <!-- End social section -->
-                
-                
-                
-                
-            <!-- Begin contact section -->
-			<section id="contact-section" class="page text-white parallax contact-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/map-bg.jpg);">
-            <div class="cover"></div>
-            
-                 <!-- Begin page header-->
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2 class="contact">Contacts</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">All to contact us</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- End page header-->
-                
-                <div class="contact wow bounceInRight" data-wow-delay="0.4s">
-                    <div class="container">
-                    	<div class="row">
-                        
-                            <div class="col-sm-6">
-                                <div class="contact-info">
-                                    <h4 class="contact">Our Address</h4>
-                                    <ul class="contact-address">
-			                            <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; 100 Limpbiscayne Blvd. (North) 17st Floor ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New World Tower New York ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New York, USA, 33148</li>
-			                            <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
-			                            <li><i class="fa fa-print"></i>&nbsp; 1 -234 -456 -7890</li>
-			                            <li><i class="fa fa-envelope"></i> info@yourdomain.com</li>
-			                        </ul>
-                                </div>
-                            </div>
-                        
-                        	<div class="col-sm-6">
-                                <div class="contact-form">
-                                	<h4 class="contact">Write to us</h4>
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="Your Name" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control input-lg" placeholder="E-mail" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control input-lg" placeholder="Subject" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
-                                        </div>
-                                        <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
-                                    </form>
-                                </div>	
-                            </div>
-                                                                                
-                        </div> <!-- /.row -->
-                    </div> <!-- /.container -->
-                </div>
-            </section>
-            <!-- End contact section -->
-                
-                
-
-                
+            @yield('content')
             <!-- Begin footer -->
             <footer class="text-off-white">
             
@@ -753,6 +199,7 @@
         
         <!-- Plugins JS -->
 		<script src="../js/jquery/jquery-1.11.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 		<script src="../js/bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
 		<script src="../js/stellar/js/jquery.stellar.min.js"></script>
@@ -762,16 +209,87 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script> -->
+        <script src="https://rvera.github.io/image-picker/image-picker/image-picker.min.js"></script>
+        <script src="https://rvera.github.io/image-picker/image-picker/image-picker.js"></script>
 		<!-- <script src="../js/smoothscroll.js"></script> -->
 
 		<!-- Theme JS -->
 		<script src="../js/theme.js"></script>
+        @yield('script')
         <script>
+        $("select").imagepicker({
+            hide_select : true,
+            show_label  : false
+        });
+
         let setT = setTimeout(function(){ 
             document.getElementById("loading").style.display = "none";
             document.getElementById("main-body").style.display = "block";
         }, 2000);
 
+        $(function(){
+            var $sections = $('.form-section');
+
+            function navigateTo(index){
+                $sections.removeClass('current').eq(index).addClass('current');
+                $('.form-navigation .previous').toggle(index>0);
+                var atTheEnd = index >= $sections.length - 1;
+                $('.form-navigation .next').toggle(!atTheEnd);
+                $('.form-navigation [type=submit]').toggle(atTheEnd);
+            }
+
+            function curIndex() {
+                return $sections.index($sections.filter('.current'));
+            }
+
+            $('.form-navigation .previous').click(function(){
+                navigateTo(curIndex()-1);
+            });
+
+            $('.form-navigation .next').click(function(){
+                    navigateTo(curIndex()+1);
+            });
+            
+            $sections.each(function(index,section){
+                $(section).find(':input').attr('data-parsley-group', 'block'+index);
+            });
+
+            navigateTo(0);
+        });
+
+            function focusText(){
+                var textbox = document.getElementById("url");
+                textbox.focus();    
+            }
+
+            function getCheckedSystem() {
+            const checkBox = document.getElementById('url_system').checked;   
+            if (checkBox === true) {
+                    console.log(document.getElementById("url").value = document.getElementById('url_system').value);
+                    // document.getElementById("url").disabled = true;
+                } else {
+                console.log(false);
+            }
+            }
+                
+            function getCheckedName(){
+                const checkBoxName = document.getElementById('url_name').checked;
+                if(checkBoxName === true){
+                    console.log(document.getElementById("url").value = document.getElementById('url_name').value);
+                    document.getElementById("url").disabled = false;
+                    var textbox = document.getElementById("url");
+                    textbox.focus();    
+                } else {
+                    console.log(false);
+                }
+            }
+
+            function packageClick(e){
+                document.getElementById('prices-section').style.display = "none";
+                document.getElementById('prices-section-two').style.display = "block";
+                document.getElementById('package_name').value = e.target.value;
+            }   
         </script>
     </body> 
 </html>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container" onload="focusText()">
+<!-- <div class="container" onload="focusText()">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <form method="POST" action="{{ route('register') }}">
@@ -112,51 +112,5 @@
             </form>
         </div>
     </div>
-</div>
-
-@section('script')
-<script>
-
-// function annotate(){
-//   var random =  Math.floor(1000 + Math.random() * 9000);
-//   var typed= document.getElementById("name").value;
-//   document.getElementById("url_system").value = typed + random;
-// }
-
-$.ajax({
-  url: '/api/generate_code',
-  type: 'get',
-  success: function(response){
-    document.getElementById("url_system").value = response['generate_code'];
-  }
-});
-
-function focusText(){
-    var textbox = document.getElementById("url");
-    textbox.focus();    
-}
-
-function getCheckedSystem() {
-  const checkBox = document.getElementById('url_system').checked;   
-  if (checkBox === true) {
-        console.log(document.getElementById("url").value = document.getElementById('url_system').value);
-        document.getElementById("url").disabled = true;
-    } else {
-      console.log(false);
-  }
-}
-    
-function getCheckedName(){
-    const checkBoxName = document.getElementById('url_name').checked;
-    if(checkBoxName === true){
-        console.log(document.getElementById("url").value = document.getElementById('url_name').value);
-        document.getElementById("url").disabled = false;
-        var textbox = document.getElementById("url");
-        textbox.focus();    
-    } else {
-        console.log(false);
-    }
-}
-</script>
-@endsection
+</div> -->
 @endsection
