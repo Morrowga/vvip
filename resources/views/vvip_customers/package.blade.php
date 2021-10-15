@@ -1,7 +1,7 @@
 @extends('layouts.frontview')
 
 @section('content')
-    <section id="prices-section" class="page"  style="display:block;">
+    <section id="prices-section" class="page"  style="display:block; margin-top: 65px !important;" >
         <!-- Begin page header-->
         <div class="page-header-wrapper">
             <div class="container">
@@ -152,8 +152,8 @@
 
                                     <div class="form-group row mt-5">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="phone" type="text" placeholder="Enter Your Phone No"
-                                                class="form-control @error('phone_number') is-invalid @enderror register-input" name="phone_number" style="font-size: 17px;"
+                                            <input id="phone" type="tel"
+                                                class="form-control @error('phone_number') is-invalid @enderror register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
                                                 value="{{ old('phone_number') }}" required autocomplete="phone_number">
 
                                             @error('phone_number')
@@ -273,6 +273,7 @@
                     document.getElementById("url_system").value = response['generate_code'];
                 }
             });
+
     </script>
     @endsection
     <!--template-modal-->

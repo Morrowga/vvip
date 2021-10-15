@@ -127,7 +127,47 @@ class UserRegisterController extends Controller
         return $messages;
     }
 
+    public function saveUser(Request $request){
+        if(!empty($request)){
+            $username = $request->name;
+            $phone = $request->phone_number;
+            $phone_count = strlen($phone);
+            $user = User::where('phone_number', '=', $phone)->first();
+            if($user !== null){
+                $messages = [
+                    'status' => '500',
+                    'message' => 'Phone Number Exists.'
+                ];
+                return $messages;
+            } elseif ($phone_count > 11){
+                $messages = [
+                    'status' => '400',
+                    'message' => 'Phone Number is invalid'
+                ];
+                return $messages;
+            } elseif ($phone_count < 6){
+                $messages = [
+                    'status' => '400',
+                    'message' => 'Phone Number is invalid'
+                ];
+                return $messages;
+            }else {
+                $save_user = new User;
+                $save_user->name = $username;
+                $save_user->phone_number = $phone;
+                $save_user->save();
 
+                $messages = [
+                    'status' => '200',
+                    'message' => 'success',
+                    'user_id' => $save_user->id
+                ];
+                return $messages;
+            }
+        }
+    }
+
+   
     /**
      * Display a listing of the resource.
      *

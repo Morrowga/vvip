@@ -27,6 +27,8 @@ Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::cl
 
 Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
 
+Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
+
 Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
 
 Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
