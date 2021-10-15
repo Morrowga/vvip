@@ -134,11 +134,19 @@ class UserRegisterController extends Controller
             $phone_count = strlen($phone);
             $user = User::where('phone_number', '=', $phone)->first();
             if($user !== null){
-                $messages = [
-                    'status' => '500',
-                    'message' => 'Phone Number Exists.'
-                ];
-                return $messages;
+                if($user->package_status === 'active'){
+                    $messages = [
+                        'status' => '500',
+                        'message' => 'Phone Number Exist and Package is Active'
+                    ];
+                    return $messages;
+                } else {
+                    $messages = [
+                        'status' => '500',
+                        'message' => 'Phone Number Exist and Package is Expired'
+                    ];
+                    return $messages;
+                }
             } elseif ($phone_count > 11){
                 $messages = [
                     'status' => '400',
