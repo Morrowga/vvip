@@ -251,7 +251,7 @@ border: 2px solid rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
 
-.modal {
+/* .modal {
     padding-right: 0px !important;
 }
 
@@ -266,7 +266,7 @@ border: 2px solid rgb(217,181,81) !important;
 
 .modal-title{
     color: rgb(217,181,81);
-}
+}  */
 
 .sub-btn{
     border: 2px solid rgb(217,181,81) !important;
@@ -292,6 +292,8 @@ border: 2px solid rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
 
-.modal-footer {
+/* .modal-footer {
     padding-top: 5px !important;
-}
+} */
+
+

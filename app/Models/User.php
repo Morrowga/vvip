@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Http\Traits\UsesUuid;
+use App\Models\SmartCardDesign;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,4 +48,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function smart_card_design()
+    {
+        return $this->belongsTo(SmartCardDesign::class);
+    }
 }

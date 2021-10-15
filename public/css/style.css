@@ -1476,13 +1476,13 @@ transition-duration: 1s;
 	margin-top: 5px !important;
 }
 
-.modal {
+/* .modal {
     padding-right: 0px !important;
 }
 
 .modal-open{
 	padding-right:0 !important;
-}
+} */
 
 /* .image-picker{
 	text-align: center !important;
@@ -1494,4 +1494,10 @@ transition-duration: 1s;
 	text-align: center !important;
 	display: flex !important;
 	justify-content: center !important;
+}
+
+
+.thumbnails li img{
+	width: 200px !important; 
+	height: 200px !important;
 }

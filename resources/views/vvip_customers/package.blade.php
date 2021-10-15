@@ -226,19 +226,10 @@
                                 <div class="form-section">
                                     <div class="form-group">
                                         <div class="col-md-12" id="design" style="margin-left: 100px !important;">
-                                            <select class="image-picker show-html" name="smart_card_design">
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" data-img-class="first" value="1"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg"  value="2"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="3"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="4"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="5"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="6"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="7"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="8"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="9"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="10"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" value="11"></option>
-                                                <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" data-img-class="last" value="12"></option>
+                                            <select class="image-picker show-html" name="smart_card_design_id">
+                                                @foreach($cards as $card)
+                                                <option data-img-src="{{ $card->front_image }}" value="{{ $card->id }}"></option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

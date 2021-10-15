@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
+use App\Models\SmartCardDesign;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 
@@ -103,6 +104,27 @@ class UserRegisterController extends Controller
 
             return $messages;
         }
+    }
+
+
+    public function card_designs(){
+        $cards = SmartCardDesign::get();
+        $array = [];
+        foreach($cards as $card){
+            $data = [
+                    "id" => $card->id,
+                    "front_image" => $card->front_image,
+                    "back_image" => $card->back_image
+            ];
+            array_push($array, $data);
+        }
+
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "card_design" => $array
+        ];
+        return $messages;
     }
 
 

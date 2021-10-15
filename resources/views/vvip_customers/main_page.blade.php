@@ -115,7 +115,7 @@
                 <div class="prices">
                     <div class="container">
                         <div class="text-center">
-                            <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">View Packages</a>
+                            <a class="btn btn-default btn-lg-xl page-scroll" href="{{ route('view_packages') }}" role="button">View Packages</a>
                         </div>  
                     </div>
                 </div>

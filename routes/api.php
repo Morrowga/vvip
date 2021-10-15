@@ -28,3 +28,8 @@ Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::cl
 Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
 
 Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
+
+Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
+
+
+Route::get('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);

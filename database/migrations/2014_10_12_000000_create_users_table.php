@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('url')->nullable();
             $table->string('secure_status')->default('public');
             $table->string('email')->nullable();
-            $table->string('smart_card_design')->nullable();
+            $table->string('smart_card_design_id')->nullable();
             $table->string('package')->nullable();
             $table->string('package_status')->nullable();
             $table->string('remaining_days')->nullable();
