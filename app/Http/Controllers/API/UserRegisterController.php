@@ -72,30 +72,6 @@ class UserRegisterController extends Controller
     }
 
     //pin_create for mobile
-    public function createPin(Request $request,$user_id = null){
-        $create_pin = $request->input('pin');
-        if(!empty($create_pin)){
-                // $user_id = $pin['user_id'];
-                $has_user = User::find($user_id);
-                if(!empty($has_user)){
-                    $has_user->password = Hash::make($create_pin);
-                    $has_user->save();  
-
-                    $messages = [
-                        "status" => '200 OK',
-                        "message" => 'Success'
-                    ];
-                    
-                    return $messages;
-            }
-        } else {
-            $messages = [
-                "status" => '404',
-                "message" => 'Something went wrong'
-            ];
-            return $messages;
-        }
-    }
 
     //generate_code for mobile
     public function generateCode(){

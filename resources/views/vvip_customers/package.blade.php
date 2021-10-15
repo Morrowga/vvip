@@ -225,7 +225,7 @@
                                 </div>
                                 <div class="form-section">
                                     <div class="form-group">
-                                        <div class="col-md-12" id="design" style="margin-left: 40px !important;">
+                                        <div class="col-md-12" id="design" style="margin-left: 100px !important;">
                                             <select class="image-picker show-html" name="smart_card_design">
                                                 <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg" data-img-class="first" value="1"></option>
                                                 <option data-img-src="https://i.pinimg.com/236x/85/6d/b5/856db5e0025dd12b56ba6e9447c4dba2.jpg"  value="2"></option>
