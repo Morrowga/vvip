@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
-use App\Providers\RouteServiceProvider;
 use App\Models\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
+use App\Models\Package;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
 {
@@ -29,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = "/web_pin";
+    protected $redirectTo = "/home";
 
     /**
      * Create a new controller instance.
@@ -63,12 +64,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {   
+        $packages = Package::get();
+
         $user = new User;
         $user->name = request()->name;
         $user->email = request()->email;
         $user->phone_number = request()->phone_number;
-        $user->url = request()->url;
+        foreach($packages as $package){
+            if($package->token == request()->package){
+                $user->package = $package->name;
+            }
+        }
+        $user->smart_card_design = request()->smart_card_design;
+        $user->url = "http://vvip9.co/" . request()->url;
         $user->secure_status = request()->secure_status;
+        $user->password = Hash::make(request()->pin);
         $user->save();
 
         return $user;

@@ -28,3 +28,5 @@ Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class,
 Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
 
 Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
+
+Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);

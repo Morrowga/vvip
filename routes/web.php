@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,9 +19,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/web_pin', [App\Http\Controllers\HomeController::class, 'pin'])->name('pin');
-
-Route::put('/web_pin_create', [App\Http\Controllers\HomeController::class, 'web_pin'])->name('web_pin_create');
-
-
-// Route::post('create', [App\Http\Controllers\HomeController::class, 'createPlan'])->name('package');
+Route::get('view/package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" style="margin-top: 50px !important;">
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
         <img src="../images/logo.jpeg" class="text-center logo" alt="">
