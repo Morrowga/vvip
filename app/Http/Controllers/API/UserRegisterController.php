@@ -137,13 +137,15 @@ class UserRegisterController extends Controller
                 if($user->package_status === 'active'){
                     $messages = [
                         'status' => '500',
-                        'message' => 'Phone Number Exist and Package is Active'
+                        'message' => 'Phone Number Exist',
+                        'Package' => '1'
                     ];
                     return $messages;
                 } else {
                     $messages = [
                         'status' => '500',
-                        'message' => 'Phone Number Exist and Package is Expired'
+                        'message' => 'Phone Number Exist',
+                        'Package' => '0'
                     ];
                     return $messages;
                 }
