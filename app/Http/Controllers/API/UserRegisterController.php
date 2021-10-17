@@ -209,7 +209,8 @@ class UserRegisterController extends Controller
                     $messages = [
                         'status' => '200',
                         'message' => 'success',
-                        'countdown_left' => $time->time_left
+                        'countdown_left' => $time->time_left,
+                        'total_seconds' => $remaining
                     ];
                     return $messages;
                 } else {
@@ -223,7 +224,8 @@ class UserRegisterController extends Controller
                     $messages = [
                         'status' => '200',
                         'message' => 'success',
-                        'countdown_left' => $to_update->time_left
+                        'countdown_left' => $to_update->time_left,
+                        'total_seconds' => $remaining_update
                     ];
                     return $messages;
                 }
