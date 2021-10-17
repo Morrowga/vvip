@@ -8,6 +8,7 @@
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
             </a>
+            <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
@@ -28,29 +29,35 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-
-                    <!-- <form action="" method="POST" >
-                        @csrf
-                        <input type="file" name="image" class="form-control">
-                        <input type="text" name="plan_name" class="form-control">
-                        <input type="text" name="price" class="form-control">
-                        <input type="text" name="package_name" class="form-control">
-                        <button type="submit" class="btn btn-primary">create</button>
-                    </form> -->
-                </div>
+            <h1 id="countdown"></h1>
+            <div class="d-flex justify-content-center">
+                <img src="../images/logo.jpeg" alt="" class="register_image">
             </div>
+            <p class="panel-text">You need to wait until 2days cause this panel can use only with smart card.</p>
         </div>
     </div>
 </div>
+@section('script')
+    <script>
+
+        var user_id = $('#userid').val();
+        setInterval(function(){ 
+        $.ajax({
+                url: '/api/create_time',
+                method:'POST',
+                data: {
+                    user_id : user_id
+                },
+                success: function(response){
+                    // console.log(response.countdown_left);
+                    $('#countdown').text(response.countdown_left);
+                },
+                error:function(error){
+                    console.log(error)
+                }
+            });
+        }, 1000);
+
+    </script>
+@endsection
 @endsection

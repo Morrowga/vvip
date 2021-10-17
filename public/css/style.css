@@ -1444,7 +1444,6 @@ transition-duration: 1s;
 }
 
 .payment {
-	border-radius: 50% !important;
 	text-align: right !important;
 }
 
@@ -1489,3 +1488,16 @@ transition-duration: 1s;
 	width: 200px !important; 
 	height: 200px !important;
 }
+
+.save-user{
+	background-color: rgb(0,0,0) !important;
+	border: 2px solid rgb(217,181,81) !important;
+	color: rgba(255,255,255) !important;
+}
+
+.save-user:hover{
+	background-color: rgb(217,181,81) !important;
+	transition-duration: 1s !important;
+	color : rgb(0,0,0) !important;
+}
+

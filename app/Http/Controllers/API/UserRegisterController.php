@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Package;
-use App\Models\SmartCardDesign;
+use DateTime;
 use Carbon\Carbon;
+use App\Models\User;
+use App\Models\Package;
+use App\Models\WaitingTime;
+use Illuminate\Http\Request;
+use App\Models\SmartCardDesign;
+use App\Http\Controllers\Controller;
+use App\Models\UserLog;
 use Illuminate\Support\Facades\Hash;
 
 class UserRegisterController extends Controller
@@ -24,6 +27,7 @@ class UserRegisterController extends Controller
             $url = $request->url;
             $secure_status = $request->secure_status;
             $phone = $country_number . $phone_number;
+            $pin = $request->pin;
             $user_exist_phone = User::where('phone_number', '=', $phone)->first();
             $user_exist_url = User::where('url', '=', $url)->first();
                 if($user_exist_phone === null){
@@ -40,6 +44,7 @@ class UserRegisterController extends Controller
                         $user->remaining_days = $remain;
                         $user->url = $url;
                         $user->secure_status = $secure_status;
+                        $user->password = Hash::make($pin);
                         $user->save();
                         
                         $messages = [
@@ -137,14 +142,14 @@ class UserRegisterController extends Controller
                 if($user->package_status === 'active'){
                     $messages = [
                         'status' => '500',
-                        'message' => 'Phone Number Exist',
+                        'message' => 'Phone Number Exist & Active',
                         'Package' => '1'
                     ];
                     return $messages;
                 } else {
                     $messages = [
                         'status' => '500',
-                        'message' => 'Phone Number Exist',
+                        'message' => 'Phone Number Exist & Expired',
                         'Package' => '0'
                     ];
                     return $messages;
@@ -162,7 +167,7 @@ class UserRegisterController extends Controller
                 ];
                 return $messages;
             }else {
-                $save_user = new User;
+                $save_user = new UserLog;
                 $save_user->name = $username;
                 $save_user->phone_number = $phone;
                 $save_user->save();
@@ -170,12 +175,81 @@ class UserRegisterController extends Controller
                 $messages = [
                     'status' => '200',
                     'message' => 'success',
-                    'user_id' => $save_user->id
+                    'name' => $save_user->name,
+                    'phone_number' => $save_user->phone_number
                 ];
                 return $messages;
             }
+        } else {
+            $messages = [
+                'status' => '500',
+                'message' => 'akhway',
+            ];
+            return $messages;
         }
     }
+
+
+    public function countDown(Request $request){
+        if($request->user_id){
+            $user = User::where('id', '=', $request->user_id)->first();
+            if($user !== null){
+                $wait_time = WaitingTime::where('user_id', '=', $request->user_id)->first();
+                if($wait_time === null){
+                    $new_time = date("Y-m-d H:i:s", strtotime('+48 hours'));
+                    $time = new WaitingTime();
+                    $time->user_id = $request->user_id;
+                    $time->target_time = $new_time;
+                    $remaining = strtotime($new_time) - strtotime("now");
+                    $dtF = new \DateTime('@0');
+                    $dtT = new \DateTime("@$remaining");
+                    $time->time_left = $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                    $time->save();
+                    
+                    $messages = [
+                        'status' => '200',
+                        'message' => 'success',
+                        'countdown_left' => $time->time_left
+                    ];
+                    return $messages;
+                } else {
+                    $remaining_update = strtotime($wait_time->target_time) - strtotime("now");
+                    $dtF = new \DateTime('@0');
+                    $dtT = new \DateTime("@$remaining_update");
+                    $to_update = WaitingTime::find($wait_time->id);
+                    $to_update->time_left = $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                    $to_update->save();
+
+                    $messages = [
+                        'status' => '200',
+                        'message' => 'success',
+                        'countdown_left' => $to_update->time_left
+                    ];
+                    return $messages;
+                }
+            } else {
+                $messages = [
+                    'status' => '400',
+                    'message' => 'Id does not exist'
+                ];
+                return $messages;
+            }
+        } else {
+            $messages = [
+                'status' => '500',
+                'message' => 'failed'
+            ];
+            return $messages;
+        }
+    }
+
+    // public function timeleft(Request $request){
+    //     if($request->user_id){
+    //         $user = 
+    //         if()
+    //     }
+    //     $save_time = WaitingTime::)
+    // }
 
    
     /**

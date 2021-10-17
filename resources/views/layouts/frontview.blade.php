@@ -199,7 +199,6 @@
         
         <!-- Plugins JS -->
 		<script src="../js/jquery/jquery-1.11.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
 		<script src="../js/bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
 		<script src="../js/stellar/js/jquery.stellar.min.js"></script>
@@ -286,8 +285,11 @@
             }
 
             function packageClick(e){
+                
                 document.getElementById('prices-section').style.display = "none";
-                document.getElementById('prices-section-two').style.display = "block";
+                document.getElementById('prices-section-save').style.display = "block";
+                document.getElementById('prices-section-two').style.display = "none";
+                
                 document.getElementById('package_name').value = e.target.value;
             }   
         </script>

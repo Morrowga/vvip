@@ -251,23 +251,6 @@ border: 2px solid rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
 
-/* .modal {
-    padding-right: 0px !important;
-}
-
-.modal-open{
-    padding-right:0 !important;
-}
-
-
-.modal-content{
-    background-color: rgb(0,0,0) !important;
-}
-
-.modal-title{
-    color: rgb(217,181,81);
-}  */
-
 .sub-btn{
     border: 2px solid rgb(217,181,81) !important;
     background-color:  rgb(0,0,0) !important;
@@ -292,8 +275,41 @@ border: 2px solid rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
 
-/* .modal-footer {
-    padding-top: 5px !important;
-} */
+#countdown{
+    color : rgb(217,181,81) !important;
+    display: inline-block !important;
+    vertical-align: middle !important;  
+    font-weight: bold;
+    font-family: "Britannic Bold";
+}
 
 
+.register_image{
+    width:  300px;
+    height: 300px;
+    margin-top: 30px !important;
+}
+
+.panel-text{
+    color : rgb(217,181,81) !important;
+    text-align: center;
+    font-family: "Britannic Bold";
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.dropdown-toggle{
+    text-transform: capitalize !important;
+}
+
+@media only screen and (max-width: 600px) {
+    #countdown{
+        font-stretch: expanded !important;
+        text-align: center !important;
+        margin-top: 30px !important;
+    }
+  }
+  
+  

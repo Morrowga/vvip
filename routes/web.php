@@ -19,4 +19,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('view/package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
+Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 15, 2021 at 04:09 AM
+-- Generation Time: Oct 17, 2021 at 10:22 AM
 -- Server version: 8.0.26-0ubuntu0.20.04.2
 -- PHP Version: 7.4.23
 
@@ -60,7 +60,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (51, '2019_08_19_000000_create_failed_jobs_table', 1),
 (52, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (53, '2021_10_13_021539_create_packages_table', 1),
-(54, '2021_10_15_032702_create_smart_card_designs_table', 1);
+(54, '2021_10_15_032702_create_smart_card_designs_table', 1),
+(56, '2021_10_15_075340_create_waiting_times_table', 2),
+(57, '2021_10_17_093316_create_user_logs_table', 3);
 
 -- --------------------------------------------------------
 
@@ -84,9 +86,9 @@ CREATE TABLE `packages` (
 --
 
 INSERT INTO `packages` (`id`, `token`, `image`, `plan_name`, `price`, `package_name`, `created_at`, `updated_at`) VALUES
-(1, '5823656', 'hi', 'yearly', '49$', 'normal', '2021-10-14 21:31:24', '2021-10-14 21:31:24'),
-(2, '8577453', 'hi', 'yearly', '133$', 'standard', '2021-10-14 21:31:37', '2021-10-14 21:31:37'),
-(3, '3635170', 'hi', 'yearly', '199$', 'luxury', '2021-10-14 21:31:47', '2021-10-14 21:31:47');
+(1, '5823656', 'http://vvip9.co/images/gold.png', 'yearly', '49$', 'normal', '2021-10-14 21:31:24', '2021-10-14 21:31:24'),
+(2, '8577453', 'http://vvip9.co/images/diamond.png', 'yearly', '133$', 'standard', '2021-10-14 21:31:37', '2021-10-14 21:31:37'),
+(3, '3635170', 'http://vvip9.co/images/ruby.png', 'yearly', '199$', 'luxury', '2021-10-14 21:31:47', '2021-10-14 21:31:47');
 
 -- --------------------------------------------------------
 
@@ -181,7 +183,51 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `phone_number`, `url`, `secure_status`, `email`, `smart_card_design_id`, `package`, `package_status`, `remaining_days`, `package_start_date`, `package_end_date`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-('1b0af236-6176-4077-a3cb-2876b43f1f12', 'thihaaung', '09795864194', 'http://vvip9.co/15176951', 'public', 'thiha@gmail.com', '7', NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$5CUniwYvpMzNdFpL1wuUDuD1dt6XerAzTEieXQIgVwNDe3hW8/oiy', NULL, '2021-10-14 21:38:13', '2021-10-14 21:38:13');
+('1e1e91f5-9ff4-4b41-bb72-002ce51fd7b0', 'thihaaung', '09795864194', 'http://vvip9.co/11012354', 'public', 'thiha@gmail.com', '6', NULL, NULL, NULL, NULL, NULL, NULL, '$2y$10$R5Qi.BnCGcKd0gIAaiS1ueU/ccF8h82eSoosxecsKvQPDKbf0lmZi', NULL, '2021-10-17 03:08:24', '2021-10-17 03:08:24');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_logs`
+--
+
+CREATE TABLE `user_logs` (
+  `id` bigint UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone_number` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `user_logs`
+--
+
+INSERT INTO `user_logs` (`id`, `name`, `phone_number`, `created_at`, `updated_at`) VALUES
+(1, 'thihaaung', '09795864194', '2021-10-17 03:08:02', '2021-10-17 03:08:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `waiting_times`
+--
+
+CREATE TABLE `waiting_times` (
+  `id` bigint UNSIGNED NOT NULL,
+  `user_id` char(36) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `target_time` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time_left` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `waiting_times`
+--
+
+INSERT INTO `waiting_times` (`id`, `user_id`, `target_time`, `time_left`, `created_at`, `updated_at`) VALUES
+(12, '1b0af236-6176-4077-a3cb-2876b43f1f12', '2021-10-17 09:29:36', '1 days, 23 hours, 59 minutes and 51 seconds', '2021-10-15 02:59:36', '2021-10-15 02:59:45'),
+(13, '1e1e91f5-9ff4-4b41-bb72-002ce51fd7b0', '2021-10-19 09:53:54', '1 days, 23 hours, 31 minutes and 55 seconds', '2021-10-17 03:23:54', '2021-10-17 03:51:59');
 
 --
 -- Indexes for dumped tables
@@ -234,6 +280,18 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_phone_number_unique` (`phone_number`);
 
 --
+-- Indexes for table `user_logs`
+--
+ALTER TABLE `user_logs`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `waiting_times`
+--
+ALTER TABLE `waiting_times`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -247,7 +305,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `packages`
@@ -266,6 +324,18 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `smart_card_designs`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `user_logs`
+--
+ALTER TABLE `user_logs`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `waiting_times`
+--
+ALTER TABLE `waiting_times`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

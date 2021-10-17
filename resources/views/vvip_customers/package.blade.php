@@ -1,7 +1,7 @@
 @extends('layouts.frontview')
 
 @section('content')
-    <section id="prices-section" class="page"  style="display:block; margin-top: 65px !important;" >
+    <section id="prices-section" class="page"  style="margin-top: 65px !important;" >
         <!-- Begin page header-->
         <div class="page-header-wrapper">
             <div class="container">
@@ -109,6 +109,44 @@
             <div class="extra-space-l"></div>
     </section>
 
+
+    <section id="prices-section-save" class="page-wizard" style="display:none;">
+        <div class="extra-space-l"></div>
+
+        <div class="prices">
+            <div class="container">
+                <div class="row d-flex justify-content-center text-center">
+                    <div class="col-md-12">
+                        <div class="d-flex justify-content-center">
+                            <img src="../images/logo.jpeg" alt="" class="register_image">
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-md-offset-4">
+                                <input id="save-name" type="text" placeholder="Enter Your Name"
+                                    class="form-control register-input" name="name" style="font-size: 17px;"
+                                    value="{{ old('name') }}" required autocomplete="name" autofocus>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mt-5">
+                            <div class="col-md-4 col-md-offset-4">
+                                <input id="save-phone" type="tel"
+                                    class="form-control register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
+                                    value="{{ old('phone_number') }}" required autocomplete="phone_number">
+                                    <p id="error_text" style="margin-top: 5px !important; color: rgb(184, 28, 41);"></p>
+                            </div>
+                        </div>
+                        <div class="form-group mt-5">
+                            <div class="col-md-4 col-md-offset-4">
+                                <button class="btn btn-dark save-user" style="float: right !important;">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="prices-section-two" class="page-wizard" style="display:none;">
         <div class="extra-space-l"></div>
 
@@ -117,7 +155,7 @@
                 <div class="row d-flex justify-content-center text-center">
                         <!-- <div class="col-md-4"></div> -->
                         <div class="col-md-12">
-                            <form action="{{ route('register') }}" method="POST" class="contact-form text-center">
+                            <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf 
                                 <div class="d-flex justify-content-center">
                                     <img src="../images/logo.jpeg" alt="" class="register_image">
@@ -274,6 +312,50 @@
                 }
             });
 
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(".save-user").click(function(e){
+
+        e.preventDefault();
+
+        var save_name= $("input[name=name]").val();
+        var save_phone_number = $("input[name=phone_number]").val();
+        var url = '{{ url('api/save-user') }}';
+
+        $.ajax({
+           url:url,
+           method:'POST',
+           data:{
+                  name:save_name, 
+                  phone_number:save_phone_number
+                },
+           success:function(response){
+              if(response.message == "success"){
+                document.getElementById('prices-section').style.display = "none";
+                document.getElementById('prices-section-save').style.display = "none";
+                document.getElementById('prices-section-two').style.display = "block";
+                document.getElementById('name').value = response.name;
+                document.getElementById('phone').value = response.phone_number;
+                console.log(response.message);
+              }else if(response.message == "Phone Number is invalid"){
+                    $('#error_text').text(response.message);
+              } else if(response.message == "Phone Number Exist & Active"){
+                    $('#error_text').text(response.message);
+              } else if (response.message == "Phone Number Exist & Expired") {
+                    $('#error_text').text(response.message);
+              } else {
+                console.log(reponse.message);
+              }
+           },
+           error:function(error){
+              console.log(error)
+           }
+        });
+	});
     </script>
     @endsection
     <!--template-modal-->
