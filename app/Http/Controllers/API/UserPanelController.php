@@ -48,26 +48,21 @@ class UserPanelController extends Controller
 
                     $messages = [
                         "status" => "200",
-                        "message" => "success",
-                        "user_id" => $contact->user_id,
-                        "text" => $contact->text,
-                        "image" => $contact->image
+                        "message" => "success"
                     ];
 
                     return $messages;
                 } else {
                     $messages = [
                         "status" => "500",
-                        "message" => "success",
-                        "data" => "empty"
+                        "message" => "empty",
                     ];
                     return $messages;
                 }
             } else {
                 $messages = [
                     "status" => "500",
-                    "message" => "success",
-                    "data" => "no user_id"
+                    "message" => "no user_id",
                 ];
 
                 return $messages;
@@ -75,9 +70,43 @@ class UserPanelController extends Controller
         } else {
             $messages = [
                 "status" => "400",
-                "message" => "success",
-                "data" => "Bad Request"
+                "message" => "Bad Request"
             ];
+        }
+    }
+
+    public function getContacts(Request $request){
+        $user_id = $request->user_id;
+        $array = [];
+        if(!empty($user_id)){
+            $contact = Contact::where('user_id', '=', $user_id)->get();
+            if(!empty($contact)){
+                foreach($contact as $contact_data){
+                    $data = [
+                        "text" => $contact_data->text,
+                        "image" => $contact_data->image
+                    ];
+                    array_push($array, $data);
+                }
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $array
+                ];
+                return $messages;
+            } else {
+                $messages = [
+                    "status" => "500",
+                    "message" => "There is no data in this user_id",
+                ];
+                return $messages;
+            }
+        } else {
+            $messages = [
+                "status" => "400",
+                "message" => "user_id is wrong",
+            ];
+            return $messages;
         }
     }
 }
