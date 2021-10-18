@@ -39,6 +39,7 @@ class UserPanelController extends Controller
         if($request){
             if($request->user_id){
                 $image = $request->image;
+                $imageName = $image->getClientOriginalName();
                 $first_name = $request->first_name;
                 $last_name = $request->last_name;
                 $company = $request->company;
@@ -67,10 +68,8 @@ class UserPanelController extends Controller
                 $contact->website1 = $website1;
                 $contact->website2 = $website2;
                 $contact->website3 = $website3;
-                $img = $image->getClientOriginalName();
-                $filename = substr($img, strrpos($img, '/') + 1);
-                $file_save = Storage::disk('public', $img)->put($filename, $img);
-                $contact->image = $filename . '/' . $img; 
+                $file_save = Storage::putFileAs('public', $image, $imageName);
+                $contact->image = $imageName; 
                 $contact->save();
 
                     $messages = [
@@ -104,7 +103,26 @@ class UserPanelController extends Controller
             if(!empty($contact)){
                 foreach($contact as $contact_data){
                     $data = [
-                        "image" =>  "http://vvip9.co/storage" . $contact_data->image
+                        "image" =>  "http://vvip9.co/storage/" . $contact_data->image,
+                        "personal" => [
+                            "first_name" => $contact_data->first_name,
+                            "last_name" => $contact_data->last_name,
+                            "company" => $contact_data->company,
+                            "position" => $contact_data->position,
+                            "birthday" => $contact_data->birthday
+                        ],
+                        "mobile" => [
+                            "mobile" => $contact_data->mobile,
+                            "phone" => $contact_data->phone,
+                            "office" => $contact_data->office
+                        ],
+                        "email_and_internet" => [
+                            "personalemail" => $contact_data->personalemail,
+                            "office_email" => $contact_data->office_email,
+                            "website1" => $contact_data->website1,
+                            "website2" => $contact_data->website2,
+                            "website3" => $contact_data->website3
+                        ]
                     ];
                     array_push($array, $data);
                 }
