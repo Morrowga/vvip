@@ -67,9 +67,10 @@ class UserPanelController extends Controller
                 $contact->website1 = $website1;
                 $contact->website2 = $website2;
                 $contact->website3 = $website3;
-                $filename = substr($image, strrpos($image, '/') + 1);
-                $file_save = Storage::disk('public', $image)->put($filename, $image);
-                $contact->image = $filename . '/' . $image->getClientOriginalName(); 
+                $img = $image->getClientOriginalName();
+                $filename = substr($img, strrpos($img, '/') + 1);
+                $file_save = Storage::disk('public', $img)->put($filename, $img);
+                $contact->image = $filename . '/' . $img; 
                 $contact->save();
 
                     $messages = [
@@ -103,7 +104,7 @@ class UserPanelController extends Controller
             if(!empty($contact)){
                 foreach($contact as $contact_data){
                     $data = [
-                        "image" =>  "http://vvip9.co/" . $contact_data->image
+                        "image" =>  "http://vvip9.co/storage" . $contact_data->image
                     ];
                     array_push($array, $data);
                 }
