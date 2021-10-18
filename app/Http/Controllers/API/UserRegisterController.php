@@ -6,11 +6,12 @@ use DateTime;
 use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Package;
+use App\Models\UserLog;
+use App\Models\HomeInfo;
 use App\Models\WaitingTime;
 use Illuminate\Http\Request;
 use App\Models\SmartCardDesign;
 use App\Http\Controllers\Controller;
-use App\Models\UserLog;
 use Illuminate\Support\Facades\Hash;
 
 class UserRegisterController extends Controller
@@ -201,9 +202,10 @@ class UserRegisterController extends Controller
                     $time->user_id = $request->user_id;
                     $time->target_time = $new_time;
                     $remaining = strtotime($new_time) - strtotime("now");
-                    $dtF = new \DateTime('@0');
-                    $dtT = new \DateTime("@$remaining");
-                    $time->time_left = $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                    // $dtF = new \DateTime('@0');
+                    // $dtT = new \DateTime("@$remaining");
+                    //$dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                    $time->time_left =  $remaining;
                     $time->save();
                     
                     $messages = [
@@ -215,19 +217,38 @@ class UserRegisterController extends Controller
                     return $messages;
                 } else {
                     $remaining_update = strtotime($wait_time->target_time) - strtotime("now");
-                    $dtF = new \DateTime('@0');
-                    $dtT = new \DateTime("@$remaining_update");
+                    // $dtF = new \DateTime('@0');
+                    // $dtT = new \DateTime("@$remaining_update");
                     $to_update = WaitingTime::find($wait_time->id);
-                    $to_update->time_left = $dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                    $to_update->time_left = $remaining_update;
                     $to_update->save();
 
-                    $messages = [
-                        'status' => '200',
-                        'message' => 'success',
-                        'countdown_left' => $to_update->time_left,
-                        'total_seconds' => $remaining_update
-                    ];
-                    return $messages;
+                    if($remaining_update === strtotime($wait_time->target_time)){
+                        $data = HomeInfo::get();
+                        $array = [];
+                        foreach($data as $d){
+                            $home_data = [
+                                "id" => $d->id,
+                                "text" => $d->text,
+                                "image" => $d->image
+                            ];
+                            array_push($array, $home_data);
+                        }
+                        $messages = [
+                            'status' => '200',
+                            'message' => 'success',
+                            'total_seconds' => $remaining_update,
+                            'home_page' => $array
+                        ];
+                        return $messages;
+                    } else {
+                        $messages = [
+                            'status' => '200',
+                            'message' => 'success',
+                            'total_seconds' => $remaining_update,
+                        ];
+                        return $messages;
+                    }
                 }
             } else {
                 $messages = [

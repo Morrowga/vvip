@@ -14,27 +14,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UserPanelController extends Controller
 {
-    public function home_api(){
-        $data = HomeInfo::get();
-        $array = [];
-        foreach($data as $d){
-            $home_data = [
-                "id" => $d->id,
-                "text" => $d->text,
-                "image" => $d->image
-            ];
-            array_push($array, $home_data);
-        }
-        $messages = [
-            "status" => "200",
-            "message" => "success",
-            "home" => $array
-        ];
-        
-
-        return $messages;
-    }
-
     public function create_contact(Request $request){
         if($request){
             if($request->user_id){
