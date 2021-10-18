@@ -16,8 +16,10 @@ class CreateDeepLinksTable extends Migration
         Schema::create('deep_links', function (Blueprint $table) {
             $table->id();
             $table->uuid('user_id');
-            $table->string('url');
-            $table->string('type');
+            $table->string('url')->nullable();
+            $table->string('name')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('active')->default(0);
             $table->timestamps();
         });
     }
