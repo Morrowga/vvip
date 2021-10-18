@@ -276,13 +276,35 @@ border: 2px solid rgb(217,181,81) !important;
 }
 
 #countdown{
-    color : rgb(217,181,81) !important;
+    color : #d9b551 !important;
     display: inline-block !important;
     vertical-align: middle !important;  
     font-weight: bold;
     font-family: "Britannic Bold";
+    display: flex !important;
+    justify-content: center !important;
+    font-size: 30px;
     margin-top: 10% !important;
+    text-align: center !important;
 }
+
+#days {
+    margin-right: 20px !important;
+}
+
+#minutes{
+    margin-left: 20px !important;
+}
+
+#seconds {
+    margin-left: 20px !important;
+}
+
+span {
+    display: block;
+    font-size: 25px;
+    color: white;
+  }
 
 
 .register_image{

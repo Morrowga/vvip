@@ -29,7 +29,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1 id="countdown"></h1>
+            <div id="countdown">
+                <div id="days"></div>
+                <div id="hours"></div>
+                <div id="minutes"></div>
+                <div id="seconds"></div>
+            </div>
             <div class="d-flex justify-content-center">
                 <img src="../images/logo.jpeg" alt="" class="register_image">
             </div>
@@ -39,25 +44,32 @@
 </div>
 @section('script')
     <script>
-
         var user_id = $('#userid').val();
-        setInterval(function(){ 
-        $.ajax({
+        setInterval(function() {
+            $.ajax({
                 url: '/api/create_time',
                 method:'POST',
                 data: {
                     user_id : user_id
                 },
                 success: function(response){
-                    // console.log(response.countdown_left);
-                    $('#countdown').text(response.countdown_left);
+                        var days = Math.floor(response.total_seconds / 86400);
+                        var hours = Math.floor((response.total_seconds - (days * 86400)) / 3600);
+                        var minutes = Math.floor((response.total_seconds - (days * 86400) - (hours * 3600 )) / 60);
+                        var seconds = Math.floor((response.total_seconds - (days * 86400) - (hours * 3600) - (minutes * 60)));
+                        if (hours < "10") { hours = "0" + hours; }
+                        if (minutes < "10") { minutes = "0" + minutes; }
+                        if (seconds < "10") { seconds = "0" + seconds; }                        
+                        $("#days").html(days + "<span>Days</span>");
+                        $("#hours").html(hours + "<span>Hours</span>");
+                        $("#minutes").html(minutes + "<span>Minutes</span>");
+                        $("#seconds").html(seconds + "<span>Seconds</span>");
                 },
                 error:function(error){
                     console.log(error)
                 }
             });
-        }, 1000);
-
+        },1000);
     </script>
 @endsection
 @endsection
