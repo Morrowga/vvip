@@ -14,11 +14,21 @@ class UserPanelController extends Controller
 {
     public function home_api(){
         $data = HomeInfo::get();
+        $array = [];
+        foreach($data as $d){
+            $home_data = [
+                "id" => $d->id,
+                "text" => $d->text,
+                "image" => $d->image
+            ];
+            array_push($array, $home_data);
+        }
         $message = [
             "status" => "200",
             "message" => "success",
-            "home" => $data
+            "home" => $array
         ];
+        
 
         return $message;
     }
