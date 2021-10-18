@@ -8,6 +8,7 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
+                                <img src="https://media3.giphy.com/media/bk0yb1TrFsOnVz3ucq/200.webp?cid=ecf05e476h8pntc8h5pslcs1oylwt961sc3hvqgrmcdz4zmq&rid=200.webp&ct=g" alt="" width="260" height="200">
                                 <p>Let's make the web beautiful together</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">Our Service</a>
@@ -15,6 +16,7 @@
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
+                                <img src="https://media3.giphy.com/media/bk0yb1TrFsOnVz3ucq/200.webp?cid=ecf05e476h8pntc8h5pslcs1oylwt961sc3hvqgrmcdz4zmq&rid=200.webp&ct=g" alt="" width="260" height="200">
                                 <p>To the greatest Journey</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn btn-blank" href="{{ route('login') }}" role="button">ACCOUNT LOGIN</a>

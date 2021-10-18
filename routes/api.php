@@ -40,3 +40,5 @@ Route::get('get_cards', [App\Http\Controllers\API\UserRegisterController::class,
 Route::post('create_time', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
 Route::get('get_home', [App\Http\Controllers\API\UserPanelController::class, 'home_api']);
+
+Route::post('create_contact', [App\Http\Controllers\API\UserPanelController::class, 'create_contact']);
