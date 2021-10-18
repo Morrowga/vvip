@@ -47,7 +47,7 @@
         var user_id = $('#userid').val();
         setInterval(function() {
             $.ajax({
-                url: '/api/create_time',
+                url: '/api/get_home',
                 method:'POST',
                 data: {
                     user_id : user_id
