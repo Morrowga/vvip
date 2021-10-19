@@ -11,6 +11,7 @@ class Helper{
             if($request_name === "get_contacts"){
                 $array = [];
                 $contact_data = Contact::where('user_id', '=', $user_id)->first();
+                return $contact_data;
                 if(!empty($contact)){
                     $data = [
                         "image" =>  "http://vvip9.co/storage/" . $contact_data->image,

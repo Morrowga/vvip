@@ -333,6 +333,10 @@ span {
         text-align: center !important;
         margin-top: 30px !important;
     }
+
+    .payment {
+        padding-left: 0 !important;
+    }
   }
   
   
