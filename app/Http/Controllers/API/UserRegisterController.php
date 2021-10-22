@@ -51,12 +51,12 @@ class UserRegisterController extends Controller
                         
                         
                         // $links = ['Facebook', 'Instagram', 'Youtube', 'Tiktok', 'Pinterest', 'LinkedIn', 'Tripadvisor','Zoom','Google Maps','Vimeo','Amazon'];
-                        $link_datas = [ "hi" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png'],
+                        $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png'],
                         ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png'],
                         ['Zoom','https://i.ibb.co/N74Prr2/zoom-meeting.png'], ['Google Maps','https://i.ibb.co/xSxcbhT/google-map.png'],['Vimeo','https://i.ibb.co/NSxKKZ2/vimeo.png'],['Amazon','https://i.ibb.co/QdrNqJn/amazon.png']]];
                        
                                
-                        foreach($link_datas['hi'] as $link){
+                        foreach($link_datas['links'] as $link){
                             $deep_link = new DeepLink;
                             $deep_link->user_id =  $user->id;
                             $deep_link->name = $link[0];
