@@ -3,7 +3,6 @@
 html,
 body {
     background-color: rgb(0,0,0) !important;
-      /* overflow-y: hidden; */
       height: 100%;
       position: relative;
 }
@@ -326,6 +325,151 @@ span {
 .dropdown-toggle{
     text-transform: capitalize !important;
 }
+
+
+.modal-open{overflow:auto !important;padding-right:0 !important;}
+
+
+.modal {
+    padding-right: 0px !important;
+}
+
+#image_data {
+    margin-top: 10px !important;
+    transform-style: preserve-3d;
+    transform: rotateX(-35deg) rotateY(20deg);
+    box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+}
+
+.modal-content,.modal-body{
+    background-color: rgb(0,0,0) !important;
+    border-bottom : none !important;
+}
+
+.modal-footer{
+    border-top : none !important;
+}
+
+#front_img{
+    transform-style: preserve-3d;
+    transform: rotateX(-35deg) rotateY(20deg);
+    box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+}
+
+#back_img{
+    transform-style: preserve-3d;
+    transform: rotateX(-35deg) rotateY(20deg);
+    box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+}
+
+.zoom{
+    margin-top: 5px !important;
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+.zoom:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+#success_p{
+    color: rgb(217,181,81) !important;
+    font-family: "Britannic Bold";
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px !important;
+    letter-spacing: 5px;
+}
+
+#select_card{
+    margin-top: 5px !important;
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+#select_card:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+#cancel{
+    border: 2px solid rgb(217,181,81) !important;
+    margin-top: 4px !important;
+}
+
+
+#card_blank_front{
+    margin-top: 5% !important;
+    width: 450px;
+    height: 250px;
+}
+
+#card_blank_back{
+    margin-top: 5% !important;
+    width: 450px;
+    height: 250px;
+}
+
+#card_back{
+    position:relative;
+}
+
+#qr_scan{
+    position: absolute;
+    top: 56% !important;
+    left: 41% !important;
+}
+
+  #red{
+    color: red;
+    border-radius: 50% !important;
+  }
+  
+  #green{
+    color: green;
+    border-radius: 50% !important;
+  }
+  
+  #yellow{
+    color:yellow;
+    border-radius: 50% !important;
+  }
+  
+  
+  #brown{
+    color: brown;
+    border-radius: 50% !important;
+  }
+
+  #grey{
+    color: grey;
+    border-radius: 50% !important;
+  }
+  
+
+  #black{
+    color: black;
+    border-radius: 50% !important;
+  }
+  
+  #blue{
+    color: rgb(19, 51, 158);
+    border-radius: 50% !important;
+  }
+  
+/* 
+.left_place{
+    position: absolute;
+    top: 58% !important;
+    left: 10% !important;
+}
+
+.right_place{
+    position: absolute;
+    top: 58% !important;
+    left: 70% !important;
+} */
 
 @media only screen and (max-width: 600px) {
     #countdown{

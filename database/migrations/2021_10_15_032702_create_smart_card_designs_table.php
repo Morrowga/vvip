@@ -17,6 +17,7 @@ class CreateSmartCardDesignsTable extends Migration
             $table->id();
             $table->string('front_image')->nullable();
             $table->string('back_image')->nullable();
+            $table->string('package_token')->nullable();
             $table->timestamps();
         });
     }

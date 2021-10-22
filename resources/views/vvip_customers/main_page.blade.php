@@ -97,34 +97,6 @@
             </div>
             <!-- End rotate-box-2 -->
         </section>
-
-        <section id="prices-section" class="page">
-            <!-- Begin page header-->
-            <div class="page-header-wrapper">
-                <div class="container">
-                    <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="package">Packages</h2>
-                        <div class="devider"></div>
-                        <p class="subtitle">That how much</p>
-                    </div>
-                </div>
-            </div>
-            <!-- End page header-->
-
-            <div class="extra-space-l"></div>
-
-                <!-- Begin prices -->
-                <div class="prices">
-                    <div class="container">
-                        <div class="text-center">
-                            <a class="btn btn-default btn-lg-xl page-scroll" href="{{ route('view_packages') }}" role="button">View Packages</a>
-                        </div>  
-                    </div>
-                </div>
-                <!-- End prices -->
-                <div class="extra-space-l"></div>
-        </section>
-        <!-- End Services -->
                 
         <!-- Begin counter up -->
         <section id="counter-section">                					
@@ -341,6 +313,9 @@
                         </div>
                                                                             
                     </div> <!-- /.row -->
+                    <div class="col-md-12">
+                        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+                    </div>
                 </div> <!-- /.container -->
             </div>
         </section>

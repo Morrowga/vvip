@@ -139,7 +139,8 @@ class UserRegisterController extends Controller
             $data = [
                     "id" => $card->id,
                     "front_image" => $card->front_image,
-                    "back_image" => $card->back_image
+                    "back_image" => $card->back_image,
+                    "package_token" => $card->package_token
             ];
             array_push($array, $data);
         }

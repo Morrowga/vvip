@@ -101,63 +101,13 @@
             
             @yield('content')
             <!-- Begin footer -->
-            <footer class="text-off-white">
-            
-                <div class="footer-top" hidden>
-                	<div class="container">
-                    	<div class="row wow bounceInLeft" data-wow-delay="0.4s">
-
-                            <div class="col-sm-6 col-md-4">
-                            	<h4>Useful Links</h4>
-                                <ul class="imp-links">
-                                	<li><a href="">About</a></li>
-                                	<li><a href="">Services</a></li>
-                                	<li><a href="">Press</a></li>
-                                	<li><a href="">Copyright</a></li>
-                                	<li><a href="">Advertise</a></li>
-                                	<li><a href="">Legal</a></li>
-                                </ul>
-                            </div>
-                        
-                        	<div class="col-sm-6 col-md-4">
-                                <h4>Subscribe</h4>
-                            	<div id="footer_signup">
-                                    <div id="email">
-                                        <form id="subscribe" method="POST">
-                                            <input type="text" placeholder="Enter email address" name="email" id="address" data-validate="validate(required, email)"/>
-                                            <button type="submit">Submit</button>
-                                            <span id="result" class="section-description"></span>
-                                        </form> 
-                                    </div>
-                                </div> 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> 
-                            </div>
-
-                            <div class="col-sm-12 col-md-4">
-                                <h4>Recent Tweets</h4>
-                                <div class="single-tweet">
-                                    <div class="tweet-content"><span>@Unika</span> Excepteur sint occaecat cupidatat non proident</div>
-                                    <div class="tweet-date">1 Hour ago</div>
-                                </div>
-                                <div class="single-tweet">
-                                    <div class="tweet-content"><span>@Unika</span> Excepteur sint occaecat cupidatat non proident uku shumaru</div>
-                                    <div class="tweet-date">1 Hour ago</div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                         <!-- /.row -->
-                    </div> 
-                    <!-- /.container -->
-                </div>
-                
-                <div class="footer">
+            <!-- <footer class="text-off-white">
+                <footer class="footer">
                     <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
                         <p class="copyright">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
                     </div>
-                </div>
-
-            </footer>
+                </footer>
+            </footer> -->
             <!-- End footer -->
 
             <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
@@ -209,18 +159,12 @@
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script> -->
-        <script src="https://rvera.github.io/image-picker/image-picker/image-picker.min.js"></script>
-        <script src="https://rvera.github.io/image-picker/image-picker/image-picker.js"></script>
 		<!-- <script src="../js/smoothscroll.js"></script> -->
 
 		<!-- Theme JS -->
 		<script src="../js/theme.js"></script>
         @yield('script')
         <script>
-        $("select").imagepicker({
-            hide_select : true,
-            show_label  : false
-        });
 
         let setT = setTimeout(function(){ 
             document.getElementById("loading").style.display = "none";
@@ -235,7 +179,7 @@
                 $('.form-navigation .previous').toggle(index>0);
                 var atTheEnd = index >= $sections.length - 1;
                 $('.form-navigation .next').toggle(!atTheEnd);
-                $('.form-navigation [type=submit]').toggle(atTheEnd);
+                $('.form-navigation .sub-btn').toggle(atTheEnd);
             }
 
             function curIndex() {
@@ -250,9 +194,9 @@
                     navigateTo(curIndex()+1);
             });
             
-            $sections.each(function(index,section){
-                $(section).find(':input').attr('data-parsley-group', 'block'+index);
-            });
+            // $sections.each(function(index,section){
+            //     $(section).find(':input').attr('data-parsley-group', 'block'+index);
+            // });
 
             navigateTo(0);
         });
@@ -266,7 +210,6 @@
             const checkBox = document.getElementById('url_system').checked;   
             if (checkBox === true) {
                     console.log(document.getElementById("url").value = document.getElementById('url_system').value);
-                    // document.getElementById("url").disabled = true;
                 } else {
                 console.log(false);
             }
@@ -284,14 +227,124 @@
                 }
             }
 
+            $('#card_front').attr('src', '../images/../images/[removal.ai]_tmp-61704c07bf95b.png');
+            $('#card_back').attr('src', '../images/../images/[removal.ai]_tmp-61704c07bf95b.png');
+            $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
+
+            $('#move_left').on('click', function(){
+                $('#qr_scan').attr('style', 'left: 10% !important');
+            });
+
+            $('#move_center').on('click', function(){
+                $('#qr_scan').attr('style', 'left: 41% !important');
+            });
+
+            $('#move_right').on('click', function(){
+                $('#qr_scan').attr('style', 'left: 70% !important');
+            });
+
+            $('#red').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 red);filter: opacity(.9) drop-shadow(0 0 0 red);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 red);filter: opacity(.9) drop-shadow(0 0 0 red);');
+            });
+
+            $('#green').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 #50c20e);filter: opacity(.9) drop-shadow(0 0 0 #50c20e);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 #50c20e);filter: opacity(.9) drop-shadow(0 0 0 #50c20e);');
+            });
+
+            $('#blue').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 #1063e0);filter: opacity(.9) drop-shadow(0 0 0 #1063e0);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 #1063e0);filter: opacity(.9) drop-shadow(0 0 0 #1063e0);');
+            });
+
+            $('#grey').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 grey);filter: opacity(.9) drop-shadow(0 0 0 grey);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 grey);filter: opacity(.9) drop-shadow(0 0 0 grey);');
+            });
+
+            $('#brown').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 brown);filter: opacity(.9) drop-shadow(0 0 0 brown);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 brown);filter: opacity(.9) drop-shadow(0 0 0 brown);');
+            });
+
+            $('#black').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 black);filter: opacity(.9) drop-shadow(0 0 0 black);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 black);filter: opacity(.9) drop-shadow(0 0 0 black);');
+            });
+
+            $('#yellow').on('click', function(){
+                $('#card_front').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 yellow);filter: opacity(.9) drop-shadow(0 0 0 yellow);');
+                $('#card_back').attr('style', '-webkit-filter: opacity(.9) drop-shadow(0 0 0 yellow);filter: opacity(.9) drop-shadow(0 0 0 yellow);');
+            });
+
+            let colorInput = document.getElementById('background_color');
+            colorInput.addEventListener('input', () =>{
+                $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
+                $('#card_blank_back').attr('style', 'background-color:' + colorInput.value + ';');
+            });
+
+
+            $('#theme_one').on('click', function(){
+               $('#card_front').attr('style', 'transform: scaleX(-1);');
+               $('#card_back').attr('style', 'transform: scaleX(-1);');
+            });
+
+            $('#theme_two').on('click', function(){
+                $('#card_front').attr('style', 'transform: scaleY(-1);');
+                $('#card_back').attr('style', 'transform: scaleY(-1);');
+            });
+
+            $('#theme_three').on('click', function(){
+                $('#card_front').attr('style', 'transform: scaleX(1);');
+                $('#card_back').attr('style', 'transform: scaleX(1);');
+            });
+
             function packageClick(e){
-                
                 document.getElementById('prices-section').style.display = "none";
-                document.getElementById('prices-section-save').style.display = "block";
-                document.getElementById('prices-section-two').style.display = "none";
-                
-                document.getElementById('package_name').value = e.target.value;
-            }   
+                document.getElementById('prices-section-save').style.display = "none";
+                document.getElementById('prices-section-two').style.display = "block";
+                var targetValue = e.target.value;
+                document.getElementById('package_name').value = targetValue;
+
+                $.ajax({
+                url: '/api/get_cards',
+                type: 'get',
+                success: function(response){
+                    console.log(response);
+                    data = response.card_design;
+                    $.each(data, function(i, value) {
+                        if(value['package_token'] == targetValue){
+                        $('#column-image').append('<div class="col-md-3"><img src="' + value['front_image'] + '" id="image_data" alt="" width="200" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
+                        } 
+                        $('.zoom').on('click', function(e) {
+                            let id = e.target.id;
+                            if(id == value['id']){
+                                $('#front_img').attr('src', value['front_image']);
+                                $('#back_img').attr('src', value['back_image']);
+                                $('#exampleModal').modal('show');
+                            }
+                            $('#select_card').on('click', function(e) {
+                               var target = e.target.id;
+                               target = id;
+                                $('#card_design_id').val(target);
+                                $('#card_front').attr('src', )
+                                $('#exampleModal').modal('hide');
+                                $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
+                            });   
+                        });
+                    });
+                },
+                error:function(){
+                    alert("failure");
+                }
+            });
+            }  
+
+            
+
         </script>
     </body> 
 </html>
+
+
