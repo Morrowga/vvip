@@ -133,7 +133,6 @@ class UserPanelController extends Controller
             $user_has = User::where('id', '=', $user_id)->first();
             if($user_has !== null){
                     $deep_link_to_unactive = DeepLink::where('user_id', $user_id)->where('active', '=', $active)->first();
-                    return $deep_link_to_unactive;
                     if($deep_link_to_unactive !== null){
                         $deep_link_to_unactive->active = '0';
                         $deep_link_to_unactive->save(); 
@@ -151,11 +150,18 @@ class UserPanelController extends Controller
                             return $messages;
                         }
                     } else {
-                        $messages = [
-                            "status" => "500",
-                            "message" => "all links are unactive",
-                        ];
-                        return $messages;
+                        $deep_link_active = DeepLink::where('name', '=', $name)->first();
+                        if ($deep_link_active !== null) {
+                            $deep_link_active->url = $url;
+                            $deep_link_active->active = $active;
+                            $deep_link_active->save();
+        
+                            $messages = [
+                                "status" => "200",
+                                "message" => "success",
+                            ];
+                            return $messages;
+                        }
                     }
             } else {
                 $messages = [
