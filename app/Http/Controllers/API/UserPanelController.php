@@ -137,7 +137,7 @@ class UserPanelController extends Controller
                         $deep_link_to_unactive->active = '0';
                         $deep_link_to_unactive->save(); 
     
-                        $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id'. '=', $user_id)->first();
+                        $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
                         if($deep_link_active !== null){
                             $deep_link_active->url = $url;
                             $deep_link_active->active = $active;
