@@ -403,61 +403,71 @@ span {
     margin-top: 5% !important;
     width: 450px;
     height: 250px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 #card_blank_back{
     margin-top: 5% !important;
     width: 450px;
     height: 250px;
+    background-color: #fff;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 #card_back{
     position:relative;
 }
 
+.color_border{
+    border: 2px solid rgb(217,181,81);
+}
+
 #qr_scan{
     position: absolute;
-    top: 56% !important;
+    top: 64% !important;
     left: 41% !important;
 }
 
-  #red{
-    color: red;
-    border-radius: 50% !important;
-  }
+.btn-place{
+    margin-top: 5px !important;
+}
   
-  #green{
-    color: green;
-    border-radius: 50% !important;
-  }
-  
-  #yellow{
-    color:yellow;
-    border-radius: 50% !important;
-  }
-  
-  
-  #brown{
-    color: brown;
-    border-radius: 50% !important;
-  }
+.home-col{
+    position: relative;
+}
 
-  #grey{
-    color: grey;
-    border-radius: 50% !important;
-  }
-  
+.home-col img{
+box-shadow:  2px 2px 10px rgb(217,181,81, 0.5);
+}
 
-  #black{
-    color: black;
-    border-radius: 50% !important;
-  }
-  
-  #blue{
-    color: rgb(19, 51, 158);
-    border-radius: 50% !important;
-  }
-  
+.home-col .action{
+position: absolute;
+top: 46%;
+left: 65%;
+}
+
+.home-col .create{
+position: absolute;
+top: 46%;
+left: 23%;
+}
+
+.home-col .profile{
+position: absolute;
+top: 46%;
+left: 65%;
+}
+
+.home-col .setting{
+position: absolute;
+top: 46%;
+left: 23%;
+}
+
+.profile_img{
+    border-radius: 50%;
+}
 /* 
 .left_place{
     position: absolute;
@@ -481,6 +491,39 @@ span {
     .payment {
         padding-left: 0 !important;
     }
+
+    .home-col img{
+        width: 150px !important;
+        height: 150px !important;
+    }
+
+    .home-col .action{
+        position: absolute;
+        top: 41%;
+        left: 45%;
+      }
+    
+      .home-col .create{
+        position: absolute;
+        top: 41%;
+        left: 23%;
+      }
+    
+      .home-col .profile{
+        position: absolute;
+        top: 41%;
+        left: 47%;
+      }
+    
+      .home-col .setting{
+        position: absolute;
+        top: 41%;
+        left: 23%;
+      }
+
+      .profile_text{
+          text-align: center !important;
+      }
   }
   
   

@@ -215,35 +215,20 @@ class UserRegisterController extends Controller
         if($request->user_id){
             $user = User::where('id', '=', $request->user_id)->first();
             if($user !== null){
-                $wait_time = WaitingTime::where('user_id', '=', $request->user_id)->first();
-                if($wait_time === null){
-                    $new_time = date("Y-m-d H:i:s", strtotime('+48 hours'));
-                    $time = new WaitingTime();
-                    $time->user_id = $request->user_id;
-                    $time->target_time = $new_time;
-                    $remaining = strtotime($new_time) - strtotime("now");
-                    // $dtF = new \DateTime('@0');
-                    // $dtT = new \DateTime("@$remaining");
-                    //$dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
-                    $time->time_left =  $remaining;
-                    $time->save();
-                    
-                    $messages = [
-                        'status' => '200',
-                        'message' => 'success',
-                        'countdown_left' => $time->time_left,
-                        'total_seconds' => $remaining
-                    ];
-                    return $messages;
-                } else {
-                    $remaining_update = strtotime($wait_time->target_time) - strtotime("now");
-                    // $dtF = new \DateTime('@0');
-                    // $dtT = new \DateTime("@$remaining_update");
-                    $to_update = WaitingTime::find($wait_time->id);
-                    $to_update->time_left = $remaining_update;
-                    $to_update->save();
-
-                    if($remaining_update === strtotime($wait_time->target_time)){
+                    $wait_time = WaitingTime::where('user_id', '=', $request->user_id)->first();
+                    if($wait_time === null){
+                        $new_time = date("Y-m-d H:i:s", strtotime('+48 hours'));
+                        $time = new WaitingTime();
+                        $time->user_id = $request->user_id;
+                        $time->target_time = $new_time;
+                        $remaining = strtotime($new_time) - strtotime("now");
+                        // $dtF = new \DateTime('@0');
+                        // $dtT = new \DateTime("@$remaining");
+                        //$dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
+                        $time->time_left =  $remaining;
+                        $time->save();
+    
+                       
                         $data = HomeInfo::get();
                         $array = [];
                         foreach($data as $d){
@@ -254,26 +239,44 @@ class UserRegisterController extends Controller
                             ];
                             array_push($array, $home_data);
                         }
+    
                         $messages = [
                             'status' => '200',
                             'message' => 'success',
-                            'total_seconds' => $remaining_update,
-                            'home_page' => $array
+                            'countdown_left' => $time->time_left,
+                            'total_seconds' => $remaining,
                         ];
                         return $messages;
                     } else {
+                        $remaining_update = strtotime($wait_time->time_left) -  strtotime('now');
+                        $update_to = WaitingTime::find($wait_time->id);
+                        $update_to->time_left = $remaining_update;
+                        $update_to->save();
+        
+                        $data = HomeInfo::get();
+                        $array = [];
+                        foreach($data as $d){
+                            $home_data = [
+                                "id" => $d->id,
+                                "text" => $d->text,
+                                "image" => $d->image
+                            ];
+                            array_push($array, $home_data);
+                        }
+                        
                         $messages = [
-                            'status' => '200',
-                            'message' => 'success',
-                            'total_seconds' => $remaining_update,
-                        ];
-                        return $messages;
+                                'status' => '200',
+                                'message' => 'success',
+                                'countdown_left' => $update_to->time_left,
+                                'total_seconds' => $remaining_update,
+                                'home_page' => $array,
+                            ];
+                            return $messages;
                     }
-                }
             } else {
                 $messages = [
-                    'status' => '400',
-                    'message' => 'Id does not exist'
+                    'status' => '200',
+                    'message' => 'user does not exist.',
                 ];
                 return $messages;
             }

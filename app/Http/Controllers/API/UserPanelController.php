@@ -79,9 +79,14 @@ class UserPanelController extends Controller
                 $contact->website1 = $website1;
                 $contact->website2 = $website2;
                 $contact->website3 = $website3;
-                $imageName = $image->getClientOriginalName();
-                $file_save = Storage::putFileAs('public', $image, $imageName);
-                $contact->image = $imageName;
+                if($request->hasFile('image')){
+                    $imageName = $image->getClientOriginalName();
+                    $file_save = Storage::putFileAs('public', $image, $imageName);
+                    $exist->image = $imageName;
+                } else {
+                    $exist->image = $image;
+                }
+
                 $contact->save();
 
                 $messages = [

@@ -18,5 +18,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+
+Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->name('action');
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');

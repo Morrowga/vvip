@@ -31,4 +31,13 @@ class HomeController extends Controller
         return view('home');
     }
 
+
+    public function profile(){
+        return view('vvip_customers.profile');
+    }
+
+    public function action(){
+        return view('vvip_customers.action');
+    }
+
 }

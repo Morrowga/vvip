@@ -150,7 +150,7 @@
         </div>
     </section>
 
-    <section id="prices-section-two" class="page"  style="margin-top: 65px !important; display: none;">
+    <section id="prices-section-two" class="page"  style="margin-top: 50px !important; display: none;">
         <div class="extra-space-l"></div>
 
         <div class="prices">
@@ -162,7 +162,7 @@
                                 @csrf 
                                 <div class="d-flex justify-content-center">
                                     <img src="../images/logo.jpeg" alt="" class="register_image">
-                                </div>  
+                                </div>   
                                 <div class="form-section">
                                     <div class="col-md-8 col-md-offset-2">
                                         <h3 class="payment-text">Select Payment</h3>
@@ -277,7 +277,7 @@
                                         <div class="row d-flex justify-content-center" id="column-image">
                                         </div>
                                     </div>
-                                </div>           
+                                </div>       
                                 <div class="form-section">
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-3">
@@ -302,37 +302,36 @@
                                                 <div class="col-md-6">
                                                     <h3 class="text">Background Color</h3>
                                                     <input type="color" class="form-control" id="background_color">
-                                                    <div class="devider" style="margin-top: 15px;"></div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <h3 class="text">Template Color</h3>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="red"></button>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="blue"></button>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="black"></button>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="green"></button>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="grey"></button>
-                                                    <button type="button" class="btn btn-dark fas fa-circle" id="yellow"></button>
+                                                    <h3 class="text">Text Color</h3>
+                                                    <input type="color" class="form-control" id="text_color">
                                                 </div>
                                             </div>
+                                            <div class="devider" style="margin-top: 15px;"></div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
+                                        <div class="col-md-10 col-md-offset-1">
                                             <div class="row">
                                                 <div class="col-md-6">
-                                                    <h3 class="text">Front View</h3>
                                                     <div class="row">
-                                                        <div class="col-md-6">
-                                                            <p class="text" style="font-size: 20px !important;">Icon Upload</p>
-                                                            <button type="button" class="btn btn-dark">Left</button>
-                                                            <button type="button" class="btn btn-dark">Right</button>
-                                                            <button type="button" class="btn btn-dark">Center</button>
+                                                        <div class="col-md-12">
+                                                            <p class="text" style="font-size: 20px !important;">Icon Upload ( Front )</p>
+                                                            <button type="button" class="btn btn-dark btn-place"> Upload</button>
+                                                            <button type="button" class="btn btn-dark btn-place"> Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Right</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <p class="text"  style="font-size: 20px !important;">Name</p>
-                                                            <button type="button" class="btn btn-dark">Left</button>
-                                                            <button type="button" class="btn btn-dark">Right</button>
-                                                            <button type="button" class="btn btn-dark">Center</button>
+                                                        <div class="col-md-12">
+                                                            <p class="text"  style="font-size: 20px !important;">Name ( Front )</p>
+                                                            <button type="button" class="btn btn-dark btn-place">Center Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Center Right</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Top Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Top Right</button>
+                                                            <button type="button" class="btn btn-dar btn-place">Bottom Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Bottom Right</button>
                                                         </div>
                                                     </div>
                                                     <div id="card_blank_front">
@@ -340,31 +339,35 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <h3 class="text">Back View</h3>
                                                     <div class="row">
-                                                        <div class="col-md-6">
-                                                            <p class="text" style="font-size: 20px !important;">QR Scan</p>
-                                                            <button type="button" id="move_left" class="btn btn-dark">Left</button>
-                                                            <button type="button" id="move_center" class="btn btn-dark">Center</button>
-                                                            <button type="button" id="move_right" class="btn btn-dark">Right</button>
+                                                        <div class="col-md-12">
+                                                            <p class="text" style="font-size: 20px !important;">QR Scan ( Back )</p>
+                                                            <button type="button" id="move_left" class="btn btn-dark btn-place"> Left</button>
+                                                            <button type="button" id="move_center" class="btn btn-dark btn-place">Center</button>
+                                                            <button type="button" id="move_right" class="btn btn-dark btn-place"> Right</button>
                                                         </div>
-                                                        <div class="col-md-6">
-                                                            <p class="text" style="font-size: 20px !important;">Name</p>
-                                                            <button type="button" class="btn btn-dark">Left</button>
-                                                            <button type="button" class="btn btn-dark">Right</button>
-                                                            <button type="button" class="btn btn-dark">Center</button>
+                                                        <div class="col-md-12">
+                                                            <p class="text" style="font-size: 20px !important;">Name ( Back )</p>
+                                                            <button type="button" class="btn btn-dark btn-place" >Center Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Center Right</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Top Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Top Right</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Bottom Left</button>
+                                                            <button type="button" class="btn btn-dark btn-place">Bottom Right</button>
                                                         </div>
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  alt="" id="card_back" width="450" height="250">
                                                         <img  id="qr_scan" alt="" width="80" height="70">
+                                                        <p class="text" id="name_back"></p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>                                        
                                     <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
-                                </div>   
+                                </div>      
                                 <div class="form-section">
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
