@@ -82,9 +82,9 @@ class UserPanelController extends Controller
                 if($request->hasFile('image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = Storage::putFileAs('public', $image, $imageName);
-                    $exist->image = $imageName;
+                    $contact->image = $imageName;
                 } else {
-                    $exist->image = $image;
+                    $contact->image = $image;
                 }
 
                 $contact->save();
