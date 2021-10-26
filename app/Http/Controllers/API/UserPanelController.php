@@ -13,6 +13,7 @@ use App\Models\DeepLink;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Helpers\Helper;
+use App\Models\SelectedView;
 
 class UserPanelController extends Controller
 {
@@ -137,37 +138,83 @@ class UserPanelController extends Controller
             $active = $request->active;
             $user_has = User::where('id', '=', $user_id)->first();
             if($user_has !== null){
+                if($active === "0"){
+                    $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
+                    $deep_link_active->url = $url;
+                    $deep_link_active->save();
+
+                    $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                    $link_data = [];
+                    foreach($deep_latest as $deep){
+                        $data = [
+                            'id' => $deep->id,
+                            'name' => $deep->name,
+                            'url' => $deep->url,
+                            'active' => $deep->active,
+                        ];
+                        array_push($link_data, $data);
+                    }
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "data" => $link_data
+                    ];
+                    return $messages;
+                } else {
                     $deep_link_to_unactive = DeepLink::where('user_id', $user_id)->where('active', '=', $active)->first();
                     if($deep_link_to_unactive !== null){
-                        $deep_link_to_unactive->active = '0';
-                        $deep_link_to_unactive->save(); 
-    
-                        $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
-                        if($deep_link_active !== null){
-                            $deep_link_active->url = $url;
-                            $deep_link_active->active = $active;
-                            $deep_link_active->save();
-        
-                            $messages = [
-                                "status" => "200",
-                                "message" => "success",
-                            ];
-                            return $messages;
-                        }
-                    } else {
-                        $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
-                        if ($deep_link_active !== null) {
-                            $deep_link_active->url = $url;
-                            $deep_link_active->active = $active;
-                            $deep_link_active->save();
-        
-                            $messages = [
-                                "status" => "200",
-                                "message" => "success",
-                            ];
-                            return $messages;
-                        }
-                    }
+                       $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
+                       $deep_link_to_unactive->active = '0';
+                       $deep_link_to_unactive->save(); 
+   
+                       $deep_link_active->url = $url;
+                       $deep_link_active->active = $active;
+                       $deep_link_active->save();
+
+                       $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                       $link_data = [];
+                       foreach($deep_latest as $deep){
+                           $data = [
+                               'id' => $deep->id,
+                               'name' => $deep->name,
+                               'url' => $deep->url,
+                               'active' => $deep->active,
+                           ];
+                           array_push($link_data, $data);
+                       }
+   
+                       $messages = [
+                           "status" => "200",
+                           "message" => "success",
+                           "data" => $link_data
+                       ];
+                       return $messages;
+                   } else {
+                           $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
+                           $deep_link_active->url = $url;
+                           $deep_link_active->active = $active;
+                           $deep_link_active->save();
+
+                           $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                           $link_data = [];
+                           foreach($deep_latest as $deep){
+                               $data = [
+                                   'id' => $deep->id,
+                                   'name' => $deep->name,
+                                   'url' => $deep->url,
+                                   'active' => $deep->active,
+                               ];
+                               array_push($link_data, $data);
+                           }
+       
+                           $messages = [
+                               "status" => "200",
+                               "message" => "success",
+                               "data" => $link_data
+                           ];
+                           return $messages;
+                       }
+                }
             } else {
                 $messages = [
                     "status" => "500",
@@ -175,6 +222,16 @@ class UserPanelController extends Controller
                 ];
                 return $messages;
             }
+        }
+    }
+
+    public function displayUserWant(Request $request, $url){
+        $userid = "9c9058c0-35bb-4018-92d6-de162b78d610";
+        $url = "98336032";
+        $check = User::where('id', '=', $userid)->where('url', $url)->first();
+        if($check !== null){
+            $data_module = SelectedView::where('user_id', $userid)->first();
+            return view('vvip_customers.select_view', compact('data_module'));
         }
     }
 }

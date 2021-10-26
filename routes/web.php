@@ -25,4 +25,3 @@ Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->n
 Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createData'])->name('createData');
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
-

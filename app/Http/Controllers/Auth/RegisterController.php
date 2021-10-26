@@ -76,7 +76,7 @@ class RegisterController extends Controller
             }
         }
         $user->smart_card_design_id = request()->smart_card_design_id;
-        $user->url = "http://vvip9.co/" . request()->url;
+        $user->url = request()->url;
         $user->secure_status = request()->secure_status;
         $user->password = Hash::make(request()->pin);
         $user->save();

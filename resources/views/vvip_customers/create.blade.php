@@ -242,17 +242,6 @@
                 <button class="btn btn-warning mt-3 btn-block">Save</button>
             </div>
             <div class="col-md-6 col-md-offset-3" id="deep_link_section">
-                <div class="card" id="deep_link_card_input">
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3 class="text" id="url_text"></h3>
-                            <input type="text" name="deep_url" class="form-control" id="url_input"> 
-                            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-                            <button class="btn btn-dark btn-block mt-2">SAVE</button>
-                            <button class="btn btn-dark btn-block mt-2" id="url_form">Save & Active</button>
-                        </div>
-                    </div>
-                </div>
                 <div class="d-flex justify-content-center">
                     <div class="row" id="platform_col">
                     </div>
@@ -260,6 +249,26 @@
             </div>
         </div>
     </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h3 class="text" id="url_text"></h3>
+        <input type="text" name="deep_url" class="form-control" id="url_input"> 
+        <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-dark mt-2 btn-block" id="just_save">Active</button>
+        <button class="btn btn-dark mt-2 btn-block" id="url_form">Save</button>     
+        <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button> 
+    </div>
+    </div>
+  </div>
 </div>
 @section('script')
 <script>
@@ -292,8 +301,6 @@ $(function() {
     var data_url = '{{ url('api/get_datas') }}';
     var user_id = $('#userid').val();
 
-    $('#deep_link_card_input').hide();
-
     $.ajax({
            url:data_url,
            method:'POST',
@@ -312,12 +319,13 @@ $(function() {
                     // }
                     $('.dlink_btn').on('click', function(){
                         if(value['id'] == this.id){
+                            $('#exampleModal').modal('show');
                             var id = this.id; 
-                            $('#deep_link_card_input').show();
+                            $('#url_input').val(value['url']);
                             $('#url_text').text(value['name'] + '  URL');
-                            $('#url_form').on("click", function(){
+
+                            $('#just_save').on("click", function(){
                                 var url = $('#url_input').val();
-                                console.log(url);
                                 var active = 1;
                                 var name = value['name'];
                                 var post_url = '{{ url('api/create_deep_link') }}';
@@ -335,12 +343,54 @@ $(function() {
                                     active: active
                                 },
                                 success:function(response){
-                                    $('#deep_link_card_input').hide().fadeOut(2000);
-                                    $('#url_input').reset();
-                                    console.log(response.message);
+                                    link_data = response.data;
+                                    $.each(link_data, function(i,link_value){
+                                        if(link_value['active'] == 1){
+                                            console.log(link_value['id']);
+                                            $('#url_input').val(link_value['name']);
+                                            $('.value' + link_value['id']).addClass('active_card');
+                                            $('#exampleModal').modal('hide');
+                                        } else {
+                                            $('.value' + link_value['id']).removeClass('active_card');
+                                        }
+                                    });
+                                    console.log(response);
+                                }
+                                });
+                            });
+
+                            $('#url_form').on("click", function(){
+                                var url = $('#url_input').val();
+                                var active_zero = 0;
+                                var name = value['name'];
+                                var post_url = '{{ url('api/create_deep_link') }}';
+                                var token =  $('#token').val();
+                                $.ajax({
+                                url:post_url,
+                                method: 'POST',
+                                headers: {
+                                    'X-CSRF-Token': token 
+                                },
+                                data:{
+                                    user_id: user_id,
+                                    url: url,
+                                    name: name,
+                                    active: active_zero
+                                },
+                                success:function(response){
+                                    link_data_two = response.data;
+                                    $.each(link_data_two, function(i,link_value){
+                                        if(link_value['active'] == 1){
+                                            console.log(link_value['id']);
+                                            $('#url_input').val(link_value['name']);
+                                            $('.value' + link_value['id']).addClass('active_card');
+                                            $('#exampleModal').modal('hide');
+                                        } 
+                                    });
+                                    console.log(response);
                                 }
                                 })
-                            })
+                            });
                         }                        
                     });
                 });
