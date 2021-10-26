@@ -3,9 +3,22 @@
 html,
 body {
     background-color: rgb(0,0,0) !important;
-      height: 100%;
+      height: 100% !important;
       position: relative;
 }
+
+body {
+    height: 100%;
+    width: 100%;
+}
+/* 
+footer{
+    width: 100%;
+    top: 90.2%;
+    position: fixed;
+    background-color:  rgb(0,0,0) !important;
+} */
+
 
 .register_logo {
     text-align: center !important;
@@ -468,18 +481,62 @@ left: 23%;
 .profile_img{
     border-radius: 50%;
 }
-/* 
-.left_place{
-    position: absolute;
-    top: 58% !important;
-    left: 10% !important;
+
+.create_content{
+    background-color: rgb(217,181,81) !important;
 }
 
-.right_place{
-    position: absolute;
-    top: 58% !important;
-    left: 70% !important;
-} */
+.menu{
+    font-size: 20px !important;
+    color: #fff;
+    text-decoration: none;
+}
+
+.color_black{
+    text-align: center;
+    padding-top: 5px;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+}
+
+.appear{
+    font-family: "Britannic Bold";
+    color: #000;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.social_link{
+    padding-top: 12px !important;
+    padding-left: 10px !important;
+}
+
+.dlink_card{
+    background-color: rgb(51,51,51) !important;
+    border: none !important;
+}
+
+.dlink_main_card{
+    border: none !important;
+    background-color: rgb(51,51,51) !important;
+}
+
+
+.dlink_btn{
+    margin-top: 10px;
+    background-color: rgb(51,51,51) !important;
+}
+
+.active_card{
+    background-color: rgb(217,181,81) !important;
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+
+
 
 @media only screen and (max-width: 600px) {
     #countdown{
@@ -524,6 +581,7 @@ left: 23%;
       .profile_text{
           text-align: center !important;
       }
+
   }
   
   

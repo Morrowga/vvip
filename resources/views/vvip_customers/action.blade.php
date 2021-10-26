@@ -35,13 +35,47 @@
 
 <div class="container">
     <div class="col-md-12">
+        <h3 class="text mt-5">Change Action</h3>
         <div class="card">
             <div class="card-body">
-                <p>Menu Categories</p>
-                <button class="btn btn-light">Contact</button>
+                <div class="d-flex justify-content-center">
+                    <p>Menu Categories</p>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-4 col-md-offset-4">
+                    <button class="btn btn-dark btn-block">Contact</button>
+                    <button class="btn btn-dark btn-block">Link Tree</button>
+                    <button class="btn btn-dark btn-block">Deep Link</button>
+                    <button class="btn btn-dark btn-block">URL</button>
+                    <button class="btn btn-dark btn-block">Email</button>
+                    <button class="btn btn-dark btn-block">Contact Social</button>
+                    <button class="btn btn-dark btn-block">SMS</button>
+                    <button class="btn btn-dark btn-block">Call</button>
+                    <button class="btn btn-dark btn-block">Event</button>
+                    <button class="btn btn-dark btn-block">Personal</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- <footer>
+        <div class="d-flex justify-content-center text-center">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="d-flex justfiy-content-center">
+                <div class="col">
+                    <a href="#home" class="text-center">Home</a> 
+                </div>
+                <div class="col">
+                    <a href="#home" class="text-center">Home</a> 
+                </div>
+                <div class="col">
+                    <a href="#home" class="text-center">Home</a> 
+                </div>
+                </div>
+            </div>
+        </div>  
+</footer> -->
 
 @endsection

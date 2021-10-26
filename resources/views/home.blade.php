@@ -48,29 +48,47 @@
     </div>
 </div> -->
 <div class="container">
-    <div class="col-md-12" style="margin-top: 50px !important;">
+    <div class="col-md-12 menu">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
                 <img src="" alt="" id="action" width="350" height="280">
                 <a href="/action" class="btn btn-dark action">Action</a>
             </div>
             <div class="col text-left home-col">
-            <img src="" alt="" id="create" width="350" height="280">
-            <a href="" class="btn btn-dark create">Create</a>
+                <img src="" alt="" id="create" width="350" height="280">
+                <a href="/create_data" class="btn btn-dark create">Create</a>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col text-right home-col" style="margin-top: 25px !important;">
+                <img src="" alt="" id="profile" width="350" height="280">
+                <a href="/profile" class="btn btn-dark profile">Profile</a>
+            </div>
+            <div class="col text-left home-col" style="margin-top: 25px !important;">
+                <img src="" alt="" id="setting" width="350" height="280">
+                <a href="" class="btn btn-dark setting">Setting</a>
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center">
-        <div class="col text-right home-col" style="margin-top: 25px !important;">
-            <img src="" alt="" id="profile" width="350" height="280">
-            <a href="/profile" class="btn btn-dark profile">Profile</a>
-        </div>
-        <div class="col text-left home-col" style="margin-top: 25px !important;">
-            <img src="" alt="" id="setting" width="350" height="280">
-            <a href="" class="btn btn-dark setting">Setting</a>
-        </div>
-    </div>
 </div>
+
+<!-- <footer>
+    <div class="d-flex justify-content-center text-center">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="d-flex justfiy-content-center">
+            <div class="col">
+                <a href="" class="text-center mb-2 pb-2"><i class="fa fa-heart fa-3x pb-2"></i></a> 
+            </div>
+            <div class="col">
+                <a href="#home" class="text-center"><img src="../images/logo.jpeg" alt="" width="50" height="50"></a> 
+            </div>
+            <div class="col">
+                <a href="#home" class="text-center">Home</a> 
+            </div>
+            </div>
+        </div>
+    </div>  
+</footer> -->
 @section('script')
     <script>
         var user_id = $('#userid').val();

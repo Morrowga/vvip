@@ -34,8 +34,8 @@
 </nav> 
 
 <div class="container">
-    <div class="col-md-12">
-        <h3 class="text mt-5">Profile</h3>
+    <div class="col-md-12 mt-5">
+        <h3 class="text">Profile</h3>
         <div class="card profile_card">
             <div class="card-body">
                 <div class="d-flex justify-content-center">
@@ -123,4 +123,22 @@
         </div>
     </div>
 </div>
+
+<!-- <footer>
+    <div class="d-flex justify-content-center text-center">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="d-flex justfiy-content-center">
+            <div class="col">
+                <a href="" class="text-center mb-2 pb-2"><i class="fa fa-heart fa-3x pb-2"></i></a> 
+            </div>
+            <div class="col">
+                <a href="#home" class="text-center"><img src="../images/logo.jpeg" alt="" width="50" height="50"></a> 
+            </div>
+            <div class="col">
+                <a href="#home" class="text-center">Home</a> 
+            </div>
+            </div>
+        </div>
+    </div>  
+</footer> -->
 @endsection

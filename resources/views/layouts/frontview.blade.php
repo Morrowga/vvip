@@ -227,8 +227,8 @@
                 }
             }
 
-            $('#card_front').attr('src', '../images/../images/[removal.ai]_tmp-61704c07bf95b.png');
-            $('#card_back').attr('src', '../images/../images/[removal.ai]_tmp-61704c07bf95b.png');
+            $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
+            $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
             $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
 
             $('#move_left').on('click', function(){

@@ -22,4 +22,7 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 
 Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->name('action');
 
+Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createData'])->name('createData');
+
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
+
