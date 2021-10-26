@@ -226,8 +226,8 @@ class UserPanelController extends Controller
     }
 
     public function displayUserWant(Request $request, $url){
-        $userid = "9c9058c0-35bb-4018-92d6-de162b78d610";
-        $url = "98336032";
+        $userid = "379d0d9f-62a3-4d18-9e4d-70f378ff6392";
+        $url = "nayyelin12";
         $check = User::where('id', '=', $userid)->where('url', $url)->first();
         if($check !== null){
             $data_module = SelectedView::where('user_id', $userid)->first();
