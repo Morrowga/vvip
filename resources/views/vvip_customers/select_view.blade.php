@@ -24,8 +24,18 @@
                 if(value['active'] == 1){
                     // $('#view_value').attr('href', value['url']);
                     var url = value['url'];
-                    var windowName = "Deep Link";
-                    var newWin = open(url,windowName,200,100);
+                    
+                    var windowName = "Your Deep Link";
+
+                    var popUpObj;
+
+                    popUpObj=window.open(url,windowName,"width=400," + "height=300");
+
+                    popUpObj.focus();
+
+                    LoadModalDiv();
+
+                    // var newWin = open(url,windowName,200,100);
                 }
         });
         }
