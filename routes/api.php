@@ -43,6 +43,4 @@ Route::post('create_contact', [App\Http\Controllers\API\UserPanelController::cla
 
 Route::post('get_datas', [App\Http\Controllers\API\UserPanelController::class, 'getRequestData']);
 
-Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant']);
-
 Route::post('create_deep_link', [App\Http\Controllers\API\UserPanelController::class, 'createDeepLink']);
