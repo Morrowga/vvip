@@ -4,7 +4,7 @@
 
 <input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
 <input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
-<h5 id="view_value" style="text-align:center; color: #fff; font-size: 50px; top: 50%; position:absolute; left: 45%;"></h5>
+<h5 id="view_value" style="text-align:center; color: #fff; font-size: 50px; top: 50%; position:absolute; left: 30%;"></h5>
 
 @section('script')
 <script>
