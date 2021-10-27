@@ -238,7 +238,7 @@ class UserPanelController extends Controller
                     return view('vvip_customers.select_view', compact('data_module'));
             }
         } else {
-            return http_response_code(404);
+            return abort(404);
         }
     }
 }
