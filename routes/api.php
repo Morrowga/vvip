@@ -19,28 +19,33 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
+Route::post('api/register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
 
-Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
+Route::post('api/customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
 
-Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
+Route::get('api/generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
 
-Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
+Route::get('api/packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
 
-Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
+Route::post('api/save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
 
-Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
+Route::post('api/create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
 
-Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
+Route::post('api/create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
 
-Route::get('cd_timer', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
+Route::get('api/cd_timer', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
-Route::get('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
+Route::get('api/get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
 
-Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
+Route::post('api/get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
-Route::post('create_contact', [App\Http\Controllers\API\UserPanelController::class, 'create_contact']);
+Route::post('api/create_contact', [App\Http\Controllers\API\UserPanelController::class, 'create_contact']);
 
-Route::post('get_datas', [App\Http\Controllers\API\UserPanelController::class, 'getRequestData']);
+Route::post('api/get_datas', [App\Http\Controllers\API\UserPanelController::class, 'getRequestData']);
 
-Route::post('create_deep_link', [App\Http\Controllers\API\UserPanelController::class, 'createDeepLink']);
+Route::post('api/create_deep_link', [App\Http\Controllers\API\UserPanelController::class, 'createDeepLink']);
+
+Route::get('{url}', 'App\Http\Controllers\API\UserPanelController@displayUserWant');
+
+
+//379d0d9f-62a3-4d18-9e4d-70f378ff6392

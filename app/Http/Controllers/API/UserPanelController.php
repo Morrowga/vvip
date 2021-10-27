@@ -225,8 +225,8 @@ class UserPanelController extends Controller
         }
     }
 
-    public function displayUserWant(Request $request, $url){
-        if($request){
+    public function displayUserWant(Request $request=null, $url){
+        if(!empty($request)){
             $userid = $request->user_id;
             $url = $request->url;
 
@@ -235,6 +235,7 @@ class UserPanelController extends Controller
                 $data_module = SelectedView::where('user_id', $userid)->first();
                 return view('vvip_customers.select_view', compact('data_module'));
             }
+            // dd(request());
         } else {
             $users = User::get();
             foreach($users as $user){

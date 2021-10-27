@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,5 +26,3 @@ Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->n
 Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createData'])->name('createData');
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
-
-Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant']);
