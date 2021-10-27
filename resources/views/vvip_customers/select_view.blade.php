@@ -22,7 +22,7 @@
             data_view = response.deep_link;
             $.each(data_view, function(i,value){ 
                 if(value['active'] == 1){
-                    $('#view_value').attr("href", value['url']);
+                    $('#view_value').attr('href', value['url']);
                 }
         });
         }
