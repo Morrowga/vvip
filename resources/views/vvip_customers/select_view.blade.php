@@ -25,7 +25,7 @@
                     // $('#view_value').attr('href', value['url']);
                     var url = value['url'];
                     var windowName = "Deep Link";
-                    var newWin = open(url,windowName,'height=300,width=300');
+                    var newWin = open(url,windowName,200,100);
                 }
         });
         }
