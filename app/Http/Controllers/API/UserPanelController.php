@@ -225,31 +225,19 @@ class UserPanelController extends Controller
         }
     }
 
-    public function displayUserWant(Request $request=null, $url){
-        if(!empty($request)){
-            $userid = $request->user_id;
-            $url = $request->url;
-
-            $check = User::where('id', '=', $userid)->where('url', $url)->first();
-            if($check !== null){
-                $data_module = SelectedView::where('user_id', $userid)->first();
-                return view('vvip_customers.select_view', compact('data_module'));
-            }
-            // dd(request());
-        } else {
-            $users = User::get();
-            foreach($users as $user){
-                $userid = $user->id;
-                $url = $user->url;
-                $data_module = SelectedView::where('user_id', $userid)->first();
-                if($data_module->request_name === null && $data_module->request_name === ""){
-                    $messages = [
-                       "message" => 'Any Action is not Active'
-                    ];
-                    return view('vvip_customers.select_view', compact('data_module', 'messages'));
-                } else {
-                     return view('vvip_customers.select_view', compact('data_module'));
-                }
+    public function displayUserWant($url){
+        $users = User::get();
+        foreach($users as $user){
+            $userid = $user->id;
+            $url = $user->url;
+            $data_module = SelectedView::where('user_id', $userid)->first();
+            if($data_module->request_name === null && $data_module->request_name === ""){
+                $messages = [
+                    "message" => 'Any Action is not Active'
+                ];
+                return view('vvip_customers.select_view', compact('data_module', 'messages'));
+            } else {
+                    return view('vvip_customers.select_view', compact('data_module'));
             }
         }
     }
