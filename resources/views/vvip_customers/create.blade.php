@@ -138,7 +138,7 @@
                             </div>
                         </button>
                     </div>
-                    <div class="col-md-6">
+                    <!-- <div class="col-md-6">
                         <button type="button" id="personal" class="btn btn-dark btn-block">
                             <div class="card create_content">
                                 <div class="card-body">
@@ -148,7 +148,7 @@
                                 </div>
                             </div>
                         </button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-3" id="contact_section">

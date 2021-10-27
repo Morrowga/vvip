@@ -226,12 +226,30 @@ class UserPanelController extends Controller
     }
 
     public function displayUserWant(Request $request, $url){
-        $userid = "379d0d9f-62a3-4d18-9e4d-70f378ff6392";
-        $url = "nayyelin12";
-        $check = User::where('id', '=', $userid)->where('url', $url)->first();
-        if($check !== null){
-            $data_module = SelectedView::where('user_id', $userid)->first();
-            return view('vvip_customers.select_view', compact('data_module'));
+        if($request){
+            $userid = $request->user_id;
+            $url = $request->url;
+
+            $check = User::where('id', '=', $userid)->where('url', $url)->first();
+            if($check !== null){
+                $data_module = SelectedView::where('user_id', $userid)->first();
+                return view('vvip_customers.select_view', compact('data_module'));
+            }
+        } else {
+            $users = User::get();
+            foreach($users as $user){
+                $userid = $user->id;
+                $url = $user->url;
+                $data_module = SelectedView::where('user_id', $userid)->first();
+                if($data_module->request_name === null && $data_module->request_name === ""){
+                    $messages = [
+                       "message" => 'Any Action is not Active'
+                    ];
+                    return view('vvip_customers.select_view', compact('data_module', 'messages'));
+                } else {
+                     return view('vvip_customers.select_view', compact('data_module'));
+                }
+            }
         }
     }
 }
