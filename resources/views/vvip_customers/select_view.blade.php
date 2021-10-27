@@ -22,21 +22,7 @@
             data_view = response.deep_link;
             $.each(data_view, function(i,value){ 
                 if(value['active'] == 1){
-                    // $('#view_value').attr('href', value['url']);
-                    var url = value['url'];
-                    
-                    var windowName = "Your Deep Link";
-
-                    var params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
-                    width=0,height=0,left=-1000,top=-1000`;
-
-                    popUpObj=window.open(url,windowName,params);
-
-                    popUpObj.focus();
-
-                    // LoadModalDiv();
-
-                    // var newWin = open(url,windowName,200,100);
+                    window.location = value['url'];
                 }
         });
         }
