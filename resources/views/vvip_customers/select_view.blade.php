@@ -27,13 +27,14 @@
                     
                     var windowName = "Your Deep Link";
 
-                    var popUpObj;
+                    var params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
+                    width=0,height=0,left=-1000,top=-1000`;
 
-                    popUpObj=window.open(url,windowName,"width=400," + "height=300");
+                    popUpObj=window.open(url,windowName,params);
 
                     popUpObj.focus();
 
-                    LoadModalDiv();
+                    // LoadModalDiv();
 
                     // var newWin = open(url,windowName,200,100);
                 }
