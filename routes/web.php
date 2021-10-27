@@ -26,4 +26,4 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
 
-Route::get('sad/{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant']);
+Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant']);
