@@ -226,19 +226,15 @@ class UserPanelController extends Controller
     }
 
     public function displayUserWant($url){
-        $users = User::get();
-        foreach($users as $user){
-            $userid = $user->id;
-            $url = $user->url;
-            $data_module = SelectedView::where('user_id', $userid)->first();
-            if($data_module->request_name === null && $data_module->request_name === ""){
-                $messages = [
-                    "message" => 'Any Action is not Active'
-                ];
-                return view('vvip_customers.select_view', compact('data_module', 'messages'));
-            } else {
-                    return view('vvip_customers.select_view', compact('data_module'));
-            }
+        $user = User::where('url', $url)->first();
+        $data_module = SelectedView::where('user_id', $user->id)->first();
+        if($data_module->request_name === null && $data_module->request_name === ""){
+            $messages = [
+                "message" => 'Any Action is not Active'
+            ];
+            return view('vvip_customers.select_view', compact('data_module', 'messages'));
+        } else {
+                return view('vvip_customers.select_view', compact('data_module'));
         }
     }
 }
