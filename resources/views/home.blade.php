@@ -3,7 +3,7 @@
 @section('content')
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">

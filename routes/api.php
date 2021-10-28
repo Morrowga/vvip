@@ -45,4 +45,6 @@ Route::post('get_datas', [App\Http\Controllers\API\UserPanelController::class, '
 
 Route::post('create_deep_link', [App\Http\Controllers\API\UserPanelController::class, 'createDeepLink']);
 
+Route::post('change_action', [App\Http\Controllers\API\UserPanelController::class, 'changeAction']);
+
 //379d0d9f-62a3-4d18-9e4d-70f378ff6392

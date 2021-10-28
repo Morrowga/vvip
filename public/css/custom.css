@@ -535,7 +535,26 @@ left: 23%;
     border: 2px solid rgb(217,181,81) !important;
 }
 
+#ca{
+    background-color: rgb(0,0,0) !important;
+}
 
+/* input[type="file"]:after {color: #fff !important;} */
+label.label_file { 
+    padding: 5px;
+  }
+
+  .file_upload {
+    display: none !important;
+}
+
+
+.action-btn{
+    background-color: rgb(0,0,0) !important;
+    font-family: "Britannic Bold";
+    color: #fff !important;
+    border-color: rgb(217,181,81) !important;
+}
 
 
 @media only screen and (max-width: 600px) {

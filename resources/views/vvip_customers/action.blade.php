@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
@@ -35,24 +35,29 @@
 
 <div class="container">
     <div class="col-md-12">
-        <h3 class="text mt-5">Change Action</h3>
-        <div class="card">
+        <div class="d-flex justify-content-center">
+            <div class="col-md-4 col-md-offset-4">
+                <h3 class="text mt-5">Change Action</h3>
+            </div>
+        </div>
+        <div class="card" id="ca">
             <div class="card-body">
-                <div class="d-flex justify-content-center">
+                <!-- <div class="d-flex justify-content-center">
                     <p>Menu Categories</p>
-                </div>
+                </div> -->
                 <div class="d-flex justify-content-center">
                     <div class="col-md-4 col-md-offset-4">
-                    <button class="btn btn-dark btn-block">Contact</button>
-                    <button class="btn btn-dark btn-block">Link Tree</button>
-                    <button class="btn btn-dark btn-block">Deep Link</button>
-                    <button class="btn btn-dark btn-block">URL</button>
-                    <button class="btn btn-dark btn-block">Email</button>
-                    <button class="btn btn-dark btn-block">Contact Social</button>
-                    <button class="btn btn-dark btn-block">SMS</button>
-                    <button class="btn btn-dark btn-block">Call</button>
-                    <button class="btn btn-dark btn-block">Event</button>
-                    <button class="btn btn-dark btn-block">Personal</button>
+                    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                    <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts">Contact</button>
+                    <button class="btn btn-dark btn-block action-btn" id="link_tree_active">Link Tree</button>
+                    <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links">Deep Link</button>
+                    <button class="btn btn-dark btn-block action-btn" id="url_active">URL</button>
+                    <button class="btn btn-dark btn-block action-btn" id="email_active">Email</button>
+                    <button class="btn btn-dark btn-block action-btn" id="contact_social_active">Contact Social</button>
+                    <button class="btn btn-dark btn-block action-btn" id="sms_active">SMS</button>
+                    <button class="btn btn-dark btn-block action-btn" id="call">Call</button>
+                    <button class="btn btn-dark btn-block action-btn" id="event">Event</button>
+                    <button class="btn btn-dark btn-block action-btn" id="personal">Personal</button>
                     </div>
                 </div>
             </div>
@@ -77,5 +82,42 @@
             </div>
         </div>  
 </footer> -->
+
+
+@section('script')
+<script>
+$(function() {
+    var user_id = $('#userid').val();
+    var action_url = '{{ url('api/change_action') }}';
+    var token =  $('#token').val();
+    $('.action-btn').on('click', function(e){
+        $request_name = $('#' + e.target.id).val();
+        $.ajax({
+           url:action_url,
+           headers: {
+                'X-CSRF-Token': token 
+            },
+           method:'POST',
+           data:{
+                user_id: user_id,  
+                request_name: $request_name
+                },
+           success:function(response){
+               var id_value = ['contact_active', 'deep_link_active'];
+               $.each(id_value, function(i,value){
+                   var check = $('#' + value);
+                   if(check.val() == response.data['request_name']){
+                       check.attr('style', 'background-color: rgb(217,181,81) !important');
+                   } else {
+                       check.attr('style', 'background-color: rgb(0,0,0) !important');
+                   }
+               });
+           }
+        });
+    });
+
+});
+</script>
+@endsection
 
 @endsection

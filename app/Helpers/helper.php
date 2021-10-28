@@ -13,7 +13,7 @@ class Helper{
                 $contact_data = Contact::where('user_id', '=', $user_id)->first();
                 if(!empty($contact_data)){
                     $data = [
-                        "image" =>  "http://vvip9.co/storage/" . $contact_data->image,
+                        "image" =>  "http://vvip9.co/storage/contact_images/" . $contact_data->image,
                         "personal" => [
                             "first_name" => $contact_data->first_name,
                             "last_name" => $contact_data->last_name,
@@ -32,12 +32,32 @@ class Helper{
                             "website1" => $contact_data->website1,
                             "website2" => $contact_data->website2,
                             "website3" => $contact_data->website3
-                        ]
+                        ],
+                        "home_address" => [
+                            "street1" => $contact_data->home_street1,
+                            "street2" => $contact_data->home_street2,
+                            "postal_code" => $contact_data->home_postal_code,
+                            "city" => $contact_data->home_city,
+                            "state" => $contact_data->home_state,
+                            "country" => $contact_data->home_country
+                        ],
+                        "work_address" => [
+                            "street1" => $contact_data->work_street1,
+                            "street2" => $contact_data->work_street2,
+                            "postal_code" => $contact_data->work_postal_code,
+                            "city" => $contact_data->work_city,
+                            "state" => $contact_data->work_state,
+                            "country" => $contact_data->work_country
+                        ],
+                        "background-color" => $contact_data->background_color,
+                        "text_color" => $contact_data->text_color,
+                        "text_highlight_color" => $contact_data->text_highlight_color
                     ];
     
                     $messages = [
                         "status" => "200",
                         "message" => "success",
+                        "request" => "contacts",
                         "data" => $data
                     ];
                     return $messages;
@@ -67,6 +87,7 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
+                        "request" => "deep_link",
                         "deep_link" => $get_array
                     ];
                     return $messages; 

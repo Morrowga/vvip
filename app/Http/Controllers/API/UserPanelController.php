@@ -20,7 +20,7 @@ class UserPanelController extends Controller
     public function create_contact(Request $request){
         $check = User::where('id', $request->user_id)->first();
         if($check !== null ){
-            $image = $request->image;
+            $image = $request->file('image');
             $first_name = $request->first_name;
             $last_name = $request->last_name;
             $company = $request->company;
@@ -34,6 +34,21 @@ class UserPanelController extends Controller
             $website1 = $request->website1;
             $website2 = $request->website2;
             $website3 = $request->website3;
+            $home_street1 = $request->home_street1;
+            $home_street2 = $request->home_street2;
+            $home_postal_code = $request->home_postal_code;
+            $home_city = $request->home_city;
+            $home_state = $request->home_state;
+            $home_country = $request->home_country;
+            $work_street1 = $request->work_street1;
+            $work_street2 = $request->work_street2;
+            $work_postal_code = $request->work_postal_code;
+            $work_city = $request->work_city;
+            $work_state = $request->work_state;
+            $work_country = $request->work_country;
+            $background_color = $request->background_color;
+            $text_color = $request->text_color;
+            $text_highlight_color = $request->text_highlight_color;
             $exist = Contact::where('user_id', '=', $request->user_id)->first();
             if ($exist !== null) {
                 $exist->first_name = $first_name;
@@ -49,9 +64,24 @@ class UserPanelController extends Controller
                 $exist->website1 = $website1;
                 $exist->website2 = $website2;
                 $exist->website3 = $website3;
-                if($request->hasFile('image')){
+                $exist->home_street1 = $home_street1;
+                $exist->home_street2 = $home_street2;
+                $exist->home_postal_code = $home_postal_code;
+                $exist->home_city = $home_city;
+                $exist->home_state = $home_state;
+                $exist->home_country = $home_country;
+                $exist->work_street1 = $work_street1;
+                $exist->work_street2 = $work_street2;
+                $exist->work_postal_code = $work_postal_code;
+                $exist->work_city = $work_city;
+                $exist->work_state = $work_state;
+                $exist->work_country = $work_country;
+                $exist->background_color  = $background_color;
+                $exist->text_color = $text_color;
+                $exist->text_highlight_color = $text_highlight_color;
+                if($image){
                     $imageName = $image->getClientOriginalName();
-                    $file_save = Storage::putFileAs('public', $image, $imageName);
+                    $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $exist->image = $imageName;
                 } else {
                     $exist->image = $image;
@@ -80,14 +110,28 @@ class UserPanelController extends Controller
                 $contact->website1 = $website1;
                 $contact->website2 = $website2;
                 $contact->website3 = $website3;
-                if($request->hasFile('image')){
+                $contact->home_street1 = $home_street1;
+                $contact->home_street2 = $home_street2;
+                $contact->home_postal_code = $home_postal_code;
+                $contact->home_city = $home_city;
+                $contact->home_state = $home_state;
+                $contact->home_country = $home_country;
+                $contact->work_street1 = $work_street1;
+                $contact->work_street2 = $work_street2;
+                $contact->work_postal_code = $work_postal_code;
+                $contact->work_city = $work_city;
+                $contact->work_state = $work_state;
+                $contact->work_country = $work_country;
+                $contact->background_color  = $background_color;
+                $contact->text_color = $text_color;
+                $contact->text_highlight_color = $text_highlight_color;
+                if($image){
                     $imageName = $image->getClientOriginalName();
-                    $file_save = Storage::putFileAs('public', $image, $imageName);
+                    $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $contact->image = $imageName;
                 } else {
-                    $contact->image = $image;
+                    $exist->image = $image;
                 }
-
                 $contact->save();
 
                 $messages = [
@@ -239,6 +283,45 @@ class UserPanelController extends Controller
             }
         } else {
             return abort(404);
+        }
+    }
+
+
+    public function changeAction(Request $request){
+        if($request){
+            $userid = $request->user_id;
+            $request_name = $request->request_name;
+            $checkexist = SelectedView::where('user_id', $userid)->first();
+            if($checkexist === null){
+                $new_active = new SelectedView();
+                $new_active->user_id = $userid;
+                $new_active->request_name = $request_name;
+                $new_active->save();
+    
+                $messages = [
+                    "status" => "200",
+                    "message" => "success new",
+                    "data" => $new_active
+                ];
+                return $messages;
+            } else {
+                $checkexist->request_name = $request_name;
+                $checkexist->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success update",
+                    "data" => $checkexist
+                ];
+                return $messages;
+            }
+            
+        } else {
+            $messages = [
+                "status" => "400",
+                "message" => "request does not exist"
+            ];
+            return $messages;
         }
     }
 }

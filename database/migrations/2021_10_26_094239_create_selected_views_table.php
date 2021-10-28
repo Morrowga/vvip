@@ -16,7 +16,7 @@ class CreateSelectedViewsTable extends Migration
         Schema::create('selected_views', function (Blueprint $table) {
             $table->id();
             $table->uuid('user_id');
-            $table->string('request_name');
+            $table->string('request_name')->nullable();
             $table->timestamps();
         });
     }

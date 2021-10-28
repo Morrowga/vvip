@@ -30,6 +30,21 @@ class CreateContactsTable extends Migration
             $table->string('website1')->nullable();
             $table->string('website2')->nullable();
             $table->string('website3')->nullable();
+            $table->string('home_street1')->nullable();
+            $table->string('home_street2')->nullable();
+            $table->string('home_postal_code')->nullable();
+            $table->string('home_city')->nullable();
+            $table->string('home_state')->nullable();
+            $table->string('home_country')->nullable();
+            $table->string('work_street1')->nullable();
+            $table->string('work_street2')->nullable();
+            $table->string('work_postal_code')->nullable();
+            $table->string('work_city')->nullable();
+            $table->string('work_state')->nullable();
+            $table->string('work_country')->nullable();
+            $table->string('background_color')->nullable();
+            $table->string('text_color')->nullable();
+            $table->string('text_highlight_color')->nullable();
             $table->timestamps();
         });
     }
