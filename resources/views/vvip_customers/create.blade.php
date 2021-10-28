@@ -252,6 +252,42 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 col-md-offset-3" id="url_section">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text text-center">URL</h3>
+                        <input type="text" class="form-control">
+                        <button class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3" id="email_section">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text text-center">Email</h3>
+                        <input type="text" class="form-control">
+                        <button class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3" id="sms_section">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text text-center">SMS</h3>
+                        <input type="text" class="form-control">
+                        <button class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-md-offset-3" id="phone_section">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="text text-center">Phone</h3>
+                        <input type="text" class="form-control">
+                        <button class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -306,6 +342,7 @@ $(function() {
 
     $('#contact_section').hide();
     $('#deep_link_section').hide();
+    $('#url_section').hide();
 
 
     $('#con_tact').on('click', function() {
@@ -327,6 +364,11 @@ $(function() {
     $('#section_cancel').on('click', function() {
         $('#create_section').show();
         $('#deep_link_section').hide();
+    });
+
+    $('#url').on('click', function(){
+        $('#create_section').hide();
+        $('#url_section').show();
     });
 
     var data_url = '{{ url('api/get_datas') }}';

@@ -78,21 +78,21 @@
                     <h3 class="text text-center">Email and Internet</h3>
                     <p class="text">Personal Email : `+ response.data['email_and_internet']['personalemail'] +`</p>
                     <p class="text">Office Email : `+ response.data['email_and_internet']['office_email'] +`</p>
-                    <p class="text">Website1 : <a href="">`+ response.data['email_and_internet']['website1'] +`</a></p>
-                    <p class="text">Website2 : <a href="">`+ response.data['email_and_internet']['website2'] +`</a></p>
-                    <p class="text">Website3 : <a href="">`+ response.data['email_and_internet']['website3'] +`</a></p>
+                    <p class="text">Website1 : <a href="`+ response.data['email_and_internet']['website1'] +`">`+ response.data['email_and_internet']['website1'] +`</a></p>
+                    <p class="text">Website2 : <a href="`+ response.data['email_and_internet']['website2'] +`">`+ response.data['email_and_internet']['website2'] +`</a></p>
+                    <p class="text">Website3 : <a href="`+ response.data['email_and_internet']['website3'] +`">`+ response.data['email_and_internet']['website3'] +`</a></p>
                 </div>
             </div>`)
+            } else if(response.request == "deep_link"){
+                data_view = response.deep_link;
+                $.each(data_view, function(i,value){ 
+                    if(value['active'] == 1){
+                        window.location = value['url'];
+                    }
+                });
             }
-            data_view = response.deep_link;
-            $.each(data_view, function(i,value){ 
-                if(value['active'] == 1){
-                    window.location = value['url'];
-                }
+            }
         });
-        }
-    });
-
 </script>
 @endsection
 @endsection

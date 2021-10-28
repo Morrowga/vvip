@@ -83,7 +83,9 @@ class UserPanelController extends Controller
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $exist->image = $imageName;
-                } 
+                } else {
+                    $exist->image = $image;
+                }
                 $exist->save();
     
                 $messages = [
@@ -127,6 +129,8 @@ class UserPanelController extends Controller
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $contact->image = $imageName;
+                } else {
+                    $exist->image = $image;
                 }
                 $contact->save();
 
