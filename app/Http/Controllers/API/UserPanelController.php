@@ -13,6 +13,7 @@ use App\Models\DeepLink;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Helpers\Helper;
+use App\Models\Eusp;
 use App\Models\SelectedView;
 
 class UserPanelController extends Controller
@@ -324,4 +325,125 @@ class UserPanelController extends Controller
             return $messages;
         }
     }
+
+    public function create_url(Request $request){
+        if($request){
+            $userid = $request->user_id;
+            $url = $request->url;
+            $check = Eusp::where('user_id', $userid)->first();
+            if($check !== null){
+                $create_url = new Eusp();
+                $create_url->url = $url;
+                $create_url->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $create_url->url
+                ];
+                return $messages;
+            } else {
+                $check->url = $url;
+                $check->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $check->url
+                ];
+                return $messages;
+            }
+        }
+    }
+
+    public function create_sms(Request $request){
+        if($request){
+            $userid = $request->user_id;
+            $sms = $request->sms;
+            $check = Eusp::where('user_id', $userid)->first();
+            if($check !== null){
+                $create_sms = new Eusp();
+                $create_sms->sms = $sms;
+                $create_sms->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $create_sms->sms
+                ];
+                return $messages;
+            } else {
+                $check->sms = $sms;
+                $check->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $check->sms
+                ];
+                return $messages;
+            }
+        }
+    }
+
+    public function create_email(Request $request){
+        if($request){
+            $userid = $request->user_id;
+            $email = $request->email;
+            $check = Eusp::where('user_id', $userid)->first();
+            if($check !== null){
+                $create_email = new Eusp();
+                $create_email->email = $email;
+                $create_email->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $create_email->email
+                ];
+                return $messages;
+            } else {
+                $check->email = $email;
+                $check->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $check->email
+                ];
+                return $messages;
+            }
+        }
+    }
+
+    public function create_phone(Request $request){
+        if($request){
+            $userid = $request->user_id;
+            $phone = $request->phone;
+            $check = Eusp::where('user_id', $userid)->first();
+            if($check !== null){
+                $create_phone = new Eusp();
+                $create_phone->phone = $phone;
+                $create_phone->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $create_phone->phone
+                ];
+                return $messages;
+            } else {
+                $check->phone = $phone;
+                $check->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $check->phone
+                ];
+                return $messages;
+            }
+        }
+    }
+    
 }

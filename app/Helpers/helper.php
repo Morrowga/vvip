@@ -49,7 +49,7 @@ class Helper{
                             "state" => $contact_data->work_state,
                             "country" => $contact_data->work_country
                         ],
-                        "background-color" => $contact_data->background_color,
+                        "background_color" => $contact_data->background_color,
                         "text_color" => $contact_data->text_color,
                         "text_highlight_color" => $contact_data->text_highlight_color
                     ];

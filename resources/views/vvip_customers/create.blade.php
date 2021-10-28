@@ -343,6 +343,10 @@ $(function() {
     $('#contact_section').hide();
     $('#deep_link_section').hide();
     $('#url_section').hide();
+    $('#sms_section').hide();
+    $('#email_section').hide();
+    $('#phone_section').hide();
+
 
 
     $('#con_tact').on('click', function() {
@@ -369,6 +373,21 @@ $(function() {
     $('#url').on('click', function(){
         $('#create_section').hide();
         $('#url_section').show();
+    });
+
+    $('#email_send').on('click', function(){
+        $('#create_section').hide();
+        $('#email_section').show();
+    });
+
+    $('#sms').on('click', function(){
+        $('#create_section').hide();
+        $('#sms_section').show();
+    });
+
+    $('#call').on('click', function(){
+        $('#create_section').hide();
+        $('#phone_section').show();
     });
 
     var data_url = '{{ url('api/get_datas') }}';
