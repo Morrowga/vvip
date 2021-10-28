@@ -299,6 +299,10 @@
 <script>
 $(function() {
     //button_hide_show_play
+    $('.file_upload').change(function(){
+        var url = window.URL.createObjectURL(this.files[0]);
+        $('#img').attr('src',url);
+    });
 
     $('#contact_section').hide();
     $('#deep_link_section').hide();
@@ -441,11 +445,6 @@ $(function() {
             if(response.status != "500"){
                 var image_display = response.data['image'].replace('http://vvip9.co/','../');
             $('#img').attr('src', image_display);
-
-            $('.file_upload').change(function(){
-                var url = window.URL.createObjectURL(this.files[0]);
-                $('#img').attr('src',url);
-            });
             // $('.file_upload').val(image_keep);
             $('#first_name').val(response.data['personal']['first_name']);
             $('#last_name').val(response.data['personal']['last_name']);
