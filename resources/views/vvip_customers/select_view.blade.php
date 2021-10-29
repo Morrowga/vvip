@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<input type="text" id="request" value="{{ isset($data_module) ? $data_module->request_name : '0' }}" hidden>
-<input type="text" id="user_id" value="{{ isset($data_module) ? $data_module->user_id : '0' }}" hidden>
-<input type="text" id="self_request" value="{{ isset($data_module) ? $data_module->user_id : '0' }}" hidden>
+<input type="text" id="request" value="{{ isset($data_module) ? $data_module->request_name : '' }}" hidden>
+<input type="text" id="user_id" value="{{ isset($data_module) ? $data_module->user_id : '' }}" hidden>
+<input type="text" id="self_request" value="{{ isset($data_module) ? $data_module->self_request : '' }}" hidden>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
