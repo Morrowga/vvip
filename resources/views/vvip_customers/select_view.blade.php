@@ -31,6 +31,7 @@
         success: function(response){
             if(response != null){
                 if(response.request == "contacts"){
+                    alert('helo');
                     var image_display = response.data['image'].replace('http://vvip9.co/','../');
                     $('.data_view').append(`<div class="d-flex justify-content-center">
                     <div class="col-md-6" style="text-align:center;">
@@ -84,7 +85,6 @@
                     </div>
                 </div>`)
             } else if(response.request == "deep_link"){
-                alert('helo');
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
