@@ -90,7 +90,8 @@
                     if(value['active'] == 1){
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
-                            window.location = "googlechrome://domain";
+                            var app_url = "googlechrome://domain";
+                            chrome.tabs.create({app_url, active:true})
                         }
                     }
                 });
