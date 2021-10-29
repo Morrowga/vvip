@@ -13,6 +13,7 @@ use App\Models\DeepLink;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use App\Helpers\Helper;
+use App\Models\Action;
 use App\Models\Eusp;
 use App\Models\SelectedView;
 
@@ -330,6 +331,27 @@ class UserPanelController extends Controller
         }
     }
 
+    public function getChangeAction(Request $request){
+       $get_action = Action::get();
+       $array = [];
+       foreach($get_action as $action){
+           $data = [
+                "id" => $get_action->id,
+                "name" => $get_action->name,
+                "action_image" => $get_action->action_image,
+           ];
+           array_push($array, $data);
+       }
+
+       $messages = [
+            "status" => "200",
+            "message" => "success",
+            "data" => $array
+       ];
+
+       return $messages;
+    }
+
     public function create_url(Request $request){
         if($request){
             $userid = $request->user_id;
@@ -470,3 +492,4 @@ class UserPanelController extends Controller
     }
     
 }
+

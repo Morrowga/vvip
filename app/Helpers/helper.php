@@ -3,6 +3,7 @@ namespace App\Helpers;
 use App\Models\DeepLink;
 use App\Models\Contact;
 use App\Models\Eusp;
+use App\Models\SelectedView;
 use App\Models\User;
 
 class Helper{
@@ -102,6 +103,17 @@ class Helper{
             } else if($request_name === "get_eusp"){
                 $eusp = Eusp::where('user_id', $user_id)->first();
                 if(!empty($eusp)){
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "request" => "eusp",
+                        "data" => $eusp
+                    ];
+                    return $messages;
+                }
+            } else if($request_name === "get_selected_action"){
+                $get_select = SelectedView::where('user_id', $user_id)->first();
+                if(!empty($get_select)){
                     $messages = [
                         "status" => "200",
                         "message" => "success",

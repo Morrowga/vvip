@@ -55,4 +55,7 @@ Route::post('create_sms', [App\Http\Controllers\API\UserPanelController::class, 
 
 Route::post('create_phone', [App\Http\Controllers\API\UserPanelController::class, 'create_phone']);
 
+Route::get('get_actions', [App\Http\Controllers\API\UserPanelController::class, 'getChangeAction']);
+
+
 //379d0d9f-62a3-4d18-9e4d-70f378ff6392
