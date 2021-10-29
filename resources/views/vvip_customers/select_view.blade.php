@@ -1,11 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-
+@if($data_module->request_name == null)
 <input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
 <input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
 <input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
-<iframe id="ifrm" src="" hidden></iframe>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
@@ -111,6 +110,19 @@
         });
 </script>
 @endsection
+@else 
+<div class="container">
+<div class="d-flex justify-content-center">
+    <img src="../images/logo.jpeg" alt="" width="250" height="250">
+</div>
+<div class="container">
+    <div class="col-md-12">
+        <div class="data_view">
+                <h1 class="text text-center">{{ $messages }}</h1>
+        </div>
+    </div>
+</div>
+</div>
 @endsection
 
 
