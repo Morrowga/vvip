@@ -90,7 +90,7 @@
                     if(value['active'] == 1){
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
-                            const app_url = "intent://facebook.com/#Intent;scheme=https;package=com.facebook.android;end";
+                            const app_url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
                             window.location.replace(app_url);
                         }
                     }
