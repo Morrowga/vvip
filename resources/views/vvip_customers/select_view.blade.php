@@ -2,8 +2,8 @@
 
 @section('content')
 <input type="text" id="request" value="{{ isset($data_module) ? $data_module->request_name : '0' }}" hidden>
-<input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
-<input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
+<input type="text" id="user_id" value="{{ isset($data_module) ? $data_module->user_id : '0' }}" hidden>
+<input type="text" id="self_request" value="{{ isset($data_module) ? $data_module->user_id : '0' }}" hidden>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
@@ -29,7 +29,8 @@
         },  
         type: 'POST',
         success: function(response){
-            if(response.request == "contacts"){
+            if(response != null){
+                if(response.request == "contacts"){
                     var image_display = response.data['image'].replace('http://vvip9.co/','../');
                     $('.data_view').append(`<div class="d-flex justify-content-center">
                     <div class="col-md-6" style="text-align:center;">
@@ -105,6 +106,9 @@
                         );
                     }
                 } 
+             } else {
+                 alaert('null');
+             }
             }
         });
 </script>
