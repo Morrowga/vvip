@@ -90,7 +90,7 @@
                         var isMobile = /Android/i.test(navigator.userAgent);
                         if (isMobile) {
                             var cut_http = value['url'].replace('https://','');
-                            var package_name = value['package_name'];
+                            var package_name = value['app_package'];
                             const app_url = "intent://"+ cut_http +"#Intent;scheme=https;package="+ package_name +";end";
                             window.location.replace(app_url);
                         }
