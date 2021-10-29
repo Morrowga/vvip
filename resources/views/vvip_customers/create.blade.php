@@ -595,7 +595,7 @@ $(function() {
             request_name: "get_eusp"
         },
         success:function(response){
-            console.log(response);
+            console.log(response.data);
             $('#get_url').val(response.data['url']);
             $('#e_address').val(response.data['email_address']);
             $('#e_subject').val(response.data['email_subject']);
