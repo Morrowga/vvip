@@ -94,8 +94,6 @@
                             // var package_name = value['app_package'];
                             const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
                             window.location.replace(url);
-                            }
-                        }
                     }
                 });
             } else if(response.request == "eusp"){
