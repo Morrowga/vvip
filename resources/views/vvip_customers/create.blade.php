@@ -253,7 +253,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-3" id="url_section">
-                <form action="" method="POST" id="url_form">
+                <form action="" method="POST" id="get_url_form">
                 <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                 <div class="card">
                     <div class="card-body">
@@ -605,7 +605,7 @@ $(function() {
         }
     });
 
-    $('#url_form').submit(function(e){
+    $('#get_url_form').submit(function(e){
         e.preventDefault();
         var create_url = '{{ url('api/create_url') }}';
         var token =  $('#token').val();

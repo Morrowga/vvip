@@ -87,7 +87,7 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        var isMobile = /Android/i.test(navigator.userAgent);
                         if (isMobile) {
                             var cut_http = value['url'].replace('https://','');
                             var package_name = value['package_name'];
