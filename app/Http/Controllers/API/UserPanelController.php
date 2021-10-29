@@ -275,7 +275,7 @@ class UserPanelController extends Controller
         $user = User::where('url', $url)->first();
         if($user !== null){
             $data_module = SelectedView::where('user_id', $user->id)->first();
-            if($data_module->request_name === null){
+            if(empty($data_module->request_name)){
                 $messages = [
                     "message" => 'Any Action is not Active'
                 ];
