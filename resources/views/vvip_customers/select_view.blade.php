@@ -91,7 +91,8 @@
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
                             var cut_http = value['url'].replace('https://','');
-                            const app_url = "intent://"+ cut_http +"#Intent;scheme=https;package=com.instagram.android;end";
+                            var package_name = value['package_name'];
+                            const app_url = "intent://"+ cut_http +"#Intent;scheme=https;package="+ package_name +";end";
                             window.location.replace(app_url);
                         }
                     }

@@ -51,9 +51,9 @@ class UserRegisterController extends Controller
                         
                         
                         // $links = ['Facebook', 'Instagram', 'Youtube', 'Tiktok', 'Pinterest', 'LinkedIn', 'Tripadvisor','Zoom','Google Maps','Vimeo','Amazon'];
-                        $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png'],
-                        ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png'],
-                        ['Zoom','https://i.ibb.co/N74Prr2/zoom-meeting.png'], ['Google Maps','https://i.ibb.co/xSxcbhT/google-map.png'],['Vimeo','https://i.ibb.co/NSxKKZ2/vimeo.png'],['Amazon','https://i.ibb.co/QdrNqJn/amazon.png']]];
+                        $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
+                        ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png','com.pinterest'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png','com.linkedin.android'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png','com.tripadvisor.tripadvisor'],
+                        ['Zoom','https://i.ibb.co/N74Prr2/zoom-meeting.png','us.zoom.videomeetings'], ['Google Maps','https://i.ibb.co/xSxcbhT/google-map.png','com.google.android.apps.mapslite'],['Vimeo','https://i.ibb.co/NSxKKZ2/vimeo.png','com.vimeocreate.videoeditor.moviemaker'],['Amazon','https://i.ibb.co/QdrNqJn/amazon.png','amazon&c=apps']]];
                        
                                
                         foreach($link_datas['links'] as $link){
@@ -61,6 +61,7 @@ class UserRegisterController extends Controller
                             $deep_link->user_id =  $user->id;
                             $deep_link->name = $link[0];
                             $deep_link->icon = $link[1];
+                            $deep_link->app_package = $link[2];
                             $deep_link->active = 0;
                             $deep_link->save();
                         }
