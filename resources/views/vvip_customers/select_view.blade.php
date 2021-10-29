@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+
 <input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
 <input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
-<input type="text" id="self_request" value="{{ $data_module->self_request }}" hidden>
+<input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
+<iframe id="ifrm" src="" hidden></iframe>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
@@ -29,9 +31,7 @@
         },  
         type: 'POST',
         success: function(response){
-            if(response != null){
-                if(response.request == "contacts"){
-                    alert('helo');
+            if(response.request == "contacts"){
                     var image_display = response.data['image'].replace('http://vvip9.co/','../');
                     $('.data_view').append(`<div class="d-flex justify-content-center">
                     <div class="col-md-6" style="text-align:center;">
@@ -88,12 +88,11 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        // var isMobile = /Android/i.test(navigator.userAgent);
-                        // if (isMobile) {
-                            // var cut_http = value['url'].replace('https://','');
-                            // var package_name = value['app_package'];
-                            const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                            window.location.replace(url);
+                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            const app_url = "intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end";
+                            window.location.replace(app_url);
+                        }
                     }
                 });
             } else if(response.request == "eusp"){
@@ -106,14 +105,10 @@
                         );
                     }
                 } 
-             } else {
-                 alaert('null');
-             }
             }
         });
 </script>
 @endsection
-
 @endsection
 
 
