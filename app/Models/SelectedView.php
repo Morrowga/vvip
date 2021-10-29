@@ -9,7 +9,7 @@ class SelectedView extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['request_name', 'user_id'];
+    protected $fillable = ['request_name', 'user_id', 'self_request_name'];
 
     protected $table = "selected_views";
 }

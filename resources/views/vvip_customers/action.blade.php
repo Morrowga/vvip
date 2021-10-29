@@ -48,14 +48,14 @@
                 <div class="d-flex justify-content-center">
                     <div class="col-md-4 col-md-offset-4">
                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-                    <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts">Contact</button>
-                    <button class="btn btn-dark btn-block action-btn" id="link_tree_active">Link Tree</button>
-                    <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links">Deep Link</button>
-                    <button class="btn btn-dark btn-block action-btn" id="url_active">URL</button>
-                    <button class="btn btn-dark btn-block action-btn" id="email_active">Email</button>
+                    <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts" data-id="contact_active">Contact</button>
+                    <button class="btn btn-dark btn-block action-btn" id="link_tree_active" data-id="link_tree_active">Link Tree</button>
+                    <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links" data-id="deep_link_active">Deep Link</button>
+                    <button class="btn btn-dark btn-block action-btn" id="url_active" value="get_eusp" data-id="url_active">URL</button>
+                    <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active">Email</button>
                     <button class="btn btn-dark btn-block action-btn" id="contact_social_active">Contact Social</button>
-                    <button class="btn btn-dark btn-block action-btn" id="sms_active">SMS</button>
-                    <button class="btn btn-dark btn-block action-btn" id="call">Call</button>
+                    <button class="btn btn-dark btn-block action-btn" id="sms_active" value="get_eusp" data-id="sms_active">SMS</button>
+                    <button class="btn btn-dark btn-block action-btn" id="call_active" value="get_eusp" data-id="call_active">Call</button>
                     <button class="btn btn-dark btn-block action-btn" id="event">Event</button>
                     <button class="btn btn-dark btn-block action-btn" id="personal">Personal</button>
                     </div>
@@ -91,7 +91,7 @@ $(function() {
     var action_url = '{{ url('api/change_action') }}';
     var token =  $('#token').val();
     $('.action-btn').on('click', function(e){
-        $request_name = $('#' + e.target.id).val();
+        var request_name = $('#' + e.target.id).val();
         $.ajax({
            url:action_url,
            headers: {
@@ -100,13 +100,21 @@ $(function() {
            method:'POST',
            data:{
                 user_id: user_id,  
-                request_name: $request_name
+                request_name: request_name,
+                self_request_name: e.target.id
                 },
            success:function(response){
-               var id_value = ['contact_active', 'deep_link_active'];
+               console.log(response);
+            // var check = $('#' + response.data['self_request_name']);
+            // if(check.val() == response.data['request_name']) {
+            //    check.attr('style', 'background-color: rgb(217,181,81) !important');
+            // } else {
+            //    check.attr('style', 'background-color: rgb(0,0,0) !important');
+            // }
+               var id_value = ['contact_active', 'deep_link_active', 'url_active', 'email_active', 'sms_active', 'call_active'];
                $.each(id_value, function(i,value){
                    var check = $('#' + value);
-                   if(check.val() == response.data['request_name']){
+                   if(check.attr('data-id') == response.data['self_request_name']){
                        check.attr('style', 'background-color: rgb(217,181,81) !important');
                    } else {
                        check.attr('style', 'background-color: rgb(0,0,0) !important');

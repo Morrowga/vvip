@@ -181,7 +181,7 @@
                     <div class="card-body">
                         <h4 class="text text-center">Mobile</h4>
                         <input type="text" id="mobile" class="form-control" placeholder="Mobile" name="mobile">
-                        <input type="text" id="home" class="form-control mt-1" placeholder="Home" name="home">
+                        <input type="text" id="phone" class="form-control mt-1" placeholder="Phone" name="phone">
                         <input type="text" id="office" class="form-control mt-1" placeholder="Office" name="office">
                     </div>
 
@@ -189,15 +189,15 @@
                         <h4 class="text text-center">Email & Internet</h4>
                         <input type="text" id="personal_email" class="form-control" placeholder="Personal Email" name="personalemail">
                         <input type="text" id="office_email" class="form-control mt-1" placeholder="Office Email" name="office_email">
-                        <input type="text" id="website1" class="form-control mt-1" placeholder="Website1" name="website1">
-                        <input type="text" id="website2" class="form-control mt-1" placeholder="Website2" name="website2">
-                        <input type="text" id="website3" class="form-control mt-1" placeholder="Website3" name="website3">
+                        <input type="text" id="website1" class="form-control mt-1" placeholder="Website One" name="website1">
+                        <input type="text" id="website2" class="form-control mt-1" placeholder="Website Two" name="website2">
+                        <input type="text" id="website3" class="form-control mt-1" placeholder="Website Three" name="website3">
                     </div>
 
                     <div class="card-body">
                         <h4 class="text text-center">Home Address</h4>
-                        <input type="text" id="home_street1" class="form-control" placeholder="Street 1" name="home_street1">
-                        <input type="text" id="home_street2" class="form-control mt-1" placeholder="Street 2" name="home_street2">
+                        <input type="text" id="home_street1" class="form-control" placeholder="Street One" name="home_street1">
+                        <input type="text" id="home_street2" class="form-control mt-1" placeholder="Street Two" name="home_street2">
                         <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="Postal Code" name="home_postal_code">
                         <input type="text" id="home_city" class="form-control mt-1" placeholder="City" name="home_city">
                         <input type="text" id="home_state" class="form-control mt-1" placeholder="State" name="state">
@@ -206,8 +206,8 @@
 
                     <div class="card-body">
                         <h4 class="text text-center">Work Address</h4>
-                        <input type="text" id="work_street1" class="form-control" placeholder="Street 1" name="work_street1">
-                        <input type="text" id="work_street2" class="form-control mt-1" placeholder="Street 2" name="work_street2">
+                        <input type="text" id="work_street1" class="form-control" placeholder="Street One" name="work_street1">
+                        <input type="text" id="work_street2" class="form-control mt-1" placeholder="Street Two" name="work_street2">
                         <input type="text" id="work_postal_code" class="form-control mt-1" placeholder="Postal Code" name="work_postal_code">
                         <input type="text" id="work_city" class="form-control mt-1" placeholder="City" name="work_city">
                         <input type="text" id="work_state" class="form-control mt-1" placeholder="State" name="work_state">
@@ -253,40 +253,55 @@
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-3" id="url_section">
+                <form action="" method="POST" id="url_form">
+                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                 <div class="card">
                     <div class="card-body">
                         <h3 class="text text-center">URL</h3>
-                        <input type="text" class="form-control">
-                        <button class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
+                        <input type="text" class="form-control" name="url" id="get_url">
+                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="col-md-6 col-md-offset-3" id="email_section">
+                <form action="" method="POST" id="email_form">
+                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                 <div class="card">
                     <div class="card-body">
                         <h3 class="text text-center">Email</h3>
-                        <input type="text" class="form-control">
-                        <button class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
+                        <input type="text" name="email_address" id="e_address" class="form-control" placeholder="email_address">
+                        <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="email_subject">
+                        <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="email_body"></textarea>
+                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="col-md-6 col-md-offset-3" id="sms_section">
+                <form action="" method="POST" id="sms_form">
+                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                 <div class="card">
                     <div class="card-body">
                         <h3 class="text text-center">SMS</h3>
-                        <input type="text" class="form-control">
-                        <button class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
+                        <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="Sms Number">
+                        <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="Sms Text"></textarea>
+                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
                     </div>
                 </div>
+                </form>
             </div>
             <div class="col-md-6 col-md-offset-3" id="phone_section">
+                <form action="" method="POST" id="phone_form">
+                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
                 <div class="card">
                     <div class="card-body">
                         <h3 class="text text-center">Phone</h3>
-                        <input type="text" class="form-control">
-                        <button class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
+                        <input type="number" class="form-control" id="phone_num" name="phone">
+                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
     </div>
@@ -517,17 +532,17 @@ $(function() {
             $('#office').val(response.data['mobile']['office']);
             $('#personalemail').val(response.data['email_and_internet']['personalemail']);
             $('#office_email').val(response.data['email_and_internet']['office_email']);
-            $('#website1').val(response.data['email_and_internet']['website1']);
-            $('#website2').val(response.data['email_and_internet']['website2']);
-            $('#website3').val(response.data['email_and_internet']['website3']);
-            $('#home_street1').val(response.data['home_address']['street1']);
-            $('#home_street2').val(response.data['home_address']['street2']);
+            $('#website1').val(response.data['email_and_internet']['website_one']);
+            $('#website2').val(response.data['email_and_internet']['website_two']);
+            $('#website3').val(response.data['email_and_internet']['website_three']);
+            $('#home_street1').val(response.data['home_address']['street_one']);
+            $('#home_street2').val(response.data['home_address']['street_two']);
             $('#home_postal_code').val(response.data['home_address']['postal_code']);
             $('#home_city').val(response.data['home_address']['city']);
             $('#home_state').val(response.data['home_address']['state']);
             $('#home_country').val(response.data['home_address']['country']);
-            $('#work_street1').val(response.data['work_address']['street1']);
-            $('#work_street2').val(response.data['work_address']['street2']);
+            $('#work_street1').val(response.data['work_address']['street_one']);
+            $('#work_street2').val(response.data['work_address']['street_two']);
             $('#work_postal_code').val(response.data['work_address']['postal_code']);
             $('#work_city').val(response.data['work_address']['city']);
             $('#work_state').val(response.data['work_address']['state']);
@@ -569,6 +584,129 @@ $(function() {
                 });
             }
             });  
+    });
+
+
+    $.ajax({
+        url:data_url,
+        method:'POST',
+        data:{
+            user_id: user_id,  
+            request_name: "get_eusp"
+        },
+        success:function(response){
+            $('#get_url').val(response.data['url']);
+            $('#e_address').val(response.data['email_address']);
+            $('#e_subject').val(response.data['email_subject']);
+            $('#e_body').val(response.data['email_body']);
+            $('#sms_no').val(response.data['sms_no']);
+            $('#sms_text').val(response.data['sms_text']);
+            $('#phone_num').val(response.data['phone']);
+        }
+    });
+
+    $('#url_form').submit(function(e){
+        e.preventDefault();
+        var create_url = '{{ url('api/create_url') }}';
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: create_url,
+            method:'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                    'X-CSRF-Token': token 
+            },
+            data: formData,
+            success:function(response){
+                console.log(response.message);
+                $('#save_modal').modal('show');
+                $('#url_section').hide();
+                $('#ok').on('click', function(){
+                    $('#create_section').show();
+                });
+            }
+        });  
+    });
+
+    $('#email_form').submit(function(e){
+        e.preventDefault();
+        var create_email = '{{ url('api/create_email') }}';
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: create_email,
+            method:'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                    'X-CSRF-Token': token 
+            },
+            data: formData,
+            success:function(response){
+                console.log(response.message);
+                $('#save_modal').modal('show');
+                $('#email_section').hide();
+                $('#ok').on('click', function(){
+                    $('#create_section').show();
+                });
+            }
+        });  
+    });
+
+    $('#sms_form').submit(function(e){
+        e.preventDefault();
+        var create_email = '{{ url('api/create_sms') }}';
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: create_email,
+            method:'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                    'X-CSRF-Token': token 
+            },
+            data: formData,
+            success:function(response){
+                console.log(response.message);
+                $('#save_modal').modal('show');
+                $('#sms_section').hide();
+                $('#ok').on('click', function(){
+                    $('#create_section').show();
+                });
+            }
+        });  
+    });
+
+    $('#phone_form').submit(function(e){
+        e.preventDefault();
+        var create_email = '{{ url('api/create_phone') }}';
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: create_email,
+            method:'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                    'X-CSRF-Token': token 
+            },
+            data: formData,
+            success:function(response){
+                console.log(response.message);
+                $('#save_modal').modal('show');
+                $('#phone_section').hide();
+                $('#ok').on('click', function(){
+                    $('#create_section').show();
+                });
+            }
+        });  
     });
 });
 </script>

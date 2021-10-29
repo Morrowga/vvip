@@ -2,6 +2,7 @@
 namespace App\Helpers;
 use App\Models\DeepLink;
 use App\Models\Contact;
+use App\Models\Eusp;
 use App\Models\User;
 
 class Helper{
@@ -29,21 +30,21 @@ class Helper{
                         "email_and_internet" => [
                             "personalemail" => $contact_data->personalemail,
                             "office_email" => $contact_data->office_email,
-                            "website1" => $contact_data->website1,
-                            "website2" => $contact_data->website2,
-                            "website3" => $contact_data->website3
+                            "website_one" => $contact_data->website1,
+                            "website_two" => $contact_data->website2,
+                            "website_three" => $contact_data->website3
                         ],
                         "home_address" => [
-                            "street1" => $contact_data->home_street1,
-                            "street2" => $contact_data->home_street2,
+                            "street_one" => $contact_data->home_street1,
+                            "street_two" => $contact_data->home_street2,
                             "postal_code" => $contact_data->home_postal_code,
                             "city" => $contact_data->home_city,
                             "state" => $contact_data->home_state,
                             "country" => $contact_data->home_country
                         ],
                         "work_address" => [
-                            "street1" => $contact_data->work_street1,
-                            "street2" => $contact_data->work_street2,
+                            "street_one" => $contact_data->work_street1,
+                            "street_two" => $contact_data->work_street2,
                             "postal_code" => $contact_data->work_postal_code,
                             "city" => $contact_data->work_city,
                             "state" => $contact_data->work_state,
@@ -98,6 +99,17 @@ class Helper{
                     ];
                     return $messages; 
                 }    
+            } else if($request_name === "get_eusp"){
+                $eusp = Eusp::where('user_id', $user_id)->first();
+                if(!empty($eusp)){
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "request" => "eusp",
+                        "data" => $eusp
+                    ];
+                    return $messages;
+                }
             }
         }
     }

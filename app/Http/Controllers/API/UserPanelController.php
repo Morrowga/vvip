@@ -292,28 +292,32 @@ class UserPanelController extends Controller
         if($request){
             $userid = $request->user_id;
             $request_name = $request->request_name;
+            $self_request = $request->self_request_name;
             $checkexist = SelectedView::where('user_id', $userid)->first();
             if($checkexist === null){
-                $new_active = new SelectedView();
-                $new_active->user_id = $userid;
-                $new_active->request_name = $request_name;
-                $new_active->save();
-    
-                $messages = [
-                    "status" => "200",
-                    "message" => "success new",
-                    "data" => $new_active
-                ];
-                return $messages;
+                    $new_active = new SelectedView();
+                    $new_active->user_id = $userid;
+                    $new_active->request_name = $request_name;
+                    $new_active->self_request;
+                    $new_active->save();
+        
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success new",
+                        "data" => $new_active,
+                    ];
+                    return $messages;
+               
             } else {
                 $checkexist->request_name = $request_name;
+                $checkexist->self_request_name = $self_request;
                 $checkexist->save();
-
+    
                 $messages = [
-                    "status" => "200",
-                    "message" => "success update",
-                    "data" => $checkexist
-                ];
+                        "status" => "200",
+                        "message" => "success update",
+                        "data" => $checkexist,
+                    ];
                 return $messages;
             }
             
@@ -331,15 +335,16 @@ class UserPanelController extends Controller
             $userid = $request->user_id;
             $url = $request->url;
             $check = Eusp::where('user_id', $userid)->first();
-            if($check !== null){
+            if($check === null){
                 $create_url = new Eusp();
+                $create_url->user_id = $userid;
                 $create_url->url = $url;
                 $create_url->save();
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $create_url->url
+                    "url" => $create_url->url
                 ];
                 return $messages;
             } else {
@@ -349,7 +354,7 @@ class UserPanelController extends Controller
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $check->url
+                    "url" => $check->url
                 ];
                 return $messages;
             }
@@ -359,27 +364,33 @@ class UserPanelController extends Controller
     public function create_sms(Request $request){
         if($request){
             $userid = $request->user_id;
-            $sms = $request->sms;
+            $sms_no = $request->sms_no;
+            $sms_text = $request->sms_text;
             $check = Eusp::where('user_id', $userid)->first();
-            if($check !== null){
+            if($check === null){
                 $create_sms = new Eusp();
-                $create_sms->sms = $sms;
+                $create_sms->user_id = $userid;
+                $create_sms->sms_no = $sms_no;
+                $create_sms->sms_text = $sms_text;
                 $create_sms->save();
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $create_sms->sms
+                    "sms_no" => $create_sms->sms_no,
+                    "sms_text" => $create_sms->sms_text
                 ];
                 return $messages;
             } else {
-                $check->sms = $sms;
+                $check->sms_no = $sms_no;
+                $check->sms_text = $sms_text;
                 $check->save();
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $check->sms
+                    "sms_no" => $check->sms_no,
+                    "sms_text" => $check->sms_text
                 ];
                 return $messages;
             }
@@ -389,27 +400,38 @@ class UserPanelController extends Controller
     public function create_email(Request $request){
         if($request){
             $userid = $request->user_id;
-            $email = $request->email;
+            $email_address = $request->email_address;
+            $email_subject = $request->email_subject;
+            $email_body = $request->email_body;
             $check = Eusp::where('user_id', $userid)->first();
-            if($check !== null){
+            if($check === null){
                 $create_email = new Eusp();
-                $create_email->email = $email;
+                $create_email->user_id = $userid;
+                $create_email->email_address = $email_address;
+                $create_email->email_subject = $email_subject;
+                $create_email->email_body = $email_body;
                 $create_email->save();
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $create_email->email
+                    "email_address" => $create_email->email_address,
+                    "email_subject" => $create_email->email_subject,
+                    "email_body" => $create_email->email_body,
                 ];
                 return $messages;
             } else {
-                $check->email = $email;
+                $check->email_address = $email_address;
+                $check->email_subject = $email_subject;
+                $check->email_body = $email_body;
                 $check->save();
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $check->email
+                    "email_address" => $check->email_address,
+                    "email_subject" => $check->email_subject,
+                    "email_body" => $check->email_body,
                 ];
                 return $messages;
             }
@@ -421,8 +443,9 @@ class UserPanelController extends Controller
             $userid = $request->user_id;
             $phone = $request->phone;
             $check = Eusp::where('user_id', $userid)->first();
-            if($check !== null){
+            if($check === null){
                 $create_phone = new Eusp();
+                $create_phone->user_id = $userid;
                 $create_phone->phone = $phone;
                 $create_phone->save();
 

@@ -9,7 +9,7 @@ class Eusp extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['email', 'url', 'sms', 'phone', 'user_id'];
+    protected $fillable = ['email_address','email_subject','email_body','url', 'sms_no','sms_text', 'phone', 'user_id'];
 
     protected $table = "eusps";
 }
