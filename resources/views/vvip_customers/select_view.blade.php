@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<input type="text" id="request" value="{{ isset($data_module) ? $data_module->request_name : '' }}" hidden>
-<input type="text" id="user_id" value="{{ isset($data_module) ? $data_module->user_id : '' }}" hidden>
-<input type="text" id="self_request" value="{{ isset($data_module) ? $data_module->self_request : '' }}" hidden>
+<input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
+<input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
+<input type="text" id="self_request" value="{{ $data_module->self_request }}" hidden>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
@@ -88,12 +88,13 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var isMobile = /Android/i.test(navigator.userAgent);
-                        if (isMobile) {
-                            var cut_http = value['url'].replace('https://','');
-                            var package_name = value['app_package'];
-                            const app_url = "intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end";
-                            window.location.replace(app_url);
+                        // var isMobile = /Android/i.test(navigator.userAgent);
+                        // if (isMobile) {
+                            // var cut_http = value['url'].replace('https://','');
+                            // var package_name = value['app_package'];
+                            const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+                            window.location.replace(url);
+                            }
                         }
                     }
                 });
