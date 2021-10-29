@@ -290,7 +290,7 @@ class UserPanelController extends Controller
 
 
     public function changeAction(Request $request){
-        if($request){
+        if($request->user_id){
             $userid = $request->user_id;
             $request_name = $request->request_name;
             $self_request = $request->self_request_name;
