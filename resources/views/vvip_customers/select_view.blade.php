@@ -84,6 +84,7 @@
                     </div>
                 </div>`)
             } else if(response.request == "deep_link"){
+                alert('helo');
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
