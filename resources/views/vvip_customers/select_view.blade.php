@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
+<input type="text" id="request" value="{{ isset($data_module) ? $data_module->request_name : '0' }}" hidden>
 <input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
 <input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
 
