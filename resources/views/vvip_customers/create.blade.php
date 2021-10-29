@@ -596,13 +596,17 @@ $(function() {
         },
         success:function(response){
             console.log(response.data);
-            $('#get_url').val(response.data['url']);
-            $('#e_address').val(response.data['email_address']);
-            $('#e_subject').val(response.data['email_subject']);
-            $('#e_body').val(response.data['email_body']);
-            $('#sms_no').val(response.data['sms_no']);
-            $('#sms_text').val(response.data['sms_text']);
-            $('#phone_num').val(response.data['phone']);
+            if(response.data == null || response.data == ''){
+                console.log('no_data_yet');
+            } else {
+                $('#get_url').val(response.data['url']);
+                $('#e_address').val(response.data['email_address']);
+                $('#e_subject').val(response.data['email_subject']);
+                $('#e_body').val(response.data['email_body']);
+                $('#sms_no').val(response.data['sms_no']);
+                $('#sms_text').val(response.data['sms_text']);
+                $('#phone_num').val(response.data['phone']);
+            }
         }
     });
 
