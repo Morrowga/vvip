@@ -111,6 +111,13 @@ class Helper{
                         "data" => $eusp
                     ];
                     return $messages;
+                } else {
+                    $messages = [
+                        "status" => "500",
+                        "message" => "data does not exist in this id",
+                        "request" => "eusp",
+                    ];
+                    return $messages;
                 }
             } else if($request_name === "get_selected_action"){
                 $get_select = SelectedView::where('user_id', $user_id)->first();
@@ -125,7 +132,7 @@ class Helper{
                 } else {
                     $messages = [
                         "status" => "500",
-                        "message" => "data does not exist",
+                        "message" => "data does not exist in this id",
                         "request" => "eusp",
                     ];
                     return $messages;
