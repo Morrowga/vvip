@@ -292,33 +292,42 @@ class UserPanelController extends Controller
     public function changeAction(Request $request){
         if($request->user_id){
             $userid = $request->user_id;
-            $request_name = $request->request_name;
-            $self_request = $request->self_request_name;
-            $checkexist = SelectedView::where('user_id', '=',$userid)->first();
-            if($checkexist === null){
-                    $new_active = new SelectedView();
-                    $new_active->user_id = $userid;
-                    $new_active->request_name = $request_name;
-                    $new_active->self_request;
-                    $new_active->save();
+            $user_exist = User::where('id', '=', $userid)->first();
+            if($user_exist !== null){
+                $request_name = $request->request_name;
+                $self_request = $request->self_request_name;
+                $checkexist = SelectedView::where('user_id', '=',$userid)->first();
+                if($checkexist === null){
+                        $new_active = new SelectedView();
+                        $new_active->user_id = $userid;
+                        $new_active->request_name = $request_name;
+                        $new_active->self_request;
+                        $new_active->save();
+            
+                        $messages = [
+                            "status" => "200",
+                            "message" => "success new",
+                            "data" => $new_active,
+                        ];
+                        return $messages;
+                   
+                } else {
+                    $checkexist->request_name = $request_name;
+                    $checkexist->self_request_name = $self_request;
+                    $checkexist->save();
         
                     $messages = [
-                        "status" => "200",
-                        "message" => "success new",
-                        "data" => $new_active,
-                    ];
+                            "status" => "200",
+                            "message" => "success update",
+                            "data" => $checkexist,
+                        ];
                     return $messages;
-               
+                }
             } else {
-                $checkexist->request_name = $request_name;
-                $checkexist->self_request_name = $self_request;
-                $checkexist->save();
-    
                 $messages = [
-                        "status" => "200",
-                        "message" => "success update",
-                        "data" => $checkexist,
-                    ];
+                    "status" => "400",
+                    "message" => "user does not exist"
+                ];
                 return $messages;
             }
             
