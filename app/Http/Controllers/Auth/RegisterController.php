@@ -93,6 +93,7 @@ class RegisterController extends Controller
             $deep_link->user_id =  $user->id;
             $deep_link->name = $link[0];
             $deep_link->icon = $link[1];
+            $deep_link->app_package = $link[2];
             $deep_link->active = 0;
             $deep_link->save();
         }
