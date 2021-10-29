@@ -122,6 +122,13 @@ class Helper{
                         "data" => $eusp
                     ];
                     return $messages;
+                } else {
+                    $messages = [
+                        "status" => "500",
+                        "message" => "data does not exist",
+                        "request" => "eusp",
+                    ];
+                    return $messages;
                 }
             }
         }
