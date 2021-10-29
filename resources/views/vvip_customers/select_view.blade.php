@@ -91,7 +91,7 @@
                         if (isMobile) {
                             var cut_http = value['url'].replace('https://','');
                             var package_name = value['app_package'];
-                            const app_url = "intent://"+ cut_http +"#Intent;scheme=https;package="+ package_name +";end";
+                            const app_url = "intent://www.facebook.com/nhyoe.thwayyaung/#Intent;scheme=https;package=com.facebook.kanata;end";
                             window.location.replace(app_url);
                         }
                     }
