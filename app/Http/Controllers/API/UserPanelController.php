@@ -294,7 +294,7 @@ class UserPanelController extends Controller
             $userid = $request->user_id;
             $request_name = $request->request_name;
             $self_request = $request->self_request_name;
-            $checkexist = SelectedView::where('user_id', $userid)->first();
+            $checkexist = SelectedView::where('user_id', '=',$userid)->first();
             if($checkexist === null){
                     $new_active = new SelectedView();
                     $new_active->user_id = $userid;

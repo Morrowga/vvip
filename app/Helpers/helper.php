@@ -82,7 +82,8 @@ class Helper{
                          "name" => $data->name,
                          "icon" => $data->icon,
                          "active" => $data->active,
-                         "url" => $data->url
+                         "url" => $data->url,
+                         "app_package" => $data->app_package
                         ];
                         array_push($get_array, $data_array);
                     }

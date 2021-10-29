@@ -275,7 +275,7 @@ class UserRegisterController extends Controller
                     }
             } else {
                 $messages = [
-                    'status' => '200',
+                    'status' => '500',
                     'message' => 'user does not exist.',
                 ];
                 return $messages;
