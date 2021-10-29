@@ -92,7 +92,7 @@
                         if (isMobile) {
                             var cut_http = value['url'].replace('https://','');
                             var package_name = value['app_package'];
-                            const app_url = "intent://www.facebook.com/nhyoe.thwayyaung/#Intent;scheme=https;package=com.facebook.kanata;end";
+                            const app_url = "intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end";
                             window.location.replace(app_url);
                         }
                     }
