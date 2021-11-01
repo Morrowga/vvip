@@ -20,23 +20,6 @@
 
 @section('script')
 <script>
-    function getMobileOperatingSystem() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-        {
-            return 'iOS';
-        }
-        else if( userAgent.match( /Android/i ) )
-        {
-            return 'Android';
-        }
-        else
-        {
-            return 'unknown';
-        }
-    }
-
-
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
     var request_name = $('#request').val();
@@ -107,21 +90,12 @@
                     if(value['active'] == 1){
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         // if (isMobile) {
-                            var host = value['url'];
-                            switch(getMobileOperatingSystem()){
-                                case 'Android':
-                                        app_url = "facebook://user?username=" + host;
-                                        break;
-                                case 'iOS':
-                                        app_url = "facebook://user?username=" + host;
-                                        break;
-                                default:
-                                        break;
-                            }
-                            // var package = value['app_package'];
-                            // if(package == 'com.facebook.katana'){
-                            //     console.log(value['url']);
-                            //     const app_url = "facebook://user?username=owendunnigan";
+                            var host = value['url'].replace('https://','');
+                            var package = value['app_package'];
+                            if(package == 'com.facebook.katana'){
+                                alert('h');
+                                console.log(value['url']);
+                                const app_url = "facebook://user?username=";
                                 window.location.replace(app_url);
                             } else {
                                 const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
