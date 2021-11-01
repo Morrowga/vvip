@@ -111,7 +111,7 @@
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
                             var package = value['app_package'];
-                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=http;package="+ package +";end";
+                            const app_url = "intent://"+ value['url'] +"#Intent;package="+ package +";end";
                             window.location.replace(app_url);
                         }
                     }
