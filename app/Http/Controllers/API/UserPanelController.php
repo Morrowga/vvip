@@ -291,7 +291,6 @@ class UserPanelController extends Controller
 
 
     public function changeAction(Request $request){
-        if($request->user_id){
             $userid = $request->user_id;
             $user_exist = User::where('id', '=', $userid)->first();
             if($user_exist !== null){
@@ -331,14 +330,6 @@ class UserPanelController extends Controller
                 ];
                 return $messages;
             }
-            
-        } else {
-            $messages = [
-                "status" => "400",
-                "message" => "request does not exist"
-            ];
-            return $messages;
-        }
     }
 
     public function getChangeAction(Request $request){
