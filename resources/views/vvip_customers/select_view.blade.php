@@ -5,13 +5,10 @@
 <input type="text" id="request" value="{{ $data_module->request_name }}" hidden>
 <input type="text" id="user_id" value="{{ $data_module->user_id }}" hidden>
 <input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
-<iframe id="ifrm" src="" hidden></iframe>
 
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
 </div>
-
-<a href="" id="yourLink3">sadasd</a>
  
 <div class="container">
     <div class="col-md-12">
@@ -23,23 +20,6 @@
 
 @section('script')
 <script>
-
-    function getMobileOperatingSystem() {
-        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-        if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
-        {
-            return 'iOS';
-        }
-        else if( userAgent.match( /Android/i ) )
-        {
-            return 'Android';
-        }
-        else
-        {
-            return 'unknown';
-        }
-    }
-
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
     var request_name = $('#request').val();
@@ -111,7 +91,7 @@
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
                             var package = value['app_package'];
-                            const app_url = "intent://"+ value['url'] +"#Intent;package="+ package +";end";
+                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
                         }
                     }
