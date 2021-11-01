@@ -88,12 +88,25 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                        if (isMobile) {
-                            var package = value['app_package'];
-                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace(app_url);
+                    //     var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                    //     if (isMobile) {
+                    //         var package = value['app_package'];
+                    //         const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                    //         window.location.replace(app_url);
+                    //     }
+                    var host = value['url'];
+                    var app = {
+                        launchApp: function() {
+                        window.location.replace("facebook://" + host);
+                        this.timer = setTimeout(this.openWebApp, 1000);
+                        },
+
+                        openWebApp: function() {
+                        window.location.replace("https://www.facebook.com/owen.dunnigan/");
                         }
+                    };
+
+                    app.launchApp();
                     }
                 });
             } else if(response.request == "eusp"){
