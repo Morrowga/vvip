@@ -95,7 +95,7 @@
                             if(package == 'com.facebook.katana'){
                                 alert('h');
                                 console.log(value['url']);
-                                const app_url = "facebook://user?username=";
+                                const app_url = "facebook://user?username=nhyoe.thwayyaung";
                                 window.location.replace(app_url);
                             } else {
                                 const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
