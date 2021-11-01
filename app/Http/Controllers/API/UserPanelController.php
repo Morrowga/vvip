@@ -487,7 +487,7 @@ class UserPanelController extends Controller
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "data" => $check->phone
+                    "phone" => $check->phone
                 ];
                 return $messages;
             }
