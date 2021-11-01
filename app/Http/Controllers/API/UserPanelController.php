@@ -346,9 +346,9 @@ class UserPanelController extends Controller
        $array = [];
        foreach($get_action as $action){
            $data = [
-                "id" => $get_action->id,
-                "name" => $get_action->name,
-                "action_image" => $get_action->action_image,
+                "id" => $action->id,
+                "name" => $action->name,
+                "action_image" => $action->action_image,
            ];
            array_push($array, $data);
        }
