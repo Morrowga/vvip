@@ -11,7 +11,8 @@
 </div>
 
 <a href="" id="phone_call" hidden></a>
- 
+<a href="" id="send_sms" hidden></a>
+
 <div class="container">
     <div class="col-md-12">
         <div class="data_view">
@@ -112,6 +113,12 @@
                         var tele = "tel:" + response.data['phone'];
                         $('#phone_call').attr('href', tele);
                         window.location.href = $('#phone_call').attr('href');
+                    } else if($('#self_request').val() == "sms_active"){
+                        var sms_no = response.data['sms_no'];
+                        var sms_text = response.data['sms_text'];
+                        var send_sms_to = "sms://"+ sms_no + ";?&body=" + sms_text;
+                        $('#send_sms').attr('href', send_sms_to);
+                        window.location.href = $('#send_sms').attr('href');
                     }
                 } 
             }
