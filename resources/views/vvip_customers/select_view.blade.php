@@ -10,7 +10,8 @@
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
 </div>
-<a id="goto_deep">Helo</a>
+
+<a href="" id="yourLink3">sadasd</a>
  
 <div class="container">
     <div class="col-md-12">
@@ -22,6 +23,23 @@
 
 @section('script')
 <script>
+
+    function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if( userAgent.match( /iPad/i ) || userAgent.match( /iPhone/i ) || userAgent.match( /iPod/i ) )
+        {
+            return 'iOS';
+        }
+        else if( userAgent.match( /Android/i ) )
+        {
+            return 'Android';
+        }
+        else
+        {
+            return 'unknown';
+        }
+    }
+    
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
     var request_name = $('#request').val();
@@ -90,9 +108,6 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var host = value['url'].replace('www','');
-                        console.log(host);
-                        $('#goto_deep').attr('href', host).data('app-link', "fb://profile");
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         // if (isMobile) {
                             // var package = value['app_package'];
@@ -119,6 +134,24 @@
                 } 
             }
         });
+
+        function onLoad(){
+           var urlLink1 = "http://www.instagram.com/OwenDunnigan";
+           var urlLink2 = "http://www.twitter.com/OwenDunnigan";
+           var urlLink3 = "http://www.facebook.com/OwenDunnigan";
+           switch(getMobileOperatingSystem()){
+               case 'Android':
+                    urlLink3 = "facebook://user?username=owendunnigan";
+                    break;
+               case 'iOS':
+                    urlLink3 = "facebook://user?username=owendunnigan";
+                    break;
+               default:
+                    break;
+            }
+           document.getElementById('yourLink3').setAttribute('href', urlLink3);
+        }
+        window.onload = onLoad;
 </script>
 @endsection
 @endsection
