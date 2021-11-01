@@ -10,6 +10,8 @@
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
 </div>
+<a id="goto_deep">Helo</a>
+ 
 <div class="container">
     <div class="col-md-12">
         <div class="data_view">
@@ -88,18 +90,20 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
+                        var host = value['url'].replace('www','');
+                        console.log(host);
+                        $('#goto_deep').attr('href', host).data('app-link', "fb://profile");
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         // if (isMobile) {
-                            var host = value['url'].replace('https://','');
-                            var package = value['app_package'];
-                            if(package == 'com.facebook.katana'){
-                                // console.log(value['url']);
-                                const app_url = "intent://"+ host +"#Intent;scheme=https;end";
-                                window.location.replace(app_url);
-                            } else {
-                                const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
-                                window.location.replace(app_url);
-                            }
+                            // var package = value['app_package'];
+                            // if(package == 'com.facebook.katana'){
+                            //     // console.log(value['url']);
+                            //     const app_url = "intent://"+ host +"#Intent;scheme=https;end";
+                            //     window.location.replace(app_url);
+                            // } else {
+                            //     const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
+                            //     window.location.replace(app_url);
+                            // }
                         // }
                     }
                 });
