@@ -306,17 +306,17 @@
         </div>
     </div>
 </div>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deep_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <h3 class="text" id="url_text"></h3>
-        <input type="text" name="deep_url" class="form-control" id="url_input"> 
-        <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+      <div class="modal-body" id="modal_url_input">
+            <h3 class="text" id="url_text"></h3>
+            <input type="text" name="deep_url" class="form-control" id="url_input" > 
+            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
       </div>
       <div class="modal-footer">
         <button class="btn btn-dark mt-2 btn-block" id="just_save">Active</button>
@@ -327,7 +327,10 @@
   </div>
 </div>
 
-<div class="modal fade" id="save_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div id="modal_section">
+</div>
+
+<div class="modal fade deep" id="save_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom: none !important;">
@@ -419,89 +422,126 @@ $(function() {
            success:function(response){
                 data = response.deep_link;
                 $.each(data, function(i, value) {
-                    $('#platform_col').append('<div class="col-md-6"><button type="button" class="btn btn-dark btn-block dlink_btn" id="'+ value['id'] +'"><div class="card dlink_main_card value'+ value['id'] +'" id="'+ value['id'] +'"><div class="card-body dlink_card"><div class="dblock d-flex justify-content-center"><img src="' + value['icon']  +'" id="img_social" width="50" height="50"><h5 class="social_link">' + value['name'] +'</h5></div></div></button></div>');
-                    // if(value['active'] == "1"){
-                    //     var card_id = $('.value' + value['id']);
-                    //     console.log(card_id);
-                    //     card_id.addClass("active_card");
-                    // }
-                    $('.dlink_btn').on('click', function(){
-                        if(value['id'] == this.id){
-                            $('#exampleModal').modal('show');
-                            var id = this.id; 
-                            $('#url_input').val(value['url']);
-                            $('#url_text').text(value['name'] + '  URL');
+                    if(value['active'] == 1){
+                        $('#platform_col').append(`<div class="col-md-6">
+                        <button type="button" class="btn btn-dark btn-block dlink_btn active_card check`+ value['id'] +`" id="`+ value['id'] +`">
+                            <img src="` + value['icon']  + `" id="img_social" width="50" height="50">
+                            <h5 class="social_link" id="social_link">` + value['name'] +`</h5>
+                        </button>
+                        </div>`);
+                    } else {
+                        $('#platform_col').append(`<div class="col-md-6">
+                        <button type="button" class="btn btn-dark btn-block dlink_btn check`+ value['id'] +`" id="`+ value['id'] +`">
+                            <img src="` + value['icon']  +`" id="img_social" width="50" height="50">
+                            <h5 class="social_link" id="social_link">` + value['name'] +`</h5>
+                        </button>
+                        </div>`);
+                    }
+                    
+                    $('#modal_section').append(`<div class="modal fade" id="deep_modal` + value['id'] + `" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="modal_url_input">
+                                                            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                                            <h3 class="                                    console.log(link_value['id']);
+text url_text`+ value['id'] +`" id="url_text" name="url_text">`+ value['name'] +`</h3>
+                                                            <input type="text" name="deep_url" class="form-control url_input`+ value['id'] +`" id="url_input" value="`+ value['url'] +`"> 
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-dark mt-2 btn-block active_save" id="`+ value['id'] +`">Active</button>
+                                                        <button class="btn btn-dark mt-2 btn-block just_save" id="`+ value['id'] +`">Save</button>     
+                                                        <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button> 
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                                </div>`);
+                                            });
+    
+                $('.dlink_btn').on('click', function(){
+                var id = this.id;
+                var deep_modal = $('#deep_modal' + id);
+                deep_modal.modal('show');
 
-                            $('#just_save').on("click", function(){
-                                var url = $('#url_input').val();
-                                var active = 1;
-                                var name = value['name'];
-                                var post_url = '{{ url('api/create_deep_link') }}';
-                                var token =  $('#token').val();
-                                $.ajax({
-                                url:post_url,
-                                method: 'POST',
-                                headers: {
-                                    'X-CSRF-Token': token 
-                                },
-                                data:{
-                                    user_id: user_id,
-                                    url: url,
-                                    name: name,
-                                    active: active
-                                },
-                                success:function(response){
-                                    link_data = response.data;
-                                    $.each(link_data, function(i,link_value){
-                                        if(link_value['active'] == 1){
-                                            console.log(link_value['id']);
-                                            $('#url_input').val(link_value['name']);
-                                            $('.value' + link_value['id']).addClass('active_card');
-                                            $('#exampleModal').modal('hide');
-                                        } else {
-                                            $('.value' + link_value['id']).removeClass('active_card');
-                                        }
-                                    });
-                                    console.log(response);
-                                }
-                                });
-                            });
 
-                            $('#url_form').on("click", function(){
-                                var url = $('#url_input').val();
-                                var active_zero = 0;
-                                var name = value['name'];
-                                var post_url = '{{ url('api/create_deep_link') }}';
-                                var token =  $('#token').val();
-                                $.ajax({
-                                url:post_url,
-                                method: 'POST',
-                                headers: {
-                                    'X-CSRF-Token': token 
-                                },
-                                data:{
-                                    user_id: user_id,
-                                    url: url,
-                                    name: name,
-                                    active: active_zero
-                                },
-                                success:function(response){
-                                    link_data_two = response.data;
-                                    $.each(link_data_two, function(i,link_value){
-                                        if(link_value['active'] == 1){
-                                            console.log(link_value['id']);
-                                            $('#url_input').val(link_value['name']);
-                                            $('.value' + link_value['id']).addClass('active_card');
-                                            $('#exampleModal').modal('hide');
-                                        } 
-                                    });
-                                    console.log(response);
+                $('.active_save').on("click", function(e){
+                    var save_id = e.target.id;
+                    var url = $('.url_input'+ save_id).val();
+                    console.log(url);
+                    var active = 1;
+                    var name = $('.url_text' + save_id).text();
+                    var post_url = '{{ url('api/create_deep_link') }}';
+                    var token =  $('#token').val();
+                    $.ajax({
+                    url:post_url,
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': token 
+                    },
+                    data:{
+                        user_id: user_id,
+                        url: url,
+                        name: name,
+                        active: active
+                    },
+                    success:function(response){
+                        link_data = response.data;
+                        $.each(link_data, function(i,link_value){
+                                $('#url_input'+ link_value['id']).val(link_value['url']);
+                                $('#url_text' + link_value['id']).text(link_value['name']);
+                                if(link_value['active'] == 1){
+                                    // console.log($('.dlink_btn').attr('id'));
+                                        // alert('he');
+                                        $('.check' + link_value['id']).addClass('active_card');
+                                } else {
+                                    $('.check' + link_value['id']).removeClass('active_card');
                                 }
-                                })
-                            });
-                        }                        
+                                $('#deep_modal'+ link_value['id']).modal('hide');
+                        });
+                        console.log(response);
+                    }
                     });
                 });
+
+                $('.just_save').on("click", function(e){
+                    var save_id = e.target.id;
+                    var save_url = $('.url_input'+ save_id).val();
+                    console.log(url);
+                    var active_zero = 0;
+                    var save_name = $('.url_text' + save_id).text();
+                    var post_url = '{{ url('api/create_deep_link') }}';
+                    var token =  $('#token').val();
+                    $.ajax({
+                    url:post_url,
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-Token': token 
+                    },
+                    data:{
+                        user_id: user_id,
+                        url: save_url,
+                        name: save_name,
+                        active: active_zero
+                    },
+                    success:function(response){
+                        link_data = response.data;
+                        $.each(link_data, function(i,link_value){
+                                $('#url_input'+ link_value['id']).val(link_value['url']);
+                                $('#url_text' + link_value['id']).text(link_value['name']);''
+                                if(link_value['active'] == 1){
+                                    $('.check' + link_value['id']).addClass('active_card');
+                                } 
+                                $('#deep_modal'+ link_value['id']).modal('hide');
+                        });
+                        console.log(response);
+                    }
+                    });
+                });
+
+            });
            },
            error:function(error){
               console.log(error);
@@ -718,3 +758,5 @@ $(function() {
 @endsection
 
 @endsection
+
+

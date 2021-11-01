@@ -174,7 +174,7 @@ class UserPanelController extends Controller
             ];
             return $messages;
         }
-    }
+    } 
 
     public function createDeepLink(Request $request){
         if($request){
@@ -184,7 +184,62 @@ class UserPanelController extends Controller
             $active = $request->active;
             $user_has = User::where('id', '=', $user_id)->first();
             if($user_has !== null){
-                if($active === "0"){
+                if($active === "1"){
+
+                    $deep_link_where_active = DeepLink::where('user_id', $user_id)->where('active', '=', $active)->first();
+                    if($deep_link_where_active !== null){
+                        $deep_link_where_active->active = 0;
+                        $deep_link_where_active->save();
+
+                        $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
+                        $deep_link_update_active->url = $url;
+                        $deep_link_update_active->active = $active;
+                        $deep_link_update_active->save();
+
+                       $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                       $link_data = [];
+                       foreach($deep_latest as $deep){
+                           $data = [
+                               'id' => $deep->id,
+                               'name' => $deep->name,
+                               'url' => $deep->url,
+                               'active' => $deep->active,
+                           ];
+                           array_push($link_data, $data);
+                       }
+   
+                       $messages = [
+                           "status" => "200",
+                           "message" => "success",
+                           "data" => $link_data
+                       ];
+                       return $messages;
+                   } else {
+                           $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
+                           $deep_link_update_active->url = $url;
+                           $deep_link_update_active->active = $active;
+                           $deep_link_update_active->save();
+
+                           $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                           $link_data = [];
+                           foreach($deep_latest as $deep){
+                               $data = [
+                                   'id' => $deep->id,
+                                   'name' => $deep->name,
+                                   'url' => $deep->url,
+                                   'active' => $deep->active,
+                               ];
+                               array_push($link_data, $data);
+                           }
+       
+                           $messages = [
+                               "status" => "200",
+                               "message" => "success",
+                               "data" => $link_data
+                           ];
+                           return $messages;
+                       }
+                } else {
                     $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
                     $deep_link_active->url = $url;
                     $deep_link_active->save();
@@ -206,60 +261,6 @@ class UserPanelController extends Controller
                         "data" => $link_data
                     ];
                     return $messages;
-                } else {
-                    $deep_link_to_unactive = DeepLink::where('user_id', $user_id)->where('active', '=', $active)->first();
-                    if($deep_link_to_unactive !== null){
-                       $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
-                       $deep_link_to_unactive->active = '0';
-                       $deep_link_to_unactive->save(); 
-   
-                       $deep_link_active->url = $url;
-                       $deep_link_active->active = $active;
-                       $deep_link_active->save();
-
-                       $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
-                       $link_data = [];
-                       foreach($deep_latest as $deep){
-                           $data = [
-                               'id' => $deep->id,
-                               'name' => $deep->name,
-                               'url' => $deep->url,
-                               'active' => $deep->active,
-                           ];
-                           array_push($link_data, $data);
-                       }
-   
-                       $messages = [
-                           "status" => "200",
-                           "message" => "success",
-                           "data" => $link_data
-                       ];
-                       return $messages;
-                   } else {
-                           $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
-                           $deep_link_active->url = $url;
-                           $deep_link_active->active = $active;
-                           $deep_link_active->save();
-
-                           $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
-                           $link_data = [];
-                           foreach($deep_latest as $deep){
-                               $data = [
-                                   'id' => $deep->id,
-                                   'name' => $deep->name,
-                                   'url' => $deep->url,
-                                   'active' => $deep->active,
-                               ];
-                               array_push($link_data, $data);
-                           }
-       
-                           $messages = [
-                               "status" => "200",
-                               "message" => "success",
-                               "data" => $link_data
-                           ];
-                           return $messages;
-                       }
                 }
             } else {
                 $messages = [

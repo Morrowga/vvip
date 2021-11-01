@@ -46,7 +46,7 @@
                     <p>Menu Categories</p>
                 </div> -->
                 <div class="d-flex justify-content-center">
-                    <div class="col-md-4 col-md-offset-4">
+                    <div class="col-md-4 col-md-offset-4" id="action_body">
                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                     <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts" data-id="contact_active">Contact</button>
                     <button class="btn btn-dark btn-block action-btn" id="link_tree_active" data-id="link_tree_active">Link Tree</button>
@@ -122,6 +122,24 @@ $(function() {
                });
            }
         });
+    });
+
+    var get_action = '{{ url('api/get_datas') }}'
+    var get_request = 'get_selected_action';
+    $.ajax({
+        url: get_action,
+        headers: {
+            'X-CSRF-Token': token
+        },
+        method: 'POST',
+        data:{
+            user_id: user_id,
+            request_name: get_request,
+        },
+        success:function(response){
+            console.log(response.data['self_request_name']);
+            $('#' + response.data['self_request_name']).attr('style', 'background-color: rgb(217,181,81) !important');
+        }
     });
 
 });

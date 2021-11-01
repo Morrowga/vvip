@@ -66,7 +66,7 @@ class Helper{
 
                 } else {
                     $messages = [
-                        "status" => "500",
+                        "status" => "412",
                         "message" => "There is no data in this user_id",
                     ];
                     return $messages;
@@ -96,7 +96,7 @@ class Helper{
                     return $messages; 
                 } else {
                     $messages = [
-                        "status" => "500",
+                        "status" => "412",
                         "message" => "Data does not exist in this user",
                     ];
                     return $messages; 
@@ -113,7 +113,7 @@ class Helper{
                     return $messages;
                 } else {
                     $messages = [
-                        "status" => "500",
+                        "status" => "412",
                         "message" => "data does not exist in this id",
                         "request" => "eusp",
                     ];
@@ -125,15 +125,15 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "eusp",
-                        "data" => $eusp
+                        "request" => "get_selected_action",
+                        "data" => $get_select
                     ];
                     return $messages;
                 } else {
                     $messages = [
-                        "status" => "500",
+                        "status" => "412",
                         "message" => "data does not exist in this id",
-                        "request" => "eusp",
+                        "request" => "get_selected_action",
                     ];
                     return $messages;
                 }
