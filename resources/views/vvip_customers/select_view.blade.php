@@ -96,6 +96,7 @@
                     //     }
                     var host = value['url'];
                     window.location.replace("com.facebook.katana://" + host);
+                    }
                 });
             } else if(response.request == "eusp"){
                     if($('#self_request').val() == "url_active"){
