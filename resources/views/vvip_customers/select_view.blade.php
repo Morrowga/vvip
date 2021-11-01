@@ -12,6 +12,7 @@
 
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
+<a href="" id="send_email" hidden></a>
 
 <div class="container">
     <div class="col-md-12">
@@ -105,10 +106,19 @@
                     if($('#self_request').val() == "url_active"){
                        window.location = "https://" + response.data['url'];
                     } else if($('#self_request').val() == "email_active"){
-                        $('.data_view').append(`<p class="text text-center">`+ response.data['email_address'] +`</p>
-                                                <p class="text text-center">`+ response.data['email_subject'] +`</p>
-                                                <p class="text text-center">`+ response.data['email_body'] +`</p>`
-                        );
+                        var email_address = response.data['email_address'];
+                        var email_subject = response.data['email_subject'];
+                        var email_body = response.data['email_body'];
+                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        if(isMobile){
+                            var send_email_to = "mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body=" + email_body;
+                            var inMobile = "intent://" + send_email_to +"#Intent;scheme=https;package=com.google.android.gm;end";
+                            window.location.replace(inMobile);
+                        } else {
+                            var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body=" + email_body;
+                            $('#send_email').attr('href', send_email_to);
+                            window.location.href = $('#send_email').attr('href');
+                        }
                     } else if($('#self_request').val() == "call_active"){
                         var tele = "tel:" + response.data['phone'];
                         $('#phone_call').attr('href', tele);
@@ -119,7 +129,7 @@
                         var send_sms_to = "sms://"+ sms_no + ";?&body=" + sms_text;
                         $('#send_sms').attr('href', send_sms_to);
                         window.location.href = $('#send_sms').attr('href');
-                    }
+                    } 
                 } 
             }
         });
