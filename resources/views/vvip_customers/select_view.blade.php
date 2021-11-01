@@ -9,6 +9,8 @@
 <div class="d-flex justify-content-center">
     <img src="../images/logo.jpeg" alt="" width="250" height="250">
 </div>
+
+<a href="" id="phone_call" hidden></a>
  
 <div class="container">
     <div class="col-md-12">
@@ -106,6 +108,10 @@
                                                 <p class="text text-center">`+ response.data['email_subject'] +`</p>
                                                 <p class="text text-center">`+ response.data['email_body'] +`</p>`
                         );
+                    } else if($('#self_request').val() == "call_active"){
+                        var tele = "tel:" + response.data['phone'];
+                        $('#phone_call').attr('href', tele);
+                        window.location.href = $('#phone_call').attr('href');
                     }
                 } 
             }
