@@ -94,11 +94,11 @@
                             var package = value['app_package'];
                             if(package == 'com.facebook.katana'){
                                 console.log(value['url']);
-                                app_url = "facebook://user?username=nhyoe.thwayyaung";
-                                window.location.hash = app_url;
+                                app_url = "com.facebook.katana://nhyoe.thwayyaung";
+                                window.location.replace(app_url);
                             } else {
                                 const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
-                                window.location.hash = app url;
+                                window.location.replace(app_url);
                             }
                         // }
                     }
