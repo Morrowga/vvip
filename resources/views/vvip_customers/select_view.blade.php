@@ -93,9 +93,8 @@
                             var host = value['url'].replace('https://','');
                             var package = value['app_package'];
                             if(package == 'com.facebook.katana'){
-                                alert('h');
                                 console.log(value['url']);
-                                const app_url = "facebook://user?username=nhyoe.thwayyaung";
+                                var app_url = "facebook://user?username=nhyoe.thwayyaung";
                                 window.location.replace(app_url);
                             } else {
                                 const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
