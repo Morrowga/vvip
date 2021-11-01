@@ -349,6 +349,8 @@ class UserPanelController extends Controller
                 "id" => $action->id,
                 "name" => $action->name,
                 "action_image" => $action->action_image,
+                "request_name" => $action->request_name,
+                "self_request_name" => $action->self_request_name
            ];
            array_push($array, $data);
        }
