@@ -39,7 +39,7 @@
             return 'unknown';
         }
     }
-    
+
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
     var request_name = $('#request').val();
@@ -108,18 +108,12 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                        // if (isMobile) {
-                            // var package = value['app_package'];
-                            // if(package == 'com.facebook.katana'){
-                            //     // console.log(value['url']);
-                            //     const app_url = "intent://"+ host +"#Intent;scheme=https;end";
-                            //     window.location.replace(app_url);
-                            // } else {
-                            //     const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
-                            //     window.location.replace(app_url);
-                            // }
-                        // }
+                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            var package = value['app_package'];
+                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=http;package="+ package +";end";
+                            window.location.replace(app_url);
+                        }
                     }
                 });
             } else if(response.request == "eusp"){
@@ -134,24 +128,6 @@
                 } 
             }
         });
-
-        function onLoad(){
-           var urlLink1 = "http://www.instagram.com/OwenDunnigan";
-           var urlLink2 = "http://www.twitter.com/OwenDunnigan";
-           var urlLink3 = "http://www.facebook.com/OwenDunnigan";
-           switch(getMobileOperatingSystem()){
-               case 'Android':
-                    urlLink3 = "facebook://user?username=owendunnigan";
-                    break;
-               case 'iOS':
-                    urlLink3 = "facebook://user?username=owendunnigan";
-                    break;
-               default:
-                    break;
-            }
-           document.getElementById('yourLink3').setAttribute('href', urlLink3);
-        }
-        window.onload = onLoad;
 </script>
 @endsection
 @endsection
