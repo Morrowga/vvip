@@ -97,7 +97,7 @@
                     var host = value['url'];
                     var app = {
                         launchApp: function() {
-                        window.location.replace("facebook://" + host);
+                        window.location.replace("com.facebook.katana://" + host);
                         this.timer = setTimeout(this.openWebApp, 1000);
                         },
 
