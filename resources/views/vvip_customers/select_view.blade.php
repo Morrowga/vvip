@@ -90,11 +90,15 @@
                     if(value['active'] == 1){
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if (isMobile) {
-                            var host = value['url'].replace('http://','');
-                            console.log(host);
+                            var host = value['url'].replace('https://','');
                             var package = value['app_package'];
-                            const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace(app_url);
+                            if(package == 'com.facebook.katana'){
+                                const app_url = "facebook://user?username=" + host;
+                                window.location.replace(app_url);
+                            } else {
+                                const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
+                                window.location.replace(app_url);
+                            }
                         }
                     }
                 });
