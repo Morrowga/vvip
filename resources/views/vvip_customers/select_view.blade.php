@@ -94,7 +94,7 @@
                             var package = value['app_package'];
                             if(package == 'com.facebook.katana'){
                                 // console.log(value['url']);
-                                const app_url = "intent://"+ host +"#Intent;scheme=http://vvip9.co;end";
+                                const app_url = "intent://"+ host +"#Intent;scheme=https;end";
                                 window.location.replace(app_url);
                             } else {
                                 const app_url = "intent://"+ host +"#Intent;scheme=https;package="+ package +";end";
