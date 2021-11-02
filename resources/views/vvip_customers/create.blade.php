@@ -180,7 +180,7 @@
                 <h4 class="appear text-center">Appearance Setting</h4>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="col">
-                        <p class="appear">Background Color</p>
+                        <p class="appear">Background</p>
                     </div>
                     <div class="col">
                     <input type="color" class="form-control" id="background_color" name="background_color">
@@ -188,7 +188,7 @@
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="col">
-                        <p class="appear">Text Color</p>
+                        <p class="appear">Text</p>
                     </div>
                     <div class="col">
                     <input type="color" class="form-control" id="text_color" name="text_color">
