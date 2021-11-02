@@ -613,7 +613,7 @@ label.label_file {
 
 
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 425px) {
     #countdown{
         font-stretch: expanded !important;
         text-align: center !important;
@@ -632,25 +632,25 @@ label.label_file {
     .home-col .action{
         position: absolute;
         top: 41%;
-        left: 45%;
+        left: 32%;
       }
     
       .home-col .create{
         position: absolute;
         top: 41%;
-        left: 23%;
+        left: 27%;
       }
     
       .home-col .profile{
         position: absolute;
         top: 41%;
-        left: 47%;
+        left: 28%;
       }
     
       .home-col .setting{
         position: absolute;
         top: 41%;
-        left: 23%;
+        left: 25%;
       }
 
       .profile_text{
@@ -659,39 +659,6 @@ label.label_file {
 
   }
 
-  @media screen 
-  and (device-width: 412px) 
-  and (device-height: 823px) 
-  and (-webkit-device-pixel-ratio: 3.5) 
-  and (orientation: portrait) {
-    .home-col .action{
-        position: absolute;
-        top: 41%;
-        left: 40%;
-      }
-    
-      .home-col .create{
-        position: absolute;
-        top: 41%;
-        left: 23%;
-      }
-    
-      .home-col .profile{
-        position: absolute;
-        top: 41%;
-        left: 47%;
-      }
-    
-      .home-col .setting{
-        position: absolute;
-        top: 41%;
-        left: 23%;
-      }
-
-      .profile_text{
-          text-align: center !important;
-      }
-}
 
 
 
