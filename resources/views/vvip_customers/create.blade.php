@@ -32,7 +32,7 @@
     </div>
 </nav>
 
-<div class="d-flex justify-content-center" style="height: 1090px;">
+<div class="d-flex justify-content-center" style="height: 900px;">
     <div class="col-md-6 col-md-offset-3" id="create_section">
         <h3 class="text">Create Contents</h3>
         <div class="d-flex justify-content-center text-center mt-4">

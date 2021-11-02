@@ -620,6 +620,10 @@ label.label_file {
 
 
 @media only screen and (max-width: 425px) {
+    #home_height{
+        height: 550px !important;
+    }
+
     #countdown{
         font-stretch: expanded !important;
         text-align: center !important;

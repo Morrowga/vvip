@@ -47,8 +47,8 @@
         </div>
     </div>
 </div> -->
-<div class="container" style="height: 600px;">
-    <div class="col-md-12 menu mt-5">
+<div class="container" id="home_height" style="height: 600px;">
+    <div class="col-md-12 menu mt-2">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
                 <img src="https://i.ibb.co/Z6f6Dfq/action.jpg" alt="" id="action" width="350" height="280">
