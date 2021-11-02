@@ -43,15 +43,15 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="card">
                     <div class="card-body">
-                        <button class="btn btn-primary btn-block menu_button">Profile <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Create Content <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Change Action <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Active My Card <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Lucky Draw <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Statistic <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Share<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Setting<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-primary btn-block menu_button">Support<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Profile <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Create Content <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Change Action <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Active My Card <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Lucky Draw <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Statistic <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Share<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Setting<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button">Support<i class="fas fa-caret-right menu_arrow"></i></button>
                     </div>
                 </div>
             </div>
