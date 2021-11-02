@@ -761,6 +761,10 @@ label.label_file {
         height: 1400px !important;
     }
 
+    #menu_container{
+        height: 900px !important;
+    }
+
     #countdown{
         font-stretch: expanded !important;
         text-align: center !important;
@@ -803,6 +807,7 @@ label.label_file {
       .profile_text{
           text-align: center !important;
       }
+      
 
   }
 
