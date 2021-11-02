@@ -32,8 +32,8 @@
     </div>
 </nav>
 
-<div class="d-flex justify-content-center" style="height: 900px;">
-    <div class="col-md-6 col-md-offset-3" id="create_section">
+<div class="d-flex justify-content-center">
+    <div class="col-md-6 col-md-offset-3" id="create_section" style="height: 900px;">
         <h3 class="text">Create Contents</h3>
         <div class="d-flex justify-content-center text-center mt-4">
             <div class="col">
@@ -112,7 +112,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-md-offset-3" id="contact_section">
+    <div class="col-md-6 col-md-offset-3" id="contact_section" style="height: 2150px;">
         <h3 class="text">Contacts</h3>
         <form method="POST" id="upload-contact-form" enctype="multipart/form-data">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -124,9 +124,9 @@
                     </div>
                     <div class="col-md-6">
                         <h4 class="text text-center">Upload Photo</h4>
-                        <label class="label_file btn btn-dark btn-block">
+                        <label class="label_file btn btn-dark btn-block text">
                             <input type="file" class="file_upload" name="image">
-                            select file
+                            Select file
                         </label>
                     </div>
                 </div>

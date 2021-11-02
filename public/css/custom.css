@@ -63,6 +63,7 @@ footer{
   .text{
       color: rgb(217,181,81) !important;
       font-weight: bold;
+      letter-spacing: 2px;
       font-family: "Britannic Bold";
   }
 
@@ -751,6 +752,41 @@ label.label_file {
     background-color: rgb(217,181,81) !important;
     transition-duration: 0.7s;
   } 
+  #save_contact{
+    background-color: rgba(0, 0, 0) !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    border: 2px solid rgb(217,181,81) !important;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  #save_contact:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.7s;
+  }
+
+
+  #section_cancel{
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    border: 2px solid rgb(217,181,81) !important;
+    font-size: 20px;
+  }
+
+  #ok{
+    background-color: rgba(0, 0, 0) !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    color: #fff;
+    border: 2px solid rgb(217,181,81) !important;
+    font-size: 20px;
+  }
+
+  #ok:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.7s;
+  }
   
 @media only screen and (max-width: 425px) {
     #home_height{
