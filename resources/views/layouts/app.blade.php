@@ -76,7 +76,7 @@
             </div>
         </nav> -->
 
-        <main class="py-4" style="flex: 1 !important; overflow:auto !important; padding-bottom: 5px !important;">
+        <main class="py-4" style="flex: 1 !important; overflow:auto !important;">
             @yield('content')
         </main>
 
