@@ -196,7 +196,7 @@
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="col">
-                        <p class="appear">Text Highlight Color</p>
+                        <p class="appear">Text Highlight</p>
                     </div>
                     <div class="col">
                         <input type="color" class="form-control" id="text_highlight_color" name="text_highlight_color">
