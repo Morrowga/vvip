@@ -188,7 +188,7 @@
                 </div>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="col">
-                        <p class="appear">Text</p>
+                    <p class="appear">Text</p>
                     </div>
                     <div class="col">
                     <input type="color" class="form-control" id="text_color" name="text_color">
@@ -208,7 +208,7 @@
         </form>
         <button class="btn btn-light mt-3 btn-block" id="section_cancel">Cancel</button>
     </div>
-    <div class="col-md-6 col-md-offset-3" id="deep_link_section">
+    <div class="col-md-6 col-md-offset-3" id="deep_link_section" style="height:  830px;">
         <div class="d-flex justify-content-center">
             <div class="row" id="platform_col">
             </div>
@@ -221,7 +221,7 @@
             <div class="card-body">
                 <h3 class="text text-center">URL</h3>
                 <input type="text" class="form-control" name="url" id="get_url">
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_url">Save</button>
             </div>
         </div>
         </form>
@@ -235,7 +235,7 @@
                 <input type="text" name="email_address" id="e_address" class="form-control" placeholder="email_address">
                 <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="email_subject">
                 <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="email_body"></textarea>
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_email">Save</button>
             </div>
         </div>
         </form>
@@ -248,7 +248,7 @@
                 <h3 class="text text-center">SMS</h3>
                 <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="Sms Number">
                 <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="Sms Text"></textarea>
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_sms">Save</button>
             </div>
         </div>
         </form>
@@ -260,17 +260,16 @@
             <div class="card-body">
                 <h3 class="text text-center">Phone</h3>
                 <input type="number" class="form-control" id="phone_num" name="phone">
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_phone">Save</button>
             </div>
         </div>
         </form>
     </div>
 </div>
-<div class="modal fade" id="deep_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="deep_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="modal_url_input">
@@ -279,13 +278,13 @@
             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
       </div>
       <div class="modal-footer">
-        <button class="btn btn-dark mt-2 btn-block" id="just_save">Active</button>
-        <button class="btn btn-dark mt-2 btn-block" id="url_form">Save</button>     
+        <button class="btn btn-dark mt-2 btn-block justsave" id="just_save">Active</button>
+        <button class="btn btn-dark mt-2 btn-block urlform" id="url_form">Save</button>     
         <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button> 
     </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <div id="modal_section">
 </div>
@@ -402,7 +401,6 @@ $(function() {
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body" id="modal_url_input">
@@ -413,7 +411,7 @@ $(function() {
                                                     <div class="modal-footer">
                                                         <button class="btn btn-dark mt-2 btn-block active_save" id="`+ value['id'] +`">Active</button>
                                                         <button class="btn btn-dark mt-2 btn-block just_save" id="`+ value['id'] +`">Save</button>     
-                                                        <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button> 
+                                                        <button type="button" class="btn btn-secondary btn-block cancel_deep" data-bs-dismiss="modal">Close</button> 
                                                     </div>
                                                     </div>
                                                 </div>

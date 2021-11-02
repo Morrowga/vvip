@@ -67,6 +67,7 @@ footer{
       font-family: "Britannic Bold";
   }
 
+
   .vvip_text{
     color: rgb(217,181,81) !important;
     font-weight: bold;
@@ -569,7 +570,13 @@ left: 23%;
 .active_card{
     background-color: rgb(217,181,81) !important;
     border: 2px solid rgb(217,181,81) !important;
+    box-shadow:
+	  20px 20px 60px rgb(217,181,81),
+	  -20px -20px 60px rgb(217,181,81,0.2);
+    padding-top: 9px !important;
 }
+
+
 
 #ca{
     background-color: rgb(0,0,0) !important;
@@ -787,6 +794,50 @@ label.label_file {
     background-color: rgb(217,181,81) !important;
     transition-duration: 0.7s;
   }
+
+  .active_save{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+}
+
+.cancel_deep{
+    background-color: rgb(255,255,255) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    letter-spacing: 2px;
+    color: #000 !important;
+    font-family: "Britannic Bold";
+}
+
+    .just_save{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+}
+
+.save_all{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+}
+
+.save_all:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s;
+}
+
+.active_save:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s;
+}
+
+.just_save:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s;
+}
   
 @media only screen and (max-width: 425px) {
     #home_height{
