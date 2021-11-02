@@ -32,278 +32,238 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="col-md-12 mt-5">
-        <div class="d-flex justify-content-center">
-            <div class="col-md-6 col-md-offset-3" id="create_section">
-                <h3 class="text">Create Contents</h3>
-                <div class="d-flex justify-content-center text-center mt-4">
-                    <div class="col-md-6">
-                        <button type="button" id="con_tact" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/ys0sstT/contacts.png" alt="" width="50" height="50">
-                                    <p class="color_black">Contacts</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="button" id="link_tree" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/4JrcrZ9/link-tree.png" alt="" width="50" height="50">
-                                    <p class="color_black">Links Tree</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4 text-center">
-                    <div class="col-md-6">
-                        <button type="button" id="deep_link" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/nQmbWpR/deep-link.png" alt="" width="50" height="50">
-                                    <p class="color_black">Deep Link</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="button" id="cands" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" alt="" width="50"
-                                        height="50">
-                                    <p class="color_black">Contact & Social</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4 text-center">
-                    <div class="col-md-6">
-                        <button type="button" id="url" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/yhD08Qb/url.png" alt="" width="50" height="50">
-                                    <p class="color_black">URL</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="button" id="email_send" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/2kVtmRV/email.png" alt="" width="50" height="50">
-                                    <p class="color_black">Email</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4 text-center">
-                    <div class="col-md-6">
-                        <button type="button" id="sms" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/W5jcVJL/sms.png" alt="" width="50" height="50">
-                                    <p class="color_black">SMS</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <button type="button" id="call" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/2WdRt2B/call.png" alt="" width="50" height="50">
-                                    <p class="color_black">Call</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-4 text-center">
-                    <div class="col-md-6">
-                        <button type="button" id="event" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://i.ibb.co/YcD8dkz/event.png" alt="" width="50" height="50">
-                                    <p class="color_black">Events</p>
-                                </div>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="col-md-6">
-                        <!-- <button type="button" id="personal" class="btn btn-dark btn-block">
-                            <div class="card create_content">
-                                <div class="card-body">
-                                    <img src="https://cdn-icons.flaticon.com/png/128/3948/premium/3948048.png?token=exp=1635146332~hmac=b5126d32ac78751b9a7842de1421ebbd"
-                                        alt="" width="50" height="50">
-                                    <p class="color_black">Personal Se</p>
-                                </div>
-                            </div>
-                        </button> -->
-                    </div>
-                </div>
+<div class="d-flex justify-content-center" style="height: 1090px;">
+    <div class="col-md-6 col-md-offset-3" id="create_section">
+        <h3 class="text">Create Contents</h3>
+        <div class="d-flex justify-content-center text-center mt-4">
+            <div class="col">
+                <button type="button" id="con_tact" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/ys0sstT/contacts.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Contacts</p>
+                </button>
             </div>
-            <div class="col-md-6 col-md-offset-3" id="contact_section">
-                <h3 class="text">Contacts</h3>
-                <form method="POST" id="upload-contact-form" enctype="multipart/form-data">
-                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <div class="card">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6">
-                                <img id="img" width="150" height="150" />
-                            </div>
-                            <div class="col-md-6">
-                                <h4 class="text text-center">Upload Photo</h4>
-                                <label class="label_file btn btn-dark btn-block">
-                                    <input type="file" class="file_upload" name="image">
-                                    select file
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <h4 class="text text-center">Personal</h4>
-                        <input type="text" id="first_name" class="form-control" placeholder="First Name" name="first_name">
-                        <input type="text" id="last_name" class="form-control mt-1" placeholder="Last Name" name="last_name">
-                        <input type="text" id="company" class="form-control mt-1" placeholder="Company" name="company">
-                        <input type="text" id="position" class="form-control mt-1" placeholder="Position" name="position">
-                        <input type="text" id="birthday" class="form-control mt-1" placeholder="Birthday" name="birthday">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="text text-center">Mobile</h4>
-                        <input type="text" id="mobile" class="form-control" placeholder="Mobile" name="mobile">
-                        <input type="text" id="phone" class="form-control mt-1" placeholder="Phone" name="phone">
-                        <input type="text" id="office" class="form-control mt-1" placeholder="Office" name="office">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="text text-center">Email & Internet</h4>
-                        <input type="text" id="personal_email" class="form-control" placeholder="Personal Email" name="personalemail">
-                        <input type="text" id="office_email" class="form-control mt-1" placeholder="Office Email" name="office_email">
-                        <input type="text" id="website1" class="form-control mt-1" placeholder="Website One" name="website1">
-                        <input type="text" id="website2" class="form-control mt-1" placeholder="Website Two" name="website2">
-                        <input type="text" id="website3" class="form-control mt-1" placeholder="Website Three" name="website3">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="text text-center">Home Address</h4>
-                        <input type="text" id="home_street1" class="form-control" placeholder="Street One" name="home_street1">
-                        <input type="text" id="home_street2" class="form-control mt-1" placeholder="Street Two" name="home_street2">
-                        <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="Postal Code" name="home_postal_code">
-                        <input type="text" id="home_city" class="form-control mt-1" placeholder="City" name="home_city">
-                        <input type="text" id="home_state" class="form-control mt-1" placeholder="State" name="state">
-                        <input type="text" id="home_country" class="form-control mt-1" placeholder="Country" name="country">
-                    </div>
-
-                    <div class="card-body">
-                        <h4 class="text text-center">Work Address</h4>
-                        <input type="text" id="work_street1" class="form-control" placeholder="Street One" name="work_street1">
-                        <input type="text" id="work_street2" class="form-control mt-1" placeholder="Street Two" name="work_street2">
-                        <input type="text" id="work_postal_code" class="form-control mt-1" placeholder="Postal Code" name="work_postal_code">
-                        <input type="text" id="work_city" class="form-control mt-1" placeholder="City" name="work_city">
-                        <input type="text" id="work_state" class="form-control mt-1" placeholder="State" name="work_state">
-                        <input type="text" id="work_country" class="form-control mt-1" placeholder="Country" name="work_country">
-                    </div>
-
-                    <div class="card-body" style="background-color: rgb(217,181,81) !important;">
-                        <h4 class="appear text-center">Appearance Setting</h4>
-                        <div class="d-flex justify-content-center mt-3">
-                            <div class="col">
-                                <p class="appear">Background Color</p>
-                            </div>
-                            <div class="col">
-                            <input type="color" class="form-control" id="background_color" name="background_color">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center mt-3">
-                            <div class="col">
-                                <p class="appear">Text Color</p>
-                            </div>
-                            <div class="col">
-                            <input type="color" class="form-control" id="text_color" name="text_color">
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center mt-3">
-                            <div class="col">
-                                <p class="appear">Text Highlight Color</p>
-                            </div>
-                            <div class="col">
-                                <input type="color" class="form-control" id="text_highlight_color" name="text_highlight_color">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-warning mt-3 btn-block" id="save_contact">Save</button>
-                </form>
-                <button class="btn btn-light mt-3 btn-block" id="section_cancel">Cancel</button>
-            </div>
-            <div class="col-md-6 col-md-offset-3" id="deep_link_section">
-                <div class="d-flex justify-content-center">
-                    <div class="row" id="platform_col">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-md-offset-3" id="url_section">
-                <form action="" method="POST" id="get_url_form">
-                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text text-center">URL</h3>
-                        <input type="text" class="form-control" name="url" id="get_url">
-                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-            <div class="col-md-6 col-md-offset-3" id="email_section">
-                <form action="" method="POST" id="email_form">
-                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text text-center">Email</h3>
-                        <input type="text" name="email_address" id="e_address" class="form-control" placeholder="email_address">
-                        <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="email_subject">
-                        <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="email_body"></textarea>
-                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-            <div class="col-md-6 col-md-offset-3" id="sms_section">
-                <form action="" method="POST" id="sms_form">
-                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text text-center">SMS</h3>
-                        <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="Sms Number">
-                        <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="Sms Text"></textarea>
-                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
-                    </div>
-                </div>
-                </form>
-            </div>
-            <div class="col-md-6 col-md-offset-3" id="phone_section">
-                <form action="" method="POST" id="phone_form">
-                <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="text text-center">Phone</h3>
-                        <input type="number" class="form-control" id="phone_num" name="phone">
-                        <button type="submit" class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
-                    </div>
-                </div>
-                </form>
+            <div class="col">
+                <button type="button" id="link_tree" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/4JrcrZ9/link-tree.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Links Tree</p>
+                </button>
             </div>
         </div>
+        <div class="d-flex justify-content-center mt-4 text-center">
+            <div class="col-md-6">
+                <button type="button" id="deep_link" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/nQmbWpR/deep-link.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Deep Link</p>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="cands" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" class="mt-3" alt="" width="50"
+                        height="50">
+                    <p class="color_black c_s">Contact & Social</p>
+                </button>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4 text-center">
+            <div class="col-md-6">
+                <button type="button" id="url" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/yhD08Qb/url.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">URL</p>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="email_send" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/2kVtmRV/email.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Email</p>
+                </button>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4 text-center">
+            <div class="col-md-6">
+                <button type="button" id="sms" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/W5jcVJL/sms.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">SMS</p>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button type="button" id="call" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/2WdRt2B/call.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Call</p>
+                </button>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center mt-4 text-center">
+            <div class="col-md-6">
+                <button type="button" id="event" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/YcD8dkz/event.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Events</p>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <!-- <button type="button" id="personal" class="btn btn-dark btn-block">
+                    <div class="card create_content">
+                        <div class="card-body">
+                            <img src="https://cdn-icons.flaticon.com/png/128/3948/premium/3948048.png?token=exp=1635146332~hmac=b5126d32ac78751b9a7842de1421ebbd"
+                                alt="" width="50" height="50">
+                            <p class="color_black">Personal Se</p>
+                        </div>
+                    </div>
+                </button> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="contact_section">
+        <h3 class="text">Contacts</h3>
+        <form method="POST" id="upload-contact-form" enctype="multipart/form-data">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-6">
+                        <img id="img" width="150" height="150" />
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text text-center">Upload Photo</h4>
+                        <label class="label_file btn btn-dark btn-block">
+                            <input type="file" class="file_upload" name="image">
+                            select file
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <h4 class="text text-center">Personal</h4>
+                <input type="text" id="first_name" class="form-control" placeholder="First Name" name="first_name">
+                <input type="text" id="last_name" class="form-control mt-1" placeholder="Last Name" name="last_name">
+                <input type="text" id="company" class="form-control mt-1" placeholder="Company" name="company">
+                <input type="text" id="position" class="form-control mt-1" placeholder="Position" name="position">
+                <input type="text" id="birthday" class="form-control mt-1" placeholder="Birthday" name="birthday">
+            </div>
+
+            <div class="card-body">
+                <h4 class="text text-center">Mobile</h4>
+                <input type="text" id="mobile" class="form-control" placeholder="Mobile" name="mobile">
+                <input type="text" id="phone" class="form-control mt-1" placeholder="Phone" name="phone">
+                <input type="text" id="office" class="form-control mt-1" placeholder="Office" name="office">
+            </div>
+
+            <div class="card-body">
+                <h4 class="text text-center">Email & Internet</h4>
+                <input type="text" id="personal_email" class="form-control" placeholder="Personal Email" name="personalemail">
+                <input type="text" id="office_email" class="form-control mt-1" placeholder="Office Email" name="office_email">
+                <input type="text" id="website1" class="form-control mt-1" placeholder="Website One" name="website1">
+                <input type="text" id="website2" class="form-control mt-1" placeholder="Website Two" name="website2">
+                <input type="text" id="website3" class="form-control mt-1" placeholder="Website Three" name="website3">
+            </div>
+
+            <div class="card-body">
+                <h4 class="text text-center">Home Address</h4>
+                <input type="text" id="home_street1" class="form-control" placeholder="Street One" name="home_street1">
+                <input type="text" id="home_street2" class="form-control mt-1" placeholder="Street Two" name="home_street2">
+                <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="Postal Code" name="home_postal_code">
+                <input type="text" id="home_city" class="form-control mt-1" placeholder="City" name="home_city">
+                <input type="text" id="home_state" class="form-control mt-1" placeholder="State" name="state">
+                <input type="text" id="home_country" class="form-control mt-1" placeholder="Country" name="country">
+            </div>
+
+            <div class="card-body">
+                <h4 class="text text-center">Work Address</h4>
+                <input type="text" id="work_street1" class="form-control" placeholder="Street One" name="work_street1">
+                <input type="text" id="work_street2" class="form-control mt-1" placeholder="Street Two" name="work_street2">
+                <input type="text" id="work_postal_code" class="form-control mt-1" placeholder="Postal Code" name="work_postal_code">
+                <input type="text" id="work_city" class="form-control mt-1" placeholder="City" name="work_city">
+                <input type="text" id="work_state" class="form-control mt-1" placeholder="State" name="work_state">
+                <input type="text" id="work_country" class="form-control mt-1" placeholder="Country" name="work_country">
+            </div>
+
+            <div class="card-body" style="background-color: rgb(217,181,81) !important;">
+                <h4 class="appear text-center">Appearance Setting</h4>
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="col">
+                        <p class="appear">Background Color</p>
+                    </div>
+                    <div class="col">
+                    <input type="color" class="form-control" id="background_color" name="background_color">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="col">
+                        <p class="appear">Text Color</p>
+                    </div>
+                    <div class="col">
+                    <input type="color" class="form-control" id="text_color" name="text_color">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3">
+                    <div class="col">
+                        <p class="appear">Text Highlight Color</p>
+                    </div>
+                    <div class="col">
+                        <input type="color" class="form-control" id="text_highlight_color" name="text_highlight_color">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-warning mt-3 btn-block" id="save_contact">Save</button>
+        </form>
+        <button class="btn btn-light mt-3 btn-block" id="section_cancel">Cancel</button>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="deep_link_section">
+        <div class="d-flex justify-content-center">
+            <div class="row" id="platform_col">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="url_section">
+        <form action="" method="POST" id="get_url_form">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text text-center">URL</h3>
+                <input type="text" class="form-control" name="url" id="get_url">
+                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_url">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="email_section">
+        <form action="" method="POST" id="email_form">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text text-center">Email</h3>
+                <input type="text" name="email_address" id="e_address" class="form-control" placeholder="email_address">
+                <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="email_subject">
+                <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="email_body"></textarea>
+                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_email">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="sms_section">
+        <form action="" method="POST" id="sms_form">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text text-center">SMS</h3>
+                <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="Sms Number">
+                <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="Sms Text"></textarea>
+                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_sms">Save</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="phone_section">
+        <form action="" method="POST" id="phone_form">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body">
+                <h3 class="text text-center">Phone</h3>
+                <input type="number" class="form-control" id="phone_num" name="phone">
+                <button type="submit" class="btn btn-dark btn-block mt-3" id="save_phone">Save</button>
+            </div>
+        </div>
+        </form>
     </div>
 </div>
 <div class="modal fade" id="deep_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -515,6 +515,12 @@ left: 23%;
     background-color: rgb(217,181,81) !important;
 }
 
+.c_s{
+    font-size: 13.8px !important;
+    letter-spacing: 0 !important;
+    height: 29px !important;
+}
+
 .menu{
     font-size: 20px !important;
     color: #fff;

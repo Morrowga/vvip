@@ -24,7 +24,7 @@
     <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div id="app" style="display:none; width:100%; height: 1000px; flex-direction: column;">
+    <div id="app" style="display:none; width:100%; height: auto; flex-direction: column;">
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

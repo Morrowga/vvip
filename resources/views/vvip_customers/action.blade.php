@@ -33,7 +33,7 @@
     </div>
 </nav> 
 
-<div class="container">
+<div class="container" style="height: 700px;">
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-4 col-md-offset-4">
