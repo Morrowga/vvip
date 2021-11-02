@@ -80,6 +80,9 @@
             @yield('content')
         </main>
 
+        @if(Route::currentRouteName('login'))
+            
+        @else
         <div class="navbar-footer">
             <div class="d-flex justify-content-center text-center">
                 <div class="col-md-4">
@@ -93,6 +96,7 @@
                 </div>
             </div>
         </div>
+        @endif
         
     </div>
     <div id="loading" style="display:block;">
