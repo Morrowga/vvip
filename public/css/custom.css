@@ -621,7 +621,7 @@ label.label_file {
 
 @media only screen and (max-width: 425px) {
     #home_height{
-        height: 550px !important;
+        height: 510px !important;
     }
 
     #countdown{
