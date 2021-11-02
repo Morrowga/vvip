@@ -80,8 +80,8 @@
             @yield('content')
         </main>
 
-        @if(Route::currentRouteName('login'))
-
+        @if(url()->current() == route('login'))
+        
         @else
         <div class="navbar-footer">
             <div class="d-flex justify-content-center text-center">
