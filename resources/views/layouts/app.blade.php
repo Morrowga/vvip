@@ -79,6 +79,20 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        <div class="navbar-footer">
+            <div class="d-flex justify-content-center text-center">
+                <div class="col-md-4">
+                    <a href="#home" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#news" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#home" class="text-center"><i class="fas fa-th-list fa-2x menu_list"></i></a>
+                </div>
+            </div>
+        </div>
         
     </div>
     <div id="loading" style="display:block;">

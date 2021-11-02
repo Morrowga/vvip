@@ -48,78 +48,27 @@
     </div>
 </div> -->
 <div class="container">
-    <div class="col-md-12 menu">
+    <div class="col-md-12 menu mt-5">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
-                <img src="" alt="" id="action" width="350" height="280">
-                <a href="/action" class="btn btn-dark action">Action</a>
+                <img src="https://i.ibb.co/Z6f6Dfq/action.jpg" alt="" id="action" width="350" height="280">
+                <a href="/action" class="btn btn-dark action">ACTION</a>
             </div>
             <div class="col text-left home-col">
-                <img src="" alt="" id="create" width="350" height="280">
-                <a href="/create_data" class="btn btn-dark create">Create</a>
+                <img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" id="create" width="350" height="280">
+                <a href="/create_data" class="btn btn-dark create">CREATE</a>
             </div>
         </div>
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col" style="margin-top: 25px !important;">
-                <img src="" alt="" id="profile" width="350" height="280">
-                <a href="/profile" class="btn btn-dark profile">Profile</a>
+                <img src="https://i.ibb.co/fG0HJ4N/profile.jpg" alt="" id="profile" width="350" height="280">
+                <a href="/profile" class="btn btn-dark profile">PROFILE</a>
             </div>
             <div class="col text-left home-col" style="margin-top: 25px !important;">
-                <img src="" alt="" id="setting" width="350" height="280">
-                <a href="" class="btn btn-dark setting">Setting</a>
+                <img src="https://i.ibb.co/0nFM29f/setting.jpg" alt="" id="setting" width="350" height="280">
+                <a href="" class="btn btn-dark setting">SETTING</a>
             </div>
         </div>
     </div>
 </div>
-
-<!-- <footer>
-    <div class="d-flex justify-content-center text-center">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="d-flex justfiy-content-center">
-            <div class="col">
-                <a href="" class="text-center mb-2 pb-2"><i class="fa fa-heart fa-3x pb-2"></i></a> 
-            </div>
-            <div class="col">
-                <a href="#home" class="text-center"><img src="../images/logo.jpeg" alt="" width="50" height="50"></a> 
-            </div>
-            <div class="col">
-                <a href="#home" class="text-center">Home</a> 
-            </div>
-            </div>
-        </div>
-    </div>  
-</footer> -->
-@section('script')
-    <script>
-        var user_id = $('#userid').val();
-            $.ajax({
-                url: '/api/get_home',
-                method:'POST',
-                data: {
-                    user_id : user_id
-                },
-                success: function(response){
-                        // var days = Math.floor(response.total_seconds / 86400);
-                        // var hours = Math.floor((response.total_seconds - (days * 86400)) / 3600);
-                        // var minutes = Math.floor((response.total_seconds - (days * 86400) - (hours * 3600 )) / 60);
-                        // var seconds = Math.floor((response.total_seconds - (days * 86400) - (hours * 3600) - (minutes * 60)));
-                        // if (hours < "10") { hours = "0" + hours; }
-                        // if (minutes < "10") { minutes = "0" + minutes; }
-                        // if (seconds < "10") { seconds = "0" + seconds; }                        
-                        // $("#days").html(days + "<span>Days</span>");
-                        // $("#hours").html(hours + "<span>Hours</span>");
-                        // $("#minutes").html(minutes + "<span>Minutes</span>");
-                        // $("#seconds").html(seconds + "<span>Seconds</span>");
-                        console.log(response.home_page);
-                        $('#action').attr('src', response.home_page[0]['image']);
-                        $('#create').attr('src', response.home_page[1]['image']);
-                        $('#profile').attr('src', response.home_page[2]['image']);
-                        $('#setting').attr('src', response.home_page[3]['image']);
-                },
-                error:function(error){
-                    console.log(error)
-                }
-            });
-    </script>
-@endsection
 @endsection

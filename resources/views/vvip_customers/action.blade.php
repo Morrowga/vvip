@@ -105,12 +105,6 @@ $(function() {
                 },
            success:function(response){
                console.log(response);
-            // var check = $('#' + response.data['self_request_name']);
-            // if(check.val() == response.data['request_name']) {
-            //    check.attr('style', 'background-color: rgb(217,181,81) !important');
-            // } else {
-            //    check.attr('style', 'background-color: rgb(0,0,0) !important');
-            // }
                var id_value = ['contact_active', 'deep_link_active', 'url_active', 'email_active', 'sms_active', 'call_active'];
                $.each(id_value, function(i,value){
                    var check = $('#' + value);
