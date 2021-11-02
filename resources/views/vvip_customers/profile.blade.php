@@ -33,112 +33,153 @@
     </div>
 </nav> 
 
-<div class="container">
+<div class="container" style="height: 1400px;">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6 col-md-offset-3">
+            <input type="text" value="{{ Auth::user()->id }}" id="userid" hidden>
+            <h3 class="text">Profile</h3>
+        </div>
+    </div>
     <div class="col-md-12 mt-5">
-        <h3 class="text">Profile</h3>
-        <div class="card profile_card">
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <img src="https://i.pinimg.com/236x/4c/bd/43/4cbd43a2e345adda7dd7f75848c95db7.jpg" class="profile_img" alt="" width="200" height="200">
-                </div>
-                <div class="d-flex justify-content-center mt-4">
-                    <div class="col">
-                        <p class="text-right profile_text">Name </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>Mg Mg</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
-                        <p class="text-right profile_text">Mobile </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>09795864194</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
-                        <p class="text-right profile_text">Email </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>thiha@gmail.com</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
-                        <p class="text-right profile_text">BOD </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>18.5.1998</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
-                        <p class="text-right profile_text">Work </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>Htut</p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col">
-                        <p class="text-right profile_text">Address </p>
-                    </div>
-                    
-                    <div class="col">
-                        <p>Yangon</p>
-                    </div>
-                </div>
+        <div class="d-flex justify-content-center">
+            <img src="https://i.pinimg.com/236x/4c/bd/43/4cbd43a2e345adda7dd7f75848c95db7.jpg" class="profile_img" alt="" width="200" height="200">
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6">
+            <div class="d-flex justify-content-center mt-4">
+            <p class="text-center profile_txt">Name </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="username" style="text-transform: capitalize;"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Mobile </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="profile_text" id="mobile"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Email </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="email_name"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">BOD </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="bod"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Work </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="work"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Address </p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="address"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">URL</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="customer_url"></p>
+        </div>
             </div>
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <h5>Package</h5>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>Premium Package</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>Expired Date: 20.10.2022</p>
-                </div>
+            <div class="col-md-6">
+        <div class="d-flex justify-content-center  mt-4">
+            <p class="text-center profile_txt">Package</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="package"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Package Status</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="package_status"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Remaining Days</p>  
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="remaining_days"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text"></p>  
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt">Secure Status</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_text" id="secure_status"></p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <p class="text-center profile_txt" id="secure_status">Private Mode</p>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col">
+                <p id="private_on_off" class="text-right profile_text pt-2"></p>
             </div>
-            <div class="card-body">
-                <div class="d-flex justify-content-center">
-                    <h5>Card Warranty</h5>  
-                </div>
-                <div class="d-flex justify-content-center">
-                    <p>One Year Warranty</p>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-4 col-md-offset-4">
-                    <button class="btn btn-dark btn-block">EDIT</button>
-                    </div>
-                </div>
+            <div class="col">
+                <label class="switch">
+                    <input type="checkbox" class="sw">
+                    <span class="slider round"  id="switch_box"></span>
+                </label>
+            </div>
+        </div>
+        </div>
+        </div>
+       
+        <div class="d-flex justify-content-center mt-3">
+            <div class="col-md-4 col-md-offset-4">
+            <button class="btn btn-dark btn-block">EDIT</button>
             </div>
         </div>
     </div>
 </div>
 
-<!-- <footer>
-    <div class="d-flex justify-content-center text-center">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="d-flex justfiy-content-center">
-            <div class="col">
-                <a href="" class="text-center mb-2 pb-2"><i class="fa fa-heart fa-3x pb-2"></i></a> 
-            </div>
-            <div class="col">
-                <a href="#home" class="text-center"><img src="../images/logo.jpeg" alt="" width="50" height="50"></a> 
-            </div>
-            <div class="col">
-                <a href="#home" class="text-center">Home</a> 
-            </div>
-            </div>
-        </div>
-    </div>  
-</footer> -->
+@section('script')
+<script>
+$(function() {
+    var user_id = $('#userid').val();
+    var profile_url = '{{ url('api/get_profile') }}';
+    $.ajax({
+        url:profile_url,
+           method:'POST',
+           data:{
+                user_id: user_id,  
+                },
+           success:function(response){
+               $('#username').text(response.data['name']);
+               $('#email_name').text(response.data['email']);
+               $('#mobile').text(response.data['phone_number']);
+               $('#customer_url').text('http://vvip9.co/' + response.data['url']);
+               $('#package').text(response.data['package']);
+               $('#package_status').text(response.data['package_status']);
+               $('remaining_days').text(response.data['remaining_days']);
+               if(response.data['secure_status'] == 'public'){
+                $('#secure_status').text(response.data['secure_status']);
+                $('#private_on_off').text('Off');
+               } 
+               console.log(response);
+           }
+    });
+
+    $('.sw').on('change', function(){
+        var check = $(this);
+        var check_value = check.val();
+
+        if(check.is(':checked')){
+            $('#private_on_off').text('On');
+        } else {
+            $('#private_on_off').text('Off');
+        }
+    });
+});
+</script>
+@endsection
 @endsection

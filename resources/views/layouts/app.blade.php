@@ -86,10 +86,10 @@
         <div class="navbar-footer">
             <div class="d-flex justify-content-center text-center">
                 <div class="col-md-4">
-                    <a href="" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
+                    <a href="/create_data" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
                 </div>
                 <div class="col-md-4">
-                    <a href="" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
+                    <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
                 </div>
                 <div class="col-md-4">
                     <a href="" class="text-center"><i class="fas fa-th-list fa-2x menu_list"></i></a>
@@ -99,7 +99,7 @@
         @endif
         
     </div>
-    <div id="loading" style="display:block;">
+    <div id="loading" style="display:block;"> 
         <div class="container justify-content-center d-flex">
             <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
             <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

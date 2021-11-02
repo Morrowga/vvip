@@ -57,5 +57,6 @@ Route::post('create_phone', [App\Http\Controllers\API\UserPanelController::class
 
 Route::get('get_actions', [App\Http\Controllers\API\UserPanelController::class, 'getChangeAction']);
 
+Route::post('get_profile', [App\Http\Controllers\API\UserPanelController::class, 'get_profile']);
 
 //379d0d9f-62a3-4d18-9e4d-70f378ff6392
