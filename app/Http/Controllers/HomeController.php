@@ -44,14 +44,18 @@ class HomeController extends Controller
         return view('vvip_customers.create');
     }
 
-    public function addDeep_link(Request $request){
-        $user_id = $request->user_id;
-        return $user_id;
-        // $url = $request->url;
-        // $name = $request->name;
-        // $active = $request->active;
-        $link =  DeepLink::where('user_id', $user_id)->get();
-        return $link;
+    // public function addDeep_link(Request $request){
+    //     $user_id = $request->user_id;
+    //     // return $user_id;
+    //     // $url = $request->url;
+    //     // $name = $request->name;
+    //     // $active = $request->active;
+    //     $link =  DeepLink::where('user_id', $user_id)->get();
+    //     return $link;
+    // }
+
+    public function listView(){
+        return view('vvip_customers.menu');
     }
 
 }

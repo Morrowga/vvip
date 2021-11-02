@@ -92,7 +92,7 @@
                     <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
                 </div>
                 <div class="col-md-4">
-                    <a href="" class="text-center"><i class="fas fa-th-list fa-2x menu_list"></i></a>
+                    <a href="/list" class="text-center"><i class="fas fa-th-list fa-2x menu_list"></i></a>
                 </div>
             </div>
         </div>

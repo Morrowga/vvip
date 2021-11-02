@@ -720,10 +720,45 @@ label.label_file {
   }
   
   
+  .edit_profile{
+    background-color: rgba(0, 0, 0) !important;
+    font-family: "Britannic Bold";
+    border: 2px solid rgb(217,181,81) !important;
+    letter-spacing: 1px;
+  }
 
+  .edit_profile:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s;
+  }
+
+  .menu_arrow{
+    text-align:right; 
+    float:right; 
+    margin-top: 3px;
+  }
+
+  .menu_button{
+    background-color: rgb(255,255,255) !important;
+    color: #000 !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    font-weight: bold;
+    border: 2px solid rgb(217,181,81) !important;
+  }
+
+  .menu_button:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.7s;
+  } 
+  
 @media only screen and (max-width: 425px) {
     #home_height{
         height: 510px !important;
+    }
+
+    #profile_container{
+        height: 1400px !important;
     }
 
     #countdown{

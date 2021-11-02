@@ -137,6 +137,38 @@ class Helper{
                     ];
                     return $messages;
                 }
+            } else if($request_name === "get_user_profile"){
+                $user_check = User::where('id', $user_id)->first();
+                if($user_check !== null){
+                    $data = [
+                        "user_id" => $user_check->id,
+                        "name" => $user_check->name,
+                        "email" => $user_check->email,
+                        "phone_number" => $user_check->phone_number,
+                        "url" => $user_check->url,
+                        "profile_image" => $user_check->profile_image,
+                        "secure_status" => $user_check->secure_status,
+                        "package" => $user_check->package,
+                        "package_status" => $user_check->package_status,
+                        "remaining_days" => $user_check->remaining_days,
+                    ];
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "request" => "get_user_profile",
+                        "data" => $data
+                    ];
+
+                    return $messages;
+                } else {
+                    $messages = [
+                        "status" => "412",
+                        "message" => "User does not exist",
+                        "request" => "get_user_profile",
+                    ];
+
+                    return $messages;
+                }
             }
         }
     }

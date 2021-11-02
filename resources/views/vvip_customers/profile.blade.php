@@ -33,7 +33,7 @@
     </div>
 </nav> 
 
-<div class="container" style="height: 1400px;">
+<div class="container" style="height: 1050px;" id="profile_container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-offset-3">
             <input type="text" value="{{ Auth::user()->id }}" id="userid" hidden>
@@ -136,7 +136,7 @@
        
         <div class="d-flex justify-content-center mt-3">
             <div class="col-md-4 col-md-offset-4">
-            <button class="btn btn-dark btn-block">EDIT</button>
+            <button class="btn btn-dark btn-block edit_profile">EDIT</button>
             </div>
         </div>
     </div>
@@ -146,12 +146,13 @@
 <script>
 $(function() {
     var user_id = $('#userid').val();
-    var profile_url = '{{ url('api/get_profile') }}';
+    var profile_url = '{{ url('api/get_datas') }}';
     $.ajax({
         url:profile_url,
            method:'POST',
            data:{
                 user_id: user_id,  
+                request_name: "get_user_profile"
                 },
            success:function(response){
                $('#username').text(response.data['name']);
