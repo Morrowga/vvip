@@ -24,7 +24,7 @@
     <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <div id="app" style="display:none; width:100%; height: 100%; position: fixed !important;">
+    <div id="app" style="display:none; width:100%; height: 100%; flex-direction: column;">
         <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -76,7 +76,7 @@
             </div>
         </nav> -->
 
-        <main class="py-4" style="grid-row: 2 !important; overflow-y:auto !important;">
+        <main class="py-4" style="flex: 1 !important; overflow:auto !important;">
             @yield('content')
         </main>
 
