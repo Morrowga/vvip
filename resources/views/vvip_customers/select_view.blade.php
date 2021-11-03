@@ -53,7 +53,6 @@
                         <p class="text_color" id="birthday">Birthday : `+ response.data['personal']['birthday'] +`</p>
                     </div>
                 </div>
-                <hr>
                 <div class="d-flex justify-content-center row">
                     <div class="col-md-6 text-center">
                         <p class="text_color" id="str_one">Street One ( Home ) : `+ response.data['home_address']['street_one'] +`</p>
@@ -72,7 +71,6 @@
                         <p class="text_color" id="work_country">Country ( Work ) : `+ response.data['work_address']['country'] +`</p>
                     </div>
                 </div>
-                <hr>
                 <div class="d-flex justify-content-center row">
                     <div class="col-md-6 text-center">
                         <p class="text_color" id="mobile">Mobile : `+ response.data['mobile']['mobile'] +`</p>
@@ -87,6 +85,8 @@
                         <p class="text_color" id="web_three">Website Three : <a href="https://`+ response.data['email_and_internet']['website_three'] +`" target="_blank">`+ response.data['email_and_internet']['website_three'] +`</a></p>
                     </div>
                 </div>`);
+
+                $('#card_background').attr('style', 'background-color:' + response.data['background_color'] + '!important;');
 
                 $('.text_color').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
                 response.data['text_highlight_color'] + ';');
