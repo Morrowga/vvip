@@ -89,7 +89,7 @@
                 $('#card_background').attr('style', 'background-color:' + response.data['background_color'] + '!important;');
 
                 $('.text_color').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
-                response.data['text_highlight_color'] + ';');
+                response.data['text_highlight_color'] + '; font-family: "Britannic Bold"; font-size: 19px; font-weight: 900;');
 
                 if(response.data['personal']['first_name'] == null){
                     $('#fn').hide();
