@@ -33,7 +33,7 @@
     </div>
 </nav> 
 
-<div class="container" style="height: 1050px;" id="profile_container">
+<div class="container" style="height: 850px;" id="profile_container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-offset-3">
             <input type="text" value="{{ Auth::user()->id }}" id="userid" hidden>
@@ -134,11 +134,11 @@
         </div>
         </div>
        
-        <div class="d-flex justify-content-center mt-3">
+        <!-- <div class="d-flex justify-content-center mt-3">
             <div class="col-md-4 col-md-offset-4">
             <button class="btn btn-dark btn-block edit_profile">EDIT</button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

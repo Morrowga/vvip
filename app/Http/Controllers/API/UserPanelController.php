@@ -81,13 +81,11 @@ class UserPanelController extends Controller
                 $exist->background_color  = $background_color;
                 $exist->text_color = $text_color;
                 $exist->text_highlight_color = $text_highlight_color;
-                if($image){
+                if($request->hasfile('image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $exist->image = $imageName;
-                } else {
-                    $exist->image = $image;
-                }
+                } 
                 $exist->save();
     
                 $messages = [
@@ -131,9 +129,7 @@ class UserPanelController extends Controller
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
                     $contact->image = $imageName;
-                } else {
-                    $exist->image = $image;
-                }
+                } 
                 $contact->save();
 
                 $messages = [

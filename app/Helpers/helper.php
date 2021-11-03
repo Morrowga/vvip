@@ -15,7 +15,7 @@ class Helper{
                 $contact_data = Contact::where('user_id', '=', $user_id)->first();
                 if(!empty($contact_data)){
                     $data = [
-                        "image" =>  "http://vvip9.co/storage/contact_images/" . $contact_data->image,
+                        "image" =>  "../storage/contact_images/" . $contact_data->image,
                         "personal" => [
                             "first_name" => $contact_data->first_name,
                             "last_name" => $contact_data->last_name,

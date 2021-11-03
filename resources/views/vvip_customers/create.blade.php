@@ -125,7 +125,7 @@
                     <div class="col-md-6">
                         <h4 class="text text-center">Upload Photo</h4>
                         <label class="label_file btn btn-dark btn-block text">
-                            <input type="file" class="file_upload" name="image">
+                            <input type="file" class="file_upload" name="image" accept="image/*">
                             Select file
                         </label>
                     </div>
@@ -516,9 +516,10 @@ $(function() {
         success:function(response){
             console.log(response.message);
             if(response.status != "500"){
-                var image_display = response.data['image'].replace('http://vvip9.co/','../');
-            $('#img').attr('src', image_display);
-            // $('.file_upload').val(image_keep);
+                //  console.log(response.data['image']);
+                // var image_display = response.data['image'].replace('../');
+            $('#img').attr('src', response.data['image']);
+            // $('.file_upload').val(response.data['image']);
             $('#first_name').val(response.data['personal']['first_name']);
             $('#last_name').val(response.data['personal']['last_name']);
             $('#company').val(response.data['personal']['company']);
@@ -557,7 +558,8 @@ $(function() {
     });
 
 
-    $('#upload-contact-form').submit(function(e){
+
+    $('#upload-contact-form').submit(function(e){ 
         e.preventDefault();
         var contact_url = '{{ url('api/create_contact') }}';
         var token =  $('#token').val();
