@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.user_display')
 
 @section('content')
 
@@ -16,8 +16,12 @@
 
 <div class="container">
     <div class="col-md-12">
-        <div class="data_view">
-            
+        <div class="card" id="card_background">
+            <div class="card-body">
+                <div class="data_view">
+                
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -37,57 +41,154 @@
         success: function(response){
             if(response.request == "contacts"){
                     var image_display = response.data['image'].replace('http://vvip9.co/','../');
-                    $('.data_view').append(`<div class="d-flex justify-content-center">
+                    $('.data_view').append(`<div class="d-flex justify-content-center row">
                     <div class="col-md-6" style="text-align:center;">
                         <img src="`+ image_display +`" alt="" width="200"  height="200" style="border-radius: 50%">
                     </div>
-                    <div class="col-md-6">
-                        <h3 class="text text-center">Personal</h3>
-                        <p class="text">First Name :`+ response.data['personal']['first_name'] +` </p>
-                        <p class="text">Last Name : `+ response.data['personal']['last_name'] +`</p>
-                        <p class="text">Company : `+ response.data['personal']['company'] +`</p>
-                        <p class="text">Position : `+ response.data['personal']['position'] +`</p>
-                        <p class="text">Birthday : `+ response.data['personal']['birthday'] +`</p>
+                    <div class="col-md-6 text-center mt-2">
+                        <p class="text_color" id="fn">First Name :`+ response.data['personal']['first_name'] +` </p>
+                        <p class="text_color" id="ln">Last Name : `+ response.data['personal']['last_name'] +`</p>
+                        <p class="text_color" id="company">Company : `+ response.data['personal']['company'] +`</p>
+                        <p class="text_color" id="position">Position : `+ response.data['personal']['position'] +`</p>
+                        <p class="text_color" id="birthday">Birthday : `+ response.data['personal']['birthday'] +`</p>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-6">
-                        <h3 class="text text-center">Home Address</h3>
-                        <p class="text">Street One : `+ response.data['home_address']['street_one'] +`</p>
-                        <p class="text">Street Two : `+ response.data['home_address']['street_two'] +`</p>
-                        <p class="text">Postal Code : `+ response.data['home_address']['postal_code'] +`</p>
-                        <p class="text">City : `+ response.data['home_address']['city'] +`</p>
-                        <p class="text">State : `+ response.data['home_address']['state'] +`</p>
-                        <p class="text">Country : `+ response.data['home_address']['country'] +`</p>
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-6 text-center">
+                        <p class="text_color" id="str_one">Street One ( Home ) : `+ response.data['home_address']['street_one'] +`</p>
+                        <p class="text_color" id="str_two">Street Two ( Home ) : `+ response.data['home_address']['street_two'] +`</p>
+                        <p class="text_color" id="postal_code">Postal Code ( Home ) : `+ response.data['home_address']['postal_code'] +`</p>
+                        <p class="text_color" id="city">City ( HOME ) : `+ response.data['home_address']['city'] +`</p>
+                        <p class="text_color" id="state">State ( HOME ) : `+ response.data['home_address']['state'] +`</p>
+                        <p class="text_color" id="country">Country ( Home ) : `+ response.data['home_address']['country'] +`</p>
                     </div>
-                    <div class="col-md-6">
-                        <h3 class="text text-center">Work Address</h3>
-                        <p class="text">Street One : `+ response.data['work_address']['street_one'] +`</p>
-                        <p class="text">Street Two : `+ response.data['work_address']['street_two'] +`</p>
-                        <p class="text">Postal Code : `+ response.data['work_address']['postal_code'] +`</p>
-                        <p class="text">City : `+ response.data['work_address']['city'] +`</p>
-                        <p class="text">State : `+ response.data['work_address']['state'] +`</p>
-                        <p class="text">Country : `+ response.data['work_address']['country'] +`</p>
+                    <div class="col-md-6 text-center">
+                        <p class="text_color" id="work_str_one">Street One ( Work ) : `+ response.data['work_address']['street_one'] +`</p>
+                        <p class="text_color" id="work_str_two"> Street Two ( Work ) : `+ response.data['work_address']['street_two'] +`</p>
+                        <p class="text_color" id="work_postal_code">Postal Code ( Work ) : `+ response.data['work_address']['postal_code'] +`</p>
+                        <p class="text_color" id="work_city">City ( Work ): `+ response.data['work_address']['city'] +`</p>
+                        <p class="text_color" id="work_state">State ( Work ) : `+ response.data['work_address']['state'] +`</p>
+                        <p class="text_color" id="work_country">Country ( Work ) : `+ response.data['work_address']['country'] +`</p>
                     </div>
                 </div>
                 <hr>
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-6">
-                        <h3 class="text text-center">Mobile</h3>
-                        <p class="text">Mobile : `+ response.data['mobile']['mobile'] +`</p>
-                        <p class="text">Phone : `+ response.data['mobile']['phone'] +`</p>
-                        <p class="text">Office : `+ response.data['mobile']['office'] +`</p>
+                <div class="d-flex justify-content-center row">
+                    <div class="col-md-6 text-center">
+                        <p class="text_color" id="mobile">Mobile : `+ response.data['mobile']['mobile'] +`</p>
+                        <p class="text_color" id="phone_no">Phone : `+ response.data['mobile']['phone'] +`</p>
+                        <p class="text_color" id="office">Office : `+ response.data['mobile']['office'] +`</p>
                     </div>
-                    <div class="col-md-6">
-                        <h3 class="text text-center">Email and Internet</h3>
-                        <p class="text">Personal Email : `+ response.data['email_and_internet']['personalemail'] +`</p>
-                        <p class="text">Office Email : `+ response.data['email_and_internet']['office_email'] +`</p>
-                        <p class="text">Website One : <a href="https://`+ response.data['email_and_internet']['website_one'] +`" target="_blank">`+ response.data['email_and_internet']['website_one'] +`</a></p>
-                        <p class="text">Website Two : <a href="https://`+ response.data['email_and_internet']['website_two'] +`" target="_blank">`+ response.data['email_and_internet']['website_two'] +`</a></p>
-                        <p class="text">Website Three : <a href="https://`+ response.data['email_and_internet']['website_three'] +`" target="_blank">`+ response.data['email_and_internet']['website_three'] +`</a></p>
+                    <div class="col-md-6 text-center">
+                        <p class="text_color" id="email">Personal Email : `+ response.data['email_and_internet']['personalemail'] +`</p>
+                        <p class="text_color" id="office_email">Office Email : `+ response.data['email_and_internet']['office_email'] +`</p>
+                        <p class="text_color" id="web_one">Website One : <a href="https://`+ response.data['email_and_internet']['website_one'] +`" target="_blank">`+ response.data['email_and_internet']['website_one'] +`</a></p>
+                        <p class="text_color" id="web_two">Website Two : <a href="https://`+ response.data['email_and_internet']['website_two'] +`" target="_blank">`+ response.data['email_and_internet']['website_two'] +`</a></p>
+                        <p class="text_color" id="web_three">Website Three : <a href="https://`+ response.data['email_and_internet']['website_three'] +`" target="_blank">`+ response.data['email_and_internet']['website_three'] +`</a></p>
                     </div>
-                </div>`)
+                </div>`);
+
+                $('.text_color').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                response.data['text_highlight_color'] + ';');
+
+                if(response.data['personal']['first_name'] == null){
+                    $('#fn').hide();
+                } 
+                if(response.data['personal']['last_name'] == null){
+                    $('#ln').hide();
+                }
+
+                if(response.data['personal']['company'] == null){
+                    $('#company').hide();
+                }
+
+                if(response.data['personal']['position'] == null){
+                    $('#position').hide();
+                }
+
+                if(response.data['personal']['birthday'] == null){
+                    $('#birthday').hide();
+                }
+
+                if(response.data['home_address']['street_one'] == null){
+                    $('#str_one').hide();
+                }
+                
+                if(response.data['home_address']['street_two'] == null){
+                    $('#str_two').hide();
+                }
+
+                if(response.data['home_address']['postal_code'] == null){
+                    $('#postal_code').hide();
+                }
+
+                if(response.data['home_address']['city'] == null){
+                    $('#city').hide();
+                }
+                
+                if(response.data['home_address']['state'] == null){
+                    $('#state').hide();
+                }
+
+                if(response.data['home_address']['country'] == null) {
+                    $('#country').hide();
+                }
+
+                if(response.data['work_address']['street_one'] == null){
+                    $('#work_str_one').hide();
+                }
+                
+                if(response.data['work_address']['street_two'] == null){
+                    $('#work_str_two').hide();
+                }
+
+                if(response.data['work_address']['postal_code'] == null){
+                    $('#work_postal_code').hide();
+                }
+
+                if(response.data['work_address']['city'] == null){
+                    $('#work_city').hide();
+                }
+                
+                if(response.data['work_address']['state'] == null){
+                    $('#work_state').hide();
+                }
+
+                if(response.data['work_address']['country'] == null) {
+                    $('#work_country').hide();
+                }
+
+                if(response.data['mobile']['mobile'] == null){
+                    $('#mobile').hide();
+                }
+
+                if(response.data['mobile']['mobile'] == null){
+                    $('#phone_no').hide();
+                }
+
+                if(response.data['mobile']['office'] == null){
+                    $('#office').hide();
+                }
+                
+                if(response.data['email_and_internet']['personalemail'] == null){
+                    $('#email').hide();
+                }
+
+                if(response.data['email_and_internet']['office_email'] == null){
+                    $('#office_email').hide();
+                }
+
+                if(response.data['email_and_internet']['website_one'] == null){
+                    $('#web_one').hide();
+                }
+
+                if(response.data['email_and_internet']['website_two'] == null){
+                    $('#web_two').hide();
+                }
+
+                if(response.data['email_and_internet']['website_three'] == null){
+                    $('#web_three').hide();
+                }
             } else if(response.request == "deep_link"){
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 

@@ -29,5 +29,5 @@ Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->n
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
 
-Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant']);
+Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 

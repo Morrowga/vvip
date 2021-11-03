@@ -4,7 +4,7 @@
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
-        <a class="navbar-brand" href="{{ url('/') }}">
+        <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
@@ -155,16 +155,18 @@ $(function() {
                 request_name: "get_user_profile"
                 },
            success:function(response){
-               $('#username').text(response.data['name']);
-               $('#email_name').text(response.data['email']);
-               $('#mobile').text(response.data['phone_number']);
-               $('#customer_url').text('http://vvip9.co/' + response.data['url']);
-               $('#package').text(response.data['package']);
-               $('#package_status').text(response.data['package_status']);
-               $('remaining_days').text(response.data['remaining_days']);
-               if(response.data['secure_status'] == 'public'){
-                $('#secure_status').text(response.data['secure_status']);
-                $('#private_on_off').text('Off');
+               if(response.data == null){
+                $('#username').text(response.data['name']);
+                $('#email_name').text(response.data['email']);
+                $('#mobile').text(response.data['phone_number']);
+                $('#customer_url').text('http://vvip9.co/' + response.data['url']);
+                $('#package').text(response.data['package']);
+                $('#package_status').text(response.data['package_status']);
+                $('remaining_days').text(response.data['remaining_days']);
+                if(response.data['secure_status'] == 'public'){
+                    $('#secure_status').text(response.data['secure_status']);
+                    $('#private_on_off').text('Off');
+               }
                } 
                console.log(response);
            }

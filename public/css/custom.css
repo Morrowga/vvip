@@ -824,6 +824,13 @@ label.label_file {
     font-family: "Britannic Bold";
 }
 
+.text_color{
+    font-family: "Britannic Bold";
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
 .save_all:hover{
     background-color: rgb(217,181,81) !important;
     transition-duration: 0.8s;
