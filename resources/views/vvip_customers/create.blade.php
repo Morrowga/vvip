@@ -545,9 +545,9 @@ $(function() {
             $('#work_city').val(response.data['work_address']['city']);
             $('#work_state').val(response.data['work_address']['state']);
             $('#work_country').val(response.data['work_address']['country']);
-            $('#background_color').val(response.data['background-color']);
+            $('#background_color').val(response.data['background_color']);
             $('#text_color').val(response.data['text_color']);
-            $('#text_highlight_color').val(response.data['text_hightlight_color']);
+            $('#text_highlight_color').val(response.data['text_highlight_color']);
             } else {
                 console.log(response.message);
             }
