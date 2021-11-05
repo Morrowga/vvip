@@ -269,50 +269,48 @@
                     </div>
                 </div>
             </div>
-            <div class="card-body" id="more_link">
-                <div class="card-body" id="link_three">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Three</h3>
-                            <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
-                        </div>
+            <div class="card-body" id="link_three">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h3 class="text text-center">Link Three</h3>
+                        <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
                     </div>
                 </div>
-                <div class="card-body" id="link_four">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Four</h3>
-                            <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
-                        </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <div class="col-md-10 col-md-offset-1">
+                        <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
                     </div>
                 </div>
-                <div class="card-body" id="link_five">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Five</h3>
-                            <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
-                        </div>
+            </div>
+            <div class="card-body" id="link_four">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h3 class="text text-center">Link Four</h3>
+                        <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
                     </div>
                 </div>
-                <div class="col-md-12 mt-2 text-center">
-                    <a class="btn btn-dark load-previous">Load Previous</a>
-                    <button class="btn btn-dark save_tree" type="submit">Save Link</button>
+                <div class="d-flex justify-content-center mt-2">
+                    <div class="col-md-10 col-md-offset-1">
+                        <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
+                    </div>
                 </div>
+            </div>
+            <div class="card-body" id="link_five">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-10 col-md-offset-1">
+                        <h3 class="text text-center">Link Five</h3>
+                        <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-2">
+                    <div class="col-md-10 col-md-offset-1">
+                        <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mt-2 text-center">
+                <a class="btn btn-dark load-previous">Load Previous</a>
+                <button class="btn btn-dark save_tree" type="submit">Save Link</button>
             </div>
         </div>
         </form>
@@ -439,7 +437,9 @@ $(function() {
 
     $('.load-previous').on('click', function(){
         // $('#save_modal').modal('hide');
-        $('#more_link').hide();
+        $('#link_three').hide();
+        $('#link_four').hide();
+        $('#link_five').hide();
         $('#image_card').addClass('animate__animated animate__fadeInDown').show();
         $('#link_above').addClass('animate__animated animate__fadeInDown').show();
     });
@@ -451,7 +451,9 @@ $(function() {
         // $('#save_modal').modal('hide');
         $('#image_card').hide();
         $('#link_above').hide();
-        $('#more_link').addClass('animate__animated animate__fadeInUp').show();
+        $('#link_three').addClass('animate__animated animate__fadeInUp').show();
+        $('#link_four').addClass('animate__animated animate__fadeInUp').show();
+        $('#link_five').addClass('animate__animated animate__fadeInUp').show();
     });
 
 
