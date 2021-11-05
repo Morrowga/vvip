@@ -263,54 +263,56 @@
                             <input type="text" class="form-control" id="linktwo_url" name="link_two_url" placeholder="write your app url">
                         </div>
                     </div>
-                    <div class="col-md-12 mt-2 text-center" id="more">
+                    <div class="col-md-12 mt-2 text-center">
                         <a class="btn btn-dark load-more">Load More</a>
                         <button class="btn btn-dark save_tree" type="submit">Save Link</button>
                     </div>
                 </div>
             </div>
-            <div class="card-body" id="link_three">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3 class="text text-center">Link Three</h3>
-                        <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
+            <div class="card-body" id="more_link">
+                <div class="card-body" id="link_three">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Three</h3>
+                            <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-2">
-                    <div class="col-md-10 col-md-offset-1">
-                        <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
+                <div class="card-body" id="link_four">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Four</h3>
+                            <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-body" id="link_four">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3 class="text text-center">Link Four</h3>
-                        <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
+                <div class="card-body" id="link_five">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Five</h3>
+                            <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mt-2">
-                    <div class="col-md-10 col-md-offset-1">
-                        <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
-                    </div>
+                <div class="col-md-12 mt-2 text-center">
+                    <a class="btn btn-dark load-previous">Load Previous</a>
+                    <button class="btn btn-dark save_tree" type="submit">Save Link</button>
                 </div>
-            </div>
-            <div class="card-body" id="link_five">
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-10 col-md-offset-1">
-                        <h3 class="text text-center">Link Five</h3>
-                        <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-2">
-                    <div class="col-md-10 col-md-offset-1">
-                        <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12 mt-2 text-center" id="previou_s">
-                <a class="btn btn-dark load-previous">Load Previous</a>
-                <button class="btn btn-dark save_tree" type="submit">Save Link</button>
             </div>
         </div>
         </form>
@@ -430,17 +432,16 @@ $(function() {
     $('#email_section').hide();
     $('#phone_section').hide();
     $('#link_tree_section').hide();
-    $('#link_three').hide();
-    $('#link_four').hide();
-    $('#link_five').hide();
-    $('#previou_s').hide()
+    // $('#link_three').hide();
+    // $('#link_four').hide();
+    // $('#link_five').hide();
+    $('#more_link').hide();
 
     $('.load-previous').on('click', function(){
         // $('#save_modal').modal('hide');
         $('#link_three').hide();
         $('#link_four').hide();
         $('#link_five').hide();
-        $('#more').show();
         $('#image_card').addClass('animate__animated animate__fadeInDown').show();
         $('#link_above').addClass('animate__animated animate__fadeInDown').show();
     });
@@ -450,7 +451,6 @@ $(function() {
         // $('#link_four').show();
         // $('#link_five').show();
         // $('#save_modal').modal('hide');
-        $('#previou_s').addClass('animate__animated animate__fadeInUp').show();
         $('#image_card').hide();
         $('#link_above').hide();
         $('#link_three').addClass('animate__animated animate__fadeInUp').show();
