@@ -450,7 +450,7 @@ $(function() {
         // $('#link_four').show();
         // $('#link_five').show();
         // $('#save_modal').modal('hide');
-        $('#previou_s').show()
+        $('#previou_s').addClass('animate__animated animate__fadeInUp').show();
         $('#image_card').hide();
         $('#link_above').hide();
         $('#link_three').addClass('animate__animated animate__fadeInUp').show();
