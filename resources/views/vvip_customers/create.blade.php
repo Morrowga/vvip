@@ -263,7 +263,7 @@
                             <input type="text" class="form-control" id="linktwo_url" name="link_two_url" placeholder="write your app url">
                         </div>
                     </div>
-                    <div class="col-md-12 mt-2 text-center">
+                    <div class="col-md-12 mt-2 text-center" id="more">
                         <a class="btn btn-dark load-more">Load More</a>
                         <button class="btn btn-dark save_tree" type="submit">Save Link</button>
                     </div>
@@ -308,7 +308,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-12 mt-2 text-center">
+            <div class="col-md-12 mt-2 text-center" id="previou_s">
                 <a class="btn btn-dark load-previous">Load Previous</a>
                 <button class="btn btn-dark save_tree" type="submit">Save Link</button>
             </div>
@@ -440,6 +440,7 @@ $(function() {
         $('#link_three').hide();
         $('#link_four').hide();
         $('#link_five').hide();
+        $('#more').hide();
         $('#image_card').addClass('animate__animated animate__fadeInDown').show();
         $('#link_above').addClass('animate__animated animate__fadeInDown').show();
     });
@@ -449,6 +450,7 @@ $(function() {
         // $('#link_four').show();
         // $('#link_five').show();
         // $('#save_modal').modal('hide');
+        $('#previou_s').hide()
         $('#image_card').hide();
         $('#link_above').hide();
         $('#link_three').addClass('animate__animated animate__fadeInUp').show();
