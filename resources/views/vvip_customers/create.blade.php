@@ -433,6 +433,7 @@ $(function() {
     $('#link_three').hide();
     $('#link_four').hide();
     $('#link_five').hide();
+    $('#previou_s').hide()
 
     $('.load-previous').on('click', function(){
         // $('#save_modal').modal('hide');
