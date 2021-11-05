@@ -430,10 +430,9 @@ $(function() {
     $('#email_section').hide();
     $('#phone_section').hide();
     $('#link_tree_section').hide();
-    // $('#link_three').hide();
-    // $('#link_four').hide();
-    // $('#link_five').hide();
-    $('#more_link').hide();
+    $('#link_three').hide();
+    $('#link_four').hide();
+    $('#link_five').hide();
 
     $('.load-previous').on('click', function(){
         // $('#save_modal').modal('hide');
