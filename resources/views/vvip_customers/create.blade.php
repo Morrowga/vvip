@@ -766,17 +766,21 @@ $(function() {
         },
         success:function(response){
             console.log(response);
-            $('#link_img').attr('src', '../' + response.data['link_image']);
-            $('#linkone_label').val(response.data['link_one_label']);
-            $('#linkone_url').val(response.data['link_one_url']);
-            $('#linktwo_label').val(response.data['link_two_label']);
-            $('#linktwo_url').val(response.data['link_two_url']);
-            $('#linkthree_label').val(response.data['link_three_label']);
-            $('#linkthree_url').val(response.data['link_three_url']);
-            $('#linkfour_label').val(response.data['link_four_label']);
-            $('#linkfour_url').val(response.data['link_four_url']);
-            $('#linkfive_label').val(response.data['link_five_label']);
-            $('#linkfive_url').val(response.data['link_five_url']);
+            if(response.status == '200'){
+                $('#link_img').attr('src', '../' + response.data['link_image']);
+                $('#linkone_label').val(response.data['link_one_label']);
+                $('#linkone_url').val(response.data['link_one_url']);
+                $('#linktwo_label').val(response.data['link_two_label']);
+                $('#linktwo_url').val(response.data['link_two_url']);
+                $('#linkthree_label').val(response.data['link_three_label']);
+                $('#linkthree_url').val(response.data['link_three_url']);
+                $('#linkfour_label').val(response.data['link_four_label']);
+                $('#linkfour_url').val(response.data['link_four_url']);
+                $('#linkfive_label').val(response.data['link_five_label']);
+                $('#linkfive_url').val(response.data['link_five_url']);
+            } else {
+                console.log('data does not exist');
+            }   
         }
     });
 
