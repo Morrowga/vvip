@@ -541,9 +541,26 @@ left: 23%;
 
 .appear{
     font-family: "Britannic Bold";
-    color: #000;
+    color: #fff;
     letter-spacing: 2px;
     font-weight: bold;
+}
+
+.appear-btn{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    color: #fff !important;
+}
+
+.appear-btn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s;
+}
+
+#card_appear{
+    background-color: #000 !important;
 }
 
 .social_link{
@@ -588,6 +605,10 @@ label.label_file {
   }
 
   .file_upload {
+    display: none !important;
+}
+
+.link_file_upload{
     display: none !important;
 }
 
@@ -825,6 +846,7 @@ label.label_file {
 }
 
 .text_color{
+
     font-family: "Britannic Bold";
     font-size: 19px;
     font-weight: bold;
@@ -844,6 +866,42 @@ label.label_file {
 .just_save:hover{
     background-color: rgb(217,181,81) !important;
     transition-duration: 0.8s;
+}
+
+.load-more{
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+.load-more:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+.load-previous{
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+.load-previous:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+.save_tree{
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-family: "Britannic Bold";
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+.save_tree:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
 }
   
 @media only screen and (max-width: 425px) {

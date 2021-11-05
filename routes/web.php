@@ -21,6 +21,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
+Route::get('/setting', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
+
 Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->name('action');
 
 Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createData'])->name('createData');

@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Helpers\Helper;
 use App\Models\Action;
 use App\Models\Eusp;
+use App\Models\LinkTree;
 use App\Models\SelectedView;
 
 class UserPanelController extends Controller
@@ -48,9 +49,9 @@ class UserPanelController extends Controller
             $work_city = $request->work_city;
             $work_state = $request->work_state;
             $work_country = $request->work_country;
-            $background_color = $request->background_color;
-            $text_color = $request->text_color;
-            $text_highlight_color = $request->text_highlight_color;
+            // $background_color = $request->background_color;
+            // $text_color = $request->text_color;
+            // $text_highlight_color = $request->text_highlight_color;
             $exist = Contact::where('user_id', '=', $request->user_id)->first();
             if ($exist !== null) {
                 $exist->first_name = $first_name;
@@ -78,9 +79,9 @@ class UserPanelController extends Controller
                 $exist->work_city = $work_city;
                 $exist->work_state = $work_state;
                 $exist->work_country = $work_country;
-                $exist->background_color  = $background_color;
-                $exist->text_color = $text_color;
-                $exist->text_highlight_color = $text_highlight_color;
+                // $exist->background_color  = $background_color;
+                // $exist->text_color = $text_color;
+                // $exist->text_highlight_color = $text_highlight_color;
                 if($request->hasfile('image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
@@ -122,9 +123,9 @@ class UserPanelController extends Controller
                 $contact->work_city = $work_city;
                 $contact->work_state = $work_state;
                 $contact->work_country = $work_country;
-                $contact->background_color  = $background_color;
-                $contact->text_color = $text_color;
-                $contact->text_highlight_color = $text_highlight_color;
+                // $contact->background_color  = $background_color;
+                // $contact->text_color = $text_color;
+                // $contact->text_highlight_color = $text_highlight_color;
                 if($image){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('contact_images', $imageName, 'public');
@@ -487,6 +488,210 @@ class UserPanelController extends Controller
                 ];
                 return $messages;
             }
+        }
+    }
+
+    public function create_appearance(Request $request){
+        $user_id = $request->user_id;
+        $background_color = $request->background_color;
+        $text_color = $request->text_color;
+        $text_highlight_color = $request->text_highlight_color;
+
+        $check_user = User::where('id', $user_id)->first();
+
+        if($check_user !== null){
+            $contact_exist = Contact::where('user_id', $check_user->id)->first();
+            $link_tree_exist = LinkTree::where('user_id', $check_user->id)->first();
+            if($contact_exist !== null || $link_tree_exist !== null){
+                $contact_exist->background_color = $background_color;
+                $contact_exist->text_color = $text_color;
+                $contact_exist->text_highlight_color = $text_highlight_color;
+                $contact_exist->save();
+
+                $link_tree_exist->background_color = $background_color;
+                $link_tree_exist->text_color = $text_color;
+                $link_tree_exist->text_highlight_color = $text_highlight_color;
+                $link_tree_exist->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "contact" => $contact_exist,
+                    "link_tree" => $link_tree_exist
+                ];
+
+                return $messages;
+
+            } else {
+                $contact_new = new Contact();
+                $contact_new->user_id = $user_id;
+                $contact_new->background_color = $background_color;
+                $contact_new->text_color = $text_color;
+                $contact_new->text_highlight_color = $text_highlight_color;
+                $contact_new->save();
+
+                $link_new = new LinkTree();
+                $link_new->background_color = $background_color;
+                $link_new->text_color = $text_color;
+                $link_new->text_highlight_color = $text_highlight_color;
+                $link_new->save();
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "contact" => $contact_new,
+                    "link_tree" => $link_new
+                ];
+
+                return $messages;
+            }
+        
+        } else {
+             $messages = [
+                "status" => "412",
+                "message" => "User does not exist."
+             ];
+
+             return $messages;
+        }
+    }
+
+
+    public function create_link_tree(Request $request){
+        $link_one_label = $request->link_one_label;
+        $link_one_url = $request->link_one_url;
+        $link_two_label = $request->link_two_label;
+        $link_two_url = $request->link_two_url;
+        $link_three_label = $request->link_three_label;
+        $link_three_url = $request->link_three_url;
+        $link_four_label = $request->link_four_label;
+        $link_four_url = $request->link_four_url;
+        $link_five_label = $request->link_five_label;
+        $link_five_url = $request->link_five_url;
+        $user_id = $request->user_id;
+        $image = $request->file('link_image');
+        $check_user = User::where('id', $user_id)->first();
+
+        if($check_user !== null){
+            $data_one = [
+                "label" => $link_one_label,
+                "link" => $link_one_url
+            ];
+
+            $data_two = [
+                "label" => $link_two_label,
+                "link" => $link_two_url
+            ];
+            
+            $data_three = [
+                "label" => $link_three_label,
+                "link" => $link_three_url
+            ];
+
+            $data_four = [
+                "label" => $link_four_label,
+                "link" => $link_four_url
+            ];
+
+            $data_five = [
+                "label" => $link_five_label,
+                "link" => $link_five_url
+            ];
+
+            $link_exist = LinkTree::where('user_id', $check_user->id)->first();
+
+            if($link_exist !== null){
+                $link_exist->link_one = json_encode($data_one);
+                $link_exist->link_two = json_encode($data_two);
+                $link_exist->link_three = json_encode($data_three);
+                $link_exist->link_four = json_encode($data_four);
+                $link_exist->link_five = json_encode($data_five);
+                if($request->hasfile('link_image')){
+                    $imageName = $image->getClientOriginalName();
+                    $file_save = $image->storeAs('link_tree_images', $imageName, 'public');
+                    $link_exist->link_image = $imageName;
+                } 
+                $link_exist->save();
+
+                $de_link_one = json_decode($link_exist->link_one);
+                $de_link_two = json_decode($link_exist->link_two);
+                $de_link_three = json_decode($link_exist->link_three);
+                $de_link_four = json_decode($link_exist->link_four);
+                $de_link_five = json_decode($link_exist->link_five);
+
+                $final_data = [
+                  "user_id"  => $link_exist->user_id,
+                  "link_image" => $link_exist->link_image,
+                  "link_one_label" => $de_link_one->label,
+                  "link_one_url" => $de_link_one->link,
+                  "link_two_label" => $de_link_two->label,
+                  "link_two_url" => $de_link_two->link,
+                  "link_three_label" => $de_link_three->label,
+                  "link_three_url" => $de_link_three->link,
+                  "link_four_label" => $de_link_four->label,
+                  "link_four_url" => $de_link_four->link,
+                  "link_four_label" => $de_link_five->label,
+                  "link_four_url" => $de_link_five->link,
+                ];
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $final_data
+                 ];
+    
+                 return $messages;
+            } else {
+                $new_link = new LinkTree();
+                $new_link->user_id = $user_id;
+                $new_link->link_one = json_encode($data_one);
+                $new_link->link_two = json_encode($data_two);
+                $new_link->link_three = json_encode($data_three);
+                $new_link->link_four = json_encode($data_four);
+                $new_link->link_five = json_encode($data_five);
+                if($request->hasfile('link_image')){
+                    $imageName = $image->getClientOriginalName();
+                    $file_save = $image->storeAs('link_tree_images', $imageName, 'public');
+                    $new_link->link_image = $imageName;
+                } 
+                $new_link->save();
+
+                $de_link_one = json_decode($new_link->link_one);
+                $de_link_two = json_decode($new_link->link_two);
+                $de_link_three = json_decode($new_link->link_three);
+                $de_link_four = json_decode($new_link->link_four);
+                $de_link_five = json_decode($new_link->link_five);
+
+                $final_data = [
+                  "user_id"  => $new_link->user_id,
+                  "link_image" => $new_link->link_image,
+                  "link_one_label" => $de_link_one->label,
+                  "link_one_url" => $de_link_one->link,
+                  "link_two_label" => $de_link_two->label,
+                  "link_two_url" => $de_link_two->link,
+                  "link_three_label" => $de_link_three->label,
+                  "link_three_url" => $de_link_three->link,
+                  "link_four_label" => $de_link_four->label,
+                  "link_four_url" => $de_link_four->link,
+                  "link_four_label" => $de_link_five->label,
+                  "link_four_url" => $de_link_five->link,
+                ];
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "data" => $final_data
+                 ];
+    
+                 return $messages;
+            }
+        } else {
+            $messages = [
+                "status" => "412",
+                "message" => "User does not exist."
+             ];
+
+             return $messages;
         }
     }
 }

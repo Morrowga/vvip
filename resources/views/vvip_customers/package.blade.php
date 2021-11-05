@@ -280,23 +280,6 @@
                                 </div>       
                                 <div class="form-section">
                                     <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <h2 class="text">Choose Template Position</h2>
-                                            <div class="row" style="margin-top: 10px !important;">
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-dark" id="theme_one" style="margin-top: 5px !important;">Left Side</button>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-dark" id="theme_two" style="margin-top: 5px !important;">Mirror Side</button>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <button type="button" class="btn btn-dark" id="theme_three" style="margin-top: 5px !important;">Right Side</button>
-                                                </div>
-                                            </div>
-                                            <div class="devider" style="margin-top: 15px;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
                                             <div class="row">
                                                 <div class="col-md-6">
@@ -328,10 +311,6 @@
                                                             <button type="button" class="btn btn-dark btn-place">Center Left</button>
                                                             <button type="button" class="btn btn-dark btn-place">Center Right</button>
                                                             <button type="button" class="btn btn-dark btn-place">Center</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Top Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Top Right</button>
-                                                            <button type="button" class="btn btn-dar btn-place">Bottom Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Bottom Right</button>
                                                         </div>
                                                     </div>
                                                     <div id="card_blank_front">
@@ -351,10 +330,6 @@
                                                             <button type="button" class="btn btn-dark btn-place" >Center Left</button>
                                                             <button type="button" class="btn btn-dark btn-place">Center Right</button>
                                                             <button type="button" class="btn btn-dark btn-place">Center</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Top Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Top Right</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Bottom Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Bottom Right</button>
                                                         </div>
                                                     </div>
                                                     <div id="card_blank_back">

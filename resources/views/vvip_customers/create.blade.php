@@ -176,7 +176,7 @@
                 <input type="text" id="work_country" class="form-control mt-1" placeholder="Country" name="work_country">
             </div>
 
-            <div class="card-body" style="background-color: rgb(217,181,81) !important;">
+            <!-- <div class="card-body" style="background-color: rgb(217,181,81) !important;">
                 <h4 class="appear text-center">Appearance Setting</h4>
                 <div class="d-flex justify-content-center mt-3">
                     <div class="col">
@@ -202,7 +202,7 @@
                         <input type="color" class="form-control" id="text_highlight_color" name="text_highlight_color">
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <button type="submit" class="btn btn-warning mt-3 btn-block" id="save_contact">Save</button>
         </form>
@@ -213,6 +213,109 @@
             <div class="row" id="platform_col">
             </div>
         </div>
+    </div>
+    <div class="col-md-6 col-md-offset-3" id="link_tree_section" style="height: 800px;">
+        <form method="POST" id="link_tree_form">
+        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+        <div class="card">
+            <div class="card-body" id="image_card">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <img id="link_img" class="text-center" width="150" height="150" />
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="text text-center mt-3">Upload Logo</h4>
+                        <label class="label_file btn btn-dark btn-block text">
+                            <input type="file" class="link_file_upload" name="link_image" accept="image/*">
+                            Select file
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" id="link_above">
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link One</h3>
+                            <input type="text" class="form-control" id="linkone_label" name="link_one_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-1">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkone_url" name="link_one_url" placeholder="write your app url">
+                        </div> 
+                    </div>
+                    <!-- <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button class="btn btn-dark btn-block">Save Link</button>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Two</h3>
+                            <input type="text" class="form-control" id="linktwo_label" name="link_two_label" placeholder="write your app label"> 
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linktwo_url" name="link_two_url" placeholder="write your app url">
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2 text-center">
+                        <a class="btn btn-dark load-more">Load More</a>
+                        <button class="btn btn-dark save_tree" type="submit">Save Link</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body" id="more_link">
+                <div class="card-body" id="link_three">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Three</h3>
+                            <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="link_four">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Four</h3>
+                            <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body" id="link_five">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 class="text text-center">Link Five</h3>
+                            <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-2">
+                        <div class="col-md-10 col-md-offset-1">
+                            <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-2 text-center">
+                    <a class="btn btn-dark load-previous">Load Previous</a>
+                    <button class="btn btn-dark save_tree" type="submit">Save Link</button>
+                </div>
+            </div>
+        </div>
+        </form>
     </div>
     <div class="col-md-6 col-md-offset-3" id="url_section">
         <form action="" method="POST" id="get_url_form">
@@ -300,7 +403,7 @@
         <div class="d-flex justify-content-center">
             <img class="text-center" src="../images/logo.jpeg" alt="" width="100" height="100">
         </div>
-        <h3 class="text text-center mt-2">Contact Saved</h3>
+        <h3 class="text text-center mt-2" id="save_text"></h3>
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button type="button" class="btn btn-secondary btn-block" id="ok" data-bs-dismiss="modal">Ok</button>
@@ -317,13 +420,39 @@ $(function() {
         $('#img').attr('src',url);
     });
 
+    $('.link_file_upload').change(function(){
+        var link_url = window.URL.createObjectURL(this.files[0]);
+        $('#link_img').attr('src',link_url);
+    });
+
     $('#contact_section').hide();
     $('#deep_link_section').hide();
     $('#url_section').hide();
     $('#sms_section').hide();
     $('#email_section').hide();
     $('#phone_section').hide();
+    $('#link_tree_section').hide();
+    // $('#link_three').hide();
+    // $('#link_four').hide();
+    // $('#link_five').hide();
+    $('#more_link').hide();
 
+    $('.load-previous').on('click', function(){
+        // $('#save_modal').modal('hide');
+        $('#more_link').hide();
+        $('#image_card').addClass('animate__animated animate__fadeInDown').show();
+        $('#link_above').addClass('animate__animated animate__fadeInDown').show();
+    });
+
+    $('.load-more').on('click', function(){
+        // $('#link_three').show();
+        // $('#link_four').show();
+        // $('#link_five').show();
+        // $('#save_modal').modal('hide');
+        $('#image_card').hide();
+        $('#link_above').hide();
+        $('#more_link').addClass('animate__animated animate__fadeInUp').show();
+    });
 
 
     $('#con_tact').on('click', function() {
@@ -340,6 +469,11 @@ $(function() {
     $('#deep_link').on('click', function() {
         $('#create_section').hide();
         $('#deep_link_section').show();
+    });
+
+    $('#link_tree').on('click', function() {
+        $('#create_section').hide();
+        $('#link_tree_section').show();
     });
     
     $('#section_cancel').on('click', function() {
@@ -518,7 +652,7 @@ $(function() {
             if(response.status != "500"){
                 //  console.log(response.data['image']);
                 // var image_display = response.data['image'].replace('../');
-            $('#img').attr('src', response.data['image']);
+            $('#img').attr('src', '../' + response.data['image']);
             // $('.file_upload').val(response.data['image']);
             $('#first_name').val(response.data['personal']['first_name']);
             $('#last_name').val(response.data['personal']['last_name']);
@@ -545,9 +679,9 @@ $(function() {
             $('#work_city').val(response.data['work_address']['city']);
             $('#work_state').val(response.data['work_address']['state']);
             $('#work_country').val(response.data['work_address']['country']);
-            $('#background_color').val(response.data['background_color']);
-            $('#text_color').val(response.data['text_color']);
-            $('#text_highlight_color').val(response.data['text_highlight_color']);
+            // $('#background_color').val(response.data['background_color']);
+            // $('#text_color').val(response.data['text_color']);
+            // $('#text_highlight_color').val(response.data['text_highlight_color']);
             } else {
                 console.log(response.message);
             }
@@ -576,6 +710,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
+                $('#save_text').text('Contact Saved');
                 $('#save_modal').modal('show');
                 $('#contact_section').hide();
                 $('#ok').on('click', function(){
@@ -585,6 +720,65 @@ $(function() {
             });  
     });
 
+
+    $('#link_tree_form').submit(function(e){
+        e.preventDefault();
+        var link_tree_url = '{{ url('api/create_link_tree') }}';
+        var token = $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: link_tree_url,
+            method: 'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                'X-CSRF-Token' : token
+            },
+            data: formData,
+            success:function(response){
+                console.log(response);
+                $('#save_text').text('Link Tree Saved');
+                $('#save_modal').modal('show');
+                // $('#link_img').attr('src', '../storage/link_tree_images/' + response.data['link_image']);
+                // $('#linkone_label').val(response.data['link_one_label']);
+                // $('#linkone_url').val(response.data['link_one_url']);
+                // $('#linktwo_label').val(response.data['link_two_label']);
+                // $('#linktwo_url').val(response.data['link_two_url']);
+                // $('#linkthree_label').val(response.data['link_three_label']);
+                // $('#linkthree_url').val(response.data['link_three_url']);
+                // $('#linkfour_label').val(response.data['link_four_label']);
+                // $('#linkfour_url').val(response.data['link_four_url']);
+                // $('#linkfive_label').val(response.data['link_five_label']);
+                // $('#linkfive_url').val(response.data['link_five_url']);
+            }
+        });
+    });
+
+    var get_link_tree = '{{ url('api/get_datas') }}';
+
+    $.ajax({
+        url:get_link_tree,
+        method:'POST',
+        data:{
+            user_id: user_id,  
+            request_name: "get_link_trees"
+        },
+        success:function(response){
+            console.log(response);
+            $('#link_img').attr('src', '../' + response.data['link_image']);
+            $('#linkone_label').val(response.data['link_one_label']);
+            $('#linkone_url').val(response.data['link_one_url']);
+            $('#linktwo_label').val(response.data['link_two_label']);
+            $('#linktwo_url').val(response.data['link_two_url']);
+            $('#linkthree_label').val(response.data['link_three_label']);
+            $('#linkthree_url').val(response.data['link_three_url']);
+            $('#linkfour_label').val(response.data['link_four_label']);
+            $('#linkfour_url').val(response.data['link_four_url']);
+            $('#linkfive_label').val(response.data['link_five_label']);
+            $('#linkfive_url').val(response.data['link_five_url']);
+        }
+    });
 
     $.ajax({
         url:data_url,
@@ -626,6 +820,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
+                $('#save_text').text('Url Saved');
                 $('#save_modal').modal('show');
                 $('#url_section').hide();
                 $('#ok').on('click', function(){
@@ -652,6 +847,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
+                $('#save_text').text('Email Saved');
                 $('#save_modal').modal('show');
                 $('#email_section').hide();
                 $('#ok').on('click', function(){
@@ -678,6 +874,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
+                $('#save_text').text('SMS Saved');
                 $('#save_modal').modal('show');
                 $('#sms_section').hide();
                 $('#ok').on('click', function(){
@@ -704,6 +901,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
+                $('#save_text').text('Phone Number Saved');
                 $('#save_modal').modal('show');
                 $('#phone_section').hide();
                 $('#ok').on('click', function(){

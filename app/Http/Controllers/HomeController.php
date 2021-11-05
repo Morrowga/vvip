@@ -44,6 +44,10 @@ class HomeController extends Controller
         return view('vvip_customers.create');
     }
 
+    public function setting(){
+        return view('vvip_customers.setting');
+    }
+
     // public function addDeep_link(Request $request){
     //     $user_id = $request->user_id;
     //     // return $user_id;

@@ -66,7 +66,7 @@
             </div>
             <div class="col text-left home-col" style="margin-top: 25px !important;">
                 <img src="https://i.ibb.co/0nFM29f/setting.jpg" alt="" id="setting" width="350" height="280">
-                <a href="" class="btn btn-dark setting">SETTING</a>
+                <a href="/setting" class="btn btn-dark setting">SETTING</a>
             </div>
         </div>
     </div>
