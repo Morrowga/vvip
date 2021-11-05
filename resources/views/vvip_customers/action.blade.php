@@ -49,7 +49,7 @@
                     <div class="col-md-4 col-md-offset-4" id="action_body">
                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                     <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts" data-id="contact_active">Contact</button>
-                    <button class="btn btn-dark btn-block action-btn" id="link_tree_active" data-id="link_tree_active">Link Tree</button>
+                    <button class="btn btn-dark btn-block action-btn" id="link_tree_active" value="get_link_trees" data-id="link_tree_active">Link Tree</button>
                     <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links" data-id="deep_link_active">Deep Link</button>
                     <button class="btn btn-dark btn-block action-btn" id="url_active" value="get_eusp" data-id="url_active">URL</button>
                     <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active">Email</button>
@@ -105,7 +105,7 @@ $(function() {
                 },
            success:function(response){
                console.log(response);
-               var id_value = ['contact_active', 'deep_link_active', 'url_active', 'email_active', 'sms_active', 'call_active'];
+               var id_value = ['contact_active', 'deep_link_active','link_tree_active', 'url_active', 'email_active', 'sms_active', 'call_active'];
                $.each(id_value, function(i,value){
                    var check = $('#' + value);
                    if(check.attr('data-id') == response.data['self_request_name']){
