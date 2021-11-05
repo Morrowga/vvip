@@ -523,6 +523,7 @@ class UserPanelController extends Controller
                 $link_tree_exist->save();
             } else {
                 $link_new = new LinkTree();
+                $link_new->user_id = $user_id;
                 $link_new->background_color = $background_color;
                 $link_new->text_color = $text_color;
                 $link_new->text_highlight_color = $text_highlight_color;
