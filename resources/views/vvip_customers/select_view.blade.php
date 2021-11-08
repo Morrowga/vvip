@@ -216,13 +216,13 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                        if (isMobile) {
-                            var host = value['url'];
-                            var package = value['app_package'];
-                            window.location.replace('facebook://profile/?id=nhyoe.thwayyaung');
-                            // const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            // window.location.replace("intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end");
-                        }
+                        window.location.replace('fb://profile/?id=nhyoe.thwayyaung');
+                        // window.location.replace("intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end");
+                        // if (isMobile) {
+                        //     var host = value['url'];
+                        //     var package = value['app_package'];
+                        //     // const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                        // }
                     // window.location.replace("facebook://" + host);
                     }
                 });
