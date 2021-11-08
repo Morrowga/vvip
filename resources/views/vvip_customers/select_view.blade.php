@@ -219,8 +219,8 @@
                         // if (isMobile) {
                             // var host = value['url'];
                             // var package = value['app_package'];
-                            // var app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace("fb://www.facebook.com");
+                            var app_url = "intent://"+ value['url'] +"/#Intent;scheme=https;package="+ package +";end";
+                            window.location.replace(app_url);
                         // }
                     // window.location.replace("facebook://" + host);
                     }
