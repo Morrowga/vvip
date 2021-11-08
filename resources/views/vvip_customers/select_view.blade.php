@@ -217,7 +217,7 @@
                     if(value['active'] == 1){
                         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         // window.location.replace('fb://profile/?id=nhyoe.thwayyaung');
-                        window.location.replace("www.facebook.com");
+                        window.location.replace("intent://instagram.com#Intent;scheme=https;package=com.instagram.android;end");
                         // if (isMobile) {
                         //     var host = value['url'];
                         //     var package = value['app_package'];
