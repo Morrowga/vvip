@@ -220,7 +220,7 @@
                             // var host = value['url'];
                             // var package = value['app_package'];
                             const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-
+                            alert(url);
                             window.location.replace(url); 
                         // }
                     // window.location.replace("facebook://" + host);
