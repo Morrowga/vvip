@@ -228,6 +228,9 @@
                             } else if(value['name'] == "Youtube"){
                                 var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
                                 window.location.replace(url); 
+                            } else if(value['name'] == "Tiktok"){
+                                var url = "snssdk1233://user/profile/" + host;
+                                window.location.replace(url); 
                             }
                         }
                     // window.location.replace("facebook://" + host);
