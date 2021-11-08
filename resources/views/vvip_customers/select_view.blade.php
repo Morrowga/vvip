@@ -226,7 +226,7 @@
                                 var url = "instagram://user?username=" + host;
                                 window.location.replace(url); 
                             } else if(value['name'] == "Youtube"){
-                                var url = "vnd.youtube://user/" + host;
+                                var url = "vnd.youtube://user/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
                                 window.location.replace(url); 
                             }
                         }

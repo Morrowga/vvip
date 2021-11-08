@@ -193,7 +193,7 @@ class UserPanelController extends Controller
                         $deep_link_update_active->active = $active;
                         $deep_link_update_active->save();
 
-                       $deep_latest = DeepLink::orderBy('updated_at', 'DESC')->get();
+                       $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
                        $link_data = [];
                        foreach($deep_latest as $deep){
                            $data = [
