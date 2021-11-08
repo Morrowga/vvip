@@ -219,8 +219,9 @@
                         if (isAndroid) {
                             var host = value['url'];
                             var package = value['app_package'];
-                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace(app_url);
+                            window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
+                            // const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                            // window.location.replace(app_url);
                         } else if(isIOS){
                             window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
                             // setTimeout(function () {

@@ -546,7 +546,7 @@ $(function() {
                                                     <div class="modal-body" id="modal_url_input">
                                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                                             <h3 class="text url_text`+ value['id'] +`" id="url_text" name="url_text">`+ value['name'] +`</h3>
-                                                            <input type="text" name="deep_url" class="form-control url_input`+ value['id'] +`" id="url_input" value="`+ value['url'] +`"> 
+                                                            <input type="text" name="deep_url" placeholder="aungpyaephy6" class="form-control url_input`+ value['id'] +`" id="url_input" value="`+ value['url'] +`"> 
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button class="btn btn-dark mt-2 btn-block active_save" id="`+ value['id'] +`">Active</button>
