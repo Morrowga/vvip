@@ -218,6 +218,7 @@
                         var isAndroid = /Android|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent);
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                         if (isAndroid) {
+                            alert('s');
                             var host = value['url'];
                             var package = value['app_package'];
                             // window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
