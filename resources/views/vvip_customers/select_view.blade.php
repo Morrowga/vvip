@@ -229,7 +229,7 @@
                                 var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
                                 window.location.replace(url); 
                             } else if(value['name'] == "Tiktok"){
-                                var url = "vt.tiktok://" + host;
+                                var url = "www.tiktok.com/" + host;
                                 window.location.replace(url); 
                             }
                         }
