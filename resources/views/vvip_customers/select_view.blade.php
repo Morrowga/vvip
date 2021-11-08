@@ -223,7 +223,7 @@
                             window.location.replace(app_url);
                         } else if(isIOS){
                             // var path = "nhyoe.thwayyaung";
-                            window.location.replace("com.LinkedIn.LinkedIniOSApp://in/thiha-aung-00852b194"); 
+                            window.location.replace("linkedin://in/thiha-aung-00852b194"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
