@@ -598,7 +598,7 @@ $(function() {
                                 }
                                 $('#deep_modal'+ link_value['id']).modal('hide');
                         });
-                        console.log(response);
+                        // console.log(response);
                     }
                     });
                 });
