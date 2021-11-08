@@ -235,7 +235,7 @@
                                 var url = "pinterest://user/" + host;
                                 window.location.replace(url); 
                             } else if(value['name'] == "LinkedIn"){
-                                var url = "linkedin://company/" + host;
+                                var url = "linkedin://in/" + host;
                                 window.location.replace(url); 
                             }
                         }
