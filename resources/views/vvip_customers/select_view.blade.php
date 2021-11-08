@@ -222,8 +222,7 @@
                             const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
                         } else if(isIOS){
-                            // var path = "nhyoe.thwayyaung";
-                            window.location.replace("itms-apps://itunes.apple.com/app/myapp/id284882215?mt=8"); 
+                            window.location.replace("snssdk1233://"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
