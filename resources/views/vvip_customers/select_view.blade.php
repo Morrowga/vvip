@@ -215,7 +215,7 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var isAndroid = /Android/i.test(navigator.userAgent);
+                        var isAndroid = /Android|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent);
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                         if (isAndroid) {
                             var host = value['url'];
