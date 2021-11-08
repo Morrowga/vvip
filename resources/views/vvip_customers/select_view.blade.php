@@ -47,7 +47,6 @@
 
 @section('script')
 <script>
-    $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
@@ -215,41 +214,14 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        // var isAndroid = /Android|pocket|psp|kindle|avantgo|blazer|midori|Tablet|Palm|maemo|plucker|phone|BlackBerry|symbian|IEMobile|mobile|ZuneWP7|Windows Phone|Opera Mini/i.test(navigator.userAgent);
-                        // var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-
-                        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-                        // Windows Phone must come first because its UA also contains "Android"
-                        if (/windows phone/i.test(userAgent)) {
-                            alert("Windows Phone");
-                        }
-
-                        if (/android/i.test(userAgent)) {
-                            // alert('Android');
+                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+                        if (isMobile) {
                             var host = value['url'];
                             var package = value['app_package'];
                             const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
                         }
-
-                        // iOS detection from: http://stackoverflow.com/a/9039885/177710
-                        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-                           alert('IOS');
-                        }
-
-                        return "unknown";
-
-                    //     if (isAndroid) {
-                    //         alert('s');
-                    //      
-                    //     } else if(isIOS){
-                    //         window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
-                    //         // setTimeout(function () {
-                    //         //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
-                    //         // }, 2000);
-                    //     }
-                    // // window.location.replace("facebook://" + host); 
+                    // window.location.replace("facebook://" + host);
                     }
                 });
             } else if(response.request == "eusp"){
