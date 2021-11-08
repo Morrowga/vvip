@@ -215,14 +215,14 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                        // if (isMobile) {
-                            // var host = value['url'];
-                            // var package = value['app_package'];
-                            const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+                        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        if (isMobile) {
+                            var host = value['url'];
+                            var package = value['app_package'];
+                            const url = "fb://profile/?id=nhyoe.thwayyaung";
                             alert(url);
                             window.location.replace(url); 
-                        // }
+                        }
                     // window.location.replace("facebook://" + host);
                     }
                 });
