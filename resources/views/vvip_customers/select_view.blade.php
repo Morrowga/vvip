@@ -223,7 +223,7 @@
                             window.location.replace(app_url);
                         } else if(isIOS){
                             // var path = "nhyoe.thwayyaung";
-                            window.location.replace("fb://facebook.com/princess.nweii"); 
+                            window.location.replace("comLinkedInLinkedIniOSApp://in/thiha-aung-00852b194"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
