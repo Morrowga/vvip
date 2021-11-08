@@ -217,10 +217,10 @@
                     if(value['active'] == 1){
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         // if (isMobile) {
-                            var host = value['url'];
-                            var package = value['app_package'];
-                            var app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace(app_url);
+                            // var host = value['url'];
+                            // var package = value['app_package'];
+                            // var app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                            window.location.replace("fb://www.facebook.com");
                         // }
                     // window.location.replace("facebook://" + host);
                     }
