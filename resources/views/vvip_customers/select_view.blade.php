@@ -223,9 +223,9 @@
                             window.location.replace(app_url);
                         } else if(isIOS){
                             window.location.replace("facebook://nhyoe.thwayyaung/"); 
-                            setTimeout(function () {
-                                window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
-                            }, 2000);
+                            // setTimeout(function () {
+                            //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
+                            // }, 2000);
                         }
                     // window.location.replace("facebook://" + host);
                     }
