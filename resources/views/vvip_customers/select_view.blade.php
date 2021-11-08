@@ -7,14 +7,14 @@
 <input type="text" id="self_request" value="{{ $data_module->self_request_name }}" hidden>
 
 <div class="d-flex justify-content-center">
-    <img src="../images/logo.jpeg" alt="" width="250" height="250">
+    <img src="../images/logo.jpeg" alt="" width="250" height="250" id="image_hide">
 </div>
 
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
 
-<div class="container">
+<div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
             <div class="card-body">
@@ -26,8 +26,28 @@
     </div>
 </div>
 
+<div class="container" id="link_tree_display">
+    <div class="card" id="link_tree_card">
+        <div class="card-body">
+            <div class="col-md-12 d-flex justify-content-center">
+                <img src="" alt="" width="300" height="300" id="link_tree_img" style="border-radius: 50%;">
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <div class="col-md-6 col-md-offset-3">
+                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank"></a>
+                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_two"  target="_blank"></a>
+                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_three"  target="_blank"></a>
+                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_four"  target="_blank"></a>
+                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_five"  target="_blank"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section('script')
 <script>
+    $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
     var userid = $('#user_id').val();
     var request_name = $('#request').val();
@@ -40,6 +60,7 @@
         type: 'POST',
         success: function(response){
             if(response.request == "contacts"){
+                    $('#contact_display').show();
                     var image_display = response.data['image'].replace('http://vvip9.co/','../');
                     $('.data_view').append(`<div class="d-flex justify-content-center row">
                     <div class="col-md-6" style="text-align:center;">
@@ -193,12 +214,18 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-                        if (isMobile) {
+                        var isAndroid = /Android/i.test(navigator.userAgent);
+                        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        if (isAndroid) {
                             var host = value['url'];
                             var package = value['app_package'];
                             const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
+                        } else if(isIOS){
+                            window.location.replace("facebook://nhyoe.thwayyaung/"); 
+                            setTimeout(function () {
+                                window.location.replace("https://itunes.apple.com/app/id12345678"); 
+                            }, 2000);
                         }
                     // window.location.replace("facebook://" + host);
                     }
@@ -231,7 +258,49 @@
                         $('#send_sms').attr('href', send_sms_to);
                         window.location.href = $('#send_sms').attr('href');
                     } 
-                } 
+                }  else if(response.request == "get_link_trees"){
+                    $('#image_hide').hide();
+                    $('#link_tree_card').attr('style', 'background-color:' + response.data['background_color'] + ';');
+                    $('.link_tree_d_btn').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                    response.data['text_highlight_color'] + ';');
+                    if(response.data['link_image'] == null){
+                        $('#link_tree_img').hide(); 
+                    } else {
+                        $('#link_tree_img').attr('src', '../' + response.data['link_image']);
+                    }
+
+                    if(response.data['link_one_url'] == null || response.data['link_one_label'] == null){
+                        $('#link_one').hide();
+                    } else {
+                        $('#link_one').attr('href', response.data['link_one_url']).text(response.data['link_one_label']);
+                    }
+
+                    if(response.data['link_two_url'] == null || response.data['link_two_label'] == null){
+                        $('#link_two').hide();
+                    } else {
+                        $('#link_two').attr('href', response.data['link_two_url']).text(response.data['link_two_label']);
+                    }
+
+                    if(response.data['link_three_url'] == null || response.data['link_three_label'] == null){
+                        $('#link_three').hide();
+                    } else {
+                        $('#link_three').attr('href', response.data['link_three_url']).text(response.data['link_three_label']);
+                    }
+
+                    if(response.data['link_four_url'] == null || response.data['link_four_label'] == null){
+                        $('#link_four').hide();
+                    } else {
+                        $('#link_four').attr('href', response.data['link_four_url']).text(response.data['link_four_label']);
+                    }
+
+                    if(response.data['link_five_url'] == null || response.data['link_five_label'] == null){
+                        $('#link_five').hide();
+                    } else {
+                        $('#link_five').attr('href', response.data['link_five_url']).text(response.data['link_five_label'])
+                    }
+
+                   console.log(response.data);
+                }
             }
         });
 </script>
