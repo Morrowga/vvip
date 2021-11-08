@@ -238,7 +238,7 @@
                                 var url = "linkedin://in/" + host;
                                 window.location.replace(url); 
                             } else if(value['name'] == "Tripadvisor"){
-                                var url = "tripadvisor://Profile/" + host;
+                                var url = "tripadvisor://Hotel_Review/" + host;
                                 window.location.replace(url);
                             }
                         }
