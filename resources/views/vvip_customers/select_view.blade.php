@@ -222,6 +222,8 @@
                             if(value['name'] == "Facebook"){
                                 var url = "fb://profile/?id=" + host;
                                 window.location.replace(url); 
+                            } else if(value['name'] == "Instagram"){
+                                var url = "instagram://user?username=" + host;
                             }
                         }
                     // window.location.replace("facebook://" + host);
