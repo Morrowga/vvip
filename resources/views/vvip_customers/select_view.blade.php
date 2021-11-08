@@ -227,6 +227,7 @@
 
                         if (/android/i.test(userAgent)) {
                             alert('Android');
+                            window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
                         }
 
                         // iOS detection from: http://stackoverflow.com/a/9039885/177710
