@@ -224,6 +224,7 @@
                                 window.location.replace(url); 
                             } else if(value['name'] == "Instagram"){
                                 var url = "instagram://user?username=" + host;
+                                window.location.replace(url); 
                             }
                         }
                     // window.location.replace("facebook://" + host);
