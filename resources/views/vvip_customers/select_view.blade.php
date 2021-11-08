@@ -222,12 +222,12 @@
                             const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
                         } else if(isIOS){
-                            window.location.replace("fb://user?username=owendunnigan"); 
+                            window.location.replace("instagram://user?username=owendunnigan"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
                         }
-                    // window.location.replace("facebook://" + host);
+                    // window.location.replace("facebook://" + host); 
                     }
                 });
             } else if(response.request == "eusp"){
