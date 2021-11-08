@@ -219,8 +219,8 @@
                         if (isMobile) {
                             var host = value['url'];
                             var package = value['app_package'];
-                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                            window.location.replace("intent://instagram.com/aung_pyae12#Intent;scheme=https;package=com.instagram.android;end");
+                            var app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                            window.location.replace(app_url);
                         }
                     // window.location.replace("facebook://" + host);
                     }
