@@ -240,6 +240,9 @@
                             } else if(value['name'] == "Tripadvisor"){
                                 var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
                                 window.location.replace(url);
+                            } else if(value['name'] == "Zoom"){
+                                var url = "zoomus://" + host;
+                                window.location.replace(url);
                             }
                         }
                     // window.location.replace("facebook://" + host);
