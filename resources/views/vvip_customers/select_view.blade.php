@@ -241,7 +241,7 @@
                                 var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
                                 window.location.replace(url);
                             } else if(value['name'] == "Zoom"){
-                                var url = host;
+                                var url = "zoomus://" + host;
                                 window.location.replace(url);
                             } else if(value['name'] == "Google Maps"){
                                 var url = "comgooglemaps://?" + host;
