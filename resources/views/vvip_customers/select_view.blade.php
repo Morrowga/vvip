@@ -226,8 +226,11 @@
                         }
 
                         if (/android/i.test(userAgent)) {
-                            alert('Android');
-                            window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
+                            // alert('Android');
+                            var host = value['url'];
+                            var package = value['app_package'];
+                            const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
+                            window.location.replace(app_url);
                         }
 
                         // iOS detection from: http://stackoverflow.com/a/9039885/177710
@@ -239,11 +242,7 @@
 
                     //     if (isAndroid) {
                     //         alert('s');
-                    //         var host = value['url'];
-                    //         var package = value['app_package'];
-                    //         // window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
-                    //         const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
-                    //         window.location.replace(app_url);
+                    //      
                     //     } else if(isIOS){
                     //         window.location.replace("fb://profile/?id=nhyoe.thwayyaung"); 
                     //         // setTimeout(function () {
