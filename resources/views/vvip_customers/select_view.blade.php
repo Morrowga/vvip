@@ -222,7 +222,7 @@
                             const app_url = "intent://"+ value['url'] +"#Intent;scheme=https;package="+ package +";end";
                             window.location.replace(app_url);
                         } else if(isIOS){
-                            window.location.replace("instagram://user?username=aung_pyae12"); 
+                            window.location.replace("facebook://user?username=owendunnigan"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
