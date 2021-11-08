@@ -223,7 +223,7 @@
                             window.location.replace(app_url);
                         } else if(isIOS){
                             // var path = "nhyoe.thwayyaung";
-                            window.location.replace("vnd.youtube://4KnNVK-udTU"); 
+                            window.location.replace("vnd.fb://nhyoe.thwayyaung"); 
                             // setTimeout(function () {
                             //     window.location.replace("https://itunes.apple.com/app/facebook/id12345678"); 
                             // }, 2000);
