@@ -216,12 +216,13 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        if (isMobile) {
+                        if (isIOS) {
                             var host = value['url'];
-                            var package = value['app_package'];
-                            const url = "fb://profile/?id=nhyoe.thwayyaung";
-                            alert(url);
-                            window.location.replace(url); 
+                            // var package = value['app_package'];
+                            if(value['name'] == "Facebook"){
+                                var url = "fb://profile/?id=" + host;
+                                window.location.replace(url); 
+                            }
                         }
                     // window.location.replace("facebook://" + host);
                     }
