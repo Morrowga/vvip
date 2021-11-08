@@ -244,7 +244,7 @@
                                 var url = "zoomus://" + host;
                                 window.location.replace(url);
                             } else if(value['name'] == "Google Maps"){
-                                var url = "comgooglemaps://" + host;
+                                var url = "comgooglemaps://?" + host;
                                 window.location.replace(url);
                             }
                         }
