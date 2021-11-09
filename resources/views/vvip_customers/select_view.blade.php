@@ -229,7 +229,7 @@
                                         if(confirm('You do not seem to have Facebook installed, do you want to go download it now?')){
                                             window.location.replace(store_url);
                                         } else {
-                                            alert('you need to install the app');
+                                            return false;
                                         }
                                     }, 300);
                                     return false;
