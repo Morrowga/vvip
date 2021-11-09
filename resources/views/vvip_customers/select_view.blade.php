@@ -217,7 +217,7 @@
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                         var isAndroid = /android|blackberry|windows phone/i.test(navigator.userAgent.toLowerCase());  
-                        var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
+                        // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
                         // if (isIOS) {
                             var host = value['url'];
                             // var package = value['app_package'];
@@ -236,13 +236,10 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     alert('android');
-                                }   
-                                else if(isDesktop) {
+                                } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
-                                } else {
-                                    alert('unkown');
-                                }                   
+                                }                  
                             } else if(value['name'] == "Instagram"){
                                 if(isIOS){
                                     var url = "instagram://user?username=" + host;
