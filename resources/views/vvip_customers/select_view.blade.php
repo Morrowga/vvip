@@ -247,7 +247,7 @@
                                 var url = "comgooglemapsurl://maps.google.com/?q=" + host;
                                 window.location.replace(url);
                             } else if(value['name'] == "Vimeo"){
-                                var url = "vimeo://app.vimeo.com/" + host;
+                                var url = "vimeo://app.vimeo.com/users/" + host;
                                 window.location.replace(url);
                             }
                         }
