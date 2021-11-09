@@ -225,14 +225,14 @@
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
                                     // window.location = url;// fb://method/call..
                                     window.location.replace(url);
-                                    if($(window).trigger(url) == false){
-                                        if (confirm('You do not seem to have Facebook installed, do you want to go download it now?')) {
+                                    setTimeout(function(){
+                                        if(confirm('You do not seem to have Facebook installed, do you want to go download it now?')){
                                             window.location.replace(store_url);
+                                        } else {
+                                            alert('you need to install the app');
                                         }
-                                    }
-                                    // setTimeout(function(){
-                                        
-                                    // }, 300);
+                                    }, 300);
+                                    return false;
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
