@@ -229,7 +229,7 @@
                                         if(confirm('Do you have app or want to download it?')){
                                             window.location.replace(store_url);
                                         } else {
-                                            window.location.reload();
+                                            return false;
                                         }
                                     }, 300);
                                 } else {
