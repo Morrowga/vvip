@@ -246,6 +246,9 @@
                             } else if(value['name'] == "Google Maps"){
                                 var url = "comgooglemapsurl://maps.google.com/?q=" + host;
                                 window.location.replace(url);
+                            } else if(value['name'] == "Vimeo"){
+                                var url = "vimeo://app.vimeo.com/" + host;
+                                window.location.replace(url);
                             }
                         }
                     // window.location.replace("facebook://" + host);
