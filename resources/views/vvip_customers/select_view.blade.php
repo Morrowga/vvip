@@ -216,44 +216,99 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        if (isIOS) {
+                        // if (isIOS) {
                             var host = value['url'];
                             // var package = value['app_package'];
                             if(value['name'] == "Facebook"){
-                                var url = "fb://profile/?id=" + host;
-                                window.location.replace(url); 
+                                if(isIOS){
+                                    var url = "fb://profile/?id=" + host;
+                                    window.location.replace(url); 
+                                } else {
+                                    var url = "https://www.facebook.com/" + host;
+                                    window.location.replace(url); 
+                                }                                
                             } else if(value['name'] == "Instagram"){
-                                var url = "instagram://user?username=" + host;
-                                window.location.replace(url); 
+                                if(isIOS){
+                                    var url = "instagram://user?username=" + host;
+                                    window.location.replace(url); 
+                                } else {
+                                    var url = "https://www.instagram.com/" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Youtube"){
-                                var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
-                                window.location.replace(url); 
+                                if(isIOS){
+                                    var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
+                                    window.location.replace(url); 
+                                } else {
+                                    var url = "https://www.youtube.com/channel/" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Tiktok"){
-                                var url = "snssdk1233://user/profile/" + host;
-                                window.location.replace(url); 
+                                if(isIOS){
+                                    var url = "snssdk1233://user/profile/" + host;
+                                    window.location.replace(url); 
+                                } else {
+                                    var url = "https://www.tiktok.com/" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Pinterest"){
-                                var url = "pinterest://user/" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "pinterest://user/" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://www.pinterest.com/" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "LinkedIn"){
-                                var url = "linkedin://in/" + host;
-                                window.location.replace(url); 
+                                if(isIOS){
+                                    var url = "linkedin://in/" + host;
+                                    window.location.replace(url); 
+                                } else {
+                                    var url = "https://www.linkedin.com/in/" + host;
+                                    window.location.replace(url);
+                                } 
                             } else if(value['name'] == "Tripadvisor"){
-                                var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://www.tripadvisor.com/Hotel_Review-" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Zoom"){
-                                var url = "zoomus://" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "zoomus://" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://us05web.zoom.us/" + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Google Maps"){
-                                var url = "comgooglemapsurl://maps.google.com/?q=" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "comgooglemapsurl://maps.google.com/?q=" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://www." + host;
+                                    window.location.replace(url);
+                                }
                             } else if(value['name'] == "Vimeo"){
-                                var url = "vimeo://app.vimeo.com/users/" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "vimeo://app.vimeo.com/users/" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://vimeo.com/user" + host;
+                                }
+                                
                             } else if(value['name'] == "Amazon"){
-                                var url = "com.amazon.mobile.shopping.web://" + host;
-                                window.location.replace(url);
+                                if(isIOS){
+                                    var url = "com.amazon.mobile.shopping.web://" + host;
+                                    window.location.replace(url);
+                                } else {
+                                    var url = "https://www.amazon.com/" + host;
+                                    window.location.replace(url);
+                                }
                             }
-                        }
+                        // }
                     // window.location.replace("facebook://" + host);
                     }
                 });
