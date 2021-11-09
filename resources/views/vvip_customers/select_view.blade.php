@@ -221,14 +221,14 @@
                             // var package = value['app_package'];
                             if(value['name'] == "Facebook"){
                                 if(isIOS){
-                                    var now = new Date().valueOf();
-                                    var url = "fb://profile/?id=" + host;
-                                    window.location.replace(url); 
-                                    setTimeout(function () {
-                                        if (new Date().valueOf() - now > 100) {
-                                            window.location.replace("https://itunes.apple.com/app/facebook/id284882215");
-                                        }
-                                    }, 25);
+                                    encode_host = encodeURIComponent(host);
+                                    var url = "fb://profile/?id=" + encode_host;
+                                    var store_url = "https://itunes.apple.com/app/facebook/id284882215";
+                                    try {
+                                        window.location.replace(url); 
+                                    } catch (error) {
+                                        window.location.replace(store_url);
+                                    }
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
