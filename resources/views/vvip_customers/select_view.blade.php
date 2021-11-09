@@ -223,16 +223,12 @@
                                 if(isIOS){
                                     var url = "fb://profile/?id=" + host;
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
-                                    var loadedAt = +new Date;
-                                    setTimeout(
-                                    function(){
-                                        if (+new Date - loadedAt < 2000){
-                                            window.location.replace(store_url);
-                                        }
-                                    }
-                                    ,500);
-
-                                    window.location.replace(url);
+                                    window.location = url;// fb://method/call..
+                                    !window.document.webkitHidden && setTimeout(function () {
+                                        setTimeout(function () {
+                                        window.location = store_url; // http://itunes.apple.com/..
+                                        }, 100);
+                                    }, 600);
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
