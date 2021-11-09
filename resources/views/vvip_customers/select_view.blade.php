@@ -234,8 +234,8 @@
                                         }
                                     };
 
-                                    app.lanuchApp();
-                                    
+                                    alert(app.lanuchApp());
+
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
