@@ -223,7 +223,7 @@
                                 if(isIOS){
                                     var url = "fb://profile/?id=" + host;
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
-                                   if(url == false){
+                                   if(window.location.replace(url) == false){
                                        window.location.replace(store_url);
                                    }
                                 } else {
