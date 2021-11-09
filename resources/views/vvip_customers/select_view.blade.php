@@ -223,6 +223,9 @@
                                 if(isIOS){
                                     var url = "fb://profile/?id=" + host;
                                     window.location.replace(url); 
+                                    setTimeout(function () {
+                                        window.location.href = "https://itunes.apple.com/app/facebook/id284882215";
+                                    }, 1000);
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
