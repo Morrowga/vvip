@@ -224,11 +224,11 @@
                                     var url = "fb://profile/?id=" + host;
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
                                     // window.location = url;// fb://method/call..
-                                    window.location.replace(url);
+                                    window.location = url;
                                     setTimeout(function(){
-                                        if(confirm('Do you have app or want to download it?')){
-                                            window.location =  store_url;
-                                        } 
+                                        if(confirm('You do not seem to have Facebook installed, do you want to go download it now?')){
+                                        window.location = store_url;
+                                        }
                                     }, 300);
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
