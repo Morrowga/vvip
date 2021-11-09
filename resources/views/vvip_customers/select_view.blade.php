@@ -249,6 +249,9 @@
                             } else if(value['name'] == "Vimeo"){
                                 var url = "vimeo://app.vimeo.com/users/" + host;
                                 window.location.replace(url);
+                            } else if(value['name'] == "Amazon"){
+                                var url = "com.amazon.mobile.shopping.web://" + host;
+                                window.location.replace(url);
                             }
                         }
                     // window.location.replace("facebook://" + host);
