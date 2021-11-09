@@ -227,10 +227,8 @@
                                     window.location.replace(url);
                                     setTimeout(function(){
                                         if(confirm('Do you have app or want to download it?')){
-                                            window.location.replace(store_url);
-                                        } else {
-                                            // alert('refresh your page to see the result again');
-                                        }
+                                            window.location =  store_url;
+                                        } 
                                     }, 300);
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
