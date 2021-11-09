@@ -223,19 +223,9 @@
                                 if(isIOS){
                                     var url = "fb://profile/?id=" + host;
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
-                                    var app = {
-                                        launchApp: function() {
-                                            window.location.replace(url);
-                                            this.timer = setTimeout(this.openWebApp, 1000);
-                                        },
-
-                                        openWebApp: function() {
-                                            window.location.replace(store_url);
-                                        }
-                                    };
-
-                                    alert(app.lanuchApp());
-
+                                   if(url == false){
+                                       window.location.replace(store_url);
+                                   }
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
