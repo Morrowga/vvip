@@ -223,14 +223,19 @@
                                 if(isIOS){
                                     var url = "fb://profile/?id=" + host;
                                     var store_url = "https://itunes.apple.com/app/facebook/id284882215";
-                                    if([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@host]])
-                                    {
-                                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@host]];
-                                    }
-                                    else
-                                    {
-                                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@store_url]];
-                                    }
+                                    var app = {
+                                        launchApp: function() {
+                                            window.location.replace(url);
+                                            this.timer = setTimeout(this.openWebApp, 1000);
+                                        },
+
+                                        openWebApp: function() {
+                                            window.location.replace(store_url);
+                                        }
+                                    };
+
+                                    app.lanuchApp();
+                                    
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
