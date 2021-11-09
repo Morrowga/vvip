@@ -225,8 +225,9 @@
                                     var url = "fb://profile/?id=" + host;
                                     window.location.replace(url); 
                                     setTimeout(function () {
-                                        if (new Date().valueOf() - now > 100) return;
-                                        window.location.replace("https://itunes.apple.com/app/facebook/id284882215");
+                                        if (new Date().valueOf() - now > 100) {
+                                            window.location.replace("https://itunes.apple.com/app/facebook/id284882215");
+                                        }
                                     }, 25);
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
