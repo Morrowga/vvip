@@ -227,10 +227,10 @@
                                     setTimeout(
                                     function(){
                                         if (+new Date - loadedAt < 2000){
-                                        window.location.replace(store_url);
+                                            window.location.replace(store_url);
                                         }
                                     }
-                                    ,100);
+                                    ,500);
 
                                     window.location.replace(url);
                                 } else {
