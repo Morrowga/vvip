@@ -226,8 +226,10 @@
                                     // window.location = url;// fb://method/call..
                                     window.location = url;
                                     setTimeout(function(){
-                                        if(confirm('You do not seem to have Facebook installed, do you want to go download it now?')){
+                                        if(confirm('Do you already have Facebook or do you want to go download it?')){
                                         window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
                                         }
                                     }, 300);
                                 } else {
