@@ -226,13 +226,12 @@
                                     // window.location = url;// fb://method/call..
                                     window.location.replace(url);
                                     setTimeout(function(){
-                                        if(confirm('You do not seem to have Facebook installed, do you want to go download it now?')){
+                                        if(confirm('Do you have app or want to download it?')){
                                             window.location.replace(store_url);
                                         } else {
-                                            return false;
+                                            window.location.reload();
                                         }
                                     }, 300);
-                                    return false;
                                 } else {
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
