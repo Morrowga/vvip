@@ -227,8 +227,8 @@
                 }
             }
 
-            $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
-            $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
+            // $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
+            // $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
             $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
 
             $('#move_left').on('click', function(){
@@ -244,6 +244,25 @@
             });
 
 
+            $('#front_move_left').on('click', function(){
+                $('.card_description').attr('style', 'right: 30% !important');
+            $('.front_card_name').attr('style', 'right: 30% !important');
+                $('#logo_view').attr('style', 'left: 13% !important');
+            });
+
+            $('#front_move_center').on('click', function(){
+                $('.card_description').attr('style', 'text-align:center !important');
+                $('.front_card_name').attr('style', 'text-align:center !important');
+                $('#logo_view').attr('style', 'left: 42% !important');
+            });
+
+            $('#front_move_right').on('click', function(){
+                $('.card_description').attr('style', 'left: 25% !important');
+                $('.front_card_name').attr('style', 'left: 25% !important');
+                $('#logo_view').attr('style', 'left: 67% !important');
+            });
+
+
             let colorInput = document.getElementById('background_color');
             colorInput.addEventListener('input', () =>{
                 $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
@@ -253,23 +272,7 @@
 
             $("#name").keyup(function(event) {
                 var name_value = $(this).val();
-                $('#name_back').text(name_value);
-            });
-
-
-            $('#theme_one').on('click', function(){
-               $('#card_front').attr('style', 'transform: scaleX(-1);');
-               $('#card_back').attr('style', 'transform: scaleX(-1);');
-            });
-
-            $('#theme_two').on('click', function(){
-                $('#card_front').attr('style', 'transform: scaleY(-1);');
-                $('#card_back').attr('style', 'transform: scaleY(-1);');
-            });
-
-            $('#theme_three').on('click', function(){
-                $('#card_front').attr('style', 'transform: scaleX(1);');
-                $('#card_back').attr('style', 'transform: scaleX(1);');
+                $('.front_card_name').text(name_value);
             });
 
             function packageClick(e){
@@ -287,23 +290,29 @@
                     data = response.card_design;
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
-                        $('#column-image').append('<div class="col-md-3"><img src="' + value['front_image'] + '" id="image_data" alt="" width="200" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
+                        $('#column-image').append('<div class="col-md-3"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
                         } 
                         $('.zoom').on('click', function(e) {
                             let id = e.target.id;
                             if(id == value['id']){
-                                $('#front_img').attr('src', value['front_image']);
-                                $('#back_img').attr('src', value['back_image']);
+                                console.log(value['back_image']);
+                                $('#front_img').attr('src', "../images/" + value['front_image']);
+                                $('#back_img').attr('src', "../images/" + value['back_image']);
                                 $('#exampleModal').modal('show');
                             }
                             $('#select_card').on('click', function(e) {
                                var target = e.target.id;
                                target = id;
+                               console.log(target);
                                 $('#card_design_id').val(target);
-                                $('#card_front').attr('src', )
-                                $('#exampleModal').modal('hide');
-                                $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
-                            });   
+                                if(target == value['id']){
+                                    $('#card_front').attr('src', "../images/" + value['front_image'] );
+                                    $('#card_back').attr('src', "../images/" + value['back_image'] );
+                                    $('#exampleModal').modal('hide');
+                                    $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
+                                }
+                                
+                            });  
                         });
                     });
                 },
@@ -313,10 +322,46 @@
             });
             }  
 
+            $('.uploadLogo').change(function(){
+                var logo = window.URL.createObjectURL(this.files[0]);
+                $('#logo_view').attr('src',logo);
+                $('#logoModal').modal('hide');
+            });
+
+            $('#editName').on("click", function(){
+                $('#nameTextModal').modal('show');
+            });
+
+            $('.edit_name').keyup(function(event){
+                var text_value = $(this).val();
+                $('.front_card_name').text(text_value);
+            });
+
+            $('#editDescription').on("click", function(){
+                $('#descriptionTextModal').modal('show');
+            });
+
+            var limit_char  = 15;
+            var line_limit = 2;
             
 
+            $('.edit_description').keyup(function(event){ 
+
+                var char_length = $(this).val().length;
+                // console.log(char_length);
+                $('.card_description').text($(this).val());
+                
+                var limit = 30;
+                var break_limit = 15;
+                if(char_length > limit){
+                    $(this).val($(this).val().substring(0, limit));
+                }
+               
+            });
+
+            $('#upload_logo').on("click", function(){
+                $('#logoModal').modal('show');
+            });
         </script>
     </body> 
 </html>
-
-

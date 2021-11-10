@@ -297,45 +297,46 @@
                                     <div class="form-group">
                                     <div class="col-md-10 col-md-offset-1">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-6 text-center">
                                                     <div class="row">
                                                         <div class="col-md-12">
-                                                            <p class="text" style="font-size: 20px !important;">Icon Upload ( Front )</p>
-                                                            <button type="button" class="btn btn-dark btn-place"> Upload</button>
-                                                            <button type="button" class="btn btn-dark btn-place"> Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Right</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
+                                                            <p class="text" style="font-size: 20px !important;">Icon Upload</p>
+                                                            <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block">Upload new</button>
+                                                        </div>
+                                                        <div class="col-md-12 mt-2">
+                                                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Name</p>
+                                                            <button type="button" id="editName" class="btn btn-dark btn-place btn-block">Edit Text</button>
                                                         </div>
                                                         <div class="col-md-12">
-                                                            <p class="text"  style="font-size: 20px !important;">Name ( Front )</p>
-                                                            <button type="button" class="btn btn-dark btn-place">Center Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Center Right</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
+                                                            <p class="text"  style="font-size: 21px !important; margin-top: 15px">Description</p>
+                                                            <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block">Edit Text</button>                    
                                                         </div>
                                                     </div>
-                                                    <div id="card_blank_front">
-                                                        <img  alt="" id="card_front" width="450" height="250">
+                                                    <div id="card_blank_front" style="text-align:center;">
+                                                        <img  alt="" id="card_front">
+                                                        <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
+                                                        <p class="front_card_name"></p>
+                                                        <p class="card_description">Your Description</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="row">
-                                                        <div class="col-md-12">
-                                                            <p class="text" style="font-size: 20px !important;">QR Scan ( Back )</p>
+                                                        <div class="col-md-12 mt-2">
+                                                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Poistion</p>
+                                                            <button type="button" id="front_move_left" class="btn btn-dark btn-place"> Left</button>
+                                                            <button type="button" id="front_move_center" class="btn btn-dark btn-place">Center</button>
+                                                            <button type="button" id="front_move_right" class="btn btn-dark btn-place"> Right</button>   
+                                                        </div>
+                                                        <div class="col-md-12 mt-3">
+                                                            <p class="text" style="font-size: 20px !important; margin-top:15px;">QR Scan</p>
                                                             <button type="button" id="move_left" class="btn btn-dark btn-place"> Left</button>
                                                             <button type="button" id="move_center" class="btn btn-dark btn-place">Center</button>
                                                             <button type="button" id="move_right" class="btn btn-dark btn-place"> Right</button>
                                                         </div>
-                                                        <div class="col-md-12">
-                                                            <p class="text" style="font-size: 20px !important;">Name ( Back )</p>
-                                                            <button type="button" class="btn btn-dark btn-place" >Center Left</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Center Right</button>
-                                                            <button type="button" class="btn btn-dark btn-place">Center</button>
-                                                        </div>
                                                     </div>
                                                     <div id="card_blank_back">
-                                                        <img  alt="" id="card_back" width="450" height="250">
+                                                        <img  id="card_back" alt="" width="430" height="250">
                                                         <img  id="qr_scan" alt="" width="80" height="70">
-                                                        <p class="text" id="name_back"></p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -380,14 +381,14 @@
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button>
+                    </button> -->
                 </div>
                 <div class="modal-body">
-                    <div class="row" style="margin-top: 20px !important;">
+                    <div class="row" style="margin-top: 60px !important;">
                         <div class="col-md-6 text-center">
                             <img src="" id="front_img" alt="" with="400" height="400">
                         </div>
@@ -399,6 +400,79 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary" id="select_card">Select Card</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">Upload Logo</h4>
+                        <label class="btn btn-dark btn-block" id="up_load_btn"> 
+                            <input type="file" class="uploadLogo" accept="image/*">
+                            Select file
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="nameTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">Edit Your Name</h4>
+                        <input type="text" class="form-control btn-block edit_name" placeholder="enter your custom name">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="descriptionTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button> -->
+                </div>
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">Edit Your Description</h4>
+                        <textarea type="text" rows="3" class="form-control btn-block edit_description" placeholder="enter your custom description"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Select Card</button> -->
                 </div>
             </div>
         </div>

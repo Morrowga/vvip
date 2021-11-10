@@ -354,8 +354,9 @@ span {
 #image_data {
     margin-top: 10px !important;
     transform-style: preserve-3d;
-    transform: rotateX(-35deg) rotateY(20deg);
+    transform: rotateX(-25deg) rotateY(15deg);
     box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+    background-color: #fff !important;
 }
 
 .modal-content,.modal-body{
@@ -369,6 +370,7 @@ span {
 
 #front_img{
     transform-style: preserve-3d;
+    background-color: #fff;
     transform: rotateX(-35deg) rotateY(20deg);
     box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
 }
@@ -376,6 +378,7 @@ span {
 #back_img{
     transform-style: preserve-3d;
     transform: rotateX(-35deg) rotateY(20deg);
+    background-color: #fff;
     box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
 }
 
@@ -415,25 +418,76 @@ span {
     margin-top: 4px !important;
 }
 
+#cancel:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
 
 #card_blank_front{
     margin-top: 5% !important;
-    width: 450px;
+    width: 100%;
     height: 250px;
-    background-color: #fff;
+    position: relative;
     box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 #card_blank_back{
-    margin-top: 5% !important;
-    width: 450px;
+    margin-top: 20.3% !important;
+    width: 100%;
     height: 250px;
     background-color: #fff;
-    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    /* box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
+}
+
+
+#normal_default_txt_left{
+    position: absolute;
+    top: 71% !important;
+    font-size: 20px !important;
+    left: 29% !important;
+    font-family: "Britannic Bold";
+}
+
+#normal_default_txt_right{
+    position: absolute;
+    top: 71% !important;
+    font-size: 20px !important;
+    left: 60% !important;
+    font-family: "Britannic Bold";
+}
+
+#card_front{
+width: 100%;
+height: 250px;    
 }
 
 #card_back{
     position:relative;
+}
+
+
+.front_card_name{
+    width: 100%;
+    font-family: "Britannic Bold";
+    font-weight: bold !important;
+    margin: auto;
+    position: absolute;
+    top: 53% !important;
+    text-align: center !important;
+}
+
+.card_description{
+    width: 100%;
+    font-family: "Britannic Bold";
+    font-weight: bold !important;
+    margin: auto;
+    position: absolute;
+    top: 60% !important;
+    text-align: center !important;
+}
+
+.add_width{
+    max-height: 50px !important;
 }
 
 .color_border{
@@ -442,8 +496,44 @@ span {
 
 #qr_scan{
     position: absolute;
-    top: 64% !important;
+    top: 67% !important;
     left: 41% !important;
+}
+
+#logo_view{
+    border-radius: 50% !important;
+}
+
+#logo_view{
+    position: absolute;
+    top: 25% !important;
+    left: 42% !important;
+}
+
+
+.edit_name{
+    background-color: rgb(0,0,0) !important; 
+    border: 2px solid rgb(217,181,81) !important;
+    font-family: "Britannic Bold";
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+
+.edit_description{
+    background-color: rgb(0,0,0) !important; 
+    border: 2px solid rgb(217,181,81) !important;
+    font-family: "Britannic Bold";
+    font-size: 15px;
+    letter-spacing: 2px;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
 }
 
 .btn-place{
@@ -608,10 +698,38 @@ label.label_file {
     display: none !important;
 }
 
+.uploadLogo{
+    display: none !important;
+}
+
 .link_file_upload{
     display: none !important;
 }
 
+.upload_logo_text{
+    color: #000 !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+}
+
+
+
+#up_load_btn{
+    background-color: #000 !important;
+    border:2px solid #d9b551 !important;
+    font-family: "Britannic Bold";
+    letter-spacing: 2px;
+    color : #fff;
+    border-bottom-left-radius: 15px !important;
+    border-bottom-right-radius: 15px !important;
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+}
+
+#up_load_btn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
 
 .action-btn{
     background-color: rgb(0,0,0) !important;
@@ -973,6 +1091,20 @@ label.label_file {
           text-align: center !important;
       }
       
+
+      #front_img{
+          width: 300px;
+          height: 300px;
+          transform-style: preserve-3d;
+          transform: rotateX(-35deg) rotateY(20deg);
+      }
+
+      #back_img{
+        width: 300px;
+        height: 300px;
+        transform-style: preserve-3d;
+        transform: rotateX(-35deg) rotateY(20deg);
+    }
 
   }
 

@@ -180,10 +180,15 @@ class Helper{
                         $de_link_three = json_decode($link_tree->link_three);
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
-        
+                        
+                        if($link_tree->link_image === null){
+                            $link_img = "storage/link_tree_images/logo.jpeg";
+                        } else {
+                            $link_img = "storage/link_tree_images/" . $link_tree->link_image;
+                        }
                         $final_data = [
                           "user_id"  => $link_tree->user_id,
-                          "link_image" => "storage/link_tree_images/" . $link_tree->link_image,
+                          "link_image" => $link_img,
                           "link_one_label" => $de_link_one->label,
                           "link_one_url" => $de_link_one->link,
                           "link_two_label" => $de_link_two->label,
@@ -192,8 +197,8 @@ class Helper{
                           "link_three_url" => $de_link_three->link,
                           "link_four_label" => $de_link_four->label,
                           "link_four_url" => $de_link_four->link,
-                          "link_four_label" => $de_link_five->label,
-                          "link_four_url" => $de_link_five->link,
+                          "link_five_label" => $de_link_five->label,
+                          "link_five_url" => $de_link_five->link,
                           "background_color" => $link_tree->background_color,
                           "text_color" => $link_tree->text_color,
                           "text_highlight_color" => $link_tree->text_highlight_color

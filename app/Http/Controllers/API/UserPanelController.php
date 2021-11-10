@@ -562,7 +562,6 @@ class UserPanelController extends Controller
         $user_id = $request->user_id;
         $image = $request->file('link_image');
         $check_user = User::where('id', $user_id)->first();
-
         if($check_user !== null){
             $data_one = [
                 "label" => $link_one_label,
