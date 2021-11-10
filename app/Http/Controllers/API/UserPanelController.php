@@ -620,8 +620,8 @@ class UserPanelController extends Controller
                   "link_three_url" => $de_link_three->link,
                   "link_four_label" => $de_link_four->label,
                   "link_four_url" => $de_link_four->link,
-                  "link_four_label" => $de_link_five->label,
-                  "link_four_url" => $de_link_five->link,
+                  "link_five_label" => $de_link_five->label,
+                  "link_five_url" => $de_link_five->link,
                 ];
 
                 $messages = [
