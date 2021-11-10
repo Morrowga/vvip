@@ -235,6 +235,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
+                                    alert('s');
                                     var url = "intent://profile/?id="+ host +"#Intent;package=com.facebook.katana;scheme=fb;end";
                                     window.location = url;
                                 } else {
