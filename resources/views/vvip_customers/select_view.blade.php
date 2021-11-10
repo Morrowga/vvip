@@ -216,7 +216,7 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        var isAndroid = /Android|blackberry|windows phone/i.test(navigator.userAgent.toLowerCase());  
+                        var isAndroid = /Android|iPhone|iPad|iPod|blackberry|windows phone/i.test(navigator.userAgent.toLowerCase());  
                         // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
                         // if (isIOS) {
                             var host = value['url'];
