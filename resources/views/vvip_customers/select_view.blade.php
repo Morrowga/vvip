@@ -245,7 +245,9 @@
                                         // windowObjectReference = window.open("intent://youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end", "CNN_WindowName", windowFeatures);
                                         const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
 
-                                        window.location.replace(url); 
+                                        window.location.replace(url);
+                                        
+                                        return false;
 
                                     } else {    
                                     var url = "https://www.facebook.com/" + host;
