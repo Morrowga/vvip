@@ -182,7 +182,7 @@ class Helper{
                         $de_link_five = json_decode($link_tree->link_five);
                         
                         if($link_tree->link_image === null){
-                            $link_img = "storage/link_tree_images/logo.jpeg";
+                            $link_img = "public/images/logo.jpeg";
                             $final_data = [
                                 "user_id"  => $link_tree->user_id,
                                 "link_image" => $link_img,
