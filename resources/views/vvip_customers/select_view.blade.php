@@ -13,6 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
+<a href="" id="android_d"></a>
 
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -215,10 +216,204 @@
                 data_view = response.deep_link;
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
-                        var url =
-                            "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-
-                        window.location.replace(url);
+                        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        var isAndroid = /Android|blackberry|windows phone/i.test(navigator.userAgent.toLowerCase());  
+                        // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
+                        // if (isIOS) {
+                            var host = value['url'];
+                            // var package = value['app_package'];
+                            if(value['name'] == "Facebook"){
+                                if(isIOS){
+                                    var url = "fb://profile/?id=" + host;
+                                    var store_url = "https://itunes.apple.com/app/facebook/id284882215";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Facebook or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300);
+                                } else if(isAndroid){
+                                    const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+                                    $('#android_d').attr('href', url);
+                                    window.location.open($('#android_d').attr('href')); 
+                                } else {    
+                                    var url = "https://www.facebook.com/" + host;
+                                    window.location.replace(url); 
+                                }                  
+                            } else if(value['name'] == "Instagram"){
+                                if(isIOS){
+                                    var url = "instagram://user?username=" + host;
+                                    var store_url = "https://itunes.apple.com/app/instagram/id389801252";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Instagram or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300);
+                                } else {
+                                    var url = "https://www.instagram.com/" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Youtube"){
+                                if(isIOS){
+                                    var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
+                                    var store_url = "https://itunes.apple.com/app/youtube-watch-listen-stream/id544007664";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Youtube or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300);
+                                } else {
+                                    var url = "https://www.youtube.com/channel/" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Tiktok"){
+                                if(isIOS){
+                                    var url = "snssdk1233://user/profile/" + host;
+                                    var store_url = "https://itunes.apple.com/app/tiktok-make-your-day/id835599320";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Tiktok or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300);                                    
+                                } else {
+                                    var url = "https://www.tiktok.com/" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Pinterest"){
+                                if(isIOS){
+                                    var url = "pinterest://user/" + host;
+                                    var store_url = "https://itunes.apple.com/app/pinterest/id429047995";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Pinterest or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300);  
+                                } else {
+                                    var url = "https://www.pinterest.com/" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "LinkedIn"){
+                                if(isIOS){
+                                    var url = "linkedin://in/" + host;
+                                    var store_url = "https://itunes.apple.com/app/linkedin-network-job-finder/id288429040";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have LinkedIn or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://www.linkedin.com/in/" + host;
+                                    window.location.replace(url);
+                                } 
+                            } else if(value['name'] == "Tripadvisor"){
+                                if(isIOS){
+                                    var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
+                                    var store_url = "https://itunes.apple.com/app/tripadvisor-plan-book-trips/id284876795";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Tripadvisor or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://www.tripadvisor.com/Hotel_Review-" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Zoom"){
+                                if(isIOS){
+                                    var url = "zoomus://" + host;
+                                    var store_url = "https://itunes.apple.com/app/zoom-cloud-meetings/id546505307";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Zoom or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://us05web.zoom.us/" + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Google Maps"){
+                                if(isIOS){
+                                    var url = "comgooglemapsurl://maps.google.com/?q=" + host;
+                                    var store_url = "https://itunes.apple.com/app/google-maps/id585027354";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Google Maps or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://www." + host;
+                                    window.location.replace(url);
+                                }
+                            } else if(value['name'] == "Vimeo"){
+                                if(isIOS){
+                                    var url = "vimeo://app.vimeo.com/users/" + host;
+                                    var store_url = "https://itunes.apple.com/app/vimeo-unlock-video-power/id425194759";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Vimeo or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://vimeo.com/user" + host;
+                                }
+                                
+                            } else if(value['name'] == "Amazon"){
+                                if(isIOS){
+                                    var url = "com.amazon.mobile.shopping.web://" + host;
+                                    var store_url = "https://itunes.apple.com/app/amazon-shopping/id297606951";
+                                    // window.location = url;// fb://method/call..
+                                    window.location = url;
+                                    setTimeout(function(){
+                                        if(confirm('Do you already have Amazon or do you want to go download it?')){
+                                        window.location = store_url;
+                                        } else {
+                                            alert('refresh the page to see the resut again.');
+                                        }
+                                    }, 300); 
+                                } else {
+                                    var url = "https://www.amazon.com/" + host;
+                                    window.location.replace(url);
+                                }
+                            }
                         // }
                     // window.location.replace("facebook://" + host);
                     }
