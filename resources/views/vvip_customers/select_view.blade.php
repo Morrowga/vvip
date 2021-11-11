@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="an_link" href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
+<a id="deeplink" href="ss.wohui.learn://subscribed">Deep Link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -235,23 +235,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                        $('a[rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"]').get(0).click();
-                                        // document.getElementById('an_link').click();
-                                            // setInterval(function() {
-                                            //     $('#an_link').trigger("click");
-                                            //     alert('s');
-                                            // // alert('s');
-                                            // }, 1000);
-                                            // const element = document.querySelector('#an_link');
-                                            // element.click(function(){
-                                            //     window.location.rel = $(this).attr('rel');
-                                            // });
-                                            // window.location.rel = $('#an_link').attr('rel');
-                                        // $('#android').on(function() {
-                                            // window.location.hash = $('#android').attr('rel');
-                                            // alert($('#an_link').attr('rel'));
-                                        // });
-                                        // $('#android').trigger('click');
+                                       window.location.replace($('#deeplink').attr('href'));
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
