@@ -237,9 +237,10 @@
                                     }, 300);
                                 } else if(isAndroid){
                                         alert('s');
-                                        $('#android').on(function() {
+                                        // $('#android').on(function() {
                                             window.location.hash = $('#android').attr('rel');
-                                        });
+                                            // window.location.replace = window.location.hash;
+                                        // });
                                         // $('#android').trigger('click');
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
