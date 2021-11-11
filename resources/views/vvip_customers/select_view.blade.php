@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d" hidden>Deep link</a> 
+<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d">Deep link</a> 
 
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -48,8 +48,6 @@
 
 @section('script')
 <script>
-    window.location.replace($('#android_d').attr('rel'));
-
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
@@ -240,7 +238,11 @@
                                 } else if(isAndroid){
                                         alert('s');
                                         // $('#android_d').on("click", function() {  
-                                            window.location.replace($('#android_d').attr('rel'));
+                                            $('#android_d').on('click', function(){
+                                                $.address.value($('#android_d').attr('href'));  
+                                            });
+
+                                            location = $('#android_d').attr('rel');
                                         // });  
 
                                         // window.location.replace($.address.value($(this).attr('href')));
