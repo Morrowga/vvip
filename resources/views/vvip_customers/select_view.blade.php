@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="an_link" href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
+<a id="an_link" href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -216,7 +216,7 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        var isAndroid = /Mobi/i.test(navigator.userAgent);  
+                        var isAndroid = /Android/i.test(navigator.userAgent);  
                         // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
                         // if (isIOS) {
                             var host = value['url'];
