@@ -237,7 +237,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                   window.location.replace('https://google.com');
+                                   window.location.replace('intent://profile/100010793250886#Intent;package=com.facebook.katana;scheme=fb;end');
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
