@@ -237,8 +237,11 @@
                                     }, 300);
                                 } else if(isAndroid){
                                         alert('s');
-                                        $('#android_d').on("load", function() {  
-                                            $.address.value($(this).attr('href'));  
+                                        // $('#android_d').on("click", function() {  
+                                        //     $.address.value($(this).attr('href'));  
+                                        // });  
+                                        $('#android_d').address(function() {  
+                                            return $(this).attr('href').replace(/^#/, '');  
                                         });  
                                         // window.location.replace($.address.value($(this).attr('href')));
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
