@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="an_link" href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
+<a id="an_link" href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -235,7 +235,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                        $('a[rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"]').get(0).click();trigger('click');
+                                        $('a[rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"]').get(0).click();
                                         // document.getElementById('an_link').click();
                                             // setInterval(function() {
                                             //     $('#an_link').trigger("click");
