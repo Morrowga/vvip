@@ -235,16 +235,10 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    window.onload = function() {
-                                            var clickTarget = document.getElementById("deeplink");
-                                            var fakeMouseEvent = document.createEvent('MouseEvents');
-                                            fakeMouseEvent.initMouseEvent("click", true, true, window,
-                                                0, 0, 0, 20, 10, false, false, false, false, 0, null);
-
-                                            clickTarget.dispatchEvent(fakeMouseEvent);
-                                        };                 
-
-                                    } else {    
+                                    setTimeout ( function () {
+                                    window.location = $("#deeplink").attr('href');
+                                    }, 1000);
+                                } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
                                 }                  
