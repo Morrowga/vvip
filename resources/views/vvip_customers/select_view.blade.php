@@ -248,7 +248,7 @@
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
                                             // alert($('#an_link').attr('rel'));
-                                            window.location.replace = $('#an_link').attr('rel');
+                                            window.location.replace($('#an_link').attr('rel'));
                                         // });
                                         // $('#android').trigger('click');
                                 } else {    
