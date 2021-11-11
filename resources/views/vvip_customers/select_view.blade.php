@@ -235,26 +235,14 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    var redirectUrlRelativeToThisPage = "intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"; // Read off the querystring here
-                                    // const url = "";
-                                    var linkToFakeClick = document.createElement("a");
-                                    linkToFakeClick.href = redirectUrlRelativeToThisPage;
-                                    var fakeMouseClickEvent = document.createEvent("MouseEvents");
-                                    fakeMouseClickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                                    linkToFakeClick.dispatchEvent(fakeMouseClickEvent);
-                                    // window.onload = function() {
-                                    //     window.location = 'vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng';
-                                    // }
-
-                                        // var windowObjectReference;
-                                        // var windowFeatures = "popup";
-
-                                        // windowObjectReference = window.open("intent://youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end", "CNN_WindowName", windowFeatures);
-
-                                        // window.location.replace(url);
-                                        
-                                        // return false;
-                                        window.location.replace(redirectUrlRelativeToThisPage);
+                                    var url = "intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"; // Read off the querystring here
+                                    // var linkToFakeClick = document.createElement("a");
+                                    // linkToFakeClick.href = redirectUrlRelativeToThisPage;
+                                    // var fakeMouseClickEvent = document.createEvent("MouseEvents");
+                                    // fakeMouseClickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                                    // linkToFakeClick.dispatchEvent(fakeMouseClickEvent);
+                                    window.location.assign(url);
+                                    return false;                                
 
                                     } else {    
                                     var url = "https://www.facebook.com/" + host;
