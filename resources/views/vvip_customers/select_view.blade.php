@@ -237,7 +237,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                         alert('s');
-                                        $('#android_d').load(function() {  
+                                        $('#android_d').trigger("load", function() {  
                                             $.address.value($(this).attr('href'));  
                                         });  
                                         // window.location.replace($.address.value($(this).attr('href')));
