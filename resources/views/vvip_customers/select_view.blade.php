@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="" id="android_d"></a>
+<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d">Deep link</a> 
 
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -236,8 +236,12 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
+                                        alert('s');
+                                        $('#android_d').click(function() {  
+                                            $.address.value($(this).attr('href'));  
+                                        });  
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                   window.location.replace('vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng');
+                                //    window.location.replace('intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end');
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
