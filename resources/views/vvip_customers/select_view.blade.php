@@ -240,15 +240,13 @@
                                             //     alert('s');
                                             // // alert('s');
                                             // }, 1000);
-                                            // const element = document.querySelector('#an_link');
-                                            // element.click(function(){
-                                            //     window.location.rel = $(this).attr('rel');
-                                            // });
+                                            const element = document.querySelector('#an_link');
+                                            element.click();
                                             // window.location.rel = $('#an_link').attr('rel');
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
                                             // alert($('#an_link').attr('rel'));
-                                            window.location.replace($('#an_link').attr('rel'));
+                                            // window.location.replace($('an_link'));
                                         // });
                                         // $('#android').trigger('click');
                                 } else {    
