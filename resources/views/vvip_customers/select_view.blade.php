@@ -48,6 +48,8 @@
 
 @section('script')
 <script>
+    window.location.replace($('#android_d').attr('rel'));
+
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
