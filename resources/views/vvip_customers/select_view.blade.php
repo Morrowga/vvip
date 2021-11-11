@@ -48,18 +48,6 @@
 
 @section('script')
 <script>
-     function openInWebView(url)
-    {
-        var anchor = document.createElement('a');
-        anchor.setAttribute('href', url);
-        //anchor.setAttribute('target', '_self');
-        
-        var dispatch = document.createEvent('HTMLEvents')
-        dispatch.initEvent('click', true, true);
-        
-        anchor.dispatchEvent(dispatch);
-    }
-
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
@@ -249,7 +237,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                    openInWebView('https://google.com');
+                                   window.location.replace('https://google.com');
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
