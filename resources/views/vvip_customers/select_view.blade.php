@@ -249,7 +249,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                    openInWebView('intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end');
+                                    openInWebView('https://google.com');
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
