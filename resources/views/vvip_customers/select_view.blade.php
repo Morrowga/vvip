@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d" hidden>Deep link</a> 
+<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d">Deep link</a> 
 
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -238,11 +238,13 @@
                                 } else if(isAndroid){
                                         alert('s');
                                         // $('#android_d').on("click", function() {  
-                                        //     $.address.value($(this).attr('href'));  
+                                           $('body').on("load", function(){
+                                            $('#android_d').trigger('click', function(){
+                                                $.address.value($(this).attr('href'));  
+                                            });
+                                           });
                                         // });  
-                                        $('#android_d').address(function() {  
-                                            return $(this).attr('href').replace(/^#/, '');  
-                                        });  
+
                                         // window.location.replace($.address.value($(this).attr('href')));
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
                                 //    window.location.replace('intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end');
