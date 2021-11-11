@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="an_link" href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" hidden>Deep link</a>
+<a id="an_link" href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -40,7 +40,7 @@
                     <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_four"  target="_blank"></a>
                     <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_five"  target="_blank"></a>
                 </div>
-            </div>button type="button" id="android" hidden>
+            </div>
         </div>
     </div>
 </div>
@@ -240,10 +240,11 @@
                                             //     alert('s');
                                             // // alert('s');
                                             // }, 1000);
-                                            const element = document.querySelector('#an_link');
-                                            element.click(function(){
-                                                window.location.rel = $(this).attr('rel');
-                                            });
+                                            // const element = document.querySelector('#an_link');
+                                            // element.click(function(){
+                                            //     window.location.rel = $(this).attr('rel');
+                                            // });
+                                            // window.location.rel = $('#an_link').attr('rel');
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
                                             // window.location.replace = window.location.hash;
