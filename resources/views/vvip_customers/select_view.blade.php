@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="deeplink" href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end">Deep Link</a>
+<a href="" id="deeplink">Deep Link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -235,9 +235,9 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    setTimeout ( function () {
-                                    window.open($("#deeplink").attr('href'));
-                                    }, 1000);
+                                    $(window).load(function(){
+                                        $('#deeplink').addClass("external").attr({ target: "_blank", href: 'intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end' })[0].click();
+                                    });
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
