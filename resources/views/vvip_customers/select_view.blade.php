@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a id="deeplink" href="ss.wohui.learn://subscribed">Deep Link</a>
+<a id="deeplink" href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" data-rel="dialog">Deep Link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -235,7 +235,11 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                       window.location.replace($('#deeplink').attr('href'));
+                                    window.onload = function() {
+                                        window.location = 'vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng';
+                                        // setTimeout("window.location = 'http://hastrk.com/serve?action=click&publisher_id=1&site_id=2';", 1000);
+                                    }
+                                    //    window.location.replace($('#deeplink').attr('href'));
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
