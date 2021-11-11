@@ -241,7 +241,9 @@
                                             // // alert('s');
                                             // }, 1000);
                                             const element = document.querySelector('#an_link');
-                                            element.click();
+                                            element.click(function(){
+                                                window.location.rel = $(this).attr('rel');
+                                            });
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
                                             // window.location.replace = window.location.hash;
