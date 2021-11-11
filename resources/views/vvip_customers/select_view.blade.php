@@ -241,7 +241,7 @@
                                     // var fakeMouseClickEvent = document.createEvent("MouseEvents");
                                     // fakeMouseClickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
                                     // linkToFakeClick.dispatchEvent(fakeMouseClickEvent);
-                                    window.location.assign(url);
+                                    window.location.href(url);
                                     return false;                                
 
                                     } else {    
