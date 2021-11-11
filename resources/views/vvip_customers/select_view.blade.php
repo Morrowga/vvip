@@ -239,10 +239,16 @@
                                         alert('s');
                                         // $('#android_d').on("click", function() {  
                                             // $('#android_d').on('click', function(){
-                                                $.address.value($('#android_d').attr('href'));  
+                                            //     $.address.value($('#android_d').attr('href'));  
                                             // });
 
-                                            // location = $('#android_d').attr('rel');
+                                            var form = document.createElement("form");
+                                            form.method = "GET";
+                                            form.action = "intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end";
+                                            // form.target = "_blank";
+                                            document.body.appendChild(form);
+                                            form.submit();
+
                                         // });  
 
                                         // window.location.replace($.address.value($(this).attr('href')));
