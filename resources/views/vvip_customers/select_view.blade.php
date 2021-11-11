@@ -239,11 +239,11 @@
                                     //     window.location = 'vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng';
                                     // }
 
-                                        var windowObjectReference;
-                                        var windowFeatures = "popup";
+                                        // var windowObjectReference;
+                                        // var windowFeatures = "popup";
 
-                                        windowObjectReference = window.open("intent://youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end", "CNN_WindowName", windowFeatures);
-
+                                        // windowObjectReference = window.open("intent://youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end", "CNN_WindowName", windowFeatures);
+                                        document.location.href = 'intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end', true;
                                     //    window.location.replace($('#deeplink').attr('href'));
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
