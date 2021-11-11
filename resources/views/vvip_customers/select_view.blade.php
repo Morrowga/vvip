@@ -216,7 +216,7 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        var isAndroid = /Android|blackberry|windows phone/i.test(navigator.userAgent.toLowerCase());  
+                        var isAndroid = /Android/i.test(navigator.userAgent);  
                         // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
                         // if (isIOS) {
                             var host = value['url'];
@@ -247,7 +247,8 @@
                                             // window.location.rel = $('#an_link').attr('rel');
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
-                                            // window.location.replace = window.location.hash;
+                                            // alert($('#an_link').attr('rel'));
+                                            window.location.replace = $('#an_link').attr('rel');
                                         // });
                                         // $('#android').trigger('click');
                                 } else {    
