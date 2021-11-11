@@ -236,7 +236,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     setTimeout ( function () {
-                                    window.location = $("#deeplink").attr('href');
+                                    window.open($("#deeplink").attr('href'));
                                     }, 1000);
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
