@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="" id="deeplink">Deep Link</a>
+<a href="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="deeplink">Deep Link</a>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
