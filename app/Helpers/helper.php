@@ -254,7 +254,32 @@ class Helper{
 
                     return $messages;
                 }
+            } else if($request_name === "get_welcome"){
+                $user  = User::where('id', $user_id)->first();
+                if($user !== null){
+                    $data  = [
+                        "user_name" => $user->name,
+                        "text" => "Hello" . $user->name . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP."
+                    ];
+        
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "request" => "get_welcome",
+                        "data" => $data
+                     ];
+        
+                     return $messages;
+                } else {
+                    $messages = [
+                        "status" => "412",
+                        "message" => "User does not exist."
+                     ];
+        
+                     return $messages;
+                }
             }
         }
     }
 }
+

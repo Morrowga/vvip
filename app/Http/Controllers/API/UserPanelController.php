@@ -684,5 +684,6 @@ class UserPanelController extends Controller
              return $messages;
         }
     }
+
 }
 
