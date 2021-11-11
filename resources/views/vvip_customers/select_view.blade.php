@@ -237,10 +237,10 @@
                                     }, 300);
                                 } else if(isAndroid){
                                         alert('s');
-                                        // $('#android_d').click(function() {  
-                                        //     $.address.value($(this).attr('href'));  
-                                        // });  
-                                        window.location.replace($.address.value($(this).attr('href')));
+                                        $('#android_d').click(function() {  
+                                            $.address.value($(this).attr('href'));  
+                                        });  
+                                        // window.location.replace($.address.value($(this).attr('href')));
                                     // var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
                                 //    window.location.replace('intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end');
                                 } else {    
