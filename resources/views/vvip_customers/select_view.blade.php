@@ -235,7 +235,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                        $('#deeplink').addClass("external").attr({ target: "_blank", href: 'intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end' })[0].click();
+
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
