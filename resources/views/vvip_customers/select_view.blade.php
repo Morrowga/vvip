@@ -216,7 +216,7 @@
                 $.each(data_view, function(i,value){ 
                     if(value['active'] == 1){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                        var isAndroid = /Android/i.test(navigator.userAgent);  
+                        var isAndroid = /android/i.test(navigator.userAgent);  
                         // var isDesktop = /webos/i.test(navigator.userAgent.toLowerCase());
                         // if (isIOS) {
                             var host = value['url'];
@@ -235,8 +235,13 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                   window.location.href  = url;
+                                    var redirectUrlRelativeToThisPage = "intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"; // Read off the querystring here
+                                    // const url = "";
+                                    var linkToFakeClick = document.createElement("a");
+                                    linkToFakeClick.href = redirectUrlRelativeToThisPage;
+                                    var fakeMouseClickEvent = document.createEvent("MouseEvents");
+                                    fakeMouseClickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                                    linkToFakeClick.dispatchEvent(fakeMouseClickEvent);
                                     // window.onload = function() {
                                     //     window.location = 'vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng';
                                     // }
@@ -249,6 +254,7 @@
                                         // window.location.replace(url);
                                         
                                         // return false;
+                                        window.location.replace(redirectUrlRelativeToThisPage);
 
                                     } else {    
                                     var url = "https://www.facebook.com/" + host;
