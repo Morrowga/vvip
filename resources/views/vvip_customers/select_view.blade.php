@@ -236,25 +236,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
-                                    var X = setTimeout(function(){
-                                        window.location.replace(url);
-                                        return true;
-                                    },300);
-
-                                    if( window.location = url ){
-                                        clearTimeout(X);
-                                        return true;
-                                    } else {
-                                        if( window.location.href = url ){
-                                            clearTimeout(X);
-                                            return true;
-                                        }else{
-                                            clearTimeout(X);
-                                            window.location.replace(url);
-                                            return true;
-                                        }
-                                    }
-                                    return false;
+                                   window.location.href  = url;
                                     // window.onload = function() {
                                     //     window.location = 'vnd.youtube://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng';
                                     // }
