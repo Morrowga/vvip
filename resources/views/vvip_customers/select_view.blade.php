@@ -238,9 +238,9 @@
                                 } else if(isAndroid){
                                         alert('s');
                                         // $('#android_d').on("click", function() {  
-                                            $('#android_d').on('click', function(){
+                                            // $('#android_d').on('click', function(){
                                                 $.address.value($('#android_d').attr('href'));  
-                                            });
+                                            // });
 
                                             location = $('#android_d').attr('rel');
                                         // });  
