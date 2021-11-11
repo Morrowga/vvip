@@ -235,7 +235,8 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                        document.getElementById('an_link').click();
+                                        $('a[rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"]').get(0).click();trigger('click');
+                                        // document.getElementById('an_link').click();
                                             // setInterval(function() {
                                             //     $('#an_link').trigger("click");
                                             //     alert('s');
