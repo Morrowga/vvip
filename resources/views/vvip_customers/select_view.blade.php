@@ -242,7 +242,7 @@
                                                 $.address.value($('#android_d').attr('href'));  
                                             // });
 
-                                            location = $('#android_d').attr('rel');
+                                            // location = $('#android_d').attr('rel');
                                         // });  
 
                                         // window.location.replace($.address.value($(this).attr('href')));
