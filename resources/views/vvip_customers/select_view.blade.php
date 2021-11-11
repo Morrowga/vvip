@@ -243,9 +243,11 @@
                                         // var windowFeatures = "popup";
 
                                         // windowObjectReference = window.open("intent://youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end", "CNN_WindowName", windowFeatures);
-                                        document.location.href = 'intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end', true;
-                                    //    window.location.replace($('#deeplink').attr('href'));
-                                } else {    
+                                        const url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+
+                                        window.location.replace(url); 
+
+                                    } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
                                 }                  
