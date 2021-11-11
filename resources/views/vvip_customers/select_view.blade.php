@@ -235,18 +235,20 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
+                                        document.getElementById('an_link').click();
                                             // setInterval(function() {
                                             //     $('#an_link').trigger("click");
                                             //     alert('s');
                                             // // alert('s');
                                             // }, 1000);
-                                            const element = document.querySelector('#an_link');
-                                            element.click();
+                                            // const element = document.querySelector('#an_link');
+                                            // element.click(function(){
+                                            //     window.location.rel = $(this).attr('rel');
+                                            // });
                                             // window.location.rel = $('#an_link').attr('rel');
                                         // $('#android').on(function() {
                                             // window.location.hash = $('#android').attr('rel');
                                             // alert($('#an_link').attr('rel'));
-                                            // window.location.replace($('an_link'));
                                         // });
                                         // $('#android').trigger('click');
                                 } else {    
