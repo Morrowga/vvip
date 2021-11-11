@@ -235,14 +235,14 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    var url = "intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end"; // Read off the querystring here
-                                    // var linkToFakeClick = document.createElement("a");
-                                    // linkToFakeClick.href = redirectUrlRelativeToThisPage;
-                                    // var fakeMouseClickEvent = document.createEvent("MouseEvents");
-                                    // fakeMouseClickEvent.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
-                                    // linkToFakeClick.dispatchEvent(fakeMouseClickEvent);
-                                    window.location.href(url);
-                                    return false;                                
+                                    window.onload = function() {
+                                            var clickTarget = document.getElementById("deeplink");
+                                            var fakeMouseEvent = document.createEvent('MouseEvents');
+                                            fakeMouseEvent.initMouseEvent("click", true, true, window,
+                                                0, 0, 0, 20, 10, false, false, false, false, 0, null);
+
+                                            clickTarget.dispatchEvent(fakeMouseEvent);
+                                        };                 
 
                                     } else {    
                                     var url = "https://www.facebook.com/" + host;
