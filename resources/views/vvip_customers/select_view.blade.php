@@ -235,7 +235,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-
+                                    $("#deeplink")[0].click();
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
