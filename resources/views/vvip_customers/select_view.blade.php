@@ -13,7 +13,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d">Deep link</a> 
+<a href="https://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng" rel="intent://www.youtube.com/channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng#Intent;package=com.google.android.youtube;scheme=https;end" id="android_d" hidden>Deep link</a> 
 
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -238,11 +238,7 @@
                                 } else if(isAndroid){
                                         alert('s');
                                         // $('#android_d').on("click", function() {  
-                                           $('body').on("load", function(){
-                                            $('#android_d').trigger('click', function(){
-                                                $.address.value($(this).attr('href'));  
-                                            });
-                                           });
+                                            window.location.replace($('#android_d').attr('rel'));
                                         // });  
 
                                         // window.location.replace($.address.value($(this).attr('href')));
