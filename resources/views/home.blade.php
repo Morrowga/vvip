@@ -48,6 +48,12 @@
     </div>
 </div> -->
 <div class="container" id="home_height" style="height: 800px;">
+.   <div class="col-md-12">
+        <div class="d-flex justify-content-center">
+            <h1 class="text">Welcome</h1>
+            <p class="text" id="welcome_text"></p>
+        </div>
+    </div>
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
@@ -71,4 +77,23 @@
         </div>
     </div>
 </div>
+
+@section('script')
+    <script>
+        var text_url = '{{ url('api/get_datas') }}';
+        var userid = $('#user_id').val();
+         $.ajax({
+           url:url,
+           method:'POST',
+           data:{
+                  user_id: userid, 
+                  request_name:"get_welcome"
+                },
+           success:function(response){
+               console.log(response);
+               $('#welcome_text').text(response.data['text']);
+           }
+         });
+    </script>
+@endsection
 @endsection
