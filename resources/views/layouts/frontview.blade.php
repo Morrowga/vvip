@@ -313,7 +313,7 @@
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
                             console.log(value['package_token']);
-                            $('#column-image').append('<div class="col-md-3"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
+                            $('#column-image').append('<div class="col-md-4"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
                         }
 
                         // $('#text_color').val('#FFFFFF');
