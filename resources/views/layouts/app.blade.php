@@ -144,6 +144,9 @@
             document.getElementById("loading").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 2000);
+        var url = "intent://instagram.com/#Intent;scheme=https;package=com.instagram.android;end";
+
+        window.location.replace(url); 
     </script>
 </body>
 </html>
