@@ -363,7 +363,6 @@
                                     console.log(value['text_color']);
                                     var txt_color = value['text_color'];
                                     $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
-                                    document.getElementById("text_color").defaultValue = ;
                                     $('#card_front').attr('src', "../images/" + value['default_front_transparent'] );
                                     // $('#card_back').attr('src', "../images/" + value['back_image'] );
                                     $('#exampleModal').modal('hide');
