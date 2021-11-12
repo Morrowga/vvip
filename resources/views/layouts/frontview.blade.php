@@ -310,6 +310,7 @@
                 type: 'get',
                 success: function(response){
                     data = response.card_design;
+                    console.log(response);
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
                             console.log(value['package_token']);
@@ -350,7 +351,8 @@
                                 if(targetValue == "12345"){
                                     $('#back_img').attr('src', "../images/Back.png");
                                 } else {
-                                    $('#back_img').attr('src', "../images/" + value['back_image']);
+                                    console.log(value['default_back_transparent']);
+                                    $('#back_img').attr('src', "../images/" + value['default_back_transparent']);
                                 }
                                 $('#exampleModal').modal('show');
                             }
