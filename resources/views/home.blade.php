@@ -47,7 +47,7 @@
         </div>
     </div>
 </div> -->
-<div class="container" id="home_height" style="height: 600px;">
+<div class="container" id="home_height" style="height: 800px;">
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">

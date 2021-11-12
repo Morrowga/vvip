@@ -327,9 +327,7 @@
                             $('#text_div').removeClass('col-md-6').addClass('col-md-6 col-md-offset-3');
                             $('#qr_div').hide();
                             $('#card_blank_back').attr('style', 'margin-top: 171px !important;');
-                        } else {
-                            $('#card_back').attr('src', "../images/" + value['back_image'] );
-                        }
+                        } 
 
 
                         let colorInput = document.getElementById('background_color');
@@ -352,7 +350,7 @@
                                     $('#back_img').attr('src', "../images/Back.png");
                                 } else {
                                     console.log(value['default_back_transparent']);
-                                    $('#back_img').attr('src', "../images/" + value['default_back_transparent']);
+                                    $('#back_img').attr('src', "../images/" + value['back_image']);
                                 }
                                 $('#exampleModal').modal('show');
                             }
@@ -365,8 +363,10 @@
                                     console.log(value['text_color']);
                                     var txt_color = value['text_color'];
                                     $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
-                                    $('#card_front').attr('src', "../images/" + value['default_front_transparent'] );
-                                    // $('#card_back').attr('src', "../images/" + value['back_image'] );
+                                    $('#card_front').attr('src', "../images/" + value['default_front_transparent']);
+                                    if(targetValue != '12345'){
+                                        $('#card_back').attr('src', "../images/" + value['default_back_transparent']);
+                                    }
                                     $('#exampleModal').modal('hide');
                                     $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
                                 }
