@@ -14,10 +14,11 @@ class AddMoreToSmartCardDesignsTable extends Migration
     public function up()
     {
         Schema::table('smart_card_designs', function (Blueprint $table) {
-            $table->string('default_background_color')->after('back_image')->nullable();
-            $table->string('default_transparent_color')->nullable();
-            $table->json('front_transparent')->nullable();
-            $table->json('back_transparent')->nullable();
+            $table->string('preview_bg_color')->nullable()->after('package_token');
+            $table->string('preview_text_color')->nullable()->after('preview_bg_color');
+            $table->string('default_front_transparent')->nullable()->after('preview_text_color');
+            $table->string('default_back_transparent')->nullable()->after('default_front_transparent');
+            $table->string('total_transparent')->nullable()->after('default_back_transparent');
         });
     }
 

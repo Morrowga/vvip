@@ -141,7 +141,12 @@ class UserRegisterController extends Controller
                     "id" => $card->id,
                     "front_image" => $card->front_image,
                     "back_image" => $card->back_image,
-                    "package_token" => $card->package_token
+                    "package_token" => $card->package_token,
+                    "default_front_transparent" => $card->default_front_transparent,
+                    "default_back_transparent" => $card->default_back_transparent,
+                    "bg_color" => $card->preview_bg_color,
+                    "text_color" => $card->preview_text_color,
+                    "total_transparent" => json_decode($card->total_transparent)
             ];
             array_push($array, $data);
         }

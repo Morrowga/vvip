@@ -227,6 +227,7 @@
                 }
             }
 
+
             // $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
             // $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
             $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
@@ -245,30 +246,52 @@
 
 
             $('#front_move_left').on('click', function(){
-                $('.card_description').attr('style', 'right: 30% !important');
-            $('.front_card_name').attr('style', 'right: 30% !important');
+                $('.card_description').attr('style', 'right: 30% !important; color:' + $('#text_color').val() + '!important;');
+                $('.front_card_name').attr('style', 'right: 30% !important; color:' + $('#text_color').val() + '!important;');
                 $('#logo_view').attr('style', 'left: 13% !important');
+                $('#catch_click').text('left');
+                console.log($('#catch_click').text());
             });
 
             $('#front_move_center').on('click', function(){
-                $('.card_description').attr('style', 'text-align:center !important');
-                $('.front_card_name').attr('style', 'text-align:center !important');
+                $('.card_description').attr('style', 'text-align:center !important; color:' + $('#text_color').val() + '!important;');
+                $('.front_card_name').attr('style', 'text-align:center !important; color:' + $('#text_color').val() + '!important;');
                 $('#logo_view').attr('style', 'left: 42% !important');
+                $('#catch_click').text('center');
+                console.log($('#catch_click').text());
             });
 
             $('#front_move_right').on('click', function(){
-                $('.card_description').attr('style', 'left: 25% !important');
-                $('.front_card_name').attr('style', 'left: 25% !important');
-                $('#logo_view').attr('style', 'left: 67% !important');
+                $('.card_description').attr('style', 'left: 25% !important; color:' + $('#text_color').val() + '!important;');
+                $('.front_card_name').attr('style', 'left: 25% !important;color:' + $('#text_color').val() + '!important;');
+                $('#logo_view').attr('style', 'left: 67% !important;');
+                $('#catch_click').text('right');
+                console.log($('#catch_click').text());
             });
 
-
-            let colorInput = document.getElementById('background_color');
-            colorInput.addEventListener('input', () =>{
-                $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
-                $('#card_blank_back').attr('style', 'background-color:' + colorInput.value + ';');
+            let TextcolorInput = document.getElementById('text_color');
+            TextcolorInput.addEventListener('input', () =>{
+                    // alert('left');
+                if($('#catch_click').text() == 'left'){
+                    $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important; right: 30% !important;');
+                    $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important; right: 30% !important;');
+                } else if($('#catch_click').text() == 'right'){
+                    $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important; left: 25% !important;');
+                    $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important; left: 25% !important;');
+                } else {
+                    $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important; text-align:center !important;');
+                    $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important; text-align:center !important;');
+                }
+                // else if($('.front_card_name').css('marginRight') == '30%'){
+                //     alert('right');
+                //     $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important; right: 30% important;');
+                //     $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important; right: 30% important;');
+                // } else {
+                //     alert('center');
+                //     $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important;');
+                //     $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important;');
+                // }
             });
-
 
             $("#name").keyup(function(event) {
                 var name_value = $(this).val();
@@ -286,18 +309,49 @@
                 url: '/api/get_cards',
                 type: 'get',
                 success: function(response){
-                    console.log(response);
                     data = response.card_design;
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
-                        $('#column-image').append('<div class="col-md-3"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
-                        } 
+                            console.log(value['package_token']);
+                            $('#column-image').append('<div class="col-md-3"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
+                        }
+
+                        // $('#text_color').val('#FFFFFF');
+                        
+                        $('.front_card_name').attr('style', 'color:' + $('#text_color').val() + ';');
+                        $('.card_description').attr('style', 'color:' + $('#text_color').val() + ';');
+
+                        if(targetValue == "12345"){
+                            $('#bg_div').hide();
+                            $('#text_div').removeClass('col-md-6').addClass('col-md-6 col-md-offset-3');
+                            $('#qr_div').hide();
+                            $('#card_blank_back').attr('style', 'margin-top: 171px !important;');
+                        } else {
+                            $('#card_back').attr('src', "../images/" + value['back_image'] );
+                        }
+
+
+                        let colorInput = document.getElementById('background_color');
+                        colorInput.addEventListener('input', () =>{
+                            if(targetValue == "12345"){
+                                $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
+                            } else {
+                                $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
+                                $('#card_blank_back').attr('style', 'background-color:' + colorInput.value + ';');
+                            }
+                        });
+
+
                         $('.zoom').on('click', function(e) {
                             let id = e.target.id;
                             if(id == value['id']){
                                 console.log(value['back_image']);
-                                $('#front_img').attr('src', "../images/" + value['front_image']);
-                                $('#back_img').attr('src', "../images/" + value['back_image']);
+                                    $('#front_img').attr('src', "../images/" + value['front_image']);
+                                if(targetValue == "12345"){
+                                    $('#back_img').attr('src', "../images/Back.png");
+                                } else {
+                                    $('#back_img').attr('src', "../images/" + value['back_image']);
+                                }
                                 $('#exampleModal').modal('show');
                             }
                             $('#select_card').on('click', function(e) {
@@ -306,8 +360,12 @@
                                console.log(target);
                                 $('#card_design_id').val(target);
                                 if(target == value['id']){
-                                    $('#card_front').attr('src', "../images/" + value['front_image'] );
-                                    $('#card_back').attr('src', "../images/" + value['back_image'] );
+                                    console.log(value['text_color']);
+                                    var txt_color = value['text_color'];
+                                    $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
+                                    document.getElementById("text_color").defaultValue = ;
+                                    $('#card_front').attr('src', "../images/" + value['default_front_transparent'] );
+                                    // $('#card_back').attr('src', "../images/" + value['back_image'] );
                                     $('#exampleModal').modal('hide');
                                     $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
                                 }
@@ -334,6 +392,13 @@
 
             $('.edit_name').keyup(function(event){
                 var text_value = $(this).val();
+                var text_length = $(this).val().length;
+                var text_limit = 18;
+
+                if(text_length > text_limit){
+                    $(this).val($(this).val().substring(0, text_limit));
+                }
+
                 $('.front_card_name').text(text_value);
             });
 
@@ -341,9 +406,6 @@
                 $('#descriptionTextModal').modal('show');
             });
 
-            var limit_char  = 15;
-            var line_limit = 2;
-            
 
             $('.edit_description').keyup(function(event){ 
 
@@ -352,7 +414,6 @@
                 $('.card_description').text($(this).val());
                 
                 var limit = 30;
-                var break_limit = 15;
                 if(char_length > limit){
                     $(this).val($(this).val().substring(0, limit));
                 }

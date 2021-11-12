@@ -282,13 +282,14 @@
                                     <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
                                             <div class="row">
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="bg_div">
                                                     <h3 class="text">Background Color</h3>
                                                     <input type="color" class="form-control" id="background_color">
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-6" id="text_div">
                                                     <h3 class="text">Text Color</h3>
                                                     <input type="color" class="form-control" id="text_color">
+                                                    <p id="catch_click" hidden></p>
                                                 </div>
                                             </div>
                                             <div class="devider" style="margin-top: 15px;"></div>
@@ -315,8 +316,8 @@
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
-                                                        <p class="front_card_name"></p>
-                                                        <p class="card_description">Your Description</p>
+                                                        <p class="front_card_name text-center"></p>
+                                                        <p class="card_description text-center">Your Description</p>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
@@ -327,7 +328,7 @@
                                                             <button type="button" id="front_move_center" class="btn btn-dark btn-place">Center</button>
                                                             <button type="button" id="front_move_right" class="btn btn-dark btn-place"> Right</button>   
                                                         </div>
-                                                        <div class="col-md-12 mt-3">
+                                                        <div class="col-md-12 mt-3" id="qr_div">
                                                             <p class="text" style="font-size: 20px !important; margin-top:15px;">QR Scan</p>
                                                             <button type="button" id="move_left" class="btn btn-dark btn-place"> Left</button>
                                                             <button type="button" id="move_center" class="btn btn-dark btn-place">Center</button>
@@ -335,7 +336,7 @@
                                                         </div>
                                                     </div>
                                                     <div id="card_blank_back">
-                                                        <img  id="card_back" alt="" width="430" height="250">
+                                                        <img  id="card_back" alt="" height="250">
                                                         <img  id="qr_scan" alt="" width="80" height="70">
                                                     </div>
                                                 </div>
