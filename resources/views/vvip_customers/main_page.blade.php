@@ -283,7 +283,7 @@
                             <div class="contact-info">
                                 <h4 class="contact">Our Address</h4>
                                 <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; No.8 Moe Ma Kha (1) Street ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma Li Kha Housing,Thingangyun Tsp. ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yangon ,Myanmar</li>
+                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; No.8 Moe Ma Kha (1) Street,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma Li Kha Housing,Thingangyun Tsp,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yangon ,Myanmar</li>
                                     <li><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
                                     <li><i class="fa fa-envelope"></i> info@htut.com</li>
                                 </ul>
