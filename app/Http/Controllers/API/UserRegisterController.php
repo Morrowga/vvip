@@ -277,7 +277,7 @@ class UserRegisterController extends Controller
                 "status" => "200",
                 "message" => "success",
                 "data" => $data,
-                "total" => $card->total_transparent
+                "total" => json_decode($card->total_transparent)
             ];
             return $messages;
         } else {
