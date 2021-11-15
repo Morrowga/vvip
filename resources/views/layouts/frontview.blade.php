@@ -307,7 +307,10 @@
 
                 $.ajax({
                 url: '/api/get_cards',
-                type: 'get',
+                type: 'post',
+                data:{
+                  take_request:"all"
+                },
                 success: function(response){
                     data = response.card_design;
                     console.log(response);

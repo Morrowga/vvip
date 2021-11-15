@@ -133,30 +133,160 @@ class UserRegisterController extends Controller
     }
 
 
-    public function card_designs(){
-        $cards = SmartCardDesign::get();
-        $array = [];
-        foreach($cards as $card){
-            $data = [
-                    "id" => $card->id,
-                    "front_image" => $card->front_image,
-                    "back_image" => $card->back_image,
-                    "package_token" => $card->package_token,
-                    "default_front_transparent" => $card->default_front_transparent,
-                    "default_back_transparent" => $card->default_back_transparent,
-                    "bg_color" => $card->preview_bg_color,
-                    "text_color" => $card->preview_text_color,
-                    "total_transparent" => json_decode($card->total_transparent)
-            ];
-            array_push($array, $data);
-        }
+    public function card_designs(Request $request){
+        $take_request = $request->take_request;
+        if($take_request == 'all'){
+            $cards = SmartCardDesign::get();
+            $array = [];
+            foreach($cards as $card){
+                $data = [
+                        "id" => $card->id,
+                        "front_image" => $card->front_image,
+                        "back_image" => $card->back_image,
+                        "package_token" => $card->package_token,
+                        "default_front_transparent" => $card->default_front_transparent,
+                        "default_back_transparent" => $card->default_back_transparent,
+                        "bg_color" => $card->preview_bg_color,
+                        "text_color" => $card->preview_text_color,
+                        "total_transparent" => json_decode($card->total_transparent)
+                ];
+                array_push($array, $data);
 
-        $messages = [
-            "status" => "200",
-            "message" => "success",
-            "card_design" => $array
-        ];
-        return $messages;
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array
+                ];
+                return $messages;
+            } 
+        } else if($take_request == 'normal'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            if(!$cards->count() <= 0)
+            foreach ($cards as $card) {
+                $data = [
+                        "id" => $card->id,
+                        "front_image" => $card->front_image,
+                        "back_image" => $card->back_image,
+                        "package_token" => $card->package_token,
+                        "default_front_transparent" => $card->default_front_transparent,
+                        "default_back_transparent" => $card->default_back_transparent,
+                        "bg_color" => $card->preview_bg_color,
+                        "text_color" => $card->preview_text_color,
+                        "total_transparent" => json_decode($card->total_transparent)
+                ];
+                array_push($array, $data);
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "card_design" => $array
+            ];
+            return $messages;
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        } else if($take_request == 'standard'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            // return $cards->count();
+            if(!$cards->count() <= 0){
+                foreach ($cards as $card) {
+                    $data = [
+                            "id" => $card->id,
+                            "front_image" => $card->front_image,
+                            "back_image" => $card->back_image,
+                            "package_token" => $card->package_token,
+                            "default_front_transparent" => $card->default_front_transparent,
+                            "default_back_transparent" => $card->default_back_transparent,
+                            "bg_color" => $card->preview_bg_color,
+                            "text_color" => $card->preview_text_color,
+                            "total_transparent" => json_decode($card->total_transparent)
+                    ];
+                    array_push($array, $data);
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array
+                ];
+                return $messages;
+                }
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        } else if($take_request == 'luxury'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            if(!$cards->count() <= 0){
+                foreach ($cards as $card) {
+                    $data = [
+                            "id" => $card->id,
+                            "front_image" => $card->front_image,
+                            "back_image" => $card->back_image,
+                            "package_token" => $card->package_token,
+                            "default_front_transparent" => $card->default_front_transparent,
+                            "default_back_transparent" => $card->default_back_transparent,
+                            "bg_color" => $card->preview_bg_color,
+                            "text_color" => $card->preview_text_color,
+                            "total_transparent" => json_decode($card->total_transparent)
+                    ];
+                    array_push($array, $data);
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array
+                ];
+                return $messages;
+                }
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        }
+    }
+
+
+    public function get_card_by_id(Request $request, $id = null){
+        $id = $request->id;
+        $card = SmartCardDesign::where('id', $id)->first();
+        if($card !== null){
+            $data = [
+                "id" => $card->id,
+                "front_image" => $card->front_image,
+                "back_image" => $card->back_image,
+                "package_token" => $card->package_token,
+                "default_front_transparent" => $card->default_front_transparent,
+                "default_back_transparent" => $card->default_back_transparent,
+                "bg_color" => $card->preview_bg_color,
+                "text_color" => $card->preview_text_color,
+                "total_transparent" => json_decode($card->total_transparent)
+            ];
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "data" => $data
+            ];
+            return $messages;
+        } else {
+            $messages = [
+                "status" => "400",
+                "message" => "bad request",
+            ];
+            return $messages;
+        }
     }
 
     public function saveUser(Request $request){
