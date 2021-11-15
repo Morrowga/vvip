@@ -398,15 +398,28 @@ class UserRegisterController extends Controller
                             ];
                             array_push($array, $home_data);
                         }
-                        
-                        $messages = [
+
+                        if($user->profile_image === null){
+                            $messages = [
                                 'status' => '200',
                                 'message' => 'success',
                                 'countdown_left' => $update_to->time_left,
                                 'total_seconds' => $remaining_update,
                                 'home_page' => $array,
+                                'user_image' => 'images/logo.jpeg'
                             ];
                             return $messages;
+                        } else {
+                            $messages = [
+                                'status' => '200',
+                                'message' => 'success',
+                                'countdown_left' => $update_to->time_left,
+                                'total_seconds' => $remaining_update,
+                                'home_page' => $array,
+                                'user_image' => $user->profile_image
+                            ];
+                            return $messages;
+                        }
                     }
             } else {
                 $messages = [
