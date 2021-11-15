@@ -283,10 +283,9 @@
                             <div class="contact-info">
                                 <h4 class="contact">Our Address</h4>
                                 <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; 100 Limpbiscayne Blvd. (North) 17st Floor ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New World Tower New York ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New York, USA, 33148</li>
-                                    <li><i class="fa fa-phone"></i>&nbsp; 1 -234 -456 -7890</li>
-                                    <li><i class="fa fa-print"></i>&nbsp; 1 -234 -456 -7890</li>
-                                    <li><i class="fa fa-envelope"></i> info@yourdomain.com</li>
+                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; No.8 Moe Ma Kha (1) Street ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma Li Kha Housing,Thingangyun Tsp. ,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yangon ,Myanmar</li>
+                                    <li><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
+                                    <li><i class="fa fa-envelope"></i> info@htut.com</li>
                                 </ul>
                             </div>
                         </div>
