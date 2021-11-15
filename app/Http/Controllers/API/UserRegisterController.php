@@ -148,14 +148,14 @@ class UserRegisterController extends Controller
                         "default_back_transparent" => $card->default_back_transparent,
                         "bg_color" => $card->preview_bg_color,
                         "text_color" => $card->preview_text_color,
-                        "total_transparent" => json_decode($card->total_transparent)
                 ];
                 array_push($array, $data);
 
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "card_design" => $array
+                    "card_design" => $array,
+                    json_decode($card->total_transparent)
                 ];
                 return $messages;
             } 
@@ -174,13 +174,13 @@ class UserRegisterController extends Controller
                         "default_back_transparent" => $card->default_back_transparent,
                         "bg_color" => $card->preview_bg_color,
                         "text_color" => $card->preview_text_color,
-                        json_decode($card->total_transparent)
                 ];
                 array_push($array, $data);
             $messages = [
                 "status" => "200",
                 "message" => "success",
-                "card_design" => $array
+                "card_design" => $array,
+                json_decode($card->total_transparent)
             ];
             return $messages;
             } else {
@@ -206,13 +206,13 @@ class UserRegisterController extends Controller
                             "default_back_transparent" => $card->default_back_transparent,
                             "bg_color" => $card->preview_bg_color,
                             "text_color" => $card->preview_text_color,
-                            json_decode($card->total_transparent)
                     ];
                     array_push($array, $data);
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "card_design" => $array
+                    "card_design" => $array,
+                    json_decode($card->total_transparent)
                 ];
                 return $messages;
                 }
@@ -238,13 +238,13 @@ class UserRegisterController extends Controller
                             "default_back_transparent" => $card->default_back_transparent,
                             "bg_color" => $card->preview_bg_color,
                             "text_color" => $card->preview_text_color,
-                            json_decode($card->total_transparent)
                     ];
                     array_push($array, $data);
                 $messages = [
                     "status" => "200",
                     "message" => "success",
-                    "card_design" => $array
+                    "card_design" => $array,
+                    json_decode($card->total_transparent)
                 ];
                 return $messages;
                 }
@@ -272,12 +272,12 @@ class UserRegisterController extends Controller
                 "default_back_transparent" => $card->default_back_transparent,
                 "bg_color" => $card->preview_bg_color,
                 "text_color" => $card->preview_text_color,
-                json_decode($card->total_transparent)
             ];
             $messages = [
                 "status" => "200",
                 "message" => "success",
-                "data" => $data
+                "data" => $data,
+                json_decode($card->total_transparent)
             ];
             return $messages;
         } else {
