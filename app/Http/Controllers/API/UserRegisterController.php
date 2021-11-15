@@ -406,7 +406,8 @@ class UserRegisterController extends Controller
                                 'countdown_left' => $update_to->time_left,
                                 'total_seconds' => $remaining_update,
                                 'home_page' => $array,
-                                'user_image' => 'images/logo.jpeg'
+                                'user_image' => 'images/logo.jpeg',
+                                'user_name' => $user->name,
                             ];
                             return $messages;
                         } else {
