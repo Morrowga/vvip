@@ -155,7 +155,7 @@ class UserRegisterController extends Controller
                     "status" => "200",
                     "message" => "success",
                     "card_design" => $array,
-                    json_decode($card->total_transparent)
+                    "total" => $card->total_transparent
                 ];
                 return $messages;
             } 
@@ -180,7 +180,7 @@ class UserRegisterController extends Controller
                 "status" => "200",
                 "message" => "success",
                 "card_design" => $array,
-                json_decode($card->total_transparent)
+                "total" => $card->total_transparent
             ];
             return $messages;
             } else {
@@ -212,7 +212,7 @@ class UserRegisterController extends Controller
                     "status" => "200",
                     "message" => "success",
                     "card_design" => $array,
-                    json_decode($card->total_transparent)
+                    "total" => $card->total_transparent
                 ];
                 return $messages;
                 }
@@ -244,7 +244,7 @@ class UserRegisterController extends Controller
                     "status" => "200",
                     "message" => "success",
                     "card_design" => $array,
-                    json_decode($card->total_transparent)
+                    "total" => $card->total_transparent
                 ];
                 return $messages;
                 }
@@ -277,7 +277,7 @@ class UserRegisterController extends Controller
                 "status" => "200",
                 "message" => "success",
                 "data" => $data,
-                json_decode($card->total_transparent)
+                "total" => $card->total_transparent
             ];
             return $messages;
         } else {
