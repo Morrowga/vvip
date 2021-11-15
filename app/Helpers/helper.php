@@ -103,9 +103,6 @@ class Helper{
                             "state" => "",
                             "country" => ""
                         ],
-                        "background_color" => $contact_data->background_color,
-                        "text_color" => $contact_data->text_color,
-                        "text_highlight_color" => $contact_data->text_highlight_color
                     ];
     
                     $messages = [
