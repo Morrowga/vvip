@@ -69,39 +69,39 @@ class Helper{
                     $data = [
                         "image" =>  "images/logo.jpeg",
                         "personal" => [
-                            "first_name" => $contact_data->first_name,
-                            "last_name" => $contact_data->last_name,
-                            "company" => $contact_data->company,
-                            "position" => $contact_data->position,
-                            "birthday" => $contact_data->birthday
+                            "first_name" => "",
+                            "last_name" => "",
+                            "company" => "",
+                            "position" => "",
+                            "birthday" => ""
                         ],
                         "mobile" => [
-                            "mobile" => $contact_data->mobile,
-                            "phone" => $contact_data->phone,
-                            "office" => $contact_data->office
+                            "mobile" => "",
+                            "phone" => "",
+                            "office" => ""
                         ],
                         "email_and_internet" => [
-                            "personalemail" => $contact_data->personalemail,
-                            "office_email" => $contact_data->office_email,
-                            "website_one" => $contact_data->website1,
-                            "website_two" => $contact_data->website2,
-                            "website_three" => $contact_data->website3
+                            "personalemail" => "",
+                            "office_email" => "",
+                            "website_one" => "",
+                            "website_two" => "",
+                            "website_three" => ""
                         ],
                         "home_address" => [
-                            "street_one" => $contact_data->home_street1,
-                            "street_two" => $contact_data->home_street2,
-                            "postal_code" => $contact_data->home_postal_code,
-                            "city" => $contact_data->home_city,
-                            "state" => $contact_data->home_state,
-                            "country" => $contact_data->home_country
+                            "street_one" => "",
+                            "street_two" => "",
+                            "postal_code" => "",
+                            "city" => "",
+                            "state" => "",
+                            "country" => ""
                         ],
                         "work_address" => [
-                            "street_one" => $contact_data->work_street1,
-                            "street_two" => $contact_data->work_street2,
-                            "postal_code" => $contact_data->work_postal_code,
-                            "city" => $contact_data->work_city,
-                            "state" => $contact_data->work_state,
-                            "country" => $contact_data->work_country
+                            "street_one" => "",
+                            "street_two" => "",
+                            "postal_code" => "",
+                            "city" =>"",
+                            "state" => "",
+                            "country" => ""
                         ],
                         "background_color" => $contact_data->background_color,
                         "text_color" => $contact_data->text_color,
