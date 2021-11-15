@@ -155,9 +155,16 @@ class Helper{
                     return $messages;
                 } else {
                     $messages = [
-                        "status" => "412",
-                        "message" => "data does not exist in this id",
+                        "status" => "200",
+                        "message" => "success",
                         "request" => "eusp",
+                        "email" => "",
+                        "email_subject" => "",
+                        "email_body" => "",
+                        "phone" => "",
+                        "url" => "",
+                        "sms_text" => "",
+                        "sms_no" => "",
                     ];
                     return $messages;
                 }
