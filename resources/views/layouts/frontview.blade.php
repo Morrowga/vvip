@@ -8,7 +8,6 @@
 -->
 <html lang="en-US">
 	<head>
-
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>VVIP 9</title>
@@ -30,6 +29,7 @@
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
         <link rel="stylesheet" href="https://rvera.github.io/image-picker/image-picker/image-picker.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+        <link rel="stylesheet" href="../font/stylesheet.css">
     
 		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
@@ -114,6 +114,7 @@
                                               
         </div>
         <div id="loading" style="display:block;">
+            <input type="text" id="text_color" hidden>
             <div class="container justify-content-center d-flex">
                 <img src="../images/logo.jpeg" alt="" width="350" height="350" class="main_logo mt-4">
                 <svg class="load" version="1.1" id="L4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -158,6 +159,7 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@2.0.0/dist/YouTubeToHtml5.js"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script> -->
 		<!-- <script src="../js/smoothscroll.js"></script> -->
 
@@ -270,7 +272,7 @@
             });
 
             let TextcolorInput = document.getElementById('text_color');
-            TextcolorInput.addEventListener('input', () =>{
+                TextcolorInput.addEventListener('input', () =>{
                     // alert('left');
                 if($('#catch_click').text() == 'left'){
                     $('.front_card_name').attr('style', 'color:' + TextcolorInput.value + '!important; right: 30% !important;');
@@ -292,7 +294,7 @@
                 //     $('.card_description').attr('style', 'color:' + TextcolorInput.value + '!important;');
                 // }
             });
-
+        
             $("#name").keyup(function(event) {
                 var name_value = $(this).val();
                 $('.front_card_name').text(name_value);

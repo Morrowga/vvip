@@ -9,22 +9,23 @@ Master Stylesheet
 	Version:	1.0	
 
 ---------------------------------------------------------------------------------*/
-@import url(//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold);
+@import url(//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family);
+
 
 html {
 	height: 100% !important;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 body {
 	position: relative;
 	height: 100%;
 	font-size: 14px;
 	color: #363940;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 body .body {
 	height: 100%;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 .cover {
 	position: absolute;
@@ -83,19 +84,46 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 /* End Fonts */
 
 .page-scroll{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
+	font-weight: bold !important;
 }
 
 
 #services-section{
-	font-family: "Britannic Bold" !important;
+	position: relative;
+	font-family: 'Kudryashev Display' !important;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	width: 100%;
+}
+
+
+.video_contain{
+	perspective: 800px;
+	width: 100% !important;
+}
+
+
+#vid_pro {
+	/* border-radius: 80% !important; */
+	/* border-top-left-radius: 50% !important;
+	border-bottom-right-radius: 50% !important; */
+	transform: translate3d(0);
+	-moz-transform:rotate(20deg);
+	-webkit-transform:rotate(20deg);
+	-o-transform:rotate(20deg);
+	-ms-transform:rotate(20deg);
+	transform:rotate(20deg);
 }
 
 .subtitle{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 	font-size: 14px;
+	font-weight: bold;
 }
 
 section {
@@ -420,7 +448,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .rotate-box-1 .rotate-box-info {
 	padding-left: 60px;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 
 /* End rotate box-1 */
@@ -788,12 +816,12 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .prices .panel-body .lead {
 	margin: 0;
 	font-size: 48px;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 }
 
 .lead{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 	letter-spacing: 4px;
 }
@@ -910,12 +938,16 @@ ul.social-list li a i {
 
 ul.contact-address {
 	float: left;
+	font-weight: bold !important;
+	letter-spacing: 2px;
 	width: 100%;
 	padding: 0;
 	margin: 15px 0 ;
 }
 ul.contact-address li {
 	padding: 0 0 20px;
+	font-weight: bold !important;
+	letter-spacing: 2px;
 	margin: 0;
 }
 ul.contact-address li:last-child {
@@ -1233,23 +1265,24 @@ p.subtitle {
 
 .navbarbtn{
 	background-color: rgb(0,0,0) !important;
+	font-weight: bold !important;
 }
 
 .package {
 	padding-top: 10px !important;
 	text-transform: uppercase;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color: rgb(253,235,162) !important;
 }
 
 .service {
 	padding-top: 10px !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color: rgb(253,235,162) !important;
 }
 
 .service-text{
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color:rgba(255,255,255,0.7)!important;
 	font-size: 18px !important; 
 }
@@ -1279,17 +1312,19 @@ p.subtitle {
 .logo-text{
 	color: rgb(253,235,162) !important;
 	letter-spacing: 10px;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .about{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .about-text{
-	color: rgba(255,255,255,0.7) !important;
-	font-family: "Britannic Bold" !important ;
+	color: rgba(255,255,255) !important;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-family: 'Kudryashev Display' !important ;
 }
 .about-text:hover{
 	color: rgb(253,235,162) !important;
@@ -1321,12 +1356,12 @@ p.subtitle {
 
 .social{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .contact{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .contact-btn{
@@ -1449,7 +1484,7 @@ transition-duration: 1s;
 .payment-text{
 	font-size: 25px;
 	color: rgb(217,181,81) !important;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 
 /* .page-wizard{
@@ -1494,6 +1529,31 @@ transition-duration: 1s;
 #prices-section-two{
 	position: relative;
 }
+
+
+#video_one{
+	border-top-left-radius: 100% !important;
+	border-bottom-right-radius: 100% !important;
+}
+
+
+#dia {
+	-moz-transform: rotate(45deg);  
+	  -o-transform: rotate(45deg);  
+	-webkit-transform: rotate(45deg);  
+	 -ms-transform: rotate(45deg);  
+		 transform: rotate(45deg); 
+	  }
+
+/* #video_two{
+	border-top-left-radius: 100% !important;
+	border-bottom-right-radius: 100% !important;
+}
+
+#video_three{
+	border-top-left-radius: 100% !important;
+	border-bottom-right-radius: 100% !important;
+} */
 
 @media only screen and (max-width: 600px) {
     #text-carousel-intro-section .caption {

@@ -8,25 +8,31 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <img src="https://media3.giphy.com/media/bk0yb1TrFsOnVz3ucq/200.webp?cid=ecf05e476h8pntc8h5pslcs1oylwt961sc3hvqgrmcdz4zmq&rid=200.webp&ct=g" alt="" width="260" height="200">
-                                <p>Let's make the web beautiful together</p>
+                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                </video>
+                                <p>Everything is smart</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">Our Service</a>
                                 <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">BUY NOW</a>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <img src="https://media3.giphy.com/media/bk0yb1TrFsOnVz3ucq/200.webp?cid=ecf05e476h8pntc8h5pslcs1oylwt961sc3hvqgrmcdz4zmq&rid=200.webp&ct=g" alt="" width="260" height="200">
+                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                </video>
                                 <p>To the greatest Journey</p>
-                                <div class="extra-space-l"></div>
-                                <a class="btn btn-blank" href="{{ route('login') }}" role="button">ACCOUNT LOGIN</a>
                             </div>
-                            <!-- <div class="item">
-                                <h1>I'm Unika</h1>
-                                <p>VVIP NINE</p>
-                                <div class="extra-space-l"></div>
-                                <a class="btn btn-blank" href="https://creativemarket.com/Themetorium" target="_blank" role="button">View More!</a>
-                            </div> -->
+                            <div class="item">
+                                <h1 class="logo-text">VVIP NINE</h1>
+                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                </video>
+                                <p>To the greatest Journey</p>
+                            </div>
                         </div>
                     </div> <!-- /.caption -->
                 </div>
@@ -37,69 +43,38 @@
         <!-- Begin Services -->
         <section id="services-section" class="page text-center">
             <!-- Begin page header-->
-            <div class="page-header-wrapper">
-                <div class="container">
-                    <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="service">Products</h2>
-                        <div class="devider"></div>
-                        <p class="subtitle">what we really know how</p>
+            <div class="video_contain">
+                <video loop autoplay muted id="vid_pro">
+                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
+                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
+                </video>
+            </div>
+            <div class="col-md-12" id="text_section_product">
+                <div class="page-header-wrapper">
+                    <div class="container">
+                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                            <h2 class="service">Products</h2>
+                            <div class="devider"></div>
+                            <p class="subtitle">what we really know how</p>
+                        </div>
                     </div>
                 </div>
+                <!-- End page header-->
+            
+                <!-- Begin roatet box-2 -->
+                <div class="rotate-box-2-wrapper">
+                    <div class="container">
+                        <div class="text-center">
+                            <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info  </a>
+                        </div>                
+                    </div> <!-- /.container -->                 
+                </div>
+                <!-- End rotate-box-2 -->
             </div>
-            <!-- End page header-->
-        
-            <!-- Begin roatet box-2 -->
-            <div class="rotate-box-2-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0">
-                                <span class="rotate-box-icon"><i class="fa fa-mobile service-icon"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4 class="service-text">App Development</h4>
-                                    <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                </div>
-                            </a>
-                        </div>
-        
-                        <div class="col-md-3 col-sm-6">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.2s">
-                                <span class="rotate-box-icon"><i class="far fa-chart-bar service-icon"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4 class="service-text">Ui Design</h4>
-                                    <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                </div>
-                            </a>
-                        </div>
-        
-                        <div class="col-md-3 col-sm-6">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.4s">
-                                <span class="rotate-box-icon"><i class="fas fa-cloud service-icon"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4 class="service-text">Cloud Hosting</h4>
-                                    <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="col-md-3 col-sm-6">
-                            <a href="#" class="rotate-box-2 square-icon text-center wow zoomIn" data-wow-delay="0.6s">
-                                <span class="rotate-box-icon"><i class="fas fa-pencil-alt service-icon"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4 class="service-text">Coding Pen</h4>
-                                    <p class="service-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                </div>
-                            </a>
-                        </div>
-                        
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->                 
-            </div>
-            <!-- End rotate-box-2 -->
         </section>
                 
         <!-- Begin counter up -->
-        <section id="counter-section">                					
+        <section id="counter-section" style="margin-top: 10px !important;">                					
             <div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
                 <div class="cover"></div>
                 <!-- Begin page header-->
@@ -249,10 +224,10 @@
             
             <div class="container">
                 <ul class="social-list">
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="rotate-box-icon fb"><i class="fab fa-facebook"></i></span></a></li>
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon linkedin"><i class="fab fa-linkedin"></i></span></a></li>
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="rotate-box-icon instagram"><i class="fab fa-instagram"></i></span></a></li>
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="rotate-box-icon youtube"><i class="fab fa-youtube"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="fb" style="border-radius: 50% !important;"><i class="fab fa-facebook"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="linkedin" style="border-radius: 50% !important;"><i class="fab fa-linkedin"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="instagram" style="border-radius: 50% !important;"><i class="fab fa-instagram"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="youtube" style="border-radius: 50% !important;"><i class="fab fa-youtube"></i></span></a></li>
                 </ul>
             </div>
             
@@ -319,4 +294,9 @@
             </div>
         </section>
         <!-- End contact section -->
+@section('script')
+<script>
+  
+</script>
+@endsection
 @endsection

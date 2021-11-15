@@ -174,7 +174,7 @@ class UserRegisterController extends Controller
                         "default_back_transparent" => $card->default_back_transparent,
                         "bg_color" => $card->preview_bg_color,
                         "text_color" => $card->preview_text_color,
-                        "total_transparent" => json_decode($card->total_transparent)
+                        json_decode($card->total_transparent)
                 ];
                 array_push($array, $data);
             $messages = [
@@ -206,7 +206,7 @@ class UserRegisterController extends Controller
                             "default_back_transparent" => $card->default_back_transparent,
                             "bg_color" => $card->preview_bg_color,
                             "text_color" => $card->preview_text_color,
-                            "total_transparent" => json_decode($card->total_transparent)
+                            json_decode($card->total_transparent)
                     ];
                     array_push($array, $data);
                 $messages = [
@@ -238,7 +238,7 @@ class UserRegisterController extends Controller
                             "default_back_transparent" => $card->default_back_transparent,
                             "bg_color" => $card->preview_bg_color,
                             "text_color" => $card->preview_text_color,
-                            "total_transparent" => json_decode($card->total_transparent)
+                            json_decode($card->total_transparent)
                     ];
                     array_push($array, $data);
                 $messages = [
@@ -272,7 +272,7 @@ class UserRegisterController extends Controller
                 "default_back_transparent" => $card->default_back_transparent,
                 "bg_color" => $card->preview_bg_color,
                 "text_color" => $card->preview_text_color,
-                "total_transparent" => json_decode($card->total_transparent)
+                json_decode($card->total_transparent)
             ];
             $messages = [
                 "status" => "200",
