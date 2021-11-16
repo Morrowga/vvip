@@ -83,7 +83,7 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll navli" href="/">Home</a></li>
-                            <li><a class="page-scroll navli" href="#services-section">Products</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_product') }}">Products</a></li>
                             <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
                             <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
                             <li><a class="page-scroll navli" href="{{ route('view_packages') }}">Packages</a></li>
@@ -150,7 +150,7 @@
         
         <!-- Plugins JS -->
 		<script src="../js/jquery/jquery-1.11.1.min.js"></script>
-		<script src="../js/bootstrap/js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap/js/bootstrap.min.js"></script>
 		<script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
 		<script src="../js/stellar/js/jquery.stellar.min.js"></script>
 		<script src="../js/animations/js/wow.min.js"></script>

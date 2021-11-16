@@ -23,5 +23,9 @@ class WebUserJourneyController extends Controller
     public function main_view(){
         return view('vvip_customers.main_page');
     }
+
+    public function products(){
+        return view('vvip_customers.product');
+    }
     
 }

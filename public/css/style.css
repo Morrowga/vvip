@@ -91,13 +91,7 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 
 
 #services-section{
-	position: relative;
 	font-family: 'Kudryashev Display' !important;
-	align-items: center;
-	display: flex;
-	justify-content: center;
-	overflow: hidden;
-	width: 100%;
 }
 
 
@@ -106,15 +100,34 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 	width: 100% !important;
 }
 
+.fas.fa-credit-card{
+	-moz-transform:rotate(-20deg);
+	-webkit-transform:rotate(-20deg);
+	-o-transform:rotate(-20deg);
+	box-sizing: border-box;
+	-ms-transform:rotate(-20deg);
+	transform:rotate(-20deg);
+	color: rgb(217,181,81);
+	font-size: 250px;
+}
+
 
 #vid_pro {
 	/* border-radius: 80% !important; */
-	/* border-top-left-radius: 50% !important;
-	border-bottom-right-radius: 50% !important; */
-	transform: translate3d(0);
+	/* border-radius: 100% !important; */
+	/* width: 300px; */
+	/* height: 300px; */
+	width: 100%    !important;
+  	height: auto   !important;
+	/* border-top-left-radius: 30% !important;
+	border-bottom-left-radius: 30% !important;
+	border-top-right-radius: 30% !important;
+	border-bottom-right-radius: 30% !important; */
+	box-shadow: 2px 2px 10px rgb(217,181,81);
 	-moz-transform:rotate(20deg);
 	-webkit-transform:rotate(20deg);
 	-o-transform:rotate(20deg);
+	box-sizing: border-box;
 	-ms-transform:rotate(20deg);
 	transform:rotate(20deg);
 }
@@ -126,9 +139,26 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 	font-weight: bold;
 }
 
-section {
-	position: relative;
+
+.border-product{
+	/* border: 2px solid rgb(217,181,81); */
+	padding-top: 10px !important;
+	background: #000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #d9b551, #000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #d9b551, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.add_shadow{
+	color: #d9b551 !important;
+	font-size: 16px;
+	text-shadow: 2px 2px 20px #000;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding-bottom: 5px;
+}
+/* section {
+	position: relative;
+} */
 .page-loader {
 	position: fixed;
 	left: 0px;
@@ -1321,17 +1351,46 @@ p.subtitle {
 }
 
 .about-text{
-	color: rgba(255,255,255) !important;
+	color:  #fff !important;
 	font-weight: bold;
 	letter-spacing: 2px;
 	font-family: 'Kudryashev Display' !important ;
+	padding-top: 15px;
 }
+#head_about_text{
+	background: #d9b551;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #d9b551, #000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #d9b551, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	height: 50px;
+	letter-spacing: 2px;
+	text-shadow: 2px 2px 5px rgb(0,0,0, 0.6);
+	border-top-left-radius: 50% !important;
+	border-bottom-left-radius: 50% !important;
+	border-top-right-radius: 50% !important;
+	border-bottom-right-radius: 50% !important;
+	text-align: center;
+	}
+
 .about-text:hover{
 	color: rgb(253,235,162) !important;
 }
 
 .about-icon{
 	color: rgb(253,235,162) !important;
+}
+
+.about_more{
+	background-color: rgb(0,0,0);
+	font-weight: bold;
+	border: 2px solid rgb(217,181,81);
+	color: rgb(217,181,81);
+	margin-left: 10px !important;
+	margin-top: 10px !important;
+}
+
+.about_more:hover{
+	background-color: rgb(217,181,81);
+	transition-duration: 0.7s;
 }
 
 .fb:hover{
@@ -1544,16 +1603,6 @@ transition-duration: 1s;
 	 -ms-transform: rotate(45deg);  
 		 transform: rotate(45deg); 
 	  }
-
-/* #video_two{
-	border-top-left-radius: 100% !important;
-	border-bottom-right-radius: 100% !important;
-}
-
-#video_three{
-	border-top-left-radius: 100% !important;
-	border-bottom-right-radius: 100% !important;
-} */
 
 @media only screen and (max-width: 600px) {
     #text-carousel-intro-section .caption {

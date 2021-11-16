@@ -42,35 +42,39 @@
 
         <!-- Begin Services -->
         <section id="services-section" class="page text-center">
-            <!-- Begin page header-->
-            <div class="video_contain">
-                <video loop autoplay muted id="vid_pro">
-                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
-                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
-                </video>
-            </div>
-            <div class="col-md-12" id="text_section_product">
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2 class="service">Products</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">what we really know how</p>
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                        <div class="video_contain">
+                        <video loop autoplay muted id="vid_pro">
+                            <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
+                            <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
+                        </video>
+                        </div>
+                </div>
+                <div class="col-md-6" id="text_section_product">
+                    <div class="page-header-wrapper">
+                        <div class="container" style="margin-top: 60px !important;">
+                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                                <h2 class="service">Products</h2>
+                                <div class="devider"></div>
+                                <p class="subtitle">what we really know how</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- End page header-->
-            
-                <!-- Begin roatet box-2 -->
-                <div class="rotate-box-2-wrapper">
-                    <div class="container">
-                        <div class="text-center">
-                            <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info  </a>
-                        </div>                
-                    </div> <!-- /.container -->                 
-                </div>
+                    <!-- End page header-->
+                
+                    <!-- Begin roatet box-2 -->
+                    <div class="rotate-box-2-wrapper">
+                        <div class="container">
+                            <div class="text-center">
+                                <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info  </a>
+                            </div>                
+                        </div> <!-- /.container -->                 
+                    </div>
                 <!-- End rotate-box-2 -->
+                </div>
             </div>
+            <!-- Begin page header-->
         </section>
                 
         <!-- Begin counter up -->
@@ -152,55 +156,55 @@
             <div class="rotate-box-1-wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                 <span class="rotate-box-icon"><i class="fa fa-users about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text">Who We Are?</h4>
-                                    <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    <h4 class="about-text" id="head_about_text">Who Is VVIP9?</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 Card is the latest brand only coming into business around 2020. Since
+                                        its conception, they’ve done a fantastic result at creating an NFC smart card with
+                                        all the features you’ll ever need.", 150, '...') }}
+                                    </p>
+                                    <button class="btn btn-dark about_more d-block">More</button>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                 <span class="rotate-box-icon"><i class="fas fa-gem about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text">What We Do?</h4>
-                                    <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    <h4 class="about-text" id="head_about_text">What Is Smart Card?</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("Digital Smart Business Card is a beautiful and innovative way to exchange information with only a single business card and a smartphone.", 100, '...') }}
+                                    </p>
+                                    <button class="btn btn-dark about_more d-block">More</button>
                                 </div>
                             </a>
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
+                        <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text">Why We Do It?</h4>
-                                    <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
+                                    <h4 class="about-text" id="head_about_text">The Useful Of VVIP9</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 provides a variety of options to choose from where considering going with a digital business card and is a great reduced budget option in the market today.col-md-6
+                                        When it become to using the business card to exchange information,the VVIP9 was the most accurate and seamless in sending information in an attractive and quick way.
+                                        VVIP9 card plans can be one of the best ways to describe your business, and enchance your business.Nowadays, offering VIP cards is a smart decision in all modearn business.", 130, '...') }}
+                                    </p>
+                                    <button class="btn btn-dark about_more d-block">More</button>
                                 </div>
                             </a>
                         </div>
-                        
-                        <div class="col-md-3 col-sm-6">
-                            <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.6s">
-                                <span class="rotate-box-icon"><i class="far fa-clock about-icon"></i></span>
-                                <div class="rotate-box-info">
-                                    <h4 class="about-text">Since When?</h4>
-                                    <p class="about-text">Lorem ipsum dolor sit amet set, consectetur utes anet adipisicing elit, sed do eiusmod tempor incidist.</p>
-                                </div>
-                            </a>
-                        </div>
-                        
                     </div> <!-- /.row -->
                 </div> <!-- /.container -->
                 <div class="container">
                     <!-- Cta Button -->
                     <div class="extra-space-l"></div>
                     <div class="text-center">
-                        <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a>
+                        <!-- <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a> -->
                     </div>
                 </div> <!-- /.container -->  
+                                
             </div>
             <!-- End rotate box-1 -->
             <div class="extra-space-l"></div>
@@ -224,9 +228,9 @@
             
             <div class="container">
                 <ul class="social-list">
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.3s"><span class="fb" style="border-radius: 50% !important;"><i class="fab fa-facebook"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" style="border-radius: 50% !important;" data-wow-delay="0.3s"><span class="fb" style="border-radius: 50% !important;"><i class="fab fa-facebook" style="border-radius: 50% !important;"></i></span></a></li>
                     <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="linkedin" style="border-radius: 50% !important;"><i class="fab fa-linkedin"></i></span></a></li>
-                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="instagram" style="border-radius: 50% !important;"><i class="fab fa-instagram"></i></span></a></li>
+                    <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.5s"><span class="instagram" style="border-radius: 65% !important;"><i class="fab fa-instagram"></i></span></a></li>
                     <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="youtube" style="border-radius: 50% !important;"><i class="fab fa-youtube"></i></span></a></li>
                 </ul>
             </div>
