@@ -38,7 +38,7 @@
                     <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sit atque tempore necessitatibus facere accusamus corporis cum sequi, neque nulla dolores nobis nostrum, eum fuga blanditiis. Praesentium illum ea reprehenderit.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="https://mofluid.com/blog/wp-content/uploads/2015/06/deep-linking.png" alt="" width="300" height="250">
+                    <img src="https://i.imgur.com/QSlIpj1.png" alt="" width="300" height="400">
                 </div>
             </div>
         </div>
