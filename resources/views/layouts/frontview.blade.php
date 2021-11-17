@@ -319,7 +319,15 @@
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
                             console.log(value['package_token']);
-                            $('#column-image').append('<div class="col-md-4"><img src="../images/' + value['front_image'] + '" id="image_data" alt="" width="310" height="200"><div class="col-md-6 col-md-offset-3"><button type="button" class="btn btn-success zoom" id="' + value['id']  + '" data-id="' + value['id'] + '">Zoom Card</button><p id="success_p"  class="success_text'+ value['id'] +'"></p>');
+                            $('#column-image').append(`<div class="col-md-4">
+                            <img src="../images/` + value['front_image'] + `" id="image_data" alt="" width="310" height="200">
+                            <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
+                                <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">Zoom Card</button>
+                                <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">Select Card</button>
+                            </div>
+                            <div class="col-md-6 col-md-offset-3">
+                                <p id="success_p"  class="success_text`+ value['id'] +`"></p>
+                            </div>`);
                         }
 
                         // $('#text_color').val('#FFFFFF');
@@ -329,7 +337,6 @@
 
                         if(targetValue == "12345"){
                             $('#bg_div').hide();
-                            $('#text_div').removeClass('col-md-6').addClass('col-md-6 col-md-offset-3');
                             $('#qr_div').hide();
                             $('#card_blank_back').attr('style', 'margin-top: 171px !important;');
                         } 
@@ -359,25 +366,24 @@
                                 }
                                 $('#exampleModal').modal('show');
                             }
-                            $('#select_card').on('click', function(e) {
-                               var target = e.target.id;
-                               target = id;
-                               console.log(target);
-                                $('#card_design_id').val(target);
-                                if(target == value['id']){
-                                    console.log(value['text_color']);
-                                    var txt_color = value['text_color'];
-                                    $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
-                                    $('#card_front').attr('src', "../images/" + value['default_front_transparent']);
-                                    if(targetValue != '12345'){
-                                        $('#card_back').attr('src', "../images/" + value['default_back_transparent']);
-                                    }
-                                    $('#exampleModal').modal('hide');
-                                    $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
-                                }
-                                
-                            });  
                         });
+
+                        $('.select-card').on('click', function(e) {
+                            var target = e.target.id;
+                            console.log(target);
+                            $('#card_design_id').val(target);
+                            if(target == value['id']){
+                                console.log(value['text_color']);
+                                var txt_color = value['text_color'];
+                                $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
+                                $('#card_front').attr('src', "../images/" + value['default_front_transparent']);
+                                if(targetValue != '12345'){
+                                    $('#card_back').attr('src', "../images/" + value['default_back_transparent']);
+                                }
+                                $('#exampleModal').modal('hide');
+                                $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
+                            }
+                        });  
                     });
                 },
                 error:function(){

@@ -47,7 +47,7 @@
         </div>
     </div>
 </div> -->
-<div class="container" id="home_height" style="height: 800px;">
+<div class="container" id="home_height" style="height: 850px;">
 .   <div class="col-md-12">
         <h1 class="text">Welcome</h1>
         <div class="d-flex justify-content-center">
@@ -81,7 +81,8 @@
 @section('script')
     <script>
         var text_url = '{{ url('api/get_datas') }}';
-        var userid = $('#user_id').val();
+        var userid = $('#userid').val();
+        console.log(userid);
          $.ajax({
            url:text_url,
            method:'POST',

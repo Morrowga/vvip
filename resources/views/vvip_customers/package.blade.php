@@ -6,7 +6,7 @@
         <div class="page-header-wrapper">
             <div class="container">
                 <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                    <h2 class="package">Prices</h2>
+                    <h2 class="package package_margin">Prices</h2>
                     <div class="devider"></div>
                     <p class="subtitle">That how much</p>
                 </div>
@@ -159,11 +159,11 @@
                         <!-- <div class="col-md-4"></div> -->
                         <div class="col-md-12">
                             <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
-                                @csrf 
-                                <div class="d-flex justify-content-center">
-                                    <img src="../images/logo.jpeg" alt="" class="register_image">
-                                </div>   
+                                @csrf   
                                 <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
                                     <div class="col-md-8 col-md-offset-2">
                                         <h3 class="payment-text">Select Payment</h3>
                                         <div class="devider"></div>
@@ -178,13 +178,16 @@
                                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
                                             </div>
                                             <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt="">
                                             </div>
                                             <input type="text" name="package" id="package_name" hidden>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="name" type="text" placeholder="Enter Your Name"
@@ -273,6 +276,9 @@
                                     </div>
                                 </div>
                                 <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
                                     <div class="form-group">
                                         <div class="row d-flex justify-content-center" id="column-image">
                                         </div>
@@ -282,70 +288,62 @@
                                     <div class="form-group">
                                         <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
                                             <div class="row">
-                                                <div class="col-md-6" id="bg_div">
-                                                    <h3 class="text">Background Color</h3>
-                                                    <input type="color" class="form-control" id="background_color">
-                                                </div>
-                                                <div class="col-md-6" id="text_div">
-                                                    <h3 class="text">Text Color</h3>
-                                                    <input type="color" class="form-control" id="text_color">
-                                                    <p id="catch_click" hidden></p>
-                                                </div>
-                                            </div>
-                                            <div class="devider" style="margin-top: 15px;"></div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                    <div class="col-md-10 col-md-offset-1">
-                                            <div class="row">
                                                 <div class="col-md-6 text-center">
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <p class="text" style="font-size: 20px !important;">Icon Upload</p>
-                                                            <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block">Upload new</button>
-                                                        </div>
-                                                        <div class="col-md-12 mt-2">
-                                                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Name</p>
-                                                            <button type="button" id="editName" class="btn btn-dark btn-place btn-block">Edit Text</button>
-                                                        </div>
-                                                        <div class="col-md-12">
-                                                            <p class="text"  style="font-size: 21px !important; margin-top: 15px">Description</p>
-                                                            <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block">Edit Text</button>                    
-                                                        </div>
+                                                    <div id="bg_div">
+                                                        <h3 class="text">Background Color</h3>
+                                                        <input type="color" class="form-control text-center" id="background_color">
                                                     </div>
+                                                    <div id="text_div">
+                                                        <h3 class="text text-margin">Text Color</h3>
+                                                        <input type="color" class="form-control" id="text_color">
+                                                        <p id="catch_click" hidden></p>
+                                                    </div>
+                                                    <div class="col-md-12" style="margin-top: 20px;">
+                                                        <p class="text" style="font-size: 20px !important;">Icon Upload</p>
+                                                        <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block"><i class="fas fa-camera-retro custom-case"></i> Upload New</button>
+                                                    </div>
+                                                    <div class="col-md-12 mt-2">
+                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Name</p>
+                                                        <button type="button" id="editName" class="btn btn-dark btn-place btn-block"><i class="fas fa-pen-nib custom-case"></i>Edit Text</button>
+                                                    </div>
+                                                    <div class="col-md-12">
+                                                        <p class="text"  style="font-size: 21px !important; margin-top: 15px">Description</p>
+                                                        <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block"><i class="fas fa-font custo"></i>a Edit Text</button>                    
+                                                    </div>
+                                                    <div class="col-md-12 mt-2">
+                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Poistion</p>
+                                                        <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i> Left</button>
+                                                        <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>Center</button>
+                                                        <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>   
+                                                    </div>
+                                                    <div class="col-md-12 mt-3" id="qr_div">
+                                                        <p class="text" style="font-size: 20px !important; margin-top:15px;">QR Scan</p>
+                                                        <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>Left</button>
+                                                        <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>Center</button>
+                                                        <button type="button" id="move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 text-center">
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
                                                         <p class="front_card_name text-center"></p>
                                                         <p class="card_description text-center">Your Description</p>
                                                     </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="row">
-                                                        <div class="col-md-12 mt-2">
-                                                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Poistion</p>
-                                                            <button type="button" id="front_move_left" class="btn btn-dark btn-place"> Left</button>
-                                                            <button type="button" id="front_move_center" class="btn btn-dark btn-place">Center</button>
-                                                            <button type="button" id="front_move_right" class="btn btn-dark btn-place"> Right</button>   
-                                                        </div>
-                                                        <div class="col-md-12 mt-3" id="qr_div">
-                                                            <p class="text" style="font-size: 20px !important; margin-top:15px;">QR Scan</p>
-                                                            <button type="button" id="move_left" class="btn btn-dark btn-place"> Left</button>
-                                                            <button type="button" id="move_center" class="btn btn-dark btn-place">Center</button>
-                                                            <button type="button" id="move_right" class="btn btn-dark btn-place"> Right</button>
-                                                        </div>
-                                                    </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
                                                         <img  id="qr_scan" alt="" width="80" height="70">
                                                     </div>
+                                                    <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>                                        
-                                    <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
+                                    </div>
                                 </div>      
                                 <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="password" type="password" placeholder="New Pin" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
@@ -377,6 +375,9 @@
             </div>
         </div>
     </section>
+    <div class="col-md-12" style="height: 80px;">
+        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+    </div>
     
 
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -400,7 +401,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" id="select_card">Select Card</button>
+                    <!-- <button type="button" class="btn btn-primary" id="select_card">Select Card</button> -->
                 </div>
             </div>
         </div>

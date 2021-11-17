@@ -23,7 +23,7 @@
     <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    href="../css/animate.min.css"
   />
 </head>
 <body>
@@ -89,7 +89,7 @@
         <div class="navbar-footer">
             <div class="d-flex justify-content-center text-center">
                 <div class="col-md-4">
-                    <a href="/create_data" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
+                    <a href="/action" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
                 </div>
                 <div class="col-md-4">
                     <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>

@@ -100,7 +100,7 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 	width: 100% !important;
 }
 
-.fas.fa-credit-card{
+/* .fas.fa-credit-card{
 	-moz-transform:rotate(-20deg);
 	-webkit-transform:rotate(-20deg);
 	-o-transform:rotate(-20deg);
@@ -109,7 +109,7 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 	transform:rotate(-20deg);
 	color: rgb(217,181,81);
 	font-size: 250px;
-}
+} */
 
 
 #vid_pro {
@@ -1453,6 +1453,7 @@ p.subtitle {
   
   .price-btn-one{
 	  margin-top: 35px !important;
+	  font-weight: bold;
   }
 
   .one{
@@ -1507,6 +1508,7 @@ p.subtitle {
 	background-color: rgb(0,0,0) !important;
 	float: right !important;
 	font-size: 19px;
+	font-weight: bold;
 }
 
 .next:hover{
@@ -1522,6 +1524,7 @@ p.subtitle {
 	float: right !important;
 	margin-right: 5px;
 	font-size: 19px;
+	font-weight: bold;
 }
 
 .previous:hover{
@@ -1609,6 +1612,15 @@ transition-duration: 1s;
 		/* position: relative; */
 		margin-top: 45%;
 		/* margin-top: -70px; */
+	}
+
+
+    .product_margin{
+        margin-top: 80px !important;
+    }
+
+	.package_margin{
+		margin-top: 45px !important;
 	}
   }
   

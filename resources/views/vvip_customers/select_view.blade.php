@@ -33,7 +33,7 @@
                 <img src="" alt="" width="300" height="300" id="link_tree_img" style="border-radius: 50%;">
             </div>
             <div class="d-flex justify-content-center mt-3">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 col-md-offset-3" id="display_tree">
                     <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank"></a>
                     <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_two"  target="_blank"></a>
                     <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_three"  target="_blank"></a>
@@ -444,26 +444,35 @@
                         window.location.href = $('#send_sms').attr('href');
                     } 
                 }  else if(response.request == "get_link_trees"){
+                    console.log(response.data);
                     $('#image_hide').hide();
-                    $('#link_tree_card').attr('style', 'background-color:' + response.data['background_color'] + ';');
-                    $('.link_tree_d_btn').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
-                    response.data['text_highlight_color'] + ';');
-                    if(response.data['link_image'] == null){
+                    $('#link_tree_display').show();
+                    if(response.data['background_color'] != null){
+                        $('#link_tree_card').attr('style', 'background-color:' + response.data['background_color'] + ';');
+                        $('.link_tree_d_btn').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                        response.data['text_highlight_color'] + ';');
+                    } else {
+                        $('#link_tree_card').attr('style', 'background-color:rgb(217,181,81);');
+                        $('.link_tree_d_btn').attr('style', 'color: #fff !important; text-shadow: 0px 3px 10px #000 !important;');
+                    }
+
+                    if(response.data['link_image'] == ""){
                         $('#link_tree_img').hide(); 
                     } else {
                         $('#link_tree_img').attr('src', '../' + response.data['link_image']);
                     }
 
-                    if(response.data['link_one_url'] == null || response.data['link_one_label'] == null){
+                    if(response.data['link_one_url'] == "" || response.data['link_one_label'] == ""){
                         $('#link_one').hide();
                     } else {
+                        // $('#display_tree').append('<a href="'+ response.data['link_one_url'] +'" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank">'+ response.data['link_one_label'] +'</a>')
                         $('#link_one').attr('href', response.data['link_one_url']).text(response.data['link_one_label']);
                     }
 
                     if(response.data['link_two_url'] == null || response.data['link_two_label'] == null){
                         $('#link_two').hide();
                     } else {
-                        $('#link_two').attr('href', response.data['link_two_url']).text(response.data['link_two_label']);
+                        $('#display_tree').append('<a href="'+ response.data['link_two_url'] +'" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank">'+ response.data['link_two_label'] +'</a>')
                     }
 
                     if(response.data['link_three_url'] == null || response.data['link_three_label'] == null){

@@ -222,73 +222,64 @@ class Helper{
                 $user_check = User::where('id', $user_id)->first();
                 if($user_check !== null){
                     $link_tree = LinkTree::where('user_id', $user_id)->first();
-                    if($link_tree !== null){
+                    if(!empty($link_tree)){
                         $de_link_one = json_decode($link_tree->link_one);
                         $de_link_two = json_decode($link_tree->link_two);
                         $de_link_three = json_decode($link_tree->link_three);
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
-                        
-                        if($link_tree->link_image === null){
-                            $link_img = "images/logo.jpeg";
-                            $final_data = [
-                                "user_id"  => $link_tree->user_id,
-                                "link_image" => $link_img,
-                                "link_one_label" => $de_link_one->label,
-                                "link_one_url" => $de_link_one->link,
-                                "link_two_label" => $de_link_two->label,
-                                "link_two_url" => $de_link_two->link,
-                                "link_three_label" => $de_link_three->label,
-                                "link_three_url" => $de_link_three->link,
-                                "link_four_label" => $de_link_four->label,
-                                "link_four_url" => $de_link_four->link,
-                                "link_five_label" => $de_link_five->label,
-                                "link_five_url" => $de_link_five->link,
-                                "background_color" => $link_tree->background_color,
-                                "text_color" => $link_tree->text_color,
-                                "text_highlight_color" => $link_tree->text_highlight_color
-                              ];
-                              $messages = [
-                                "status" => "200",
-                                "message" => "success",
-                                "request" => "get_link_trees",
-                                "data" => $final_data
+
+                        $link_img = "storage/link_tree_images/" . $link_tree->link_image;
+                        $final_data = [
+                            "user_id"  => $link_tree->user_id,
+                            "link_image" => $link_img,
+                            "link_one_label" => $de_link_one->label,
+                            "link_one_url" => $de_link_one->link,
+                            "link_two_label" => $de_link_two->label,
+                            "link_two_url" => $de_link_two->link,
+                            "link_three_label" => $de_link_three->label,
+                            "link_three_url" => $de_link_three->link,
+                            "link_four_label" => $de_link_four->label,
+                            "link_four_url" => $de_link_four->link,
+                            "link_five_label" => $de_link_five->label,
+                            "link_five_url" => $de_link_five->link,
+                            "background_color" => $link_tree->background_color,
+                            "text_color" => $link_tree->text_color,
+                            "text_highlight_color" => $link_tree->text_highlight_color
                             ];
-        
-                            return $messages;
-                        } else {
-                            $link_img = "storage/link_tree_images/" . $link_tree->link_image;
-                            $final_data = [
-                                "user_id"  => $link_tree->user_id,
-                                "link_image" => $link_img,
-                                "link_one_label" => $de_link_one->label,
-                                "link_one_url" => $de_link_one->link,
-                                "link_two_label" => $de_link_two->label,
-                                "link_two_url" => $de_link_two->link,
-                                "link_three_label" => $de_link_three->label,
-                                "link_three_url" => $de_link_three->link,
-                                "link_four_label" => $de_link_four->label,
-                                "link_four_url" => $de_link_four->link,
-                                "link_five_label" => $de_link_five->label,
-                                "link_five_url" => $de_link_five->link,
-                                "background_color" => $link_tree->background_color,
-                                "text_color" => $link_tree->text_color,
-                                "text_highlight_color" => $link_tree->text_highlight_color
-                              ];
-                              $messages = [
-                                "status" => "200",
-                                "message" => "success",
-                                "request" => "get_link_trees",
-                                "data" => $final_data
-                            ];
-        
-                            return $messages;
-                        }
-                    } else {
-                        $messages = [
-                            "status" => "412",
-                            "message" => "data does not exist",
+                            $messages = [
+                            "status" => "200",
+                            "message" => "success",
                             "request" => "get_link_trees",
+                            "data" => $final_data
+                        ];
+    
+                        return $messages;
+
+                    } else {
+                        $link_img = "images/logo.jpeg";
+                        $final_data = [
+                            "user_id"  => "",
+                            "link_image" => "",
+                            "link_one_label" => "",
+                            "link_one_url" => "",
+                            "link_two_label" => "",
+                            "link_two_url" => "",
+                            "link_three_label" => "",
+                            "link_three_url" => "",
+                            "link_four_label" => "",
+                            "link_four_url" =>"",
+                            "link_five_label" => "",
+                            "link_five_url" => "",
+                            "background_color" => "",
+                            "text_color" => "",
+                            "text_highlight_color" => ""
+                          ];
+                          $messages = [
+                            "status" => "200",
+                            "message" => "success",
+                            "request" => "get_link_trees",
+                            "data" => $final_data
                         ];
     
                         return $messages;
@@ -307,7 +298,7 @@ class Helper{
                 if($user !== null){
                     $data  = [
                         "user_name" => $user->name,
-                        "text" => "Hello " . $user->name . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP."
+                        "text" => "Hello " . ucfirst($user->name) . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP."
                     ];
         
                     $messages = [

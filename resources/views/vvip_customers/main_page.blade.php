@@ -43,34 +43,22 @@
         <!-- Begin Services -->
         <section id="services-section" class="page text-center">
             <div class="d-flex justify-content-center">
+                <!-- <div class="col-md-6">
+                    <div class="video_contain">
+                    <video loop autoplay muted id="vid_pro">
+                        <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
+                        <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
+                    </video>
+                    </div>
+                </div> -->
                 <div class="col-md-6">
-                        <div class="video_contain">
-                        <video loop autoplay muted id="vid_pro">
-                            <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
-                            <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
-                        </video>
-                        </div>
+                    <img src="https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png" alt="" width="300" height="350">
                 </div>
                 <div class="col-md-6" id="text_section_product">
-                    <div class="page-header-wrapper">
-                        <div class="container" style="margin-top: 60px !important;">
-                            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                                <h2 class="service">Products</h2>
-                                <div class="devider"></div>
-                                <p class="subtitle">what we really know how</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End page header-->
-                
-                    <!-- Begin roatet box-2 -->
-                    <div class="rotate-box-2-wrapper">
-                        <div class="container">
-                            <div class="text-center">
-                                <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info  </a>
-                            </div>                
-                        </div> <!-- /.container -->                 
-                    </div>
+                    <h2 class="service">Products</h2>
+                    <div class="devider"></div>
+                    <p class="subtitle" style="margin-top: 20px !important;">Something Here</p>
+                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="#about-section" role="button">More Info  </a>
                 <!-- End rotate-box-2 -->
                 </div>
             </div>
@@ -158,7 +146,7 @@
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
-                                <span class="rotate-box-icon"><i class="fa fa-users about-icon"></i></span>
+                                <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">Who Is VVIP9?</h4>
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 Card is the latest brand only coming into business around 2020. Since
@@ -172,7 +160,7 @@
 
                         <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                                <span class="rotate-box-icon"><i class="fas fa-gem about-icon"></i></span>
+                                <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">What Is Smart Card?</h4>
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit("Digital Smart Business Card is a beautiful and innovative way to exchange information with only a single business card and a smartphone.", 100, '...') }}
