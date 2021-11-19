@@ -28,4 +28,11 @@ class WebUserJourneyController extends Controller
         return view('vvip_customers.product');
     }
     
+    public function about(){
+        return view('vvip_customers.about');
+    }
+
+    public function contact(){
+        return view('vvip_customers.contact');
+    }
 }

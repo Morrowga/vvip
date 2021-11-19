@@ -33,5 +33,9 @@ Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package
 
 Route::get('product', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
 
+Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
+
+Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
+
 Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 

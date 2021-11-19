@@ -1358,16 +1358,21 @@ p.subtitle {
 	padding-top: 15px;
 }
 #head_about_text{
+	/* background: #d9b551; 
+	background: -webkit-linear-gradient(to right, #d9b551, #000); 
+	background: linear-gradient(to right, #d9b551, #000);  */
 	background: #d9b551;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to right, #d9b551, #000);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to right, #d9b551, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	background: -webkit-linear-gradient(to bottom, #000, #d9b551);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #000, #d9b551); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	height: 50px;
 	letter-spacing: 2px;
-	text-shadow: 2px 2px 5px rgb(0,0,0, 0.6);
-	border-top-left-radius: 50% !important;
+	font-weight: bold;
+	box-shadow: 2px 2px 5px rgb(217,181,81);
+	border-radius: 50% !important;
+	/* border-top-left-radius: 50% !important;
 	border-bottom-left-radius: 50% !important;
 	border-top-right-radius: 50% !important;
-	border-bottom-right-radius: 50% !important;
+	border-bottom-right-radius: 50% !important; */
 	text-align: center;
 	}
 
@@ -1420,6 +1425,7 @@ p.subtitle {
 
 .contact{
 	color: rgb(253,235,162) !important;
+	font-weight: bold;
 	font-family: 'Kudryashev Display' !important ;
 }
 
@@ -1427,6 +1433,7 @@ p.subtitle {
 	background-color: rgba(0, 0, 0) !important;
 	border-color: rgb(253,235,162) !important;
 	font-size: 18px;
+	font-weight: bold;
 }
 
 .contact-btn:hover{

@@ -58,7 +58,7 @@
                     <h2 class="service">Products</h2>
                     <div class="devider"></div>
                     <p class="subtitle" style="margin-top: 20px !important;">Something Here</p>
-                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="#about-section" role="button">More Info  </a>
+                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/product" role="button">More Info  </a>
                 <!-- End rotate-box-2 -->
                 </div>
             </div>
@@ -142,18 +142,17 @@
 
             <!-- Begin rotate box-1 -->
             <div class="rotate-box-1-wrapper">
-                <div class="container">
+                <div class="container about_container">
                     <div class="row">
                         <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                 <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text" id="head_about_text">Who Is VVIP9?</h4>
+                                    <h4 class="about-text" id="head_about_text">What Is VVIP9?</h4>
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 Card is the latest brand only coming into business around 2020. Since
                                         its conception, they’ve done a fantastic result at creating an NFC smart card with
                                         all the features you’ll ever need.", 150, '...') }}
                                     </p>
-                                    <button class="btn btn-dark about_more d-block">More</button>
                                 </div>
                             </a>
                         </div>
@@ -165,7 +164,6 @@
                                     <h4 class="about-text" id="head_about_text">What Is Smart Card?</h4>
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit("Digital Smart Business Card is a beautiful and innovative way to exchange information with only a single business card and a smartphone.", 100, '...') }}
                                     </p>
-                                    <button class="btn btn-dark about_more d-block">More</button>
                                 </div>
                             </a>
                         </div>
@@ -178,12 +176,14 @@
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 provides a variety of options to choose from where considering going with a digital business card and is a great reduced budget option in the market today.col-md-6
                                         When it become to using the business card to exchange information,the VVIP9 was the most accurate and seamless in sending information in an attractive and quick way.
                                         VVIP9 card plans can be one of the best ways to describe your business, and enchance your business.Nowadays, offering VIP cards is a smart decision in all modearn business.", 130, '...') }}
-                                    </p>
-                                    <button class="btn btn-dark about_more d-block">More</button>
+                                    </p>                                
                                 </div>
                             </a>
                         </div>
                     </div> <!-- /.row -->
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/about" role="button">More Info  </a>
+                    </div>
                 </div> <!-- /.container -->
                 <div class="container">
                     <!-- Cta Button -->
@@ -279,12 +279,15 @@
                         </div>
                                                                             
                     </div> <!-- /.row -->
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
-                    </div>
+                    </div> -->
                 </div> <!-- /.container -->
             </div>
         </section>
+        <div class="col-md-12" style="height: 80px;">
+            <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+        </div>
         <!-- End contact section -->
 @section('script')
 <script>

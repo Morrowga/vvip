@@ -37,7 +37,6 @@
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
         <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
-
 		<!-- Skin CSS -->
 		<link rel="stylesheet" href="../css/skin/cool-gray.css">
         <!-- <link rel="stylesheet" href="css/skin/ice-blue.css"> -->
@@ -87,8 +86,8 @@
                             <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
                             <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
                             <li><a class="page-scroll navli" href="{{ route('view_packages') }}">Packages</a></li>
-                            <li><a class="page-scroll navli" href="#about-section">About</a></li>
-                            <li><a class="page-scroll navli" href="#contact-section">Contact</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('about') }}">About</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('contact') }}">Contact</a></li>
                             <li><a class="page-scroll navli" href="{{ route('login') }}">Login</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
