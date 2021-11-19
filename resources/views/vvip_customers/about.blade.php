@@ -180,7 +180,7 @@
 </div>
 
 <div class="col-md-12" style="height: 80px;">
-    <p class="copyright text-center" style="padding-top: 45px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+    <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
 </div>     
 
 @section('script')
