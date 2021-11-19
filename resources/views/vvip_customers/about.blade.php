@@ -44,7 +44,7 @@
 <div class="devider" style="margin-top: 15px;"></div>
 
 <div class="container">
-    <h3 class="text text-center">The Useful of VVIP 9 ?</h3>
+    <h3 class="text text-center">The Useful of VVIP 9</h3>
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-6">
