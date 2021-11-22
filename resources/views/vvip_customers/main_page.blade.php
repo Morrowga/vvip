@@ -9,27 +9,27 @@
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
                                 <video width="500" height="250" id="video_one" loop autoplay muted>
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
-                                <p>Everything is smart</p>
+                                <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
-                                <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">Our Service</a>
-                                <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">BUY NOW</a>
+                                <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Service')}}</a>
+                                <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">{{__('website.Buy')}}</a>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
                                 <video width="500" height="250" id="video_one" loop autoplay muted>
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
                                 <p>To the greatest Journey</p>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
                                 <video width="500" height="250" id="video_one" loop autoplay muted>
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4" id="video_one">
-                                    <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
                                 <p>To the greatest Journey</p>
                             </div>
@@ -55,10 +55,10 @@
                     <img src="https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png" alt="" width="300" height="350">
                 </div>
                 <div class="col-md-6" id="text_section_product">
-                    <h2 class="service">Products</h2>
+                    <h2 class="service">{{__('website.Products')}}</h2>
                     <div class="devider"></div>
                     <p class="subtitle" style="margin-top: 20px !important;">Something Here</p>
-                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/product" role="button">More Info  </a>
+                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/product" role="button">{{__('website.more')}}</a>
                 <!-- End rotate-box-2 -->
                 </div>
             </div>
@@ -66,10 +66,9 @@
         </section>
                 
         <!-- Begin counter up -->
-        <section id="counter-section" style="margin-top: 10px !important;">                					
+        <!-- <section id="counter-section" style="margin-top: 10px !important;">                					
             <div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
                 <div class="cover"></div>
-                <!-- Begin page header-->
                 <div class="page-header-wrapper">
                     <div class="container">
                         <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
@@ -79,7 +78,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- End page header-->
                 <div class="container">
 
                     <div class="row">
@@ -101,29 +99,10 @@
                                 <p class="lead">Satisfied Users</p>
                             </div>
                         </div>
-
-                        <!-- <div class="fact text-center col-md-3 col-sm-6">
-                            <div class="fact-inner">
-                                <i class="fa fa-trophy fa-3x"></i>
-                                <div class="extra-space-l"></div>
-                                <span class="counter">55</span>
-                                <p class="lead">Winning Awards</p>
-                            </div>
-                        </div>
-
-                        <div class="fact last text-center col-md-3 col-sm-6">
-                            <div class="fact-inner">
-                                <i class="fa fa-coffee fa-3x"></i>
-                                <div class="extra-space-l"></div>
-                                <span class="counter">1100</span>
-                                <p class="lead">Cups of coffee drinking</p>
-                            </div>
-                        </div> -->
-
-                    </div> <!-- /.row -->
-                </div> <!-- /.container -->
+                    </div> 
+                </div> 
             </div>
-        </section>
+        </section> -->
         <!-- End counter up -->
 
          <!-- Begin about section -->
@@ -132,7 +111,7 @@
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
-                        <h2 class="about">About</h2>
+                        <h2 class="about">{{__('website.About')}}</h2>
                         <div class="devider"></div>
                         <p class="subtitle">little information</p>
                     </div>
@@ -148,10 +127,8 @@
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0">
                                 <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text" id="head_about_text">What Is VVIP9?</h4>
-                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 Card is the latest brand only coming into business around 2020. Since
-                                        its conception, they’ve done a fantastic result at creating an NFC smart card with
-                                        all the features you’ll ever need.", 150, '...') }}
+                                    <h4 class="about-text" id="head_about_text">{{__('website.whatisvvip')}}</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatvvip_para'), 100, '...') }}
                                     </p>
                                 </div>
                             </a>
@@ -161,8 +138,8 @@
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
                                 <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text" id="head_about_text">What Is Smart Card?</h4>
-                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("Digital Smart Business Card is a beautiful and innovative way to exchange information with only a single business card and a smartphone.", 100, '...') }}
+                                    <h4 class="about-text" id="head_about_text">{{__('website.whatissmartcard')}}</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }}
                                     </p>
                                 </div>
                             </a>
@@ -172,17 +149,15 @@
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                 <div class="rotate-box-info">
-                                    <h4 class="about-text" id="head_about_text">The Useful Of VVIP9</h4>
-                                    <p class="about-text">{{ \Illuminate\Support\Str::limit("VVIP9 provides a variety of options to choose from where considering going with a digital business card and is a great reduced budget option in the market today.col-md-6
-                                        When it become to using the business card to exchange information,the VVIP9 was the most accurate and seamless in sending information in an attractive and quick way.
-                                        VVIP9 card plans can be one of the best ways to describe your business, and enchance your business.Nowadays, offering VIP cards is a smart decision in all modearn business.", 130, '...') }}
+                                    <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
+                                    <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
                                     </p>                                
                                 </div>
                             </a>
                         </div>
                     </div> <!-- /.row -->
                     <div class="col-md-12 text-center">
-                        <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/about" role="button">More Info  </a>
+                        <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/about" role="button">{{__('website.more')}}</a>
                     </div>
                 </div> <!-- /.container -->
                 <div class="container">
@@ -206,7 +181,7 @@
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="social">Join Us</h2>
+                        <h2 class="social">{{__('website.join_us')}}</h2>
                         <div class="devider"></div>
                         <p class="subtitle">Follow us on social networks</p>
                     </div>
@@ -234,7 +209,7 @@
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="contact">Contacts</h2>
+                        <h2 class="contact">{{__('website.Contact')}}</h2>
                         <div class="devider"></div>
                         <p class="subtitle">All to contact us</p>
                     </div>
@@ -248,9 +223,9 @@
                     
                         <div class="col-sm-6">
                             <div class="contact-info">
-                                <h4 class="contact">Our Address</h4>
+                                <h4 class="contact">{{__('website.our_address')}}</h4>
                                 <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; No.8 Moe Ma Kha (1) Street,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma Li Kha Housing,Thingangyun Tsp,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yangon ,Myanmar</li>
+                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{__('website.address_no')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{__('website.address_ward')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{__('website.address_cc')}}</li>
                                     <li><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
                                     <li><i class="fa fa-envelope"></i> info@htut.com</li>
                                 </ul>
@@ -259,21 +234,21 @@
                     
                         <div class="col-sm-6">
                             <div class="contact-form">
-                                <h4 class="contact">Write to us</h4>
+                                <h4 class="contact">{{__('website.write_to_us')}}</h4>
                                 <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="Your Name" required>
+                                        <input type="text" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control input-lg" placeholder="E-mail" required>
+                                        <input type="email" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="Subject" required>
+                                        <input type="text" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
+                                        <textarea class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
                                     </div>
-                                    <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
+                                    <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
                                 </form>
                             </div>	
                         </div>

@@ -81,14 +81,16 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll navli" href="/">Home</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_product') }}">Products</a></li>
+                            <li><a class="page-scroll navli" href="/">{{__('website.Home')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_product', app()->getLocale()) }}">{{__('website.Products')}}</a></li>
                             <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
                             <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
-                            <li><a class="page-scroll navli" href="{{ route('view_packages') }}">Packages</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('about') }}">About</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('contact') }}">Contact</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('login') }}">Login</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_packages', app()->getLocale()) }}">{{__('website.Packages')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('about', app()->getLocale()) }}">{{__('website.About')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('contact', app()->getLocale()) }}">{{__('website.Contact')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('login', app()->getLocale()) }}">{{__('website.login')}}</a></li>
+                            <li class="lang"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="35" height="35" alt="" style="padding-top: 0 !important;"></a></li>
+                            <li class="lang"><a href="{{ route(Route::currentRouteName(), 'mm') }}"><img src="../images/myanmar.png" width="35" height="35" alt="" style="margin-bottom: 5px !important;"></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->

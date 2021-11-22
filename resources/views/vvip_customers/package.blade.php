@@ -158,7 +158,7 @@
                 <div class="row d-flex justify-content-center text-center">
                         <!-- <div class="col-md-4"></div> -->
                         <div class="col-md-12">
-                            <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
+                            <form action="{{ route('register', app()->getLocale()) }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
                                 <div class="form-section">
                                     <div class="d-flex justify-content-center">

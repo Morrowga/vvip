@@ -1457,6 +1457,9 @@ p.subtitle {
 	  overflow: auto;
   }
 
+  .navbar-nav > .lang > a {
+	padding-top: 27px !important;
+  }
   
   .price-btn-one{
 	  margin-top: 35px !important;

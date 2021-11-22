@@ -19,6 +19,13 @@ class WebUserJourneyController extends Controller
         return view('vvip_customers.package')->with('normal', $normal)->with('standard', $standard)->with('luxury', $luxury)->with('cards', $cards);
     }
 
+    // public function lang($lang){
+    //     $lang = ['en', 'mm'];
+    //     foreach($lang as $l){
+    //         App::setlocale($l);
+    //     }
+    // }
+
 
     public function main_view(){
         return view('vvip_customers.main_page');
