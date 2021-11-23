@@ -31,7 +31,7 @@
         </li>
     </ul>
     </div>
-</nav> 
+</nav>
 
 <div class="container" style="height: 850px;" id="profile_container">
     <div class="d-flex justify-content-center">
@@ -103,13 +103,13 @@
             <p class="text-center profile_text" id="package_status"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Remaining Days</p>  
+            <p class="text-center profile_txt">Remaining Days</p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_text" id="remaining_days"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_text"></p>  
+            <p class="text-center profile_text"></p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_txt">Secure Status</p>
@@ -133,7 +133,7 @@
         </div>
         </div>
         </div>
-       
+
         <!-- <div class="d-flex justify-content-center mt-3">
             <div class="col-md-4 col-md-offset-4">
             <button class="btn btn-dark btn-block edit_profile">EDIT</button>
@@ -151,7 +151,7 @@ $(function() {
         url:profile_url,
            method:'POST',
            data:{
-                user_id: user_id,  
+                user_id: user_id,
                 request_name: "get_user_profile"
                 },
            success:function(response){
@@ -167,7 +167,7 @@ $(function() {
                     $('#secure_status').text(response.data['secure_status']);
                     $('#private_on_off').text('Off');
                }
-               } 
+               }
                console.log(response);
            }
     });

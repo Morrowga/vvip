@@ -118,6 +118,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatisvvip')}}</h4>
+                                    <img src="https://i.pinimg.com/564x/93/04/93/930493acc7770c5b263be85cd03d1cca.jpg" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatvvip_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -129,6 +130,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatissmartcard')}}</h4>
+                                    <img src="https://i.pinimg.com/236x/27/23/eb/2723eb0845417c35713e16bf6516ed46.jpg" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -140,6 +142,7 @@
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
+                                    <img src="https://i.pinimg.com/236x/7b/3b/bc/7b3bbcb67eb19a2020bdcfb7f5f82fc0.jpg" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
                                     </p>                                
                                 </div>

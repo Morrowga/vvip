@@ -3108,6 +3108,10 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
+=======
+            "abandoned": "symfony/mailer",
+>>>>>>> 82ddaa42e2b2fd7204be149ab0dfb2a0955c8e2b
             "time": "2021-10-18T15:26:12+00:00"
         },
         {

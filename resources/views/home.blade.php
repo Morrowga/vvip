@@ -30,7 +30,7 @@
         </li>
     </ul>
     </div>
-</nav> 
+</nav>
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -47,6 +47,10 @@
         </div>
     </div>
 </div> -->
+<<<<<<< HEAD
+
+<div class="container" id="home_height" style="height: 600px;">
+=======
 <div class="container" id="home_height" style="height: 850px;">
 .   <div class="col-md-12">
         <h1 class="text">Welcome</h1>
@@ -54,6 +58,7 @@
             <p class="text" id="welcome_text"></p>
         </div>
     </div>
+>>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
@@ -77,6 +82,9 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
+@endsection
+=======
 
 @section('script')
     <script>
@@ -98,3 +106,4 @@
     </script>
 @endsection
 @endsection
+>>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
