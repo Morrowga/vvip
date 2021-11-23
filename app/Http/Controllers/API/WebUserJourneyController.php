@@ -54,8 +54,6 @@ class WebUserJourneyController extends Controller
         return view('vvip_customers.main_page');
     }
 
-<<<<<<< HEAD
-=======
     public function products(){
         return view('vvip_customers.product');
     }
@@ -67,5 +65,4 @@ class WebUserJourneyController extends Controller
     public function contact(){
         return view('vvip_customers.contact');
     }
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
 }
