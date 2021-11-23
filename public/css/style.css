@@ -1340,7 +1340,7 @@ p.subtitle {
 }
 
 .panel,.panel-default{
-	/* box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important; */
+	box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 15px rgb(253,235,162) !important;
 }
 
 .logo-text{
