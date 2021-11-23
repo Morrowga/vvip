@@ -51,7 +51,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $standard->package_name }}</h3>
-                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" id="standard_img" alt="" width="300" height="250">
+                                    <img src="../images/47-470792_explore-the-world-of-icici-credit-cards-here.png" id="standard_img" alt="" width="300" height="250">
                                     <h4 class="package">DIAMOND</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
@@ -80,7 +80,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $luxury->package_name }}</h3>
-                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" alt="" id="luxury_img" width="300" height="250">
+                                    <img src="../images/917-9175739_credit-card.png" alt="" id="luxury_img" width="300" height="250">
                                     <h3 class="package">RUBY</h3>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         
@@ -503,8 +503,8 @@
 
         function standard(){
             i = 0;
-            var standard_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
-            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            var standard_pics = ["../images/47-470792_explore-the-world-of-icici-credit-cards-here.png",
+            "../images/credit-card-images-png-1.png",
             "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
             var standard_el = document.getElementById('standard_img'); 
 
@@ -520,8 +520,8 @@
 
         function luxury(){
             i = 0;
-            var luxury_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
-            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            var luxury_pics = ["../images/917-9175739_credit-card.png",
+            "../images/credit-card-images-png-1.png",
             "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
 
             var luxury_el = document.getElementById('luxury_img');
