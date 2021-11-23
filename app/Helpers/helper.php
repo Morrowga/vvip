@@ -252,7 +252,6 @@ class Helper{
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
 
-<<<<<<< HEAD
                         if($link_tree->link_image === null){
                             $link_img = "storage/link_tree_images/logo.jpeg";
                         } else {
@@ -277,27 +276,6 @@ class Helper{
                         ];
 
                         $messages = [
-=======
-                        $link_img = "storage/link_tree_images/" . $link_tree->link_image;
-                        $final_data = [
-                            "user_id"  => $link_tree->user_id,
-                            "link_image" => $link_img,
-                            "link_one_label" => $de_link_one->label,
-                            "link_one_url" => $de_link_one->link,
-                            "link_two_label" => $de_link_two->label,
-                            "link_two_url" => $de_link_two->link,
-                            "link_three_label" => $de_link_three->label,
-                            "link_three_url" => $de_link_three->link,
-                            "link_four_label" => $de_link_four->label,
-                            "link_four_url" => $de_link_four->link,
-                            "link_five_label" => $de_link_five->label,
-                            "link_five_url" => $de_link_five->link,
-                            "background_color" => $link_tree->background_color,
-                            "text_color" => $link_tree->text_color,
-                            "text_highlight_color" => $link_tree->text_highlight_color
-                            ];
-                            $messages = [
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
                             "status" => "200",
                             "message" => "success",
                             "request" => "get_link_trees",
@@ -370,14 +348,14 @@ class Helper{
             }
         }
     }
-<<<<<<< HEAD
+
     public static function get_user_agent(){
         return $_SERVER['HTTP_USER_AGENT'];
     }
 
     public static function get_ip(){
 
-    $ipaddress = '';
+        $ipaddress = '';
        if (isset($_SERVER['HTTP_CLIENT_IP']))
            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
        else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
@@ -530,7 +508,3 @@ class Helper{
 
     }
 }
-=======
-}
-
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
