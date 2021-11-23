@@ -45,6 +45,10 @@ class LoginController extends Controller
         return 'phone_number';
     }
 
+    public function credentials(Request $request){
+        return array_merge($request->only($this->username(), 'password'), ['is_verified' => 1]);
+    }
+
     public function loginApi(Request $request){
         $user_data_phone = $request->input('phone_number');
         $user_data_password = $request->input('password');

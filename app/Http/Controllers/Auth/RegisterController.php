@@ -119,6 +119,6 @@ class RegisterController extends Controller
             return redirect()->route('login')->with(session()->flash('alert-success', 'Your Account is verified. Please Login.'));
         }
 
-        return redirect()->route('login')->with(session()->flash('alert-danger', 'Something went wrong'));
+        return redirect()->route('login')->with(session()->flash('alert-danger', 'Invalid Code'));
     }
 }

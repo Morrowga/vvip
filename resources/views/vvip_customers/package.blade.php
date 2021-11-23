@@ -9,6 +9,17 @@
                     <h2 class="package package_margin">Prices</h2>
                     <div class="devider"></div>
                     <p class="subtitle">That how much</p>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-3">
+                            <div class="flash-message">
+                                @foreach(['danger', 'success', 'warning', 'info'] as $msg)
+                                    @if(Session::has('alert-', $msg))
+                                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-', $msg) }} <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
+                                    @endif
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -360,17 +371,6 @@
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="password-confirm" type="password" placeholder="Confirm Pin" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-6 col-md-offset-3">
-                                            <div class="flash-message">
-                                                @foreach(['danger', 'success', 'warning', 'info'] as $msg)
-                                                    @if(Session::has('alert-', $msg))
-                                                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-', $msg) }} <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-                                                    @endif
-                                                @endforeach
-                                            </div>
                                         </div>
                                     </div>
                                 </div>

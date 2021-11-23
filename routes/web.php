@@ -30,9 +30,9 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->name('list');
 
-Route::get('/verify', 'Auth\RegisterController@verifyUser')->name('verify.user');
+Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
-Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
+// Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
     Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
     Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
@@ -44,7 +44,7 @@ Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
     Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
 
     Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
-});
+// });
 
 
 

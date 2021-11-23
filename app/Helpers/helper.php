@@ -142,16 +142,29 @@ class Helper{
                 $get_array = [];
                 if($count > 0){
                     foreach($check_exist_datas as $data){
-                        $data_array = [
-                         "id" => $data->id,
-                         "name" => $data->name,
-                         "icon" => $data->icon,
-                         "active" => $data->active,
-                         "url" => $data->url,
-                         "app_package" => $data->app_package
-                        ];
-                        array_push($get_array, $data_array);
+                        if($data->url === null){
+                            $data_array = [
+                                "id" => $data->id,
+                                "name" => $data->name,
+                                "icon" => $data->icon,
+                                "active" => $data->active,
+                                "url" => "",
+                                "app_package" => $data->app_package
+                               ];
+                               array_push($get_array, $data_array);
+                        }  else {
+                            $data_array = [
+                                "id" => $data->id,
+                                "name" => $data->name,
+                                "icon" => $data->icon,
+                                "active" => $data->active,
+                                "url" => $data->url,
+                                "app_package" => $data->app_package
+                               ];
+                               array_push($get_array, $data_array);
+                        }
                     }
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
@@ -206,6 +219,9 @@ class Helper{
                         "status" => "412",
                         "message" => "data does not exist in this id",
                         "request" => "get_selected_action",
+                        "data" => [
+                            "self_request_name" => ""
+                        ]
                     ];
                     return $messages;
                 }
@@ -252,11 +268,8 @@ class Helper{
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
 
-                        if($link_tree->link_image === null){
-                            $link_img = "storage/link_tree_images/logo.jpeg";
-                        } else {
-                            $link_img = "storage/link_tree_images/" . $link_tree->link_image;
-                        }
+                        $link_img = "storage/link_tree_images/" . $link_tree->link_image;
+
                         $final_data = [
                           "user_id"  => $link_tree->user_id,
                           "link_image" => $link_img,
@@ -288,7 +301,7 @@ class Helper{
                         $link_img = "images/logo.jpeg";
                         $final_data = [
                             "user_id"  => "",
-                            "link_image" => "",
+                            "link_image" => $link_img,
                             "link_one_label" => "",
                             "link_one_url" => "",
                             "link_two_label" => "",
