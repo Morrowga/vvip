@@ -8,14 +8,14 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
-                                <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Service')}}</a>
-                                <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">{{__('website.Buy')}}</a>
+                                <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
+                                <!-- <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">{{__('website.Buy')}}</a> -->
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
@@ -41,16 +41,8 @@
             
 
         <!-- Begin Services -->
-        <section id="services-section" class="page text-center">
+        <!-- <section id="services-section" class="page text-center">
             <div class="d-flex justify-content-center">
-                <!-- <div class="col-md-6">
-                    <div class="video_contain">
-                    <video loop autoplay muted id="vid_pro">
-                        <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/mp4">
-                        <source src="../images/JOKER - Final Trailer - Now Playing In Theaters.mp4" type="video/ogg">
-                    </video>
-                    </div>
-                </div> -->
                 <div class="col-md-6">
                     <img src="https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png" alt="" width="300" height="350">
                 </div>
@@ -59,11 +51,9 @@
                     <div class="devider"></div>
                     <p class="subtitle" style="margin-top: 20px !important;">Something Here</p>
                      <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/product" role="button">{{__('website.more')}}</a>
-                <!-- End rotate-box-2 -->
                 </div>
             </div>
-            <!-- Begin page header-->
-        </section>
+        </section> -->
                 
         <!-- Begin counter up -->
         <!-- <section id="counter-section" style="margin-top: 10px !important;">                					

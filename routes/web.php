@@ -36,7 +36,7 @@ Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main
 
 Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
 
-Route::get('product', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
+Route::get('feature', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
 
 Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
 

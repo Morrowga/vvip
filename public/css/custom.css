@@ -262,7 +262,7 @@ border: 2px solid rgb(217,181,81) !important;
     font-family: 'Kudryashev Display' !important;
     font-size: 17px;
     letter-spacing: 3px;
-    padding-top: 5px !important;
+    padding-top: 2px;
 }
 
 .template {
@@ -365,7 +365,7 @@ span {
     margin-top: 10px !important;
     transform-style: preserve-3d;
     transform: rotateX(-25deg) rotateY(15deg);
-    box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+    box-shadow: rgb(217,181,81,0.5) 0px 60px 40px -7px;
     background-color: #fff !important;
 }
 
@@ -1336,6 +1336,38 @@ label.label_file {
     border-radius: 50% !important;
     border: 2px solid rgb(217,181,81);
     /* text-shadow: 2px 2px 10px rgb(217,181,81); */
+}
+
+
+.package_text{
+    letter-spacing: 3px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.fas.fa-question{
+    font-size: 12px;
+    color: #fff !important;
+}
+.span_question{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    border-radius: 50% !important; 
+    width: 24px !important;
+    opacity: 0.5;
+    padding: 0 !important;
+    height: 24px !important;
+    margin-left: 2px !important;
+    display: inline-block;
+}
+
+#fof_bg{
+    background: url('https://cdn1.vectorstock.com/i/thumb-large/73/65/404-error-page-not-found-in-glitch-effect-style-vector-36027365.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
 }
 
 .mapouter{position:relative;text-align:right;height:500px;width:100% !important;}

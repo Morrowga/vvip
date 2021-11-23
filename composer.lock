@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "652060656bc7d2e2dc776e6c431f9f5c",
+    "content-hash": "1945d2e9af99add6207e582e4239481e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2240,6 +2240,56 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "php-junior/zawuni",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPJunior/laravel-zawgyi-uni.git",
+                "reference": "425bfb4d79ce3f609e637f71844c310eee4cc598"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPJunior/laravel-zawgyi-uni/zipball/425bfb4d79ce3f609e637f71844c310eee4cc598",
+                "reference": "425bfb4d79ce3f609e637f71844c310eee4cc598",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpJunior\\Zawuni\\": "src/"
+                },
+                "files": [
+                    "helper/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nyi Nyi Lwin",
+                    "email": "nyinyilwin1992@hotmail.com"
+                }
+            ],
+            "description": "Laravel Zawgyi Unicode",
+            "keywords": [
+                "converter",
+                "laravel",
+                "myanmar-font",
+                "unicode",
+                "zawgyi"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPJunior/laravel-zawgyi-uni/issues",
+                "source": "https://github.com/PHPJunior/laravel-zawgyi-uni/tree/master"
+            },
+            "time": "2017-08-05T12:38:46+00:00"
         },
         {
             "name": "phpoption/phpoption",

@@ -6,7 +6,7 @@
         <div class="page-header-wrapper">
             <div class="container">
                 <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                    <h2 class="service product_margin">Products</h2>
+                    <h2 class="service product_margin">{{ __('website.Features') }}</h2>
                     <div class="devider"></div>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="devider" style="margin-top: 50px;"></div>
                 <h3 class="text text-center">Phone</h3>
                 <div class="col-md-12 border-product">
-                    <img src="https://tap-to-connect.com/wp-content/uploads/sites/13/2020/09/taptoconnect-tap-kaart-naar-telefoon-tesla-1-1.png" class="text-center" alt="" width="200" height="200">
+                    <img src="https://pngimg.com/uploads/phone_hand/phone_hand_PNG19.png" class="text-center" alt="" width="200" height="260">
                     <p class="text text-center add_shadow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat officiis id eos dicta neque fuga cumque iusto voluptates. Quos ut aspernatur unde esse, assumenda natus repellendus nihil? Voluptate, dicta ut.</p>
                 </div>
             </div>

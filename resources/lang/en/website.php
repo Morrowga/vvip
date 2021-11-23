@@ -1,13 +1,14 @@
 <?php
 return [
     'Home' => "Home",
-    'Products' => "Products",
+    'Features' => "Features",
     'Packages' => "Packages",
     'About' => "About",
     'Contact' => "Contact",
     'login' => "Login",
-    'Service' => "Our Service",
-    'Buy'  => "Buy Now",
+    'Register' => "Register",
+    // 'Service' => "Our Service",
+    // 'Buy'  => "Buy Now",
     'Everything' => "Everything is smart",
     'more' => "More Info",
     'whatisvvip' => "What is VVIP9 ?",

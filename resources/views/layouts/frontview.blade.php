@@ -1,12 +1,5 @@
 <!doctype html>
-<!--
-	Template:	 Unika - Responsive One Page HTML5 Template
-	Author:		 imransdesign.com
-	URL:		 http://imransdesign.com/
-    Designed By: https://www.behance.net/poljakova
-	Version:	1.0	
--->
-<html lang="en-US">
+<html lang="app()->getLocale()">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,14 +8,11 @@
 		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
 		<meta name="author" content="imransdesign.com">
 
-		<!-- Mobile Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <!-- Google Fonts  -->
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
 		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
 
-		<!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
@@ -31,43 +21,23 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="../font/stylesheet.css">
     
-		<!-- Theme CSS -->
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/custom.css">
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
         <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
-		<!-- Skin CSS -->
 		<link rel="stylesheet" href="../css/skin/cool-gray.css">
-        <!-- <link rel="stylesheet" href="css/skin/ice-blue.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/summer-orange.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/fresh-lime.css"> -->
-        <!-- <link rel="stylesheet" href="css/skin/night-purple.css"> -->
-
-		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-
-		<!--[if lt IE 9]>
-			<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
-
 	</head>
-
+    {!! Zawuni::includeFiles() !!}
     <body data-spy="scroll" data-target="#main-navbar">
-        <!-- <div class="page-loader"></div>   -->
-        <!-- Display loading image while page loads -->
     	<div class="body" id="main-body" style="display:none;">
-        
-            <!--========== BEGIN HEADER ==========-->
+            <!-- ========= Start HEADER =========-->
             <header id="header" class="header-main">
 
-                <!-- Begin Navbar -->
                 <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: rgb(0,0,0) !important;"> <!-- Classes: navbar-default, navbar-inverse, navbar-fixed-top, navbar-fixed-bottom, navbar-transparent. Note: If you use non-transparent navbar, set "height: 98px;" to #header -->
 
                   <div class="container">
 
-                    <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
                       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
@@ -75,21 +45,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                       </button>
-                      <a class="navbar-brand page-scroll" href="/">VVIP</a>
+                      <a class="navbar-brand page-scroll" href="{{ route('main', app()->getLocale()) }}">VVIP</a>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll navli" href="/">{{__('website.Home')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_product', app()->getLocale()) }}">{{__('website.Products')}}</a></li>
-                            <!-- <li><a class="page-scroll" href="#portfolio-section">Works</a></li> -->
-                            <!-- <li><a class="page-scroll" href="#team-section">Team</a></li> -->
+                            <li><a class="page-scroll navli" href="/">{{__('website.Home') }}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('about', app()->getLocale()) }}">{{ __('website.About') }}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('view_packages', app()->getLocale()) }}">{{__('website.Packages')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('about', app()->getLocale()) }}">{{__('website.About')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_product', app()->getLocale()) }}">{{__('website.Features')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('contact', app()->getLocale()) }}">{{__('website.Contact')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('login', app()->getLocale()) }}">{{__('website.login')}}</a></li>
-                            <li class="lang"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="35" height="35" alt="" style="padding-top: 0 !important;"></a></li>
+                            <li class="lang_en"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="30" height="30" alt="" style="padding-top: 0 !important;"></a></li>
                             <li class="lang"><a href="{{ route(Route::currentRouteName(), 'mm') }}"><img src="../images/myanmar.png" width="35" height="35" alt="" style="margin-bottom: 5px !important;"></a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
@@ -100,19 +67,7 @@
             </header>
             <!-- ========= END HEADER =========-->
             
-            @yield('content')
-            <!-- Begin footer -->
-            <!-- <footer class="text-off-white">
-                <footer class="footer">
-                    <div class="container text-center wow fadeIn" data-wow-delay="0.4s">
-                        <p class="copyright">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
-                    </div>
-                </footer>
-            </footer> -->
-            <!-- End footer -->
-
-            <a href="#" class="scrolltotop"><i class="fa fa-arrow-up"></i></a> <!-- Scroll to top button -->
-                                              
+            @yield('content')                              
         </div>
         <div id="loading" style="display:block;">
             <input type="text" id="text_color" hidden>

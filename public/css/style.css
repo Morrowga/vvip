@@ -861,6 +861,10 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 	padding: 25px 15px;
 }
 
+.panel-footer{
+	border-top: none !important;
+}
+
 /* panel-default */
 .prices .panel-default .panel-heading {
 	padding-top: 25px;
@@ -1336,7 +1340,7 @@ p.subtitle {
 }
 
 .panel,.panel-default{
-	box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important;
+	/* box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important; */
 }
 
 .logo-text{
@@ -1361,9 +1365,6 @@ p.subtitle {
 	/* background: #d9b551; 
 	background: -webkit-linear-gradient(to right, #d9b551, #000); 
 	background: linear-gradient(to right, #d9b551, #000);  */
-	background: #d9b551;  /* fallback for old browsers */
-	background: -webkit-linear-gradient(to bottom, #000, #d9b551);  /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(to bottom, #000, #d9b551); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	height: 50px;
 	letter-spacing: 2px;
 	font-weight: bold;
@@ -1459,6 +1460,10 @@ p.subtitle {
 
   .navbar-nav > .lang > a {
 	padding-top: 27px !important;
+  }
+
+  .navbar-nav > .lang_en > a{
+	padding-top: 29px !important;
   }
   
   .price-btn-one{
@@ -1602,11 +1607,10 @@ transition-duration: 1s;
 	position: relative;
 }
 
-/* 
+
 #video_one{
-	border-top-left-radius: 100% !important;
-	border-bottom-right-radius: 100% !important;
-} */
+	width: 100% !important;
+}
 
 
 #dia {

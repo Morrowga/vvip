@@ -20,88 +20,89 @@
             <div class="prices">
                 <div class="container">
                     <div class="row">
-                        <div class="price-box col-sm-6 col-md-4 wow flipInY" data-wow-delay="0.3s">
+                        <div class="price-box col-sm-6 col-md-4 wow" data-wow-delay="0.3s">
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $normal->package_name }}</h3>
-                                    <img src="../images/gold.png" alt="" width="100" height="110">
+                                    <img src="https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png" id="normal_img" alt="" width="300" height="250">
                                     <h4 class="package">GOLD</h4>
-                                    <h5 class="package">{{ $normal->plan_name }}</h5>
+                                    <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
-                                <div class="panel-body text-center">
+                                <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>URL</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Call</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>10 Card Template</li>
+                                    </ul>                                    
+                                </div>
+                                <!-- <div class="panel-body text-center">
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
-                                </div>
-                                <!-- <ul class="list-group text-center"> 
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact System</li>
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
-                                    <li class="list-group-item one"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
-                                </ul> -->
+                                </div> -->
                                 <div class="panel-footer text-center">
-                                    <button type="button" id="" class="btn btn-default price-btn-one" >More Info</button>
-                                    <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">Order Now!</button>
+                                    <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }} Order Now!</button>
                                 </div>
                             </div>										
                         </div>
                         
-                        <div class="price-box col-sm-6 price-box-featured col-md-4 wow flipInY ml-3" data-wow-delay="0.7s">
+                        <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.7s">
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $standard->package_name }}</h3>
-                                    <img src="../images/diamond.png" alt="" width="100" height="110">
+                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" id="standard_img" alt="" width="300" height="250">
                                     <h4 class="package">DIAMOND</h4>
-                                    <h5 class="package">{{ $standard->plan_name }}</h5>
+                                    <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
-                                <div class="panel-body text-center">
-                                    <p class="lead"><strong>{{ $standard->price }}</strong></p>
+                                <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Email</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact &  Social</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>SMS</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Event</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Bank/ Pay Info</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>URL</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Call</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>30 Card Template</li>
+                                    </ul>                                    
                                 </div>
-                                <!-- <ul class="list-group text-center">
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Contact & Social System</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>SMS</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Event</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Bank / Pay Info</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personal Social Platform Links</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Personnal Deep Link</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Business URL</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;"></i>Telephone Call System</li>
-                                </ul> -->
                                 <div class="panel-footer text-center">
-                                    <button type="button" class="btn btn-default price-btn-one">More Info</button>
-                                    <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">Order Now!</button>
+                                    <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }} Order Now!</button>
                                 </div>
-                                <div class="price-box-ribbon"><strong>Popular</strong></div>
                             </div>										
                         </div>
                         
-                        <div class="price-box col-sm-6 col-md-4 wow flipInY ml-3" data-wow-delay="0.9s">
+                        <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.9s">
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $luxury->package_name }}</h3>
-                                    <img src="../images/ruby.png" alt="" width="100" height="110">
+                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" alt="" id="luxury_img" width="300" height="250">
                                     <h3 class="package">RUBY</h3>
-                                    <h5 class="package">{{ $luxury->plan_name }}</h5>
-                                </div>
-                                <div class="panel-body text-center">
-                                    <p class="lead"><strong>{{ $luxury->price }}</strong></p>
-                                </div>
-                                <!-- <ul class="list-group text-center">
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Use</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Contact & Social System</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>SMS</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Event</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Bank / Pay Info</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Social Platform Links</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personnal Deep Link</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Business URL</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Personal Assistant</li>
-                                    <li class="list-group-item"><i class="fas fa-check" style="margin-right: 5px !important; font-size: 8px !important; color: rgb(253,235,162) !important;" ></i>Telephone Call System</li>
-                                </ul> -->
+                                    <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
+                                </div>         
+                                <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
+                                    <ul class="d-flex justify-content-center">
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Email</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact &  Social</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>SMS</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Event</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Personal Assistance</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Metal Card</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Bank/ Pay Info</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>URL</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Call</li>
+                                        <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>30 Card Template</li>
+                                    </ul>                                    
+                                </div>                    
                                 <div class="panel-footer text-center">
-                                    <button type="button" class="btn btn-default price-btn-one">More Info</button>
-                                    <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">Order Now!</button>
+                                    <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">{{ $luxury->price }} Order Now!</button>
                                 </div>
                             </div>										
                         </div>
@@ -193,7 +194,6 @@
                                             <input id="name" type="text" placeholder="Enter Your Name"
                                                 class="form-control @error('name') is-invalid @enderror register-input" name="name" style="font-size: 17px;"
                                                 value="{{ old('name') }}" required autocomplete="name" autofocus>
-
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -232,7 +232,10 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
-                                            <p class="url_text">URL</p>
+                                        <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
+                                             <p class="url_text text-left">URL</p>
+                                            <button type="button" class="btn btn-light span_question" data-toggle="popover" title="Insert Your URL" data-content="URL is a link for display your action which action you selected when scan the card."><i class="fas fa-question"></i></button>
+                                        </div>
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="url_radio" onchange="getCheckedName()" value="" id="url_name" checked>
@@ -247,7 +250,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 20px !important;">
-                                            <div class="row">
+                                            <div class="row" style="display: flex; justify-content: center;">
                                                 <div class="col url" style="padding-top:5px;">
                                                     <p class="vvip_text">https://vvip9.co/</p>
                                                 </div>
@@ -268,7 +271,7 @@
                                                     <label for="html">Private</label><br>
                                                 </div>
                                                 <div class="col-md-6 url">
-                                                    <input type="radio" name="secure_status" value="public">
+                                                    <input type="radio" name="secure_status" value="public" checked>
                                                     <label for="css">Public</label><br>
                                                 </div>
                                             </div>
@@ -482,6 +485,57 @@
 
     @section('script')
     <script>
+        $('[data-toggle="popover"]').popover();
+        function normal(){
+            var i = 0;
+            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png",
+            "https://pngimg.com/uploads/credit_card/credit_card_PNG96.png" ];
+            var normal_el = document.getElementById('normal_img');  // el doesn't change
+
+            function normal_toggle() {
+                normal_el.src = normal_pics[i];           // set the image
+                i = (i + 2) % normal_pics.length;  // update the counter
+            }
+            setInterval(normal_toggle, 1000);
+        }
+        
+        normal();
+
+        function standard(){
+            i = 0;
+            var standard_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
+            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
+            var standard_el = document.getElementById('standard_img'); 
+
+            function standard_toggle(){
+                standard_el.src = standard_pics[i];
+                i = (i + 2) % standard_pics.length;
+            }
+            setInterval(standard_toggle, 1000);
+
+        }
+
+        standard();
+
+        function luxury(){
+            i = 0;
+            var luxury_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
+            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
+
+            var luxury_el = document.getElementById('luxury_img');
+
+            function luxury_toggle(){
+                luxury_el.src = luxury_pics[i];
+                i = (i + 2 ) % luxury_pics.length;
+            }
+            setInterval(luxury_toggle, 1000);
+        }
+
+        luxury();
+        
+
          $.ajax({
                 url: '/api/generate_code',
                 type: 'get',
