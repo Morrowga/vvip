@@ -30,7 +30,7 @@
         </li>
     </ul>
     </div>
-</nav> 
+</nav>
 <!-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -47,6 +47,7 @@
         </div>
     </div>
 </div> -->
+
 <div class="container" id="home_height" style="height: 600px;">
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">

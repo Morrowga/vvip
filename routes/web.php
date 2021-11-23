@@ -33,3 +33,8 @@ Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package
 
 Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 
+
+
+
+
+

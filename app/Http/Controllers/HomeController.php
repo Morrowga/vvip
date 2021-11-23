@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\Helper;
 use App\Models\HomeInfo;
 use App\Models\Package;
 use Auth;
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Models\ViewCount;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request as Request;
 
 class HomeController extends Controller
 {
@@ -28,15 +30,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $count = Helper::countView();
+        return view('home',compact('count'));
     }
 
 
     public function profile(){
+        $count = Helper::countView();
         return view('vvip_customers.profile');
     }
 
     public function action(){
+        $count = Helper::countView();
         return view('vvip_customers.action');
     }
 

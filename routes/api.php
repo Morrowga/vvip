@@ -62,3 +62,10 @@ Route::post('create_appearance', [App\Http\Controllers\API\UserPanelController::
 Route::post('create_link_tree', [App\Http\Controllers\API\UserPanelController::class, 'create_link_tree']);
 
 //379d0d9f-62a3-4d18-9e4d-70f378ff6392
+
+//user stat
+Route::get('/statistics/{id}',[App\Http\Controllers\API\UserStatController::class,'user_stat']);
+Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
+
+
+
