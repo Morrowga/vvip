@@ -30,6 +30,8 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->name('list');
 
+Route::get('/verify', 'Auth\RegisterController@verifyUser')->name('verify.user');
+
 Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
     Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
@@ -43,7 +45,6 @@ Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
 
     Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 });
-
 
 
 

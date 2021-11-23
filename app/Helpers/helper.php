@@ -217,7 +217,7 @@ class Helper{
                         "name" => $user_check->name,
                         "email" => $user_check->email,
                         "phone_number" => $user_check->phone_number,
-                        "url" => "http://vvip9.co" . $user_check->url,
+                        "url" => "http://vvip9.co/" . $user_check->url,
                         "profile_image" => $user_check->profile_image,
                         "secure_status" => $user_check->secure_status,
                         "package" => $user_check->package,
