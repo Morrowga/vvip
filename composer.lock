@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f92dca6b0b8ca69708e45a35a49e4caf",
+    "content-hash": "1945d2e9af99add6207e582e4239481e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1723,6 +1723,82 @@
             "time": "2021-09-25T08:23:19+00:00"
         },
         {
+            "name": "mcamara/laravel-localization",
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mcamara/laravel-localization.git",
+                "reference": "645819da9ef29f3ba7588d9b4598799caf0b2463"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/645819da9ef29f3ba7588d9b4598799caf0b2463",
+                "reference": "645819da9ef29f3ba7588d9b4598799caf0b2463",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||^6.0||^7.0||^8.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench-browser-kit": "~3.4|~3.8|~4.0",
+                "phpunit/phpunit": "6.0.*|^8.0"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
+                    ],
+                    "aliases": {
+                        "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
+                    }
+                }
+            },
+            "autoload": {
+                "classmap": [],
+                "psr-0": {
+                    "Mcamara\\LaravelLocalization": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marc Cámara",
+                    "email": "mcamara88@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Easy localization for Laravel",
+            "homepage": "https://github.com/mcamara/laravel-localization",
+            "keywords": [
+                "laravel",
+                "localization",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/mcamara/laravel-localization/issues",
+                "source": "https://github.com/mcamara/laravel-localization/tree/1.6.2"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/iwasherefirst2",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/mcamara",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-10-24T11:55:35+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "2.3.5",
             "source": {
@@ -2183,6 +2259,56 @@
                 "source": "https://github.com/opis/closure/tree/3.6.2"
             },
             "time": "2021-04-09T13:42:10+00:00"
+        },
+        {
+            "name": "php-junior/zawuni",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/PHPJunior/laravel-zawgyi-uni.git",
+                "reference": "425bfb4d79ce3f609e637f71844c310eee4cc598"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/PHPJunior/laravel-zawgyi-uni/zipball/425bfb4d79ce3f609e637f71844c310eee4cc598",
+                "reference": "425bfb4d79ce3f609e637f71844c310eee4cc598",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PhpJunior\\Zawuni\\": "src/"
+                },
+                "files": [
+                    "helper/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nyi Nyi Lwin",
+                    "email": "nyinyilwin1992@hotmail.com"
+                }
+            ],
+            "description": "Laravel Zawgyi Unicode",
+            "keywords": [
+                "converter",
+                "laravel",
+                "myanmar-font",
+                "unicode",
+                "zawgyi"
+            ],
+            "support": {
+                "issues": "https://github.com/PHPJunior/laravel-zawgyi-uni/issues",
+                "source": "https://github.com/PHPJunior/laravel-zawgyi-uni/tree/master"
+            },
+            "time": "2017-08-05T12:38:46+00:00"
         },
         {
             "name": "phpoption/phpoption",

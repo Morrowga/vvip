@@ -31,11 +31,13 @@ Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class
 
 Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
 
-Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
+// Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
 
 Route::get('cd_timer', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
-Route::get('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
+Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
+
+Route::post('get_card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'get_card_by_id']);
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 

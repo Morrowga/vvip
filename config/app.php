@@ -82,6 +82,11 @@ return [
 
     'locale' => 'en',
 
+    'languages' => [
+        'en',
+        'mm'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale
@@ -161,6 +166,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        PhpJunior\Zawuni\ZawuniServiceProvider::class,
 
         /*
          * Package Service Providers...

@@ -47,6 +47,11 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+
+        // parent::boot();
+        // Route::bind('language',function ($name){
+        //   in_array($name,config('app.languages'))? app()->setlocale($name) : abort(404);  
+        // });
     }
 
     /**

@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -24,7 +23,7 @@
     <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/>
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    href="../css/animate.min.css"
   />
 </head>
 <body>
@@ -90,7 +89,7 @@
         <div class="navbar-footer">
             <div class="d-flex justify-content-center text-center">
                 <div class="col-md-4">
-                    <a href="/create_data" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
+                    <a href="/action" class="text-center"><i class="fa fa-heart fa-2x create_content_icon"></i></a>
                 </div>
                 <div class="col-md-4">
                     <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
@@ -137,6 +136,7 @@
     </div>
         
     <script src="../js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="../js/browser-deeplink.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     @yield('script')
     <script>

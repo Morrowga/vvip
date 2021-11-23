@@ -9,22 +9,23 @@ Master Stylesheet
 	Version:	1.0	
 
 ---------------------------------------------------------------------------------*/
-@import url(//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold);
+@import url(//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family);
+
 
 html {
 	height: 100% !important;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 body {
 	position: relative;
 	height: 100%;
 	font-size: 14px;
 	color: #363940;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 body .body {
 	height: 100%;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 .cover {
 	position: absolute;
@@ -83,24 +84,81 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 /* End Fonts */
 
 .page-scroll{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
+	font-weight: bold !important;
 }
 
 
 #services-section{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
+}
+
+
+.video_contain{
+	perspective: 800px;
+	width: 100% !important;
+}
+
+/* .fas.fa-credit-card{
+	-moz-transform:rotate(-20deg);
+	-webkit-transform:rotate(-20deg);
+	-o-transform:rotate(-20deg);
+	box-sizing: border-box;
+	-ms-transform:rotate(-20deg);
+	transform:rotate(-20deg);
+	color: rgb(217,181,81);
+	font-size: 250px;
+} */
+
+
+#vid_pro {
+	/* border-radius: 80% !important; */
+	/* border-radius: 100% !important; */
+	/* width: 300px; */
+	/* height: 300px; */
+	width: 100%    !important;
+  	height: auto   !important;
+	/* border-top-left-radius: 30% !important;
+	border-bottom-left-radius: 30% !important;
+	border-top-right-radius: 30% !important;
+	border-bottom-right-radius: 30% !important; */
+	box-shadow: 2px 2px 10px rgb(217,181,81);
+	-moz-transform:rotate(20deg);
+	-webkit-transform:rotate(20deg);
+	-o-transform:rotate(20deg);
+	box-sizing: border-box;
+	-ms-transform:rotate(20deg);
+	transform:rotate(20deg);
 }
 
 .subtitle{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 	font-size: 14px;
+	font-weight: bold;
 }
 
-section {
-	position: relative;
+
+.border-product{
+	/* border: 2px solid rgb(217,181,81); */
+	padding-top: 10px !important;
+	background: #000;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to left, #d9b551, #000);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to left, #d9b551, #000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+.add_shadow{
+	color: #d9b551 !important;
+	font-size: 16px;
+	text-shadow: 2px 2px 20px #000;
+	font-weight: bold;
+	letter-spacing: 2px;
+	padding-bottom: 5px;
+}
+/* section {
+	position: relative;
+} */
 .page-loader {
 	position: fixed;
 	left: 0px;
@@ -420,7 +478,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 }
 .rotate-box-1 .rotate-box-info {
 	padding-left: 60px;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 
 /* End rotate box-1 */
@@ -788,12 +846,12 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .prices .panel-body .lead {
 	margin: 0;
 	font-size: 48px;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 }
 
 .lead{
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 	color: rgb(253,235,162) !important;
 	letter-spacing: 4px;
 }
@@ -801,6 +859,10 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 .prices .panel-footer {
 	color: rgb(253,235,162) !important;
 	padding: 25px 15px;
+}
+
+.panel-footer{
+	border-top: none !important;
 }
 
 /* panel-default */
@@ -910,12 +972,16 @@ ul.social-list li a i {
 
 ul.contact-address {
 	float: left;
+	font-weight: bold !important;
+	letter-spacing: 2px;
 	width: 100%;
 	padding: 0;
 	margin: 15px 0 ;
 }
 ul.contact-address li {
 	padding: 0 0 20px;
+	font-weight: bold !important;
+	letter-spacing: 2px;
 	margin: 0;
 }
 ul.contact-address li:last-child {
@@ -1233,23 +1299,24 @@ p.subtitle {
 
 .navbarbtn{
 	background-color: rgb(0,0,0) !important;
+	font-weight: bold !important;
 }
 
 .package {
 	padding-top: 10px !important;
 	text-transform: uppercase;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color: rgb(253,235,162) !important;
 }
 
 .service {
 	padding-top: 10px !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color: rgb(253,235,162) !important;
 }
 
 .service-text{
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 	color:rgba(255,255,255,0.7)!important;
 	font-size: 18px !important; 
 }
@@ -1273,30 +1340,63 @@ p.subtitle {
 }
 
 .panel,.panel-default{
-	box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important;
+	/* box-shadow: 0 5px 5px rgb(245,193,82), 0 10px 25px rgb(253,235,162) !important; */
 }
 
 .logo-text{
 	color: rgb(253,235,162) !important;
 	letter-spacing: 10px;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .about{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .about-text{
-	color: rgba(255,255,255,0.7) !important;
-	font-family: "Britannic Bold" !important ;
+	color:  #fff !important;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-family: 'Kudryashev Display' !important ;
+	padding-top: 15px;
 }
+#head_about_text{
+	/* background: #d9b551; 
+	background: -webkit-linear-gradient(to right, #d9b551, #000); 
+	background: linear-gradient(to right, #d9b551, #000);  */
+	height: 50px;
+	letter-spacing: 2px;
+	font-weight: bold;
+	box-shadow: 2px 2px 5px rgb(217,181,81);
+	border-radius: 50% !important;
+	/* border-top-left-radius: 50% !important;
+	border-bottom-left-radius: 50% !important;
+	border-top-right-radius: 50% !important;
+	border-bottom-right-radius: 50% !important; */
+	text-align: center;
+	}
+
 .about-text:hover{
 	color: rgb(253,235,162) !important;
 }
 
 .about-icon{
 	color: rgb(253,235,162) !important;
+}
+
+.about_more{
+	background-color: rgb(0,0,0);
+	font-weight: bold;
+	border: 2px solid rgb(217,181,81);
+	color: rgb(217,181,81);
+	margin-left: 10px !important;
+	margin-top: 10px !important;
+}
+
+.about_more:hover{
+	background-color: rgb(217,181,81);
+	transition-duration: 0.7s;
 }
 
 .fb:hover{
@@ -1321,18 +1421,20 @@ p.subtitle {
 
 .social{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .contact{
 	color: rgb(253,235,162) !important;
-	font-family: "Britannic Bold" !important ;
+	font-weight: bold;
+	font-family: 'Kudryashev Display' !important ;
 }
 
 .contact-btn{
 	background-color: rgba(0, 0, 0) !important;
 	border-color: rgb(253,235,162) !important;
 	font-size: 18px;
+	font-weight: bold;
 }
 
 .contact-btn:hover{
@@ -1356,9 +1458,17 @@ p.subtitle {
 	  overflow: auto;
   }
 
+  .navbar-nav > .lang > a {
+	padding-top: 27px !important;
+  }
+
+  .navbar-nav > .lang_en > a{
+	padding-top: 29px !important;
+  }
   
   .price-btn-one{
 	  margin-top: 35px !important;
+	  font-weight: bold;
   }
 
   .one{
@@ -1413,6 +1523,7 @@ p.subtitle {
 	background-color: rgb(0,0,0) !important;
 	float: right !important;
 	font-size: 19px;
+	font-weight: bold;
 }
 
 .next:hover{
@@ -1428,6 +1539,7 @@ p.subtitle {
 	float: right !important;
 	margin-right: 5px;
 	font-size: 19px;
+	font-weight: bold;
 }
 
 .previous:hover{
@@ -1449,7 +1561,7 @@ transition-duration: 1s;
 .payment-text{
 	font-size: 25px;
 	color: rgb(217,181,81) !important;
-	font-family: "Britannic Bold" !important;
+	font-family: 'Kudryashev Display' !important;
 }
 
 /* .page-wizard{
@@ -1495,11 +1607,34 @@ transition-duration: 1s;
 	position: relative;
 }
 
+
+#video_one{
+	width: 100% !important;
+}
+
+
+#dia {
+	-moz-transform: rotate(45deg);  
+	  -o-transform: rotate(45deg);  
+	-webkit-transform: rotate(45deg);  
+	 -ms-transform: rotate(45deg);  
+		 transform: rotate(45deg); 
+	  }
+
 @media only screen and (max-width: 600px) {
     #text-carousel-intro-section .caption {
 		/* position: relative; */
 		margin-top: 45%;
 		/* margin-top: -70px; */
+	}
+
+
+    .product_margin{
+        margin-top: 80px !important;
+    }
+
+	.package_margin{
+		margin-top: 45px !important;
 	}
   }
   

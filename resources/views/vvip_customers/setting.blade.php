@@ -85,7 +85,7 @@
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-light appear-btn page-scroll" type="submit"
-                                style="float:right; margin-top: 10px;">Confirm</button>
+                                style="float:right; margin-top: 20px;">Confirm</button>
                         </div>
                     </form>
                 </div>

@@ -36,6 +36,8 @@ footer{
     border-bottom-right-radius: 5px !important;
     background-color: rgb(0,0,0) !important;
     color: #fff !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
 .register-input:focus, .login-input:focus {
@@ -44,8 +46,10 @@ footer{
 
 ::placeholder {
     font-weight: bold;
-    font-family: "Britannic Bold";
-  }
+    letter-spacing: 3px;
+    font-size: 15px;
+    font-family: 'Kudryashev Display' !important;
+}
 
   input:-webkit-autofill,
   input:-webkit-autofill:focus {
@@ -64,7 +68,7 @@ footer{
       color: rgb(217,181,81) !important;
       font-weight: bold;
       letter-spacing: 2px;
-      font-family: "Britannic Bold";
+      font-family: 'Kudryashev Display' !important;
   }
 
 
@@ -72,7 +76,7 @@ footer{
     color: rgb(217,181,81) !important;
     font-weight: bold;
     font-size: 18px;
-    font-family: "Britannic Bold";
+    font-family: 'Kudryashev Display' !important;
     display: inline !important;
     text-align: right;
 }
@@ -81,8 +85,10 @@ footer{
   .url{
       /* text-align: center !important; */
       color: rgb(217,181,81,0.8);
-      font-family: "Britannic Bold";
+      font-family: 'Kudryashev Display' !important;
       display:inline-block !important;
+      font-weight: bold;
+      letter-spacing: 3px;
   }
 
   input[type='radio'] { accent-color: rgb(217,181,81,0.8); }
@@ -97,6 +103,8 @@ footer{
     background-color: rgb(0,0,0) !important;
     color: rgb(255,255,255, 0.5)!important;
     display: inline !important;
+    letter-spacing: 3px;
+    font-family: 'Kudryashev Display' !important;
   }
 
   .hr_bottom{
@@ -251,9 +259,10 @@ border: 2px solid rgb(217,181,81) !important;
     text-align: left !important;
     color: rgb(217,181,81) !important;
     font-weight: bold;
-    font-family: "Britannic Bold";
+    font-family: 'Kudryashev Display' !important;
     font-size: 17px;
-    padding-top: 5px !important;
+    letter-spacing: 3px;
+    padding-top: 2px;
 }
 
 .template {
@@ -271,6 +280,7 @@ border: 2px solid rgb(217,181,81) !important;
     border: 2px solid rgb(217,181,81) !important;
     background-color:  rgb(0,0,0) !important;
     font-size: 19px;
+    font-weight: bold;
     margin-right: 5px !important;
     float: right !important;
 }
@@ -296,7 +306,7 @@ border: 2px solid rgb(217,181,81) !important;
     display: inline-block !important;
     vertical-align: middle !important;  
     font-weight: bold;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     display: flex !important;
     justify-content: center !important;
     font-size: 30px;
@@ -332,7 +342,7 @@ span {
 .panel-text{
     color : rgb(217,181,81) !important;
     text-align: center;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
     letter-spacing: 4px;
     font-size: 20px;
@@ -355,7 +365,7 @@ span {
     margin-top: 10px !important;
     transform-style: preserve-3d;
     transform: rotateX(-25deg) rotateY(15deg);
-    box-shadow: rgb(217,181,81) 0px 60px 40px -7px;
+    box-shadow: rgb(217,181,81,0.5) 0px 60px 40px -7px;
     background-color: #fff !important;
 }
 
@@ -386,6 +396,9 @@ span {
     margin-top: 5px !important;
     background-color: rgb(0,0,0) !important;
     border: 2px solid rgb(217,181,81) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    
 }
 
 .zoom:hover{
@@ -395,26 +408,89 @@ span {
 
 #success_p{
     color: rgb(217,181,81) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
     font-size: 15px;
     margin-top: 10px !important;
     letter-spacing: 5px;
 }
 
-#select_card{
+#background_color{
+    width: 99px;
+    height: 90px; 
+    -webkit-appearance: none;
+    border-radius: 50% !important;
+    text-align: center !important;
+    /* align-items: center !important;
+    display: flex !important;
+    justify-content: center !important; */
+    margin-left: 160px !important;
+    overflow: hidden;
+    background-color: rgb(0,0,0) !important;
+    box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
+}
+
+#background_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+#background_color::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+#background_color:focus{
+    border-color: rgb(217,181,81) !important;
+    box-shadow: 2px 2px 10px rgb(255,255,255,0.7) !important;
+}
+
+#text_highlight_color{
+    width: 99px;
+    height: 90px; 
+    -webkit-appearance: none;
+    border-radius: 50% !important;
+    text-align: center !important;
+    /* align-items: center !important;
+    display: flex !important;
+    justify-content: center !important; */
+    margin-left: 160px !important;
+    overflow: hidden;
+    background-color: rgb(0,0,0) !important;
+    box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
+}
+
+#text_highlight_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+#text_highlight_color::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+.select-card{
     margin-top: 5px !important;
     background-color: rgb(0,0,0) !important;
+    font-weight: bold;
+    letter-spacing: 2px;
     border: 2px solid rgb(217,181,81) !important;
 }
 
-#select_card:hover{
+.select-card:hover{
     background-color: rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
 
 #cancel{
     border: 2px solid rgb(217,181,81) !important;
+    font-weight: bold;
+    letter-spacing: 2px;
     margin-top: 4px !important;
 }
 
@@ -432,7 +508,7 @@ span {
 }
 
 #card_blank_back{
-    margin-top: 20.3% !important;
+    margin-top: 19% !important;
     width: 100%;
     height: 250px;
     background-color: #fff;
@@ -445,7 +521,8 @@ span {
     top: 71% !important;
     font-size: 20px !important;
     left: 29% !important;
-    font-family: "Britannic Bold";
+    font-weight: bold;
+	font-family: 'Kudryashev Display' !important;
 }
 
 #normal_default_txt_right{
@@ -453,7 +530,8 @@ span {
     top: 71% !important;
     font-size: 20px !important;
     left: 60% !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
 #card_front{
@@ -462,28 +540,30 @@ height: 250px;
 }
 
 #card_back{
+    width: 100%;
     position:relative;
 }
 
+#text_div{
+    margin-top: 20px;
+}
 
 .front_card_name{
     width: 100%;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     font-weight: bold !important;
     margin: auto;
     position: absolute;
-    top: 53% !important;
-    text-align: center !important;
+    top: 57% !important;
 }
 
 .card_description{
     width: 100%;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     font-weight: bold !important;
     margin: auto;
     position: absolute;
-    top: 60% !important;
-    text-align: center !important;
+    top: 64% !important;
 }
 
 .add_width{
@@ -496,7 +576,7 @@ height: 250px;
 
 #qr_scan{
     position: absolute;
-    top: 67% !important;
+    top: 74% !important;
     left: 41% !important;
 }
 
@@ -506,7 +586,7 @@ height: 250px;
 
 #logo_view{
     position: absolute;
-    top: 25% !important;
+    top: 27% !important;
     left: 42% !important;
 }
 
@@ -514,7 +594,8 @@ height: 250px;
 .edit_name{
     background-color: rgb(0,0,0) !important; 
     border: 2px solid rgb(217,181,81) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     font-size: 15px;
     letter-spacing: 2px;
     border-bottom-left-radius: 15px !important;
@@ -527,7 +608,8 @@ height: 250px;
 .edit_description{
     background-color: rgb(0,0,0) !important; 
     border: 2px solid rgb(217,181,81) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     font-size: 15px;
     letter-spacing: 2px;
     border-bottom-left-radius: 15px !important;
@@ -538,6 +620,8 @@ height: 250px;
 
 .btn-place{
     margin-top: 5px !important;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
   
 .home-col{
@@ -559,7 +643,8 @@ left: 65%;
 
 .action{
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -571,7 +656,8 @@ left: 23%;
 
 .create{
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -583,7 +669,8 @@ left: 65%;
 
 .profile {
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -595,7 +682,8 @@ left: 23%;
 
 .setting{
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -625,12 +713,12 @@ left: 23%;
     font-weight: bold;
     color: #000;
     text-transform: uppercase;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px;
 }
 
 .appear{
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     color: #fff;
     letter-spacing: 2px;
     font-weight: bold;
@@ -639,7 +727,8 @@ left: 23%;
 .appear-btn{
     border: 2px solid rgb(217,181,81) !important;
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     color: #fff !important;
 }
@@ -708,16 +797,39 @@ label.label_file {
 
 .upload_logo_text{
     color: #000 !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
 }
 
+#upload_logo{
+    color: #fff !important;
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
 
+.custom-case{
+    font-size: 20px !important;
+    color : #fff;   
+    padding-right: 5px !important;
+    /* color: rgb(217,181,81) !important; */
+}
+
+#upload_logo:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+    text-shadow: 2px 2px 10px rgb(0,0,0, 0.7);
+}
 
 #up_load_btn{
     background-color: #000 !important;
     border:2px solid #d9b551 !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     color : #fff;
     border-bottom-left-radius: 15px !important;
@@ -731,9 +843,71 @@ label.label_file {
     transition-duration: 1s !important;
 }
 
+
+#editName{
+    color: #fff !important;
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    padding-left: 5px !important;
+}
+
+#editName:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+    text-shadow: 2px 2px 10px rgb(0,0,0, 0.7);
+}
+
+#editDescription{
+    color: #fff !important;
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+#editDescription:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+    text-shadow: 2px 2px 10px rgb(0,0,0, 0.7);
+}
+
+.position_place{
+    color: #fff !important;
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+}
+
+.position_place:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+    text-shadow: 2px 2px 10px rgb(0,0,0, 0.7);
+}
+
+.position-icon{
+    padding-top: 5px;
+}
+
+.fas.fa-arrows-alt{
+    padding-right: 3px !important;
+}
+.fas.fa-caret-right{
+    padding-left: 3px !important;
+}
+
 .action-btn{
     background-color: rgb(0,0,0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     color: #fff !important;
     border-color: rgb(217,181,81) !important;
 }
@@ -852,7 +1026,7 @@ label.label_file {
       text-shadow: -5px 5px 5px rgba(255,255,255,0.2);
       font-weight: bold;
       /* text-transform: capitalize; */
-      font-family: "Britannic Bold";
+      font-family: 'Kudryashev Display' !important;
       letter-spacing: 4px;
   }
 
@@ -862,14 +1036,15 @@ label.label_file {
     font-weight: bold;
     text-transform: capitalize;
     font-size: 20px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px;
   }
   
   
   .edit_profile{
     background-color: rgba(0, 0, 0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
     letter-spacing: 1px;
   }
@@ -888,7 +1063,7 @@ label.label_file {
   .menu_button{
     background-color: rgb(255,255,255) !important;
     color: #000 !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px;
     font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
@@ -900,7 +1075,8 @@ label.label_file {
   } 
   #save_contact{
     background-color: rgba(0, 0, 0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     border: 2px solid rgb(217,181,81) !important;
     color: #fff;
@@ -914,7 +1090,8 @@ label.label_file {
 
 
   #section_cancel{
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     border: 2px solid rgb(217,181,81) !important;
     font-size: 20px;
@@ -922,7 +1099,8 @@ label.label_file {
 
   #ok{
     background-color: rgba(0, 0, 0) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     color: #fff;
     border: 2px solid rgb(217,181,81) !important;
@@ -938,7 +1116,8 @@ label.label_file {
     background-color: rgb(0,0,0) !important;
     border: 2px solid rgb(217,181,81) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
 .cancel_deep{
@@ -946,29 +1125,64 @@ label.label_file {
     border: 2px solid rgb(217,181,81) !important;
     letter-spacing: 2px;
     color: #000 !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
     .just_save{
     background-color: rgb(0,0,0) !important;
     border: 2px solid rgb(217,181,81) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
 .save_all{
     background-color: rgb(0,0,0) !important;
     border: 2px solid rgb(217,181,81) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
 }
 
 .text_color{
-
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
     font-size: 19px;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+
+#text_color{
+    width: 99px;
+    height: 90px; 
+    -webkit-appearance: none;
+    border-radius: 50% !important;
+    text-align: center !important;
+    /* align-items: center !important;
+    display: flex !important;
+    justify-content: center !important; */
+    margin-left: 160px !important;
+    overflow: hidden;
+    background-color: rgb(0,0,0) !important;
+    box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
+}
+
+#text_color::-webkit-color-swatch {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+#text_color::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50% !important;
+    padding: 0;
+}
+
+#text_color:focus{
+    border-color: rgb(217,181,81) !important;
+    box-shadow: 2px 2px 10px rgb(255,255,255,0.7) !important;
 }
 
 .save_all:hover{
@@ -989,7 +1203,8 @@ label.label_file {
 .load-more{
     background-color: rgb(0,0,0) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -1001,7 +1216,8 @@ label.label_file {
 .load-previous{
     background-color: rgb(0,0,0) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -1013,7 +1229,8 @@ label.label_file {
 .save_tree{
     background-color: rgb(0,0,0) !important;
     letter-spacing: 2px;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -1025,7 +1242,8 @@ label.label_file {
 .link_tree_d_btn{
     background-color: rgb(0,0,0) !important;
     border: 2px solid rgb(217,181,81) !important;
-    font-family: "Britannic Bold";
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
     letter-spacing: 2px;
     color: #fff !important;
 }
@@ -1034,8 +1252,145 @@ label.label_file {
     background-color: rgb(217,181,81) !important;
     transition-duration: 0.5s !important;
 }
-  
+
+.payment{
+    border-top-left-radius: 10% !important;
+    border-bottom-right-radius: 10% !important;
+}
+
+#menu_container{
+    height: 500px !important;
+}
+
+
+.team_profile_one, .team_profile_two, .team_profile_three, .team_profile_four{
+    box-shadow: 0px 0px 18px rgb(255,255,255, 0.1);
+    display: block;
+    opacity: 1;
+    transition: .5s ease;
+    /* border: 2px solid rgb(217,181,81,0.2); */
+    backface-visibility: hidden;
+}
+
+.team_profile_one:hover, .team_profile_two:hover, .team_profile_three:hover, .team_profile_four:hover{
+    transform-style: preserve-3d;
+    transform: rotateY(-50deg);
+    transition-duration: 1s;
+}
+
+.team_name_one, .team_name_two, .team_name_three, .team_name_four{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-transform: uppercase;
+    background-color: rgb(0,0,0,0.4);
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.about_video{
+    width: 100%;
+    height: auto;
+    margin-top: 25px;
+}
+
+.team_text{
+    text-shadow: 2px 2px 10px rgb(0,0,0);
+}
+
+.team_div_one, .team_div_two, .team_div_three, .team_div_four{
+    position: relative;
+}
+
+.team_div_one:hover .team_profile_one, .team_div_two:hover .team_profile_two, .team_div_three:hover .team_profile_three, .team_div_four:hover .team_profile_four{
+    opacity: 0.3 !important;
+}
+
+.team_div_one:hover .team_name_one, .team_div_two:hover .team_name_two, .team_div_three:hover .team_name_three, .team_div_four:hover .team_name_four{
+    opacity: 1 !important;
+}
+
+.apps {
+    /* border-radius: 1em/.5em; */
+    border-radius: 50% !important;
+}
+
+.apps:hover{
+    transform-style: preserve-3d;
+    transform: rotateX(25deg);
+    box-shadow: 0px 0px 18px rgb(255,255,255, 0.1);
+    transition-duration: 1s !important;
+}
+
+#typewrite{
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.purp {
+    background-color: rgb(217,181,81);
+    border-radius: 50% !important;
+    border: 2px solid rgb(217,181,81);
+    /* text-shadow: 2px 2px 10px rgb(217,181,81); */
+}
+
+
+.package_text{
+    letter-spacing: 3px;
+    font-weight: bold;
+    line-height: 1.6;
+}
+
+.fas.fa-question{
+    font-size: 12px;
+    color: #fff !important;
+}
+.span_question{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+    border-radius: 50% !important; 
+    width: 24px !important;
+    opacity: 0.5;
+    padding: 0 !important;
+    height: 24px !important;
+    margin-left: 2px !important;
+    display: inline-block;
+}
+
+#fof_bg{
+    background: url('https://cdn1.vectorstock.com/i/thumb-large/73/65/404-error-page-not-found-in-glitch-effect-style-vector-36027365.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 500px;
+}
+
+.mapouter{position:relative;text-align:right;height:500px;width:100% !important;}
+
+.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:100% !important;}
+
+#gmap_canvas{
+    height:500px;
+    width:100% !important;
+}
 @media only screen and (max-width: 425px) {
+    .contact_margin{
+        margin-top: 60px !important;
+    }
+
+    .about_margin{
+        margin-top: 60px !important;
+    }
+    
+    .product_margin{
+        margin-top: 60px !important;
+    }
+
     #home_height{
         height: 510px !important;
     }
@@ -1056,6 +1411,7 @@ label.label_file {
 
     .payment {
         padding-left: 0 !important;
+        /* border-radius: 50% !important; */
     }
 
     .home-col img{
@@ -1106,6 +1462,18 @@ label.label_file {
         transform: rotateX(-35deg) rotateY(20deg);
     }
 
+    #background_color{
+        margin-left: 120px !important;
+    }
+
+    #text_color{
+        margin-left: 120px !important;
+    }
+
+
+    .text-margin{
+        margin-top: 20px;
+    }
   }
 
 

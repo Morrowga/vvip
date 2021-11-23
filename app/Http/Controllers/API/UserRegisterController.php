@@ -133,25 +133,159 @@ class UserRegisterController extends Controller
     }
 
 
-    public function card_designs(){
-        $cards = SmartCardDesign::get();
-        $array = [];
-        foreach($cards as $card){
-            $data = [
-                    "id" => $card->id,
-                    "front_image" => $card->front_image,
-                    "back_image" => $card->back_image,
-                    "package_token" => $card->package_token
-            ];
-            array_push($array, $data);
-        }
+    public function card_designs(Request $request){
+        $take_request = $request->take_request;
+        if($take_request == 'all'){
+            $cards = SmartCardDesign::get();
+            $array = [];
+            foreach($cards as $card){
+                $data = [
+                        "id" => $card->id,
+                        "front_image" => $card->front_image,
+                        "back_image" => $card->back_image,
+                        "package_token" => $card->package_token,
+                        "default_front_transparent" => $card->default_front_transparent,
+                        "default_back_transparent" => $card->default_back_transparent,
+                        "bg_color" => $card->preview_bg_color,
+                        "text_color" => $card->preview_text_color,
+                ];
+                array_push($array, $data);
 
-        $messages = [
-            "status" => "200",
-            "message" => "success",
-            "card_design" => $array
-        ];
-        return $messages;
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array,
+                    "total" => $card->total_transparent
+                ];
+                return $messages;
+            } 
+        } else if($take_request == 'normal'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            if(!$cards->count() <= 0)
+            foreach ($cards as $card) {
+                $data = [
+                        "id" => $card->id,
+                        "front_image" => $card->front_image,
+                        "back_image" => $card->back_image,
+                        "package_token" => $card->package_token,
+                        "default_front_transparent" => $card->default_front_transparent,
+                        "default_back_transparent" => $card->default_back_transparent,
+                        "bg_color" => $card->preview_bg_color,
+                        "text_color" => $card->preview_text_color,
+                ];
+                array_push($array, $data);
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "card_design" => $array,
+                "total" => $card->total_transparent
+            ];
+            return $messages;
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        } else if($take_request == 'standard'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            // return $cards->count();
+            if(!$cards->count() <= 0){
+                foreach ($cards as $card) {
+                    $data = [
+                            "id" => $card->id,
+                            "front_image" => $card->front_image,
+                            "back_image" => $card->back_image,
+                            "package_token" => $card->package_token,
+                            "default_front_transparent" => $card->default_front_transparent,
+                            "default_back_transparent" => $card->default_back_transparent,
+                            "bg_color" => $card->preview_bg_color,
+                            "text_color" => $card->preview_text_color,
+                    ];
+                    array_push($array, $data);
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array,
+                ];
+                return $messages;
+                }
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        } else if($take_request == 'luxury'){
+            $package = Package::where('package_name', $take_request)->first();
+            $cards = SmartCardDesign::where('package_token', $package->token)->get();
+            $array = [];
+            if(!$cards->count() <= 0){
+                foreach ($cards as $card) {
+                    $data = [
+                            "id" => $card->id,
+                            "front_image" => $card->front_image,
+                            "back_image" => $card->back_image,
+                            "package_token" => $card->package_token,
+                            "default_front_transparent" => $card->default_front_transparent,
+                            "default_back_transparent" => $card->default_back_transparent,
+                            "bg_color" => $card->preview_bg_color,
+                            "text_color" => $card->preview_text_color,
+                    ];
+                    array_push($array, $data);
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "card_design" => $array,
+                    "total" => $card->total_transparent
+                ];
+                return $messages;
+                }
+            } else {
+                $messages = [
+                    "status" => "412",
+                    "message" => "no data",
+                ];
+                return $messages;
+            }
+        }
+    }
+
+
+    public function get_card_by_id(Request $request, $id = null){
+        $id = $request->id;
+        $card = SmartCardDesign::where('id', $id)->first();
+        if($card !== null){
+            $data = [
+                "id" => $card->id,
+                "front_image" => $card->front_image,
+                "back_image" => $card->back_image,
+                "package_token" => $card->package_token,
+                "default_front_transparent" => $card->default_front_transparent,
+                "default_back_transparent" => $card->default_back_transparent,
+                "bg_color" => $card->preview_bg_color,
+                "text_color" => $card->preview_text_color,
+            ];
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "data" => $data,
+                "total" => $card->total_transparent
+            ];
+            return $messages;
+        } else {
+            $messages = [
+                "status" => "400",
+                "message" => "bad request",
+            ];
+            return $messages;
+        }
     }
 
     public function saveUser(Request $request){
@@ -216,64 +350,36 @@ class UserRegisterController extends Controller
         if($request->user_id){
             $user = User::where('id', '=', $request->user_id)->first();
             if($user !== null){
-                    $wait_time = WaitingTime::where('user_id', '=', $request->user_id)->first();
-                    if($wait_time === null){
-                        $new_time = date("Y-m-d H:i:s", strtotime('+48 hours'));
-                        $time = new WaitingTime();
-                        $time->user_id = $request->user_id;
-                        $time->target_time = $new_time;
-                        $remaining = strtotime($new_time) - strtotime("now");
-                        // $dtF = new \DateTime('@0');
-                        // $dtT = new \DateTime("@$remaining");
-                        //$dtF->diff($dtT)->format('%a days, %h hours, %i minutes and %s seconds');
-                        $time->time_left =  $remaining;
-                        $time->save();
-    
-                       
-                        $data = HomeInfo::get();
-                        $array = [];
-                        foreach($data as $d){
-                            $home_data = [
-                                "id" => $d->id,
-                                "text" => $d->text,
-                                "image" => $d->image
-                            ];
-                            array_push($array, $home_data);
-                        }
-    
-                        $messages = [
-                            'status' => '200',
-                            'message' => 'success',
-                            'countdown_left' => $time->time_left,
-                            'total_seconds' => $remaining,
-                        ];
-                        return $messages;
-                    } else {
-                        $remaining_update = strtotime($wait_time->time_left) -  strtotime('now');
-                        $update_to = WaitingTime::find($wait_time->id);
-                        $update_to->time_left = $remaining_update;
-                        $update_to->save();
-        
-                        $data = HomeInfo::get();
-                        $array = [];
-                        foreach($data as $d){
-                            $home_data = [
-                                "id" => $d->id,
-                                "text" => $d->text,
-                                "image" => $d->image
-                            ];
-                            array_push($array, $home_data);
-                        }
-                        
-                        $messages = [
-                                'status' => '200',
-                                'message' => 'success',
-                                'countdown_left' => $update_to->time_left,
-                                'total_seconds' => $remaining_update,
-                                'home_page' => $array,
-                            ];
-                            return $messages;
-                    }
+                $data = HomeInfo::get();
+                $array = [];
+                foreach($data as $d){
+                    $home_data = [
+                        "id" => $d->id,
+                        "text" => $d->text,
+                        "image" => $d->image
+                    ];
+                    array_push($array, $home_data);
+                }
+
+                if($user->profile_image === null){
+                    $messages = [
+                        'status' => '200',
+                        'message' => 'success',
+                        'home_page' => $array,
+                        'user_image' => 'images/logo.jpeg',
+                        'user_name' => $user->name,
+                    ];
+                    return $messages;
+                } else {
+                    $messages = [
+                        'status' => '200',
+                        'message' => 'success',
+                        'home_page' => $array,
+                        'user_name' => $user->name,
+                        'user_image' => $user->profile_image
+                    ];
+                    return $messages;
+                }
             } else {
                 $messages = [
                     'status' => '500',

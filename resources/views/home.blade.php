@@ -47,8 +47,18 @@
         </div>
     </div>
 </div> -->
+<<<<<<< HEAD
 
 <div class="container" id="home_height" style="height: 600px;">
+=======
+<div class="container" id="home_height" style="height: 850px;">
+.   <div class="col-md-12">
+        <h1 class="text">Welcome</h1>
+        <div class="d-flex justify-content-center">
+            <p class="text" id="welcome_text"></p>
+        </div>
+    </div>
+>>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
@@ -72,4 +82,28 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 @endsection
+=======
+
+@section('script')
+    <script>
+        var text_url = '{{ url('api/get_datas') }}';
+        var userid = $('#userid').val();
+        console.log(userid);
+         $.ajax({
+           url:text_url,
+           method:'POST',
+           data:{
+                  user_id: userid, 
+                  request_name:"get_welcome"
+                },
+           success:function(response){
+               console.log(response);
+               $('#welcome_text').text(response.data['text']);
+           }
+         });
+    </script>
+@endsection
+@endsection
+>>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
