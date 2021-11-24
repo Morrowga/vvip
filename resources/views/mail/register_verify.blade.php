@@ -74,7 +74,7 @@
         <p class="text_head">Dear <strong class="mail_name">{{ $email_data['name'] }} ,</strong></p>
         <img src="http://vvip9.co/images/logo.jpeg" alt="" class="img_logo">
         <p class="text">သင့်၏ အကောင့်ကိုအတည်ပြုရန် အောက်ပါ လင့်ကို နှိပ်ပါ။</p>
-        <a class="btn-verify" href="http://localhost:8000/verify?code={{ $email_data['verification_code'] }}">Click Here!</a>
+        <a class="btn-verify" href="http://vvip9.co/verify?code={{ $email_data['verification_code'] }}">Click Here!</a>
     </div>
 </body>
 </html>
