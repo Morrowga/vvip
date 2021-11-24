@@ -51,13 +51,13 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll navli" href="/">{{__('website.Home') }}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('about', app()->getLocale()) }}">{{ __('website.About') }}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_packages', app()->getLocale()) }}">{{__('website.Packages')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_product', app()->getLocale()) }}">{{__('website.Features')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('contact', app()->getLocale()) }}">{{__('website.Contact')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('login', app()->getLocale()) }}">{{__('website.login')}}</a></li>
-                            <li class="lang_en"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="30" height="30" alt="" style="padding-top: 0 !important;"></a></li>
-                            <li class="lang"><a href="{{ route(Route::currentRouteName(), 'mm') }}"><img src="../images/myanmar.png" width="35" height="35" alt="" style="margin-bottom: 5px !important;"></a></li>
+                            <li><a class="page-scroll navli" href="{{ route('about') }}">{{ __('website.About') }}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_packages') }}">{{__('website.Packages')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
+                            <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
+                            <!-- <li class="lang_en"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="30" height="30" alt="" style="padding-top: 0 !important;"></a></li> -->
+                            <!-- <li class="lang"><a href="{{ route(Route::currentRouteName(), 'mm') }}"><img src="../images/myanmar.png" width="35" height="35" alt="" style="margin-bottom: 5px !important;"></a></li> -->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
@@ -167,7 +167,20 @@
             function getCheckedSystem() {
             const checkBox = document.getElementById('url_system').checked;   
             if (checkBox === true) {
-                    console.log(document.getElementById("url").value = document.getElementById('url_system').value);
+                    document.getElementById("url").value = document.getElementById('url_system').value;
+                    var url_value = document.getElementById("url").value;
+                    console.log(url_value);
+                    $.ajax({
+                        url: 'api/qr_generate',
+                        method: 'GET',
+                        data: {
+                            url_value
+                        },
+                        success:function(response){
+                            console.log(response);
+                            $('#qr_scan').attr('src', '../storage/customer_qr/' + url_value + '.png');
+                        }
+                    });
                 } else {
                 console.log(false);
             }
@@ -188,7 +201,6 @@
 
             // $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
             // $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
-            $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
 
             $('#move_left').on('click', function(){
                 $('#qr_scan').attr('style', 'left: 10% !important');
@@ -258,8 +270,8 @@
 
             function packageClick(e){
                 document.getElementById('prices-section').style.display = "none";
-                document.getElementById('prices-section-save').style.display = "none";
-                document.getElementById('prices-section-two').style.display = "block";
+                document.getElementById('prices-section-save').style.display = "block";
+                document.getElementById('prices-section-two').style.display = "none";
                 var targetValue = e.target.value;
                 document.getElementById('package_name').value = targetValue;
 

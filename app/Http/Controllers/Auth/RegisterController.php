@@ -73,8 +73,8 @@ class RegisterController extends Controller
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         foreach($packages as $package){
-            if($package->token == $request->package){
-                $user->package = $package->name;
+            if($package->token === $request->package){
+                $user->package = $package->package_name;
             }
         }
         $user->smart_card_design_id = $request->smart_card_design_id;

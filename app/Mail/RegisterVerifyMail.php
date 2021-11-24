@@ -28,6 +28,6 @@ class RegisterVerifyMail extends Mailable
      */
     public function build()
     {
-        return $this->from(env('MAIL_USERNAME'))->subject("Welcome World")->view('mail.register_verify', ['email_data' => $this->email_data]);
+        return $this->from(env('MAIL_USERNAME'))->subject("Welcome to VVIP9")->view('mail.register_verify', ['email_data' => $this->email_data]);
     }
 }

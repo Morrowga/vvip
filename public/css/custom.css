@@ -1378,7 +1378,15 @@ label.label_file {
     height:500px;
     width:100% !important;
 }
+
+#alert_message{
+    font-weight: bold !important;
+    font-size: 16px !important;
+    letter-spacing: 1px !important;
+	font-family: 'Kudryashev Display' !important;
+}
 @media only screen and (max-width: 425px) {
+    
     .contact_margin{
         margin-top: 60px !important;
     }

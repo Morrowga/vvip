@@ -8,18 +8,13 @@
                 <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                     <h2 class="package package_margin">Prices</h2>
                     <div class="devider"></div>
-                    <p class="subtitle">That how much</p>
-                    <div class="form-group">
-                        <div class="col-md-6 col-md-offset-3">
-                            <div class="flash-message">
-                                @foreach(['danger', 'success', 'warning', 'info'] as $msg)
-                                    @if(Session::has('alert-', $msg))
-                                        <p class="alert alert-{{ $msg }}">{{ Session::get('alert-', $msg) }} <a href="" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-                                    @endif
-                                @endforeach
-                            </div>
+                    @foreach(['danger', 'warning', 'success', 'info'] as $msg)
+                        @if(Session::has('alert-' . $msg))
+                        <div class="col-md-12 text-center" style="background-color: #fff !important;">
+                            <p class="alert alert-{{ $msg }}" id="alert_message" style="margin-top: 20px !important;">{{ Session::get('alert-' . $msg ) }} <a href="https://mail.google.com/">Mail</a> <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a></p>
                         </div>
-                    </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -346,7 +341,7 @@
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
-                                                        <img  id="qr_scan" alt="" width="80" height="70">
+                                                        <img  id="qr_scan" alt="" width="70" height="70">
                                                     </div>
                                                     <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
                                                 </div>
@@ -354,9 +349,10 @@
                                         </div>
                                     </div>
                                 </div>      
-                                <div class="form-section">
+                                <div class="form-section" id="pin_section">
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
+                                        <h3 class="text"  style="margin-top: 20px !important;">Create Login Pin</h3>
                                     </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
@@ -496,10 +492,18 @@
 
     @section('script')
     <script>
+        //  $("#url").keyup(function(event) {
+            
+        // });
+
+        // $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
+
+       
+
         $('[data-toggle="popover"]').popover();
         function normal(){
             var i = 0;
-            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png",
+            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngmart.com/files/8/Business-Card-Transparent-PNG.png",
             "https://pngimg.com/uploads/credit_card/credit_card_PNG96.png" ];
             var normal_el = document.getElementById('normal_img');  // el doesn't change
 
