@@ -30,7 +30,7 @@
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $normal->package_name }}</h3>
-                                    <img src="https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png" id="normal_img" alt="" width="300" height="250">
+                                    <img src=".../images/Normal_01.png" id="normal_img" alt="" width="300" height="250">
                                     <h4 class="package">GOLD</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
@@ -503,7 +503,7 @@
         $('[data-toggle="popover"]').popover();
         function normal(){
             var i = 0;
-            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngmart.com/files/8/Business-Card-Transparent-PNG.png",
+            var normal_pics = [ "../images/Normal_01.png", "https://www.pngmart.com/files/8/Business-Card-Transparent-PNG.png",
             "https://pngimg.com/uploads/credit_card/credit_card_PNG96.png" ];
             var normal_el = document.getElementById('normal_img');  // el doesn't change
 
