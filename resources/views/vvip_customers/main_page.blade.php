@@ -19,18 +19,18 @@
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
-                                </video>
+                                </video> -->
                                 <p>To the greatest Journey</p>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video width="500" height="250" id="video_one" loop autoplay muted>
+                                <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
-                                </video>
+                                </video> -->
                                 <p>To the greatest Journey</p>
                             </div>
                         </div>
