@@ -129,35 +129,49 @@
             document.getElementById("main-body").style.display = "block";
         }, 2000);
 
-        $(function(){
-            var $sections = $('.form-section');
+            $(function(){
+                var $sections = $('.form-section');
 
-            function navigateTo(index){
-                $sections.removeClass('current').eq(index).addClass('current');
-                $('.form-navigation .previous').toggle(index>0);
-                var atTheEnd = index >= $sections.length - 1;
-                $('.form-navigation .next').toggle(!atTheEnd);
-                $('.form-navigation .sub-btn').toggle(atTheEnd);
-            }
+                function navigateTo(index){
+                    $sections.removeClass('current').eq(index).addClass('current');
+                    $('.form-navigation .previous').toggle(index>0);
+                    var atTheEnd = index >= $sections.length - 1;
+                    $('.form-navigation .next').toggle(!atTheEnd);
+                    $('.form-navigation .sub-btn').toggle(atTheEnd);
+                }
 
-            function curIndex() {
-                return $sections.index($sections.filter('.current'));
-            }
+                function curIndex() {
+                    return $sections.index($sections.filter('.current'));
+                }
 
-            $('.form-navigation .previous').click(function(){
-                navigateTo(curIndex()-1);
+                $('.form-navigation .previous').click(function(){
+                    navigateTo(curIndex()-1);
+                });
+
+                $('.form-navigation .next').click(function(){
+                        navigateTo(curIndex()+1);
+
+                        if(curIndex() == 2){
+                            var url_value =  document.getElementById("url").value;
+                            $.ajax({
+                                url: 'api/qr_generate',
+                                method: 'GET',
+                                data: {
+                                    url_value
+                                },
+                                success:function(response){
+                                    $('#qr_scan').attr('src', '../storage/customer_qr/' + url_value + '.png');
+                                }
+                            });
+                        }
+                });
+                
+                // $sections.each(function(index,section){
+                //     $(section).find(':input').attr('data-parsley-group', 'block'+index);
+                // });
+
+                navigateTo(0);
             });
-
-            $('.form-navigation .next').click(function(){
-                    navigateTo(curIndex()+1);
-            });
-            
-            // $sections.each(function(index,section){
-            //     $(section).find(':input').attr('data-parsley-group', 'block'+index);
-            // });
-
-            navigateTo(0);
-        });
 
             function focusText(){
                 var textbox = document.getElementById("url");
@@ -168,19 +182,7 @@
             const checkBox = document.getElementById('url_system').checked;   
             if (checkBox === true) {
                     document.getElementById("url").value = document.getElementById('url_system').value;
-                    var url_value = document.getElementById("url").value;
-                    console.log(url_value);
-                    $.ajax({
-                        url: 'api/qr_generate',
-                        method: 'GET',
-                        data: {
-                            url_value
-                        },
-                        success:function(response){
-                            console.log(response);
-                            $('#qr_scan').attr('src', '../storage/customer_qr/' + url_value + '.png');
-                        }
-                    });
+                    document.getElementById("url").disabled = true;
                 } else {
                 console.log(false);
             }
@@ -198,9 +200,17 @@
                 }
             }
 
+            // var timeout = null;
 
-            // $('#card_front').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
-            // $('#card_back').attr('src', 'https://i.ibb.co/1mkpzzm/Untitled-1.png');
+            // $('#url').keyup(function() {
+            //     clearTimeout(timeout);
+
+            //     timeout = setTimeout(function() {
+            //         //do stuff here
+            //         var stuff = $('#url').val();
+            //         console.log(stuff);
+            //     }, 500);
+            // });
 
             $('#move_left').on('click', function(){
                 $('#qr_scan').attr('style', 'left: 10% !important');
@@ -342,10 +352,13 @@
                                 console.log(value['color']['text_color']);
                                 var txt_color = value['color']['text_color'];
                                 $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
-                                $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['front_image']);
-                                if(targetValue != '12345'){
-                                    $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['back_image']);
-                                }
+                                // var tran_data = value['transparent_design'];
+                                // $.each(tran_data, function(i, tran_val) {
+                                $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0][0]['front_image']);
+                                    if(targetValue != '12345'){
+                                        $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0][0]['back_image']);
+                                    }
+                                // });
                                 $('#exampleModal').modal('hide');
                                 $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
                             }
