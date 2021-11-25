@@ -132,7 +132,11 @@ $(function() {
         },
         success:function(response){
             console.log(response.data['self_request_name']);
-            $('#' + response.data['self_request_name']).attr('style', 'background-color: rgb(217,181,81) !important');
+            if(response.data['self_request_name'] == ""){
+                console.log('no data');
+            } else {
+                $('#' + response.data['self_request_name']).attr('style', 'background-color: rgb(217,181,81) !important');
+            }
         }
     });
 

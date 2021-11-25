@@ -8,7 +8,13 @@
                 <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
                     <h2 class="package package_margin">Prices</h2>
                     <div class="devider"></div>
-                    <p class="subtitle">That how much</p>
+                    @foreach(['danger', 'warning', 'success', 'info'] as $msg)
+                        @if(Session::has('alert-' . $msg))
+                        <div class="col-md-12 text-center" style="background-color: #fff !important;">
+                            <p class="alert alert-{{ $msg }}" id="alert_message" style="margin-top: 20px !important;">{{ Session::get('alert-' . $msg ) }} <a href="https://mail.google.com/">Mail</a> <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a></p>
+                        </div>
+                        @endif
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -51,7 +57,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $standard->package_name }}</h3>
-                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" id="standard_img" alt="" width="300" height="250">
+                                    <img src="../images/47-470792_explore-the-world-of-icici-credit-cards-here.png" id="standard_img" alt="" width="300" height="250">
                                     <h4 class="package">DIAMOND</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
@@ -80,7 +86,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $luxury->package_name }}</h3>
-                                    <img src="https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g" alt="" id="luxury_img" width="300" height="250">
+                                    <img src="../images/917-9175739_credit-card.png" alt="" id="luxury_img" width="300" height="250">
                                     <h3 class="package">RUBY</h3>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         
@@ -335,7 +341,7 @@
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
-                                                        <img  id="qr_scan" alt="" width="80" height="70">
+                                                        <img  id="qr_scan" alt="" width="70" height="70">
                                                     </div>
                                                     <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
                                                 </div>
@@ -343,9 +349,10 @@
                                         </div>
                                     </div>
                                 </div>      
-                                <div class="form-section">
+                                <div class="form-section" id="pin_section">
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
+                                        <h3 class="text"  style="margin-top: 20px !important;">Create Login Pin</h3>
                                     </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
@@ -485,10 +492,18 @@
 
     @section('script')
     <script>
+        //  $("#url").keyup(function(event) {
+            
+        // });
+
+        // $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
+
+       
+
         $('[data-toggle="popover"]').popover();
         function normal(){
             var i = 0;
-            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png",
+            var normal_pics = [ "https://freepngimg.com/thumb/credit_card/25824-2-credit-card-transparent-background-thumb.png", "https://www.pngmart.com/files/8/Business-Card-Transparent-PNG.png",
             "https://pngimg.com/uploads/credit_card/credit_card_PNG96.png" ];
             var normal_el = document.getElementById('normal_img');  // el doesn't change
 
@@ -503,8 +518,8 @@
 
         function standard(){
             i = 0;
-            var standard_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
-            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            var standard_pics = ["../images/47-470792_explore-the-world-of-icici-credit-cards-here.png",
+            "../images/credit-card-images-png-1.png",
             "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
             var standard_el = document.getElementById('standard_img'); 
 
@@ -520,8 +535,8 @@
 
         function luxury(){
             i = 0;
-            var luxury_pics = ["https://lh3.googleusercontent.com/proxy/8psprVcUqJegxsv44qNRJRt952vVVvcOxKg-q7N43fyIOHAsxPSVvu1VBTenNSu9VE02p-7wtg6LZJrWUnBk09vlP4prVOXIW38PLuJIb4oCnIo3_8x03Fbtx-URFkOcMiMZv829ErlV-WVAcCO0w-wxNbTLOy76TnDOXOsUHHGyBixTq2a67g",
-            "https://lh3.googleusercontent.com/proxy/57IME2o9CoTtYe_fIff1sJPFDs9xxGNG0w5MXfmlsnEBxDfviZdnw9FDtZKH-hO3C0GrPH-XwZ1Qy_CYFUcLUSbwzkABJXKvY8CCK4M66u18UGVgIoYHV0MT6ZtA9bVxcJyZCVPHVCJ1GdF00pLQ_n7N6zLxLFt8EkFFSSjkXFbhPBMoiSh9",
+            var luxury_pics = ["../images/917-9175739_credit-card.png",
+            "../images/credit-card-images-png-1.png",
             "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
 
             var luxury_el = document.getElementById('luxury_img');

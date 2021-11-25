@@ -142,16 +142,29 @@ class Helper{
                 $get_array = [];
                 if($count > 0){
                     foreach($check_exist_datas as $data){
-                        $data_array = [
-                         "id" => $data->id,
-                         "name" => $data->name,
-                         "icon" => $data->icon,
-                         "active" => $data->active,
-                         "url" => $data->url,
-                         "app_package" => $data->app_package
-                        ];
-                        array_push($get_array, $data_array);
+                        if($data->url === null){
+                            $data_array = [
+                                "id" => $data->id,
+                                "name" => $data->name,
+                                "icon" => $data->icon,
+                                "active" => $data->active,
+                                "url" => "",
+                                "app_package" => $data->app_package
+                               ];
+                               array_push($get_array, $data_array);
+                        }  else {
+                            $data_array = [
+                                "id" => $data->id,
+                                "name" => $data->name,
+                                "icon" => $data->icon,
+                                "active" => $data->active,
+                                "url" => $data->url,
+                                "app_package" => $data->app_package
+                               ];
+                               array_push($get_array, $data_array);
+                        }
                     }
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
@@ -206,6 +219,9 @@ class Helper{
                         "status" => "412",
                         "message" => "data does not exist in this id",
                         "request" => "get_selected_action",
+                        "data" => [
+                            "self_request_name" => ""
+                        ]
                     ];
                     return $messages;
                 }
@@ -217,7 +233,7 @@ class Helper{
                         "name" => $user_check->name,
                         "email" => $user_check->email,
                         "phone_number" => $user_check->phone_number,
-                        "url" => $user_check->url,
+                        "url" => "http://vvip9.co/" . $user_check->url,
                         "profile_image" => $user_check->profile_image,
                         "secure_status" => $user_check->secure_status,
                         "package" => $user_check->package,
@@ -252,11 +268,8 @@ class Helper{
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
 
-                        if($link_tree->link_image === null){
-                            $link_img = "storage/link_tree_images/logo.jpeg";
-                        } else {
-                            $link_img = "storage/link_tree_images/" . $link_tree->link_image;
-                        }
+                        $link_img = "storage/link_tree_images/" . $link_tree->link_image;
+
                         $final_data = [
                           "user_id"  => $link_tree->user_id,
                           "link_image" => $link_img,
@@ -275,26 +288,7 @@ class Helper{
                           "text_highlight_color" => $link_tree->text_highlight_color
                         ];
 
-
-                        $link_img = "storage/link_tree_images/" . $link_tree->link_image;
-                        $final_data = [
-                            "user_id"  => $link_tree->user_id,
-                            "link_image" => $link_img,
-                            "link_one_label" => $de_link_one->label,
-                            "link_one_url" => $de_link_one->link,
-                            "link_two_label" => $de_link_two->label,
-                            "link_two_url" => $de_link_two->link,
-                            "link_three_label" => $de_link_three->label,
-                            "link_three_url" => $de_link_three->link,
-                            "link_four_label" => $de_link_four->label,
-                            "link_four_url" => $de_link_four->link,
-                            "link_five_label" => $de_link_five->label,
-                            "link_five_url" => $de_link_five->link,
-                            "background_color" => $link_tree->background_color,
-                            "text_color" => $link_tree->text_color,
-                            "text_highlight_color" => $link_tree->text_highlight_color
-                            ];
-                            $messages = [
+                        $messages = [
                             "status" => "200",
                             "message" => "success",
                             "request" => "get_link_trees",
@@ -307,7 +301,7 @@ class Helper{
                         $link_img = "images/logo.jpeg";
                         $final_data = [
                             "user_id"  => "",
-                            "link_image" => "",
+                            "link_image" => $link_img,
                             "link_one_label" => "",
                             "link_one_url" => "",
                             "link_two_label" => "",
@@ -373,7 +367,7 @@ class Helper{
 
     public static function get_ip(){
 
-    $ipaddress = '';
+        $ipaddress = '';
        if (isset($_SERVER['HTTP_CLIENT_IP']))
            $ipaddress = $_SERVER['HTTP_CLIENT_IP'];
        else if(isset($_SERVER['HTTP_X_FORWARDED_FOR']))
@@ -526,5 +520,3 @@ class Helper{
 
     }
 }
-
-

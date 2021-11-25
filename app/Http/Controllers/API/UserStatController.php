@@ -23,7 +23,7 @@ class UserStatController extends Controller
             "user_os" => $requset->user_os,
             "user_browser" => $requset->user_browser,
             "user_agent" => $requset->user_agent,
-            "social_media" => $requset->social_media,
+            "social_media" => "http://vvip9.co/" . $requset->social_media,
             "device_ip" => $requset->device_ip,
             "device_id" => $requset->device_id,
             "device_name" => $requset->device_name,

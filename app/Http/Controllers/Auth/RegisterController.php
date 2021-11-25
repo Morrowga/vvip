@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use App\Models\Package;
 use App\Models\DeepLink;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Mail\MailController;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
 class RegisterController extends Controller
@@ -62,25 +64,26 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
-    protected function create(array $data)
+    public function register(Request $request)
     {   
         $packages = Package::get();
 
         $user = new User;
-        $user->name = request()->name;
-        $user->email = request()->email;
-        $user->phone_number = request()->phone_number;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone_number = $request->phone_number;
         foreach($packages as $package){
-            if($package->token == request()->package){
-                $user->package = $package->name;
+            if($package->token === $request->package){
+                $user->package = $package->package_name;
             }
         }
-        $user->smart_card_design_id = request()->smart_card_design_id;
-        $user->url = request()->url;
-        $user->secure_status = request()->secure_status;
-        $user->password = Hash::make(request()->pin);
+        $user->smart_card_design_id = $request->smart_card_design_id;
+        $user->url = $request->url;
+        $user->secure_status = $request->secure_status;
+        $user->password = Hash::make($request->pin);
+        $user->verification_code = sha1(time());
         $user->save();
-
+        
 
         $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
         ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png','com.pinterest'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png','com.linkedin.android'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png','com.tripadvisor.tripadvisor'],
@@ -97,6 +100,25 @@ class RegisterController extends Controller
             $deep_link->save();
         }
 
-        return $user;
+        if($user != null){
+            MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
+            return redirect()->back()->with(session()->flash('alert-success', 'Your Account has been created.Please check email for verification link.'));
+        }
+
+        return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
+    }
+
+
+    public function verifyUser(Request $request){
+        $verification_code =  \Illuminate\Support\Facades\Request::get('code');
+        $user = User::where('verification_code', '=', $verification_code)->first();
+        if($user != null){
+            $user->is_verified = 1;
+            $user->save();
+
+            return redirect()->route('login')->with(session()->flash('alert-success', 'Your Account is verified. Please Login.'));
+        }
+
+        return redirect()->route('login')->with(session()->flash('alert-danger', 'Invalid Code'));
     }
 }

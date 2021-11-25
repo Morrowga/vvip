@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::redirect('/', '/en');
 
 Auth::routes();
 
@@ -31,17 +30,21 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->name('list');
 
+Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
+
 // Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
+    Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
-Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
+    Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
 
-Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
+    Route::get('feature', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
 
-Route::get('feature', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
+    Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
 
-Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
+    Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
 
-Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
-
-Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
+    Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 // });
+
+
+

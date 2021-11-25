@@ -7,13 +7,16 @@ use Carbon\Carbon;
 use App\Models\User;
 use App\Models\Package;
 use App\Models\UserLog;
+use App\Models\DeepLink;
 use App\Models\HomeInfo;
 use App\Models\WaitingTime;
 use Illuminate\Http\Request;
 use App\Models\SmartCardDesign;
 use App\Http\Controllers\Controller;
-use App\Models\DeepLink;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
 {
@@ -30,6 +33,7 @@ class UserRegisterController extends Controller
             $secure_status = $request->secure_status;
             $phone = $country_number . $phone_number;
             $pin = $request->pin;
+            $smart_card_design_id = $request->smart_card_design_id;
             $user_exist_phone = User::where('phone_number', '=', $phone)->first();
             $user_exist_url = User::where('url', '=', $url)->first();
                 if($user_exist_phone === null){
@@ -40,10 +44,11 @@ class UserRegisterController extends Controller
                         $user->email = $email;
                         $user->package = $package_name;
                         $user->package_status = "active";
-                        $user->package_start_date = Carbon::now();
-                        $user->package_end_date = Carbon::now()->addYear(1);
-                        $remain = $user->package_end_date->diffIndays($user->package_start_date);
-                        $user->remaining_days = $remain;
+                        $user->smart_card_design_id = $smart_card_design_id;
+                        // $user->package_start_date = Carbon::now();
+                        // $user->package_end_date = Carbon::now()->addYear(1);
+                        // $remain = $user->package_end_date->diffIndays($user->package_start_date);
+                        // $user->remaining_days = $remain;
                         $user->url = $url;
                         $user->secure_status = $secure_status;
                         $user->password = Hash::make($pin);
@@ -396,13 +401,20 @@ class UserRegisterController extends Controller
         }
     }
 
-    // public function timeleft(Request $request){
-    //     if($request->user_id){
-    //         $user = 
-    //         if()
-    //     }
-    //     $save_time = WaitingTime::)
-    // }
+    public function qr_generate(Request $request){
+        $url = $request->url_value;
+        $get_qr = QrCode::size(500)->style('round')->format('png')->merge('images/BoxPacking-Design.png', 0.3, true)->errorCorrection('H')->generate("http://vvip9.co/" . $url, public_path('storage/customer_qr/' . $url . '.png'));
+
+        // return response($get_qr)->header('Content-type','image/png');
+        return $get_qr;
+        // $messages =  [
+        //     "status" => "200",
+        //     "message" => "success",
+        //     "qr" => $qr
+        // ];
+        
+        // return $messages;
+    }
 
    
     /**

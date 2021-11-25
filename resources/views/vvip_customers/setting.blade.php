@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="d-flex justify-content-center">
-        <div class="col-md-6 col-md-3 text-center">
+        <!-- <div class="col-md-6 col-md-3 text-center">
             <h4 class="text text-center">Languages</h4>
             <button class="btn btn-light">
                 English
@@ -48,7 +48,7 @@
             <button class="btn btn-light">
                 Myanmar
             </button>
-        </div>
+        </div> -->
     </div>
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3 mt-4">
