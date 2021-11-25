@@ -127,7 +127,7 @@ class Helper{
                             "country" => ""
                         ],
                     ];
-    
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
@@ -252,7 +252,6 @@ class Helper{
                         $de_link_four = json_decode($link_tree->link_four);
                         $de_link_five = json_decode($link_tree->link_five);
 
-<<<<<<< HEAD
                         if($link_tree->link_image === null){
                             $link_img = "storage/link_tree_images/logo.jpeg";
                         } else {
@@ -276,8 +275,7 @@ class Helper{
                           "text_highlight_color" => $link_tree->text_highlight_color
                         ];
 
-                        $messages = [
-=======
+
                         $link_img = "storage/link_tree_images/" . $link_tree->link_image;
                         $final_data = [
                             "user_id"  => $link_tree->user_id,
@@ -297,7 +295,6 @@ class Helper{
                             "text_highlight_color" => $link_tree->text_highlight_color
                             ];
                             $messages = [
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
                             "status" => "200",
                             "message" => "success",
                             "request" => "get_link_trees",
@@ -350,27 +347,26 @@ class Helper{
                         "user_name" => $user->name,
                         "text" => "Hello " . ucfirst($user->name) . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP."
                     ];
-        
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
                         "request" => "get_welcome",
                         "data" => $data
                      ];
-        
+
                      return $messages;
                 } else {
                     $messages = [
                         "status" => "412",
                         "message" => "User does not exist."
                      ];
-        
+
                      return $messages;
                 }
             }
         }
     }
-<<<<<<< HEAD
     public static function get_user_agent(){
         return $_SERVER['HTTP_USER_AGENT'];
     }
@@ -530,7 +526,5 @@ class Helper{
 
     }
 }
-=======
-}
 
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
+

@@ -3,6 +3,7 @@
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Middleware\Locale;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +31,7 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->name('list');
 
-Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
+// Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
 
 Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
@@ -43,13 +44,4 @@ Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->
 Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
 
 Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
-
-
-<<<<<<< HEAD
-
-
-
-
-=======
-});
->>>>>>> 0b8d0a9a332125293c7e3b59ad94b919fd9fa478
+// });
