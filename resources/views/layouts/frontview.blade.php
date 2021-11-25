@@ -276,19 +276,17 @@
                 document.getElementById('package_name').value = targetValue;
 
                 $.ajax({
-                url: '/api/get_cards',
-                type: 'post',
-                data:{
-                  take_request:"all"
-                },
+                url: 'http://admin.vvip9.co/api/card_design',
+                type: 'get',
                 success: function(response){
-                    data = response.card_design;
+                    console.log(response);
+                    data = response.data;
                     console.log(response);
                     $.each(data, function(i, value) {
                         if(value['package_token'] == targetValue){
                             console.log(value['package_token']);
                             $('#column-image').append(`<div class="col-md-4">
-                            <img src="../images/` + value['front_image'] + `" id="image_data" alt="" width="310" height="200">
+                            <img src="http://admin.vvip9.co/card_collection/` + value['preview_design']['front_image'] + `" id="image_data" alt="" width="310" height="200">
                             <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
                                 <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">Zoom Card</button>
                                 <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">Select Card</button>
@@ -324,13 +322,13 @@
                         $('.zoom').on('click', function(e) {
                             let id = e.target.id;
                             if(id == value['id']){
-                                console.log(value['back_image']);
-                                    $('#front_img').attr('src', "../images/" + value['front_image']);
+                                console.log(value['preview_design']['back_image']);
+                                    $('#front_img').attr('src', "http://admin.vvip9.co/card_collection/" + value['preview_design']['front_image']);
                                 if(targetValue == "12345"){
                                     $('#back_img').attr('src', "../images/Back.png");
                                 } else {
                                     console.log(value['default_back_transparent']);
-                                    $('#back_img').attr('src', "../images/" + value['back_image']);
+                                    $('#back_img').attr('src', "http://admin.vvip9.co/card_collection/" + value['preview_design']['back_image']);
                                 }
                                 $('#exampleModal').modal('show');
                             }
@@ -341,12 +339,12 @@
                             console.log(target);
                             $('#card_design_id').val(target);
                             if(target == value['id']){
-                                console.log(value['text_color']);
-                                var txt_color = value['text_color'];
-                                $('#card_blank_front').attr('style', 'background-color:'+ value['bg_color'] +'!important;');
-                                $('#card_front').attr('src', "../images/" + value['default_front_transparent']);
+                                console.log(value['color']['text_color']);
+                                var txt_color = value['color']['text_color'];
+                                $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
+                                $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['front_image']);
                                 if(targetValue != '12345'){
-                                    $('#card_back').attr('src', "../images/" + value['default_back_transparent']);
+                                    $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['back_image']);
                                 }
                                 $('#exampleModal').modal('hide');
                                 $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();

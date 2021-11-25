@@ -36,7 +36,7 @@ Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::c
 
 Route::get('cd_timer', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
-Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
+// Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
 
 Route::post('get_card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'get_card_by_id']);
 
