@@ -16,7 +16,8 @@ class CreateViewCountsTable extends Migration
         Schema::create('view_counts', function (Blueprint $table) {
             $table->id();
             $table->string('page_name');
-            $table->bigInteger('view_count');
+            $table->bigInteger('website')->default(0);
+            $table->bigInteger('mobile')->default(0);
             $table->timestamps();
         });
     }

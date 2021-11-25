@@ -14,20 +14,21 @@ class Helper{
     public static function countView()
     {
         $exit_page_name = ViewCount::get();
+        $new_page = str_replace('http://localhost:8000/','',Request::url());
         foreach($exit_page_name as $ex_pg_name){
-            if($ex_pg_name->page_name == Request::url()){
+            if($ex_pg_name->page_name == $new_page){
                 $pg_name = $ex_pg_name->page_name;
             }
         }
         if(!empty($pg_name)){
             $count_p = ViewCount::where('page_name',$pg_name)->first();
             // dd($count_p);
-                $count_p->increment('view_count');
+                $count_p->increment('website');
                 $count_p->update();
         }else{
             $count_p = new ViewCount();
-            $count_p->page_name = Request::url();
-            $count_p->view_count = $count_p->increment('view_count');
+            $count_p->page_name = $new_page;
+            $count_p->website = $count_p->increment('website');
             $count_p->save();
         }
     }

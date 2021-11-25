@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
+
 use Carbon\Carbon;
 use App\Models\User;
 use App\Helpers\Helper;
@@ -10,6 +10,7 @@ use App\Models\Package;
 use App\Models\HomeInfo;
 use App\Models\UserStat;
 use App\Models\ViewCount;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Request as FacadesRequest;
 
