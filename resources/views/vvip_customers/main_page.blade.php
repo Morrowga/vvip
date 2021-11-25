@@ -64,43 +64,20 @@
         </section> -->
 
         <!-- Begin counter up -->
-        <!-- <section id="counter-section" style="margin-top: 10px !important;">
-            <div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
-                <div class="cover"></div>
-                <div class="page-header-wrapper">
-                    <div class="container">
-                        <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                            <h2>Some Fun Facts</h2>
-                            <div class="devider"></div>
-                            <p class="subtitle">Before anyone is not told</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="fact text-center col-md-6 col-sm-6">
-                            <div class="fact-inner">
-                                <i class="fa fa-users fa-3x counter-icon"></i>
-                                <div class="extra-space-l"></div>
-                                <span class="counter">6666</span>
-                                <p class="lead">Total Users</p>
-                            </div>
-                        </div>
-
-                        <div class="fact text-center col-md-6 col-sm-6">
-                            <div class="fact-inner">
-                                <i class="fa fa-heart fa-3x counter-icon"></i>
-                                <div class="extra-space-l"></div>
-                                <span class="counter">6666</span>
-                                <p class="lead">Satisfied Users</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- <section id="counter-section" style="margin-top: 10px !important; height: 900px;"> -->
+            <div id="background-wrap" style="height: 1000px;">
+                <div class="bubble x1"></div>
+                <div class="bubble x2"></div>
+                <div class="bubble x3"></div>
+                <div class="bubble x4"></div>
+                <div class="bubble x5"></div>
+                <div class="bubble x6"></div>
+                <div class="bubble x7"></div>
+                <div class="bubble x8"></div>
+                <div class="bubble x9"></div>
+                <div class="bubble x10"></div>
             </div>
-        </section> -->
+        <!-- </section> -->
         <!-- End counter up -->
 
          <!-- Begin about section -->
@@ -236,22 +213,22 @@
                         <div class="col-sm-6">
                             <div class="contact-form">
                                 <h4 class="contact">{{__('website.write_to_us')}}</h4>
-                                <form role="form" id="submit-contact-form" method="POST">
+                                <!-- <form role="form" id="submit-contact-form" method="POST"> -->
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
+                                        <input type="text" name="name" id="c_name" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
+                                        <input type="email" name="email" id="e_name" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="subject" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
+                                        <input type="text" name="subject" id="s_name" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea name="message" class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
+                                        <textarea name="message" id="m_name" class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
                                     </div>
-                                    <input type="hidden" id="tokenn" name="_token" value="{{ csrf_token() }}">
-                                    <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
-                                </form>
+                                    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                    <button class="btn wow bounceInRight contact-btn" id="contact_btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
+                                <!-- </form> -->
                             </div>
                         </div>
 
@@ -265,29 +242,80 @@
         <div class="col-md-12" style="height: 80px;">
             <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
         </div>
+
+        <div class="modal fade deep" id="submit_contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header" style="border-bottom: none !important;">
+                    <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center" style="border-top: none !important;">
+                    <div class="d-flex justify-content-center text-center">
+                        <img class="text-center" src="../images/logo.jpeg" alt="" width="100" height="100">
+                    </div>
+                    <h3 class="text text-center mt-2" id="sub_contact"></h3>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary btn-block" id="ok" data-bs-dismiss="modal">Ok</button>
+                </div>
+                </div>
+            </div>
+        </div>
         <!-- End contact section -->
 @section('script')
-<script>
-    $('#submit-contact-form').submit(function(e){ 
+<script type="text/javascript">
+    // $(document).ready(function(){
+    //     function getCookie(c_name) {
+    //     if(document.cookie.length > 0) {
+    //         c_start = document.cookie.indexOf(c_name + "=");
+    //         if(c_start != -1) {
+    //             c_start = c_start + c_name.length + 1;
+    //             c_end = document.cookie.indexOf(";", c_start);
+    //             if(c_end == -1) c_end = document.cookie.length;
+    //             return unescape(document.cookie.substring(c_start,c_end));
+    //         }
+    //     }
+    //     return "";
+    // }
+
+    $('#contact_btn').on('click', function(e){ 
         e.preventDefault();
-        var contact_url =  `{{ url('http://admin.vvip9.co/api/contact_info') }}`;
-        var token =  $('#tokenn').val();
-        let formData = new FormData(this);
+        // var contact_url =  `{{ url('http://admin.vvip9.co/api/contact_info') }}`;
+        var token =  $('#token').val();
+        // let formData = new FormData(this);
+        var name = $('#c_name').val();
+        var email = $('#e_name').val();
+        var subject = $('#s_name').val();
+        var message = $('#m_name').val();
 
         $.ajax({
-            url: contact_url,
+            url: "http://admin.vvip9.co/api/contact_info",
             method:'POST',
-            processData: false,
             headers: {
-                'Access-Control-Allow-Headers' : "Content-Type, X-CSRF-TOKEN",
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             },
-            data: formData,
+            data: {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            },  
             success:function(response){
-                console.log(response.message);
-            }
+                console.log(response);
+                $('#sub_contact').html(`Hello <strong id="user_contact">` + response.data['name'] + `</strong>. We recieved your information. We will contact to ` + response.data['email'] + ` soon. Thanks in advanced.`);
+                $('#submit_contact').modal('show');
+                $('#ok').on('click', function(){
+                    $('#submit_contact').modal('hide');
+                });
+                e.preventDefault();
+            },
+            // error:function(response){
+            //     console.log(response);
+            // } 
             });  
-    });
+        });
+    // });
 </script>
 @endsection
 @endsection
