@@ -19,6 +19,10 @@
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg" id="video_one">
+                                </video>
                                 <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
@@ -27,6 +31,10 @@
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg" id="video_one">
+                                </video>
                                 <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
@@ -118,7 +126,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatisvvip')}}</h4>
-                                    <img src="https://i.pinimg.com/564x/93/04/93/930493acc7770c5b263be85cd03d1cca.jpg" alt="" width="300" height="350">
+                                    <img src="../images/What-VVIP.png" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatvvip_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -130,7 +138,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatissmartcard')}}</h4>
-                                    <img src="https://i.pinimg.com/236x/27/23/eb/2723eb0845417c35713e16bf6516ed46.jpg" alt="" width="300" height="350">
+                                    <img src="../images/What-Smart-Card.png" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -142,7 +150,7 @@
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
-                                    <img src="https://i.pinimg.com/236x/7b/3b/bc/7b3bbcb67eb19a2020bdcfb7f5f82fc0.jpg" alt="" width="300" height="350">
+                                    <img src="../images/Useful-VVIP9.png" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
                                     </p>
                                 </div>
@@ -228,19 +236,20 @@
                         <div class="col-sm-6">
                             <div class="contact-form">
                                 <h4 class="contact">{{__('website.write_to_us')}}</h4>
-                                <form role="form">
+                                <form role="form" id="submit-contact-form" method="POST">
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
+                                        <input type="text" name="name" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
+                                        <input type="email" name="email" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
+                                        <input type="text" name="subject" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
+                                        <textarea name="message" class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
                                     </div>
+                                    <input type="hidden" id="tokenn" name="_token" value="{{ csrf_token() }}">
                                     <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
                                 </form>
                             </div>
@@ -259,7 +268,26 @@
         <!-- End contact section -->
 @section('script')
 <script>
+    $('#submit-contact-form').submit(function(e){ 
+        e.preventDefault();
+        var contact_url =  `{{ url('http://admin.vvip9.co/api/contact_info') }}`;
+        var token =  $('#tokenn').val();
+        let formData = new FormData(this);
 
+        $.ajax({
+            url: contact_url,
+            method:'POST',
+            processData: false,
+            headers: {
+                'Access-Control-Allow-Headers' : "Content-Type, X-CSRF-TOKEN",
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: formData,
+            success:function(response){
+                console.log(response.message);
+            }
+            });  
+    });
 </script>
 @endsection
 @endsection
