@@ -3,6 +3,7 @@
 use App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Middleware\Locale;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------

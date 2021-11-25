@@ -127,7 +127,7 @@ class Helper{
                             "country" => ""
                         ],
                     ];
-    
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
@@ -341,27 +341,26 @@ class Helper{
                         "user_name" => $user->name,
                         "text" => "Hello " . ucfirst($user->name) . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP."
                     ];
-        
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
                         "request" => "get_welcome",
                         "data" => $data
                      ];
-        
+
                      return $messages;
                 } else {
                     $messages = [
                         "status" => "412",
                         "message" => "User does not exist."
                      ];
-        
+
                      return $messages;
                 }
             }
         }
     }
-
     public static function get_user_agent(){
         return $_SERVER['HTTP_USER_AGENT'];
     }
