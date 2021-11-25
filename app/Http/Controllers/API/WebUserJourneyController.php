@@ -37,6 +37,7 @@ class WebUserJourneyController extends Controller
         $standard = $packages[1];
         $luxury = $packages[2];
         $cards = SmartCardDesign::get();
+        $count = Helper::countView();
         return view('vvip_customers.package')->with('normal', $normal)->with('standard', $standard)->with('luxury', $luxury)->with('cards', $cards);
     }
 
@@ -65,6 +66,8 @@ class WebUserJourneyController extends Controller
 
         $user_stat->save();
 
+        $count = Helper::countView();
+
 
         return view('vvip_customers.main_page');
     }
@@ -84,10 +87,12 @@ class WebUserJourneyController extends Controller
         $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $user_stat->save();
+        $count = Helper::countView();
+
 
         return view('vvip_customers.product');
     }
-    
+
     public function about(){
         $user_stat = new UserStat();
         $user_stat->user_id = (Auth::user()) ? Auth::id() : NULL;
@@ -103,6 +108,8 @@ class WebUserJourneyController extends Controller
         $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $user_stat->save();
+        $count = Helper::countView();
+
 
         return view('vvip_customers.about');
     }
@@ -122,6 +129,7 @@ class WebUserJourneyController extends Controller
         $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
 
         $user_stat->save();
+        $count = Helper::countView();
 
         return view('vvip_customers.contact');
     }

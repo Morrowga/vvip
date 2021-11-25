@@ -77,5 +77,6 @@ Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::clas
 
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 
+Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'view_count']);
 
 

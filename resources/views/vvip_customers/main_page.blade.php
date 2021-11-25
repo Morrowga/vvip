@@ -38,7 +38,7 @@
                 </div>
         </section>
         <!-- End text carousel intro section -->
-            
+
 
         <!-- Begin Services -->
         <!-- <section id="services-section" class="page text-center">
@@ -54,9 +54,9 @@
                 </div>
             </div>
         </section> -->
-                
+
         <!-- Begin counter up -->
-        <!-- <section id="counter-section" style="margin-top: 10px !important;">                					
+        <!-- <section id="counter-section" style="margin-top: 10px !important;">
             <div id="counter-up-trigger" class="counter-up text-white parallax counter-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/counter-bg.jpg);">
                 <div class="cover"></div>
                 <div class="page-header-wrapper">
@@ -89,8 +89,8 @@
                                 <p class="lead">Satisfied Users</p>
                             </div>
                         </div>
-                    </div> 
-                </div> 
+                    </div>
+                </div>
             </div>
         </section> -->
         <!-- End counter up -->
@@ -144,7 +144,7 @@
                                     <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
                                     <img src="https://i.pinimg.com/236x/7b/3b/bc/7b3bbcb67eb19a2020bdcfb7f5f82fc0.jpg" alt="" width="300" height="350">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
-                                    </p>                                
+                                    </p>
                                 </div>
                             </a>
                         </div>
@@ -159,17 +159,17 @@
                     <div class="text-center">
                         <!-- <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a> -->
                     </div>
-                </div> <!-- /.container -->  
-                                
+                </div> <!-- /.container -->
+
             </div>
             <!-- End rotate box-1 -->
             <div class="extra-space-l"></div>
       </section>
       <!-- End about section -->
-            
+
         <!-- Begin social section -->
         <section id="social-section">
-        
+
              <!-- Begin page header-->
             <div class="page-header-wrapper">
                 <div class="container">
@@ -181,7 +181,7 @@
                 </div>
             </div>
             <!-- End page header-->
-            
+
             <div class="container">
                 <ul class="social-list">
                     <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" style="border-radius: 50% !important;" data-wow-delay="0.3s"><span class="fb" style="border-radius: 50% !important;"><i class="fab fa-facebook" style="border-radius: 50% !important;"></i></span></a></li>
@@ -190,14 +190,14 @@
                     <li> <a href="#" class="rotate-box-1 square-icon text-center wow zoomIn" data-wow-delay="0.4s"><span class="youtube" style="border-radius: 50% !important;"><i class="fab fa-youtube"></i></span></a></li>
                 </ul>
             </div>
-            
+
         </section>
         <!-- End social section -->
-            
+
         <!-- Begin contact section -->
         <section id="contact-section" class="page text-white parallax contact-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/map-bg.jpg);">
             <div class="cover"></div>
-        
+
              <!-- Begin page header-->
             <div class="page-header-wrapper">
                 <div class="container">
@@ -209,11 +209,11 @@
                 </div>
             </div>
             <!-- End page header-->
-            
+
             <div class="contact wow bounceInRight" data-wow-delay="0.4s">
                 <div class="container">
                     <div class="row">
-                    
+
                         <div class="col-sm-6">
                             <div class="contact-info">
                                 <h4 class="contact">{{__('website.our_address')}}</h4>
@@ -224,7 +224,7 @@
                                 </ul>
                             </div>
                         </div>
-                    
+
                         <div class="col-sm-6">
                             <div class="contact-form">
                                 <h4 class="contact">{{__('website.write_to_us')}}</h4>
@@ -243,9 +243,9 @@
                                     </div>
                                     <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
                                 </form>
-                            </div>	
+                            </div>
                         </div>
-                                                                            
+
                     </div> <!-- /.row -->
                     <!-- <div class="col-md-12">
                         <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
@@ -259,7 +259,7 @@
         <!-- End contact section -->
 @section('script')
 <script>
-  
+
 </script>
 @endsection
 @endsection
