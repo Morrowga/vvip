@@ -33,6 +33,7 @@ class UserRegisterController extends Controller
             $secure_status = $request->secure_status;
             $phone = $country_number . $phone_number;
             $pin = $request->pin;
+            $smart_card_design_id = $request->smart_card_design_id;
             $user_exist_phone = User::where('phone_number', '=', $phone)->first();
             $user_exist_url = User::where('url', '=', $url)->first();
                 if($user_exist_phone === null){
@@ -43,10 +44,11 @@ class UserRegisterController extends Controller
                         $user->email = $email;
                         $user->package = $package_name;
                         $user->package_status = "active";
-                        $user->package_start_date = Carbon::now();
-                        $user->package_end_date = Carbon::now()->addYear(1);
-                        $remain = $user->package_end_date->diffIndays($user->package_start_date);
-                        $user->remaining_days = $remain;
+                        $user->smart_card_design_id = $smart_card_design_id;
+                        // $user->package_start_date = Carbon::now();
+                        // $user->package_end_date = Carbon::now()->addYear(1);
+                        // $remain = $user->package_end_date->diffIndays($user->package_start_date);
+                        // $user->remaining_days = $remain;
                         $user->url = $url;
                         $user->secure_status = $secure_status;
                         $user->password = Hash::make($pin);
