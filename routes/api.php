@@ -73,7 +73,8 @@ Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::clas
 // });
 
 //user stat
-Route::get('/statistics/{id}',[App\Http\Controllers\API\UserStatController::class,'user_stat']);
+// Route::get('/statistics/{id}',[App\Http\Controllers\API\UserStatController::class,'user_stat']);
+
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 
 

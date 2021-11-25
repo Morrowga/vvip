@@ -401,7 +401,7 @@ class UserRegisterController extends Controller
 
     public function qr_generate(Request $request){
         $url = $request->url_value;
-        $get_qr = QrCode::size(500)->style('round')->format('png')->backgroundColor(217,181,81)->merge('images/BoxPacking-Design.png', 0.3, true)->errorCorrection('H')->generate("http://vvip9.co/" . $url, public_path('storage/customer_qr/' . $url . '.png'));
+        $get_qr = QrCode::size(500)->style('round')->format('png')->merge('images/BoxPacking-Design.png', 0.3, true)->errorCorrection('H')->generate("http://vvip9.co/" . $url, public_path('storage/customer_qr/' . $url . '.png'));
 
         // return response($get_qr)->header('Content-type','image/png');
         return $get_qr;
