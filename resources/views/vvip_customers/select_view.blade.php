@@ -277,7 +277,7 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    var url = "intent://" + host +"#Intent;package=com.facebook.katana;scheme=https;end";
+                                    var url = "intent://" + host +"#Intent;package=com.google.android.youtube;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                 } else {
                                     var url = "https://www.youtube.com/channel/" + host;
