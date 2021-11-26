@@ -339,7 +339,10 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300); 
-                                } else {
+                                } else if(isAndroid){
+                                    var url = "intent://www.pinterest.com/" + host +"#Intent;package=com.pinterest;scheme=https;end";
+                                    $('#deeplink').attr('href', url).show();
+                                 } else {
                                     var url = "https://www.linkedin.com/in/" + host;
                                     window.location.replace(url);
                                 } 
