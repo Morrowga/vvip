@@ -465,7 +465,7 @@
                             alert('s');
                         } else if(isAndroid){
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
-                            var inMobile = "intent://" + send_email_to +"#Intent;scheme=https;package=com.google.android.gm;end";
+                            var inMobile = "intent://" + send_email_to +"#Intent;package=com.google.android.gm;scheme=googlemail;end";
                             window.location.replace(send_email_to);
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
