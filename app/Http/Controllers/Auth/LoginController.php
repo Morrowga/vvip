@@ -56,7 +56,7 @@ class LoginController extends Controller
             $user_data = User::where('phone_number', $user_data_phone)->first();
             if(!empty($user_data)){
                 if(Hash::check($user_data_password, $user_data->password) !== false){
-                    if($user_data->package_status === "active"){
+                    // if($user_data->package_status === "active"){
                         if($user_data->is_verified == 1){
                             $messages = [
                                 'user_id' => $user_data->id,
@@ -73,14 +73,14 @@ class LoginController extends Controller
                             return $messages;
                         }
                        
-                    } else {
-                        $messages = [
-                            'status' => "403" ,
-                            'data' => false,
-                            'message' => 'Your package is expired.'
-                        ];
-                        return $messages;
-                    }
+                    // } else {
+                        // $messages = [
+                        //     'status' => "403" ,
+                        //     'data' => false,
+                        //     'message' => 'Your package is expired.'
+                        // ];
+                        // return $messages;
+                    // }
                 } else {
                     $messages = [
                         'status' => '403',
