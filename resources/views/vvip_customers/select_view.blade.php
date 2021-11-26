@@ -463,9 +463,10 @@
                         var isAndroid = /android/i.test(navigator.userAgent);  
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if(isIOS){
-                            alert('s');
+                            var ios_url = "googlegmail://co?to="+ email_address +"&subject="+ email_subject +"&body=" + email_body;
+                            window.location = ios_url;
                         } else if(isAndroid){
-                            var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;package=com.google.android.gm;scheme=https;end";
+                            var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;package=com.google.android.gm;scheme=inbox-gmail;end";
                             $('#email_click').attr('href', inMobile);
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
