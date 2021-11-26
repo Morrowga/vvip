@@ -1125,6 +1125,10 @@ label.label_file {
     border: 2px solid rgb(217,181,81) !important;
 }
 
+#email_click{
+    border: 2px solid rgb(217,181,81) !important;
+}
+
 .cancel_deep{
     background-color: rgb(255,255,255) !important;
     border: 2px solid rgb(217,181,81) !important;
