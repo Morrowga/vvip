@@ -576,7 +576,7 @@ height: 250px;
 
 #qr_scan{
     position: absolute;
-    top: 77% !important;
+    top: 75% !important;
     left: 41% !important;
 }
 
@@ -1332,6 +1332,14 @@ label.label_file {
     letter-spacing: 3px;
 }
 
+.sure{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    color: rgb(217,181,81);
+}
+
 .purp {
     background-color: rgb(217,181,81);
     border-radius: 50% !important;
@@ -1339,6 +1347,17 @@ label.label_file {
     /* text-shadow: 2px 2px 10px rgb(217,181,81); */
 }
 
+#check_confirm{
+    border: 2px solid rgb(217,181,81);
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+#check_confirm:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
 
 .package_text{
     letter-spacing: 3px;

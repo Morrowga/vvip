@@ -115,12 +115,10 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
         <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@2.0.0/dist/YouTubeToHtml5.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script> -->
 		<!-- <script src="../js/smoothscroll.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/html-to-image@1.9.0/lib/index.min.js"></script>
-		<!-- Theme JS -->
 		<script src="../js/theme.js"></script>
         @yield('script')
         <script>
@@ -167,16 +165,24 @@
 
                         if(curIndex() == 4){
                             $('#confirm_modal').modal('show');
-                            var node = document.getElementById('card_blank_front');
-                            htmlToImage.toPng(node)
-                            .then(function (dataUrl) {
-                                var img = new Image();
-                                img.src = dataUrl;
-                                $('#custom_fr').append(img);
-                            })
-                            .catch(function (error) {
-                                console.error('oops, something went wrong!', error);
+                            $('.sure').text('Are you sure for this. Confirm ?');
+                            $('#check_confirm').on('click', function(){
+                                $('#confirm_modal').modal('hide');
                             });
+
+                            $('#cancel_confirm').on('click', function(){
+                                navigateTo(curIndex()-1);
+                            })
+                            // var node = document.getElementById('card_blank_front');
+                            // domtoimage.toPng(node)
+                            //     .then(function (dataUrl) {
+                            //         var img = new Image();
+                            //         img.src = dataUrl;
+                            //         document.getElementById('custom_fr').appendChild(img);
+                            //     })
+                            //     .catch(function (error) {
+                            //         console.error('oops, something went wrong!', error);
+                            //     });
                         }
                 });
                 
@@ -379,9 +385,6 @@
                         });  
                     });
                 },
-                error:function(){
-                    alert("failure");
-                }
             });
             }  
 
