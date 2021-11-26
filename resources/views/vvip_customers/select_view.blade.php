@@ -15,7 +15,9 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<a href="" id="deeplink" class="text btn btn-dark">Deep Link</a>
+<div class="col-md-12 text-center" style="margin-top: 200px;">
+    <a href="" id="deeplink" class="text btn btn-dark">Deep Link</a>
+</div>
 <div class="container" id="contact_display">
     <div class="col-md-12">
         <div class="card" id="card_background">
@@ -49,6 +51,7 @@
 
 @section('script')
 <script>
+    $('#deep_link').hide();
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
@@ -237,8 +240,9 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    var url = "intent://www.facebook.com/"+ host + "#Intent;package=com.google.android.youtube;scheme=https;end";
-                                    window.location.replace(url); 
+                                    var url = "intent://www.facebook.com/"+ host + "#Intent;package=com.facebook.katana;scheme=https;end";
+                                    window.location.replace(url);
+                                    // $('#deep_link').attr('href', url).show();
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
