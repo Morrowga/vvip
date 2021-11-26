@@ -45,6 +45,7 @@ class UserRegisterController extends Controller
                         $user->package = $package_name;
                         $user->package_status = "active";
                         $user->smart_card_design_id = $smart_card_design_id;
+                        $user->verification_code = sha1(time());
                         // $user->package_start_date = Carbon::now();
                         // $user->package_end_date = Carbon::now()->addYear(1);
                         // $remain = $user->package_end_date->diffIndays($user->package_start_date);
@@ -70,13 +71,15 @@ class UserRegisterController extends Controller
                             $deep_link->active = 0;
                             $deep_link->save();
                         }
-                                                 
+
+                        MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
                         
                        
                         $messages = [
                             "status" => '200',
                             "message" => 'Success',
-                            "user_id" => $user->id
+                            "user_id" => $user->id,
+                            "verify" => 'Your Accoutn has been created. Please check Email for verify.'
                         ];
                         return $messages;
                     } else {
