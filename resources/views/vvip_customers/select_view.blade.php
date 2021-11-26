@@ -240,7 +240,10 @@
                                         }
                                     }, 300);
                                 } else if(isAndroid){
-                                    var url = "intent://www.facebook.com/"+ host + "#Intent;package=com.facebook.katana;scheme=https;end";
+                                    // $.get("https://graph.facebook.com/"+ host, function (data) {
+                                    //     alert(data.name);
+                                    // }, 'jsonp');
+                                    var url = "intent://profile/"+ host + "#Intent;package=com.facebook.katana;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
