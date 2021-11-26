@@ -91,7 +91,7 @@ class LoginController extends Controller
             } else {
                 $messages = [
                     'status' => '500',
-                    'message' => 'Your phone number is wrong or valid'
+                    'message' => 'Your phone number is invalid'
                 ]; 
                 return $messages;
             }
