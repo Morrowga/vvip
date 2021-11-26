@@ -16,7 +16,7 @@
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
 <div class="col-md-12 text-center" style="margin-top: 200px;">
-    <a href="" id="deeplink" class="text btn btn-dark">Deep Link</a>
+    <a href="" id="deeplink" class="text btn btn-dark">Click the Link</a>
 </div>
 <div class="container" id="contact_display">
     <div class="col-md-12">
