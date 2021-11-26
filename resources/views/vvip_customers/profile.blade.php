@@ -155,7 +155,7 @@ $(function() {
                 request_name: "get_user_profile"
                 },
            success:function(response){
-               if(response.data == null){
+               if(response.data != null){
                 $('#username').text(response.data['name']);
                 $('#email_name').text(response.data['email']);
                 $('#mobile').text(response.data['phone_number']);

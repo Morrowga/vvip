@@ -1062,7 +1062,7 @@ label.label_file {
   }
 
   .menu_button{
-    background-color: rgb(255,255,255) !important;
+    background-color: rgb(255,255,255, 0.8) !important;
     color: #000 !important;
 	font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px;
@@ -1438,6 +1438,15 @@ label.label_file {
 	/* z-index: -1; */
 }
 
+#menu_list_card{
+    background-color: rgb(0,0,0) !important;
+}
+
+.menu-icon{
+    color: rgb(217,181,81);
+    font-size: 22px;
+    text-shadow: 2px 2px 10px rgb(0,0,0);
+}
 /* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {

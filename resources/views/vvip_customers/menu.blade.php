@@ -41,17 +41,17 @@
     <div class="col-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-6 col-md-offset-3">
-                <div class="card">
+                <div class="card" id="menu_list_card">
                     <div class="card-body">
-                        <a href="/profile" class="btn btn-light btn-block menu_button">Profile <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/create_data" class="btn btn-light btn-block menu_button">Create Content <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/action" class="btn btn-light btn-block menu_button">Change Action <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <button class="btn btn-light btn-block menu_button">Active My Card <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button">Lucky Draw <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button">Statistic <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button">Share<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button">Setting<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button">Support<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <a href="/profile" class="btn btn-light btn-block menu_button"><i class="menu-icon fas fa-user-circle mr-2"></i>Profile <i class="fas fa-caret-right menu_arrow"></i></a>
+                        <a href="/create_data" class="btn btn-light btn-block menu_button"><i class="far fa-plus-square mr-2 menu-icon"></i> Create Content <i class="fas fa-caret-right menu_arrow"></i></a>
+                        <a href="/action" class="btn btn-light btn-block menu_button"><i class="fas fa-exchange-alt mr-2 menu-icon"></i>Change Action <i class="fas fa-caret-right menu_arrow"></i></a>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-power-off mr-2 menu-icon"></i> Active My Card <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>Lucky Draw <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-chart-pie mr-2 menu-icon"></i>Statistic <i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-share-alt-square mr-2 menu-icon"></i>Share<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-cog mr-2 menu-icon"></i>Setting<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-headset mr-2 menu-icon"></i>Support<i class="fas fa-caret-right menu_arrow"></i></button>
                     </div>
                 </div>
             </div>

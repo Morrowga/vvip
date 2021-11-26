@@ -1368,7 +1368,7 @@ p.subtitle {
 	height: 50px;
 	letter-spacing: 2px;
 	font-weight: bold;
-	box-shadow: 2px 2px 5px rgb(217,181,81);
+	/* box-shadow: 2px 2px 5px rgb(217,181,81); */
 	border-radius: 50% !important;
 	/* border-top-left-radius: 50% !important;
 	border-bottom-left-radius: 50% !important;
