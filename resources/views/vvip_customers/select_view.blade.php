@@ -51,7 +51,7 @@
 
 @section('script')
 <script>
-    $('#deep_link').hide();
+    $('#deeplink').hide();
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
@@ -241,7 +241,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     var url = "intent://www.facebook.com/"+ host + "#Intent;package=com.facebook.katana;scheme=https;end";
-                                    $('#deep_link').attr('href', url).show();
+                                    $('#deeplink').attr('href', url).show();
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
