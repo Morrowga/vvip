@@ -241,8 +241,7 @@
                                     }, 300);
                                 } else if(isAndroid){
                                     var url = "intent://www.facebook.com/"+ host + "#Intent;package=com.facebook.katana;scheme=https;end";
-                                    window.location.replace(url);
-                                    // $('#deep_link').attr('href', url).show();
+                                    $('#deep_link').attr('href', url).show();
                                 } else {    
                                     var url = "https://www.facebook.com/" + host;
                                     window.location.replace(url); 
