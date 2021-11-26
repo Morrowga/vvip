@@ -299,6 +299,9 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300);                                    
+                                } else if(isAndroid){
+                                    var url = "intent://user/profile/" + host +"#Intent;package=com.zhiliaoapp.musically;scheme=snssdk1233;end";
+                                    $('#deeplink').attr('href', url).show();
                                 } else {
                                     var url = "https://www.tiktok.com/" + host;
                                     window.location.replace(url);
