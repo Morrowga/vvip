@@ -359,7 +359,10 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300); 
-                                } else {
+                                } else if(isAndroid){
+                                    var url = "intent://" + host + "#Intent;package=com.tripadvisor.tripadvisor;scheme=https;end";
+                                    $('#deeplink').attr('href', url).show();
+                                 } else {
                                     var url = "https://www.tripadvisor.com/Hotel_Review-" + host;
                                     window.location.replace(url);
                                 }
