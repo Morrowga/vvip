@@ -319,6 +319,9 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300);  
+                                } else if(isAndroid){
+                                    var url = "pinterest://www.pinterest.com/" + host;
+                                    $('#deeplink').attr('href', url).show();
                                 } else {
                                     var url = "https://www.pinterest.com/" + host;
                                     window.location.replace(url);
