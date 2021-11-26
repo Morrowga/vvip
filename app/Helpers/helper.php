@@ -195,13 +195,15 @@ class Helper{
                         "status" => "200",
                         "message" => "success",
                         "request" => "eusp",
-                        "email" => "",
-                        "email_subject" => "",
-                        "email_body" => "",
-                        "phone" => "",
-                        "url" => "",
-                        "sms_text" => "",
-                        "sms_no" => "",
+                        "data" => [
+                            "email" => "",
+                            "email_subject" => "",
+                            "email_body" => "",
+                            "phone" => "",
+                            "url" => "",
+                            "sms_text" => "",
+                            "sms_no" => "",
+                        ]
                     ];
                     return $messages;
                 }
