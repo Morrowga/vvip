@@ -419,7 +419,10 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300); 
-                                } else {
+                                }  else if(isAndroid){
+                                    var url = "intent://" + host + "#Intent;package=com.vimeo.android.videoapp;scheme=https;end";
+                                    $('#deeplink').attr('href', url).show();
+                                 } else {
                                     var url = "https://vimeo.com/user" + host;
                                 }
                                 
