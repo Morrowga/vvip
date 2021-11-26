@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Http\Controllers\Mail\MailController;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
