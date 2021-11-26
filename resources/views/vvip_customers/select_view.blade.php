@@ -467,7 +467,6 @@
                             var ios_url = "googlegmail://co?to="+ email_address +"&subject="+ email_subject +"&body=" + email_body;
                             var store_url = "https://itunes.apple.com/app/gmail-email-by-google/id422689480";
                             // window.location = url;// fb://method/call..
-                            window.location = url;
                             setTimeout(function(){
                                 if(confirm('Do you already have Gmail or do you want to go download it?')){
                                 window.location = store_url;
