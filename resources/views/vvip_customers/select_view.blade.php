@@ -380,7 +380,7 @@
                                         }
                                     }, 300); 
                                 } else if(isAndroid){
-                                    var url = "intent://" + host + "#Intent;package=us.zoom.videomeetings;scheme=zoomus;end";
+                                    var url = "intent://" + host + "#Intent;package=us.zoom.videomeetings;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                  } else {
                                     var url = "https://us05web.zoom.us/" + host;
