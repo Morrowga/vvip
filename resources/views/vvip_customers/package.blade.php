@@ -30,7 +30,7 @@
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $normal->package_name }}</h3>
-                                    <img src=".../images/Normal_01.png" id="normal_img" alt="" width="300" height="250">
+                                    <img src="../images/Normal_01.png" id="normal_img" alt="" width="340" height="250">
                                     <h4 class="package">GOLD</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
@@ -332,7 +332,7 @@
                                                         <button type="button" id="move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 text-center">
+                                                <div class="col-md-6 text-center" id="bl_front">
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
@@ -481,6 +481,22 @@
                         <h4 class="upload_logo_text text-center mt-3">Edit Your Description</h4>
                         <textarea type="text" rows="3" class="form-control btn-block edit_description" placeholder="enter your custom description"></textarea>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                </div>
+                <div class="modal-body" id="custom_fr" style="background-color: #fff !important;">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>

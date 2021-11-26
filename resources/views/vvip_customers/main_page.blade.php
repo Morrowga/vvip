@@ -103,7 +103,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-question about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatisvvip')}}</h4>
-                                    <img src="../images/What-VVIP.png" alt="" width="300" height="350">
+                                    <img src="../images/What-VVIP.png" alt="" width="300" height="400">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatvvip_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -115,7 +115,7 @@
                                 <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.whatissmartcard')}}</h4>
-                                    <img src="../images/What-Smart-Card.png" alt="" width="300" height="350">
+                                    <img src="../images/What-Smart-Card.png" alt="" width="300" height="400">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }}
                                     </p>
                                 </div>
@@ -127,7 +127,7 @@
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
                                 <div class="rotate-box-info">
                                     <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
-                                    <img src="../images/Useful-VVIP9.png" alt="" width="300" height="350">
+                                    <img src="../images/Useful-VVIP9.png" alt="" width="300" height="400">
                                     <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
                                     </p>
                                 </div>

@@ -41,6 +41,7 @@
   },
   "homepage": "https://gitlab.com/thihaaung3/vvip9_project#readme",
   "dependencies": {
+    "html-to-image": "^1.9.0",
     "intl-tel-input": "^17.0.13",
     "socket.io": "^4.2.0"
   }

@@ -5,6 +5,7 @@
  */
 
 require('./bootstrap');
+require('html-to-image');
 
 window.Vue = require('vue').default;
 
