@@ -340,7 +340,7 @@
                                         }
                                     }, 300); 
                                 } else if(isAndroid){
-                                    var url = "intent://www.pinterest.com/" + host +"#Intent;package=com.pinterest;scheme=https;end";
+                                    var url = "intent://" + host + "#Intent;package=com.linkedin.android;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                  } else {
                                     var url = "https://www.linkedin.com/in/" + host;
