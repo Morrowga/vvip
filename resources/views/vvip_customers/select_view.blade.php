@@ -259,6 +259,9 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300);
+                                }  else if(isAndroid){
+                                    var url = "intent://" + host +"#Intent;package=com.instagram.android;scheme=https;end";
+                                    $('#deeplink').attr('href', url).show();
                                 } else {
                                     var url = "https://www.instagram.com/" + host;
                                     window.location.replace(url);
