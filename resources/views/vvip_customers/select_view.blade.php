@@ -53,6 +53,7 @@
 @section('script')
 <script>
     $('#deeplink').hide();
+    $('#email_click').hide();
     $('#link_tree_display').hide();
     $('#contact_display').hide();
     var request_url = '{{ url('api/get_datas') }}';
@@ -477,7 +478,7 @@
                             window.location = ios_url;
                         } else if(isAndroid){
                             var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;action=android.intent.action.VIEW;package=com.google.android.gm;scheme=https;end";
-                            $('#email_click').attr('href', inMobile);
+                            $('#email_click').attr('href', inMobile).show();
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
                             window.location.replace(send_email_to);
