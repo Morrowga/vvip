@@ -320,7 +320,7 @@
                                         }
                                     }, 300);  
                                 } else if(isAndroid){
-                                    var url = "pinterest://www.pinterest.com/" + host;
+                                    var url = "intent://www.pinterest.com/" + host +"#Intent;package=com.pinterest;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                 } else {
                                     var url = "https://www.pinterest.com/" + host;
