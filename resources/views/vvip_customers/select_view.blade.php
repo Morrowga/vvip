@@ -399,7 +399,10 @@
                                             alert('refresh the page to see the resut again.');
                                         }
                                     }, 300); 
-                                } else {
+                                }  else if(isAndroid){
+                                    var url = "intent://" + host + "#Intent;package=com.google.android.apps.maps;scheme=https;end";
+                                    $('#deeplink').attr('href', url).show();
+                                 } else {
                                     var url = "https://www." + host;
                                     window.location.replace(url);
                                 }
