@@ -57,13 +57,22 @@ class LoginController extends Controller
             if(!empty($user_data)){
                 if(Hash::check($user_data_password, $user_data->password) !== false){
                     if($user_data->package_status === "active"){
-                        $messages = [
-                            'user_id' => $user_data->id,
-                            'status' => '200',
-                            'message' => 'Success',
-                            'data' => true
-                        ];
-                        return $messages;
+                        if($user_data->is_verified == 1){
+                            $messages = [
+                                'user_id' => $user_data->id,
+                                'status' => '200',
+                                'message' => 'Success',
+                                'data' => true
+                            ];
+                            return $messages;
+                        } else {
+                            $messages = [
+                                'status' => '500',
+                                'message' => 'Code is invalid',
+                            ];
+                            return $messages;
+                        }
+                       
                     } else {
                         $messages = [
                             'status' => "403" ,
