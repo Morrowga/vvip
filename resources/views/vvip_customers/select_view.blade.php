@@ -466,7 +466,7 @@
                             var ios_url = "googlegmail://co?to="+ email_address +"&subject="+ email_subject +"&body=" + email_body;
                             window.location = ios_url;
                         } else if(isAndroid){
-                            var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;action=android.intent.action.VIEW;package=com.google.android.gm;scheme=googlegmail;end";
+                            var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;action=android.intent.action.VIEW;package=com.google.android.gm;scheme=https;end";
                             $('#email_click').attr('href', inMobile);
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
