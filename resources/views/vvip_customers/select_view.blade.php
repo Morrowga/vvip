@@ -17,6 +17,7 @@
 <a href="" id="send_email" hidden></a>
 <div class="col-md-12 text-center" style="margin-top: 200px;">
     <a href="" id="deeplink" class="text btn btn-dark">Click the Link</a>
+    <a href="" id="email_click" class="text btn btn-dark">Click the Link</a>
 </div>
 <div class="container" id="contact_display">
     <div class="col-md-12">
@@ -465,7 +466,7 @@
                             alert('s');
                         } else if(isAndroid){
                             var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;package=com.google.android.gm;scheme=googlemail;end";
-                            window.location.replace(inMobile);
+                            $('#email_click').attr('href', inMobile);
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
                             window.location.replace(send_email_to);
