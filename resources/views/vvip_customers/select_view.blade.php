@@ -464,9 +464,19 @@
                         // var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
                         if(isIOS){
                             var ios_url = "googlegmail://co?to="+ email_address +"&subject="+ email_subject +"&body=" + email_body;
+                            var store_url = "https://itunes.apple.com/app/gmail-email-by-google/id422689480";
+                            // window.location = url;// fb://method/call..
+                            window.location = url;
+                            setTimeout(function(){
+                                if(confirm('Do you already have Gmail or do you want to go download it?')){
+                                window.location = store_url;
+                                } else {
+                                    alert('refresh the page to see the resut again.');
+                                }
+                            }, 300); 
                             window.location = ios_url;
                         } else if(isAndroid){
-                            var inMobile = "gmail://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;action=android.intent.action.VIEW;package=com.google.android.gm;scheme=https;end";
+                            var inMobile = "intent://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body + "#Intent;action=android.intent.action.VIEW;package=com.google.android.gm;scheme=https;end";
                             $('#email_click').attr('href', inMobile);
                         } else {
                             var send_email_to = "https://mail.google.com/mail/?view=cm&fs=1&to="+ email_address +"&su="+ email_subject +"&body="+ email_body;
