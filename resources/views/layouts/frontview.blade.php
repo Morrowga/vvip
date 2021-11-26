@@ -56,8 +56,6 @@
                             <li><a class="page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
-                            <!-- <li class="lang_en"><a href="{{ route(Route::currentRouteName(), 'en') }}"><img src="../images/united-states.png" width="30" height="30" alt="" style="padding-top: 0 !important;"></a></li> -->
-                            <!-- <li class="lang"><a href="{{ route(Route::currentRouteName(), 'mm') }}"><img src="../images/myanmar.png" width="35" height="35" alt="" style="margin-bottom: 5px !important;"></a></li> -->
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->
