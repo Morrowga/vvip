@@ -30,7 +30,7 @@
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $normal->package_name }}</h3>
-                                    <img src="../images/Normal_01.png" id="normal_img" alt="" width="340" height="250">
+                                    <img src="../images/Normal_001.png" id="normal_img" alt="" width="340" height="250">
                                     <h4 class="package">GOLD</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
@@ -524,8 +524,8 @@
         $('[data-toggle="popover"]').popover();
         function normal(){
             var i = 0;
-            var normal_pics = [ "../images/Normal_01.png", "https://www.pngmart.com/files/8/Business-Card-Transparent-PNG.png",
-            "https://pngimg.com/uploads/credit_card/credit_card_PNG96.png" ];
+            var normal_pics = [ "../images/Normal_001.png", "../images/Normal_002.png",
+            "../images/Normal_003.png" ];
             var normal_el = document.getElementById('normal_img');  // el doesn't change
 
             function normal_toggle() {
@@ -539,9 +539,9 @@
 
         function standard(){
             i = 0;
-            var standard_pics = ["../images/47-470792_explore-the-world-of-icici-credit-cards-here.png",
-            "../images/credit-card-images-png-1.png",
-            "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
+            var standard_pics = ["../images/Standard_001.png",
+            "../images/Standard_002.png",
+            "../images/Standard_003.png"];
             var standard_el = document.getElementById('standard_img'); 
 
             function standard_toggle(){
