@@ -1455,6 +1455,27 @@ label.label_file {
     font-size: 22px;
     text-shadow: 2px 2px 10px rgb(0,0,0);
 }
+
+.error_texts {
+    font-size: 15px;
+    color: rgb(223,75,68) !important;
+    padding: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.moreinfo_package{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    font-weight: bold;
+    color: rgb(255,255,255);
+    margin-top: 35px !important;
+}
+
+.moreinfo_package:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
 /* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {

@@ -48,6 +48,7 @@
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
                                 </div> -->
                                 <div class="panel-footer text-center">
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
                                     <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }} Order Now!</button>
                                 </div>
                             </div>										
@@ -57,7 +58,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $standard->package_name }}</h3>
-                                    <img src="../images/47-470792_explore-the-world-of-icici-credit-cards-here.png" id="standard_img" alt="" width="300" height="250">
+                                    <img src="../images/Standard_001.png" id="standard_img" alt="" width="300" height="250">
                                     <h4 class="package">DIAMOND</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
@@ -77,6 +78,7 @@
                                     </ul>                                    
                                 </div>
                                 <div class="panel-footer text-center">
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
                                     <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }} Order Now!</button>
                                 </div>
                             </div>										
@@ -86,7 +88,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $luxury->package_name }}</h3>
-                                    <img src="../images/917-9175739_credit-card.png" alt="" id="luxury_img" width="300" height="250">
+                                    <img src="../images/Luxury_001.png" alt="" id="luxury_img" width="300" height="250">
                                     <h3 class="package">RUBY</h3>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         
@@ -108,6 +110,7 @@
                                     </ul>                                    
                                 </div>                    
                                 <div class="panel-footer text-center">
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
                                     <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">{{ $luxury->price }} Order Now!</button>
                                 </div>
                             </div>										
@@ -138,12 +141,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group row mt-5">
+                        <div class="form-group row">
                             <div class="col-md-4 col-md-offset-4">
+                                <p id="error_text" style="padding: 5px; color: rgb(184, 28, 41);"></p>
                                 <input id="save-phone" type="tel"
                                     class="form-control register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
                                     value="{{ old('phone_number') }}" required autocomplete="phone_number">
-                                    <p id="error_text" style="margin-top: 5px !important; color: rgb(184, 28, 41);"></p>
                             </div>
                         </div>
                         <div class="form-group mt-5">
@@ -197,41 +200,28 @@
                                     </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="name" type="text" placeholder="Enter Your Name"
-                                                class="form-control @error('name') is-invalid @enderror register-input" name="name" style="font-size: 17px;"
-                                                value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                            @error('name')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
+                                            <span id="error_name" class="error_texts" role="alert">
+                                                <strong>Enter Your Name</strong>
                                             </span>
-                                            @enderror
+                                            <input id="name" type="text" placeholder="Enter Your Name"
+                                                class="form-control register-input" name="name" style="font-size: 17px;" required autocomplete="name" autofocus>
                                         </div>
                                     </div>
 
                                     <div class="form-group row mt-5">
                                         <div class="col-md-4 col-md-offset-4">
+                                            <span id="error_phone" class="error_texts" role="alert"></span>
                                             <input id="phone" type="tel"
-                                                class="form-control @error('phone_number') is-invalid @enderror register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
-                                                value="{{ old('phone_number') }}" required autocomplete="phone_number">
-
-                                            @error('phone_number')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+                                                class="form-control register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
+                                                 required autocomplete="phone_number">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
+                                            <span id="error_email" class="error_texts" role="alert"></span>
                                             <input id="email" type="email" placeholder="Enter Your Email"
-                                                class="form-control @error('email') is-invalid @enderror register-input" name="email" style="font-size: 17px;"
-                                                value="{{ old('email') }}" required autocomplete="email">
-
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+                                                class="form-control register-input" name="email" style="font-size: 17px;"
+                                                required autocomplete="email">
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-md-offset-4 hr" style="margin-top: 15px !important;">
@@ -240,7 +230,7 @@
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
                                         <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
                                              <p class="url_text text-left">URL</p>
-                                            <button type="button" class="btn btn-light span_question" data-toggle="popover" title="Insert Your URL" data-content="URL is a link for display your action which action you selected when scan the card."><i class="fas fa-question"></i></button>
+                                            <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="Insert Your URL" data-content="URL is a link for display your action which action you selected when scan the card."><i class="fas fa-question"></i></button>
                                         </div>
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
@@ -256,12 +246,14 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 20px !important;">
+                                            <span id="error_url" class="error_texts" role="alert"></span>
+                                            <input type="text" value="1" id="total_input" hidden>
                                             <div class="row" style="display: flex; justify-content: center;">
                                                 <div class="col url" style="padding-top:5px;">
                                                     <p class="vvip_text">https://vvip9.co/</p>
                                                 </div>
                                                 <div class="col url">
-                                                    <input type="text" id="url" class="form-control url_input" name="url">
+                                                    <input type="text" id="url" class="form-control url_input" name="url" placeholder="Enter url">
                                                 </div>
                                             </div>
                                         </div>
@@ -269,8 +261,11 @@
                                     <div class="col-md-4 col-md-offset-4 hr_bottom mt-2" style="margin-top: 30px !important;">
                                     </div>
                                     <div class="form-group">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <p class="pt-2 url_text">Secure</p>
+                                        <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
+                                            <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
+                                                <p class="pt-2 url_text">Secure</p>
+                                                <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="Secure Status" data-content="Public allow who can view your profile url. Private allow close your profile url and you can only view."><i class="fas fa-question"></i></button>
+                                            </div>
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="secure_status" value="private">
@@ -356,7 +351,8 @@
                                     </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="password" type="password" placeholder="New Pin" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
+                                            <p class="text">Password Only Allow Numbers</p>
+                                            <input id="password" type="password" placeholder="New Pin" pattern="[0-9]+" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -366,7 +362,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="password-confirm" type="password" placeholder="Confirm Pin" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
+                                            <input id="password-confirm" pattern="[0-9]+" type="password" placeholder="Confirm Pin" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
                                 </div>
@@ -375,7 +371,7 @@
                                         <div class="col-md-12">
                                             <button type="button" class="next btn btn-info">Next</button>
                                             <button type="button" class="previous btn btn-info">Previous</button>
-                                            <button type="submit" class="btn btn-info float-right sub-btn">Submit</button>
+                                            <button type="submit" class="btn btn-info float-right sub-btn" disabled>Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -495,13 +491,15 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="background-color: #fff !important;">
                 <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                 <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                 <h5 class="modal-title" id="exampleModalLabel">New message</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
-                    </button> -->
+                    </button>
                 </div>
                 <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
-                    <p class="sure" style="font-size: 20px !important;"></p>
+                    <p class="sure" style="font-size: 20px !important; margin-top: 30px;">
+                        Are you sure for this. Confirm ?
+                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">Close</button>
@@ -510,123 +508,10 @@
             </div>
         </div>
     </div>
-
-    @section('script')
-    <script>
-        //  $("#url").keyup(function(event) {
-            
-        // });
-
-        // $('#qr_scan').attr('src','https://mpng.subpng.com/20180709/eto/kisspng-information-qr-code-android-download-qrcode-5b43f98e89ab13.1130560915311814545639.jpg');
-
-       
-
-        $('[data-toggle="popover"]').popover();
-        function normal(){
-            var i = 0;
-            var normal_pics = [ "../images/Normal_001.png", "../images/Normal_002.png",
-            "../images/Normal_003.png" ];
-            var normal_el = document.getElementById('normal_img');  // el doesn't change
-
-            function normal_toggle() {
-                normal_el.src = normal_pics[i];           // set the image
-                i = (i + 2) % normal_pics.length;  // update the counter
-            }
-            setInterval(normal_toggle, 1000);
-        }
-        
-        normal();
-
-        function standard(){
-            i = 0;
-            var standard_pics = ["../images/Standard_001.png",
-            "../images/Standard_002.png",
-            "../images/Standard_003.png"];
-            var standard_el = document.getElementById('standard_img'); 
-
-            function standard_toggle(){
-                standard_el.src = standard_pics[i];
-                i = (i + 2) % standard_pics.length;
-            }
-            setInterval(standard_toggle, 1000);
-
-        }
-
-        standard();
-
-        function luxury(){
-            i = 0;
-            var luxury_pics = ["../images/917-9175739_credit-card.png",
-            "../images/credit-card-images-png-1.png",
-            "http://pngimg.com/uploads/credit_card/credit_card_PNG35.png"];
-
-            var luxury_el = document.getElementById('luxury_img');
-
-            function luxury_toggle(){
-                luxury_el.src = luxury_pics[i];
-                i = (i + 2 ) % luxury_pics.length;
-            }
-            setInterval(luxury_toggle, 1000);
-        }
-
-        luxury();
-        
-
-         $.ajax({
-                url: '/api/generate_code',
-                type: 'get',
-                success: function(response){
-                    document.getElementById("url_system").value = response['generate_code'];
-                }
-            });
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
-        $(".save-user").click(function(e){
-
-        e.preventDefault();
-
-        var save_name= $("input[name=name]").val();
-        var save_phone_number = $("input[name=phone_number]").val();
-        var url = '{{ url('api/save-user') }}';
-
-        $.ajax({
-           url:url,
-           method:'POST',
-           data:{
-                  name:save_name, 
-                  phone_number:save_phone_number
-                },
-           success:function(response){
-              if(response.message == "success"){
-                document.getElementById('prices-section').style.display = "none";
-                document.getElementById('prices-section-save').style.display = "none";
-                document.getElementById('prices-section-two').style.display = "block";
-                document.getElementById('name').value = response.name;
-                document.getElementById('phone').value = response.phone_number;
-                console.log(response.message);
-              }else if(response.message == "Phone Number is invalid"){
-                    $('#error_text').text(response.message);
-              } else if(response.message == "Phone Number Exist & Active"){
-                    $('#error_text').text(response.message);
-              } else if (response.message == "Phone Number Exist & Expired") {
-                    $('#error_text').text(response.message);
-              } else {
-                console.log(response.message);
-              }
-           },
-           error:function(error){
-              console.log(error)
-           }
-        });
-	});
-    </script>
-    @endsection
     <!--template-modal-->
+@section('script')
+<script src="../js/package.js"></script>
+@endsection
 @endsection
    
 

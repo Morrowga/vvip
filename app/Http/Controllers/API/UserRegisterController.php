@@ -420,6 +420,58 @@ class UserRegisterController extends Controller
         // return $messages;
     }
 
+    public function user_exists(Request $request){
+        if($request->phone_number_exist !== null){
+            $user = User::where('phone_number', $request->phone_number_exist)->first();
+            if($user === null){
+                $messages = [
+                    "status" => "200",
+                    "message" =>  "success",
+                ];
+                return $messages;
+            } else {
+                $messages = [
+                    "status" => "403",
+                    "message" =>  "Phone Number Exist",
+                ];
+                return $messages;
+            }
+        } else if($request->email_exist !== null){
+            $user = User::where('email', $request->email_exist)->first();
+            if($user === null){
+                $messages = [
+                    "status" => "200",
+                    "message" =>  "success",
+                ];
+                return $messages;
+            } else {
+                $messages = [
+                    "status" => "403",
+                    "message" =>  "Email Address Exist",
+                ];
+                return $messages;
+            }
+        } else if($request->url_exist !== null){
+            $user = User::where('url', $request->url_exist)->first();
+            if($user === null){
+                $messages = [
+                    "status" => "200",
+                    "message" =>  "success",
+                ];
+                return $messages;
+            } else {
+                $messages = [
+                    "status" => "403",
+                    "message" =>  "Requested Name is Exist",
+                ];
+                return $messages;
+            }
+        }
+        
+        
+       
+    }
+
    
     /**
      * Display a listing of the resource.

@@ -8,34 +8,24 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                    <!-- <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg" id="video_one"> -->
-                                </video>
+                                </video> -->
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
-                                <!-- <a class="btn btn-blank page-scroll navbarbtn" href="#prices-section" role="button">{{__('website.Buy')}}</a> -->
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                </video>
-                                <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
-                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
-                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video> -->
                                 <p>To the greatest Journey</p>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                </video>
-                                <!-- <video width="500" height="250" id="video_one" loop autoplay muted>
-                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/mp4" id="video_one">
-                                    <source src="../images/VVIP 9 Still 6 sec.mp4" type="video/ogg" id="video_one">
                                 </video> -->
                                 <p>To the greatest Journey</p>
                             </div>
@@ -263,25 +253,14 @@
         <!-- End contact section -->
 @section('script')
 <script type="text/javascript">
-    // $(document).ready(function(){
-    //     function getCookie(c_name) {
-    //     if(document.cookie.length > 0) {
-    //         c_start = document.cookie.indexOf(c_name + "=");
-    //         if(c_start != -1) {
-    //             c_start = c_start + c_name.length + 1;
-    //             c_end = document.cookie.indexOf(";", c_start);
-    //             if(c_end == -1) c_end = document.cookie.length;
-    //             return unescape(document.cookie.substring(c_start,c_end));
-    //         }
-    //     }
-    //     return "";
-    // }
 
+    $(window).bind("load", function() {  
+        $('#movie-area').load('../images/VVIP 9 Still 4 sec.mp4');
+    }); 
+   
     $('#contact_btn').on('click', function(e){ 
         e.preventDefault();
-        // var contact_url =  `{{ url('http://admin.vvip9.co/api/contact_info') }}`;
         var token =  $('#token').val();
-        // let formData = new FormData(this);
         var name = $('#c_name').val();
         var email = $('#e_name').val();
         var subject = $('#s_name').val();
