@@ -3,74 +3,50 @@
 @section('content')
 <!-- Begin text carousel intro section -->
         <section id="text-carousel-intro-section" class="parallax intro-parallax">
+                <div id="background-wrap" style="height: 200px;">
+                    <div class="bubble x1"></div>
+                    <div class="bubble x2"></div>
+                    <div class="bubble x3"></div>
+                    <div class="bubble x4"></div>
+                    <div class="bubble x5"></div>
+                    <div class="bubble x6"></div>
+                    <div class="bubble x7"></div>
+                    <div class="bubble x8"></div>
+                    <div class="bubble x9"></div>
+                    <div class="bubble x10"></div>
+                </div> 
                 <div class="container">
                     <div class="caption text-center text-white">
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <video height="250" preload class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                </video> -->
+                                </video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                </video> -->
+                                </video>
                                 <p>To the greatest Journey</p>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <!-- <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
-                                </video> -->
+                                </video>
                                 <p>To the greatest Journey</p>
                             </div>
                         </div>
                     </div> <!-- /.caption -->
                 </div>
         </section>
-        <!-- End text carousel intro section -->
 
-
-        <!-- Begin Services -->
-        <!-- <section id="services-section" class="page text-center">
-            <div class="d-flex justify-content-center">
-                <div class="col-md-6">
-                    <img src="https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png" alt="" width="300" height="350">
-                </div>
-                <div class="col-md-6" id="text_section_product">
-                    <h2 class="service">{{__('website.Products')}}</h2>
-                    <div class="devider"></div>
-                    <p class="subtitle" style="margin-top: 20px !important;">Something Here</p>
-                     <a class="btn btn-default btn-lg-xl page-scroll"  style="margin-top: 20px;" href="/product" role="button">{{__('website.more')}}</a>
-                </div>
-            </div>
-        </section> -->
-
-        <!-- Begin counter up -->
-        <!-- <section id="counter-section" style="margin-top: 10px !important; height: 900px;"> -->
-            <div id="background-wrap" style="height: 1000px;">
-                <div class="bubble x1"></div>
-                <div class="bubble x2"></div>
-                <div class="bubble x3"></div>
-                <div class="bubble x4"></div>
-                <div class="bubble x5"></div>
-                <div class="bubble x6"></div>
-                <div class="bubble x7"></div>
-                <div class="bubble x8"></div>
-                <div class="bubble x9"></div>
-                <div class="bubble x10"></div>
-            </div>
-        <!-- </section> -->
-        <!-- End counter up -->
-
-         <!-- Begin about section -->
         <section id="about-section" class="page bg-style1">
-            <!-- Begin page header-->
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
@@ -80,9 +56,7 @@
                     </div>
                 </div>
             </div>
-            <!-- End page header-->
 
-            <!-- Begin rotate box-1 -->
             <div class="rotate-box-1-wrapper">
                 <div class="container about_container">
                     <div class="row">
@@ -130,20 +104,15 @@
                     <!-- Cta Button -->
                     <div class="extra-space-l"></div>
                     <div class="text-center">
-                        <!-- <a class="btn btn-default btn-lg-xl page-scroll" href="#about-section" role="button">More Info About Us</a> -->
                     </div>
                 </div> <!-- /.container -->
 
             </div>
-            <!-- End rotate box-1 -->
             <div class="extra-space-l"></div>
       </section>
-      <!-- End about section -->
 
-        <!-- Begin social section -->
         <section id="social-section">
 
-             <!-- Begin page header-->
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
@@ -153,7 +122,6 @@
                     </div>
                 </div>
             </div>
-            <!-- End page header-->
 
             <div class="container">
                 <ul class="social-list">
@@ -165,13 +133,10 @@
             </div>
 
         </section>
-        <!-- End social section -->
 
-        <!-- Begin contact section -->
         <section id="contact-section" class="page text-white parallax contact-parallax" data-stellar-background-ratio="0.5" style="background-image: url(../images/map-bg.jpg);">
             <div class="cover"></div>
 
-             <!-- Begin page header-->
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
@@ -181,7 +146,6 @@
                     </div>
                 </div>
             </div>
-            <!-- End page header-->
 
             <div class="contact wow bounceInRight" data-wow-delay="0.4s">
                 <div class="container">
@@ -201,7 +165,6 @@
                         <div class="col-sm-6">
                             <div class="contact-form">
                                 <h4 class="contact">{{__('website.write_to_us')}}</h4>
-                                <!-- <form role="form" id="submit-contact-form" method="POST"> -->
                                     <div class="form-group">
                                         <input type="text" name="name" id="c_name" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
                                     </div>
@@ -216,14 +179,10 @@
                                     </div>
                                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                     <button class="btn wow bounceInRight contact-btn" id="contact_btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
-                                <!-- </form> -->
                             </div>
                         </div>
 
                     </div> <!-- /.row -->
-                    <!-- <div class="col-md-12">
-                        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
-                    </div> -->
                 </div> <!-- /.container -->
             </div>
         </section>
@@ -235,7 +194,6 @@
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                 <div class="modal-header" style="border-bottom: none !important;">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center" style="border-top: none !important;">
@@ -253,11 +211,17 @@
         <!-- End contact section -->
 @section('script')
 <script type="text/javascript">
+    vid = document.getElementById("video_one");
+    //listen for CANPLAY event
+      vid.addEventListener("canplay", function() {
+       console.log("oncanplay");
+       setTimeout(function() {
+        console.log("play");
+    //Hit PLAY when video fully loaded
+        vid.play();
+       }, 500);
+    });
 
-    $(window).bind("load", function() {  
-        $('#movie-area').load('../images/VVIP 9 Still 4 sec.mp4');
-    }); 
-   
     $('#contact_btn').on('click', function(e){ 
         e.preventDefault();
         var token =  $('#token').val();

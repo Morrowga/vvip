@@ -65,7 +65,7 @@
             </header>
             <!-- ========= END HEADER =========-->
             
-            @yield('content')                              
+            @yield('content')                             
         </div>
         <div id="loading" style="display:block;">
             <input type="text" id="text_color" hidden>
@@ -113,10 +113,7 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/thelevicole/youtube-to-html5-loader@2.0.0/dist/YouTubeToHtml5.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.1/parsley.min.js"></script> -->
-		<!-- <script src="../js/smoothscroll.js"></script> -->
 		<script src="../js/theme.js"></script>
         @yield('script')
         <script>
