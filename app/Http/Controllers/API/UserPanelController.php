@@ -549,53 +549,26 @@ class UserPanelController extends Controller
 
 
     public function create_link_tree(Request $request){
-        $link_one_label = $request->link_one_label;
-        $link_one_url = $request->link_one_url;
-        $link_two_label = $request->link_two_label;
-        $link_two_url = $request->link_two_url;
-        $link_three_label = $request->link_three_label;
-        $link_three_url = $request->link_three_url;
-        $link_four_label = $request->link_four_label;
-        $link_four_url = $request->link_four_url;
-        $link_five_label = $request->link_five_label;
-        $link_five_url = $request->link_five_url;
+        $links = $request->links;
+        $links_label = $request->links_label;
+        $data = ['label' => $links_label, 'url' => $links];
+        $result = [];
+        foreach($data['label'] as $index => $d){
+            $result[] = [
+                'label' => $d,
+                'url' => $data['url'][$index]
+            ];
+        }
+        
         $user_id = $request->user_id;
         $image = $request->file('link_image');
         $check_user = User::where('id', $user_id)->first();
         if($check_user !== null){
-            $data_one = [
-                "label" => $link_one_label,
-                "link" => $link_one_url
-            ];
-
-            $data_two = [
-                "label" => $link_two_label,
-                "link" => $link_two_url
-            ];
-            
-            $data_three = [
-                "label" => $link_three_label,
-                "link" => $link_three_url
-            ];
-
-            $data_four = [
-                "label" => $link_four_label,
-                "link" => $link_four_url
-            ];
-
-            $data_five = [
-                "label" => $link_five_label,
-                "link" => $link_five_url
-            ];
-
+       
             $link_exist = LinkTree::where('user_id', $check_user->id)->first();
 
             if($link_exist !== null){
-                $link_exist->link_one = json_encode($data_one);
-                $link_exist->link_two = json_encode($data_two);
-                $link_exist->link_three = json_encode($data_three);
-                $link_exist->link_four = json_encode($data_four);
-                $link_exist->link_five = json_encode($data_five);
+                $link_exist->link_one = json_encode($result);
                 if($request->hasfile('link_image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('link_tree_images', $imageName, 'public');
@@ -603,25 +576,10 @@ class UserPanelController extends Controller
                 } 
                 $link_exist->save();
 
-                $de_link_one = json_decode($link_exist->link_one);
-                $de_link_two = json_decode($link_exist->link_two);
-                $de_link_three = json_decode($link_exist->link_three);
-                $de_link_four = json_decode($link_exist->link_four);
-                $de_link_five = json_decode($link_exist->link_five);
-
                 $final_data = [
                   "user_id"  => $link_exist->user_id,
                   "link_image" => $link_exist->link_image,
-                  "link_one_label" => $de_link_one->label,
-                  "link_one_url" => $de_link_one->link,
-                  "link_two_label" => $de_link_two->label,
-                  "link_two_url" => $de_link_two->link,
-                  "link_three_label" => $de_link_three->label,
-                  "link_three_url" => $de_link_three->link,
-                  "link_four_label" => $de_link_four->label,
-                  "link_four_url" => $de_link_four->link,
-                  "link_five_label" => $de_link_five->label,
-                  "link_five_url" => $de_link_five->link,
+                  "link_data" => json_decode($link_exist->link_one),
                 ];
 
                 $messages = [
@@ -633,39 +591,22 @@ class UserPanelController extends Controller
                  return $messages;
             } else {
                 $new_link = new LinkTree();
+                $new_link->link_one = json_encode($result);
                 $new_link->user_id = $user_id;
-                $new_link->link_one = json_encode($data_one);
-                $new_link->link_two = json_encode($data_two);
-                $new_link->link_three = json_encode($data_three);
-                $new_link->link_four = json_encode($data_four);
-                $new_link->link_five = json_encode($data_five);
                 if($request->hasfile('link_image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('link_tree_images', $imageName, 'public');
                     $new_link->link_image = $imageName;
-                } 
+                } else {
+                    $new_link->link_image = 'logo.jpeg';
+                }
                 $new_link->save();
 
-                $de_link_one = json_decode($new_link->link_one);
-                $de_link_two = json_decode($new_link->link_two);
-                $de_link_three = json_decode($new_link->link_three);
-                $de_link_four = json_decode($new_link->link_four);
-                $de_link_five = json_decode($new_link->link_five);
-
                 $final_data = [
-                  "user_id"  => $new_link->user_id,
-                  "link_image" => $new_link->link_image,
-                  "link_one_label" => $de_link_one->label,
-                  "link_one_url" => $de_link_one->link,
-                  "link_two_label" => $de_link_two->label,
-                  "link_two_url" => $de_link_two->link,
-                  "link_three_label" => $de_link_three->label,
-                  "link_three_url" => $de_link_three->link,
-                  "link_four_label" => $de_link_four->label,
-                  "link_four_url" => $de_link_four->link,
-                  "link_four_label" => $de_link_five->label,
-                  "link_four_url" => $de_link_five->link,
-                ];
+                    "user_id"  => $new_link->user_id,
+                    "link_image" => $new_link->link_image,
+                    "link_data" => json_decode($new_link->link_one),
+                  ];
 
                 $messages = [
                     "status" => "200",

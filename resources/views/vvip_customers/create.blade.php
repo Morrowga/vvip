@@ -221,7 +221,7 @@
             <div class="card-body" id="image_card">
                 <div class="d-flex justify-content-center">
                     <div class="col-md-6 text-center">
-                        <img id="link_img" class="text-center" width="150" height="150" />
+                        <img id="link_img" src="../images/logo.jpeg" class="text-center" width="150" height="150" />
                     </div>
                     <div class="col-md-6">
                         <h4 class="text text-center mt-3">Upload Logo</h4>
@@ -234,84 +234,21 @@
             </div>
             <div class="card-body" id="link_above">
                 <div class="card-body">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link One</h3>
-                            <input type="text" class="form-control" id="linkone_label" name="link_one_label" placeholder="write your app label">
-                        </div>
+                    <h3 class="text text-center">Link</h3>
+                    <div class="link_input_field">
                     </div>
-                    <div class="d-flex justify-content-center mt-1">
+                    <div class="d-flex justify-content-center mt-2">
                         <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkone_url" name="link_one_url" placeholder="write your app url">
-                        </div> 
-                    </div>
-                    <!-- <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-6 col-md-offset-3">
-                            <button class="btn btn-dark btn-block">Save Link</button>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Two</h3>
-                            <input type="text" class="form-control" id="linktwo_label" name="link_two_label" placeholder="write your app label"> 
+                            <input type="text" class="form-control" name="links_label[]" placeholder="Enter app label">
+                            <input type="text" class="form-control mt-3" id="link_input" name="links[]" placeholder="Enter app url">
                         </div>
                     </div>
                     <div class="d-flex justify-content-center mt-2">
                         <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linktwo_url" name="link_two_url" placeholder="write your app url">
+                            <button class="btn btn-success add_moree btn-block">Add More</button>
+                            <button class="submit_link_tree btn btn-primary btn-block">Confirm</button>
                         </div>
                     </div>
-                    <div class="col-md-12 mt-2 text-center">
-                        <a class="btn btn-dark load-more">Load More</a>
-                        <button class="btn btn-dark save_tree" type="submit">Save Link</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body" id="more_link">
-                <div class="card-body" id="link_three">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Three</h3>
-                            <input type="text" class="form-control" id="linkthree_label" name="link_three_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkthree_url" name="link_three_url" placeholder="write your app url">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body" id="link_four">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Four</h3>
-                            <input type="text" class="form-control" id="linkfour_label" name="link_four_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkfour_url" name="link_five_url" placeholder="write your app url">
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body" id="link_five">
-                    <div class="d-flex justify-content-center">
-                        <div class="col-md-10 col-md-offset-1">
-                            <h3 class="text text-center">Link Five</h3>
-                            <input type="text" class="form-control" id="linkfive_label" name="link_five_label" placeholder="write your app label">
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center mt-2">
-                        <div class="col-md-10 col-md-offset-1">
-                            <input type="text" class="form-control" id="linkfive_url" name="link_five_url" placeholder="write your app url">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12 mt-2 text-center">
-                    <a class="btn btn-dark load-previous">Load Previous</a>
-                    <button class="btn btn-dark save_tree" type="submit">Save Link</button>
                 </div>
             </div>
         </div>
@@ -414,6 +351,7 @@
 @section('script')
 <script>
 $(function() {
+    
     //button_hide_show_play
     $('.file_upload').change(function(){
         var url = window.URL.createObjectURL(this.files[0]);
@@ -435,30 +373,6 @@ $(function() {
     // $('#link_three').hide();
     // $('#link_four').hide();
     // $('#link_five').hide();
-    $('#more_link').hide();
-
-    $('.load-previous').on('click', function(){
-        // $('#save_modal').modal('hide');
-        // $('#link_three').hide();
-        // $('#link_four').hide();
-        $('#more_link').hide();
-        // $('#link_five').hide();
-        $('#image_card').addClass('animate__animated animate__fadeInDown').show();
-        $('#link_above').addClass('animate__animated animate__fadeInDown').show();
-    });
-
-    $('.load-more').on('click', function(){
-        // $('#link_three').show();
-        // $('#link_four').show();
-        // $('#link_five').show();
-        // $('#save_modal').modal('hide');
-        $('#more_link').addClass('animate__animated animate__fadeInUp').show();
-        $('#image_card').hide();
-        $('#link_above').hide();
-        // $('#link_three').addClass('animate__animated animate__fadeInUp').show();
-        // $('#link_four').addClass('animate__animated animate__fadeInUp').show();
-        // $('#link_five').addClass('animate__animated animate__fadeInUp').show();
-    });
 
 
     $('#con_tact').on('click', function() {
@@ -726,6 +640,23 @@ $(function() {
             });  
     });
 
+    var max_fields      = 10; //maximum input boxes allowed
+	var wrapper   		= $(".link_input_field"); //Fields wrapper
+	var add_button      = $(".add_moree"); //Add button ID
+	
+	var x = 1; //initlal text box count
+	$(add_button).click(function(e){ //on add input button click
+		e.preventDefault();
+		if(x < max_fields){ //max input box allowed
+			x++; //text box increment
+			$(wrapper).append(`<div class="d-flex justify-content-center mt-2">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <input type="text" class="form-control" name="links_label[]" placeholder="Enter app label">
+                                    <input type="text" class="form-control mt-3" id="link_input" name="links[]" placeholder="write your app label">
+                                </div>
+                            </div>`); //add input box
+		}
+	});
 
     $('#link_tree_form').submit(function(e){
         e.preventDefault();
@@ -746,17 +677,6 @@ $(function() {
                 console.log(response);
                 $('#save_text').text('Link Tree Saved');
                 $('#save_modal').modal('show');
-                // $('#link_img').attr('src', '../storage/link_tree_images/' + response.data['link_image']);
-                // $('#linkone_label').val(response.data['link_one_label']);
-                // $('#linkone_url').val(response.data['link_one_url']);
-                // $('#linktwo_label').val(response.data['link_two_label']);
-                // $('#linktwo_url').val(response.data['link_two_url']);
-                // $('#linkthree_label').val(response.data['link_three_label']);
-                // $('#linkthree_url').val(response.data['link_three_url']);
-                // $('#linkfour_label').val(response.data['link_four_label']);
-                // $('#linkfour_url').val(response.data['link_four_url']);
-                // $('#linkfive_label').val(response.data['link_five_label']);
-                // $('#linkfive_url').val(response.data['link_five_url']);
             }
         });
     });
@@ -774,19 +694,18 @@ $(function() {
             console.log(response);
             if(response.status == '200'){
                 $('#link_img').attr('src', '../' + response.data['link_image']);
-                $('#linkone_label').val(response.data['link_one_label']);
-                $('#linkone_url').val(response.data['link_one_url']);
-                $('#linktwo_label').val(response.data['link_two_label']);
-                $('#linktwo_url').val(response.data['link_two_url']);
-                $('#linkthree_label').val(response.data['link_three_label']);
-                $('#linkthree_url').val(response.data['link_three_url']);
-                $('#linkfour_label').val(response.data['link_four_label']);
-                $('#linkfour_url').val(response.data['link_four_url']);
-                $('#linkfive_label').val(response.data['link_five_label']);
-                $('#linkfive_url').val(response.data['link_five_url']);
             } else {
                 console.log('data does not exist');
-            }   
+            } 
+            var data = response.data['link_data'];
+            $.each(data, function(i, value) {
+                $(wrapper).append(`<div class="d-flex justify-content-center mt-2">
+                                <div class="col-md-10 col-md-offset-1">
+                                    <input type="text" class="form-control" name="links_label[]" value="`+ value['label'] +`" placeholder="Enter app label">
+                                    <input type="text" class="form-control mt-3" id="link_input" value="`+ value['url'] +`" name="links[]" placeholder="write your app label">
+                                </div>
+                            </div>`)
+            });
         }
     });
 

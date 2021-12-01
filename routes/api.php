@@ -66,14 +66,7 @@ Route::post('create_link_tree', [App\Http\Controllers\API\UserPanelController::c
 
 Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::class, 'qr_generate']);
 
-//379d0d9f-62a3-4d18-9e4d-70f378ff6392
-// Route::get('qrcode', function (Request $request) {
-//     $url = $request->url_value;
-//     return QrCode::size(300)->generate($url, storage_path('storage/customer_qr/' . $url . '.png'));
-// });
-
-//user stat
-// Route::get('/statistics/{id}',[App\Http\Controllers\API\UserStatController::class,'user_stat']);
+Route::post('user_exists', [App\Http\Controllers\API\UserRegisterController::class, 'user_exists']);
 
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 
