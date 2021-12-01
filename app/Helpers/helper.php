@@ -1,36 +1,40 @@
 <?php
 namespace App\Helpers;
-use App\Models\DeepLink;
-use App\Models\Contact;
 use App\Models\Eusp;
-use App\Models\LinkTree;
-use App\Models\SelectedView;
 use App\Models\User;
+use App\Models\Contact;
+use App\Models\DeepLink;
+use App\Models\LinkTree;
 use App\Models\ViewCount;
+use App\Models\SelectedView;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Request;
 
 class Helper{
 
-    public static function countView()
+    public static function countView($device = 'website')
     {
-        $exit_page_name = ViewCount::get();
-        $new_page = str_replace('http://localhost:8000/','',Request::url());
-        foreach($exit_page_name as $ex_pg_name){
-            if($ex_pg_name->page_name == $new_page){
-                $pg_name = $ex_pg_name->page_name;
-            }
+        $env = 1;
+        if (config("app.env") == 'local') {
+            $env = 0;
         }
-        if(!empty($pg_name)){
-            $count_p = ViewCount::where('page_name',$pg_name)->first();
-            // dd($count_p);
-                $count_p->increment('website');
-                $count_p->update();
-        }else{
-            $count_p = new ViewCount();
-            $count_p->page_name = $new_page;
-            $count_p->website = $count_p->increment('website');
-            $count_p->save();
+        if ($env == 0) {
+            $page = str_replace('http://127.0.0.1:8001', '', Request::url());
+        } else {
+            $page = str_replace('http://vvip9.co','', Request::url());
         }
+        if (empty($page)) {
+            $page = '/index';
+        }
+        $page_array = explode('/', $page);
+
+        $viewcount = ViewCount::where('page_name', $page_array[1])->first();
+        if ($device == 'mobile') {
+            $viewcount->mobile = ++$viewcount->mobile;
+        } else {
+            $viewcount->website = ++$viewcount->website;
+        }
+        $viewcount->save();
     }
 
     public static function getData($request_name,$user_id){
@@ -476,50 +480,50 @@ class Helper{
                     $mobile_browser++;
         }
 
-            $mobile_ua = strtolower(substr(self::get_user_agent(), 0, 4));
-            $mobile_agents = array(
-                'w3c','acs-','alav','alca','amoi','audi','avan','benq','bird','blac','blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',
-                'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-','maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',
+        $mobile_ua = strtolower(substr(self::get_user_agent(), 0, 4));
+        $mobile_agents = array(
+            'w3c','acs-','alav','alca','amoi','audi','avan','benq','bird','blac','blaz','brew','cell','cldc','cmd-','dang','doco','eric','hipt','inno',
+            'ipaq','java','jigs','kddi','keji','leno','lg-c','lg-d','lg-g','lge-','maui','maxo','midp','mits','mmef','mobi','mot-','moto','mwbp','nec-',
 
-                'newt','noki','palm','pana','pant','phil','play','port','prox','qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',
+            'newt','noki','palm','pana','pant','phil','play','port','prox','qwap','sage','sams','sany','sch-','sec-','send','seri','sgh-','shar',
 
-                'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-','tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',
-                'wapr','webc','winw','winw','xda','xda-');
+            'sie-','siem','smal','smar','sony','sph-','symb','t-mo','teli','tim-','tosh','tsm-','upg1','upsi','vk-v','voda','wap-','wapa','wapi','wapp',
+            'wapr','webc','winw','winw','xda','xda-');
 
-                if(in_array($mobile_ua,$mobile_agents)){
-                    $mobile_browser++;
-                }
+        if(in_array($mobile_ua,$mobile_agents)){
+            $mobile_browser++;
+        }
 
-                if(strpos(strtolower(self::get_user_agent()),'opera mini') > 0){
-                    $mobile_browser++;
+        if(strpos(strtolower(self::get_user_agent()),'opera mini') > 0){
+            $mobile_browser++;
 
-                    //Check for tables on opera mini alternative headers
+            //Check for tables on opera mini alternative headers
 
-                    $stock_ua =
-                    strtolower(isset($_SERVER['HTTP_X_OPERAMINI_PHONE_UA'])?
-                    $_SERVER['HTTP_X_OPERAMINI_PHONE_UA']:
-                    (isset($_SERVER['HTTP_DEVICE_STOCK_UA'])?
-                    $_SERVER['HTTP_DEVICE_STOCK_UA']:''));
+            $stock_ua =
+            strtolower(isset($_SERVER['HTTP_X_OPERAMINI_PHONE_UA'])?
+            $_SERVER['HTTP_X_OPERAMINI_PHONE_UA']:
+            (isset($_SERVER['HTTP_DEVICE_STOCK_UA'])?
+            $_SERVER['HTTP_DEVICE_STOCK_UA']:''));
 
-                    if(preg_match('/(tablet|ipad|playbook)|(android(?!.*mobile))/i', $stock_ua)){
-                        $tablet_browser++;
-                    }
-                }
+            if(preg_match('/(tablet|ipad|playbook)|(android(?!.*mobile))/i', $stock_ua)){
+                $tablet_browser++;
+            }
+        }
 
-                if($tablet_browser > 0){
-                    //do something for tablet devices
+        if($tablet_browser > 0){
+            //do something for tablet devices
 
-                    return 'Tablet';
-                }
-                else if($mobile_browser > 0){
-                    //do something for mobile devices
+            return 'Tablet';
+        }
+        else if($mobile_browser > 0){
+            //do something for mobile devices
 
-                    return 'Mobile';
-                }
-                else{
-                    //do something for everything else
-                        return 'Computer';
-                }
+            return 'Mobile';
+        }
+        else{
+            //do something for everything else
+                return 'Computer';
+        }
 
     }
 }
