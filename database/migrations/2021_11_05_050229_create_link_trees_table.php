@@ -17,11 +17,8 @@ class CreateLinkTreesTable extends Migration
             $table->id();
             $table->uuid('user_id');
             $table->string('link_image')->nullable();
-            $table->json('link_one')->nullable();
-            $table->json('link_two')->nullable();
-            $table->json('link_three')->nullable();
-            $table->json('link_four')->nullable();
-            $table->json('link_five')->nullable();
+            $table->json('links')->nullable();
+            $table->json('labels')->nullable();
             $table->string('background_color')->nullable();
             $table->string('text_color')->nullable();
             $table->string('text_highlight_color')->nullable();

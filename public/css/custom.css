@@ -1476,6 +1476,37 @@ label.label_file {
     background-color: rgb(217,181,81) !important;
     transition-duration: 1s !important;
 }
+
+
+.add_moree{
+    border: 2px solid rgb(68, 112, 71) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    background-color: rgb(255,255,255) !important
+}
+
+.add_moree:hover{
+    background-color:rgb(68, 112, 71) !important;
+    transition-duration: 1s !important;
+    color: rgb(255,255,255) !important;
+}
+
+.submit_link_tree{
+    border: 2px solid rgb(217,181,81) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    background-color: rgb(255,255,255) !important
+}
+
+.submit_link_tree:hover{
+    background-color:rgb(217,181,81) !important;
+    color: rgb(255,255,255) !important; 
+    transition-duration: 1s !important;
+}
 /* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {

@@ -50,7 +50,9 @@
                         <button type="submit" class="btn btn-primary login-btn btn-block">
                             {{ __('Login') }}
                         </button>
-                        <a href="" class="link mt-3">Do You Have Account ?</a>
+                        <div class="d-flex justify-content-center">
+                            <a href="/package" class="link mt-3 ml-3"> Do You Have Account ?</a>
+                        </div>
                         <!-- @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
