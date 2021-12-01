@@ -121,6 +121,7 @@
             document.getElementById("loading").style.display = "none";
             document.getElementById("main-body").style.display = "block";
         }, 2000);
+
         </script>
     </body> 
 </html>

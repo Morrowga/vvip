@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "237c871cfd535f182a52d40d54981cc6",
+    "content-hash": "38cf760052442754a0e0fa8090811bf1",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6023,18 +6023,6 @@
         },
         {
             "name": "facade/ignition",
-<<<<<<< HEAD
-            "version": "2.17.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/facade/ignition.git",
-                "reference": "28d12b473ffcbe326959385772fd5125c73bc974"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/28d12b473ffcbe326959385772fd5125c73bc974",
-                "reference": "28d12b473ffcbe326959385772fd5125c73bc974",
-=======
             "version": "2.14.1",
             "source": {
                 "type": "git",
@@ -6045,7 +6033,6 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/facade/ignition/zipball/6d89c4c99537f487ad29f646d57ebf107ef714ed",
                 "reference": "6d89c4c99537f487ad29f646d57ebf107ef714ed",
->>>>>>> b5f67b56c1fcf0070995302687e672e256d445e6
                 "shasum": ""
             },
             "require": {
@@ -6109,11 +6096,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-<<<<<<< HEAD
-            "time": "2021-11-24T08:47:21+00:00"
-=======
             "time": "2021-10-08T12:34:52+00:00"
->>>>>>> b5f67b56c1fcf0070995302687e672e256d445e6
         },
         {
             "name": "facade/ignition-contracts",
@@ -8244,14 +8227,7 @@
                     "type": "github"
                 }
             ],
-<<<<<<< HEAD
-=======
-            "funding": [{
-                "url": "https://github.com/sebastianbergmann",
-                "type": "github"
-            }],
             "abandoned": true,
->>>>>>> b5f67b56c1fcf0070995302687e672e256d445e6
             "time": "2020-09-28T06:45:17+00:00"
         },
         {

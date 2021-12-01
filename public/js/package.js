@@ -40,6 +40,7 @@ $(function(){
             }
 
             if(curIndex() == 4){
+                var node = document.getElementById('bl_front');
                 $('#confirm_modal').modal('show');
                 $('#check_confirm').on('click', function(){
                     $('#confirm_modal').modal('hide');
@@ -48,11 +49,37 @@ $(function(){
                 $('#cancel_confirm').on('click', function(){
                     navigateTo(curIndex()-1);
                 })
+
+                var node = document.getElementById('card_blank_back');
+
+                domtoimage.toPng(node, {
+                    cacheBust: true
+                    }).then(function (dataUrl) {
+                        var img = new Image();
+                        img.src = dataUrl;
+                        document.body.appendChild(img);
+                    })
+                    .catch(function (error) {
+                        console.error('oops, something went wrong!', error);
+                    });
             }
     });
     
     navigateTo(0);
 });
+
+function makeImage(uri) {
+    return new Promise(function (resolve, reject) {
+        var image = new Image();
+        image.onload = function () {
+            resolve(image);
+        };
+        image.crossOrigin = 'Anonymous';
+        image.onerror = reject;
+        image.src = uri;
+    });
+}
+
 
 //popover
 $('[data-toggle="popover"]').popover();
@@ -313,7 +340,7 @@ $("#phone").on('keyup', function(event) {
 });
 
 //email_validate
-$("#email").keyup(function(event) {
+$("#email").on('keyup', function(event) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
     var data = $(this).val();
     if($(this).val().length < 0){
@@ -390,7 +417,9 @@ function packageClick(e){
     document.getElementById('package_name').value = targetValue;
     //card_api
     $.ajax({
-    url: 'http://admin.vvip9.co/api/card_design',
+    url: 'api/get_cards_admin',
+    crossDomain: true,
+    contentType: 'application/x-www-form-urlencoded', 
     type: 'get',
     success: function(response){
         console.log(response);
@@ -459,9 +488,9 @@ function packageClick(e){
                     console.log(value['color']['text_color']);
                     var txt_color = value['color']['text_color'];
                     $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
-                    $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0][0]['front_image']);
+                    $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['front_image']);
                         if(targetValue != '12345'){
-                            $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0][0]['back_image']);
+                            $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['back_image']);
                         }
                     $('#exampleModal').modal('hide');
                     $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();

@@ -265,7 +265,6 @@ class Helper{
                 if($user_check !== null){
                     $link_tree = LinkTree::where('user_id', $user_id)->first();
                     if(!empty($link_tree)){
-
                         $link_img = "storage/link_tree_images/" . $link_tree->link_image;
 
                         $final_data = [

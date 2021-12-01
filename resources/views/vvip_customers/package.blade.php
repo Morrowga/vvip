@@ -491,12 +491,13 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content" style="background-color: #fff !important;">
                 <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                 <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                 <h5 class="modal-title" id="exampleModalLabel"></h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
+                    <div id="output"></div>
                     <p class="sure" style="font-size: 20px !important; margin-top: 30px;">
                         Are you sure for this. Confirm ?
                     </p>

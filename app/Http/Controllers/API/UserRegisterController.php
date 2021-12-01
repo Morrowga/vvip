@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Controllers\Mail\MailController;
+use GuzzleHttp\Client;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
@@ -466,10 +467,16 @@ class UserRegisterController extends Controller
                 ];
                 return $messages;
             }
-        }
-        
-        
+        }   
+    }
+
+
+    public function card_from_admin(){
+        $client = new Client();
+        $request = $client->get('http://admin.vvip9.co/api/card_design');
+        $response = $request->getBody();
        
+        return json_decode($response);
     }
 
    
