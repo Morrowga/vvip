@@ -1,13 +1,16 @@
 <?php
 namespace App\Helpers;
+use Carbon\Carbon;
 use App\Models\Eusp;
 use App\Models\User;
 use App\Models\Contact;
 use App\Models\DeepLink;
 use App\Models\LinkTree;
+use App\Models\UserStat;
 use App\Models\ViewCount;
 use App\Models\SelectedView;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request;
 
 class Helper{
@@ -19,7 +22,7 @@ class Helper{
             $env = 0;
         }
         if ($env == 0) {
-            $page = str_replace('http://127.0.0.1:8001', '', Request::url());
+            $page = str_replace('http://127.0.0.1:8000', '', Request::url());
         } else {
             $page = str_replace('http://vvip9.co','', Request::url());
         }
@@ -29,12 +32,39 @@ class Helper{
         $page_array = explode('/', $page);
 
         $viewcount = ViewCount::where('page_name', $page_array[1])->first();
-        if ($device == 'mobile') {
-            $viewcount->mobile = ++$viewcount->mobile;
-        } else {
-            $viewcount->website = ++$viewcount->website;
+        if ($viewcount) {
+            if ($device == 'mobile') {
+                $viewcount->mobile = ++$viewcount->mobile;
+            } else {
+                $viewcount->website = ++$viewcount->website;
+            }
+            $viewcount->save();
         }
-        $viewcount->save();
+    }
+
+    public static function user_activity($page, $type, $tbl, $row) {
+        Action::create([
+            'name' => $page,
+            'type' => $type,
+            'table_name' => $tbl,
+            'row_id' => $row
+        ]);
+    }
+
+    public static function user_stats() {
+        $user_stat = new UserStat();
+        $user_stat->user_id = (Auth::user()) ? Auth::id() : NULL;
+        $user_stat->user_ip = Request::getClientIp();
+        $user_stat->user_os = self::get_os();
+        $user_stat->user_browser = self::get_browsers();
+        $user_stat->user_agent = Request::header('User-Agent');
+        $user_stat->social_media = Request::server('HTTP_REFERER');
+        $user_stat->device_ip = null;
+        $user_stat->device_id = null;
+        $user_stat->device_name = self::get_device();
+        $user_stat->nfc_support = null;
+        $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
+        $user_stat->save();
     }
 
     public static function getData($request_name,$user_id){

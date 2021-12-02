@@ -16,9 +16,9 @@ class CreateActionsTable extends Migration
         Schema::create('actions', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
-            $table->string('action_image')->nullable();
-            $table->string('request_name')->nullable();
-            $table->string('self_request_name')->nullable();
+            $table->string('type')->nullable();
+            $table->string('table_name')->nullable();
+            $table->integer('row_id')->nullable();
             $table->timestamps();
         });
     }

@@ -17,20 +17,9 @@ use Illuminate\Support\Facades\Request as FacadesRequest;
 class WebUserJourneyController extends Controller
 {
     public function __construct() {
-        $user_stat = new UserStat();
-        $user_stat->user_id = (Auth::user()) ? Auth::id() : NULL;
-        $user_stat->user_ip = FacadesRequest::getClientIp();
-        $user_stat->user_os = Helper::get_os();
-        $user_stat->user_browser = Helper::get_browsers();
-        $user_stat->user_agent = FacadesRequest::header('User-Agent');
-        $user_stat->social_media = FacadesRequest::server('HTTP_REFERER');
-        $user_stat->device_ip = null;
-        $user_stat->device_id = null;
-        $user_stat->device_name = Helper::get_device();
-        $user_stat->nfc_support = null;
-        $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
-        $user_stat->save();
+        // 
     }
+
     public function package(){
         $packages = Package::get();
         $normal = $packages[0];
@@ -38,6 +27,7 @@ class WebUserJourneyController extends Controller
         $luxury = $packages[2];
         $cards = SmartCardDesign::get();
 
+        Helper::user_stats('package', 'view', NULL, NULL);
         Helper::countView();
         
         return view('vvip_customers.package')->with('normal', $normal)->with('standard', $standard)->with('luxury', $luxury)->with('cards', $cards);
@@ -52,21 +42,25 @@ class WebUserJourneyController extends Controller
 
 
     public function main_view(){
+        Helper::user_stats('index', 'view', NULL, NULL);
         Helper::countView();
         return view('vvip_customers.main_page');
     }
 
     public function products(){
+        Helper::user_stats('products', 'view', NULL, NULL);
         Helper::countView();
         return view('vvip_customers.product');
     }
 
     public function about(){
+        Helper::user_stats('about', 'view', NULL, NULL);
         Helper::countView();
         return view('vvip_customers.about');
     }
 
     public function contact(){
+        Helper::user_stats('contact', 'view', NULL, NULL);
         Helper::countView();
         return view('vvip_customers.contact');
     }

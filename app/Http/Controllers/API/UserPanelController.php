@@ -89,6 +89,8 @@ class UserPanelController extends Controller
                 } 
                 $exist->save();
     
+                Helper::user_stats('contact', 'create', 'contacts', $exist->id);
+
                 $messages = [
                     "status" => "200",
                     "message" => "success"
@@ -132,6 +134,8 @@ class UserPanelController extends Controller
                     $contact->image = $imageName;
                 } 
                 $contact->save();
+
+                Helper::user_stats('contact', 'create', 'contacts', $contact->id);
 
                 $messages = [
                     "status" => "200",
@@ -188,58 +192,66 @@ class UserPanelController extends Controller
                         $deep_link_where_active->active = 0;
                         $deep_link_where_active->save();
 
+                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_where_active->id);
+
                         $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
                         $deep_link_update_active->url = $url;
                         $deep_link_update_active->active = $active;
                         $deep_link_update_active->save();
 
-                       $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
-                       $link_data = [];
-                       foreach($deep_latest as $deep){
-                           $data = [
-                               'id' => $deep->id,
-                               'name' => $deep->name,
-                               'url' => $deep->url,
-                               'active' => $deep->active,
-                           ];
-                           array_push($link_data, $data);
-                       }
-   
-                       $messages = [
-                           "status" => "200",
-                           "message" => "success",
-                           "data" => $link_data
-                       ];
-                       return $messages;
-                   } else {
-                           $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
-                           $deep_link_update_active->url = $url;
-                           $deep_link_update_active->active = $active;
-                           $deep_link_update_active->save();
+                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
 
-                           $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
-                           $link_data = [];
-                           foreach($deep_latest as $deep){
-                               $data = [
-                                   'id' => $deep->id,
-                                   'name' => $deep->name,
-                                   'url' => $deep->url,
-                                   'active' => $deep->active,
-                               ];
-                               array_push($link_data, $data);
-                           }
-       
-                           $messages = [
-                               "status" => "200",
-                               "message" => "success",
-                               "data" => $link_data
-                           ];
-                           return $messages;
-                       }
+                        $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
+                        $link_data = [];
+                        foreach($deep_latest as $deep){
+                            $data = [
+                                'id' => $deep->id,
+                                'name' => $deep->name,
+                                'url' => $deep->url,
+                                'active' => $deep->active,
+                            ];
+                            array_push($link_data, $data);
+                        }
+   
+                        $messages = [
+                            "status" => "200",
+                            "message" => "success",
+                            "data" => $link_data
+                        ];
+                        return $messages;
+                    } else {
+                        $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
+                        $deep_link_update_active->url = $url;
+                        $deep_link_update_active->active = $active;
+                        $deep_link_update_active->save();
+
+                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
+
+                        $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
+                        $link_data = [];
+                        foreach($deep_latest as $deep){
+                            $data = [
+                                'id' => $deep->id,
+                                'name' => $deep->name,
+                                'url' => $deep->url,
+                                'active' => $deep->active,
+                            ];
+                            array_push($link_data, $data);
+                        }
+    
+                        $messages = [
+                            "status" => "200",
+                            "message" => "success",
+                            "data" => $link_data
+                        ];
+                        return $messages;
+                    }
                 } else {
                     $deep_link_active = DeepLink::where('name', '=', $name)->where('user_id', '=', $user_id)->first();
                     $deep_link_active->url = $url;
                     $deep_link_active->save();
+
+                    Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_active->id);
 
                     $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
                     $link_data = [];
@@ -301,6 +313,8 @@ class UserPanelController extends Controller
                         $new_active->self_request;
                         $new_active->save();
             
+                        Helper::user_stats('change_action', 'create', 'selected_views', $new_active->id);
+                        
                         $messages = [
                             "status" => "200",
                             "message" => "success new",
@@ -313,6 +327,8 @@ class UserPanelController extends Controller
                     $checkexist->self_request_name = $self_request;
                     $checkexist->save();
         
+                    Helper::user_stats('change_action', 'update', 'selected_views', $checkexist->id);
+
                     $messages = [
                             "status" => "200",
                             "message" => "success update",
@@ -363,6 +379,8 @@ class UserPanelController extends Controller
                 $create_url->url = $url;
                 $create_url->save();
 
+                Helper::user_stats('creat_url', 'create', 'eusps', $create_url->id);
+
                 $messages = [
                     "status" => "200",
                     "message" => "success",
@@ -372,6 +390,8 @@ class UserPanelController extends Controller
             } else {
                 $check->url = $url;
                 $check->save();
+
+                Helper::user_stats('creat_url', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -396,6 +416,8 @@ class UserPanelController extends Controller
                 $create_sms->sms_text = $sms_text;
                 $create_sms->save();
 
+                Helper::user_stats('create_sms', 'create', 'eusps', $create_sms->id);
+
                 $messages = [
                     "status" => "200",
                     "message" => "success",
@@ -407,6 +429,8 @@ class UserPanelController extends Controller
                 $check->sms_no = $sms_no;
                 $check->sms_text = $sms_text;
                 $check->save();
+
+                Helper::user_stats('create_sms', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -434,6 +458,8 @@ class UserPanelController extends Controller
                 $create_email->email_body = $email_body;
                 $create_email->save();
 
+                Helper::user_stats('create_email', 'create', 'eusps', $create_email->id);
+
                 $messages = [
                     "status" => "200",
                     "message" => "success",
@@ -447,6 +473,8 @@ class UserPanelController extends Controller
                 $check->email_subject = $email_subject;
                 $check->email_body = $email_body;
                 $check->save();
+
+                Helper::user_stats('create_email', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -471,6 +499,8 @@ class UserPanelController extends Controller
                 $create_phone->phone = $phone;
                 $create_phone->save();
 
+                Helper::user_stats('create_phone', 'create', 'eusps', $create_phone->id);
+
                 $messages = [
                     "status" => "200",
                     "message" => "success",
@@ -480,6 +510,8 @@ class UserPanelController extends Controller
             } else {
                 $check->phone = $phone;
                 $check->save();
+
+                Helper::user_stats('create_phone', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -507,6 +539,8 @@ class UserPanelController extends Controller
                 $contact_exist->text_color = $text_color;
                 $contact_exist->text_highlight_color = $text_highlight_color;
                 $contact_exist->save();
+
+                Helper::user_stats('create_appearance', 'update', 'contacts', $contact_exist->id);
             } else {
                 $contact_new = new Contact();
                 $contact_new->user_id = $user_id;
@@ -514,6 +548,8 @@ class UserPanelController extends Controller
                 $contact_new->text_color = $text_color;
                 $contact_new->text_highlight_color = $text_highlight_color;
                 $contact_new->save();
+
+                Helper::user_stats('create_appearance', 'create', 'contacts', $contact_new->id);
             }
 
             if($link_tree_exist !== null){
@@ -521,6 +557,8 @@ class UserPanelController extends Controller
                 $link_tree_exist->text_color = $text_color;
                 $link_tree_exist->text_highlight_color = $text_highlight_color;
                 $link_tree_exist->save();
+
+                Helper::user_stats('create_appearance', 'update', 'link_trees', $link_tree_exist->id);
             } else {
                 $link_new = new LinkTree();
                 $link_new->user_id = $user_id;
@@ -528,6 +566,8 @@ class UserPanelController extends Controller
                 $link_new->text_color = $text_color;
                 $link_new->text_highlight_color = $text_highlight_color;
                 $link_new->save();
+
+                Helper::user_stats('create_appearance', 'create', 'link_trees', $link_new->id);
             }
 
             $messages = [
@@ -576,6 +616,8 @@ class UserPanelController extends Controller
                 } 
                 $link_exist->save();
 
+                Helper::user_stats('create_link_tree', 'update', 'link_trees', $link_exist->id);
+
                 $final_data = [
                   "user_id"  => $link_exist->user_id,
                   "link_image" => $link_exist->link_image,
@@ -601,6 +643,8 @@ class UserPanelController extends Controller
                     $new_link->link_image = 'logo.jpeg';
                 }
                 $new_link->save();
+
+                Helper::user_stats('create_link_tree', 'create', 'link_trees', $new_link->id);
 
                 $final_data = [
                     "user_id"  => $new_link->user_id,

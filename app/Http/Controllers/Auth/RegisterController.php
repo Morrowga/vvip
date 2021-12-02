@@ -83,6 +83,8 @@ class RegisterController extends Controller
         $user->password = Hash::make($request->pin);
         $user->verification_code = sha1(time());
         $user->save();
+
+        Helper::user_stats('register', 'create', 'users', $user->id);
         
 
         $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
@@ -98,7 +100,9 @@ class RegisterController extends Controller
             $deep_link->app_package = $link[2];
             $deep_link->active = 0;
             $deep_link->save();
+            Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
         }
+
 
         if($user != null){
             MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
@@ -115,6 +119,8 @@ class RegisterController extends Controller
         if($user != null){
             $user->is_verified = 1;
             $user->save();
+
+            Helper::user_stats('verify_user', 'create', 'users', $user->id);
 
             return redirect()->route('login')->with(session()->flash('alert-success', 'Your Account is verified. Please Login.'));
         }
