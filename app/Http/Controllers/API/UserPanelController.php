@@ -500,7 +500,6 @@ class UserPanelController extends Controller
         $check_user = User::where('id', $user_id)->first();
 
         if($check_user !== null){
-            if($request->background_color || $request->text_color  || $request->text_highlight_color){
                 $contact_exist = Contact::where('user_id', $check_user->id)->first();
                 $link_tree_exist = LinkTree::where('user_id', $check_user->id)->first();
                 if($contact_exist !== null){
@@ -545,14 +544,15 @@ class UserPanelController extends Controller
     
                 return $messages;
             }
-        } else {
-             $messages = [
-                "status" => "412",
-                "message" => "User does not exist."
-             ];
+            
+        // } else {
+        //      $messages = [
+        //         "status" => "412",
+        //         "message" => "User does not exist."
+        //      ];
 
-             return $messages;
-        }
+        //      return $messages;
+        // }
     }
 
 
