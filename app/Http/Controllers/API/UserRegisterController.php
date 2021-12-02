@@ -59,7 +59,7 @@ class UserRegisterController extends Controller
                     $user->password = Hash::make($pin);
                     $user->save();
                     
-                    Helper::user_stats('register', 'create', 'users', $user->id);
+                    // Helper::user_stats('register', 'create', 'users', $user->id);
                     
                     // $links = ['Facebook', 'Instagram', 'Youtube', 'Tiktok', 'Pinterest', 'LinkedIn', 'Tripadvisor','Zoom','Google Maps','Vimeo','Amazon'];
                     $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
