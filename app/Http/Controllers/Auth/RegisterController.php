@@ -120,7 +120,7 @@ class RegisterController extends Controller
             $user->is_verified = 1;
             $user->save();
 
-            Helper::user_stats('verify_user', 'create', 'users', $user->id);
+            // Helper::user_stats('verify_user', 'create', 'users', $user->id);
 
             return redirect()->route('login')->with(session()->flash('alert-success', 'Your Account is verified. Please Login.'));
         }
