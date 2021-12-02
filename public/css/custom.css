@@ -648,6 +648,12 @@ left: 65%;
     border: 2px solid rgb(217,181,81) !important;
 }
 
+.action:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color:rgba(0, 0, 0) !important;
+}
+
 .home-col .create{
 position: absolute;
 top: 46%;
@@ -659,6 +665,12 @@ left: 23%;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
+}
+
+.create:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color:rgba(0, 0, 0) !important;
 }
 
 .home-col .profile{
@@ -674,6 +686,12 @@ left: 65%;
     border: 2px solid rgb(217,181,81) !important;
 }
 
+.profile:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color:rgba(0, 0, 0) !important;
+}
+
 .home-col .setting{
 position: absolute;
 top: 46%;
@@ -685,6 +703,12 @@ left: 23%;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
+}
+
+.setting:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color:rgba(0, 0, 0) !important;
 }
 
 .profile_img{
@@ -1166,6 +1190,26 @@ label.label_file {
     height: auto;
   }
 
+  #navbarDropdown{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    letter-spacing: 3px;
+  }
+  .dropdown-menu{
+    background-color: rgb(217,181,81) !important;
+  }
+  .dropdown-item{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    letter-spacing: 3px;
+    background-color: rgb(217,181,81) !important;
+  }
+
+  .dropdown-item:hover{
+    background-color: rgb(0,0,0) !important;
+    color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+  }
   
 #text_color{
     width: 99px;

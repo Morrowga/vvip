@@ -10,7 +10,7 @@
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             @else
@@ -57,22 +57,22 @@
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
-                <img src="https://i.ibb.co/Z6f6Dfq/action.jpg" alt="" id="action" width="350" height="280">
-                <a href="/action" class="btn btn-dark action">ACTION</a>
+                <img src="https://64.media.tumblr.com/55ff79d7b43c772f3bfcb11eb5d0b2a4/tumblr_mu4m21JyhJ1stn28do1_1280.png" alt="" id="action" width="350" height="280">
+                <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt"></i> ACTION</a>
             </div>
             <div class="col text-left home-col">
-                <img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" id="create" width="350" height="280">
-                <a href="/create_data" class="btn btn-dark create">CREATE</a>
+                <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="create" width="350" height="280">
+                <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square"></i> CREATE</a>
             </div>
         </div>
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col" style="margin-top: 25px !important;">
-                <img src="https://i.ibb.co/fG0HJ4N/profile.jpg" alt="" id="profile" width="350" height="280">
-                <a href="/profile" class="btn btn-dark profile">PROFILE</a>
+                <img src="https://miro.medium.com/max/1400/1*PzTm5I3QY4WDupWDTpEKOw.png" alt="" id="profile" width="350" height="280">
+                <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle"></i> PROFILE</a>
             </div>
             <div class="col text-left home-col" style="margin-top: 25px !important;">
-                <img src="https://i.ibb.co/0nFM29f/setting.jpg" alt="" id="setting" width="350" height="280">
-                <a href="/setting" class="btn btn-dark setting">SETTING</a>
+                <img src="https://miro.medium.com/max/1400/1*wRSmvIpXLsNYT2NaDFl6_A.png" alt="" id="setting" width="350" height="280">
+                <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog"></i> SETTING</a>
             </div>
         </div>
     </div>
@@ -93,6 +93,7 @@
            success:function(response){
                console.log(response);
                $('#welcome_text').text(response.data['text']);
+               $('#profile_img').attr('src', response.data['profile_img']);
            }
          });
     </script>

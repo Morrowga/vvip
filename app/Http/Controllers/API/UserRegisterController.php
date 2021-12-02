@@ -344,7 +344,7 @@ class UserRegisterController extends Controller
                 $save_user->phone_number = $phone;
                 $save_user->save();
 
-                Helper::user_stats('save_user', 'create', 'user_logs', $save_user->id);
+                // Helper::user_stats('save_user', 'create', 'user_logs', $save_user->id);
 
                 $messages = [
                     'status' => '200',
