@@ -606,22 +606,13 @@ class UserPanelController extends Controller
                 return $messages;
             }
         } else {
-            $messages = [
-                "status" => "400",
-                "message" => "field not match",
-            ];
+             $messages = [
+                "status" => "412",
+                "message" => "User does not exist."
+             ];
 
-            return $messages;
+             return $messages;
         }
-            
-        // } else {
-        //      $messages = [
-        //         "status" => "412",
-        //         "message" => "User does not exist."
-        //      ];
-
-        //      return $messages;
-        // }
     }
 
 
