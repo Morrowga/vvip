@@ -192,14 +192,14 @@ class UserPanelController extends Controller
                         $deep_link_where_active->active = 0;
                         $deep_link_where_active->save();
 
-                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_where_active->id);
+                        // Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_where_active->id);
 
                         $deep_link_update_active = DeepLink::where('user_id', $user_id)->where('name', '=', $name)->first();
                         $deep_link_update_active->url = $url;
                         $deep_link_update_active->active = $active;
                         $deep_link_update_active->save();
 
-                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
+                        // Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
 
                         $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
                         $link_data = [];
@@ -225,7 +225,7 @@ class UserPanelController extends Controller
                         $deep_link_update_active->active = $active;
                         $deep_link_update_active->save();
 
-                        Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
+                        // Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_update_active->id);
 
                         $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
                         $link_data = [];
@@ -313,7 +313,7 @@ class UserPanelController extends Controller
                         $new_active->self_request;
                         $new_active->save();
             
-                        Helper::user_stats('change_action', 'create', 'selected_views', $new_active->id);
+                        // Helper::user_stats('change_action', 'create', 'selected_views', $new_active->id);
                         
                         $messages = [
                             "status" => "200",
@@ -391,7 +391,7 @@ class UserPanelController extends Controller
                 $check->url = $url;
                 $check->save();
 
-                Helper::user_stats('creat_url', 'update', 'eusps', $check->id);
+                // Helper::user_stats('creat_url', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -474,7 +474,7 @@ class UserPanelController extends Controller
                 $check->email_body = $email_body;
                 $check->save();
 
-                Helper::user_stats('create_email', 'update', 'eusps', $check->id);
+                // Helper::user_stats('create_email', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -511,7 +511,7 @@ class UserPanelController extends Controller
                 $check->phone = $phone;
                 $check->save();
 
-                Helper::user_stats('create_phone', 'update', 'eusps', $check->id);
+                // Helper::user_stats('create_phone', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
