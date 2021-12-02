@@ -11,9 +11,6 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         
-		<link href='http://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'> <!-- Body font -->
-		<link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> <!-- Navbar font -->
-
 		<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">

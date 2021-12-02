@@ -1088,15 +1088,19 @@ label.label_file {
   .menu_button{
     background-color: rgb(255,255,255, 0.8) !important;
     color: #000 !important;
+    width: 100%;
 	font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px;
+    text-align: left !important;
     font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
   }
 
   .menu_button:hover{
-    background-color: rgb(217,181,81) !important;
-    transition-duration: 0.7s;
+    background: #272829 !important;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to lef, #272829, #d9b551) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left,#272829, #d9b551) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    transition-duration: 1s !important;
   } 
   #save_contact{
     background-color: rgba(0, 0, 0) !important;
