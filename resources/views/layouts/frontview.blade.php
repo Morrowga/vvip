@@ -23,7 +23,6 @@
         <link rel="stylesheet" href="../css/custom.css">
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
-        <!-- <link href="//db.onlinewebfonts.com/c/8be4a2f403c2dc27187d892cca388e24?family=Britannic+Bold" rel="stylesheet" type="text/css"/> -->
 		<link rel="stylesheet" href="../css/skin/cool-gray.css">
 	</head>
     <body data-spy="scroll" data-target="#main-navbar">
