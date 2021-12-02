@@ -1095,10 +1095,8 @@ label.label_file {
   }
 
   .menu_button:hover{
-    background: #272829 !important;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to lef, #272829, #d9b551) !important;  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left,#272829, #d9b551) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
-    transition-duration: 1s !important;
+    background: rgb(217,181,81) !important;  /* fallback for old browsers */
+    transition-duration: 0.9s !important;
   } 
   #save_contact{
     background-color: rgba(0, 0, 0) !important;
@@ -1497,6 +1495,18 @@ label.label_file {
 	/* z-index: -1; */
 }
 
+.spin{
+    background: none !important;
+    background-color: none !important;
+    border: none !important;    
+}
+button.spin:focus{
+    border-color: none !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 #menu_list_card{
     background-color: rgb(0,0,0) !important;
 }
@@ -1504,7 +1514,7 @@ label.label_file {
 .menu-icon{
     color: rgb(217,181,81);
     font-size: 22px;
-    text-shadow: 2px 2px 10px rgb(0,0,0);
+    text-shadow: 2px 2px 10px rgb(0,0,0,0.8);
 }
 
 .error_texts {

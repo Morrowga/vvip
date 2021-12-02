@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -78,6 +80,23 @@
     </div>
 </div>
 
+
+<div class="modal fade deep" id="wheel_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+        <div class="modal-header" style="border-bottom: none !important;">
+            <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="border-top: none !important;">
+            
+        <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-secondary btn-block" id="ok" data-bs-dismiss="modal">Ok</button>
+        </div>
+        </div>
+    </div>
+</div>
+
 @section('script')
     <script>
         var text_url = '{{ url('api/get_datas') }}';
@@ -96,6 +115,13 @@
                $('#profile_img').attr('src', response.data['profile_img']);
            }
          });
+
+        $(function(){
+            $(".spin").on("click", function(){
+                $('#wheel_modal').modal('show');
+            });
+        });
+         
     </script>
 @endsection
 @endsection
