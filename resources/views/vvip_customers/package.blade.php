@@ -327,7 +327,7 @@
                                                         <button type="button" id="move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6 text-center" id="bl_front">
+                                                <div class="col-md-6 text-center custom_card" id="bl_front">
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
@@ -382,7 +382,7 @@
         </div>
     </section>
     <div class="col-md-12" style="height: 80px;">
-        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://htut.com" class="theme-author">Htut Media</a></p>
     </div>
     
 
@@ -497,8 +497,7 @@
                     </button>
                 </div>
                 <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
-                    <div id="output"></div>
-                    <p class="sure" style="font-size: 20px !important; margin-top: 30px;">
+                    <p class="sure" style="font-size: 20px !important; margin-top: 60px !important;">
                         Are you sure for this. Confirm ?
                     </p>
                 </div>

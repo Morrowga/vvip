@@ -113,7 +113,7 @@
 		<script src="../js/classie.js"></script>
 		<script src="../js/jquery.easing.min.js"></script>
 		<script src="../js/jquery.counterup.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
 		<script src="../js/theme.js"></script>
         @yield('script')
         <script>
@@ -121,7 +121,6 @@
             document.getElementById("loading").style.display = "none";
             document.getElementById("main-body").style.display = "block";
         }, 2000);
-
         </script>
     </body> 
 </html>

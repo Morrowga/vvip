@@ -35,21 +35,20 @@
                         <div class="col-sm-6">
                             <div class="contact-form">
                                 <h4 class="contact">Write to us</h4>
-                                <form role="form">
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="Your Name" required>
+                                        <input type="text" name="name" id="c_name" class="form-control input-lg" placeholder="Your Name" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control input-lg" placeholder="E-mail" required>
+                                        <input type="email" name="email" id="e_name" class="form-control input-lg" placeholder="E-mail" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control input-lg" placeholder="Subject" required>
+                                        <input type="text" name="subject" id="s_name" class="form-control input-lg" placeholder="Subject" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
+                                        <textarea  name="message" id="m_name" class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
                                     </div>
-                                    <button type="submit" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
-                                </form>
+                                    <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                    <button type="button" id="contact_btn" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
                             </div>	
                         </div>
                                                                             
@@ -67,4 +66,62 @@
         <div class="col-md-12" style="height: 80px;">
             <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
         </div>
+
+        <div class="modal fade deep" id="submit_contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header" style="border-bottom: none !important;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center" style="border-top: none !important;">
+                    <div class="d-flex justify-content-center text-center">
+                        <img class="text-center" src="../images/logo.jpeg" alt="" width="100" height="100">
+                    </div>
+                    <h3 class="text text-center mt-2" id="sub_contact"></h3>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="button" class="btn btn-secondary btn-block" id="ok" data-bs-dismiss="modal">Ok</button>
+                </div>
+                </div>
+            </div>
+        </div>
+
+@section('script')
+<script>
+    $('#contact_button').on('click', function(e){ 
+        e.preventDefault();
+        var token =  $('#token').val();
+        var name = $('#c_name').val();
+        var email = $('#e_name').val();
+        var subject = $('#s_name').val();
+        var message = $('#m_name').val();
+
+        $.ajax({
+            url: "http://admin.vvip9.co/api/contact_info",
+            method:'POST',
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            },  
+            success:function(response){
+                console.log(response);
+                $('#sub_contact').html(`Hello <strong id="user_contact">` + response.data['name'] + `</strong>. We recieved your information. We will contact to ` + response.data['email'] + ` soon. Thanks in advanced.`);
+                $('#submit_contact').modal('show');
+                $('#ok').on('click', function(){
+                    $('#submit_contact').modal('hide');
+                });
+                e.preventDefault();
+            },
+            // error:function(response){
+            //     console.log(response);
+            // } 
+            });  
+        });
+</script>
+@endsection
 @endsection

@@ -40,42 +40,25 @@ $(function(){
             }
 
             if(curIndex() == 4){
-                var node = document.getElementById('bl_front');
                 $('#confirm_modal').modal('show');
                 $('#check_confirm').on('click', function(){
                     $('#confirm_modal').modal('hide');
+                    // $.ajax({
+                    //     url: 'api/render',
+                    //     success:function(response){
+                    //         console.log(response);
+                    //     }
+                    // });
                 });
 
                 $('#cancel_confirm').on('click', function(){
                     navigateTo(curIndex()-1);
                 })
-
-                var node = document.getElementById('card_blank_back');
-
-                domtoimage.toPng(node, {
-                    cacheBust: true
-                    }).then(function (dataUrl) {
-                        var img = new Image();
-                        img.src = dataUrl;
-                        document.getElementById('output').appendChild(img);
-                    })
             }
     });
     
     navigateTo(0);
 });
-
-function makeImage(uri) {
-    return new Promise(function (resolve, reject) {
-        var image = new Image();
-        image.onload = function () {
-            resolve(image);
-        };
-        image.crossOrigin = 'Anonymous';
-        image.onerror = reject;
-        image.src = uri;
-    });
-}
 
 
 //popover

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Controllers\Mail\MailController;
 use GuzzleHttp\Client;
+use Spatie\Browsershot\Browsershot;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
@@ -478,6 +479,14 @@ class UserRegisterController extends Controller
        
         return json_decode($response);
     }
+
+    // public function renderImage(){
+    //     $path = public_path('storage/test.jpg');
+    //     Browsershot::url('http://localhost:8000/package')
+    //         ->select('.custom_card', 0)
+    //         ->setOption('args', ['--disable-web-security'])
+    //         ->savePdf($path);
+    // }
 
    
     /**

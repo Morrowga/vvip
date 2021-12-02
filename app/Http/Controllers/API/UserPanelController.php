@@ -500,43 +500,51 @@ class UserPanelController extends Controller
         $check_user = User::where('id', $user_id)->first();
 
         if($check_user !== null){
-            $contact_exist = Contact::where('user_id', $check_user->id)->first();
-            $link_tree_exist = LinkTree::where('user_id', $check_user->id)->first();
-            if($contact_exist !== null){
-                $contact_exist->background_color = $background_color;
-                $contact_exist->text_color = $text_color;
-                $contact_exist->text_highlight_color = $text_highlight_color;
-                $contact_exist->save();
+            if($request->background_color || $request->text_color  || $request->text_highlight_color){
+                $contact_exist = Contact::where('user_id', $check_user->id)->first();
+                $link_tree_exist = LinkTree::where('user_id', $check_user->id)->first();
+                if($contact_exist !== null){
+                    $contact_exist->background_color = $background_color;
+                    $contact_exist->text_color = $text_color;
+                    $contact_exist->text_highlight_color = $text_highlight_color;
+                    $contact_exist->save();
+                } else {
+                    $contact_new = new Contact();
+                    $contact_new->user_id = $user_id;
+                    $contact_new->background_color = $background_color;
+                    $contact_new->text_color = $text_color;
+                    $contact_new->text_highlight_color = $text_highlight_color;
+                    $contact_new->save();
+                }
+    
+                if($link_tree_exist !== null){
+                    $link_tree_exist->background_color = $background_color;
+                    $link_tree_exist->text_color = $text_color;
+                    $link_tree_exist->text_highlight_color = $text_highlight_color;
+                    $link_tree_exist->save();
+                } else {
+                    $link_new = new LinkTree();
+                    $link_new->user_id = $user_id;
+                    $link_new->background_color = $background_color;
+                    $link_new->text_color = $text_color;
+                    $link_new->text_highlight_color = $text_highlight_color;
+                    $link_new->save();
+                }
+    
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                ];
+    
+                return $messages;
             } else {
-                $contact_new = new Contact();
-                $contact_new->user_id = $user_id;
-                $contact_new->background_color = $background_color;
-                $contact_new->text_color = $text_color;
-                $contact_new->text_highlight_color = $text_highlight_color;
-                $contact_new->save();
+                $messages = [
+                    "status" => "400",
+                    "message" => "field not match",
+                ];
+    
+                return $messages;
             }
-
-            if($link_tree_exist !== null){
-                $link_tree_exist->background_color = $background_color;
-                $link_tree_exist->text_color = $text_color;
-                $link_tree_exist->text_highlight_color = $text_highlight_color;
-                $link_tree_exist->save();
-            } else {
-                $link_new = new LinkTree();
-                $link_new->user_id = $user_id;
-                $link_new->background_color = $background_color;
-                $link_new->text_color = $text_color;
-                $link_new->text_highlight_color = $text_highlight_color;
-                $link_new->save();
-            }
-
-            $messages = [
-                "status" => "200",
-                "message" => "success",
-            ];
-
-            return $messages;
-        
         } else {
              $messages = [
                 "status" => "412",
