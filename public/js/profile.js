@@ -13,7 +13,7 @@ $(function() {
                 $('#username').text(response.data['name']);
                 $('#email_name').text(response.data['email']);
                 $('#mobile').text(response.data['phone_number']);
-                $('#customer_url').text('http://vvip9.co/' + response.data['url']);
+                $('#customer_url').text('https://vvip9.co/' + response.data['url']);
                 $('#package').text(response.data['package']);
                 $('#package_status').text(response.data['package_status']);
                 $('remaining_days').text(response.data['remaining_days']);

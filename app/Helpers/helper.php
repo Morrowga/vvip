@@ -23,9 +23,9 @@ class Helper{
             $env = 0;
         }
         if ($env == 0) {
-            $page = str_replace('http://vvip9.co', '', Request::url());
+            $page = str_replace('https://vvip9.co', '', Request::url());
         } else {
-            $page = str_replace('http://vvip9.co','', Request::url());
+            $page = str_replace('https://vvip9.co','', Request::url());
         }
         if (empty($page)) {
             $page = '/index';
@@ -271,7 +271,7 @@ class Helper{
                         "name" => $user_check->name,
                         "email" => $user_check->email,
                         "phone_number" => $user_check->phone_number,
-                        "url" => "http://vvip9.co/" . $user_check->url,
+                        "url" => "https://vvip9.co/" . $user_check->url,
                         "profile_image" => $user_check->profile_image,
                         "secure_status" => $user_check->secure_status,
                         "package" => $user_check->package,

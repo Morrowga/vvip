@@ -15,7 +15,7 @@ $.ajax({
     success: function(response){
         if(response.request == "contacts"){
                 $('#contact_display').show();
-                var image_display = response.data['image'].replace('http://vvip9.co/','../');
+                var image_display = response.data['image'].replace('https://vvip9.co/','../');
                 $('.data_view').append(`<div class="d-flex justify-content-center row">
                 <div class="col-md-6" style="text-align:center;">
                     <img src="`+ image_display +`" alt="" width="200"  height="200" style="border-radius: 50%">

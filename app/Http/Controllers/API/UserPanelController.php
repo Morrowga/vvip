@@ -597,14 +597,14 @@ class UserPanelController extends Controller
                     $link_new->text_highlight_color = $text_highlight_color;
                     $link_new->save();
                 }
-    
-                $messages = [
-                    "status" => "200",
-                    "message" => "success",
-                ];
-    
-                return $messages;
             }
+
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+            ];
+
+            return $messages;
         } else {
              $messages = [
                 "status" => "412",
