@@ -76,7 +76,7 @@ class UserRegisterController extends Controller
                         $deep_link->active = 0;
                         $deep_link->save();
 
-                        Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
+                        // Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
                     }
 
 
