@@ -85,9 +85,7 @@
 
 
 @section('script')
-<script>
-
-</script>
+<script src="../js/action.js"></script>
 @endsection
 
 @endsection

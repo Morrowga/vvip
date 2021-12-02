@@ -348,6 +348,9 @@
     </div>
   </div>
 </div>
+@section('script')
+<script src="../js/create_action.js"></script>
+@endsection
 @endsection
 
 
