@@ -100,7 +100,7 @@ class RegisterController extends Controller
             $deep_link->app_package = $link[2];
             $deep_link->active = 0;
             $deep_link->save();
-            Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
+            // Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
         }
 
 
