@@ -18,7 +18,7 @@
         <div class="col-md-12">
             <div class="d-flex justify-content-center">
                 <div class="col-md-6">
-                    <img src="https://www.pngkey.com/png/full/390-3907448_free-download-emv-card-png-clipart-emv-smart.png" alt="" width="300" height="350">
+                    <img src="../images/SmartCard.png" alt=""  class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <h2 class="text">Smart Card</h2>
