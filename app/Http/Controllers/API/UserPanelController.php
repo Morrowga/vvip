@@ -89,7 +89,7 @@ class UserPanelController extends Controller
                 } 
                 $exist->save();
     
-                Helper::user_stats('contact', 'create', 'contacts', $exist->id);
+                // Helper::user_stats('contact', 'create', 'contacts', $exist->id);
 
                 $messages = [
                     "status" => "200",
@@ -251,7 +251,7 @@ class UserPanelController extends Controller
                     $deep_link_active->url = $url;
                     $deep_link_active->save();
 
-                    Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_active->id);
+                    // Helper::user_stats('deep_link', 'update', 'deep_links', $deep_link_active->id);
 
                     $deep_latest = DeepLink::where('user_id', $user_id)->orderBy('updated_at', 'DESC')->get();
                     $link_data = [];
@@ -327,7 +327,7 @@ class UserPanelController extends Controller
                     $checkexist->self_request_name = $self_request;
                     $checkexist->save();
         
-                    Helper::user_stats('change_action', 'update', 'selected_views', $checkexist->id);
+                    // Helper::user_stats('change_action', 'update', 'selected_views', $checkexist->id);
 
                     $messages = [
                             "status" => "200",
@@ -379,7 +379,7 @@ class UserPanelController extends Controller
                 $create_url->url = $url;
                 $create_url->save();
 
-                Helper::user_stats('creat_url', 'create', 'eusps', $create_url->id);
+                // Helper::user_stats('creat_url', 'create', 'eusps', $create_url->id);
 
                 $messages = [
                     "status" => "200",
@@ -416,7 +416,7 @@ class UserPanelController extends Controller
                 $create_sms->sms_text = $sms_text;
                 $create_sms->save();
 
-                Helper::user_stats('create_sms', 'create', 'eusps', $create_sms->id);
+                // Helper::user_stats('create_sms', 'create', 'eusps', $create_sms->id);
 
                 $messages = [
                     "status" => "200",
@@ -430,7 +430,7 @@ class UserPanelController extends Controller
                 $check->sms_text = $sms_text;
                 $check->save();
 
-                Helper::user_stats('create_sms', 'update', 'eusps', $check->id);
+                // Helper::user_stats('create_sms', 'update', 'eusps', $check->id);
 
                 $messages = [
                     "status" => "200",
@@ -458,7 +458,7 @@ class UserPanelController extends Controller
                 $create_email->email_body = $email_body;
                 $create_email->save();
 
-                Helper::user_stats('create_email', 'create', 'eusps', $create_email->id);
+                // Helper::user_stats('create_email', 'create', 'eusps', $create_email->id);
 
                 $messages = [
                     "status" => "200",
@@ -499,7 +499,7 @@ class UserPanelController extends Controller
                 $create_phone->phone = $phone;
                 $create_phone->save();
 
-                Helper::user_stats('create_phone', 'create', 'eusps', $create_phone->id);
+                // Helper::user_stats('create_phone', 'create', 'eusps', $create_phone->id);
 
                 $messages = [
                     "status" => "200",
@@ -540,7 +540,7 @@ class UserPanelController extends Controller
                 $contact_exist->text_highlight_color = $text_highlight_color;
                 $contact_exist->save();
 
-                Helper::user_stats('create_appearance', 'update', 'contacts', $contact_exist->id);
+                // Helper::user_stats('create_appearance', 'update', 'contacts', $contact_exist->id);
             } else {
                 $contact_new = new Contact();
                 $contact_new->user_id = $user_id;
@@ -549,7 +549,7 @@ class UserPanelController extends Controller
                 $contact_new->text_highlight_color = $text_highlight_color;
                 $contact_new->save();
 
-                Helper::user_stats('create_appearance', 'create', 'contacts', $contact_new->id);
+                // Helper::user_stats('create_appearance', 'create', 'contacts', $contact_new->id);
             }
 
             if($link_tree_exist !== null){
@@ -558,7 +558,7 @@ class UserPanelController extends Controller
                 $link_tree_exist->text_highlight_color = $text_highlight_color;
                 $link_tree_exist->save();
 
-                Helper::user_stats('create_appearance', 'update', 'link_trees', $link_tree_exist->id);
+                // Helper::user_stats('create_appearance', 'update', 'link_trees', $link_tree_exist->id);
             } else {
                 $link_new = new LinkTree();
                 $link_new->user_id = $user_id;
@@ -567,7 +567,7 @@ class UserPanelController extends Controller
                 $link_new->text_highlight_color = $text_highlight_color;
                 $link_new->save();
 
-                Helper::user_stats('create_appearance', 'create', 'link_trees', $link_new->id);
+                // Helper::user_stats('create_appearance', 'create', 'link_trees', $link_new->id);
                 $contact_exist = Contact::where('user_id', $check_user->id)->first();
                 $link_tree_exist = LinkTree::where('user_id', $check_user->id)->first();
                 if($contact_exist !== null){
@@ -644,7 +644,7 @@ class UserPanelController extends Controller
                 } 
                 $link_exist->save();
 
-                Helper::user_stats('create_link_tree', 'update', 'link_trees', $link_exist->id);
+                // Helper::user_stats('create_link_tree', 'update', 'link_trees', $link_exist->id);
 
                 $final_data = [
                   "user_id"  => $link_exist->user_id,
@@ -672,7 +672,7 @@ class UserPanelController extends Controller
                 }
                 $new_link->save();
 
-                Helper::user_stats('create_link_tree', 'create', 'link_trees', $new_link->id);
+                // Helper::user_stats('create_link_tree', 'create', 'link_trees', $new_link->id);
 
                 $final_data = [
                     "user_id"  => $new_link->user_id,
