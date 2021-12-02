@@ -72,4 +72,7 @@ Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::cla
 
 Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'view_count']);
 
+Route::get('/get_cards_admin', [App\Http\Controllers\API\UserRegisterController::class, 'card_from_admin']);
+
+// Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);
 

@@ -23,7 +23,7 @@ class Helper{
             $env = 0;
         }
         if ($env == 0) {
-            $page = str_replace('http://127.0.0.1:8000', '', Request::url());
+            $page = str_replace('http://localhost:8000', '', Request::url());
         } else {
             $page = str_replace('http://vvip9.co','', Request::url());
         }
@@ -300,7 +300,6 @@ class Helper{
                 if($user_check !== null){
                     $link_tree = LinkTree::where('user_id', $user_id)->first();
                     if(!empty($link_tree)){
-
                         $link_img = "storage/link_tree_images/" . $link_tree->link_image;
 
                         $final_data = [
