@@ -23,7 +23,7 @@ class Helper{
             $env = 0;
         }
         if ($env == 0) {
-            $page = str_replace('http://localhost:8000', '', Request::url());
+            $page = str_replace('http://vvip9.co', '', Request::url());
         } else {
             $page = str_replace('http://vvip9.co','', Request::url());
         }
