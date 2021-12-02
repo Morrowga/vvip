@@ -291,11 +291,11 @@ $("#phone").on('keyup', function(event) {
         $('.next').attr('disabled', true);
     } else if($(this).val().length < 8){
         console.log('8');
-        $('#error_phone').show().text('Phone Number need between 8 and 11 digits');
+        $('#error_phone').show().text('Phone No need between 8 & 11 digits');
         $('.next').attr('disabled', true);
     } else if($(this).val().length > 11){
         console.log('11');
-        $('#error_phone').show().text('Phone Number need between 8 and 11 digits');
+        $('#error_phone').show().text('Phone No need between 8 & 11 digits');
         $('.next').attr('disabled', true);
     } else {
         $.ajax({
