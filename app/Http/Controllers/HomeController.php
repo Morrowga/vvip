@@ -35,7 +35,7 @@ class HomeController extends Controller
     {
         Helper::user_stats('home', 'view', NULL, NULL);
         Helper::countView();
-        return view('home',compact('count'));
+        return view('home');
     }
 
 

@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use App\Helpers\Helper;
 use App\Http\Controllers\Mail\MailController;
 use GuzzleHttp\Client;
 use Spatie\Browsershot\Browsershot;
@@ -356,7 +357,7 @@ class UserRegisterController extends Controller
         } else {
             $messages = [
                 'status' => '500',
-                'message' => 'akhway',
+                'message' => 'Request is wrong',
             ];
             return $messages;
         }
