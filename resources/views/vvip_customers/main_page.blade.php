@@ -20,7 +20,7 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video loop autoplay height="250" class="text-center d-flex justify-content-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4"></video>
+                                <video loop autoplay muted height="250" class="text-center d-flex justify-content-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4" playsinline></video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
