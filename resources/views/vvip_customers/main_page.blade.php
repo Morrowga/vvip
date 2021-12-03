@@ -22,6 +22,7 @@
                                 <h1 class="logo-text">VVIP NINE</h1>
                                 <video height="250" preload class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
+                                    <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
@@ -211,7 +212,16 @@
         <!-- End contact section -->
 @section('script')
 <script type="text/javascript">
-    
+    vid = document.getElementById("video_one");
+    //listen for CANPLAY event
+      vid.addEventListener("canplay", function() {
+    //    console.log("oncanplay");
+       setTimeout(function() {
+    //     console.log("play");
+    //Hit PLAY when video fully loaded
+        vid.play();
+       }, 500);
+    });
 
     $('#contact_btn').on('click', function(e){ 
         e.preventDefault();
