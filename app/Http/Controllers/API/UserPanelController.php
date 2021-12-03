@@ -135,7 +135,7 @@ class UserPanelController extends Controller
                 } 
                 $contact->save();
 
-                Helper::user_stats('contact', 'create', 'contacts', $contact->id);
+                // Helper::user_stats('contact', 'create', 'contacts', $contact->id);
 
                 $messages = [
                     "status" => "200",

@@ -25,12 +25,12 @@
                                 </video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
-                                <a class="btn btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
+                                <a class="btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
                             </div>
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
                                 <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
-                                    <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
+                                    <sourc e src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
                                 </video>
                                 <p>To the greatest Journey</p>
                             </div>
@@ -214,9 +214,9 @@
     vid = document.getElementById("video_one");
     //listen for CANPLAY event
       vid.addEventListener("canplay", function() {
-       console.log("oncanplay");
+    //    console.log("oncanplay");
        setTimeout(function() {
-        console.log("play");
+    //     console.log("play");
     //Hit PLAY when video fully loaded
         vid.play();
        }, 500);
