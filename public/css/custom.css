@@ -1501,7 +1501,6 @@ label.label_file {
     color: rgb(217,181,81) !important;
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
-    letter-spacing: 3px;
 }
 
 .input-lg::placeholder{
