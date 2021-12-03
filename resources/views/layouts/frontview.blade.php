@@ -139,6 +139,8 @@
                     $('.about-text').attr('style', 'letter-spacing: 2px !important;');
                     $('.con_li').attr('style', 'letter-spacing: 2px !important;');
                     $('.contact_address').attr('style', 'letter-spacing: 2px !important;');
+                    $('.btn').attr('style', 'letter-spacing: 1.5px !important;');
+                    $('.head_about_text').attr('style', 'letter-spacing: 2px !important;');
                 }
            })
         })

@@ -44,7 +44,7 @@ footer{
 
 ::placeholder {
     font-weight: bold;
-    letter-spacing: 3px;
+    /* letter-spacing: 3px; */
     font-size: 15px;
     font-family: 'Kudryashev Display' !important;
 }
@@ -1944,5 +1944,9 @@ button.spin:focus{
     }
     .contact_address{
         letter-spacing: none !important;
+    }
+
+    .social{
+        line-height: 5px !important;
     }
  }

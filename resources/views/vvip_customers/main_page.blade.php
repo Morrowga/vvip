@@ -81,7 +81,6 @@
                                 </div>
                             </a>
                         </div>
-
                         <div class="col-md-4 col-sm-6">
                             <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                                 <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>

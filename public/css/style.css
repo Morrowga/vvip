@@ -1157,7 +1157,6 @@ p.subtitle {
 /* ===== Begin buttons ===== */
 .btn {
 	position: relative;
-	letter-spacing: 1.5px;
 	border: none;
 }
 .btn:active {
@@ -1365,7 +1364,6 @@ p.subtitle {
 	background: -webkit-linear-gradient(to right, #d9b551, #000); 
 	background: linear-gradient(to right, #d9b551, #000);  */
 	height: 50px;
-	letter-spacing: 2px;
 	font-weight: bold;
 	/* box-shadow: 2px 2px 5px rgb(217,181,81); */
 	border-radius: 50% !important;
