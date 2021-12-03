@@ -147,4 +147,21 @@
         })
         </script>
     </body> 
+    <div class="modal fade bd-example-modal-lg" id="saveuser_check" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                 <h5 class="modal-title text-center" id="exampleModalLabel">WARNING</h5>
+                </div>
+                <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
+                    <i class="fas fa-exclamation-triangle fa-7x"></i>
+                    <p class="user_warning_text" style="font-size: 20px !important; margin-top: 60px !important;">
+                    </p>
+                </div>
+                <div class="modal-footer" id="btn_saveuser">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>

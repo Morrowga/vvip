@@ -621,15 +621,12 @@ class UserPanelController extends Controller
         $links_label = $request->links_label;
         $data = ['label' => $links_label, 'url' => $links];
         $result = [];
-        if($data !== null){
-            foreach($data['label'] as $index => $d){
-                $result[] = [
-                    'label' => $d,
-                    'url' => $data['url'][$index]
-                ];
-            }    
-        }
-        
+        foreach($data['label'] as $index => $d){
+            $result[] = [
+                'label' => $d,
+                'url' => $data['url'][$index]
+            ];
+        }    
         
         $user_id = $request->user_id;
         $image = $request->file('link_image');
