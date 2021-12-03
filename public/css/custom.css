@@ -1926,6 +1926,23 @@ button.spin:focus{
     .about_ios{
         margin-top: 20% !important;
     }
+
+    .navli {
+        letter-spacing: none !important;
+    }
+
+    .btn-blank{
+        letter-spacing: none !important;
+    }
+
+    .about-text{
+        letter-spacing: none !important;
+    }
+
+    .con_li{
+        letter-spacing: none !important;
+    }
+    .contact_address{
+        letter-spacing: none !important;
+    }
  }
-  
-  
