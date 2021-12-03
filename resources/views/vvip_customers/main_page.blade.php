@@ -20,7 +20,7 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video height="250" preload class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
+                                <video height="250" class="text-center d-flex justify-content-center" id="video_one" loop autoplay muted>
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" id="video_one">
                                     <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/ogg" id="video_one">
                                 </video>
