@@ -20,7 +20,7 @@
                         <div id="owl-intro-text" class="owl-carousel">
                             <div class="item">
                                 <h1 class="logo-text">VVIP NINE</h1>
-                                <video height="250" class="text-center d-flex justify-content-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4" loop autoplay muted></video>
+                                <video loop autoplay height="250" class="text-center d-flex justify-content-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4"></video>
                                 <p>{{__('website.Everything')}}</p>
                                 <div class="extra-space-l"></div>
                                 <a class="btn-blank page-scroll navbarbtn" href="#services-section" role="button">{{__('website.Register')}}</a>
@@ -209,7 +209,16 @@
         <!-- End contact section -->
 @section('script')
 <script type="text/javascript">
-   
+    vid = document.getElementById("video_one");
+    //listen for CANPLAY event
+      vid.addEventListener("canplay", function() {
+    //    console.log("oncanplay");
+       setTimeout(function() {
+    //     console.log("play");
+    //Hit PLAY when video fully loaded
+        vid.play();
+       }, 500);
+    });
 
     $('#contact_btn').on('click', function(e){ 
         e.preventDefault();
