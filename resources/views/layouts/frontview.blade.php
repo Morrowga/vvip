@@ -43,7 +43,6 @@
                       </button>
                       <a class="navbar-brand page-scroll" href="{{ route('main', app()->getLocale()) }}">VVIP</a>
                     </div>
-
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <li><a class="page-scroll navli" href="/">{{__('website.Home') }}</a></li>
@@ -52,6 +51,18 @@
                             <li><a class="page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
+                            <li class="nav-item dropdown text-center" style="text-align:center;">
+                                <a class="nav-link dropdown-toggle navli text-center" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
+                                </a>
+                                <div class="dropdown-menu text-center" style="text-align:center !important;" aria-labelledby="navbarDropdownMenuLink">
+                                @foreach (Config::get('languages') as $lang => $language)
+                                    @if ($lang != App::getLocale())
+                                            <a class="dropdown-item navli" style="text-align:center !important;" href="{{ route('lang.switch', $lang) }}"><span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> {{$language['display']}}</a>
+                                    @endif
+                                @endforeach
+                                </div>
+                            </li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                   </div><!-- /.container -->

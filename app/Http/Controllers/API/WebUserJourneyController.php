@@ -10,6 +10,9 @@ use App\Models\SmartCardDesign;
 use App\Models\UserDevice;
 use App\Models\UserStat;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request as FacadesRequest;
@@ -63,5 +66,13 @@ class WebUserJourneyController extends Controller
         Helper::user_stats('contact', 'view', NULL, NULL);
         Helper::countView();
         return view('vvip_customers.contact');
+    }
+
+    public function switchLang($lang)
+    {
+        if (array_key_exists($lang, Config::get('languages'))) {
+            Session::put('applocale', $lang);
+        }
+        return Redirect::back();
     }
 }

@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('lang/{lang}',  [App\Http\Controllers\API\WebUserJourneyController::class, 'switchLang'])->name('lang.switch');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
@@ -32,19 +34,17 @@ Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->n
 
 Route::get('/verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
-// Route::group(['prefix' => '{language}', 'middleware' => 'locale'], function() {
-    Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
+Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 
-    Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
+Route::get('package', 'App\Http\Controllers\API\WebUserJourneyController@package')->name('view_packages');
 
-    Route::get('feature', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
+Route::get('feature', 'App\Http\Controllers\API\WebUserJourneyController@products')->name('view_product');
 
-    Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
+Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->name('about');
 
-    Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
+Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
 
-    Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
-// });
+Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 
 
 
