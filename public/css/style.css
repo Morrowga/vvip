@@ -973,7 +973,7 @@ ul.social-list li a i {
 ul.contact-address {
 	float: left;
 	font-weight: bold !important;
-	letter-spacing: 2px;
+	/* letter-spacing: 2px; */
 	width: 100%;
 	padding: 0;
 	margin: 15px 0 ;
@@ -981,7 +981,7 @@ ul.contact-address {
 ul.contact-address li {
 	padding: 0 0 20px;
 	font-weight: bold !important;
-	letter-spacing: 2px;
+	/* letter-spacing: 2px; */
 	margin: 0;
 }
 ul.contact-address li:last-child {
@@ -1357,7 +1357,6 @@ p.subtitle {
 .about-text{
 	color:  #fff !important;
 	font-weight: bold;
-	letter-spacing: 2px;
 	font-family: 'Kudryashev Display' !important ;
 	padding-top: 15px;
 }

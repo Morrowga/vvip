@@ -136,6 +136,9 @@
                 if(drop == 'MYANMAR'){
                     $('.navli').attr('style', 'letter-spacing: 4px !important;');
                     $('.btn-blank').addClass('btn');
+                    $('.about-text').attr('style', 'letter-spacing: 2px !important;');
+                    $('.con_li').attr('style', 'letter-spacing: 2px !important;');
+                    $('.contact_address').attr('style', 'letter-spacing: 2px !important;');
                 }
            })
         })

@@ -155,9 +155,9 @@
                             <div class="contact-info">
                                 <h4 class="contact">{{__('website.our_address')}}</h4>
                                 <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{__('website.address_no')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{__('website.address_ward')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{__('website.address_cc')}}</li>
-                                    <li><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
-                                    <li><i class="fa fa-envelope"></i> info@htut.com</li>
+                                    <li class="con_li"><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{__('website.address_no')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{__('website.address_ward')}}<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{__('website.address_cc')}}</li>
+                                    <li class="con_li"><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
+                                    <li class="con_li"><i class="fa fa-envelope"></i> info@htut.com</li>
                                 </ul>
                             </div>
                         </div>
