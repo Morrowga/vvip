@@ -1429,6 +1429,7 @@ p.subtitle {
 
 .contact-btn{
 	background-color: rgba(0, 0, 0) !important;
+	border: 2px solid rgb(217,181,81) !important;
 	border-color: rgb(253,235,162) !important;
 	font-size: 18px;
 	font-weight: bold;
