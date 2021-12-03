@@ -44,6 +44,16 @@ return [
     'contact_email' => "Email",
     'contact_subject' => "Subject",
     'contact_message' => "Message",
-    'contact_send' => "Send"
+    'contact_send' => "Send",
+    'pricing' => "Pricing",
+    'more_info' => "More Info",
+    'order_now' => "Order Now!",
+    'enter_name' => "Enter Your Name",
+    'enter_phone' => "Enter Your Phone",
+    'next' => "Next",
+    'pre' => "Previous",
+    'phone_invalid' => "Your phone number is invalid.",
+    'exist_active' => "Your phone number is exist and still active. Do you want to go Login Page?",
+    'exist_expired' => "Your phone number is exist and expired. Do you want to renew your plan? "
 ]
 ?>

@@ -60,7 +60,6 @@ $(function(){
     navigateTo(0);
 });
 
-
 //popover
 $('[data-toggle="popover"]').popover();
 
@@ -139,7 +138,6 @@ $.ajaxSetup({
 //save_user_form 
 
 $(".save-user").on('click', function(e){
-
 e.preventDefault();
 
 var save_name= $("input[name=name]").val();
@@ -162,11 +160,16 @@ $.ajax({
         document.getElementById('phone').value = response.phone_number;
         console.log(response.message);
       }else if(response.message == "Phone Number is invalid"){
-            $('#error_text').text(response.message);
+            $('#error_text').html(invalid_error);
       } else if(response.message == "Phone Number Exist & Active"){
-            $('#error_text').text(response.message);
+        $('.user_warning_text').text(exist_active);
+        $('#saveuser_check').modal('show');
+        $('#btn_saveuser').append('<a id="useractive" href="/login" class="btn btn-dark u_act">Sure</a>');
+                    
       } else if (response.message == "Phone Number Exist & Expired") {
-            $('#error_text').text(response.message);
+            $('.user_warning_text').text(exist_expired);
+            $('#saveuser_check').modal('show');
+            $('#btn_saveuser').append('<button type="button"  id="userexpired" class="btn btn-dark u_exp">Sure</a>');
       } else {
         console.log(response.message);
       }
@@ -176,7 +179,6 @@ $.ajax({
    }
 });
 });
-
 //validate
 $('#error_name').hide();
 $('#error_phone').hide();

@@ -6,7 +6,7 @@
         <div class="page-header-wrapper">
             <div class="container">
                 <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                    <h2 class="package package_margin">Prices</h2>
+                    <h2 class="package package_margin">{{ __('website.pricing') }}</h2>
                     <div class="devider"></div>
                     @foreach(['danger', 'warning', 'success', 'info'] as $msg)
                         @if(Session::has('alert-' . $msg))
@@ -48,8 +48,8 @@
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
                                 </div> -->
                                 <div class="panel-footer text-center">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
-                                    <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }} Order Now!</button>
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
                         </div>
@@ -78,8 +78,8 @@
                                     </ul>                                    
                                 </div>
                                 <div class="panel-footer text-center">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
-                                    <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }} Order Now!</button>
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
                         </div>
@@ -110,8 +110,8 @@
                                     </ul>                                    
                                 </div>                    
                                 <div class="panel-footer text-center">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">More Info</a>
-                                    <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">{{ $luxury->price }} Order Now!</button>
+                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">{{ $luxury->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
                         </div>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-4 col-md-offset-4">
-                                <input id="save-name" type="text" placeholder="Enter Your Name"
+                                <input id="save-name" type="text" placeholder="{{ __('website.enter_name') }}"
                                     class="form-control register-input" name="name" style="font-size: 17px;"
                                     value="{{ old('name') }}" required autocomplete="name" autofocus>
                             </div>
@@ -144,14 +144,14 @@
                         <div class="form-group row">
                             <div class="col-md-4 col-md-offset-4">
                                 <p id="error_text" style="padding: 5px; color: rgb(184, 28, 41);"></p>
-                                <input id="save-phone" type="tel"
-                                    class="form-control register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
+                                <input id="save-phone" type="number"
+                                    class="form-control register-input" placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px;"
                                     value="{{ old('phone_number') }}" required autocomplete="phone_number">
                             </div>
                         </div>
                         <div class="form-group mt-5">
                             <div class="col-md-4 col-md-offset-4">
-                                <button class="btn btn-dark save-user" style="float: right !important;">Next</button>
+                                <button class="btn btn-dark save-user">{{ __('website.next') }}</button>
                             </div>
                         </div>
                     </div>
@@ -508,9 +508,36 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade bd-example-modal-lg" id="saveuser_check" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
+                 <h5 class="modal-title text-center" id="exampleModalLabel">WARNING</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
+                    <i class="fas fa-exclamation-triangle fa-7x"></i>
+                    <p class="user_warning_text" style="font-size: 20px !important; margin-top: 60px !important;">
+                    </p>
+                </div>
+                <div class="modal-footer" id="btn_saveuser">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--template-modal-->
 @section('script')
 <script src="../js/package.js"></script>
+
+<script>
+var invalid_error = '{{ __('website.phone_invalid') }}';
+var exist_active = '{{ __('website.exist_active') }}';
+var exist_expired = '{{ __('website.exist_expired') }}';
+</script>
 @endsection
 @endsection
    
