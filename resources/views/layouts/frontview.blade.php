@@ -159,7 +159,9 @@
                     </p>
                 </div>
                 <div class="modal-footer" id="btn_saveuser">
-                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close')  }}</button>
+                    <a id="useractive" href="/login" class="btn btn-dark u_act" hidden>{{ __('website.sure')  }}</a>
+                    <button type="button"  id="userexpired" class="btn btn-dark u_exp" hidden>{{ __('website.sure')  }}</a>
                 </div>
             </div>
         </div>

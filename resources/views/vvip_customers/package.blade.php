@@ -145,7 +145,7 @@
                             <div class="col-md-4 col-md-offset-4">
                                 <p id="error_text" style="padding: 5px; color: rgb(184, 28, 41);"></p>
                                 <input id="save-phone" type="number"
-                                    class="form-control register-input" placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px;"
+                                    class="form-control register-input" placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px; margin-top: 5px !important;"
                                     value="{{ old('phone_number') }}" required autocomplete="phone_number">
                             </div>
                         </div>
@@ -168,14 +168,14 @@
                 <div class="row d-flex justify-content-center text-center">
                         <!-- <div class="col-md-4"></div> -->
                         <div class="col-md-12">
-                            <form action="{{ route('register', app()->getLocale()) }}"  id="register-form" method="POST" class="contact-form text-center">
+                            <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
                                 <div class="form-section">
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
                                     </div> 
                                     <div class="col-md-8 col-md-offset-2">
-                                        <h3 class="payment-text">Select Payment</h3>
+                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
                                         <div class="devider"></div>
                                         <div class="form-group row pay-border">
                                             <div class="col-md-3" style="margin-top: 10px !important;">
@@ -201,10 +201,10 @@
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <span id="error_name" class="error_texts" role="alert">
-                                                <strong>Enter Your Name</strong>
+                                                <strong>{{ __('website.enter_name') }}</strong>
                                             </span>
-                                            <input id="name" type="text" placeholder="Enter Your Name"
-                                                class="form-control register-input" name="name" style="font-size: 17px;" required autocomplete="name" autofocus>
+                                            <input id="name" type="text" placeholder="{{ __('website.enter_name') }}"
+                                                class="form-control register-input" name="name" style="font-size: 17px; margin-top: 5px !important;" required autocomplete="name" autofocus>
                                         </div>
                                     </div>
 
@@ -212,15 +212,15 @@
                                         <div class="col-md-4 col-md-offset-4">
                                             <span id="error_phone" class="error_texts" role="alert"></span>
                                             <input id="phone" type="tel"
-                                                class="form-control register-input" placeholder="Enter Phone Number" name="phone_number" style="font-size: 17px;"
+                                                class="form-control register-input"  placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px; margin-top: 5px !important;"
                                                  required autocomplete="phone_number">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <span id="error_email" class="error_texts" role="alert"></span>
-                                            <input id="email" type="email" placeholder="Enter Your Email"
-                                                class="form-control register-input" name="email" style="font-size: 17px;"
+                                            <input id="email" type="email" placeholder="{{ __('website.email') }}"
+                                                class="form-control register-input" name="email" style="font-size: 17px; margin-top: 5px !important;"
                                                 required autocomplete="email">
                                         </div>
                                     </div>
@@ -229,17 +229,17 @@
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
                                         <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
-                                             <p class="url_text text-left">URL</p>
-                                            <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="Insert Your URL" data-content="URL is a link for display your action which action you selected when scan the card."><i class="fas fa-question"></i></button>
+                                             <p class="url_text text-left">{{ __('website.url') }}</p>
+                                            <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="{{ __('website.url_popover_title') }}" data-content="{{ __('website.url_popover_body') }}"><i class="fas fa-question"></i></button>
                                         </div>
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="url_radio" onchange="getCheckedName()" value="" id="url_name" checked>
-                                                    <label for="html">Name</label><br>
+                                                    <label for="html">{{ __('website.name_url') }}</label><br>
                                                 </div>
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="url_radio" onchange="getCheckedSystem()" value="" id="url_system">
-                                                    <label for="css">System</label><br>
+                                                    <label for="css">{{ __('website.system_url') }}</label><br>
                                                 </div>
                                             </div>  
                                         </div>
@@ -253,7 +253,7 @@
                                                     <p class="vvip_text">https://vvip9.co/</p>
                                                 </div>
                                                 <div class="col url">
-                                                    <input type="text" id="url" class="form-control url_input" name="url" placeholder="Enter url">
+                                                    <input type="text" id="url" class="form-control url_input" style="margin-top: 5px !important;" name="url" placeholder="{{ __('website.enter_url') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -263,8 +263,8 @@
                                     <div class="form-group">
                                         <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
                                             <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
-                                                <p class="pt-2 url_text">Secure</p>
-                                                <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="Secure Status" data-content="Public allow who can view your profile url. Private allow close your profile url and you can only view."><i class="fas fa-question"></i></button>
+                                                <p class="pt-2 url_text">{{ __('website.secure') }}</p>
+                                                <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="{{ __('website.secure_popover_title') }}" data-content="{{ __('website.secure_popover_body') }}"><i class="fas fa-question"></i></button>
                                             </div>
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
@@ -369,8 +369,8 @@
                                 <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <button type="button" class="next btn btn-info">Next</button>
-                                            <button type="button" class="previous btn btn-info">Previous</button>
+                                            <button type="button" class="next btn btn-info">{{ __('website.next') }}</button>
+                                            <button type="button" class="previous btn btn-info">{{ __('website.pre') }}</button>
                                             <button type="submit" class="btn btn-info float-right sub-btn" disabled>Submit</button>
                                         </div>
                                     </div>
@@ -516,6 +516,13 @@
 var invalid_error = '{{ __('website.phone_invalid') }}';
 var exist_active = '{{ __('website.exist_active') }}';
 var exist_expired = '{{ __('website.exist_expired') }}';
+var enter_phone = '{{ __('website.enter_phone') }}';
+var phone_no_need_digit = '{{ __('website.phone_need_digit') }}';
+var enter_email = '{{ __('website.email') }}';
+var enter_url = '{{ __('website.enter_url') }}';
+var special_char = '{{ __('website.special_char') }}';
+var url_need_char = '{{ __('website.url_need_char') }}';
+var email_invalid = '{{ __('website.email_invalid') }}';
 </script>
 @endsection
 @endsection

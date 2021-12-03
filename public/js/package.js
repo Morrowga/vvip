@@ -164,12 +164,13 @@ $.ajax({
       } else if(response.message == "Phone Number Exist & Active"){
         $('.user_warning_text').text(exist_active);
         $('#saveuser_check').modal('show');
-        $('#btn_saveuser').append('<a id="useractive" href="/login" class="btn btn-dark u_act">Sure</a>');
-                    
+        $('#useractive').show();
+        $('#userexpired').hide();
       } else if (response.message == "Phone Number Exist & Expired") {
             $('.user_warning_text').text(exist_expired);
             $('#saveuser_check').modal('show');
-            $('#btn_saveuser').append('<button type="button"  id="userexpired" class="btn btn-dark u_exp">Sure</a>');
+            $('#useractive').hide();
+            $('#userexpired').show();
       } else {
         console.log(response.message);
       }
@@ -289,15 +290,13 @@ $("#name").on("keyup", function(event) {
 //phone_validate
 $("#phone").on('keyup', function(event) {
     if($(this).val().length == ""){
-        $('#error_phone').show().text('Enter Your Phone Number');
+        $('#error_phone').show().text(enter_phone);
         $('.next').attr('disabled', true);
     } else if($(this).val().length < 8){
-        console.log('8');
-        $('#error_phone').show().text('Phone No need between 8 & 11 digits');
+        $('#error_phone').show().text(phone_no_need_digit);
         $('.next').attr('disabled', true);
     } else if($(this).val().length > 11){
-        console.log('11');
-        $('#error_phone').show().text('Phone No need between 8 & 11 digits');
+        $('#error_phone').show().text(phone_no_need_digit);
         $('.next').attr('disabled', true);
     } else {
         $.ajax({
@@ -326,10 +325,10 @@ $("#email").on('keyup', function(event) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
     var data = $(this).val();
     if($(this).val().length < 0){
-        $('#error_email').show().text('Enter Your Email Address');
+        $('#error_email').show().text(enter_email);
         $('.next').attr('disabled', true);
     } else if(!emailReg.test($(this).val())){
-        $('#error_email').show().text('Email is invalid');
+        $('#error_email').show().text(email_invalid);
         $('.next').attr('disabled', true);
     } else  if (data.indexOf('.com') >= 0) {
         $.ajax({
@@ -356,13 +355,13 @@ $("#email").on('keyup', function(event) {
 $('#url').on("keyup",function(){
     var url_char = /^[A-Za-z0-9]+$/;
     if($(this).val() == ""){
-        $('#error_url').show().text('Enter Your URL');
+        $('#error_url').show().text(enter_url);
         $('.next').attr('disabled', true);
     } else if(!url_char.test($(this).val())){ 
-        $('#error_url').show().text('Does not allow special charactors');
+        $('#error_url').show().text(special_char);
         $('.next').attr('disabled', true);
     }else if($(this).val().length < 4) {
-        $('#error_url').show().text('Url need at least 4 charactors');
+        $('#error_url').show().text(url_need_char);
         $('.next').attr('disabled', true);
     } else if($(this).val().length >= 4){ //minimum 4 charactors
         $.ajax({
