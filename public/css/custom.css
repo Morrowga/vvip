@@ -1922,5 +1922,10 @@ button.spin:focus{
 
 
 
+  @supports (-webkit-touch-callout: none) {
+    .about_ios{
+        margin-top: 20% !important;
+    }
+ }
   
   

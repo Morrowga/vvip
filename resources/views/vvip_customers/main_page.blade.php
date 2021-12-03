@@ -46,7 +46,7 @@
                 </div>
         </section>
 
-        <section id="about-section" class="page bg-style1">
+        <section id="about-section" class="page bg-style1 about_ios">
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInUp" data-wow-delay="0.3s">
