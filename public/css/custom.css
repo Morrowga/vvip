@@ -1195,17 +1195,41 @@ label.label_file {
     font-weight: bold;
     letter-spacing: 3px;
   }
+
+  .dropdown-menu:hover{
+    background-color: rgb(0,0,0) !important;
+    transition-duration: 1s !important;
+  }
+
   .dropdown-menu{
     background-color: rgb(217,181,81) !important;
+    font-weight: bold;
   }
-  .dropdown-item{
+
+  .lang_drop{
+      color: #fff;
+      font-weight: bold;
+      font-family: 'Kudryashev Display' !important;
+      letter-spacing: 2px;
+  }
+
+  .drop_link{
+    color: #fff !important;
+    font-weight: bold !important;
+    font-family: 'Kudryashev Display' !important;
+    letter-spacing: 2px !important;
+    font-size: 16px;
+    text-decoration: none !important;
+  }
+
+  .dropdown_logout{
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
     letter-spacing: 3px;
     background-color: rgb(217,181,81) !important;
   }
 
-  .dropdown-item:hover{
+  .dropdown_logout:hover{
     background-color: rgb(0,0,0) !important;
     color: rgb(217,181,81) !important;
     transition-duration: 1s !important;
