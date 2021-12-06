@@ -8,20 +8,21 @@
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -33,11 +34,11 @@
     </div>
 </nav>
 
-<div class="container" style="height: 850px;" id="profile_container">
+<div class="container" style="height: 1000px;" id="profile_container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-offset-3">
             <input type="text" value="{{ Auth::user()->id }}" id="userid" hidden>
-            <h3 class="text">Profile</h3>
+            <h3 class="text">{{ __('website.profile') }}</h3>
         </div>
     </div>
     <div class="col-md-12 mt-5">
@@ -47,63 +48,63 @@
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
             <div class="d-flex justify-content-center mt-4">
-            <p class="text-center profile_txt">Name </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="username" style="text-transform: capitalize;"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Mobile </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="profile_text" id="mobile"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Email </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="email_name"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">BOD </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="bod"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Work </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="work"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Address </p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="address"></p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">URL</p>
-        </div>
-        <div class="d-flex justify-content-center">
-            <p class="text-center profile_text" id="customer_url"></p>
-        </div>
+                <p class="text-center profile_txt">{{ __('website.profile_name') }}</p>
             </div>
-            <div class="col-md-6">
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="username" style="text-transform: capitalize;"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.profile_mobile') }} </p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="profile_text" id="mobile"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.profile_email') }}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="email_name"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.profile_url') }}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="customer_url"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.bod') }}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="bod"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.profile_work') }}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="work"></p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_txt">{{ __('website.address') }}</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p class="text-center profile_text" id="address"></p>
+            </div>
+         </div>
+        <div class="col-md-6">
         <div class="d-flex justify-content-center  mt-4">
-            <p class="text-center profile_txt">Package</p>
+            <p class="text-center profile_txt">{{ __('website.package') }}</p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_text" id="package"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Package Status</p>
+            <p class="text-center profile_txt">{{ __('website.package_status') }}</p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_text" id="package_status"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Remaining Days</p>
+            <p class="text-center profile_txt">{{ __('website.remaining') }}</p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_text" id="remaining_days"></p>
@@ -112,13 +113,13 @@
             <p class="text-center profile_text"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt">Secure Status</p>
+            <p class="text-center profile_txt">{{ __('website.secure_status') }}</p>
         </div>
         <div class="d-flex justify-content-center">
             <p class="text-center profile_text" id="secure_status"></p>
         </div>
         <div class="d-flex justify-content-center">
-            <p class="text-center profile_txt" id="secure_status">Private Mode</p>
+            <p class="text-center profile_txt" id="secure_status">{{ __('website.private_mode') }}</p>
         </div>
         <div class="d-flex justify-content-center">
             <div class="col">
@@ -141,4 +142,7 @@
         </div> -->
     </div>
 </div>
+@section('script')
+<script src="../js/profile.js"></script>
+@endsection
 @endsection

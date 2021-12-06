@@ -58,4 +58,8 @@ $(function() {
                 'text_highlight_color'] + '!important;');
         }
     });
+
+    $('#lang_btn').on('click', function(){
+        window.location = $('#lang_setting').attr('href');
+    });
 });

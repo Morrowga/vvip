@@ -65,7 +65,7 @@ footer{
   .text{
       color: rgb(217,181,81) !important;
       font-weight: bold;
-      letter-spacing: 2px;
+      margin-top: 15px !important;
       font-family: 'Kudryashev Display' !important;
   }
 
@@ -77,6 +77,7 @@ footer{
     font-family: 'Kudryashev Display' !important;
     display: inline !important;
     text-align: right;
+    padding-top: 10px !important;
 }
 
 
@@ -86,7 +87,11 @@ footer{
       font-family: 'Kudryashev Display' !important;
       display:inline-block !important;
       font-weight: bold;
-      letter-spacing: 3px;
+  }
+
+  .vvip_link {
+      padding-right: 5px !important;
+      padding-top: 5px !important;
   }
 
   input[type='radio'] { accent-color: rgb(217,181,81,0.8); }
@@ -259,7 +264,6 @@ border: 2px solid rgb(217,181,81) !important;
     font-weight: bold;
     font-family: 'Kudryashev Display' !important;
     font-size: 17px;
-    letter-spacing: 3px;
     padding-top: 2px;
 }
 
@@ -476,11 +480,14 @@ span {
     padding: 0;
 }
 
+.__mm {
+    font-size: 17px !important;
+}
+
 .select-card{
     margin-top: 5px !important;
     background-color: rgb(0,0,0) !important;
     font-weight: bold;
-    letter-spacing: 2px;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -510,13 +517,19 @@ span {
 }
 
 #card_blank_back{
-    margin-top: 19% !important;
+    margin-top: 5% !important;
     width: 100%;
     height: 250px;
     background-color: #fff;
     /* box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(217,181,81, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px; */
 }
 
+
+.modal-vertical-centered {
+    transform: translate(0, 50%) !important;
+    -ms-transform: translate(0, 50%) !important; /* IE 9 */
+    -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
+  }
 
 #normal_default_txt_left{
     position: absolute;
@@ -623,12 +636,11 @@ height: 250px;
 .btn-place{
     margin-top: 5px !important;
     font-weight: bold;
-    letter-spacing: 2px;
 }
   
-.home-col{
+/* .home-col{
     position: relative;
-}
+} */
 
 .home-col img{
 /* box-shadow:  2px 2px 10px rgb(217,181,81, 0.5); */
@@ -637,16 +649,17 @@ height: 250px;
     opacity: 0.7;
 }
 
-.home-col .action{
+/* .home-col .action{
 position: absolute;
 top: 46%;
 left: 65%;
-}
+} */
 
 .action{
     background-color: rgb(0,0,0) !important;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    text-transform: uppercase;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -656,16 +669,17 @@ left: 65%;
     color:rgba(0, 0, 0) !important;
 }
 
-.home-col .create{
+/* .home-col .create{
 position: absolute;
 top: 46%;
 left: 23%;
-}
+} */
 
 .create{
     background-color: rgb(0,0,0) !important;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    text-transform: uppercase;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -675,16 +689,17 @@ left: 23%;
     color:rgba(0, 0, 0) !important;
 }
 
-.home-col .profile{
+/* .home-col .profile{
 position: absolute;
 top: 46%;
 left: 65%;
-}
+} */
 
 .profile {
     background-color: rgb(0,0,0) !important;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    text-transform: uppercase;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -694,16 +709,17 @@ left: 65%;
     color:rgba(0, 0, 0) !important;
 }
 
-.home-col .setting{
+/* .home-col .setting{
 position: absolute;
 top: 46%;
 left: 23%;
-}
+} */
 
 .setting{
     background-color: rgb(0,0,0) !important;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    text-transform: uppercase;
     border: 2px solid rgb(217,181,81) !important;
 }
 
@@ -767,6 +783,7 @@ left: 23%;
 
 #card_appear{
     background-color: #000 !important;
+    margin-top: 20px !important;
 }
 
 .social_link{
@@ -1423,9 +1440,9 @@ label.label_file {
 .sure{
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-align: center;
-    color: rgb(217,181,81);
+    color: rgb(0,0,0);
 }
 
 .purp {
@@ -1555,6 +1572,10 @@ button.spin:focus{
     letter-spacing: 1px;
 }
 
+#error_name {
+    font-size: 15px !important;
+}
+
 .moreinfo_package{
     border: 2px solid rgb(217,181,81) !important;
     background-color: rgb(0,0,0) !important;
@@ -1597,6 +1618,27 @@ button.spin:focus{
     background-color:rgb(217,181,81) !important;
     color: rgb(255,255,255) !important; 
     transition-duration: 1s !important;
+}
+
+#card_lang{
+    background-color:rgb(0,0,0) !important;
+}
+.langbtn{
+    border: 2px solid rgb(217,181,81) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(255,255,255) !important;
+    background-color: rgb(0,0,0) !important;
+}
+
+.langbtn:hover{
+    background-color:rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+.question_link{
+    color: #fff !important;
+    text-decoration: none !important;
 }
 /* KEYFRAMES */
 
@@ -1897,7 +1939,7 @@ input[type=number] {
     }
 
     #home_height{
-        height: 510px !important;
+        height: 800px !important;
     }
 
     #profile_container{
@@ -1918,35 +1960,26 @@ input[type=number] {
         padding-left: 0 !important;
         /* border-radius: 50% !important; */
     }
-
-    .home-col img{
-        width: 150px !important;
-        height: 150px !important;
+    
+    #action {
+        width: 100%;
+        height: auto;
     }
 
-    .home-col .action{
-        position: absolute;
-        top: 41%;
-        left: 29%;
-      }
-    
-      .home-col .create{
-        position: absolute;
-        top: 41%;
-        left: 27%;
-      }
-    
-      .home-col .profile{
-        position: absolute;
-        top: 41%;
-        left: 28%;
-      }
-    
-      .home-col .setting{
-        position: absolute;
-        top: 41%;
-        left: 25%;
-      }
+    #create{
+        width: 100%;
+        height: auto;
+    }
+
+    #profile{
+        width: 100%;
+        height: auto;
+    }
+
+    #setting{
+        width: 100%;
+        height: auto;
+    }
 
       .profile_text{
           text-align: center !important;

@@ -111,9 +111,9 @@ $(function() {
                                                             <input type="text" name="deep_url" placeholder="aungpyaephy6" class="form-control url_input`+ value['id'] +`" id="url_input" value="`+ value['url'] +`"> 
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button class="btn btn-dark mt-2 btn-block active_save" id="`+ value['id'] +`">Active</button>
-                                                        <button class="btn btn-dark mt-2 btn-block just_save" id="`+ value['id'] +`">Save</button>     
-                                                        <button type="button" class="btn btn-secondary btn-block cancel_deep" data-bs-dismiss="modal">Close</button> 
+                                                        <button class="btn btn-dark mt-2 btn-block active_save" id="`+ value['id'] +`">`+ active_deep +`</button>
+                                                        <button class="btn btn-dark mt-2 btn-block just_save" id="`+ value['id'] +`">`+ onlysave +`</button>     
+                                                        <button type="button" class="btn btn-secondary btn-block cancel_deep" data-bs-dismiss="modal">`+ closebtn +`</button> 
                                                     </div>
                                                     </div>
                                                 </div>
@@ -278,7 +278,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
-                $('#save_text').text('Contact Saved');
+                $('#save_text').text('Contact ' + savethetext);
                 $('#save_modal').modal('show');
                 $('#contact_section').hide();
                 $('#ok').on('click', function(){
@@ -294,17 +294,23 @@ $(function() {
 	
 	var x = 1; //initlal text box count
 	$(add_button).on('click',function(e){ //on add input button click
+        $('.submit_link_tree').attr('disabled', false);
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment
 			$(wrapper).append(`<div class="d-flex justify-content-center mt-2">
                                 <div class="col-md-10 col-md-offset-1">
-                                    <input type="text" class="form-control" name="links_label[]" placeholder="Enter app label">
-                                    <input type="text" class="form-control mt-3" id="link_input" name="links[]" placeholder="write your app label">
+                                    <input type="text" class="form-control" name="links_label[]" placeholder="`+ app_label  +`">
+                                    <input type="text" class="form-control mt-3" id="link_input" name="links[]" placeholder="`+ app_link  +`">
+                                    <a href="#" class="remove_field btn btn-outline-danger btn-block mt-2">`+ remove +`</a>
                                 </div>
                             </div>`); //add input box
 		}
 	});
+
+    $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
 
     $('#link_tree_form').on('submit', function(e){
         e.preventDefault();
@@ -322,7 +328,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response);
-                $('#save_text').text('Link Tree Saved');
+                $('#save_text').text('Link Tree ' + savethetext);
                 $('#save_modal').modal('show');
             }
         });
@@ -351,7 +357,7 @@ $(function() {
                             </div>`)
             });
             } else {
-                console.log('data does not exist');
+                console.log('data does not exist'); 
             } 
         }
     });
@@ -396,7 +402,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
-                $('#save_text').text('Url Saved');
+                $('#save_text').text('Url ' + savethetext);
                 $('#save_modal').modal('show');
                 $('#url_section').hide();
                 $('#ok').on('click', function(){
@@ -423,7 +429,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
-                $('#save_text').text('Email Saved');
+                $('#save_text').text('Email ' + savethetext);
                 $('#save_modal').modal('show');
                 $('#email_section').hide();
                 $('#ok').on('click', function(){
@@ -450,7 +456,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
-                $('#save_text').text('SMS Saved');
+                $('#save_text').text('SMS ' + savethetext);
                 $('#save_modal').modal('show');
                 $('#sms_section').hide();
                 $('#ok').on('click', function(){
@@ -477,7 +483,7 @@ $(function() {
             data: formData,
             success:function(response){
                 console.log(response.message);
-                $('#save_text').text('Phone Number Saved');
+                $('#save_text').text('Phone Number ' + savethetext);
                 $('#save_modal').modal('show');
                 $('#phone_section').hide();
                 $('#ok').on('click', function(){

@@ -58,8 +58,8 @@
                                 <div class="dropdown-menu text-center lang_drop" aria-labelledby="navbarDropdownMenuLink">
                                 @foreach (Config::get('languages') as $lang => $language)
                                     @if ($lang != App::getLocale())
-                                            <a class="dropdown-item drop_link" id="droplang" data-lang="{{$language['display']}}" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
-                                            <!-- <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> -->
+                                        <a class="dropdown-item drop_link" id="droplang" data-lang="{{$language['display']}}" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
+                                        <!-- <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> -->
                                     @endif
                                 @endforeach
                                 </div>
@@ -139,9 +139,23 @@
                     $('.about-text').attr('style', 'letter-spacing: 2px !important;');
                     $('.con_li').attr('style', 'letter-spacing: 2px !important;');
                     $('.contact_address').attr('style', 'letter-spacing: 2px !important;');
-                    $('.btn').attr('style', 'letter-spacing: 1.5px !important;');
                     $('.head_about_text').attr('style', 'letter-spacing: 2px !important;');
                     $('.input-lg').attr('style', 'letter-spacing: 3px !important;');
+                    $('.url_text').attr('style', 'letter-spacing: 3px !important;');
+                    $('.url').attr('style', 'letter-spacing: 3px !important;');
+                    $('.select-card').attr('style', 'letter-spacing: 2px !important;');
+                    $('.zoom').attr('style', 'letter-spacing: 2px !important;');
+                    $('.text').attr('style', 'letter-spacing: 2px !important; font-size: 18px !important;');
+                    $('.btn-place').attr('style', 'letter-spacing: 2px !important;');
+                    $('.pass_allow').attr('style', 'margin-top: 10px !important;');
+                } else {
+                    $('.own_url').attr('style', 'font-size: 17px !important');
+                    $('.position_place').removeClass('__zg').addClass('__mm').attr('style', 'padding: 10px 12px !important;');
+                    $('.position-icon').attr('style', 'padding-top: -5px !important;');
+                    $('.url_text').attr('style', 'font-size: 18px !important');
+                    $('.select-card').attr('style', 'font-size: 17px !important;');
+                    $('.zoom').attr('style', 'font-size: 17px !important;');
+                    
                 }
            })
         })

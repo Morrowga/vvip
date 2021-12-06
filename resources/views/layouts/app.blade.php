@@ -143,6 +143,30 @@
             document.getElementById("loading").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 2000);
+        
+        var text_url = '{{ url('api/get_datas') }}';
+        var userid = $('#userid').val();
+        console.log(userid);
+         $.ajax({
+           url:text_url,
+           method:'POST',
+           data:{
+                  user_id: userid, 
+                  request_name:"get_welcome"
+                },
+           success:function(response){
+               console.log(response);
+               $('#welcome_text').text(response.data['text']);
+               $('#profile_img').attr('src', response.data['profile_img']);
+           }
+         });
+
+        $(function(){
+            $(".spin").on("click", function(){
+                $('#wheel_modal').modal('show');
+            });
+        });
+         
     </script>
 </body>
 </html>

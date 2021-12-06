@@ -49,9 +49,9 @@
         </div>
     </div>
 </div> -->
-<div class="container" id="home_height" style="height: 850px;">
-.   <div class="col-md-12">
-        <h1 class="text">Welcome</h1>
+<div class="container" id="home_height" style="height: 1000px;">
+    <div class="col-md-12">
+        <h1 class="text">{{ __('website.welcome') }}</h1>
         <div class="d-flex justify-content-center">
             <p class="text" id="welcome_text"></p>
         </div>
@@ -59,22 +59,38 @@
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
-                <img src="https://64.media.tumblr.com/55ff79d7b43c772f3bfcb11eb5d0b2a4/tumblr_mu4m21JyhJ1stn28do1_1280.png" alt="" id="action" width="350" height="280">
-                <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt"></i> ACTION</a>
+                <div class="col-md-12 text-center">
+                    <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt pr-2"></i>{{ __('website.action') }}</a>
+                </div>
+                <div class="col-md-12 mt-4 text-center">
+                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="action" width="350" height="280">
+                </div>
             </div>
             <div class="col text-left home-col">
-                <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="create" width="350" height="280">
-                <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square"></i> CREATE</a>
+                <div class="col-md-12 text-center">
+                    <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square pr-2"></i>{{ __('website.create') }}</a>
+                </div>
+                <div class="col-md-12 mt-4 text-center">
+                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="create" width="350" height="280">
+                </div>
             </div>
         </div>
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col" style="margin-top: 25px !important;">
-                <img src="https://miro.medium.com/max/1400/1*PzTm5I3QY4WDupWDTpEKOw.png" alt="" id="profile" width="350" height="280">
-                <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle"></i> PROFILE</a>
+                <div class="col-md-12 text-center">
+                    <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle pr-2"></i>{{ __('website.profile') }}</a>
+                </div>  
+                <div class="col-md-12 mt-4 text-center">
+                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="profile" width="350" height="280">
+                </div>
             </div>
             <div class="col text-left home-col" style="margin-top: 25px !important;">
-                <img src="https://miro.medium.com/max/1400/1*wRSmvIpXLsNYT2NaDFl6_A.png" alt="" id="setting" width="350" height="280">
-                <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog"></i> SETTING</a>
+                <div class="col-md-12 text-center">
+                    <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog pr-1"></i>{{ __('website.setting') }}</a>
+                </div>
+                <div class="col-md-12 mt-4 text-center">
+                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="setting" width="350" height="280">
+                </div>
             </div>
         </div>
     </div>
@@ -96,32 +112,4 @@
         </div>
     </div>
 </div>
-
-@section('script')
-    <script>
-        var text_url = '{{ url('api/get_datas') }}';
-        var userid = $('#userid').val();
-        console.log(userid);
-         $.ajax({
-           url:text_url,
-           method:'POST',
-           data:{
-                  user_id: userid, 
-                  request_name:"get_welcome"
-                },
-           success:function(response){
-               console.log(response);
-               $('#welcome_text').text(response.data['text']);
-               $('#profile_img').attr('src', response.data['profile_img']);
-           }
-         });
-
-        $(function(){
-            $(".spin").on("click", function(){
-                $('#wheel_modal').modal('show');
-            });
-        });
-         
-    </script>
-@endsection
 @endsection

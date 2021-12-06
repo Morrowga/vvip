@@ -6,35 +6,36 @@
         <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                @if(Auth::user()->name)
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
-                </a>
-                <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
-                @else
-                <a href="" hidden></a>
-                @endif
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
+        <li class="nav-item dropdown">
+            @if(Auth::user()->name)
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
+            </a>
+            <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
+            @else
+            <a href="" hidden></a>
+            @endif
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        </ul>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
+    </ul>
     </div>
 </nav>
 
 <div class="d-flex justify-content-center">
     <div class="col-md-6 col-md-offset-3" id="create_section" style="height: 900px;">
-        <h3 class="text">Create Contents</h3>
+        <h3 class="text">{{ __('website.create_content') }}</h3>
         <div class="d-flex justify-content-center text-center mt-4">
             <div class="col">
                 <button type="button" id="con_tact" class="btn btn-dark btn-block create_content">
@@ -123,90 +124,62 @@
                         <img id="img" width="150" height="150" />
                     </div>
                     <div class="col-md-6">
-                        <h4 class="text text-center">Upload Photo</h4>
+                        <h4 class="text text-center">{{ __('website.upload_photo') }}</h4>
                         <label class="label_file btn btn-dark btn-block text">
                             <input type="file" class="file_upload" name="image" accept="image/*">
-                            Select file
+                            {{ __('website.select_file') }}
                         </label>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <h4 class="text text-center">Personal</h4>
-                <input type="text" id="first_name" class="form-control" placeholder="First Name" name="first_name">
-                <input type="text" id="last_name" class="form-control mt-1" placeholder="Last Name" name="last_name">
-                <input type="text" id="company" class="form-control mt-1" placeholder="Company" name="company">
-                <input type="text" id="position" class="form-control mt-1" placeholder="Position" name="position">
-                <input type="text" id="birthday" class="form-control mt-1" placeholder="Birthday" name="birthday">
+                <h4 class="text text-center">{{ __('website.contact_personal') }}</h4>
+                <input type="text" id="first_name" class="form-control" placeholder="{{ __('website.contact_firstname') }}" name="first_name">
+                <input type="text" id="last_name" class="form-control mt-1" placeholder="{{ __('website.contact_lastname') }}" name="last_name">
+                <input type="text" id="company" class="form-control mt-1" placeholder="{{ __('website.contact_company') }}" name="company">
+                <input type="text" id="position" class="form-control mt-1" placeholder="{{ __('website.contact_position') }}" name="position">
+                <input type="text" id="birthday" class="form-control mt-1" placeholder="{{ __('website.contact_birthday') }}" name="birthday">
             </div>
 
             <div class="card-body">
-                <h4 class="text text-center">Mobile</h4>
-                <input type="text" id="mobile" class="form-control" placeholder="Mobile" name="mobile">
-                <input type="text" id="phone" class="form-control mt-1" placeholder="Phone" name="phone">
-                <input type="text" id="office" class="form-control mt-1" placeholder="Office" name="office">
+                <h4 class="text text-center">{{ __('website.contact_mobile') }}</h4>
+                <input type="text" id="mobile" class="form-control" placeholder="{{ __('website.contact_mobile_no') }}" name="mobile">
+                <input type="text" id="phone" class="form-control mt-1" placeholder="{{ __('website.contact_phone_no') }}" name="phone">
+                <input type="text" id="office" class="form-control mt-1" placeholder="{{ __('website.contact_office_no') }}" name="office">
             </div>
 
             <div class="card-body">
-                <h4 class="text text-center">Email & Internet</h4>
-                <input type="text" id="personal_email" class="form-control" placeholder="Personal Email" name="personalemail">
-                <input type="text" id="office_email" class="form-control mt-1" placeholder="Office Email" name="office_email">
-                <input type="text" id="website1" class="form-control mt-1" placeholder="Website One" name="website1">
-                <input type="text" id="website2" class="form-control mt-1" placeholder="Website Two" name="website2">
-                <input type="text" id="website3" class="form-control mt-1" placeholder="Website Three" name="website3">
+                <h4 class="text text-center">{{ __('website.contact_email_internet') }}</h4>
+                <input type="text" id="personal_email" class="form-control" placeholder="{{ __('website.contact_personal_email') }}" name="personalemail">
+                <input type="text" id="office_email" class="form-control mt-1" placeholder="{{ __('website.contact_office_email') }}" name="office_email">
+                <input type="text" id="website1" class="form-control mt-1" placeholder="{{ __('website.contact_website_one') }}" name="website1">
+                <input type="text" id="website2" class="form-control mt-1" placeholder="{{ __('website.contact_website_two') }}" name="website2">
+                <input type="text" id="website3" class="form-control mt-1" placeholder="{{ __('website.contact_website_three') }}" name="website3">
             </div>
 
             <div class="card-body">
-                <h4 class="text text-center">Home Address</h4>
-                <input type="text" id="home_street1" class="form-control" placeholder="Street One" name="home_street1">
-                <input type="text" id="home_street2" class="form-control mt-1" placeholder="Street Two" name="home_street2">
-                <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="Postal Code" name="home_postal_code">
-                <input type="text" id="home_city" class="form-control mt-1" placeholder="City" name="home_city">
-                <input type="text" id="home_state" class="form-control mt-1" placeholder="State" name="state">
-                <input type="text" id="home_country" class="form-control mt-1" placeholder="Country" name="country">
+                <h4 class="text text-center">{{ __('website.contact_home_address') }}</h4>
+                <input type="text" id="home_street1" class="form-control" placeholder="{{ __('website.contact_str_one') }}" name="home_street1">
+                <input type="text" id="home_street2" class="form-control mt-1" placeholder="{{ __('website.contact_str_two') }}" name="home_street2">
+                <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="{{ __('website.contact_postal_code') }}" name="home_postal_code">
+                <input type="text" id="home_city" class="form-control mt-1" placeholder="{{ __('website.contact_city') }}" name="home_city">
+                <input type="text" id="home_state" class="form-control mt-1" placeholder="{{ __('website.contact_state') }}" name="state">
+                <input type="text" id="home_country" class="form-control mt-1" placeholder="{{ __('website.contact_country') }}" name="country">
             </div>
 
             <div class="card-body">
-                <h4 class="text text-center">Work Address</h4>
-                <input type="text" id="work_street1" class="form-control" placeholder="Street One" name="work_street1">
-                <input type="text" id="work_street2" class="form-control mt-1" placeholder="Street Two" name="work_street2">
-                <input type="text" id="work_postal_code" class="form-control mt-1" placeholder="Postal Code" name="work_postal_code">
-                <input type="text" id="work_city" class="form-control mt-1" placeholder="City" name="work_city">
-                <input type="text" id="work_state" class="form-control mt-1" placeholder="State" name="work_state">
-                <input type="text" id="work_country" class="form-control mt-1" placeholder="Country" name="work_country">
+                <h4 class="text text-center">{{ __('website.contact_work_address') }}</h4>
+                <input type="text" id="work_street1" class="form-control" placeholder="{{ __('website.contact_str_one') }}" name="work_street1">
+                <input type="text" id="work_street2" class="form-control mt-1" placeholder="{{ __('website.contact_str_two') }}" name="work_street2">
+                <input type="text" id="work_postal_code" class="form-control mt-1" placeholder="{{ __('website.contact_postal_code') }}" name="work_postal_code">
+                <input type="text" id="work_city" class="form-control mt-1" placeholder="{{ __('website.contact_city') }}" name="work_city">
+                <input type="text" id="work_state" class="form-control mt-1" placeholder="{{ __('website.contact_state') }}" name="work_state">
+                <input type="text" id="work_country" class="form-control mt-1" placeholder="{{ __('website.contact_country') }}" name="work_country">
             </div>
-
-            <!-- <div class="card-body" style="background-color: rgb(217,181,81) !important;">
-                <h4 class="appear text-center">Appearance Setting</h4>
-                <div class="d-flex justify-content-center mt-3">
-                    <div class="col">
-                        <p class="appear">Background</p>
-                    </div>
-                    <div class="col">
-                    <input type="color" class="form-control" id="background_color" name="background_color">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-3">
-                    <div class="col">
-                    <p class="appear">Text</p>
-                    </div>
-                    <div class="col">
-                    <input type="color" class="form-control" id="text_color" name="text_color">
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center mt-3">
-                    <div class="col">
-                        <p class="appear">Text Highlight</p>
-                    </div>
-                    <div class="col">
-                        <input type="color" class="form-control" id="text_highlight_color" name="text_highlight_color">
-                    </div>
-                </div>
-            </div> -->
         </div>
-        <button type="submit" class="btn btn-warning mt-3 btn-block" id="save_contact">Save</button>
+        <button type="submit" class="btn btn-warning mt-3 btn-block" id="save_contact">{{ __('website.save') }}</button>
         </form>
-        <button class="btn btn-light mt-3 btn-block" id="section_cancel">Cancel</button>
+        <button class="btn btn-light mt-3 btn-block" id="section_cancel">{{ __('website.cancel') }}</button>
     </div>
     <div class="col-md-6 col-md-offset-3" id="deep_link_section" style="height:  830px;">
         <div class="d-flex justify-content-center">
@@ -214,7 +187,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6 col-md-offset-3" id="link_tree_section" style="height: 800px;">
+    <div class="col-md-6 col-md-offset-3" id="link_tree_section" style="height: 1500px;">
         <form method="POST" id="link_tree_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
         <div class="card">
@@ -224,10 +197,10 @@
                         <img id="link_img" src="../images/logo.jpeg" class="text-center" width="150" height="150" />
                     </div>
                     <div class="col-md-6">
-                        <h4 class="text text-center mt-3">Upload Logo</h4>
+                        <h4 class="text text-center mt-3">{{ __('website.upload_photo') }}</h4>
                         <label class="label_file btn btn-dark btn-block text">
                             <input type="file" class="link_file_upload" name="link_image" accept="image/*">
-                            Select file
+                            {{ __('website.select_file') }}
                         </label>
                     </div>
                 </div>
@@ -237,16 +210,16 @@
                     <h3 class="text text-center">Link</h3>
                     <div class="link_input_field">
                     </div>
-                    <div class="d-flex justify-content-center mt-2">
+                    <!-- <div class="d-flex justify-content-center mt-2">
                         <div class="col-md-10 col-md-offset-1">
                             <input type="text" class="form-control" name="links_label[]" placeholder="Enter app label">
                             <input type="text" class="form-control mt-3" id="link_input" name="links[]" placeholder="Enter app url">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="d-flex justify-content-center mt-2">
                         <div class="col-md-10 col-md-offset-1">
-                            <button class="btn btn-success add_moree btn-block">Add More</button>
-                            <button class="submit_link_tree btn btn-primary btn-block">Confirm</button>
+                            <button class="btn btn-success add_moree btn-block">{{ __('website.addmore') }}</button>
+                            <button class="submit_link_tree btn btn-primary btn-block" disabled>{{ __('website.save') }}</button>
                         </div>
                     </div>
                 </div>
@@ -260,8 +233,8 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text text-center">URL</h3>
-                <input type="text" class="form-control" name="url" id="get_url">
-                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_url">Save</button>
+                <input type="text" class="form-control" name="url" id="get_url" placeholder="{{ __('website.createurl') }}">
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_url">{{ __('website.save') }}</button>
             </div>
         </div>
         </form>
@@ -272,10 +245,10 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text text-center">Email</h3>
-                <input type="text" name="email_address" id="e_address" class="form-control" placeholder="email_address">
-                <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="email_subject">
-                <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="email_body"></textarea>
-                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_email">Save</button>
+                <input type="text" name="email_address" id="e_address" class="form-control" placeholder="{{ __('website.email_address') }}">
+                <input type="text" name="email_subject" id="e_subject" class="form-control mt-2" placeholder="{{ __('website.email_sub') }}">
+                <textarea type="text" name="email_body" rows="3" id="e_body" class="form-control mt-2" placeholder="{{ __('website.email_body') }}"></textarea>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_email">{{ __('website.save') }}</button>
             </div>
         </div>
         </form>
@@ -286,9 +259,9 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text text-center">SMS</h3>
-                <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="Sms Number">
-                <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="Sms Text"></textarea>
-                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_sms">Save</button>
+                <input type="number" name="sms_no" id="sms_no" class="form-control" placeholder="{{ __('website.phonenumber') }}">
+                <textarea type="text" name="sms_text" id="sms_text" class="form-control mt-2" placeholder="{{ __('website.sms_body') }}"></textarea>
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_sms">{{ __('website.save') }}</button>
             </div>
         </div>
         </form>
@@ -299,8 +272,8 @@
         <div class="card">
             <div class="card-body">
                 <h3 class="text text-center">Phone</h3>
-                <input type="number" class="form-control" id="phone_num" name="phone">
-                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_phone">Save</button>
+                <input type="number" class="form-control" placeholder="{{ __('website.phonecallnumber') }}" id="phone_num" name="phone">
+                <button type="submit" class="btn btn-dark btn-block mt-3 save_all" id="save_phone">{{ __('website.save') }}</button>
             </div>
         </div>
         </form>
@@ -350,6 +323,16 @@
 </div>
 @section('script')
 <script src="../js/create_action.js"></script>
+<script>
+    var app_label = '{{ __('website.enter_app_label') }}';
+    var app_link = '{{ __('website.enter_app_link') }}';
+    var remove = '{{ __('website.remove') }}';
+    var active_deep = '{{ __('website.active') }}';
+    var onlysave = '{{ __('website.save_deep') }}';
+    var closebtn = '{{ __('website.close') }}';
+    var savethetext = '{{ __('website.savetext') }}';
+    var okbtn = '{{ __('website.Ok') }}';
+</script>
 @endsection
 @endsection
 

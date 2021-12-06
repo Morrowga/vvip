@@ -8,20 +8,21 @@
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -31,13 +32,13 @@
         </li>
     </ul>
     </div>
-</nav> 
+</nav>
 
 <div class="container" style="height: 700px;">
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-4 col-md-offset-4">
-                <h3 class="text mt-5">Change Action</h3>
+                <h3 class="text mt-5">{{ __('website.change_action') }} <a href="/feature" class="question_link"><i class="far fa-question-circle"></i></a></h3>
             </div>
         </div>
         <div class="card" id="ca">

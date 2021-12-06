@@ -9,11 +9,12 @@ $(function() {
                 request_name: "get_user_profile"
                 },
            success:function(response){
+               console.log(response);
                if(response.data != null){
                 $('#username').text(response.data['name']);
                 $('#email_name').text(response.data['email']);
                 $('#mobile').text(response.data['phone_number']);
-                $('#customer_url').text('https://vvip9.co/' + response.data['url']);
+                $('#customer_url').text(response.data['url']);
                 $('#package').text(response.data['package']);
                 $('#package_status').text(response.data['package_status']);
                 $('remaining_days').text(response.data['remaining_days']);
@@ -31,7 +32,7 @@ $(function() {
         var check_value = check.val();
 
         if(check.is(':checked')){
-            $('#private_on_off').text('On');
+            window.open($('#lang_setting').attr('href'));
         } else {
             $('#private_on_off').text('Off');
         }

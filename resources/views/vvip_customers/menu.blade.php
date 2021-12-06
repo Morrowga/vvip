@@ -7,20 +7,21 @@
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }}
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
+                <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -30,12 +31,12 @@
         </li>
     </ul>
     </div>
-</nav> 
+</nav>
 
 <div class="container" id="menu_container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-offset-3">
-            <h3 class="text">Menu</h3>
+            <h3 class="text">{{ __('website.menu') }}</h3>
         </div>
     </div>
     <div class="col-12">
@@ -43,15 +44,15 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="card" id="menu_list_card">
                     <div class="card-body">
-                        <a href="/profile" class="btn btn-light btn-block menu_button"><i class="menu-icon fas fa-user-circle mr-2"></i>Profile <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/create_data" class="btn btn-light btn-block menu_button"><i class="far fa-plus-square mr-2 menu-icon"></i> Create Content <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/action" class="btn btn-light btn-block menu_button"><i class="fas fa-exchange-alt mr-2 menu-icon"></i>Change Action <i class="fas fa-caret-right menu_arrow"></i></a>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-power-off mr-2 menu-icon"></i> Active My Card <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>Lucky Draw <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-chart-pie mr-2 menu-icon"></i>Statistic <i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-share-alt-square mr-2 menu-icon"></i>Share<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-cog mr-2 menu-icon"></i>Setting<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-headset mr-2 menu-icon"></i>Support<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <a href="/profile" class="btn btn-light btn-block menu_button"><i class="menu-icon fas fa-user-circle mr-2"></i>{{ __('website.profile') }}<i class="fas fa-caret-right menu_arrow"></i></a>
+                        <a href="/create_data" class="btn btn-light btn-block menu_button"><i class="far fa-plus-square mr-2 menu-icon"></i>{{ __('website.create_content') }}<i class="fas fa-caret-right menu_arrow"></i></a>
+                        <a href="/action" class="btn btn-light btn-block menu_button"><i class="fas fa-exchange-alt mr-2 menu-icon"></i>{{ __('website.change_action') }}<i class="fas fa-caret-right menu_arrow"></i></a>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-power-off mr-2 menu-icon"></i>{{ __('website.active_my_card') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>{{ __('website.lucky_draw') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-chart-pie mr-2 menu-icon"></i>{{ __('website.statistic') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-share-alt-square mr-2 menu-icon"></i>{{ __('website.share') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <a href="/setting" class="btn btn-light btn-block menu_button"><i class="fas fa-cog mr-2 menu-icon"></i>{{ __('website.setting') }}<i class="fas fa-caret-right menu_arrow"></i></a>
+                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-headset mr-2 menu-icon"></i>{{ __('website.support') }}<i class="fas fa-caret-right menu_arrow"></i></button>
                     </div>
                 </div>
             </div>

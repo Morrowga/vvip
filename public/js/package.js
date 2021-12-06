@@ -308,7 +308,7 @@ $("#phone").on('keyup', function(event) {
             success:function(response){
                 console.log(response);
                 if(response.status == '403'){
-                    $('#error_phone').show().text(response.message);
+                    $('#error_phone').show().text(phone_exist);
                     $('.next').attr('disabled', true);
                 } else {
                     $('#error_phone').hide();
@@ -340,7 +340,7 @@ $("#email").on('keyup', function(event) {
             success:function(response){
                 console.log(response);
                 if(response.status == '403'){
-                    $('#error_email').show().text(response.message);
+                    $('#error_email').show().text(email_exist);
                     $('.next').attr('disabled', true);
                 } else {
                     $('#error_email').hide();
@@ -413,8 +413,8 @@ function packageClick(e){
                 $('#column-image').append(`<div class="col-md-4">
                 <img src="http://admin.vvip9.co/card_collection/` + value['preview_design']['front_image'] + `" id="image_data" alt="" width="310" height="200">
                 <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
-                    <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">Zoom Card</button>
-                    <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">Select Card</button>
+                    <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
+                    <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
                 </div>
                 <div class="col-md-6 col-md-offset-3">
                     <p id="success_p"  class="success_text`+ value['id'] +`"></p>
@@ -429,7 +429,7 @@ function packageClick(e){
             if(targetValue == "12345"){
                 $('#bg_div').hide();
                 $('#qr_div').hide();
-                $('#card_blank_back').attr('style', 'margin-top: 171px !important;');
+                $('#card_blank_back').attr('style', 'margin-top: 100px !important;');
             } 
 
             //add_bg_color
@@ -474,7 +474,7 @@ function packageClick(e){
                             $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['back_image']);
                         }
                     $('#exampleModal').modal('hide');
-                    $('.success_text' + target).text('Select Successful').delay(5000).fadeOut();
+                    $('.success_text' + target).text(select_success).delay(5000).fadeOut();
                 }
             });  
         });

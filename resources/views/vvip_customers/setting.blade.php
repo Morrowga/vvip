@@ -2,41 +2,42 @@
 
 @section('content')
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
+<<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item dropdown">
-                @if(Auth::user()->name)
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
-                </a>
-                <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
-                @else
-                <a href="" hidden></a>
-                @endif
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
+        <li class="nav-item dropdown">
+            @if(Auth::user()->name)
+            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
+            </a>
+            <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
+            @else
+            <a href="" hidden></a>
+            @endif
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </li>
-        </ul>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </div>
+        </li>
+    </ul>
     </div>
 </nav>
 
 <div class="container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3">
-            <h3 class="text">Setting</h3>
+            <h3 class="text">{{ __('website.setting') }}</h3>
         </div>
     </div>
     <div class="d-flex justify-content-center">
@@ -52,7 +53,25 @@
     </div>
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3 mt-4">
-            <h4 class="text text-center">Color Appearance</h4>
+            <h4 class="text text-center">{{ __('website.language') }}</h4>
+            <div class="card text-center" id="card_lang">
+                <div class="card-body text-center">
+                    <div class="d-flex justify-content-center">
+                        <div class="col" id="">
+                            @foreach (Config::get('languages') as $lang => $language)
+                                @if ($lang != App::getLocale())
+                                    <a class="drop_link" id="lang_setting" href="{{ route('lang.switch', $lang) }}" disabled>{{$language['display']}}</a>
+                                    <!-- <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> -->
+                                @endif
+                            @endforeach
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-dark langbtn" id="lang_btn">{{ __('website.change') }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 class="text text-center">{{ __('website.color_appearance') }}</h4>
             <div class="card" id="card_appear">
                 <div class="card-body">
                     <form method="POST" id="appearance" enctype="multipart/form-data">
@@ -60,7 +79,7 @@
                             <input type="text" id="userid" name="user_id" value="{{ Auth::user()->id }}" hidden>
                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                             <div class="col">
-                                <p class="appear">Background</p>
+                                <p class="appear">{{ __('website.background') }}</p>
                             </div>
                             <div class="col">
                                 <input type="color" class="form-control" id="background_color" name="background_color">
@@ -68,7 +87,7 @@
                         </div>
                         <div class="d-flex justify-content-center mt-3">
                             <div class="col">
-                                <p class="appear" id="text_appear">Text</p>
+                                <p class="appear" id="text_appear">{{ __('website.text') }}</p>
                             </div>
                             <div class="col">
                                 <input type="color" class="form-control" id="text_color" name="text_color">
@@ -76,7 +95,7 @@
                         </div>
                         <div class="d-flex justify-content-center mt-3">
                             <div class="col">
-                                <p class="appear">Text Highlight</p>
+                                <p class="appear">{{ __('website.text_highlight') }}</p>
                             </div>
                             <div class="col">
                                 <input type="color" class="form-control" id="text_highlight_color"
@@ -85,7 +104,7 @@
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-light appear-btn page-scroll" type="submit"
-                                style="float:right; margin-top: 20px;">Confirm</button>
+                                style="float:right; margin-top: 20px;">{{ __('website.confirm') }}</button>
                         </div>
                     </form>
                 </div>

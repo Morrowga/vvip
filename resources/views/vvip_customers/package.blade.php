@@ -200,9 +200,7 @@
                                     </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <span id="error_name" class="error_texts" role="alert">
-                                                <strong>{{ __('website.enter_name') }}</strong>
-                                            </span>
+                                            <span id="error_name" class="error_texts" role="alert">{{ __('website.enter_name') }}</span>
                                             <input id="name" type="text" placeholder="{{ __('website.enter_name') }}"
                                                 class="form-control register-input" name="name" style="font-size: 17px; margin-top: 5px !important;" required autocomplete="name" autofocus>
                                         </div>
@@ -235,7 +233,7 @@
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="url_radio" onchange="getCheckedName()" value="" id="url_name" checked>
-                                                    <label for="html">{{ __('website.name_url') }}</label><br>
+                                                    <label for="html" class="own_url">{{ __('website.name_url') }}</label><br>
                                                 </div>
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="url_radio" onchange="getCheckedSystem()" value="" id="url_system">
@@ -249,11 +247,11 @@
                                             <span id="error_url" class="error_texts" role="alert"></span>
                                             <input type="text" value="1" id="total_input" hidden>
                                             <div class="row" style="display: flex; justify-content: center;">
-                                                <div class="col url" style="padding-top:5px;">
+                                                <div class="col url vvip_link">
                                                     <p class="vvip_text">https://vvip9.co/</p>
                                                 </div>
-                                                <div class="col url">
-                                                    <input type="text" id="url" class="form-control url_input" style="margin-top: 5px !important;" name="url" placeholder="{{ __('website.enter_url') }}">
+                                                <div class="col">
+                                                    <input type="text" id="url" class="form-control url_input" name="url" placeholder="{{ __('website.enter_url') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -294,37 +292,37 @@
                                             <div class="row">
                                                 <div class="col-md-6 text-center">
                                                     <div id="bg_div">
-                                                        <h3 class="text">Background Color</h3>
+                                                    <h3 class="text">{{ __('website.background_color') }}</h3>
                                                         <input type="color" class="form-control text-center" id="background_color">
                                                     </div>
                                                     <div id="text_div">
-                                                        <h3 class="text text-margin">Text Color</h3>
+                                                        <h3 class="text text-margin">{{ __('website.text_color') }}</h3>
                                                         <input type="color" class="form-control" id="text_color">
                                                         <p id="catch_click" hidden></p>
                                                     </div>
                                                     <div class="col-md-12" style="margin-top: 20px;">
-                                                        <p class="text" style="font-size: 20px !important;">Icon Upload</p>
-                                                        <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block"><i class="fas fa-camera-retro custom-case"></i> Upload New</button>
+                                                        <p class="text" style="font-size: 20px !important;">{{ __('website.icon_up') }}</p>
+                                                        <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block"><i class="fas fa-camera-retro custom-case"></i>{{ __('website.upload_logo') }}</button>
                                                     </div>
                                                     <div class="col-md-12 mt-2">
-                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Name</p>
-                                                        <button type="button" id="editName" class="btn btn-dark btn-place btn-block"><i class="fas fa-pen-nib custom-case"></i>Edit Text</button>
+                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.editname') }}</p>
+                                                        <button type="button" id="editName" class="btn btn-dark btn-place btn-block"><i class="fas fa-pen-nib custom-case"></i>{{ __('website.edit_name') }}</button>
                                                     </div>
                                                     <div class="col-md-12">
-                                                        <p class="text"  style="font-size: 21px !important; margin-top: 15px">Description</p>
-                                                        <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block"><i class="fas fa-font custo"></i>a Edit Text</button>                    
+                                                        <p class="text"  style="font-size: 21px !important; margin-top: 15px">{{ __('website.description') }}</p>
+                                                        <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block"><i class="fas fa-font custo"></i>{{ __('website.edit_descript') }}</button>                    
                                                     </div>
                                                     <div class="col-md-12 mt-2">
-                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">Poistion</p>
-                                                        <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i> Left</button>
-                                                        <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>Center</button>
-                                                        <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>   
+                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.position') }}</p>
+                                                        <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
+                                                        <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
+                                                        <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>   
                                                     </div>
                                                     <div class="col-md-12 mt-3" id="qr_div">
-                                                        <p class="text" style="font-size: 20px !important; margin-top:15px;">QR Scan</p>
-                                                        <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>Left</button>
-                                                        <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>Center</button>
-                                                        <button type="button" id="move_right" class="btn btn-dark btn-place position_place">Right<i class="fas fa-caret-right position-icon"></i></button>
+                                                        <p class="text" style="font-size: 20px !important; margin-top:15px;">{{ __('website.qr_scan') }}</p>
+                                                        <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
+                                                        <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
+                                                        <button type="button" id="move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 text-center custom_card" id="bl_front">
@@ -332,7 +330,7 @@
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
                                                         <p class="front_card_name text-center"></p>
-                                                        <p class="card_description text-center">Your Description</p>
+                                                        <p class="card_description text-center">{{ __('website.your_de') }}</p>
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
@@ -347,12 +345,12 @@
                                 <div class="form-section" id="pin_section">
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
-                                        <h3 class="text"  style="margin-top: 20px !important;">Create Login Pin</h3>
+                                        <h3 class="text"  style="margin-top: 20px !important;">{{ __('website.create_login_pin') }}</h3>
                                     </div> 
-                                    <div class="form-group row">
+                                    <div class="form-group row" style="margin-top: 10px;">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <p class="text">Password Only Allow Numbers</p>
-                                            <input id="password" type="password" placeholder="New Pin" pattern="[0-9]+" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
+                                            <input id="password" type="password" placeholder="{{ __('website.new_pin') }}" pattern="[0-9]+" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
+                                            <p class="text pass_allow" style="margin-top: 10px !important;">{{ __('website.pass_allow') }}</p>
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -362,7 +360,7 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="password-confirm" pattern="[0-9]+" type="password" placeholder="Confirm Pin" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
+                                            <input id="password-confirm" pattern="[0-9]+" type="password" placeholder="{{ __('website.confirm_pin') }}" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
                                         </div>
                                     </div>
                                 </div>
@@ -371,7 +369,7 @@
                                         <div class="col-md-12">
                                             <button type="button" class="next btn btn-info">{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info">{{ __('website.pre') }}</button>
-                                            <button type="submit" class="btn btn-info float-right sub-btn" disabled>Submit</button>
+                                            <button type="submit" class="btn btn-info float-right sub-btn" disabled>{{ __('website.submit_register') }}</button>
                                         </div>
                                     </div>
                                 </div>
@@ -387,14 +385,8 @@
     
 
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content">
-                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button> -->
-                </div>
                 <div class="modal-body">
                     <div class="row" style="margin-top: 60px !important;">
                         <div class="col-md-6 text-center">
@@ -406,7 +398,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
                     <!-- <button type="button" class="btn btn-primary" id="select_card">Select Card</button> -->
                 </div>
             </div>
@@ -415,20 +407,14 @@
 
 
     <div class="modal fade bd-example-modal-lg" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content" style="background-color: #fff !important;">
-                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button> -->
-                </div>
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
-                        <h4 class="upload_logo_text text-center mt-3">Upload Logo</h4>
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.icon_up') }}</h4>
                         <label class="btn btn-dark btn-block" id="up_load_btn"> 
                             <input type="file" class="uploadLogo" accept="image/*">
-                            Select file
+                            {{ __('website.select_logo') }}
                         </label>
                     </div>
                 </div>
@@ -441,18 +427,12 @@
     </div>
 
     <div class="modal fade bd-example-modal-lg" id="nameTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content" style="background-color: #fff !important;">
-                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button> -->
-                </div>
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
-                        <h4 class="upload_logo_text text-center mt-3">Edit Your Name</h4>
-                        <input type="text" class="form-control btn-block edit_name" placeholder="enter your custom name">
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.editname') }}</h4>
+                        <input type="text" class="form-control btn-block edit_name" placeholder="{{ __('website.enter_card_name') }}">
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -464,18 +444,12 @@
     </div>
 
     <div class="modal fade bd-example-modal-lg" id="descriptionTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content" style="background-color: #fff !important;">
-                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                    <!-- <h5 class="modal-title" id="exampleModalLabel">New message</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button> -->
-                </div>
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
-                        <h4 class="upload_logo_text text-center mt-3">Edit Your Description</h4>
-                        <textarea type="text" rows="3" class="form-control btn-block edit_description" placeholder="enter your custom description"></textarea>
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.description') }}</h4>
+                        <textarea type="text" rows="3" class="form-control btn-block edit_description" placeholder="{{ __('website.enter_card_description') }}"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -488,22 +462,17 @@
 
 
     <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content" style="background-color: #fff !important;">
-                <div class="modal-header" style="border-bottom: none !important; border-top: none !important;">
-                 <h5 class="modal-title" id="exampleModalLabel"></h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
                 <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
-                    <p class="sure" style="font-size: 20px !important; margin-top: 60px !important;">
-                        Are you sure for this. Confirm ?
+                    <i class="fas fa-exclamation-triangle fa-7x" style="margin-top: 65px !important;"></i>
+                    <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
+                        {{ __('website.areusure') }}
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">Close</button>
-                    <button type="button" id="check_confirm" class="btn btn-primary">Confirm</button>
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
+                    <button type="button" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
                 </div>
             </div>
         </div>
@@ -517,12 +486,17 @@ var invalid_error = '{{ __('website.phone_invalid') }}';
 var exist_active = '{{ __('website.exist_active') }}';
 var exist_expired = '{{ __('website.exist_expired') }}';
 var enter_phone = '{{ __('website.enter_phone') }}';
+var phone_exist = '{{ __('website.phonenumber_exist') }}';
 var phone_no_need_digit = '{{ __('website.phone_need_digit') }}';
 var enter_email = '{{ __('website.email') }}';
 var enter_url = '{{ __('website.enter_url') }}';
 var special_char = '{{ __('website.special_char') }}';
 var url_need_char = '{{ __('website.url_need_char') }}';
 var email_invalid = '{{ __('website.email_invalid') }}';
+var email_exist = '{{ __('website.email_exist')  }}';
+var zoom_card = '{{ __('website.zoom')  }}';
+var select_card = '{{ __('website.select_card')  }}';
+var select_success = '{{ __('website.select_success')  }}';
 </script>
 @endsection
 @endsection
