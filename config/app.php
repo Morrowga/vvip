@@ -164,6 +164,9 @@ return [
         PhpJunior\Zawuni\ZawuniServiceProvider::class,
         SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Shetabit\Visitor\Provider\VisitorServiceProvider::class,
+        Stevebauman\Location\LocationServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -233,7 +236,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Helper' => App\Helpers\Helper::class,
         'QrCode' => SimpleSoftwareIO\QrCode\Facades\QrCode::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Image' => Intervention\Image\Facades\Image::class,
+        'Visitor' => Shetabit\Visitor\Facade\Visitor::class,
+        'Location' => Stevebauman\Location\Facades\Location::class,
     ],
 
 ];

@@ -16,8 +16,10 @@
         "mcamara/laravel-localization": "^1.6",
         "php-junior/zawuni": "^1.2",
         "rabbit-converter/rabbit-php": "dev-master",
+        "shetabit/visitor": "^3.1",
         "simplesoftwareio/simple-qrcode": "~4",
-        "spatie/browsershot": "^3.52"
+        "spatie/browsershot": "^3.52",
+        "stevebauman/location": "^6.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

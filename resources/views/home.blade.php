@@ -8,7 +8,6 @@
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -22,7 +21,7 @@
                 <a class="dropdown-item dropdown_logout" href="{{ route('logout') }}"
                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                   <i class="fas fa-power-off"></i>  {{ __('Logout') }} 
+                  {{ __('Logout') }} <i class="fas fa-power-off"></i>
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -51,7 +50,12 @@
 </div> -->
 <div class="container" id="home_height" style="height: 1000px;">
     <div class="col-md-12">
-        <h1 class="text">{{ __('website.welcome') }}</h1>
+        <div class="d-flex justify-content-between">
+            <h1 class="text">{{ __('website.welcome') }}</h1>
+            @if(Auth::user()->secure_status == 'private')
+            <button class="btn btn-dark bell text-right">Notification<i class="far fa-bell pl-2"></i></button>
+            @endif
+        </div>
         <div class="d-flex justify-content-center">
             <p class="text" id="welcome_text"></p>
         </div>

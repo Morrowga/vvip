@@ -1924,6 +1924,42 @@ input[type=number] {
     transition-duration: 0.7s !important;
     color: rgb(0,0,0) !important;
 }
+
+.bell {
+    letter-spacing: 2px;
+    background: none !important;
+    border: none !important;
+    margin-top: 10px;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    font-size: 20px !important;
+    color: rgb(217,181,81) !important;
+}
+
+.bell:focus{
+    box-shadow: none !important;
+}
+
+.private_text{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(217,181,81) !important;
+    letter-spacing: 3px !important;
+    opacity: 0.9;
+}
+
+.userprofileimg{
+    border-radius:  50% !important;
+}
+
+.private_link{
+    text-decoration: none !important; 
+    color: rgb(217,181,81);
+    font-size: 20px;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+}
+
 @media only screen and (max-width: 425px) {
     
     .contact_margin{
@@ -2021,6 +2057,16 @@ input[type=number] {
         text-align: left !important;
         padding-left: 25px !important;
       }
+
+      .userprofileimg{
+          width: 130px !important;
+          height: 120px !important;
+      }
+
+      .loading-text{
+          margin-top: 90%;
+      }
+
   }
 
 

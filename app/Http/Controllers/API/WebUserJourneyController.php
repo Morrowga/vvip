@@ -68,6 +68,7 @@ class WebUserJourneyController extends Controller
         return view('vvip_customers.contact');
     }
 
+    
     public function switchLang($lang)
     {
         if (array_key_exists($lang, Config::get('languages'))) {

@@ -26,6 +26,8 @@ Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])-
 
 Route::get('/setting', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 
+Route::get('/connection', [App\Http\Controllers\HomeController::class, 'privateConnection'])->name('private');
+
 Route::get('/action', [App\Http\Controllers\HomeController::class, 'action'])->name('action');
 
 Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createData'])->name('createData');
@@ -44,7 +46,7 @@ Route::get('about', 'App\Http\Controllers\API\WebUserJourneyController@about')->
 
 Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact')->name('contact');
 
-Route::get('{url}', [App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
+Route::get('{url}',[App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url')->middleware(['web']);
 
 
 

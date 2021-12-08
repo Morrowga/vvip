@@ -16,58 +16,6 @@ use Illuminate\Support\Facades\Request;
 
 class Helper{
 
-    public static function countView($device = 'website')
-    {
-        $env = 1;
-        if (config("app.env") == 'local') {
-            $env = 0;
-        }
-        if ($env == 0) {
-            $page = str_replace('https://vvip9.co', '', Request::url());
-        } else {
-            $page = str_replace('https://vvip9.co','', Request::url());
-        }
-        if (empty($page)) {
-            $page = '/index';
-        }
-        $page_array = explode('/', $page);
-
-        $viewcount = ViewCount::where('page_name', $page_array[1])->first();
-        if ($viewcount) {
-            if ($device == 'mobile') {
-                $viewcount->mobile = ++$viewcount->mobile;
-            } else {
-                $viewcount->website = ++$viewcount->website;
-            }
-            $viewcount->save();
-        }
-    }
-
-    public static function user_activity($page, $type, $tbl, $row) {
-        Action::create([
-            'name' => $page,
-            'type' => $type,
-            'table_name' => $tbl,
-            'row_id' => $row
-        ]);
-    }
-
-    public static function user_stats() {
-        $user_stat = new UserStat();
-        $user_stat->user_id = (Auth::user()) ? Auth::id() : NULL;
-        $user_stat->user_ip = Request::getClientIp();
-        $user_stat->user_os = self::get_os();
-        $user_stat->user_browser = self::get_browsers();
-        $user_stat->user_agent = Request::header('User-Agent');
-        $user_stat->social_media = Request::server('HTTP_REFERER');
-        $user_stat->device_ip = null;
-        $user_stat->device_id = null;
-        $user_stat->device_name = self::get_device();
-        $user_stat->nfc_support = null;
-        $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
-        $user_stat->save();
-    }
-
     public static function getData($request_name,$user_id){
         if($request_name !== null){
             if($request_name === "get_contacts"){
@@ -367,6 +315,57 @@ class Helper{
         }
     }
 
+    public static function countView($device = 'website')
+    {
+        $env = 1;
+        if (config("app.env") == 'local') {
+            $env = 0;
+        }
+        if ($env == 0) {
+            $page = str_replace('https://vvip9.co', '', Request::url());
+        } else {
+            $page = str_replace('https://vvip9.co','', Request::url());
+        }
+        if (empty($page)) {
+            $page = '/index';
+        }
+        $page_array = explode('/', $page);
+
+        $viewcount = ViewCount::where('page_name', $page_array[1])->first();
+        if ($viewcount) {
+            if ($device == 'mobile') {
+                $viewcount->mobile = ++$viewcount->mobile;
+            } else {
+                $viewcount->website = ++$viewcount->website;
+            }
+            $viewcount->save();
+        }
+    }
+
+    public static function user_activity($page, $type, $tbl, $row) {
+        Action::create([
+            'name' => $page,
+            'type' => $type,
+            'table_name' => $tbl,
+            'row_id' => $row
+        ]);
+    }
+
+    public static function user_stats() {
+        $user_stat = new UserStat();
+        $user_stat->user_id = (Auth::user()) ? Auth::id() : NULL;
+        $user_stat->user_ip = Request::getClientIp();
+        $user_stat->user_os = self::get_os();
+        $user_stat->user_browser = self::get_browsers();
+        $user_stat->user_agent = Request::header('User-Agent');
+        $user_stat->social_media = Request::server('HTTP_REFERER');
+        $user_stat->device_ip = null;
+        $user_stat->device_id = null;
+        $user_stat->device_name = self::get_device();
+        $user_stat->nfc_support = null;
+        $user_stat->used_at = Carbon::now()->format('Y-m-d H:i:s');
+        $user_stat->save();
+    }
 
     public static function get_user_agent(){
         return $_SERVER['HTTP_USER_AGENT'];

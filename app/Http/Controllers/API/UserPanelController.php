@@ -3,20 +3,21 @@
 namespace App\Http\Controllers\API;
 
 use Auth;
+use App\Models\Eusp;
 use App\Models\User;
+use App\Models\Action;
+use App\Helpers\Helper;
 use App\Models\Contact;
 use App\Models\Package;
-use App\Models\HomeInfo;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Models\DeepLink;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
-use App\Helpers\Helper;
-use App\Models\Action;
-use App\Models\Eusp;
+use App\Models\HomeInfo;
 use App\Models\LinkTree;
 use App\Models\SelectedView;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class UserPanelController extends Controller
 {
@@ -281,17 +282,33 @@ class UserPanelController extends Controller
         }
     }
 
-    public function displayUserWant($url){
+    public function displayUserWant(Request $request,$url){
         $user = User::where('url', $url)->first();
         if($user !== null){
-            $data_module = SelectedView::where('user_id', $user->id)->first();
-            if(empty($data_module->request_name)){
-                $messages = [
-                    "message" => 'Any Action is not Active'
-                ];
-                return view('vvip_customers.select_view', compact('data_module', 'messages'));
-            } else {
+            if($user->secure_status !== 'private'){
+                $data_module = SelectedView::where('user_id', $user->id)->first();
+                if(empty($data_module->request_name)){
+                    $messages = [
+                        "message" => 'Any Action is not Active'
+                    ];
+                    return view('vvip_customers.select_view', compact('data_module', 'messages'));
+                } else {
                     return view('vvip_customers.select_view', compact('data_module'));
+                }
+            } else {
+                $ip = $request->getClientIp(true);
+                $in_addr = inet_pton($ip);
+                return $in_addr;
+                $device = $request->visitor()->device();
+                $platform = $request->visitor()->platform();
+                $browser  = $request->visitor()->browser();
+                $data = \Location::get('bc:17:b8:16:f6:8e');
+                return $data;
+                $country =  $data->countryName;
+                $region = $data->regionName;
+                $city = $data->cityName;
+                $timezone = Carbon::now();
+                return view('vvip_customers.private_connection', compact('user'));
             }
         } else {
             return abort(404);
@@ -698,5 +715,8 @@ class UserPanelController extends Controller
         }
     }
 
+    public function privateConnection($user_id = null){
+        return view('vvip_customers.private_connection');
+    }
 }
 

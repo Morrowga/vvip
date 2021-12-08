@@ -5,9 +5,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>VVIP 9</title>
         <link rel="shortcut icon" type="image/jpg" href="../images/Favicon-Size.png"/>
-		<meta name="description" content="Unika - Responsive One Page HTML5 Template">
-		<meta name="keywords" content="HTML5, Bootsrtrap, One Page, Responsive, Template, Portfolio" />
-		<meta name="author" content="imransdesign.com">
+		<meta name="description" content="VVIP9">
+		<meta name="keywords" content="VVIP9, VVIP, Vvip9, vvip9.co, smartcard, nfc, deeplink" />
+		<meta name="author" content="htut.com">
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         
