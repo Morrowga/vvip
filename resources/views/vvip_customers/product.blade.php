@@ -39,7 +39,7 @@
                     <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae neque, praesentium veritatis laudantium voluptates quasi, eum, officia optio fugit qui facilis tempora alias. Commodi illum cumque impedit neque modi.</p>
                 </div>   
                 <div class="col-md-6">
-                    <img src="https://miro.medium.com/max/1400/1*ukM74jDxbMpyzcEi7CiCLg.png" alt="" width="350" height="250">
+                    <img src="../images/Contact.png" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="col-md-12" style="margin-top: 75px !important;">
             <div class="d-flex justify-content-center">
                 <div class="col-md-6">
-                    <img src="https://i.imgur.com/QSlIpj1.png" alt="" width="300" height="400">
+                    <img src="../images/Deep-Link.png" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                 <h2 class="text">Deep Link</h2>
@@ -70,7 +70,7 @@
             <div class="col-sm-12 text-center">
                 <h3 class="text text-center">Email</h3>
                 <div class="col-md-12 border-product">
-                    <img src="https://triadprint.com/wp-content/uploads/2021/04/nfc_2.png" alt="" width="220" height="220">
+                    <img src="../images/Email.png" width="250" height="200">
                     <p class="text text-center add_shadow" style="margin-top: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid.</p>
                 </div>
             </div>
@@ -78,7 +78,7 @@
             <div class="devider" style="margin-top: 50px;"></div>
                 <h3 class="text text-center">URL </h3>
                 <div class="col-md-12 border-product">
-                    <img src="https://cardsless.com/img/phone-2.png" alt="" width="220" height="220">
+                    <img src="../images/URL.png" width="200" height="200">
                     <p class="text text-center add_shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid.</p>
                 </div>
             </div>
@@ -89,7 +89,7 @@
                 <div class="devider" style="margin-top: 50px;"></div>
                 <h3 class="text text-center">Phone</h3>
                 <div class="col-md-12 border-product">
-                    <img src="https://pngimg.com/uploads/phone_hand/phone_hand_PNG19.png" class="text-center" alt="" width="200" height="260">
+                    <img src="../images/PhoneCall.png" class="text-center" width="200" height="200">
                     <p class="text text-center add_shadow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat officiis id eos dicta neque fuga cumque iusto voluptates. Quos ut aspernatur unde esse, assumenda natus repellendus nihil? Voluptate, dicta ut.</p>
                 </div>
             </div>
@@ -97,7 +97,7 @@
                 <div class="devider" style="margin-top: 50px;"></div>
                 <h3 class="text text-center">SMS</h3>
                 <div class="col-md-12 border-product">
-                    <img src="https://www.tactify.me/wp-content/uploads/fmob.png" alt="" width="200" height="200">
+                    <img src="../images/SMS.png" width="200" height="200">
                     <p class="text text-center add_shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid. </p>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                     <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quae neque, praesentium veritatis laudantium voluptates quasi, eum, officia optio fugit qui facilis tempora alias. Commodi illum cumque impedit neque modi.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="http://graduate.auburn.edu/wp-content/uploads/2018/06/profess.png" alt="" width="280" height="150">
+                    <img src="../images/Contact.png" class="img-fluid">
                 </div>            
             </div>
         </div>

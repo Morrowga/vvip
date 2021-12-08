@@ -297,12 +297,11 @@ class UserPanelController extends Controller
                 }
             } else {
                 $ip = $request->getClientIp(true);
-                $in_addr = inet_pton($ip);
-                return $in_addr;
+                return $ip;
                 $device = $request->visitor()->device();
                 $platform = $request->visitor()->platform();
                 $browser  = $request->visitor()->browser();
-                $data = \Location::get('bc:17:b8:16:f6:8e');
+                $data = \Location::get('fe80::b114:144c:4edf:fcfc%18');
                 return $data;
                 $country =  $data->countryName;
                 $region = $data->regionName;
