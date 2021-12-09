@@ -286,16 +286,6 @@ class UserPanelController extends Controller
         }
     }
 
-    public function does_url_redirect($url){
-    
-        $headers = get_headers($url, 1);
-        if (!empty($headers['Location'])) {
-            return "true";
-        } else {
-            return "false";
-        }
-    }
-
     public function displayUserWant(Request $request,$url){
         $user = User::where('url', $url)->first();
         if($user !== null){
@@ -310,8 +300,11 @@ class UserPanelController extends Controller
                     return view('vvip_customers.select_view', compact('data_module'));
                 }
             } else {
-                $is_redirect = $this->does_url_redirect('https://vvip9.co/' . $url);
-                return $is_redirect;
+                if (!empty(header('Location: https://vvip9.co/' . $url))) {
+                    return "true";
+                } else {
+                    return "false";
+                }
                 
                    
                 // $ip = "103.135.217.174";
