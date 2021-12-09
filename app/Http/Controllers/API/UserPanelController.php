@@ -300,7 +300,9 @@ class UserPanelController extends Controller
                     return view('vvip_customers.select_view', compact('data_module'));
                 }
             } else {
-                 if (isset($_SERVER['HTTP_REFERER'])) {
+                 if ($_SERVER['HTTP_REFERER'] == "https://vvip.co/" + $url) {
+                    return abort(404); 
+                 } else {
                     $data_module = SelectedView::where('user_id', $user->id)->first();
                     if(empty($data_module->request_name)){
                         $messages = [
@@ -310,8 +312,6 @@ class UserPanelController extends Controller
                     } else {
                         return view('vvip_customers.select_view', compact('data_module'));
                     }
-                 } else {
-                    return abort(404); 
                  }
                 // $ip = "103.135.217.174";
                 // //$request->visitor()->ip()
