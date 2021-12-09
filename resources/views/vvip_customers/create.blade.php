@@ -7,7 +7,6 @@
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><button type="button" id="spin_wheel" class="btn btn-dark spin"><img src="https://media2.giphy.com/media/8wVRtdu0M1u0AvcDVM/giphy.gif?cid=ecf05e47l6ec3cuxzlfbbknxpy3afosyszxpdjo91ed3459i&rid=giphy.gif&ct=g" width="100" height="100" style="border-radius: 50% !important;" alt=""></button></li>
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

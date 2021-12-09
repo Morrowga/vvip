@@ -166,6 +166,8 @@ return [
         Intervention\Image\ImageServiceProvider::class,
         Shetabit\Visitor\Provider\VisitorServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
+        
 
 
         /*
@@ -177,7 +179,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -239,6 +241,7 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Visitor' => Shetabit\Visitor\Facade\Visitor::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];
