@@ -1493,6 +1493,7 @@ label.label_file {
     background-size: cover;
     width: 100%;
     height: 500px;
+    top: 20%;
 }
 
 .mapouter{position:relative;text-align:right;height:500px;width:100% !important;}
@@ -1958,6 +1959,62 @@ input[type=number] {
     font-size: 20px;
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+}
+
+.badge_noti {
+    position: relative;
+    top: -10px;
+    left: -25px;
+    border: 1px solid black;
+    border-radius: 50% !important;
+    background-color: #F84F31 !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    width: 30px;
+    padding: 5px !important;
+    font-size: 15px !important;
+}
+
+.noti_text{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(217,181,81);
+}
+
+.noti_btn_div{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    margin-top: 5%;
+}
+
+#noti_div{
+    border-bottom: 2px solid rgb(217,181,81) !important;
+    margin-top: 5px !important;
+    border-bottom-right-radius: 5% !important;
+}
+
+.allow{
+    border: 2px solid rgb(217,181,81) !important;
+    background: rgb(0,0,0) !important; 
+    color: rgb(217,181,81) !important;  
+}
+
+.allow:hover{
+    background: rgb(217,181,81) !important;
+    transition-duration: 0.9 !important;
+    color: #fff !important;
+}
+
+.disallow{
+    border: 2px solid rgb(219, 20, 40)!important;
+    background: rgb(0,0,0) !important;
+    color: rgb(217,181,81) !important;  
+}
+
+.disallow:hover{
+    background: rgb(219, 20, 40) !important;
+    transition-duration: 0.9s !important;
+    color: #fff !important;
 }
 
 @media only screen and (max-width: 425px) {
