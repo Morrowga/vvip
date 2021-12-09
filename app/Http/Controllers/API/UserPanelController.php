@@ -301,8 +301,6 @@ class UserPanelController extends Controller
                 }
             } else {
                 if (!empty($_SERVER['HTTP_REFERER'])) {
-                    return "false";
-                } else {
                     $data_module = SelectedView::where('user_id', $user->id)->first();
                     if(empty($data_module->request_name)){
                         $messages = [
@@ -312,6 +310,8 @@ class UserPanelController extends Controller
                     } else {
                         return view('vvip_customers.select_view', compact('data_module'));
                     }
+                } else {
+                    die();
                 }
                    
                 // $ip = "103.135.217.174";
