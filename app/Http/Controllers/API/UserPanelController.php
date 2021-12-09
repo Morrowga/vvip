@@ -301,7 +301,7 @@ class UserPanelController extends Controller
                 }
             } else {
                 if (!empty($_SERVER['HTTP_REFERER'])) {
-                    die();
+                    return "false";
                 } else {
                     $data_module = SelectedView::where('user_id', $user->id)->first();
                     if(empty($data_module->request_name)){
