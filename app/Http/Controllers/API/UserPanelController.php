@@ -302,20 +302,19 @@ class UserPanelController extends Controller
                     return view('vvip_customers.select_view', compact('data_module'));
                 }
             } else if($normal !== null){
-                return "sad";
-                // if ($normal->secure_status !== 'private') {
-                //     $data_module = SelectedView::where('user_id', $encrypt->id)->first();
-                //     if(empty($data_module->request_name)){
-                //         $messages = [
-                //             "message" => 'Any Action is not Active'
-                //         ];
-                //         return view('vvip_customers.select_view', compact('data_module', 'messages'));
-                //     } else {
-                //         return view('vvip_customers.select_view', compact('data_module'));
-                //     }
-                // } else {
-                //     return abort(404);
-                // }
+                if ($normal->secure_status !== 'private') {
+                    $data_module = SelectedView::where('user_id', $encrypt->id)->first();
+                    if(empty($data_module->request_name)){
+                        $messages = [
+                            "message" => 'Any Action is not Active'
+                        ];
+                        return view('vvip_customers.select_view', compact('data_module', 'messages'));
+                    } else {
+                        return view('vvip_customers.select_view', compact('data_module'));
+                    }
+                } else {
+                    return abort(404);
+                }
             } else {
                 return abort(404);
             }
