@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\API;
 
 use Auth;
-use Pusher\Pusher;
 use App\Models\Eusp;
 use App\Models\User;
 use App\Models\Action;
@@ -21,6 +20,7 @@ use App\Models\UservisitorCheck;
 use App\Events\VisitorNotification;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 
 class UserPanelController extends Controller
@@ -286,11 +286,13 @@ class UserPanelController extends Controller
         }
     }
 
+
     public function displayUserWant(Request $request,$url){
-        $user = User::where('url', $url)->first();
-        if($user !== null){
-            if($user->secure_status !== 'private'){
-                $data_module = SelectedView::where('user_id', $user->id)->first();
+            $normal = User::where('url', $url)->first();
+            $encrypt = User::where('encryption_url')->first();
+
+            if($encrypt !== null){
+                $data_module = SelectedView::where('user_id', $encrypt->id)->first();
                 if(empty($data_module->request_name)){
                     $messages = [
                         "message" => 'Any Action is not Active'
@@ -299,74 +301,84 @@ class UserPanelController extends Controller
                 } else {
                     return view('vvip_customers.select_view', compact('data_module'));
                 }
-            } else {
-                if (!empty(header('Location: https://vvip9.co/' . $url))) {
-                    return "true";
+            } else if($normal !== null){
+                if ($normal->secure_status !== 'private') {
+                    $data_module = SelectedView::where('user_id', $encrypt->id)->first();
+                    if(empty($data_module->request_name)){
+                        $messages = [
+                            "message" => 'Any Action is not Active'
+                        ];
+                        return view('vvip_customers.select_view', compact('data_module', 'messages'));
+                    } else {
+                        return view('vvip_customers.select_view', compact('data_module'));
+                    }
                 } else {
-                    return "false";
+                    return abort(404);
                 }
-                
-                   
-                // $ip = "103.135.217.174";
-                // //$request->visitor()->ip()
-                // $agent = new Agent;
-                // $mobile = $agent->isMobile();
-                // $desktop = $agent->isDesktop();
-                // $tablet = $agent->isTablet();
-                // $phone = $agent->isPhone();
-                // if($mobile){
-                //     $image = 'fa-mobile';
-                //     $result = 'Mobile';
-                // } else if($desktop) {
-                //     $image = 'fa-desktop';
-                //     $result = 'Desktop';
-                // } else if($tablet){
-                //     $image = 'fa-tablet';
-                //     $result = 'Tablet';
-                // } else {
-                //     $image = 'fa-question';
-                //     $result = 'Unknown Device';
-                // }
-                // $platform = $request->visitor()->platform();
-                // $browser  = $request->visitor()->browser();
-                // $client = new \GuzzleHttp\Client();
-                // $request = $client->get('https://api.freegeoip.app/json/'. $ip . '?apikey=bceff300-5899-11ec-a974-61401516c2e1');
-                // $d = $request->getBody();
-                // $data = json_decode($d);
-                // $country =  $data->country_name;
-                // $region = $data->region_name;
-                // $city = $data->city;
-                // $timezone = Carbon::now();
-                // $time_format = $timezone->toDateTimeString();
-                // $store_stat = new UservisitorCheck();
-                // $store_stat->user_id = $user->id;
-                // $store_stat->ip = $ip;
-                // $store_stat->device_image = $image;
-                // $store_stat->device_name = $result;
-                // $store_stat->platform = $platform;
-                // $store_stat->browser = $browser;
-                // $store_stat->country_name = $country;
-                // $store_stat->region_name = $region;
-                // $store_stat->city_name = $city;
-                // $store_stat->time = $time_format;
-                // $store_stat->save();
-
-                // $pusher = new Pusher(
-                //     config('broadcasting.connections.pusher.key'),
-                //     config('broadcasting.connections.pusher.secret'),
-                //     config('broadcasting.connections.pusher.app_id'),
-                //     config('broadcasting.connections.pusher.options')
-                // );
-
-                // $data = ['text' => 'Visitor enter your private page.'];
-
-                // $pusher->trigger( 'notification', 'visitor-notification', $data);
-                
-                // return view('vvip_customers.private_connection', compact('user'));
+            } else {
+                return abort(404);
             }
-        } else {
-            return abort(404);
-        }
+               
+            
+                    
+                    
+                    // $ip = "103.135.217.174";
+                    // //$request->visitor()->ip()
+                    // $agent = new Agent;
+                    // $mobile = $agent->isMobile();
+                    // $desktop = $agent->isDesktop();
+                    // $tablet = $agent->isTablet();
+                    // $phone = $agent->isPhone();
+                    // if($mobile){
+                    //     $image = 'fa-mobile';
+                    //     $result = 'Mobile';
+                    // } else if($desktop) {
+                    //     $image = 'fa-desktop';
+                    //     $result = 'Desktop';
+                    // } else if($tablet){
+                    //     $image = 'fa-tablet';
+                    //     $result = 'Tablet';
+                    // } else {
+                    //     $image = 'fa-question';
+                    //     $result = 'Unknown Device';
+                    // }
+                    // $platform = $request->visitor()->platform();
+                    // $browser  = $request->visitor()->browser();
+                    // $client = new \GuzzleHttp\Client();
+                    // $request = $client->get('https://api.freegeoip.app/json/'. $ip . '?apikey=bceff300-5899-11ec-a974-61401516c2e1');
+                    // $d = $request->getBody();
+                    // $data = json_decode($d);
+                    // $country =  $data->country_name;
+                    // $region = $data->region_name;
+                    // $city = $data->city;
+                    // $timezone = Carbon::now();
+                    // $time_format = $timezone->toDateTimeString();
+                    // $store_stat = new UservisitorCheck();
+                    // $store_stat->user_id = $user->id;
+                    // $store_stat->ip = $ip;
+                    // $store_stat->device_image = $image;
+                    // $store_stat->device_name = $result;
+                    // $store_stat->platform = $platform;
+                    // $store_stat->browser = $browser;
+                    // $store_stat->country_name = $country;
+                    // $store_stat->region_name = $region;
+                    // $store_stat->city_name = $city;
+                    // $store_stat->time = $time_format;
+                    // $store_stat->save();
+
+                    // $pusher = new Pusher(
+                    //     config('broadcasting.connections.pusher.key'),
+                    //     config('broadcasting.connections.pusher.secret'),
+                    //     config('broadcasting.connections.pusher.app_id'),
+                    //     config('broadcasting.connections.pusher.options')
+                    // );
+
+                    // $data = ['text' => 'Visitor enter your private page.'];
+
+                    // $pusher->trigger( 'notification', 'visitor-notification', $data);
+                    
+                    // return view('vvip_customers.private_connection', compact('user'));
+        
     }
 
     // public function getUserVisitor($userid = null){

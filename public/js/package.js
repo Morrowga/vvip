@@ -30,11 +30,14 @@ $(function(){
                 $.ajax({
                     url: 'api/qr_generate',
                     method: 'GET',
+                    headers: {
+                        'Content-type':'image/png'
+                    },
                     data: {
                         url_value
                     },
                     success:function(response){
-                        $('#qr_scan').attr('src', '../storage/customer_qr/' + url_value + '.png');
+                        $('#qr_scan').attr('src', '../storage/customer_qr/' + response + '.png');
                     }
                 });
             }
@@ -197,7 +200,7 @@ function getCheckedSystem() {
     const checkBox = document.getElementById('url_system').checked;   
     if (checkBox === true) {
             document.getElementById("url").value = document.getElementById('url_system').value;
-            document.getElementById("url").disabled = true;
+            // document.getElementById("url").disabled = true;
             $('#error_url').hide();
             $('.next').attr('disabled', false)
         } else {

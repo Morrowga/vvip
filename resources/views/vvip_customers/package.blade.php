@@ -267,11 +267,11 @@
                                             <div class="row" style="margin-top: 15px !important;">
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="secure_status" value="private">
-                                                    <label for="html">Private</label><br>
+                                                   <label for="html">Private</label><br>
                                                 </div>
                                                 <div class="col-md-6 url">
                                                     <input type="radio" name="secure_status" value="public" checked>
-                                                    <label for="css">Public</label><br>
+                                                   <label for="css">Public</label><br>
                                                 </div>
                                             </div>
                                         </div>

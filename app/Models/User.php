@@ -27,7 +27,8 @@ class User extends Authenticatable
         'package',
         'url',
         'secure_status',
-        'smart_card_design'
+        'smart_card_design',
+        'encryption_url'
     ];
 
     /**

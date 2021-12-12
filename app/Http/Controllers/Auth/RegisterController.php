@@ -12,6 +12,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Controllers\Mail\MailController;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Crypt;
 
 class RegisterController extends Controller
 {
@@ -79,6 +80,7 @@ class RegisterController extends Controller
         }
         $user->smart_card_design_id = $request->smart_card_design_id;
         $user->url = $request->url;
+        $user->encryption_url = Crypt::encryptString($request->url);
         $user->secure_status = $request->secure_status;
         $user->password = Hash::make($request->pin);
         $user->verification_code = sha1(time());

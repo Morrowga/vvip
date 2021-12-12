@@ -19,6 +19,7 @@ use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Helpers\Helper;
 use App\Http\Controllers\Mail\MailController;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Crypt;
 use Spatie\Browsershot\Browsershot;
 use Intervention\Image\Facades\Image as Image;
 
@@ -417,10 +418,11 @@ class UserRegisterController extends Controller
 
     public function qr_generate(Request $request){
         $url = $request->url_value;
-        $get_qr = QrCode::size(500)->style('round')->format('png')->merge('images/BoxPacking-Design.png', 0.3, true)->errorCorrection('H')->generate("https://vvip9.co/" . $url, public_path('storage/customer_qr/' . $url . '.png'));
+        $encrypt = Crypt::encryptString($url);
+        $get_qr = QrCode::size(500)->format('png')->merge('images/logoround.png', 0.3, true)->errorCorrection('H')->generate("https://vvip9.co/" . $encrypt, public_path('storage/customer_qr/' . $encrypt . '.png'));
 
-        // return response($get_qr)->header('Content-type','image/png');
-        return $get_qr;
+        return $encrypt;
+        // return $get_qr;
         // $messages =  [
         //     "status" => "200",
         //     "message" => "success",
