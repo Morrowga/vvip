@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name')->nullable();
             $table->string('phone_number')->unique();
             $table->string('url')->nullable();
-            $table->string('profile_image')->nullable();
+            $table->string('profile_image')->default('logo.jpeg');
             $table->string('secure_status')->default('public');
             $table->string('email')->nullable();
             $table->string('smart_card_design_id')->nullable();
