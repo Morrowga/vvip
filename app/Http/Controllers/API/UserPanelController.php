@@ -303,7 +303,7 @@ class UserPanelController extends Controller
                 }
             } else if($normal !== null){
                 if ($normal->secure_status !== 'private') {
-                    $data_module = SelectedView::where('user_id', $encrypt->id)->first();
+                    $data_module = SelectedView::where('user_id', $normal->id)->first();
                     if(empty($data_module->request_name)){
                         $messages = [
                             "message" => 'Any Action is not Active'
