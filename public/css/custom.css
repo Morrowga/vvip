@@ -80,6 +80,9 @@ footer{
     padding-top: 10px !important;
 }
 
+    #cns_no_data_text{
+        text-transform: capitalize;
+    }
 
   .url{
       /* text-align: center !important; */

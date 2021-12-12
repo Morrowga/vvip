@@ -116,6 +116,7 @@ class Helper{
                         "status" => "200",
                         "message" => "success",
                         "request" => "contacts",
+                        "text" => "no data available",
                         "data" => $data
                     ];
                     return $messages;

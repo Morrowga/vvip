@@ -11,6 +11,7 @@ $(function() {
         $('#link_img').attr('src',link_url);
     });
 
+    $('#cands_section').hide();
     $('#contact_section').hide();
     $('#deep_link_section').hide();
     $('#url_section').hide();
@@ -22,6 +23,161 @@ $(function() {
     // $('#link_four').hide();
     // $('#link_five').hide();
 
+    $('#see_more_contact').hide();
+
+    $('#cands').on('click', function(){
+        $('#create_section').hide();
+        $('#cands_section').show();
+        $.ajax({
+            url: 'api/get_datas',
+            method:'POST',
+            data:{
+                 user_id: user_id,  
+                 request_name: "get_contacts"
+                 },
+            success:function(response){
+                console.log(response);
+                if(response.text != "no data available"){
+                    console.log(response);
+                    $('#cns_image').attr('src', '../' + response.data['image']);
+                    $('#cns_firstname').text(response.data['personal']['first_name']);
+                    $('#cns_lastname').text(response.data['personal']['last_name']);
+                    $('#cns_company').text(response.data['personal']['company']);
+                    $('#cns_position').text(response.data['personal']['position']);
+                    $('#cns_birthday').text(response.data['personal']['birthday']);
+                    $('#cns_mobile').text(response.data['mobile']['mobile']);
+                    $('#cns_phone').text(response.data['mobile']['phone']);
+                    $('#cns_office').text(response.data['mobile']['office']);
+                    $('#cns_personal').text(response.data['email_and_internet']['personalemail']);
+                    $('#cns_officeemail').text(response.data['email_and_internet']['office_email']);
+                    $('#cns_webone').text(response.data['email_and_internet']['website_one']);
+                    $('#cns_webtwo').text(response.data['email_and_internet']['website_two']);
+                    $('#cns_webthree').text(response.data['email_and_internet']['website_three']);
+                    $('#cns_strone').text(response.data['home_address']['street_one']);
+                    $('#cns_strtwo').text(response.data['home_address']['street_two']);
+                    $('#cns_postal').text(response.data['home_address']['postal']);
+                    $('#cns_city').text(response.data['home_address']['city']);
+                    $('#cns_state').text(response.data['home_address']['state']);
+                    $('#cns_country').text(response.data['home_address']['country']);
+                    $('#cns_work_strone').text(response.data['work_address']['street_one']);
+                    $('#cns_work_strtwo').text(response.data['work_address']['street_two']);
+                    $('#cns_work_postal').text(response.data['work_address']['postal']);
+                    $('#cns_work_city').text(response.data['work_address']['city']);
+                    $('#cns_work_state').text(response.data['work_address']['state']);
+                    $('#cns_work_country').text(response.data['work_address']['country']);
+                    
+                    $('#seemore_contact_btn').on('click', function(){
+                        if(response.data['personal']['first_name'] == null && response.data['personal']['last_name'] == null){
+                            $('#namesection').hide();
+                        }
+                        if(response.data['personal']['first_name'] == null){
+                            $('#cns_firstname').hide();
+                        } 
+                        if(response.data['personal']['last_name'] == null){
+                            $('#cns_lastname').hide();
+                        }
+            
+                        if(response.data['personal']['company'] == null){
+                            $('#comsection').hide();
+                        }
+            
+                        if(response.data['personal']['position'] == null){
+                            $('#positionsection').hide();
+                        }
+            
+                        if(response.data['personal']['birthday'] == null){
+                            $('#bdsection').hide();
+                        }
+            
+                        if(response.data['home_address']['street_one'] == null){
+                            $('#home_strone_section').hide();
+                        }
+                        
+                        if(response.data['home_address']['street_two'] == null){
+                            $('#home_strtwo_section').hide();
+                        }
+            
+                        if(response.data['home_address']['postal_code'] == null){
+                            $('#home_postal_section').hide();
+                        }
+            
+                        if(response.data['home_address']['city'] == null){
+                            $('#home_city_section').hide();
+                        }
+                        
+                        if(response.data['home_address']['state'] == null){
+                            $('#home_state_section').hide();
+                        }
+            
+                        if(response.data['home_address']['country'] == null) {
+                            $('#home_country_section').hide();
+                        }
+            
+                        if(response.data['work_address']['street_one'] == null){
+                            $('#work_strone_section').hide();
+                        }
+                        
+                        if(response.data['work_address']['street_two'] == null){
+                            $('#work_strtwo_section').hide();
+                        }
+            
+                        if(response.data['work_address']['postal_code'] == null){
+                            $('#work_postal_section').hide();
+                        }
+            
+                        if(response.data['work_address']['city'] == null){
+                            $('#work_city_section').hide();
+                        }
+                        
+                        if(response.data['work_address']['state'] == null){
+                            $('#work_state_section').hide();
+                        }
+            
+                        if(response.data['work_address']['country'] == null) {
+                            $('#work_country_section').hide();
+                        }
+            
+                        if(response.data['mobile']['mobile'] == null){
+                            $('#mobilesection').hide();
+                        }
+            
+                        if(response.data['mobile']['mobile'] == null){
+                            $('#phonesection').hide();
+                        }
+            
+                        if(response.data['mobile']['office'] == null){
+                            $('#officesection').hide();
+                        }
+                        
+                        if(response.data['email_and_internet']['personalemail'] == null){
+                            $('#personalsection').hide();
+                        }
+            
+                        if(response.data['email_and_internet']['office_email'] == null){
+                            $('#officeemailsection').hide();
+                        }
+            
+                        if(response.data['email_and_internet']['website_one'] == null){
+                            $('#wbonesection').hide();
+                        }
+            
+                        if(response.data['email_and_internet']['website_two'] == null){
+                            $('#wbtwosection').hide();
+                        }
+            
+                        if(response.data['email_and_internet']['website_three'] == null){
+                            $('#wbthreesection').hide();
+                        }
+                    });
+                } else {
+                    console.log(response.text);
+                    $('#cns_no_data_text').append(`
+                        <h1 id="no_data_text" class="text text-center">`+ response.text +`</h1>
+                    `);
+                }
+            }
+        });
+    });
 
     $('#con_tact').on('click', function() {
         $('#create_section').hide();

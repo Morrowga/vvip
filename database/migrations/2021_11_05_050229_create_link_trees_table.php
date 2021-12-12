@@ -16,7 +16,7 @@ class CreateLinkTreesTable extends Migration
         Schema::create('link_trees', function (Blueprint $table) {
             $table->id();
             $table->uuid('user_id');
-            $table->string('link_image')->nullable();
+            $table->string('link_image')->default('logo.jpeg');
             $table->json('links')->nullable();
             $table->json('labels')->nullable();
             $table->string('background_color')->nullable();

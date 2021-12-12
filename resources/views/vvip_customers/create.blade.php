@@ -186,6 +186,158 @@
             </div>
         </div>
     </div>
+    <div class="col-md-12" id="cands_section" style="height: 800px;">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-12" id="cns_no_data_text"></div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-12 text-center">
+                        <img id="cns_image" alt="" width="200" height="200">
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-6 text-center" id="namesection">
+                        <label for="" class="text text-center">NAME</label>
+                        <div class="d-flex justify-content-center">
+                            <p class="text text-center" id="cns_firstname"></p><p class="text text-center" id="cns_lastname"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center" id="comsection">
+                        <label for="" class="text text-center">Company</label>
+                        <p class="text text-center" id="cns_company"></p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-6 text-center" id="positionsection">
+                        <label for="" class="text text-center">Position</label>
+                        <p class="text text-center" id="cns_position"></p>
+                    </div>
+                    <div class="col-md-6 text-center" id="bdsection">
+                        <label for="" class="text text-center">Birthday</label>
+                        <p class="text text-center" id="cns_birthday"></p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="col-md-4 col-md-offset-4 text-center">
+                        <button class="btn btn-success btn-block" id="seemore_contact_btn">See More</button>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-5">
+                    <div class="col-md-12" id="see_more_contact">
+                    <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="mobilesection">
+                                <label for="" class="text text-center">Mobile</label>
+                                <p class="text text-center" id="cns_mobile"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="phonesection">
+                                <label for="" class="text text-center">Phone</label>
+                                <p class="text text-center" id="cns_phone"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="officesection">
+                                <label for="" class="text text-center">Office</label>
+                                <p class="text text-center" id="cns_office"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="personalsection">
+                                <label for="" class="text text-center">Personal</label>
+                                <p class="text text-center" id="cns_personal"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="officeemailsection">
+                                <label for="" class="text text-center">Office</label>
+                                <p class="text text-center" id="cns_officeemail"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="wbonesection">
+                                <label for="" class="text text-center">Website One</label>
+                                <p class="text text-center" id="cns_webone"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="wbtwosection">
+                                <label for="" class="text text-center">Website Two</label>
+                                <p class="text text-center" id="cns_webtwo"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="wbthreesection">
+                                <label for="" class="text text-center">Website Three</label>
+                                <p class="text text-center"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-12 text-center" id="home_strone_section">
+                                <label for="" class="text text-center">Street One</label>
+                                <p class="text text-center" id="cns_strone"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-12 text-center" id="home_strtwo_section">
+                                <label for="" class="text text-center">Street Two</label>
+                                <p class="text text-center" id="cns_strtwo"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="home_postal_section">
+                                <label for="" class="text text-center">Postal Code</label>
+                                <p class="text text-center" id="cns_postal"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="home_city_section">
+                                <label for="" class="text text-center">City</label>
+                                <p class="text text-center" id="cns_city"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="home_state_section">
+                                <label for="" class="text text-center">State</label>
+                                <p class="text text-center" id="cns_state"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="home_country_section">
+                                <label for="" class="text text-center">Country</label>
+                                <p class="text text-center" id="cns_country"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-12 text-center" id="work_strone_section">
+                                <label for="" class="text text-center">Street One</label>
+                                <p class="text text-center" id="cns_work_strone"></p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-12 text-center" id="work_strtwo_section">
+                                <label for="" class="text text-center">Street Two</label>
+                                <p class="text text-center" id="cns_work_strtwo">`+ response.data['work_address']['street_two'] +`</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="work_postal_section">
+                                <label for="" class="text text-center">Postal Code</label>
+                                <p class="text text-center" id="cns_work_postal">`+ response.data['work_address']['postal_code'] +`</p>
+                            </div>
+                            <div class="col-md-6 text-center" id="work_city_section">
+                                <label for="" class="text text-center">City</label>
+                                <p class="text text-center" id="cns_work_city">`+ response.data['work_address']['city'] +`</p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="work_state_section">
+                                <label for="" class="text text-center">State</label>
+                                <p class="text text-center" id="cns_work_state">`+ response.data['work_address']['state'] +`</p>
+                            </div>
+                            <div class="col-md-6 text-center" id="work_country_section">
+                                <label for="" class="text text-center">Country</label>
+                                <p class="text text-center" id="cns_country">`+ response.data['work_address']['country'] +`</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+
+            </div>
+        </div>
+    </div>
     <div class="col-md-6 col-md-offset-3" id="link_tree_section" style="height: 1500px;">
         <form method="POST" id="link_tree_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
