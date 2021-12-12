@@ -61,10 +61,16 @@ $.ajax({
                 </div>
             </div>`);
 
-            $('#card_background').attr('style', 'background-color:' + response.data['background_color'] + '!important;');
+            if(response.data['background_color'] != null){
+                $('#card_background').attr('style', 'background-color:' + response.data['background_color'] + '!important;');
 
-            $('.text_color').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
-            response.data['text_highlight_color'] + '; font-family: "Britannic Bold"; font-size: 19px; font-weight: 900;');
+                $('.text_color').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                response.data['text_highlight_color'] + '; font-family: "Britannic Bold"; font-size: 19px; font-weight: 900;');
+            } else {
+                $('#card_background').attr('style', 'background-color:rgb(217,181,81);');
+                $('.text_color').attr('style', 'color: #fff !important; text-shadow: 0px 3px 10px #000 !important;');
+            }
+        
 
             if(response.data['personal']['first_name'] == null){
                 $('#fn').hide();
@@ -443,8 +449,15 @@ $.ajax({
                 } 
             }  else if(response.request == "get_link_trees"){
                 console.log(response.data);
+                var linktree_data = response.data;
+                $.each(linktree_data['link_data'], function(i, value) {
+                    $('#link_tree_display').append(`
+                        <a href="https://`+ value['url'] +`" class="btn btn-light btn-block link_tree_d_btn mt-4" id="link_one" target="_blank">`+ value['label'] +`</a>
+                    `);
+                });
                 $('#image_hide').hide();
                 $('#link_tree_display').show();
+
                 if(response.data['background_color'] != null){
                     $('#link_tree_card').attr('style', 'background-color:' + response.data['background_color'] + ';');
                     $('.link_tree_d_btn').attr('style', 'color:' + response.data['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
@@ -458,37 +471,6 @@ $.ajax({
                     $('#link_tree_img').hide(); 
                 } else {
                     $('#link_tree_img').attr('src', '../' + response.data['link_image']);
-                }
-
-                if(response.data['link_one_url'] == "" || response.data['link_one_label'] == ""){
-                    $('#link_one').hide();
-                } else {
-                    // $('#display_tree').append('<a href="'+ response.data['link_one_url'] +'" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank">'+ response.data['link_one_label'] +'</a>')
-                    $('#link_one').attr('href', response.data['link_one_url']).text(response.data['link_one_label']);
-                }
-
-                if(response.data['link_two_url'] == null || response.data['link_two_label'] == null){
-                    $('#link_two').hide();
-                } else {
-                    $('#display_tree').append('<a href="'+ response.data['link_two_url'] +'" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank">'+ response.data['link_two_label'] +'</a>')
-                }
-
-                if(response.data['link_three_url'] == null || response.data['link_three_label'] == null){
-                    $('#link_three').hide();
-                } else {
-                    $('#link_three').attr('href', response.data['link_three_url']).text(response.data['link_three_label']);
-                }
-
-                if(response.data['link_four_url'] == null || response.data['link_four_label'] == null){
-                    $('#link_four').hide();
-                } else {
-                    $('#link_four').attr('href', response.data['link_four_url']).text(response.data['link_four_label']);
-                }
-
-                if(response.data['link_five_url'] == null || response.data['link_five_label'] == null){
-                    $('#link_five').hide();
-                } else {
-                    $('#link_five').attr('href', response.data['link_five_url']).text(response.data['link_five_label'])
                 }
 
                console.log(response.data);

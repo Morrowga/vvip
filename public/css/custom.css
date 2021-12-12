@@ -2098,7 +2098,11 @@ input[type=number] {
     }
 
     #background_color{
-        margin-left: 120px !important;
+        margin-left: 60px !important;
+    }
+
+    #text_highlight_color{
+        margin-left: 60px !important;
     }
 
     #text_color{

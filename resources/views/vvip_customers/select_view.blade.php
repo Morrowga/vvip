@@ -39,11 +39,7 @@
             </div>
             <div class="d-flex justify-content-center mt-3">
                 <div class="col-md-6 col-md-offset-3" id="display_tree">
-                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_one" target="_blank"></a>
-                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_two"  target="_blank"></a>
-                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_three"  target="_blank"></a>
-                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_four"  target="_blank"></a>
-                    <a href="" class="btn btn-light btn-block link_tree_d_btn" id="link_five"  target="_blank"></a>
+                    
                 </div>
             </div>
         </div>

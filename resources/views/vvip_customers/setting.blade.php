@@ -33,7 +33,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container" style="height: 800px !important;">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3">
             <h3 class="text">{{ __('website.setting') }}</h3>
