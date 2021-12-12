@@ -80,7 +80,7 @@ class RegisterController extends Controller
         }
         $user->smart_card_design_id = $request->smart_card_design_id;
         $user->url = $request->url;
-        $user->encryption_url = Crypt::encryptString($request->url);
+        $user->encryption_url = $request->encrytion_url;
         $user->secure_status = $request->secure_status;
         $user->password = Hash::make($request->pin);
         $user->verification_code = sha1(time());

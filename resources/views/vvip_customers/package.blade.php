@@ -239,6 +239,7 @@
                                                     <input type="radio" name="url_radio" onchange="getCheckedSystem()" value="" id="url_system">
                                                     <label for="css">{{ __('website.system_url') }}</label><br>
                                                 </div>
+                                                <input type="text" id="encrypt_url" name="encryption_url" hidden>
                                             </div>  
                                         </div>
                                     </div>
