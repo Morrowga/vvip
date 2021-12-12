@@ -39,6 +39,7 @@ $(function(){
                     success:function(response){
                         $('#qr_scan').attr('src', '../storage/customer_qr/' + response + '.png');
                         $('#encrypt_url').val(response);
+                        console.log($('#encrypt_url').val());
                     }
                 });
             }
