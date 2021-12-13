@@ -529,6 +529,10 @@ span {
 }
 
 
+#backcard{
+    position: relative;
+}
+
 .modal-vertical-centered {
     transform: translate(0, 50%) !important;
     -ms-transform: translate(0, 50%) !important; /* IE 9 */
@@ -858,6 +862,10 @@ label.label_file {
     border-top-right-radius: 20px !important;
     border-bottom-right-radius: 20px !important;
     border-bottom-left-radius: 20px !important;
+}
+
+#backcard{
+
 }
 
 .custom-case{

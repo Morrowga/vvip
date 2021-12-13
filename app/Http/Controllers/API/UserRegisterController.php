@@ -5,22 +5,24 @@ namespace App\Http\Controllers\API;
 use DateTime;
 use Carbon\Carbon;
 use App\Models\User;
+use GuzzleHttp\Client;
+use App\Helpers\Helper;
 use App\Models\Package;
 use App\Models\UserLog;
 use App\Models\DeepLink;
 use App\Models\HomeInfo;
 use App\Models\WaitingTime;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use App\Models\SmartCardDesign;
+use Spatie\Browsershot\Browsershot;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
-use App\Helpers\Helper;
 use App\Http\Controllers\Mail\MailController;
-use GuzzleHttp\Client;
-use Illuminate\Support\Facades\Crypt;
-use Spatie\Browsershot\Browsershot;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
@@ -487,7 +489,32 @@ class UserRegisterController extends Controller
         $request = $client->get('http://admin.vvip9.co/api/card_design');
         $response = $request->getBody();
        
-        return json_decode($response);
+        $data = json_decode($response);
+        foreach($data->data as $d){
+            foreach($d->transparent_design as $design){
+                $front_image = "http://admin.vvip9.co/card_collection/" . $design->front_image;
+                $back_image = "http://admin.vvip9.co/card_collection/" . $design->back_image;
+
+                $frontimg = file_get_contents($front_image);
+                $frontname = substr($front_image, strrpos($front_image, '/') + 1);
+                $front = Storage::put('public/cards/' . $frontname, $frontimg);
+
+                $backimg = file_get_contents($back_image);
+                $backname = substr($front_image, strrpos($front_image, '/') + 1);
+                $back = Storage::put('public/cards/' . $backname, $backimg);
+
+
+                // $res = response($result)->header('Content-type', 'image/png');
+
+
+                // $res->storeAs('card_designs', $name, 'public');
+
+            }
+        }
+
+        return $data;
+
+        // return $front_fetch->header('Content-Type', 'image/png');
     }
 
     // public function renderImage(){

@@ -344,6 +344,9 @@
                                     </div>
                                 </div>      
                                 <div class="form-section" id="pin_section">
+                                    <div class="col-md-12" id="uu">
+                                        <p class="text"></p>
+                                    </div>
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
                                         <h3 class="text"  style="margin-top: 20px !important;">{{ __('website.create_login_pin') }}</h3>
@@ -465,15 +468,26 @@
     <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-vertical-centered">
             <div class="modal-content" style="background-color: #fff !important;">
-                <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
-                    <i class="fas fa-exclamation-triangle fa-7x" style="margin-top: 65px !important;"></i>
-                    <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
+                <div class="modal-body  text-center" id="preview_cards" style="background-color: rgb(255,255,255,0.5) !important;">
+                    <div class="row">
+                        <div class="col-md-6" id="frontcard">
+
+                        </div>
+                        <div class="col-md-6" id="backcard">
+
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
                         {{ __('website.areusure') }}
                     </p>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
-                    <button type="button" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
+                    <div class="col-md-12" style="margin-top: 20px !important;">
+                        <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
+                        <button type="button" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
+                    </div>
                 </div>
             </div>
         </div>

@@ -221,6 +221,7 @@ class Helper{
                         "email" => $user_check->email,
                         "phone_number" => $user_check->phone_number,
                         "url" => "https://vvip9.co/" . $user_check->url,
+                        "encryption_url" => $user_check->encryption_url,
                         "profile_image" => $user_check->profile_image,
                         "secure_status" => $user_check->secure_status,
                         "package" => $user_check->package,

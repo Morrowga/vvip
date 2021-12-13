@@ -45,6 +45,19 @@ $(function(){
             }
 
             if(curIndex() == 4){
+
+                $('#frontcard').html($('#card_blank_front').html());
+                $('#backcard').html($('#card_blank_back').html());
+                $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
+                $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
+                $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
+
+                // $('#frontcard').find('[id*="bl_front"]').first().removeClass('col-md-6').addClass('col-md-12');
+                // $('#frontcard').find('[id*="card_blank_front"]').first().addClass('');
+                // $('#frontcard').find('[id*="card_blank_back"]').first().addClass('col-md-6';
+                // $('#card_blank_back').attr('style', 'margin-top: 5% !important;');
+                // $('#backcard').html($('#card_blank_back').html());
+                // $('#qr_scan').attr('style', 'top: 50% !important; position: absolute;');
                 $('#confirm_modal').modal('show');
                 $('#check_confirm').on('click', function(){
                     $('#confirm_modal').modal('hide');
@@ -453,12 +466,12 @@ function packageClick(e){
                 let id = e.target.id;
                 if(id == value['id']){
                     console.log(value['preview_design']['back_image']);
-                        $('#front_img').attr('src', "http://admin.vvip9.co/card_collection/" + value['preview_design']['front_image']);
+                        $('#front_img').attr('src', "../storage/cards/" + value['preview_design']['front_image']);
                     if(targetValue == "12345"){
                         $('#back_img').attr('src', "../images/Back.png");
                     } else {
                         console.log(value['default_back_transparent']);
-                        $('#back_img').attr('src', "http://admin.vvip9.co/card_collection/" + value['preview_design']['back_image']);
+                        $('#back_img').attr('src', "../storage/cards/" + value['preview_design']['back_image']);
                     }
                     $('#exampleModal').modal('show');
                 }
@@ -474,9 +487,9 @@ function packageClick(e){
                     console.log(value['color']['text_color']);
                     var txt_color = value['color']['text_color'];
                     $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
-                    $('#card_front').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['front_image']);
+                    $('#card_front').attr('src', "../storage/cards/" + value['transparent_design'][0]['front_image']);
                         if(targetValue != '12345'){
-                            $('#card_back').attr('src', "http://admin.vvip9.co/card_collection/" + value['transparent_design'][0]['back_image']);
+                            $('#card_back').attr('src', "../storage/cards/" + value['transparent_design'][0]['back_image']);
                         }
                     $('#exampleModal').modal('hide');
                     $('.success_text' + target).text(select_success).delay(5000).fadeOut();
