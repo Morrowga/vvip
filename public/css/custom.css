@@ -2021,8 +2021,93 @@ input[type=number] {
     color: #fff !important;
 }
 
+#secure_status{
+    text-transform: capitalize;
+}
+
+#cns_main_card{
+    background-color: rgb(217,181,81) !important;
+}
+
+#cns_card{
+    background-color: rgb(0,0,0);
+    border-top-right-radius: 5% !important;
+    border-bottom-left-radius: 5% !important;
+}
+
+#seemore_contact_btn{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-family: 'Kudryashev Display' !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+#seemore_contact_btn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.9s;
+}
+
+#seemore_contact_btn:focus{
+    box-shadow: none !important;
+}
+
+
+#linkcns{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    letter-spacing: 2px;
+    font-family: 'Kudryashev Display' !important;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+#linkcns:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.9s;
+    color: #000;
+}
+
+
+#linkcns:focus{
+    box-shadow: none !important;
+}
+
+
+#namesection > label, #comsection > label, #positionsection > label, #bdsection > label, 
+#mobilesection > label, #phonesection > label , #officesection > label, #personalsection > label, 
+#officeemailsection > label, #wbonesection > label, #wbtwosection > label, #wbthreesection > label,
+#home_strone_section > label, #home_strtwo_section > label, #home_postal_section > label,
+#home_state_section > label, #home_city_section > label, #home_country_section > label,
+#work_strone_section > label, #work_strtwo_section > label, #work_postal_section > label,
+#work_state_section > label, #work_city_section > label, #work_country_section > label{
+    text-transform: uppercase !important;
+    border-bottom: 2px solid rgb(217,181,81, 0.5);
+    border-bottom-left-radius: 5px !important;
+    border-bottom-right-radius: 5px !important;
+}
+
+.card-header{
+    font-family: 'Kudryashev Display' !important;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#wbonesection > label, #wbtwosection > label, #wbthreesection > label{
+    display: block !important;
+}
+
+#disappear_cns:hover{
+    transition-duration: 0.9s !important;
+}
+
+
 @media only screen and (max-width: 425px) {
-    
+    #cands_section{
+        height: 2700px !important;
+    }
     .contact_margin{
         margin-top: 60px !important;
     }

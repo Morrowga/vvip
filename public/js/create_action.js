@@ -19,6 +19,7 @@ $(function() {
     $('#email_section').hide();
     $('#phone_section').hide();
     $('#link_tree_section').hide();
+    $('#disappear_cns').hide();
     // $('#link_three').hide();
     // $('#link_four').hide();
     // $('#link_five').hide();
@@ -50,124 +51,185 @@ $(function() {
                     $('#cns_office').text(response.data['mobile']['office']);
                     $('#cns_personal').text(response.data['email_and_internet']['personalemail']);
                     $('#cns_officeemail').text(response.data['email_and_internet']['office_email']);
-                    $('#cns_webone').text(response.data['email_and_internet']['website_one']);
-                    $('#cns_webtwo').text(response.data['email_and_internet']['website_two']);
-                    $('#cns_webthree').text(response.data['email_and_internet']['website_three']);
+                    $('#cns_webone').attr('href',response.data['email_and_internet']['website_one']).text(response.data['email_and_internet']['website_one']);
+                    $('#cns_webtwo').attr('href',response.data['email_and_internet']['website_two']).text(response.data['email_and_internet']['website_two']);
+                    $('#cns_webthree').attr('href',response.data['email_and_internet']['website_three']).text(response.data['email_and_internet']['website_three']);
                     $('#cns_strone').text(response.data['home_address']['street_one']);
                     $('#cns_strtwo').text(response.data['home_address']['street_two']);
-                    $('#cns_postal').text(response.data['home_address']['postal']);
+                    $('#cns_postal').text(response.data['home_address']['postal_code']);
                     $('#cns_city').text(response.data['home_address']['city']);
                     $('#cns_state').text(response.data['home_address']['state']);
                     $('#cns_country').text(response.data['home_address']['country']);
                     $('#cns_work_strone').text(response.data['work_address']['street_one']);
                     $('#cns_work_strtwo').text(response.data['work_address']['street_two']);
-                    $('#cns_work_postal').text(response.data['work_address']['postal']);
+                    $('#cns_work_postal').text(response.data['work_address']['postal_code']);
                     $('#cns_work_city').text(response.data['work_address']['city']);
                     $('#cns_work_state').text(response.data['work_address']['state']);
                     $('#cns_work_country').text(response.data['work_address']['country']);
                     
                     $('#seemore_contact_btn').on('click', function(){
+                        $('#disappear_cns').show();
+                        $('#seemore_contact_btn').hide();
+                        $('#see_more_contact').show();
                         if(response.data['personal']['first_name'] == null && response.data['personal']['last_name'] == null){
                             $('#namesection').hide();
+                        } else {
+                            $('#namesection').show();
                         }
                         if(response.data['personal']['first_name'] == null){
                             $('#cns_firstname').hide();
-                        } 
+                        } else {
+                            $('#cns_firstname').show();
+                        }
                         if(response.data['personal']['last_name'] == null){
                             $('#cns_lastname').hide();
+                        } else {
+                            $('#cns_lastname').show();
                         }
             
                         if(response.data['personal']['company'] == null){
                             $('#comsection').hide();
+                        } else {
+                            $('#comsection').show();
                         }
             
                         if(response.data['personal']['position'] == null){
                             $('#positionsection').hide();
+                        } else {
+                            $('#positionsection').show();
                         }
             
                         if(response.data['personal']['birthday'] == null){
                             $('#bdsection').hide();
+                        } else {
+                            $('#bdsection').show();
                         }
             
                         if(response.data['home_address']['street_one'] == null){
                             $('#home_strone_section').hide();
+                        } else {
+                            $('#home_strone_section').show();
                         }
                         
                         if(response.data['home_address']['street_two'] == null){
                             $('#home_strtwo_section').hide();
+                        } else {
+                            $('#home_strtwo_section').show();
                         }
             
                         if(response.data['home_address']['postal_code'] == null){
                             $('#home_postal_section').hide();
+                        } else {
+                            $('#home_postal_section').show();
                         }
             
                         if(response.data['home_address']['city'] == null){
                             $('#home_city_section').hide();
+                        } else {
+                            $('#home_city_section').show();
                         }
                         
                         if(response.data['home_address']['state'] == null){
                             $('#home_state_section').hide();
+                        } else {
+                            $('#home_state_section').show();
                         }
             
                         if(response.data['home_address']['country'] == null) {
                             $('#home_country_section').hide();
+                        } else {
+                            $('#home_country_section').show();
                         }
             
                         if(response.data['work_address']['street_one'] == null){
                             $('#work_strone_section').hide();
+                        } else {
+                            $('#work_strone_section').show();
                         }
                         
                         if(response.data['work_address']['street_two'] == null){
                             $('#work_strtwo_section').hide();
+                        } else {
+                            $('#work_strtwo_section').show();
                         }
             
                         if(response.data['work_address']['postal_code'] == null){
                             $('#work_postal_section').hide();
+                        } else {
+                            $('#work_postal_section').show();
                         }
             
                         if(response.data['work_address']['city'] == null){
                             $('#work_city_section').hide();
+                        } else {
+                            $('#work_city_section').show();
                         }
                         
                         if(response.data['work_address']['state'] == null){
                             $('#work_state_section').hide();
+                        } else {
+                            $('#work_state_section').show();
                         }
             
                         if(response.data['work_address']['country'] == null) {
                             $('#work_country_section').hide();
+                        } else {
+                            $('#work_country_section').show();
                         }
             
                         if(response.data['mobile']['mobile'] == null){
                             $('#mobilesection').hide();
+                        } else {
+                            $('#mobilesection').show();
                         }
             
-                        if(response.data['mobile']['mobile'] == null){
+                        if(response.data['mobile']['phone'] == null){
                             $('#phonesection').hide();
+                        } else {
+                            $('#phonesection').show();
                         }
             
                         if(response.data['mobile']['office'] == null){
                             $('#officesection').hide();
+                        } else {
+                            $('#officesection').show();
                         }
                         
                         if(response.data['email_and_internet']['personalemail'] == null){
                             $('#personalsection').hide();
+                        } else {
+                            $('#personalsection').show();
                         }
             
                         if(response.data['email_and_internet']['office_email'] == null){
                             $('#officeemailsection').hide();
+                        } else {
+                            $('#officeemailsection').show();
                         }
             
                         if(response.data['email_and_internet']['website_one'] == null){
                             $('#wbonesection').hide();
+                        } else {
+                            $('#wbonesection').show();
                         }
             
                         if(response.data['email_and_internet']['website_two'] == null){
                             $('#wbtwosection').hide();
+                        } else {
+                            $('#wbtwosection').show();
                         }
             
                         if(response.data['email_and_internet']['website_three'] == null){
                             $('#wbthreesection').hide();
+                        } else {
+                            $('#wbthreesection').show();
                         }
+                    });
+
+                    $('#disappear_cns').on('click', function(){
+                        $('#seemore_contact_btn').show();
+                        $('#disappear_cns').hide();
+                        $('#see_more_contact').hide();
                     });
                 } else {
                     console.log(response.text);
@@ -177,6 +239,28 @@ $(function() {
                 }
             }
         });
+
+        $.ajax({
+            url: 'api/get_datas',
+            method:'POST',
+            data:{
+                 user_id: user_id,  
+                 request_name: "get_link_trees"
+                 },
+            success:function(response){
+                $('#link_tree_cns').attr('src', '../' + response.data['link_image']);
+                var linktree = response.data['link_data'];
+                $.each(linktree, function(i,val){
+                    console.log(val);
+                    $('#link_tree_links_cns').append(`
+                        <div class="col-md-12 mt-2">
+                            <a href="https://`+ val['url'] +`" target="_blank" class="btn btn-success btn-block" id="linkcns">`+ val['label'] +`</a>
+                        </div>
+                    `);
+                });
+                console.log(response);
+            }
+        })
     });
 
     $('#con_tact').on('click', function() {
@@ -450,7 +534,7 @@ $(function() {
 	
 	var x = 1; //initlal text box count
 	$(add_button).on('click',function(e){ //on add input button click
-        $('.submit_link_tree').attr('disabled', false);
+        // $('.submit_link_tree').attr('disabled', false);
 		e.preventDefault();
 		if(x < max_fields){ //max input box allowed
 			x++; //text box increment

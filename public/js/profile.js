@@ -21,6 +21,10 @@ $(function() {
                 if(response.data['secure_status'] == 'public'){
                     $('#secure_status').text(response.data['secure_status']);
                     $('#private_on_off').text('Off');
+               } else {
+                $('#secure_status').text(response.data['secure_status']);
+                $('#private_on_off').text('On');
+                $('.sw').attr('checked', true);
                }
                }
                console.log(response);
@@ -32,9 +36,33 @@ $(function() {
         var check_value = check.val();
 
         if(check.is(':checked')){
-            window.open($('#lang_setting').attr('href'));
+            $('#private_on_off').text('On');
+            $.ajax({
+                url: 'api/secure',
+                   method:'POST',
+                   data:{
+                        user_id: user_id,
+                        secure_status: "private"
+                        },
+                   success:function(response){
+                       console.log(response.data);
+                       $('#secure_status').text(response.data);
+                   }
+            });
         } else {
             $('#private_on_off').text('Off');
+            $.ajax({
+                url: 'api/secure',
+                   method:'POST',
+                   data:{
+                        user_id: user_id,
+                        secure_status: "public"
+                        },
+                   success:function(response){
+                       console.log(response);
+                       $('#secure_status').text(response.data);
+                   }
+            });
         }
     });
 });

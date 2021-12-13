@@ -94,10 +94,10 @@
         </div>
         <div class="d-flex justify-content-center mt-4 text-center">
             <div class="col-md-6">
-                <button type="button" id="event" class="btn btn-dark btn-block create_content">
+                <!-- <button type="button" id="event" class="btn btn-dark btn-block create_content">
                     <img src="https://i.ibb.co/YcD8dkz/event.png" class="mt-3" alt="" width="50" height="50">
                     <p class="color_black">Events</p>
-                </button>
+                </button> -->
             </div>
             <div class="col-md-6">
                 <!-- <button type="button" id="personal" class="btn btn-dark btn-block">
@@ -162,8 +162,8 @@
                 <input type="text" id="home_street2" class="form-control mt-1" placeholder="{{ __('website.contact_str_two') }}" name="home_street2">
                 <input type="text" id="home_postal_code" class="form-control mt-1" placeholder="{{ __('website.contact_postal_code') }}" name="home_postal_code">
                 <input type="text" id="home_city" class="form-control mt-1" placeholder="{{ __('website.contact_city') }}" name="home_city">
-                <input type="text" id="home_state" class="form-control mt-1" placeholder="{{ __('website.contact_state') }}" name="state">
-                <input type="text" id="home_country" class="form-control mt-1" placeholder="{{ __('website.contact_country') }}" name="country">
+                <input type="text" id="home_state" class="form-control mt-1" placeholder="{{ __('website.contact_state') }}" name="home_state">
+                <input type="text" id="home_country" class="form-control mt-1" placeholder="{{ __('website.contact_country') }}" name="home_country">
             </div>
 
             <div class="card-body">
@@ -186,7 +186,10 @@
             </div>
         </div>
     </div>
-    <div class="col-md-12" id="cands_section" style="height: 800px;">
+    <div class="col-md-12" id="cands_section" style="height: 2100px;">
+        <div class="col-md-6 col-md-offset-3">
+            <h3 class="text text-center">Contacts & Social</h3>
+        </div>
         <div class="row">
             <div class="col-md-6 mt-5">
                 <div class="d-flex justify-content-center">
@@ -197,144 +200,172 @@
                         <img id="cns_image" alt="" width="200" height="200">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-6 text-center" id="namesection">
-                        <label for="" class="text text-center">NAME</label>
+                <div class="card" id="cns_main_card">
+                    <div class="card-body" id="cns_card">
                         <div class="d-flex justify-content-center">
-                            <p class="text text-center" id="cns_firstname"></p><p class="text text-center" id="cns_lastname"></p>
+                            <div class="col-md-6 text-center" id="namesection">
+                                <label for="" class="text text-center">NAME</label>
+                                <div class="d-flex justify-content-center">
+                                    <p class="text text-center" id="cns_firstname"></p><p class="text text-center" id="cns_lastname"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 text-center" id="comsection">
+                                <label for="" class="text text-center">Company</label>
+                                <p class="text text-center" id="cns_company"></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 text-center" id="comsection">
-                        <label for="" class="text text-center">Company</label>
-                        <p class="text text-center" id="cns_company"></p>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <div class="col-md-6 text-center" id="positionsection">
-                        <label for="" class="text text-center">Position</label>
-                        <p class="text text-center" id="cns_position"></p>
-                    </div>
-                    <div class="col-md-6 text-center" id="bdsection">
-                        <label for="" class="text text-center">Birthday</label>
-                        <p class="text text-center" id="cns_birthday"></p>
+                        <div class="d-flex justify-content-center">
+                            <div class="col-md-6 text-center" id="positionsection">
+                                <label for="" class="text text-center">Position</label>
+                                <p class="text text-center" id="cns_position"></p>
+                            </div>
+                            <div class="col-md-6 text-center" id="bdsection">
+                                <label for="" class="text text-center">Birthday</label>
+                                <p class="text text-center" id="cns_birthday"></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
                     <div class="col-md-4 col-md-offset-4 text-center">
                         <button class="btn btn-success btn-block" id="seemore_contact_btn">See More</button>
+                        <button class="btn btn-outline-danger btn-block" id="disappear_cns"><i class="far fa-times-circle"></i> Hide</button>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center mt-5">
                     <div class="col-md-12" id="see_more_contact">
-                    <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="mobilesection">
-                                <label for="" class="text text-center">Mobile</label>
-                                <p class="text text-center" id="cns_mobile"></p>
+                    <div class="card" id="cns_main_card">
+                        <div class="card-body" id="cns_card">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="mobilesection">
+                                    <label for="" class="text text-center">Mobile</label>
+                                    <p class="text text-center" id="cns_mobile"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="phonesection">
+                                    <label for="" class="text text-center">Phone</label>
+                                    <p class="text text-center" id="cns_phone"></p>
+                                </div>
                             </div>
-                            <div class="col-md-6 text-center" id="phonesection">
-                                <label for="" class="text text-center">Phone</label>
-                                <p class="text text-center" id="cns_phone"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="officesection">
-                                <label for="" class="text text-center">Office</label>
-                                <p class="text text-center" id="cns_office"></p>
-                            </div>
-                            <div class="col-md-6 text-center" id="personalsection">
-                                <label for="" class="text text-center">Personal</label>
-                                <p class="text text-center" id="cns_personal"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="officeemailsection">
-                                <label for="" class="text text-center">Office</label>
-                                <p class="text text-center" id="cns_officeemail"></p>
-                            </div>
-                            <div class="col-md-6 text-center" id="wbonesection">
-                                <label for="" class="text text-center">Website One</label>
-                                <p class="text text-center" id="cns_webone"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="wbtwosection">
-                                <label for="" class="text text-center">Website Two</label>
-                                <p class="text text-center" id="cns_webtwo"></p>
-                            </div>
-                            <div class="col-md-6 text-center" id="wbthreesection">
-                                <label for="" class="text text-center">Website Three</label>
-                                <p class="text text-center"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-12 text-center" id="home_strone_section">
-                                <label for="" class="text text-center">Street One</label>
-                                <p class="text text-center" id="cns_strone"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-12 text-center" id="home_strtwo_section">
-                                <label for="" class="text text-center">Street Two</label>
-                                <p class="text text-center" id="cns_strtwo"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="home_postal_section">
-                                <label for="" class="text text-center">Postal Code</label>
-                                <p class="text text-center" id="cns_postal"></p>
-                            </div>
-                            <div class="col-md-6 text-center" id="home_city_section">
-                                <label for="" class="text text-center">City</label>
-                                <p class="text text-center" id="cns_city"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="home_state_section">
-                                <label for="" class="text text-center">State</label>
-                                <p class="text text-center" id="cns_state"></p>
-                            </div>
-                            <div class="col-md-6 text-center" id="home_country_section">
-                                <label for="" class="text text-center">Country</label>
-                                <p class="text text-center" id="cns_country"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-12 text-center" id="work_strone_section">
-                                <label for="" class="text text-center">Street One</label>
-                                <p class="text text-center" id="cns_work_strone"></p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-12 text-center" id="work_strtwo_section">
-                                <label for="" class="text text-center">Street Two</label>
-                                <p class="text text-center" id="cns_work_strtwo">`+ response.data['work_address']['street_two'] +`</p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="work_postal_section">
-                                <label for="" class="text text-center">Postal Code</label>
-                                <p class="text text-center" id="cns_work_postal">`+ response.data['work_address']['postal_code'] +`</p>
-                            </div>
-                            <div class="col-md-6 text-center" id="work_city_section">
-                                <label for="" class="text text-center">City</label>
-                                <p class="text text-center" id="cns_work_city">`+ response.data['work_address']['city'] +`</p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="col-md-6 text-center" id="work_state_section">
-                                <label for="" class="text text-center">State</label>
-                                <p class="text text-center" id="cns_work_state">`+ response.data['work_address']['state'] +`</p>
-                            </div>
-                            <div class="col-md-6 text-center" id="work_country_section">
-                                <label for="" class="text text-center">Country</label>
-                                <p class="text text-center" id="cns_country">`+ response.data['work_address']['country'] +`</p>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="officesection">
+                                    <label for="" class="text text-center">Office</label>
+                                    <p class="text text-center" id="cns_office"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="personalsection">
+                                    <label for="" class="text text-center">Personal</label>
+                                    <p class="text text-center" id="cns_personal"></p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="card mt-3" id="cns_main_card">
+                        <div class="card-body" id="cns_card">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="officeemailsection">
+                                    <label for="" class="text text-center">Office</label>
+                                    <p class="text text-center" id="cns_officeemail"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="wbonesection">
+                                    <label for="" class="text text-center">Website One</label>
+                                    <a href="" target="_blank" class="text text-center" id="cns_webone"></a>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="wbtwosection">
+                                    <label for="" class="text text-center">Website Two</label>
+                                    <a href="" target="_blank" class="text text-center" id="cns_webtwo"></a>
+                                </div>
+                                <div class="col-md-6 text-center" id="wbthreesection">
+                                    <label for="" class="text text-center">Website Three</label>
+                                    <a href="" target="_blank" class="text text-center" id="cns_webthree"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3" id="cns_main_card">
+                        <div class="card-header text-center">
+                            Home Address
+                        </div>  
+                        <div class="card-body" id="cns_card">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="home_strone_section">
+                                    <label for="" class="text text-center">Street One</label>
+                                    <p class="text text-center" id="cns_strone"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="home_strtwo_section">
+                                    <label for="" class="text text-center">Street Two</label>
+                                    <p class="text text-center" id="cns_strtwo"></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="home_postal_section">
+                                    <label for="" class="text text-center">Postal Code</label>
+                                    <p class="text text-center" id="cns_postal"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="home_city_section">
+                                    <label for="" class="text text-center">City</label>
+                                    <p class="text text-center" id="cns_city"></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="home_state_section">
+                                    <label for="" class="text text-center">State</label>
+                                    <p class="text text-center" id="cns_state"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="home_country_section">
+                                    <label for="" class="text text-center">Country</label>
+                                    <p class="text text-center" id="cns_country"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3" id="cns_main_card">
+                        <div class="card-header text-center">
+                            Work Address
+                        </div>
+                        <div class="card-body" id="cns_card">
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="work_strone_section">
+                                    <label for="" class="text text-center">Street One</label>
+                                    <p class="text text-center" id="cns_work_strone"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="work_strtwo_section">
+                                    <label for="" class="text text-center">Street Two</label>
+                                    <p class="text text-center" id="cns_work_strtwo"></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="work_postal_section">
+                                    <label for="" class="text text-center">Postal Code</label>
+                                    <p class="text text-center" id="cns_work_postal"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="work_city_section">
+                                    <label for="" class="text text-center">City</label>
+                                    <p class="text text-center" id="cns_work_city"></p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <div class="col-md-6 text-center" id="work_state_section">
+                                    <label for="" class="text text-center">State</label>
+                                    <p class="text text-center" id="cns_work_state"></p>
+                                </div>
+                                <div class="col-md-6 text-center" id="work_country_section">
+                                    <label for="" class="text text-center">Country</label>
+                                    <p class="text text-center" id="cns_work_country"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6">
-
+            <div class="col-md-6 mt-5">
+                <div class="d-flex justify-content-center">
+                    <img src="" alt="" id="link_tree_cns" width="200" height="200">
+                </div>
+                <div id="link_tree_links_cns">
+                    
+                </div>
             </div>
         </div>
     </div>
@@ -370,7 +401,7 @@
                     <div class="d-flex justify-content-center mt-2">
                         <div class="col-md-10 col-md-offset-1">
                             <button class="btn btn-success add_moree btn-block">{{ __('website.addmore') }}</button>
-                            <button class="submit_link_tree btn btn-primary btn-block" disabled>{{ __('website.save') }}</button>
+                            <button class="submit_link_tree btn btn-primary btn-block">{{ __('website.save') }}</button>
                         </div>
                     </div>
                 </div>

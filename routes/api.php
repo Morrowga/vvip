@@ -64,11 +64,7 @@ Route::post('create_appearance', [App\Http\Controllers\API\UserPanelController::
 
 Route::post('create_link_tree', [App\Http\Controllers\API\UserPanelController::class, 'create_link_tree']);
 
-// Route::get('visitorchecks/{userid}', [App\Http\Controllers\API\UserPanelController::class, 'getUserVisitor']);
-
-// Route::get('new_visitor/{userid}', [App\Http\Controllers\API\UserPanelController::class, 'lastestVisitor']);
-
-// Route::post('verify_visitor', [App\Http\Controllers\API\UserPanelController::class, 'verify_visitor']);
+Route::post('secure', [App\Http\Controllers\API\UserPanelController::class, 'secure_status']);
 
 Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::class, 'qr_generate']);
 

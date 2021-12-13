@@ -646,9 +646,11 @@ class UserPanelController extends Controller
             $data = ['label' => $links_label, 'url' => $links];
             $result = [];
             foreach ($data['label'] as $index => $d) {
+                $http_replace = $data['url'][$index];
+                $http_replace = str_replace('https://', '', $http_replace);
                 $result[] = [
                         'label' => $d,
-                        'url' => $data['url'][$index]
+                        'url' => $http_replace
                     ];
             }
         
@@ -721,6 +723,26 @@ class UserPanelController extends Controller
              return $messages;
         }
     }
+
+
+    public function secure_status(Request $request){
+        $secure = $request->secure_status;
+        $userid = $request->user_id;
+        $update_status = User::where('id', $userid)->first();
+        $update_status->secure_status = $secure;
+        $update_status->save();
+
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "data" => $update_status->secure_status
+        ];
+
+        return $messages;
+
+    }
+
+
 
     public function privateConnection($user_id = null){
         return view('vvip_customers.private_connection');

@@ -129,7 +129,7 @@ return [
     "bod" => "BOD ( Birthday )",
     "secure_status" => "Secure Status",
     "profile_work" => "Work",
-    "private_mode" => "Private_mode",
+    "private_mode" => "Private Mode",
     "address" => "Address",
     "profile_url" => "URL",
     "upload_photo" => "Upload Photo",
