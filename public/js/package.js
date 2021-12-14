@@ -49,26 +49,25 @@ $(function(){
                 $('#frontcard').html($('#card_blank_front').html());
                 $('#backcard').html($('#card_blank_back').html());
                 $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
-                $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
                 $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
-
-                // $('#frontcard').find('[id*="bl_front"]').first().removeClass('col-md-6').addClass('col-md-12');
-                // $('#frontcard').find('[id*="card_blank_front"]').first().addClass('');
-                // $('#frontcard').find('[id*="card_blank_back"]').first().addClass('col-md-6';
-                // $('#card_blank_back').attr('style', 'margin-top: 5% !important;');
-                // $('#backcard').html($('#card_blank_back').html());
-                // $('#qr_scan').attr('style', 'top: 50% !important; position: absolute;');
+                // $('#frontcard').find('[class*="card_description"]').first().attr('style', 'width: 92% !important;');
                 $('#confirm_modal').modal('show');
                 $('#check_confirm').on('click', function(){
                     $('#confirm_modal').modal('hide');
-                    // $.ajax({
-                    //     url: 'api/render',
-                    //     success:function(response){
-                    //         console.log(response);
+
+                    // Save the PDF
+                    // html2canvas(document.getElementById("modal_pdf"), {
+                    //     dpi: 300, // Set to 300 DPI
+                    //     scale: 3, // Adjusts your resolution
+                    //     onrendered: function(canvas) {
+                    //     var img = canvas.toDataURL("image/png", 1);
+                    //     var doc = new jsPDF('l', 'pt','a4',true);
+                    //     doc.addImage(img, "PNG", 15, 40);
+                    //     doc.save('sample-file.pdf');
                     //     }
                     // });
                 });
-
+                   
                 $('#cancel_confirm').on('click', function(){
                     navigateTo(curIndex()-1);
                 })
@@ -484,6 +483,7 @@ function packageClick(e){
                 console.log(target);
                 $('#card_design_id').val(target);
                 if(target == value['id']){
+                    // $('#customer_preview_card').val($('#image_data').attr('src'));
                     console.log(value['color']['text_color']);
                     var txt_color = value['color']['text_color'];
                     $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
