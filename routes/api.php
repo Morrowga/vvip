@@ -76,5 +76,7 @@ Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'v
 
 Route::get('/get_cards_admin', [App\Http\Controllers\API\UserRegisterController::class, 'card_from_admin']);
 
+Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
+
 // Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);
 

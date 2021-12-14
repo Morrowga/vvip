@@ -142,39 +142,39 @@
         <div class="d-flex justify-content-center">
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" id="has_web_bs" class="app_link">
-                    <img src="../images/bs.jpeg" class="apps" alt="" width="100" height="100">
+                    <img src="../images/02.BalloneStar.png" class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">Ballone Star</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">Ballone Star</h5> -->
             </div>
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" class="app_link" id="has_web_dama">
-                    <img src="../images/dama.jpeg"  class="apps" alt="" width="100" height="100">
+                    <img src="../images/01.Dhammapuzar.png"  class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">Dama Pu Zar</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">Dama Pu Zar</h5> -->
             </div>
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" class="app_link" id="has_web_nayla">
-                    <img src="../images/nayla.jpeg" class="apps" alt="" width="100" height="100">
+                    <img src="../images/03.NayLa.png" class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">NayLa</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">NayLa</h5> -->
             </div>
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" class="app_link" id="has_web_tatlan">
-                    <img src="../images/tatlan.jpeg" class="apps" alt="" width="100" height="100">
+                    <img src="../images/Tatlan.png" class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">TatLan</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">TatLan</h5> -->
             </div>
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" class="app_link" id="has_web_star">
-                    <img src="../images/star.jpeg"  class="apps" alt="" width="100" height="100">
+                    <img src="../images/04.StarChannel.png"  class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">Starchannel</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">Starchannel</h5> -->
             </div>
             <div class="col-md-2 text-center">
                 <a href="" target="_blank" class="app_link"  id="no_web_hh">
-                    <img src="https://i.ibb.co/mCC9fm5/diction.png" class="apps" alt="" width="100" height="100">
+                    <img src="../images/05.HTUT-Dictionary.png" class="apps" alt="" width="100" height="100">
                 </a>
-                <h5 class="text text-center" style="padding-top: 10px;">Htut Health</h5>
+                <!-- <h5 class="text text-center" style="padding-top: 10px;">Htut Health</h5> -->
             </div>
         </div>
     </div>

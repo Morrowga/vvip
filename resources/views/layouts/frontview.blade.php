@@ -113,8 +113,9 @@
         <!-- Plugins JS -->
 		<script src="../js/jquery/jquery-1.11.1.min.js"></script>
         <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-        <script src="../js/html2canvas.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
 		<script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
 		<script src="../js/stellar/js/jquery.stellar.min.js"></script>
 		<script src="../js/animations/js/wow.min.js"></script>

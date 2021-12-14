@@ -1,20 +1,20 @@
 @extends('layouts.frontview')
 
 @section('content')
-<section id="services-section" class="page text-center" style="margin-top: 35px !important;">
-    <div class="col-md-12" id="text_section_product">
-        <div class="page-header-wrapper">
-            <div class="container">
-                <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                    <h2 class="service product_margin">{{ __('website.Features') }}</h2>
-                    <div class="devider"></div>
+    <section id="services-section" class="page text-center" style="margin-top: 35px !important;">
+        <div class="col-md-12" id="text_section_product">
+            <div class="page-header-wrapper">
+                <div class="container">
+                    <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                        <h2 class="service product_margin">{{ __('website.Features') }}</h2>
+                        <div class="devider"></div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="container">
+    <div class="container">
         <div class="col-md-12">
             <div class="d-flex justify-content-center">
                 <div class="col-md-6">
@@ -65,44 +65,68 @@
 
 
     <div class="container">
-        <!-- <div class="col-md-12" style="margin-top: 75px !important;"> -->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h3 class="text text-center">Email</h3>
-                <div class="col-md-12 border-product">
-                    <img src="../images/Email.png" width="250" height="200">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                    <h3 class="text text-center">Email</h3>
                     <p class="text text-center add_shadow" style="margin-top: 10px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid.</p>
                 </div>
-            </div>
-            <div class="col-sm-12 text-center mt-5"  style="margin-left: 10px;">
-            <div class="devider" style="margin-top: 50px;"></div>
-                <h3 class="text text-center">URL </h3>
-                <div class="col-md-12 border-product">
-                    <img src="../images/URL.png" width="200" height="200">
-                    <p class="text text-center add_shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid.</p>
+                <div class="col-md-6">
+                    <img src="../images/Email.png" class="img-fluid">
                 </div>
             </div>
         </div>
-    <!-- </div> -->
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <div class="devider" style="margin-top: 50px;"></div>
-                <h3 class="text text-center">Phone</h3>
-                <div class="col-md-12 border-product">
-                    <img src="../images/PhoneCall.png" class="text-center" width="200" height="200">
-                    <p class="text text-center add_shadow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat officiis id eos dicta neque fuga cumque iusto voluptates. Quos ut aspernatur unde esse, assumenda natus repellendus nihil? Voluptate, dicta ut.</p>
+    </div>
+
+    <div class="devider" style="margin-top: 50px;"></div>
+
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                    <img src="../images/URL.png" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text text-center">URL </h3>
+                        <p class="text text-center add_shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid.</p>
                 </div>
             </div>
-            <div class="col-sm-12 text-center" style="margin-left: 10px; margin-top: 15px;">
-                <div class="devider" style="margin-top: 50px;"></div>
-                <h3 class="text text-center">SMS</h3>
-                <div class="col-md-12 border-product">
-                    <img src="../images/SMS.png" width="200" height="200">
+        </div>
+    </div>
+
+    <div class="devider" style="margin-top: 50px;"></div>
+        
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                    <h3 class="text text-center">Phone</h3>
+                    <p class="text text-center add_shadow">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat officiis id eos dicta neque fuga cumque iusto voluptates. Quos ut aspernatur unde esse, assumenda natus repellendus nihil? Voluptate, dicta ut.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="../images/PhoneCall.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="devider" style="margin-top: 50px;"></div>
+
+    <div class="container">
+        <div class="col-md-12 text-center">
+            <div class="d-flex justify-content-center">
+                <div class="col-md-6">
+                    <img src="../images/SMS.png" class="img-fluid">
+                </div>
+                <div class="col-md-6">
+                    <h3 class="text text-center">SMS</h3>
                     <p class="text text-center add_shadow">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam enim reprehenderit temporibus? Vitae quo sapiente provident id praesentium aliquid. </p>
                 </div>
             </div>
         </div>
     </div>
+           
+      
 
     <div class="devider" style="margin-top: 65px;"></div>
 

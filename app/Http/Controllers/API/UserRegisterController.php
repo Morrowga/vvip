@@ -37,10 +37,12 @@ class UserRegisterController extends Controller
             $package_name = $request->package_name;
             $country_number = $request->country_number;
             $url = $request->url;
+            $encryption_url = $request->encryption_url;
             $secure_status = $request->secure_status;
             $phone = $country_number . $phone_number;
             $pin = $request->pin;
             $smart_card_design_id = $request->smart_card_design_id;
+
             $user_exist_phone = User::where('phone_number', '=', $phone)->first();
             $user_exist_url = User::where('url', '=', $url)->first();
             if($user_exist_phone === null){
@@ -52,6 +54,7 @@ class UserRegisterController extends Controller
                     $user->package = $package_name;
                     $user->package_status = "active";
                     $user->smart_card_design_id = $smart_card_design_id;
+                    $user->encrytion_url = $encryption_url;
                     $user->verification_code = sha1(time());
                     // $user->package_start_date = Carbon::now();
                     // $user->package_end_date = Carbon::now()->addYear(1);
@@ -517,6 +520,19 @@ class UserRegisterController extends Controller
         // return $front_fetch->header('Content-Type', 'image/png');
     }
 
+
+    public function encryptionUrlMobile(Request $request){
+        $url = $request->url;
+        $en = Crypt::encryptString($url);
+
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "data" => $en
+        ];
+
+        return $messages;
+    }
     // public function renderImage(){
     //     $path = public_path('storage/test.jpg');
     //     Browsershot::url('http://localhost:8000/package')

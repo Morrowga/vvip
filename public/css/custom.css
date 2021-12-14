@@ -533,7 +533,7 @@ span {
     position: relative;
 }
 
-.modal-vertical-centered {
+.modal-dialog-centered {
     transform: translate(0, 50%) !important;
     -ms-transform: translate(0, 50%) !important; /* IE 9 */
     -webkit-transform: translate(0, 50%) !important; /* Safari and Chrome */
@@ -864,8 +864,8 @@ label.label_file {
     border-bottom-left-radius: 20px !important;
 }
 
-#backcard{
-
+#card_back{
+    border: 2px solid #000 !important;
 }
 
 .custom-case{
@@ -1431,15 +1431,13 @@ label.label_file {
     opacity: 1 !important;
 }
 
-.apps {
-    /* border-radius: 1em/.5em; */
-    border-radius: 50% !important;
-}
+/* .apps {
+    box-shadow: 0px 0px 18px rgb(255,255,255, 0.1);
+} */
 
 .apps:hover{
     transform-style: preserve-3d;
     transform: rotateX(25deg);
-    box-shadow: 0px 0px 18px rgb(255,255,255, 0.1);
     transition-duration: 1s !important;
 }
 
