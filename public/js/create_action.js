@@ -368,7 +368,7 @@ $(function() {
 
                 $('.active_save').on("click", function(e){
                     var save_id = e.target.id;
-                    var url = $('.url_input'+ save_id).val();
+                    var url = $('.url_input'+ save_id).val().replace('https://', '');
                     console.log(url);
                     var active = 1;
                     var name = $('.url_text' + save_id).text();
@@ -407,8 +407,7 @@ $(function() {
 
                 $('.just_save').on("click", function(e){
                     var save_id = e.target.id;
-                    var save_url = $('.url_input'+ save_id).val();
-                    console.log(url);
+                    var save_url = $('.url_input'+ save_id).val().replace('https://', '');
                     var active_zero = 0;
                     var save_name = $('.url_text' + save_id).text();
                     var post_url = 'api/create_deep_link';
