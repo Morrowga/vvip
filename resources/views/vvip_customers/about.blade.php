@@ -12,29 +12,17 @@
 </section>
 
 <div class="container">
-    <h3 class="text text-center">What is VVIP9 ?</h3>
+    <h3 class="text text-center">{{__('website.whatisvvip')}}</h3>
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-6"  style="margin-top: 15px;">
-                <video class="about_video" loop autoplay muted>
-                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4">
-                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg">
+                <video height="250" class="text-center d-flex justify-content-center about_video" id="about_video"  loop autoplay muted>
+                    <source src="../images/VVIP 9 Still 4 sec.mp4" type="video/mp4" >
                 </video>
             </div>
             <div class="col-md-6">
-                <p class="text" style="letter-spacing: 3px; font-size: 16px; margin-top: 25px; width: 100%;">
-                    VVIP9 Card is the latest brand only coming into business around 2020. Since
-                    its conception, they’ve done a fantastic result at creating an NFC smart card with
-                    all the features you’ll ever need.
-
-                    Available in plastic, wood, and metal (stainless steel) each card is very high
-                    quality and allows for decent customization in having your logo printed on the front
-                    of the card. The VVIP9 card provides the best quality in terms of the printing on the
-                    front/back of the business card.
-
-                    By color option, users can choose as white, black and silver. You also have
-                    the choice to include a QR code which can be used if you ever come across a
-                    smartphone that doesn’t have NFC covering all bases.
+                <p class="text" style="font-size: 16px; margin-top: 25px; width: 100%;">
+                    {{ __('website.whatvvip_para') }}
                 </p>
             </div>
         </div>
@@ -44,34 +32,19 @@
 <div class="devider" style="margin-top: 15px;"></div>
 
 <div class="container">
-    <h3 class="text text-center">The Useful of VVIP 9</h3>
+    <h3 class="text text-center">{{ __('website.useful')}}</h3>
+    <div class="col-md-12">
+        <video class="about_video" loop autoplay muted>
+            <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4">
+            <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg">
+        </video>
+    </div>
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
-            <div class="col-md-6">
-                <p class="text" style="letter-spacing: 3px; font-size: 16px; margin-top: 25px; width: 100%;">
-                    VVIP9 provides a variety of options to choose from when considering going with a digital business
-
-                    card and is a great reduced budget option in the market today.
-
-                    When it came to using the business card to exchange information, the VVIP9 was the most
-
-                    accurate and seamless in sending information in an attractive and quick way.
-
-                    VVIP9 card plans can be one of the best ways to describe your business and enhance your
-
-                    business. Nowadays, offering VIP cards is a smart decision in all modern businesses.
-
-                    In order to grow your business today, you need to expand your marketing efforts to reduce costs
-
-                    and link customers to your product or service with special discounts and other promotions.
+            <div class="col-md-12">
+                <p class="text" style="font-size: 16px; margin-top: 25px; width: 100%;">
+                    {{ __('website.useful_para') }}
                 </p>
-            </div>
-            <div class="col-md-6"  style="margin-top: 25px;">
-                <video class="about_video" loop autoplay muted>
-                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4">
-                    <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg">
-                </video>
-                <!-- <img src="../images/Useful-VVIP9.png" alt="300" width="" height=""> -->
             </div>
         </div>
     </div>
@@ -81,7 +54,7 @@
 
 <div class="container">
     <div class="col-md-12 text-center">
-        <h3 class="text text-center">Our Purpose</h3>
+        <h1 class="text text-center">PURPOSE</h1>
         <div class="d-flex justify-content-center">
             <div class="col-md-6 col-md-offset-3">
                 <div class="typewriter">
@@ -136,7 +109,7 @@
 <div class="container">
     <!-- <h3 class="text text-center">Other Products</h3> -->
     <div class="col-md-12 text-center">
-        <a href="http://htut.com/" target="_blank"><img src="https://i.ibb.co/1r4dqVX/logo.png" alt="" width="250" height="90"></a>
+        <a href="http://htut.com/" target="_blank"><img src="../images/HTUT_LogoNew.png" alt="" width="150" height="90"></a>
     </div>
     <div class="col-md-12" style="margin-top: 20px;">
         <div class="d-flex justify-content-center">
@@ -186,6 +159,17 @@
 
 @section('script')
 <script>
+
+vid_about = document.getElementById("about_video");
+//listen for CANPLAY event
+  vid_about.addEventListener("canplay", function() {
+//    console.log("oncanplay");
+   setTimeout(function() {
+//     console.log("play");
+//Hit PLAY when video fully loaded
+    vid_about.play();
+   }, 500);
+});
    // set up text to print, each item in array is new line
 var aText = new Array(
 "There are only 10 types of people in the world:", 

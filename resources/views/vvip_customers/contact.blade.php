@@ -9,7 +9,7 @@
             <div class="page-header-wrapper">
                 <div class="container">
                     <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="contact contact_margin">Contacts</h2>
+                        <h2 class="contact contact_margin">{{ __('website.Contact') }}</h2>
                         <div class="devider"></div>
                         <p class="subtitle">All to contact us</p>
                     </div>
@@ -23,9 +23,9 @@
                     
                         <div class="col-sm-6">
                             <div class="contact-info">
-                                <h4 class="contact">Our Address</h4>
+                                <h4 class="contact">{{ __('website.our_address') }}</h4>
                                 <ul class="contact-address">
-                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; No.8 Moe Ma Kha (1) Street,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Ma Li Kha Housing,Thingangyun Tsp,<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yangon ,Myanmar</li>
+                                    <li><i class="fa fa-map-marker fa-lg"></i>&nbsp; {{ __('website.address_no') }} <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{__('website.address_ward') }},<br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{__('website.address_cc')}}</li>
                                     <li><i class="fa fa-phone"></i>&nbsp; +959 898876787</li>
                                     <li><i class="fa fa-envelope"></i> info@htut.com</li>
                                 </ul>
@@ -34,21 +34,21 @@
                     
                         <div class="col-sm-6">
                             <div class="contact-form">
-                                <h4 class="contact">Write to us</h4>
+                                <h4 class="contact">{{__('website.write_to_us')}}</h4>
                                     <div class="form-group">
-                                        <input type="text" name="name" id="c_name" class="form-control input-lg" placeholder="Your Name" required>
+                                        <input type="text" name="name" id="c_name" class="form-control input-lg" placeholder="{{__('website.contact_name') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" id="e_name" class="form-control input-lg" placeholder="E-mail" required>
+                                        <input type="email" name="email" id="e_name" class="form-control input-lg" placeholder="{{__('website.contact_email') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="subject" id="s_name" class="form-control input-lg" placeholder="Subject" required>
+                                        <input type="text" name="subject" id="s_name" class="form-control input-lg" placeholder="{{__('website.contact_subject') }}" required>
                                     </div>
                                     <div class="form-group">
-                                        <textarea  name="message" id="m_name" class="form-control input-lg" rows="5" placeholder="Message" required></textarea>
+                                        <textarea  name="message" id="m_name" class="form-control input-lg" rows="5" placeholder="{{__('website.contact_message') }}" required></textarea>
                                     </div>
                                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-                                    <button type="button" id="contact_btn" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">Send</button>
+                                    <button type="button" id="contact_btn" class="btn wow bounceInRight contact-btn" data-wow-delay="0.8s">{{__('website.contact_send') }}</button>
                             </div>	
                         </div>
                                                                             

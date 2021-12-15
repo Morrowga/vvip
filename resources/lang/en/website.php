@@ -12,28 +12,33 @@ return [
     'Everything' => "Everything is smart",
     'more' => "More Info",
     'whatisvvip' => "What is VVIP9 ?",
-    'whatvvip_para' => "VVIP9 Card is the latest brand only coming into business around 2020. Since
-    its conception, they’ve done a fantastic result at creating an NFC smart card with
-    all the features you’ll ever need.
-    Available in plastic, wood, and metal (stainless steel) each card is very high
-    quality and allows for decent customization in having your logo printed on the front
-    of the card. The VVIP9 card provides the best quality in terms of the printing on the
-    front/back of the business card.
-    By color option, users can choose as white, black and silver. You also have
-    the choice to include a QR code which can be used if you ever come across a
-    smartphone that doesn’t have NFC covering all bases’.",
+    'whatvvip_para' => "VVIP9 SMART CARD is a very useful card that incorporates the latest technology that came
+    into business around 2021.
+    With just one card and a smartphone, you can exchange information and create the fastest,
+    most accurate and smooth card combination with advanced technology.",
     'whatissmartcard' => "What Is Smart Card ?",
-    'whatsmartcard_para' => "Digital Smart Business Card is a beautiful and innovative way to exchange
-    information with only a single business card and a smartphone.",
+    'whatsmartcard_para' => "VVIP9 SMART CARD users can access their contact information and their respective
+    company info; Personal info can be easily edited from your mobile phone anytime you want,
+    and you do not need to carry as many cards as you used to. The VVIP9 SMART CARD
+    allows you to quickly and easily share information with the touch of a mobile phone.",
     'useful' => "The Useful Of VVIP9",
-    'useful_para' => "VVIP9 provides a variety of options to choose from when considering going with a digital business
-    card and is a great reduced budget option in the market today.
-    When it came to using the business card to exchange information, the VVIP9 was the most
-    accurate and seamless in sending information in an attractive and quick way.
-    VVIP9 card plans can be one of the best ways to describe your business and enhance your
-    business. Nowadays, offering VIP cards is a smart decision in all modern businesses.
-    In order to grow your business today, you need to expand your marketing efforts to reduce costs
-    and link customers to your product or service with special discounts and other promotions.",
+    'useful_para' => "In every company, Visiting card or Business card is used daily for each employee On average, an employee is issued a new quarterly card every four months due to a variety of
+    reasons, such as insufficient card changes and redesigning, so the average cost per employee
+    per year is around 100,000.
+    Instead, VVIP9 SMART CARDs can be used interchangeably to reduce costs and overtime.
+    Not only is this a great way to save money, you can also use your smartphone to edit the data
+    you want to change with the advanced technology included in the card.
+    Paying for VVIP9 SMART CARDs at business meetings is also a smart way for modern
+    businesses to be one of the best ways to describe your business and enhance your business.
+    It is a high-tech card that can be used by any business person and is especially useful for all
+    company employees.
+    It can also be used by artists, celebrities on social networks and in government offices and
+    departments.
+    Holders of VVIP9 SMART CARD need to have a good understanding of the details of each
+    feature on the card.
+    VVIP9 SMART CARD Contains Contact | Link Tree | Deep Link | URL | Email | Contact &amp;
+    Social | Message | Call | Event | Personal Assistance | Bank or Pay Info | Contains many
+    information such as Card Design &amp; Packaging.",
     'join_us' => "Join Us",
     'our_address' => "Our Address",
     'address_no' => "No.8 Moe Ma Kha (1) Street",
