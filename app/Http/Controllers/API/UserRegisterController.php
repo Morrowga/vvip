@@ -386,25 +386,14 @@ class UserRegisterController extends Controller
                     array_push($array, $home_data);
                 }
 
-                if($user->profile_image === null){
-                    $messages = [
-                        'status' => '200',
-                        'message' => 'success',
-                        'home_page' => $array,
-                        'user_image' => 'images/logo.jpeg',
-                        'user_name' => $user->name,
-                    ];
-                    return $messages;
-                } else {
-                    $messages = [
-                        'status' => '200',
-                        'message' => 'success',
-                        'home_page' => $array,
-                        'user_name' => $user->name,
-                        'user_image' => $user->profile_image
-                    ];
-                    return $messages;
-                }
+                $messages = [
+                    'status' => '200',
+                    'message' => 'success',
+                    'home_page' => $array,
+                    'user_image' => 'user_images/' . $user->profile_image,
+                    'user_name' => $user->name,
+                ];
+                return $messages;
             } else {
                 $messages = [
                     'status' => '500',
