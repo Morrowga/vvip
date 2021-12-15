@@ -186,6 +186,7 @@ class UserPanelController extends Controller
         if($request){
             $user_id = $request->user_id;
             $url = $request->url;
+            $url = str_replace('https://', '', $url);
             $name = $request->name;
             $active = $request->active;
             $user_has = User::where('id', '=', $user_id)->first();
