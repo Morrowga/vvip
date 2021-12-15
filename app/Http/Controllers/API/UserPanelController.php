@@ -186,8 +186,8 @@ class UserPanelController extends Controller
         if($request){
             $user_id = $request->user_id;
             $url = $request->url;
-            if(strstr($url, 'https://www.facebook.com') !== false){
-                $url = str_replace('https://www.facebook.com/', '', $url);
+            if(strstr($url, 'https://www.facebook.com') !== false || strstr($url, 'https://facebook.com') !== false){
+                $url = substr($url, strrpos($url, '/') + 1);
             } 
             $name = $request->name;
             $active = $request->active;
