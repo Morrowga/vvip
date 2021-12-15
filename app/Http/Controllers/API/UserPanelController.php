@@ -26,12 +26,6 @@ use Illuminate\Support\Facades\Storage;
 
 class UserPanelController extends Controller
 {
-
-    public function __construct()
-    {
-       
-    }
-
     public function create_contact(Request $request){
         $check = User::where('id', $request->user_id)->first();
         if($check !== null ){

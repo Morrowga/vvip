@@ -7,8 +7,6 @@ return [
     'Contact' => "Contact",
     'login' => "Login",
     'Register' => "Register",
-    // 'Service' => "Our Service",
-    // 'Buy'  => "Buy Now",
     'Everything' => "Everything is smart",
     'more' => "More Info",
     'whatisvvip' => "What is VVIP9 ?",
