@@ -45,8 +45,8 @@ $(function(){
             }
 
             if(curIndex() == 4){
-                $('#frontcard').html($('#card_blank_front'));
-                $('#backcard').html($('#card_blank_back'));
+                $('#frontcard').html($('#card_blank_front').html());
+                $('#backcard').html($('#card_blank_back').html());
                 $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
                 $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
                 $('#confirm_modal').modal('show');
@@ -126,16 +126,19 @@ luxury();
  $.ajax({
         url: '/api/generate_code',
         type: 'get',
+        headers: {
+            'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+        }, 
         success: function(response){
             document.getElementById("url_system").value = response['generate_code'];
         }
     });
 
-$.ajaxSetup({
-    headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    }
-});
+// $.ajaxSetup({
+//     headers: {
+//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+//     }
+// });
 
 
 //save_user_form 
@@ -154,6 +157,9 @@ $.ajax({
           name:save_name, 
           phone_number:save_phone_number
         },
+    headers: {
+        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+    },  
    success:function(response){
       if(response.message == "success"){
         document.getElementById('prices-section').style.display = "none";
@@ -405,6 +411,9 @@ function packageClick(e){
     crossDomain: true,
     contentType: 'application/x-www-form-urlencoded', 
     type: 'get',
+    headers: {
+        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+    }, 
     success: function(response){
         console.log(response);
         data = response.data;

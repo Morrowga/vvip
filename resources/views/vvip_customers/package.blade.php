@@ -482,11 +482,15 @@
                         </p>
                     </div>
                     <div class="row">
-                        <div class="col-md-6" id="frontcard">
-
+                        <div class="col-md-6" style="text-align:center;">
+                            <div id="frontcard" class="text-center" >
+                                
+                            </div>
                         </div>
-                        <div class="col-md-6" id="backcard">
-
+                        <div class="col-md-6">
+                            <div id="backcard" class="text-center" >
+                                
+                            </div>
                         </div>
                     </div>
                 </div>
