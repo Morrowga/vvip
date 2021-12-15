@@ -368,7 +368,8 @@ $(function() {
 
                 $('.active_save').on("click", function(e){
                     var save_id = e.target.id;
-                    var url = $('.url_input'+ save_id).val().replace('https://', '');
+                    var url_val = $('.url_input'+ save_id).val();
+                    var url = url_val.replace('https://', '');
                     console.log(url);
                     var active = 1;
                     var name = $('.url_text' + save_id).text();
