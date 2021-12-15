@@ -331,7 +331,7 @@
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
                                                         <p class="front_card_name text-center">{{ __('website.your_name') }}</p>
-                                                        <p class="card_description text-center">{{ __('website.your_de') }}</p>
+                                                        <p class="card_description text-center" style="margin-top: 20px !important;" >{{ __('website.your_de') }}</p>
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
@@ -347,13 +347,13 @@
                                     <div class="col-md-12" id="uu">
                                         <p class="text"></p>
                                     </div>
-                                    <!-- <div class="form-group" hidden>
+                                    <div class="form-group" hidden>
                                         <input type="text" name="customer_preview_card">
                                         <input type="text" name="customer_trasparent_front">
                                         <input type="text" name="customer_transparent_back">
                                         <input type="file" name="pdf_file">
                                         <input type="file" name="customer_position">
-                                    </div> -->
+                                    </div>
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
                                         <h3 class="text"  style="margin-top: 20px !important;">{{ __('website.create_login_pin') }}</h3>
@@ -476,23 +476,21 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content" id="modal_pdf" style="background-color: #fff !important;">
                 <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
-                    <div class="col-md-12" id="preview_cards">
-                        <div class="row" id="screenshot">
-                            <div class="col-md-6" id="frontcard">
+                    <div class="col-md-12 mt-2">
+                        <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
+                            {{ __('website.areusure') }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" id="frontcard">
 
-                            </div>
-                            <div class="col-md-6" id="backcard">
+                        </div>
+                        <div class="col-md-6" id="backcard">
 
-                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <div class="col-md-12 mt-2">
-                        <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
-                        {{ __('website.areusure') }}
-                        </p>
-                    </div>
                     <div class="col-md-12" style="margin-top: 20px !important;">
                         <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
                         <button type="button" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>

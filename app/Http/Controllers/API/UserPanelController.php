@@ -21,10 +21,17 @@ use App\Events\VisitorNotification;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 
 class UserPanelController extends Controller
 {
+
+    public function __construct()
+    {
+       
+    }
+
     public function create_contact(Request $request){
         $check = User::where('id', $request->user_id)->first();
         if($check !== null ){
@@ -160,26 +167,27 @@ class UserPanelController extends Controller
     }
 
     public function getRequestData(Request $request){
-        $user_id = $request->user_id;
-        $check = User::where('id', $user_id)->first();
-        $request_name = $request->request_name;
-        if($check !== null){
-            if($request_name !== null){
-                return Helper::getData($request_name, $user_id);
-             } else {
-                 $messages = [
-                     "status" => "400",
-                     "message" => "Need Request Name."
-                 ];
-                 return $messages;
-             }
-        } else {
-            $messages = [
-                "status" => "400",
-                "message" => "User Id does not exist."
-            ];
-            return $messages;
-        }
+            $user_id = $request->user_id;
+            $check = User::where('id', $user_id)->first();
+            $request_name = $request->request_name;
+            if($check !== null){
+                if($request_name !== null){
+                    return Helper::getData($request_name, $user_id);
+                 } else {
+    
+                     $messages = [
+                         "status" => "400",
+                         "message" => "Need Request Name."
+                     ];
+                     return $messages;
+                 }
+            } else {
+                $messages = [
+                    "status" => "400",
+                    "message" => "User Id does not exist."
+                ];
+                return $messages;
+            }
     } 
 
     public function createDeepLink(Request $request){
@@ -294,7 +302,6 @@ class UserPanelController extends Controller
         }
     }
 
-
     public function displayUserWant(Request $request,$url){
             $normal = User::where('url', $url)->first();
             $encrypt = User::where('encryption_url', $url)->first();
@@ -327,9 +334,6 @@ class UserPanelController extends Controller
                 return abort(404);
             } 
     }
-
-    
-
 
     public function changeAction(Request $request){
             $userid = $request->user_id;
@@ -404,6 +408,7 @@ class UserPanelController extends Controller
         if($request){
             $userid = $request->user_id;
             $url = $request->url;
+            $url = str_replace('https://', '', $url);
             $check = Eusp::where('user_id', $userid)->first();
             if($check === null){
                 $create_url = new Eusp();

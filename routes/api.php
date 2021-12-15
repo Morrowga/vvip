@@ -19,26 +19,23 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => 'apiKey'], function() {
+    Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
 
-Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
-
-Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
-
-Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
-
-Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
-
-Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
-
-Route::post('create_pack', [App\Http\Controllers\API\WebUserJourneyController::class, 'createPlan']);
-
-// Route::post('create_card', [App\Http\Controllers\API\WebUserJourneyController::class, 'createTemplate']);
-
-Route::get('cd_timer', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
-
-Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
-
-Route::post('get_card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'get_card_by_id']);
+    Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
+    
+    Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
+    
+    Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
+    
+    Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
+    
+    Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
+    
+    Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
+    
+    Route::post('get_card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'get_card_by_id']);
+});
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
@@ -76,7 +73,6 @@ Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'v
 
 Route::get('/get_cards_admin', [App\Http\Controllers\API\UserRegisterController::class, 'card_from_admin']);
 
-Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
 
 // Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);
 

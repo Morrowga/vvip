@@ -101,7 +101,7 @@ return [
     "your_de" => "Your Description",
     "your_name" => "Your Name",
     "select_success" => "Select Successful",
-    "areusure" => "",
+    "areusure" => "The smart card which you make your own card would need to wait 3days and you can start use the card after these days. Are you sure for this. Confirm ?",
     "pass_allow" => "Password Only Allow Numbers",
     "create_login_pin" => "Create Login Pin",
     "new_pin" => "New Pin",
