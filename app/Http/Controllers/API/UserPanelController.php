@@ -186,23 +186,14 @@ class UserPanelController extends Controller
         if($request){
             $user_id = $request->user_id;
             $url = $request->url;
-            if(strstr($url, 'google') !== false || strstr($url, 'maps') !== false ){
-                $parts = explode("/",$url);
-                array_shift($parts);array_shift($parts);array_shift($parts);
-                $newurl = implode("/",$parts);
-                $url = $newurl;
-
-            } else if(strstr($url, 'amazon.com')) {
-                $parts = explode("/",$url);
-                array_shift($parts);array_shift($parts);array_shift($parts);
-                $newurl = implode("/",$parts);
-                $url = $newurl;
-            } else if(strstr($url, 'zoom.us') !== false) {
+             if(strstr($url, 'zoom.us') !== false) {
                 $url = str_replace('https://', '', $url);
             } else {
-                $url = substr($url, strrpos($url, '/') + 1);
+                $parts = explode("/",$url);
+                array_shift($parts);array_shift($parts);array_shift($parts);
+                $url = implode("/",$parts);
             }
-            
+
             $name = $request->name;
             $active = $request->active;
             $user_has = User::where('id', '=', $user_id)->first();

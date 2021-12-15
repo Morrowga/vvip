@@ -222,7 +222,7 @@ $.ajax({
                             }
                         } else if(value['name'] == "Youtube"){
                             if(isIOS){
-                                var url = "vnd.youtube://channel/" + host;
+                                var url = "vnd.youtube://" + host;
                                 var store_url = "https://itunes.apple.com/app/youtube-watch-listen-stream/id544007664";
                                 // window.location = url;// fb://method/call..
                                 window.location = url;
@@ -234,10 +234,10 @@ $.ajax({
                                     }
                                 }, 300);
                             } else if(isAndroid){
-                                var url = "intent://" + host +"#Intent;package=com.google.android.youtube;scheme=https;end";
+                                var url = "intent://youtube.com/" + host +"#Intent;package=com.google.android.youtube;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                             } else {
-                                var url = "https://www.youtube.com/channel/" + host;
+                                var url = "https://www.youtube.com/" + host;
                                 window.location.replace(url);
                             }
                         } else if(value['name'] == "Tiktok"){
@@ -282,7 +282,7 @@ $.ajax({
                             }
                         } else if(value['name'] == "LinkedIn"){
                             if(isIOS){
-                                var url = "linkedin://in/" + host;
+                                var url = "linkedin://" + host;
                                 var store_url = "https://itunes.apple.com/app/linkedin-network-job-finder/id288429040";
                                 // window.location = url;// fb://method/call..
                                 window.location = url;
@@ -294,10 +294,10 @@ $.ajax({
                                     }
                                 }, 300); 
                             } else if(isAndroid){
-                                var url = "intent://linkedin.com/in/" + host + "#Intent;package=com.linkedin.android;scheme=https;end";
+                                var url = "intent://linkedin.com/" + host + "#Intent;package=com.linkedin.android;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                              } else {
-                                var url = "https://www.linkedin.com/in/" + host;
+                                var url = "https://www.linkedin.com/" + host;
                                 window.location.replace(url);
                             } 
                         } else if(value['name'] == "Tripadvisor"){
