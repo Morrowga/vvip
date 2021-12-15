@@ -214,7 +214,7 @@ $.ajax({
                                     }
                                 }, 300);
                             }  else if(isAndroid){
-                                var url = "intent://" + host +"#Intent;package=com.instagram.android;scheme=https;end";
+                                var url = "intent://instagram.com/" + host +"#Intent;package=com.instagram.android;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                             } else {
                                 var url = "https://www.instagram.com/" + host;
@@ -222,7 +222,7 @@ $.ajax({
                             }
                         } else if(value['name'] == "Youtube"){
                             if(isIOS){
-                                var url = "vnd.youtube://channel/UCVSNWq6MTXBZuIJ6iZ1z6Ng";
+                                var url = "vnd.youtube://channel/" + host;
                                 var store_url = "https://itunes.apple.com/app/youtube-watch-listen-stream/id544007664";
                                 // window.location = url;// fb://method/call..
                                 window.location = url;
@@ -294,7 +294,7 @@ $.ajax({
                                     }
                                 }, 300); 
                             } else if(isAndroid){
-                                var url = "intent://" + host + "#Intent;package=com.linkedin.android;scheme=https;end";
+                                var url = "intent://linkedin.com/in/" + host + "#Intent;package=com.linkedin.android;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                              } else {
                                 var url = "https://www.linkedin.com/in/" + host;
@@ -302,7 +302,7 @@ $.ajax({
                             } 
                         } else if(value['name'] == "Tripadvisor"){
                             if(isIOS){
-                                var url = "tripadvisor://www.tripadvisor.com/Hotel_Review-" + host;
+                                var url = "tripadvisor://www.tripadvisor.com/" + host;
                                 var store_url = "https://itunes.apple.com/app/tripadvisor-plan-book-trips/id284876795";
                                 // window.location = url;// fb://method/call..
                                 window.location = url;
@@ -314,10 +314,10 @@ $.ajax({
                                     }
                                 }, 300); 
                             } else if(isAndroid){
-                                var url = "intent://" + host + "#Intent;package=com.tripadvisor.tripadvisor;scheme=https;end";
+                                var url = "intent://tripadvisor.com/" + host + "#Intent;package=com.tripadvisor.tripadvisor;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                              } else {
-                                var url = "https://www.tripadvisor.com/Hotel_Review-" + host;
+                                var url = "https://www.tripadvisor.com/" + host;
                                 window.location.replace(url);
                             }
                         } else if(value['name'] == "Zoom"){
@@ -337,7 +337,7 @@ $.ajax({
                                 var url = "intent://" + host + "#Intent;package=us.zoom.videomeetings;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                              } else {
-                                var url = "https://us05web.zoom.us/" + host;
+                                var url = "https://" + host;
                                 window.location.replace(url);
                             }
                         } else if(value['name'] == "Google Maps"){
@@ -374,15 +374,15 @@ $.ajax({
                                     }
                                 }, 300); 
                             }  else if(isAndroid){
-                                var url = "intent://" + host + "#Intent;package=com.vimeo.android.videoapp;scheme=https;end";
+                                var url = "intent://vimeo.com/" + host + "#Intent;package=com.vimeo.android.videoapp;scheme=https;end";
                                 $('#deeplink').attr('href', url).show();
                              } else {
-                                var url = "https://vimeo.com/user" + host;
+                                var url = "https://vimeo.com/user/" + host;
                             }
                             
                         } else if(value['name'] == "Amazon"){
                             if(isIOS){
-                                var url = "com.amazon.mobile.shopping.web://" + host;
+                                var url = "com.amazon.mobile.shopping.web://amazon.com/" + host;
                                 var store_url = "https://itunes.apple.com/app/amazon-shopping/id297606951";
                                 // window.location = url;// fb://method/call..
                                 window.location = url;
@@ -394,7 +394,7 @@ $.ajax({
                                     }
                                 }, 300); 
                             } else if(isAndroid){
-                                    var url = "intent://" + host + "#Intent;package=com.amazon.mShop.android.shopping;scheme=https;end";
+                                    var url = "intent://amazon.com/" + host + "#Intent;package=com.amazon.mShop.android.shopping;scheme=https;end";
                                     $('#deeplink').attr('href', url).show();
                                 } else {
                                 var url = "https://www.amazon.com/" + host;
