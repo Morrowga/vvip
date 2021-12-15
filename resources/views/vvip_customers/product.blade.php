@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-6">
                     <h2 class="text">Smart Card</h2>
-                    <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum sit atque tempore necessitatibus facere accusamus corporis cum sequi, neque nulla dolores nobis nostrum, eum fuga blanditiis. Praesentium illum ea reprehenderit.</p>
+                    <p class="text">{{ __('website.whatsmartcard_para') }}</p>
                 </div>
             </div>
         </div>

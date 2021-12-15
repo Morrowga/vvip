@@ -7,6 +7,7 @@ return [
     'Contact' => "Contact",
     'login' => "Login",
     'Register' => "Register",
+    'have_account' => "Do You Have Account ?",
     'Everything' => "Everything is smart",
     'more' => "More Info",
     'whatisvvip' => "What is VVIP9 ?",
@@ -104,6 +105,7 @@ return [
     "create_login_pin" => "Create Login Pin",
     "new_pin" => "New Pin",
     "confirm_pin" => "Confirm Pin",
+    "pin" => "Enter Pin",
     "submit_register" => "Submit",
     "setting" => "Setting",
     "language" => "Language",
@@ -178,8 +180,8 @@ return [
     "email_body" => "Your email body",
     "phonenumber" => "Enter phone number who want you to send.",
     "sms_body" => "Enter the text what you want to describe.",
-    "phonecallnumber" => "Enter phone number who want you to call."
-
-
+    "phonecallnumber" => "Enter phone number who want you to call.",
+    "purpose" => "PURPOSE",
+    "our_team" => "Our Team"
 ]
 ?>

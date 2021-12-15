@@ -12,7 +12,7 @@
 </section>
 
 <div class="container">
-    <h3 class="text text-center">{{__('website.whatisvvip')}}</h3>
+    <h3 class="text text-center teampurpose">{{__('website.whatisvvip')}}</h3>
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-6"  style="margin-top: 15px;">
@@ -32,7 +32,7 @@
 <div class="devider" style="margin-top: 15px;"></div>
 
 <div class="container">
-    <h3 class="text text-center">{{ __('website.useful')}}</h3>
+    <h3 class="text text-center teampurpose">{{ __('website.useful')}}</h3>
     <div class="col-md-12">
         <video class="about_video" loop autoplay muted>
             <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4">
@@ -54,7 +54,7 @@
 
 <div class="container">
     <div class="col-md-12 text-center">
-        <h1 class="text text-center">PURPOSE</h1>
+        <h1 class="text text-center teampurpose">{{ __('website.purpose') }}</h1>
         <div class="d-flex justify-content-center">
             <div class="col-md-6 col-md-offset-3">
                 <div class="typewriter">
@@ -68,7 +68,7 @@
 <div class="devider" style="margin-top: 25px;"></div>
 
 <div class="container">
-    <h3 class="text text-center">Our Team</h3>
+    <h3 class="text text-center teampurpose">{{ __('website.our_team') }}</h3>
     <!-- <p class="text text-center" style="font-weight:bold; font-size: 18px;">Htut Company</p> -->
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
