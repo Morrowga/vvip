@@ -482,7 +482,19 @@ class UserRegisterController extends Controller
         $response = $request->getBody();
        
         $data = json_decode($response);
+        // return $data;
         foreach($data->data as $d){
+            $pre_front = "http://admin.vvip9.co/card_collection/" . $d->preview_design->front_image;
+            $pre_back = "http://admin.vvip9.co/card_collection/" . $d->preview_design->back_image;
+
+            $front_preview = file_get_contents($pre_front);
+            $pre_front_name = substr($pre_front, strrpos($pre_front, '/') + 1);
+            $front = Storage::put('public/cards/' . $pre_front_name, $front_preview);
+
+            $back_preview = file_get_contents($pre_back);
+            $pre_back_name = substr($pre_back, strrpos($pre_back, '/') + 1);
+            $back = Storage::put('public/cards/' . $pre_back_name, $back_preview);
+
             foreach($d->transparent_design as $design){
                 $front_image = "http://admin.vvip9.co/card_collection/" . $design->front_image;
                 $back_image = "http://admin.vvip9.co/card_collection/" . $design->back_image;

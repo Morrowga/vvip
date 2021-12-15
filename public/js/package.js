@@ -423,7 +423,7 @@ function packageClick(e){
                 //loop_card_designs
                 console.log(value['package_token']);
                 $('#column-image').append(`<div class="col-md-4">
-                <img src="http://admin.vvip9.co/card_collection/` + value['preview_design']['front_image'] + `" id="image_data" alt="" width="310" height="200">
+                <img src="../storage/cards/` + value['preview_design']['front_image'] + `" id="image_data" alt="" width="310" height="200">
                 <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
                     <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
                     <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
