@@ -99,6 +99,8 @@ return [
     "qr_scan" => "Qr Code",
     "your_de" => "Your Description",
     "your_name" => "Your Name",
+    "Back Theme" => "Choose Back Theme",
+    "Front Theme" => "Choose Front Theme",
     "select_success" => "Select Successful",
     "areusure" => "The smart card which you make your own card would need to wait 3days and you can start use the card after these days. Are you sure for this. Confirm ?",
     "pass_allow" => "Password Only Allow Numbers",

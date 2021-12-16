@@ -293,13 +293,13 @@
                                             <div class="row">
                                                 <div class="col-md-6 text-center">
                                                     <div class="front_theme">
-                                                        <h3 class="text text-margin">Choose Front Theme</h3>
+                                                        <h3 class="text text-margin">{{ __('website.Front Theme') }}</h3>
                                                         <div class="front_theme_div" style="display:flex; justify-content: center !important;">
 
                                                         </div>
                                                     </div>
                                                     <div class="back_theme">
-                                                        <h3 class="text text-margin">Choose Back Theme</h3>
+                                                        <h3 class="text text-margin">{{ __('website.Back Theme') }}</h3>
                                                         <div class="back_theme_div" style="display:flex; justify-content: center !important;">
 
                                                         </div>
