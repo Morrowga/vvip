@@ -407,7 +407,7 @@ function packageClick(e){
     document.getElementById('package_name').value = targetValue;
     //card_api
     $.ajax({
-    url: 'api/get_cards_admin',
+    url: 'api/cards/' + targetValue,
     crossDomain: true,
     contentType: 'application/x-www-form-urlencoded', 
     type: 'get',
@@ -416,14 +416,11 @@ function packageClick(e){
     }, 
     success: function(response){
         console.log(response);
-        data = response.data;
-        console.log(response);
+        data = response.preview_design;
         $.each(data, function(i, value) {
-            if(value['package_token'] == targetValue){
                 //loop_card_designs
-                console.log(value['package_token']);
                 $('#column-image').append(`<div class="col-md-4">
-                <img src="../storage/cards/` + value['preview_design']['front_image'] + `" id="image_data" alt="" width="310" height="200">
+                <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="310" height="200">
                 <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
                     <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
                     <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
@@ -431,7 +428,6 @@ function packageClick(e){
                 <div class="col-md-6 col-md-offset-3">
                     <p id="success_p"  class="success_text`+ value['id'] +`"></p>
                 </div>`);
-            }
             
             //add_color_to_name&description
             $('.front_card_name').attr('style', 'color:' + $('#text_color').val() + ';');
@@ -460,12 +456,12 @@ function packageClick(e){
                 let id = e.target.id;
                 if(id == value['id']){
                     console.log(value['preview_design']['back_image']);
-                        $('#front_img').attr('src', "../storage/cards/" + value['preview_design']['front_image']);
+                        $('#front_img').attr('src', "../storage/cards/" + value['front_image']);
                     if(targetValue == "12345"){
                         $('#back_img').attr('src', "../images/Back.png");
                     } else {
                         console.log(value['default_back_transparent']);
-                        $('#back_img').attr('src', "../storage/cards/" + value['preview_design']['back_image']);
+                        $('#back_img').attr('src', "../storage/cards/" + value['back_image']);
                     }
                     $('#exampleModal').modal('show');
                 }
@@ -477,18 +473,78 @@ function packageClick(e){
                 var target = e.target.id;
                 console.log(target);
                 $('#card_design_id').val(target);
-                if(target == value['id']){
-                    // $('#customer_preview_card').val($('#image_data').attr('src'));
-                    console.log(value['color']['text_color']);
-                    var txt_color = value['color']['text_color'];
-                    $('#card_blank_front').attr('style', 'background-color:'+ value['color']['back_color'] +'!important;');
-                    $('#card_front').attr('src', "../storage/cards/" + value['transparent_design'][0]['front_image']);
+                $.ajax({
+                    url: 'api/card_by_id/' + target,
+                    crossDomain: true,
+                    contentType: 'application/x-www-form-urlencoded', 
+                    type: 'get',
+                    headers: {
+                        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+                    }, 
+                    success: function(response){
+                        var front_theme = response.package_design[0]['front_trans'];
+                        var back_theme = response.package_design[0]['back_trans'];
+                        var tran_front_data = response.package_design[0]['front_trans'][0];
+                        var tran_back_data = response.package_design[0]['back_trans'][0];
+                        // $('#customer_preview_card').val($('#image_data').attr('src'));
+                        var txt_color = tran_front_data['textcolor'];
+                        $('#card_blank_front').attr('style', 'background-color:'+ tran_front_data['bg_color'] +'!important;');
+                        $('.front_card_name').attr('style', 'color:' + txt_color + '!important;');
+                        $('.card_description').attr('style', 'color:' + txt_color + '!important;');
+                        var tran_front_img = tran_front_data['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                        $('#card_front').attr('src', tran_front_img);
                         if(targetValue != '12345'){
-                            $('#card_back').attr('src', "../storage/cards/" + value['transparent_design'][0]['back_image']);
+                            var tran_back_img = tran_back_data['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                            $('#card_back').attr('src', tran_back_data);
+                            $('.back_theme').show();
+                        } else {
+                            $('.back_theme').hide();
                         }
-                    $('#exampleModal').modal('hide');
-                    $('.success_text' + target).text(select_success).delay(5000).fadeOut();
-                }
+                        $('#exampleModal').modal('hide');
+                        $('.success_text' + target).text(select_success).delay(5000).fadeOut();
+
+
+                        $.each(front_theme, function(i,front_theme_val){
+                            var fronttheme = front_theme_val['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                            console.log(fronttheme);
+                            $('.front_theme_div').append(`
+                                <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                                    <img src="`+ fronttheme +`" alt="" width="60" height="60" class="theme_img_front" id="`+ fronttheme +`" data-property="`+ front_theme_val['front_property'] +`" data-position="`+ front_theme_val['front_position'] +`">
+                                </div>
+                            `)
+                        })
+
+                        $.each(back_theme, function(i,back_theme_val){
+                            var backtheme = back_theme_val['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                            $('.back_theme_div').append(`
+                                <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                                    <img src="`+ backtheme +`" alt="" width="60" height="60" class="theme_img_back" id="`+ backtheme +`" data-property="`+ back_theme_val['back_property'] +`" data-position="`+ back_theme_val['back_position'] +`">
+                                </div>
+                            `)
+                        })
+
+                        $('.theme_img_front').on('click', function(e){
+                            $('#card_front').attr('src', e.target.id);
+                            if(e.target.getAttribute('data-property') == "unactive"){
+                                $('#front_move_' + e.target.getAttribute('data-position')).trigger('click');
+                                $('#positioning').hide();
+                            } else {
+                                $('#positioning').show();
+                            }
+                        });
+
+                        $('.theme_img_back').on('click', function(e){
+                            $('#card_back').attr('src', e.target.id);
+
+                            if(e.target.getAttribute('data-property') == "unactive"){
+                                $('#move_' + e.target.getAttribute('data-position')).trigger('click');
+                                $('#positioning').hide();
+                            } else {
+                                $('#positioning').show();
+                            }
+                        });
+                    }
+                });
             });  
         });
     },

@@ -20,6 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'apiKey'], function() {
+    Route::get('cards/{token}', [App\Http\Controllers\API\UserRegisterController::class, 'cards']);
+
+    Route::get('card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'card_by_id']);
+    
     Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
 
     Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
@@ -30,11 +34,7 @@ Route::group(['middleware' => 'apiKey'], function() {
     
     Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
     
-    Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);
-    
-    Route::post('get_cards', [App\Http\Controllers\API\UserRegisterController::class, 'card_designs']);
-    
-    Route::post('get_card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'get_card_by_id']);
+    Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);    
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
@@ -70,8 +70,6 @@ Route::post('user_exists', [App\Http\Controllers\API\UserRegisterController::cla
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 
 Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'view_count']);
-
-Route::get('/get_cards_admin', [App\Http\Controllers\API\UserRegisterController::class, 'card_from_admin']);
 
 
 // Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);

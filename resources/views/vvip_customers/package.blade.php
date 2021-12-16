@@ -292,6 +292,18 @@
                                         <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
                                             <div class="row">
                                                 <div class="col-md-6 text-center">
+                                                    <div class="front_theme">
+                                                        <h3 class="text text-margin">Choose Front Theme</h3>
+                                                        <div class="front_theme_div" style="display:flex; justify-content: center !important;">
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="back_theme">
+                                                        <h3 class="text text-margin">Choose Back Theme</h3>
+                                                        <div class="back_theme_div" style="display:flex; justify-content: center !important;">
+
+                                                        </div>
+                                                    </div>
                                                     <div id="bg_div">
                                                     <h3 class="text">{{ __('website.background_color') }}</h3>
                                                         <input type="color" class="form-control text-center" id="background_color">
@@ -313,7 +325,7 @@
                                                         <p class="text"  style="font-size: 21px !important; margin-top: 15px">{{ __('website.description') }}</p>
                                                         <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block"><i class="fas fa-font custo"></i>{{ __('website.edit_descript') }}</button>                    
                                                     </div>
-                                                    <div class="col-md-12 mt-2">
+                                                    <div class="col-md-12 mt-2" id="positioning">
                                                         <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.position') }}</p>
                                                         <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
                                                         <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
