@@ -15,9 +15,8 @@ class CreateCustomerCardsTable extends Migration
     {
         Schema::create('customer_cards', function (Blueprint $table) {
             $table->id();
-            $table->uuid('user_id');
-            $table->string('pdf_file')->nullable();
-            $table->string('transparnet_front')->nullable();
+            $table->string('user_url')->nullable();
+            $table->string('transparent_front')->nullable();
             $table->string('transparent_back')->nullable();
             $table->string('preview_image')->nullable();
             $table->string('text_color')->nullable();
@@ -26,8 +25,10 @@ class CreateCustomerCardsTable extends Migration
             $table->string('description')->nullable();
             $table->string('name')->nullable();
             $table->string('position')->nullable();
+            $table->string('qr_position')->nullable();
             $table->string('finish_card')->default();
             $table->string('user_recieve')->default(0);
+            $table->string('package_name')->nullable();
             $table->timestamps();
         });
     }

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Controllers\Mail\MailController;
+use App\Models\CustomerCard;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
@@ -387,14 +388,48 @@ class UserRegisterController extends Controller
 
         return $messages;
     }
-    // public function renderImage(){
-    //     $path = public_path('storage/test.jpg');
-    //     Browsershot::url('http://localhost:8000/package')
-    //         ->select('.custom_card', 0)
-    //         ->setOption('args', ['--disable-web-security'])
-    //         ->savePdf($path);
-    // }
 
+
+    public function save_customer_card(Request $request){
+        $preview_image = $request->pre;
+        $front_transparent_img = $request->tran_f;
+        $back_transparent_img = $request->tran_b;
+        $package_name = $request->pk_name;
+        $customer_url = $request->customer_url;
+        $txtcolor = $request->text_color;
+        $bgcolor = $request->bg_color;
+        $logo = $request->file('logo_img');
+        $description = $request->description_text;
+        $cardname = $request->cardname_text;
+        $position = $request->position_front;
+        $qr_position = $request->position_back;
+
+        $save_card =  new CustomerCard;
+        $save_card->user_url = $customer_url;
+        $save_card->package_name = $package_name;
+        $save_card->transparent_front = $front_transparent_img;
+        $save_card->transparent_back = $back_transparent_img;
+        $save_card->preview_image = $preview_image;
+        $save_card->text_color = $txtcolor;
+        $save_card->bg_color = $bgcolor;
+        if($request->hasfile('logo_img')){
+            $imageName = $logo->getClientOriginalName();
+            $file_save = $logo->storeAs('customer_cards', $imageName, 'public');
+            $save_card->card_logo = $imageName;
+        }  else {
+            $save_card->card_logo = 'logo.jpeg';
+        }
+        $save_card->description = $description;
+        $save_card->name = $cardname;
+        $save_card->position = $position;
+        $save_card->qr_position = $qr_position;
+        $save_card->save();
+
+
+        return $save_card;
+
+    }
+    
    
     /**
      * Display a listing of the resource.

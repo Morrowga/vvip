@@ -23,6 +23,8 @@ Route::group(['middleware' => 'apiKey'], function() {
     Route::get('cards/{token}', [App\Http\Controllers\API\UserRegisterController::class, 'cards']);
 
     Route::get('card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'card_by_id']);
+
+    Route::post('save_customer_card', [App\Http\Controllers\API\UserRegisterController::class, 'save_customer_card']);
     
     Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
 

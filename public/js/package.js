@@ -45,13 +45,58 @@ $(function(){
             }
 
             if(curIndex() == 4){
+                $('#input-1').val($('#image_data').attr('src'));
+                $('#input-2').val($('#card_front').attr('src'));
+                $('#input-3').val($('#card_back').attr('src'));
+                $('#input-4').prop("files",$(".uploadLogo").prop("files"));
+                console.log($('#input-4').prop("files",$(".uploadLogo").prop("files")));
+                $('#input-5').val($('#text_color').val());
+                $('#input-6').val($('#background_color').val());
+                $('#input-7').val($('#card_blank_front').find('[class*="front_card_name"]').text());
+                $('#input-8').val($('#card_blank_front').find('[class*="card_description"]').text());
+                $('#input-9').val($('#catch_click').text());
+                $('#input-10').val($('#qrposition').val());
+                $('#input-11').val($('#package_name').val());
+                $('#input-12').val($('#url').val());
                 $('#frontcard').html($('#card_blank_front').html());
                 $('#backcard').html($('#card_blank_back').html());
                 $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
                 $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
                 $('#confirm_modal').modal('show');
-                $('#check_confirm').on('click', function(){
+                $('#form_save').on('submit', function(e){
+                    e.preventDefault();
                     $('#confirm_modal').modal('hide');
+                    var token =  $('#token').val();
+                    let formData = new FormData(this);
+                    // var previewimg = $('#input-1').val();
+                    // var fronttranimg = $('#input-2').val();
+                    // var backtranimg = $('#input-3').val();
+                    // var logo = $('#input-4').val();
+                    // var txt_color = $('#input-5').val();
+                    // var bg_color = $('#input-6').val();
+                    // var cardname = $('#input-7').val();
+                    // var description = $('#input-8').val();
+                    // var position = $('#input-9').val();
+                    // var qr_position = $('#input-10').val();
+                    // var pack = $('#input-11').val();
+                    // var userurl = $('#input-12').val();
+                    
+                    $.ajax({
+                        url: 'api/save_customer_card',
+                        method:'POST',
+                        dataType: 'json',
+                        data: formData,
+                        processData: false, //add this
+                        contentType: false, //and this
+                        headers: {
+                                'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
+                                'X-CSRF-Token': token 
+                        },
+                        
+                        success:function(response){
+                            console.log(response);
+                        }
+                    });
                 });
                    
                 $('#cancel_confirm').on('click', function(){
@@ -166,6 +211,7 @@ $.ajax({
         document.getElementById('prices-section-save').style.display = "none";
         document.getElementById('prices-section-two').style.display = "block";
         document.getElementById('name').value = response.name;
+        $('.front_card_name').text(response.name);
         document.getElementById('phone').value = response.phone_number;
         console.log(response.message);
       }else if(response.message == "Phone Number is invalid"){
@@ -230,14 +276,17 @@ function getCheckedName(){
 //qr_position
 $('#move_left').on('click', function(){
     $('#qr_scan').attr('style', 'left: 10% !important');
+    $('#qrposition').val('left');
 });
 
 $('#move_center').on('click', function(){
     $('#qr_scan').attr('style', 'left: 41% !important');
+    $('#qrposition').val('center');
 });
 
 $('#move_right').on('click', function(){
     $('#qr_scan').attr('style', 'left: 70% !important');
+    $('#qrposition').val('right');
 });
 
 
@@ -486,20 +535,30 @@ function packageClick(e){
                         var back_theme = response.package_design[0]['back_trans'];
                         var tran_front_data = response.package_design[0]['front_trans'][0];
                         var tran_back_data = response.package_design[0]['back_trans'][0];
-                        // $('#customer_preview_card').val($('#image_data').attr('src'));
                         var txt_color = tran_front_data['textcolor'];
+                        var frontposition = tran_front_data['front_position'];
+                        var backposition = tran_back_data['back_position'];
+                        $('#background_color').val(tran_front_data['bg_color']);
+                        $('#text_color').val(txt_color);
                         $('#card_blank_front').attr('style', 'background-color:'+ tran_front_data['bg_color'] +'!important;');
+                        $('#frontcard').attr('style', 'background-color:'+ tran_front_data['bg_color'] +'!important;');
                         $('.front_card_name').attr('style', 'color:' + txt_color + '!important;');
                         $('.card_description').attr('style', 'color:' + txt_color + '!important;');
+                        $('#catch_click').text(tran_front_data['front_position']);
                         var tran_front_img = tran_front_data['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
                         $('#card_front').attr('src', tran_front_img);
+                        $('#front_move_' + frontposition).trigger('click');
                         if(targetValue != '12345'){
                             var tran_back_img = tran_back_data['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
                             $('#card_back').attr('src', tran_back_data);
+                            $('#move_' + backposition).trigger('click');
                             $('.back_theme').show();
+                            $('#backcard').attr('style', 'background-color:'+ tran_back_data['bg_color'] +'!important;');
                         } else {
+                            $('#qrposition').text(tran_back_data['back_position']);
                             $('.back_theme').hide();
                         }
+                        $('#qrposition').val(tran_back_data['back_position']);
                         $('#exampleModal').modal('hide');
                         $('.success_text' + target).text(select_success).delay(5000).fadeOut();
 
@@ -551,6 +610,7 @@ function packageClick(e){
 });
 }  
 
+
 //add_upload_logo_on_card
 $('.uploadLogo').on('change', function(){
     var logo = window.URL.createObjectURL(this.files[0]);
@@ -586,6 +646,7 @@ $('.edit_description').on('keyup', function(event){
     var char_length = $(this).val().length;
     // console.log(char_length);
     $('.card_description').text($(this).val());
+    console.log($('.card_description').text());
     
     var limit = 30;
     if(char_length > limit){

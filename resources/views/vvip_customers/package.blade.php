@@ -336,14 +336,15 @@
                                                         <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
                                                         <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
                                                         <button type="button" id="move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>
+                                                        <input type="text" id="qrposition" hidden>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 text-center custom_card" id="bl_front">
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
                                                         <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
-                                                        <p class="front_card_name text-center">{{ __('website.your_name') }}</p>
-                                                        <p class="card_description text-center" style="margin-top: 20px !important;" >{{ __('website.your_de') }}</p>
+                                                        <p class="front_card_name text-center">Your Name</p>
+                                                        <p class="card_description text-center" style="margin-top: 20px !important;" >Your Description</p>
                                                     </div>
                                                     <div id="card_blank_back">
                                                         <img  id="card_back" alt="" height="250">
@@ -358,13 +359,6 @@
                                 <div class="form-section" id="pin_section">
                                     <div class="col-md-12" id="uu">
                                         <p class="text"></p>
-                                    </div>
-                                    <div class="form-group" hidden>
-                                        <input type="text" name="customer_preview_card">
-                                        <input type="text" name="customer_trasparent_front">
-                                        <input type="text" name="customer_transparent_back">
-                                        <input type="file" name="pdf_file">
-                                        <input type="file" name="customer_position">
                                     </div>
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
@@ -393,6 +387,7 @@
                                             <button type="button" class="next btn btn-info">{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info">{{ __('website.pre') }}</button>
                                             <button type="submit" class="btn btn-info float-right sub-btn" disabled>{{ __('website.submit_register') }}</button>
+                                            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                         </div>
                                     </div>
                                 </div>
@@ -441,7 +436,7 @@
                         </label>
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer"> 
                     <!-- <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Select Card</button> -->
                 </div>
@@ -505,11 +500,27 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group" hidden>
+                        <form action="" method="POST" id="form_save">
+                            <input type="text" id="input-1" name="pre" hidden>
+                            <input type="text" id="input-2" name="tran_f" hidden>
+                            <input type="text" id="input-3" name="tran_b" hidden>
+                            <input type="file" id="input-4" name="logo_img" hidden>
+                            <input type="text" id="input-5" name="text_color" hidden>
+                            <input type="text" id="input-6" name="bg_color" hidden>
+                            <input type="text" id="input-7" name="cardname_text" hidden>
+                            <input type="text" id="input-8" name="description_text" hidden>
+                            <input type="text" id="input-9" name="position_front" hidden>
+                            <input type="text" id="input-10" name="position_back" hidden>
+                            <input type="text" id="input-11" name="pk_name" hidden>
+                            <input type="text" id="input-12" name="customer_url" hidden>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="col-md-12" style="margin-top: 20px !important;">
                         <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
-                        <button type="button" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
+                        <button type="submit" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
+                        </form>
                     </div>
                 </div>
             </div>
