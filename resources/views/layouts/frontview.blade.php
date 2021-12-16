@@ -127,6 +127,7 @@
 		<script src="../js/theme.js"></script>
         @yield('script')
         <script>
+
         let setT = setTimeout(function(){ 
             document.getElementById("loading").style.display = "none";
             document.getElementById("main-body").style.display = "block";

@@ -54,7 +54,7 @@ class UserRegisterController extends Controller
                     $user->package = $package_name;
                     $user->package_status = "active";
                     $user->smart_card_design_id = $smart_card_design_id;
-                    $user->encrytion_url = $encryption_url;
+                    $user->encryption_url = $encryption_url;
                     $user->verification_code = sha1(time());
                     // $user->package_start_date = Carbon::now();
                     // $user->package_end_date = Carbon::now()->addYear(1);
