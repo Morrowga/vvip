@@ -199,10 +199,23 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
   	background-size: cover;
 }
 
-.intro-parallax{
-	background: rgb(0,0,0) !important;
+.intro-parallax, #bgblack{
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	
+	background: rgb(221,220,248) !important; 
+	/* background: -webkit-linear-gradient(to right, rgb(221,220,248),rgb(196,194,196)) !important;   */
+	/* background: linear-gradient(to right, rgb(221,220,248), rgb(196,194,196)) !important;  */
+	/* background: rgb(0,0,0) !important; */
+
 	/* background-repeat: no-repeat !important; */
 	/* background-size: cover ; */
+}
+
+video::-webkit-media-controls-panel{
+	/* background-color: transparent !important; */
+	box-shadow: none !important; 
 }
 
 .counter-parallax{
@@ -370,7 +383,7 @@ font-family: "Lato", Helvetica, Arial, sans-serif;
 }
 #text-carousel-intro-section .caption {
 	/* position: relative; */
-	margin-top: 20%;
+	margin-top: 10%;
 	/* margin-top: -70px; */
 }
 #text-carousel-intro-section .caption h1 {
@@ -914,7 +927,7 @@ a.rotate-box-1:hover, a.rotate-box-2:hover {
 
 /* ===== Begin social ===== */
 #social-section {
-	padding: 80px 0;
+	padding: 60px 0;
 }
 ul.social-list {
 	text-align: center;
@@ -1280,7 +1293,7 @@ p.subtitle {
 
 /*customize*/
 .item{
-	background-color: rgb(0,0,0) !important;
+	/* background-color: rgb(0,0,0) !important; */
 	/* border-top: 2px solid rgb(253,235,162); */
 	/* border-bottom: 2px solid rgb(253,235,162); */
 	/* padding-top: 10px; */
@@ -1358,7 +1371,10 @@ p.subtitle {
 	font-weight: bold;
 	font-family: 'Kudryashev Display' !important ;
 	padding-top: 15px;
+	margin-top: 10px !important;
 }
+
+
 #head_about_text{
 	/* background: #d9b551; 
 	background: -webkit-linear-gradient(to right, #d9b551, #000); 
@@ -1612,6 +1628,20 @@ transition-duration: 1s;
 
 #video_one{
 	width: 100% !important;
+	height: auto;
+	border: none !important;
+	box-shadow: none !important;
+	outline: none !important;
+	/* background-color: transparent; */
+	/* object-fit: cover; */
+	/* border: 2px solid #d9b551 !important; */
+	/* border-bottom-left-radius: 05% !important; */
+	/* border-top-right-radius: 10% !important; */
+}
+
+#video_one:focus{
+	outline: none !important;
+	box-shadow: none !important;
 }
 
 

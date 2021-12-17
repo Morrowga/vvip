@@ -6,7 +6,7 @@ return [
     'About' => "About",
     'Contact' => "Contact",
     'login' => "Login",
-    'Register' => "Register",
+    'Register' => "REGISTER",
     'have_account' => "Do You Have Account ?",
     'Everything' => "Everything is smart",
     'more' => "More Info",
@@ -39,6 +39,8 @@ return [
     Social | Message | Call | Event | Personal Assistance | Bank or Pay Info | Contains many
     information such as Card Design &amp; Packaging.",
     'join_us' => "Join Us",
+    'follow' => "Follow us on social networks",
+    'share_us' => "Share Us",
     'our_address' => "Our Address",
     'address_no' => "No.8 Moe Ma Kha (1) Street",
     'address_ward' => "Ma Li Kha Housing,Thingangyun Tsp",

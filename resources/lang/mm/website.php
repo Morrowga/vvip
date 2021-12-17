@@ -55,6 +55,8 @@ return [
     Personal Assistance | Bank or Pay Info | Card Design &amp; Packaging စသည့်
     အချက်အလက်များစွာပါ၀င်ပါသည်",
     'join_us' => "ကျွန်ုပ်တို့ နှင့် ပါဝင်လိုက်ပါ",
+    'follow' => "Social Mediaအပေါ်တွင် Follow ပြုလုပ်ပါ။",
+    'share_us' => "Social Media တွင် ရှဲရန်",
     'our_address'  => "ကျွန်ုပ်တို့ လိပ်စာ",
     'address_no' => "အမှတ် ၈, မိုးမခ ( ၁ ) လမ်း",
     'address_ward' => "မလိခ အိမ်ရာ, သင်္ကန်းကျွန်း မြို့နယ်",
