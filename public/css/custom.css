@@ -1495,6 +1495,14 @@ label.label_file {
 }
 
 
+#modal_pdf{
+    background-color: rgb(217,181,81) !important;
+}
+
+#modal_pdf > .modal-body{
+    background-color: rgb(217,181,81) !important;
+}
+
 .theme_img_back{
     border-radius:  50% !important;
     box-shadow: 2px 2px 10px rgb(217,181,81);
@@ -2225,7 +2233,7 @@ input[type=number] {
     }
 
     #text_color{
-        margin-left: 120px !important;
+        margin-left: 125px !important;
     }
 
 

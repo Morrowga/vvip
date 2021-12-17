@@ -481,8 +481,8 @@
 
     <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content" id="modal_pdf" style="background-color: #fff !important;">
-                <div class="modal-body  text-center" style="background-color: rgb(255,255,255,0.5) !important;">
+            <div class="modal-content" id="modal_pdf">
+                <div class="modal-body  text-center">
                     <div class="col-md-12 mt-2">
                         <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
                             {{ __('website.areusure') }}

@@ -378,7 +378,8 @@ class UserRegisterController extends Controller
 
     public function encryptionUrlMobile(Request $request){
         $url = $request->url;
-        $en = Crypt::encryptString($url);
+        if($url !== null){
+            $en = Crypt::encryptString($url);
 
         $messages = [
             "status" => "200",
@@ -387,6 +388,7 @@ class UserRegisterController extends Controller
         ];
 
         return $messages;
+        }
     }
 
 
