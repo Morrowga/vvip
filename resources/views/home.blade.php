@@ -7,6 +7,7 @@
         <a class="navbar-brand" href="{{ url('/home') }}">
             <img src="../images/logo.jpeg" alt="" width="100" height="100">
         </a>
+        <a href="/spin_wheel" id="spinwheel" class="lucky">LUCKY DRAW DAILY <img src="https://www.pngall.com/wp-content/uploads/10/Spinning-Wheel-Vector-PNG-Photos.png" class="pl-2" alt="" width="50" height="50"></a>
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
             @if(Auth::user()->name)
@@ -96,26 +97,6 @@
         </div>
     </div>
 </div>
-@section('script')
-<script>
-    var text_url = '{{ url('api/get_datas') }}';
-        var userid = $('#userid').val();
-        console.log(userid);
-         $.ajax({
-           url:text_url,
-           method:'POST',
-           data:{
-                  user_id: userid, 
-                  request_name:"get_welcome"
-                },
-           success:function(response){
-               console.log(response);
-               $('#welcome_text').text(response.data['text']);
-               $('#profile_img').attr('src', response.data['profile_img']);
-           }
-         });
-</script>
-@endsection
 @endsection
 
 

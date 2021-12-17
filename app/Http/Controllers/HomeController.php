@@ -64,6 +64,10 @@ class HomeController extends Controller
         return view('vvip_customers.setting');
     }
 
+    public function spinWheel(){
+        return view('vvip_customers.spin_wheel');
+    }
+
     // public function addDeep_link(Request $request){
     //     $user_id = $request->user_id;
     //     // return $user_id;

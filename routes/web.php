@@ -25,6 +25,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
 
+Route::get('/spin_wheel', [App\Http\Controllers\HomeController::class, 'spinWheel']);
+
 Route::get('/setting', [App\Http\Controllers\HomeController::class, 'setting'])->name('setting');
 
 Route::get('/connection', [App\Http\Controllers\HomeController::class, 'privateConnection'])->name('private');

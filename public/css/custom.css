@@ -1135,7 +1135,7 @@ label.label_file {
     color: #000 !important;
     width: 100%;
 	font-family: 'Kudryashev Display' !important;
-    letter-spacing: 2px;
+    /* letter-spacing: 2px; */
     text-align: left !important;
     font-weight: bold;
     border: 2px solid rgb(217,181,81) !important;
@@ -1687,6 +1687,20 @@ button.spin:focus{
     color: #fff !important;
     text-decoration: none !important;
 }
+
+
+.lucky {
+    text-decoration: none !important;
+    color: rgb(217,181,81);
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+}
+
+
+.lucky:hover {
+    color: rgb(217,181,81);
+    opacity: 0.9;
+}
 /* KEYFRAMES */
 
 @-webkit-keyframes animateBubble {
@@ -2147,6 +2161,7 @@ input[type=number] {
 
 
 @media only screen and (max-width: 425px) {
+
     #cands_section{
         height: 2700px !important;
     }

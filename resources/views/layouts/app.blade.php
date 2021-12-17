@@ -133,8 +133,9 @@
         </div>
     </div>
         
-    <script src="../js/jquery/jquery-1.11.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="../js/browser-deeplink.js" type="text/javascript"></script>
+    <script src="../js/Winwheel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
     @yield('script')
@@ -150,6 +151,22 @@
             });
         });
          
+        var text_url = '{{ url('api/get_datas') }}';
+        var userid = $('#userid').val();
+        console.log(userid);
+         $.ajax({
+           url:text_url,
+           method:'POST',
+           data:{
+                  user_id: userid, 
+                  request_name:"get_welcome"
+                },
+           success:function(response){
+               console.log(response);
+               $('#welcome_text').text(response.data['text']);
+               $('#profile_img').attr('src', response.data['profile_img']);
+           }
+         });
     </script>
 </body>
 </html>

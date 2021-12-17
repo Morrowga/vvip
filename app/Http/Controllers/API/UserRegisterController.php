@@ -191,11 +191,17 @@ class UserRegisterController extends Controller
                 ];
                 return $messages;
             }else {
-                $save_user = new UserLog;
-                $save_user->name = $username;
-                $save_user->phone_number = $phone;
-                $save_user->save();
+                // $phone_log = UserLog::where('phone_number', $phone)->orderBy('created_at', 'DESC')->first();
+                
+                // if($phone_log === null){
+                    $save_user = new UserLog;
+                    $save_user->name = $username;
+                    $save_user->phone_number = $phone;
+                    $save_user->save();
+                // } else {
 
+                // }
+               
                 // Helper::user_stats('save_user', 'create', 'user_logs', $save_user->id);
 
                 $messages = [
