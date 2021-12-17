@@ -385,8 +385,8 @@
                                     <div class="form-group row">
                                         <div class="col-md-12">
                                             <button type="button" class="next btn btn-info">{{ __('website.next') }}</button>
-                                            <button type="button" class="previous btn btn-info">{{ __('website.pre') }}</button>
-                                            <button type="submit" class="btn btn-info float-right sub-btn" disabled>{{ __('website.submit_register') }}</button>
+                                            <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
+                                            <button type="submit" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                         </div>
                                     </div>

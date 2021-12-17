@@ -504,7 +504,7 @@ function packageClick(e){
             $('.zoom').on('click', function(e) {
                 let id = e.target.id;
                 if(id == value['id']){
-                    console.log(value['preview_design']['back_image']);
+                    // console.log(value['preview_design']['back_image']);
                         $('#front_img').attr('src', "../storage/cards/" + value['front_image']);
                     if(targetValue == "12345"){
                         $('#back_img').attr('src', "../images/Back.png");
