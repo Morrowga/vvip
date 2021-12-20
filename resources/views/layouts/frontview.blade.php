@@ -163,9 +163,12 @@
     </div>
     <!--===========================================SaveUserModal========================================================-->
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-body">
+                <div class="modal-header" style="border: none !important;">
+                    <!-- <h4 class="text">Smart Card</h4> -->
+                </div>
+                <div class="modal-body" style="margin-top: 60px !important;">
                     <div class="row" style="margin-top: 60px !important;">
                         <div class="col-md-6 text-center">
                             <img src="" id="front_img" alt="" with="400" height="400">
@@ -184,8 +187,11 @@
     </div>
 
 
-    <div class="modal fade bd-example-modal-lg" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="logoModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-header" style="border: none !important;">
+                <!-- <h4 class="text">Card Logo</h4> -->
+            </div>
             <div class="modal-content" style="background-color: #fff !important;">
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
@@ -204,8 +210,11 @@
         </div>
     </div>
 
-    <div class="modal fade bd-example-modal-lg" id="nameTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="nameTextModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-header" style="border: none !important;">
+                <!-- <h4 class="text">Card  Name</h4> -->
+            </div>
             <div class="modal-content" style="background-color: #fff !important;">
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
@@ -221,8 +230,11 @@
         </div>
     </div>
 
-    <div class="modal fade bd-example-modal-lg" id="descriptionTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="descriptionTextModal"  role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-header" style="border: none !important;">
+                <!-- <h4 class="text">Card Description</h4> -->
+            </div>
             <div class="modal-content" style="background-color: #fff !important;">
                 <div class="modal-body" style="background-color: #fff !important;">
                     <div class="col-md-12" style="margin-top: 60px !important;">
@@ -239,9 +251,12 @@
     </div>
 
 
-    <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal fade" id="confirm_modal" role="dialog">
+        <div class="modal-dialog">
             <div class="modal-content" id="modal_pdf">
+                <div class="modal-header" style="border: none !important;">
+                    <!-- <h4 class="text">Please Confirm</h4> -->
+                </div>
                 <div class="modal-body  text-center">
                     <div class="col-md-12 mt-2">
                         <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
