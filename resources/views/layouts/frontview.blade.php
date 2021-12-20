@@ -257,7 +257,7 @@
                 <div class="modal-header" style="border: none !important;">
                     <!-- <h4 class="text">Please Confirm</h4> -->
                 </div>
-                <div class="modal-body  text-center">
+                <div class="modal-body  text-center" style="margin-top: 60px !important;">
                     <div class="col-md-12 mt-2">
                         <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
                             {{ __('website.areusure') }}
