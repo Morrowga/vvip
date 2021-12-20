@@ -171,9 +171,9 @@
                             <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
                                 <div class="form-section">
-                                    <div class="d-flex justify-content-center">
+                                    <!-- <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div> 
+                                    </div>  -->
                                     <div class="col-md-8 col-md-offset-2">
                                         <h3 class="payment-text">{{ __('website.payment') }}</h3>
                                         <div class="devider"></div>
