@@ -24,6 +24,7 @@
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+        <link href="https://www.dafontfree.net/embed/YnJpdGFubmljLWJvbGQtcmVndWxhciZkYXRhLzEzL2IvNjQ1MzAvQlJJVEFOSUMuVFRG" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="../css/skin/cool-gray.css">
 	</head>
     <body data-spy="scroll" data-target="#main-navbar">
@@ -161,4 +162,128 @@
         </div>
     </div>
     <!--===========================================SaveUserModal========================================================-->
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row" style="margin-top: 60px !important;">
+                        <div class="col-md-6 text-center">
+                            <img src="" id="front_img" alt="" with="400" height="400">
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="" id="back_img" alt="" with="400" height="400">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
+                    <!-- <button type="button" class="btn btn-primary" id="select_card">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" id="logoModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.icon_up') }}</h4>
+                        <label class="btn btn-dark btn-block" id="up_load_btn"> 
+                            <input type="file" class="uploadLogo" accept="image/*">
+                            {{ __('website.select_logo') }}
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer"> 
+                    <!-- <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="nameTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.editname') }}</h4>
+                        <input type="text" class="form-control btn-block edit_name" placeholder="{{ __('website.enter_card_name') }}">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade bd-example-modal-lg" id="descriptionTextModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" style="background-color: #fff !important;">
+                <div class="modal-body" style="background-color: #fff !important;">
+                    <div class="col-md-12" style="margin-top: 60px !important;">
+                        <h4 class="upload_logo_text text-center mt-3">{{ __('website.description') }}</h4>
+                        <textarea type="text" rows="3" class="form-control btn-block edit_description" placeholder="{{ __('website.enter_card_description') }}"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
+                    <!-- <button type="button" class="btn btn-primary">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade bd-example-modal-lg" id="confirm_modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="modal_pdf">
+                <div class="modal-body  text-center">
+                    <div class="col-md-12 mt-2">
+                        <p class="sure" style="font-size: 20px !important; margin-top: 10px !important;">
+                            {{ __('website.areusure') }}
+                        </p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6" style="text-align:center;">
+                            <div id="frontcard" class="text-center" >
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="backcard" class="text-center" >
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" hidden>
+                        <form action="" method="POST" id="form_save">
+                            <input type="text" id="input-1" name="pre" hidden>
+                            <input type="text" id="input-2" name="tran_f" hidden>
+                            <input type="text" id="input-3" name="tran_b" hidden>
+                            <input type="file" id="input-4" name="logo_img" hidden>
+                            <input type="text" id="input-5" name="text_color" hidden>
+                            <input type="text" id="input-6" name="bg_color" hidden>
+                            <input type="text" id="input-7" name="cardname_text" hidden>
+                            <input type="text" id="input-8" name="description_text" hidden>
+                            <input type="text" id="input-9" name="position_front" hidden>
+                            <input type="text" id="input-10" name="position_back" hidden>
+                            <input type="text" id="input-11" name="pk_name" hidden>
+                            <input type="text" id="input-12" name="customer_url" hidden>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12" style="margin-top: 20px !important;">
+                        <button type="button" class="btn btn-secondary mt-2" id="cancel_confirm" data-dismiss="modal">{{ __('website.close') }}</button>
+                        <button type="submit" id="check_confirm" class="btn btn-primary">{{ __('website.confirm') }}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>
