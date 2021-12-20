@@ -342,7 +342,7 @@
                                                 <div class="col-md-6 text-center custom_card" id="bl_front">
                                                     <div id="card_blank_front" style="text-align:center;">
                                                         <img  alt="" id="card_front">
-                                                        <img src="../images/logo.jpeg" id="logo_view" alt="" width="70" height="70">
+                                                        <img src="../images/logo.jpeg" class="customlogo" id="logo_view" alt="" width="70" height="70">
                                                         <p class="front_card_name text-center">Your Name</p>
                                                         <p class="card_description text-center" style="margin-top: 20px !important;" >Your Description</p>
                                                     </div>

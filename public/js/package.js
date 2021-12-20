@@ -304,6 +304,11 @@ $('#front_move_center').on('click', function(){
     $('.front_card_name').attr('style', 'text-align:center !important; color:' + $('#text_color').val() + '!important;');
     $('#logo_view').attr('style', 'left: 42% !important');
     $('#catch_click').text('center');
+    if (window.matchMedia('(max-width: 375px)').matches) {
+        $('#logo_view').attr('style', 'left: 39% !important');
+    } else if(window.matchMedia('(max-width: 411px)').matches) {
+        $('#logo_view').attr('style', 'left: 40% !important');
+    }
     console.log($('#catch_click').text());
 });
 
