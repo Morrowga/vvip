@@ -171,9 +171,9 @@
                             <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
                                 <div class="form-section">
-                                    <!-- <div class="d-flex justify-content-center">
+                                    <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div>  -->
+                                    </div> 
                                     <div class="col-md-8 col-md-offset-2">
                                         <h3 class="payment-text">{{ __('website.payment') }}</h3>
                                         <div class="devider"></div>
@@ -384,7 +384,7 @@
                                 <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <button type="button" class="next btn btn-info">{{ __('website.next') }}</button>
+                                            <button type="button" class="next btn btn-info" style="margin-top: 10px !important;">{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
                                             <button type="submit" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
@@ -531,6 +531,7 @@
 <script src="../js/package.js"></script>
 
 <script>
+
 var invalid_error = '{{ __('website.phone_invalid') }}';
 var exist_active = '{{ __('website.exist_active') }}';
 var exist_expired = '{{ __('website.exist_expired') }}';
