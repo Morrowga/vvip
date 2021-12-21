@@ -45,6 +45,30 @@
         </div>
     </div>
 </div>
+
+<div class="container" id="cns_backbg">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="card" id="cns_cardbg">
+                <div class="card-body">
+                    <div class="cns_contact">
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card" id="cns_treecardbg">
+                <div class="card-body text-center">
+                    <img src="" class="text-center" alt="" width="200" height="200" id="cnstree_img" style="border-radius: 50%;">
+
+                    <div class="cns_tree">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
 
 

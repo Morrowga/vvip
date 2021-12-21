@@ -53,7 +53,7 @@
                     <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links" data-id="deep_link_active">Deep Link</button>
                     <button class="btn btn-dark btn-block action-btn" id="url_active" value="get_eusp" data-id="url_active">URL</button>
                     <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active">Email</button>
-                    <button class="btn btn-dark btn-block action-btn" id="contact_social_active">Contact Social</button>
+                    <button class="btn btn-dark btn-block action-btn" id="cns_active" value="get_cns" data-id="cns_active">Contact Social</button>
                     <button class="btn btn-dark btn-block action-btn" id="sms_active" value="get_eusp" data-id="sms_active">SMS</button>
                     <button class="btn btn-dark btn-block action-btn" id="call_active" value="get_eusp" data-id="call_active">Call</button>
                     <button class="btn btn-dark btn-block action-btn" id="event">Event</button>

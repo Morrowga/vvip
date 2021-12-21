@@ -1488,6 +1488,20 @@ label.label_file {
     transition-duration: 0.5s !important;
 }
 
+.linktreecns_btn{
+    background-color: rgb(0,0,0) !important;
+    border: 2px solid rgb(217,181,81) !important;
+	font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #fff !important;
+}
+
+.linktreecns_btn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.5s !important;
+}
+
 .payment{
     border-top-left-radius: 10% !important;
     border-bottom-right-radius: 10% !important;
@@ -2099,6 +2113,10 @@ to { transform:  rotateY(360deg); }
     background-color: #000 !important;
     color: #fff !important;
 }
+
+/* .make_border{
+    border: 2px solid #000 !important;
+} */
 
 
 #homecard > .card-body{

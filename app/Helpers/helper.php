@@ -313,6 +313,73 @@ class Helper{
 
                      return $messages;
                 }
+            } else if($request_name === "get_cns"){
+                $contact = Contact::where('user_id', $user_id)->first();
+                $linktree =  LinkTree::where('user_id', $user_id)->first();
+
+                $contact_array = [
+                    "image" =>  "storage/contact_images/" . $contact->image,
+                    "personal" => [
+                        "first_name" => $contact->first_name,
+                        "last_name" => $contact->last_name,
+                        "company" => $contact->company,
+                        "position" => $contact->position,
+                        "birthday" => $contact->birthday
+                    ],
+                    "mobile" => [
+                        "mobile" => $contact->mobile,
+                        "phone" => $contact->phone,
+                        "office" => $contact->office
+                    ],
+                    "email_and_internet" => [
+                        "personalemail" => $contact->personalemail,
+                        "office_email" => $contact->office_email,
+                        "website_one" => $contact->website1,
+                        "website_two" => $contact->website2,
+                        "website_three" => $contact->website3
+                    ],
+                    "home_address" => [
+                        "street_one" => $contact->home_street1,
+                        "street_two" => $contact->home_street2,
+                        "postal_code" => $contact->home_postal_code,
+                        "city" => $contact->home_city,
+                        "state" => $contact->home_state,
+                        "country" => $contact->home_country
+                    ],
+                    "work_address" => [
+                        "street_one" => $contact->work_street1,
+                        "street_two" => $contact->work_street2,
+                        "postal_code" => $contact->work_postal_code,
+                        "city" => $contact->work_city,
+                        "state" => $contact->work_state,
+                        "country" => $contact->work_country
+                    ],
+                ];
+
+                $color_app = [
+                    "background_color" => $contact->background_color,
+                    "text_color" => $contact->text_color,
+                    "text_highlight_color" => $contact->text_highlight_color
+                ];
+
+                $link_img = "storage/link_tree_images/" . $linktree->link_image;
+
+                $linktree_array = [
+                    "user_id"  => $linktree->user_id,
+                    "link_image" => $link_img,
+                    "link_data" => json_decode($linktree->link_one),
+                ];
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                    "request" => "get_cns",
+                    "contact" => $contact_array,
+                    "color_app" => $color_app,
+                    "linktree" => $linktree_array
+                ];
+
+                return $messages;
             }
         }
     }

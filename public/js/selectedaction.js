@@ -452,7 +452,7 @@ $.ajax({
                 console.log(response.data);
                 var linktree_data = response.data;
                 $.each(linktree_data['link_data'], function(i, value) {
-                    $('#link_tree_display').append(`
+                    $('#display_tree').append(`
                         <a href="https://`+ value['url'] +`" class="btn btn-light btn-block link_tree_d_btn mt-4" id="link_one" target="_blank">`+ value['label'] +`</a>
                     `);
                 });
@@ -475,6 +475,185 @@ $.ajax({
                 }
 
                console.log(response.data);
+            } else if(response.request == "get_cns"){
+                $('#image_hide').hide();
+                var image_display = response.contact['image'].replace('https://vvip9.co/','../');
+                $('.cns_contact').append(`<div class="d-flex justify-content-center row">
+                <div class="col-md-6" style="text-align:center;">
+                    <img src="`+ image_display +`" alt="" width="200"  height="200" style="border-radius: 50%">
+                </div>
+                <div class="col-md-6 text-center mt-2">
+                    <p class="text_color" id="cns_fn">First Name :`+ response.contact['personal']['first_name'] +` </p>
+                    <p class="text_color" id="cns_ln">Last Name : `+ response.contact['personal']['last_name'] +`</p>
+                    <p class="text_color" id="cns_company">Company : `+ response.contact['personal']['company'] +`</p>
+                    <p class="text_color" id="cns_position">Position : `+ response.contact['personal']['position'] +`</p>
+                    <p class="text_color" id="cns_birthday">Birthday : `+ response.contact['personal']['birthday'] +`</p>
+                </div>
+                <hr>
+            </div>
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_str_one">Home Street One`+ `<br>` + response.contact['home_address']['street_one'] +`</p>
+                    <p class="text_color" id="cns_str_two">Home Street Two`+ `<br>` + response.contact['home_address']['street_two'] +`</p>
+                    <p class="text_color" id="cns_postal_code">Home Postal Code`+ `<br>` + response.contact['home_address']['postal_code'] +`</p>
+                    <p class="text_color" id="cns_city">Home City`+ `<br>` + response.contact['home_address']['city'] +`</p>
+                    <p class="text_color" id="cns_state">Home State`+ `<br>` + response.contact['home_address']['state'] +`</p>
+                    <p class="text_color" id="cns_country">Home Country`+ `<br>` + response.contact['home_address']['country'] +`</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_work_str_one">Work Street One`+ `<br>` + response.contact['work_address']['street_one'] +`</p>
+                    <p class="text_color" id="cns_work_str_two">Work Street Two`+ `<br>` + response.contact['work_address']['street_two'] +`</p>
+                    <p class="text_color" id="cns_work_postal_code">Work Postal Code`+ `<br>` + response.contact['work_address']['postal_code'] +`</p>
+                    <p class="text_color" id="cns_work_city">Work City`+ `<br>` + response.contact['work_address']['city'] +`</p>
+                    <p class="text_color" id="cns_work_state">Work State`+ `<br>` + response.contact['work_address']['state'] +`</p>
+                    <p class="text_color" id="cns_work_country">Work Country`+ `<br>` + response.contact['work_address']['country'] +`</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-12 text-center">
+                    <p class="text_color" id="cns_mobile">Mobile : `+ response.contact['mobile']['mobile'] +`</p>
+                    <p class="text_color" id="cns_phone_no">Phone : `+ response.contact['mobile']['phone'] +`</p>
+                    <p class="text_color" id="cns_office">Office : `+ response.contact['mobile']['office'] +`</p>
+                </div>
+                <div class="col-md-12 text-center">
+                    <p class="text_color" id="cns_email">Personal Email`+ `<br>` +response.contact['email_and_internet']['personalemail'] +`</p>
+                    <p class="text_color" id="cns_office_email">Office Email` + `<br>` + response.contact['email_and_internet']['office_email'] +`</p>
+                    <p class="text_color" id="cns_web_one">Website One`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_one'] +`" target="_blank">`+ response.contact['email_and_internet']['website_one'] +`</a></p>
+                    <p class="text_color" id="cns_web_two">Website Two`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_two'] +`" target="_blank">`+ response.contact['email_and_internet']['website_two'] +`</a></p>
+                    <p class="text_color" id="cns_web_three">Website Three`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_three'] +`" target="_blank">`+ response.contact['email_and_internet']['website_three'] +`</a></p>
+                </div>
+            </div>`);
+
+                if(response.color_app['background_color'] != null){
+                    $('#cns_backbg').attr('style', 'background-color:' + response.color_app['background_color'] + '!important;');
+                    $('#cns_cardbg').attr('style', 'background-color:' + response.color_app['background_color'] + '!important;');
+
+                    $('.text_color').attr('style', 'color:' + response.color_app['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                    response.color_app['text_highlight_color'] + '; font-family: "Britannic Bold"; font-size: 19px; font-weight: 900;');
+                } else {
+                    $('#card_background').attr('style', 'background-color:rgb(217,181,81);');
+                    $('.text_color').attr('style', 'color: #fff !important; text-shadow: 0px 3px 10px #000 !important;');
+                }
+                
+                if(response.contact['personal']['first_name'] == null){
+                    $('#cns_fn').hide();
+                } 
+                if(response.contact['personal']['last_name'] == null){
+                    $('#cns_ln').hide();
+                }
+
+                if(response.contact['personal']['company'] == null){
+                    $('#cns_company').hide();
+                }
+
+                if(response.contact['personal']['position'] == null){
+                    $('#cns_position').hide();
+                }
+
+                if(response.contact['personal']['birthday'] == null){
+                    $('#cns_birthday').hide();
+                }
+
+                if(response.contact['home_address']['street_one'] == null){
+                    $('#cns_str_one').hide();
+                }
+                
+                if(response.contact['home_address']['street_two'] == null){
+                    $('#cns_str_two').hide();
+                }
+
+                if(response.contact['home_address']['postal_code'] == null){
+                    $('#cns_postal_code').hide();
+                }
+
+                if(response.contact['home_address']['city'] == null){
+                    $('#cns_city').hide();
+                }
+                
+                if(response.contact['home_address']['state'] == null){
+                    $('#cns_state').hide();
+                }
+
+                if(response.contact['home_address']['country'] == null) {
+                    $('#cns_country').hide();
+                }
+
+                if(response.contact['work_address']['street_one'] == null){
+                    $('#cns_work_str_one').hide();
+                }
+                
+                if(response.contact['work_address']['street_two'] == null){
+                    $('#cns_work_str_two').hide();
+                }
+
+                if(response.contact['work_address']['postal_code'] == null){
+                    $('#cns_work_postal_code').hide();
+                }
+
+                if(response.contact['work_address']['city'] == null){
+                    $('#cns_work_city').hide();
+                }
+                
+                if(response.contact['work_address']['state'] == null){
+                    $('#cns_work_state').hide();
+                }
+
+                if(response.contact['work_address']['country'] == null) {
+                    $('#cns_work_country').hide();
+                }
+
+                if(response.contact['mobile']['mobile'] == null){
+                    $('#cns_mobile').hide();
+                }
+
+                if(response.contact['mobile']['mobile'] == null){
+                    $('#cns_phone_no').hide();
+                }
+
+                if(response.contact['mobile']['office'] == null){
+                    $('#cns_office').hide();
+                }
+                
+                if(response.contact['email_and_internet']['personalemail'] == null){
+                    $('#cns_email').hide();
+                }
+
+                if(response.contact['email_and_internet']['office_email'] == null){
+                    $('#cns_office_email').hide();
+                }
+
+                if(response.contact['email_and_internet']['website_one'] == null){
+                    $('#cns_web_one').hide();
+                }
+
+                if(response.contact['email_and_internet']['website_two'] == null){
+                    $('#cns_web_two').hide();
+                }
+
+                if(response.contact['email_and_internet']['website_three'] == null){
+                    $('#cns_web_three').hide();
+                }
+                var cnstree = response.linktree;
+                $.each(cnstree['link_data'], function(i, value) {
+                    $('.cns_tree').append(`
+                        <a href="https://`+ value['url'] +`" class="btn btn-light btn-block linktreecns_btn mt-4" id="link_one" target="_blank">`+ value['label'] +`</a>
+                    `);
+                });
+
+                if(response.color_app['background_color'] != null){
+                    $('#cns_treecardbg').attr('style', 'background-color:' + response.color_app['background_color'] + ';');
+                    $('.linktreecns_btn').attr('style', 'color:' + response.color_app['text_color'] + '!important; text-shadow: 0px 3px 10px' + 
+                    response.color_app['text_highlight_color'] + ';');
+                } else {
+                    $('#cns_treecardbg').attr('style', 'background-color:rgb(217,181,81);');
+                    $('.linktreecns_btn').attr('style', 'color: #fff !important; text-shadow: 0px 3px 10px #000 !important;');
+                }
+
+                if(response.linktree['link_image'] == ""){
+                    $('#cnstree_img').hide(); 
+                } else {
+                    $('#cnstree_img').attr('src', '../' + response.linktree['link_image']);
+                }
             }
         }
     });
