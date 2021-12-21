@@ -49,7 +49,7 @@
         </div>
     </div>
 </div> -->
-<div class="container" id="home_height" style="height: 1000px;">
+<div class="container" id="home_height" style="height: 500px;">
     <div class="col-md-12">
         <div class="d-flex justify-content-between">
             <h1 class="text">{{ __('website.welcome') }}</h1>
@@ -62,37 +62,53 @@
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col">
                 <div class="col-md-12 text-center">
-                    <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt pr-2"></i>{{ __('website.action') }}</a>
+                    <div class="card" id="homecard">
+                        <div class="card-body">
+                            <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt pr-2"></i>{{ __('website.action') }}</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-4 text-center">
+                <!-- <div class="col-md-12 mt-4 text-center">
                     <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="action" width="350" height="280">
-                </div>
+                </div> -->
             </div>
             <div class="col text-left home-col">
                 <div class="col-md-12 text-center">
-                    <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square pr-2"></i>{{ __('website.create') }}</a>
+                    <div class="card" id="homecard">
+                        <div class="card-body">
+                            <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square pr-2"></i>{{ __('website.create') }}</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-4 text-center">
+                <!-- <div class="col-md-12 mt-4 text-center">
                     <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="create" width="350" height="280">
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="d-flex justify-content-center">
             <div class="col text-right home-col" style="margin-top: 25px !important;">
                 <div class="col-md-12 text-center">
-                    <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle pr-2"></i>{{ __('website.profile') }}</a>
+                    <div class="card" id="homecard">
+                        <div class="card-body">
+                            <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle pr-2"></i>{{ __('website.profile') }}</a>
+                        </div>
+                    </div>
                 </div>  
-                <div class="col-md-12 mt-4 text-center">
+                <!-- <div class="col-md-12 mt-4 text-center">
                     <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="profile" width="350" height="280">
-                </div>
+                </div> -->
             </div>
             <div class="col text-left home-col" style="margin-top: 25px !important;">
                 <div class="col-md-12 text-center">
-                    <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog pr-1"></i>{{ __('website.setting') }}</a>
+                    <div class="card" id="homecard">
+                        <div class="card-body">
+                            <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog pr-1"></i>{{ __('website.setting') }}</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12 mt-4 text-center">
+                <!-- <div class="col-md-12 mt-4 text-center">
                     <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="setting" width="350" height="280">
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

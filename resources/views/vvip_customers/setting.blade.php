@@ -80,7 +80,7 @@
                             <div class="col">
                                 <p class="appear">{{ __('website.background') }}</p>
                             </div>
-                            <div class="col">
+                            <div class="col" id="setting_bg">
                                 <input type="color" class="form-control" id="background_color" name="background_color">
                             </div>
                         </div>
@@ -88,7 +88,7 @@
                             <div class="col">
                                 <p class="appear" id="text_appear">{{ __('website.text') }}</p>
                             </div>
-                            <div class="col">
+                            <div class="col" id="setting_text">
                                 <input type="color" class="form-control" id="text_color" name="text_color">
                             </div>
                         </div>
@@ -96,7 +96,7 @@
                             <div class="col">
                                 <p class="appear">{{ __('website.text_highlight') }}</p>
                             </div>
-                            <div class="col">
+                            <div class="col" id="setting_hc">
                                 <input type="color" class="form-control" id="text_highlight_color"
                                     name="text_highlight_color">
                             </div>
@@ -113,7 +113,7 @@
 </div>
 
 <div class="modal fade deep" id="save_setting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header" style="border-bottom: none !important;">
                 <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->

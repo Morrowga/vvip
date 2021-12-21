@@ -14,6 +14,7 @@ $.ajax({
     type: 'POST',
     success: function(response){
         if(response.request == "contacts"){
+                $('#image_hide').hide();
                 $('#contact_display').show();
                 var image_display = response.data['image'].replace('https://vvip9.co/','../');
                 $('.data_view').append(`<div class="d-flex justify-content-center row">

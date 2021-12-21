@@ -251,8 +251,8 @@
     </div>
 
 
-    <div class="modal fade" id="confirm_modal" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal fade bd-example-modal-lg" id="confirm_modal" role="dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content" id="modal_pdf">
                 <div class="modal-header" style="border: none !important;">
                     <!-- <h4 class="text">Please Confirm</h4> -->

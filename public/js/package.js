@@ -302,12 +302,20 @@ $('#front_move_left').on('click', function(){
 $('#front_move_center').on('click', function(){
     $('.card_description').attr('style', 'text-align:center !important; color:' + $('#text_color').val() + '!important;');
     $('.front_card_name').attr('style', 'text-align:center !important; color:' + $('#text_color').val() + '!important;');
-    $('#logo_view').attr('style', 'left: 42% !important');
+    $('#logo_view').attr('style', 'left: 42% !important;');
     $('#catch_click').text('center');
     if (window.matchMedia('(max-width: 375px)').matches) {
-        $('#logo_view').attr('style', 'left: 38% !important');
+        $('#logo_view').attr('style', 'left: 39%;');
     } else if(window.matchMedia('(max-width: 411px)').matches) {
-        $('#logo_view').attr('style', 'left: 40% !important');
+        $('#logo_view').attr('style', 'left: 40%;');
+    } else if(window.matchMedia('(max-width: 320px)').matches){
+        alert('s');
+        // $('#frontcard').find('[id*="logo_view"]').first().attr('style', 'left: 36%;');
+        $('#logo_view').attr('style', 'left: 36%;');
+    } else if(window.matchMedia('(max-width: 414px)').matches){
+        $('#logo_view').attr('style', 'left: 40%;');
+    } else if(window.matchMedia('(max-width: 768px)').matches){
+        $('#logo_view').attr('style', 'left: 45%;');
     } 
     console.log($('#catch_click').text());
 });
@@ -474,7 +482,7 @@ function packageClick(e){
         $.each(data, function(i, value) {
                 //loop_card_designs
                 $('#column-image').append(`<div class="col-md-4">
-                <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="310" height="200">
+                <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="270" height="200">
                 <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
                     <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
                     <button type="button" class="btn btn-success select-card" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>

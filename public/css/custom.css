@@ -101,7 +101,7 @@ body {
     background-size: 80%;
     animation: shine 3s linear infinite;
     position: absolute;
-    top: 70% !important;
+    top: 70%;
     left: 50% !important;
     transform: translate(-50%, -50%);
   }
@@ -472,6 +472,7 @@ span {
     transform: rotateX(-25deg) rotateY(15deg);
     box-shadow: rgb(217,181,81,0.5) 0px 60px 40px -7px;
     background-color: #fff !important;
+    padding: 5px;
 }
 
 .modal-content,.modal-body{
@@ -529,7 +530,7 @@ span {
     /* align-items: center !important;
     display: flex !important;
     justify-content: center !important; */
-    margin-left: 160px !important;
+    margin-left: 169px;
     overflow: hidden;
     background-color: rgb(0,0,0) !important;
     box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
@@ -561,7 +562,7 @@ span {
     /* align-items: center !important;
     display: flex !important;
     justify-content: center !important; */
-    margin-left: 160px !important;
+    margin-left: 160px;
     overflow: hidden;
     background-color: rgb(0,0,0) !important;
     box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
@@ -713,14 +714,20 @@ height: 250px;
 }
 
 #card_blank_front > #logo_view{
+    position: absolute;
+    top: 27%;
+    left: 42%;
     border-radius: 50% !important;
 }
 
-#card_blank_front > #logo_view{
+#frontcard > #logo_view{
     position: absolute;
-    top: 27% !important;
-    left: 42% !important;
+    top: 27%;
+    left: 42%;
+    border-radius: 50% !important;
 }
+
+
 
 
 .edit_name{
@@ -855,9 +862,9 @@ left: 23%;
 }
 
 .c_s{
-    font-size: 13.8px !important;
+    font-size: 13.8px;
     letter-spacing: 0 !important;
-    height: 29px !important;
+    /* height: 29px !important; */
 }
 
 .menu{
@@ -1390,7 +1397,7 @@ label.label_file {
     /* align-items: center !important;
     display: flex !important;
     justify-content: center !important; */
-    margin-left: 160px !important;
+    margin-left: 169px;
     overflow: hidden;
     background-color: rgb(0,0,0) !important;
     box-shadow: 2px 2px 10px rgb(255,255,255,0.7);
@@ -1797,227 +1804,6 @@ button.spin:focus{
     color: rgb(217,181,81);
     opacity: 0.9;
 }
-/* 
-@-webkit-keyframes animateBubble {
-    0% {
-        margin-top: 1000px;
-    }
-    100% {
-        margin-top: -100%;
-    }
-}
-
-@-moz-keyframes animateBubble {
-    0% {
-        margin-top: 1000px;
-    }
-    100% {
-        margin-top: -100%;
-    }
-}
-
-@keyframes animateBubble {
-    0% {
-        margin-top: 1000px;
-    }
-    100% {
-        margin-top: -100%;
-    }
-}
-
-@-webkit-keyframes sideWays { 
-    0% { 
-        margin-left:0px;
-    }
-    100% { 
-        margin-left:50px;
-    }
-}
-
-@-moz-keyframes sideWays { 
-    0% { 
-        margin-left:0px;
-    }
-    100% { 
-        margin-left:50px;
-    }
-}
-
-@keyframes sideWays { 
-    0% { 
-        margin-left:0px;
-    }
-    100% { 
-        margin-left:50px;
-    }
-}
-
-/* ANIMATIONS */
-
-/* 
-.x1 {
-    -webkit-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	
-	left: -5%;
-	top: 5%;
-	
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	transform: scale(0.6);
-}
-
-.x2 {
-    -webkit-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	
-	left: 5%;
-	top: 80%;
-	
-	-webkit-transform: scale(0.4);
-	-moz-transform: scale(0.4);
-	transform: scale(0.4);
-}
-
-.x3 {
-    -webkit-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	
-	left: 10%;
-	top: 40%;
-	
-	-webkit-transform: scale(0.7);
-	-moz-transform: scale(0.7);
-	transform: scale(0.7);
-}
-
-.x4 {
-    -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	
-	left: 20%;
-	top: 0;
-	
-	-webkit-transform: scale(0.3);
-	-moz-transform: scale(0.3);
-	transform: scale(0.3);
-}
-
-.x5 {
-    -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	
-	left: 30%;
-	top: 50%;
-	
-	-webkit-transform: scale(0.5);
-	-moz-transform: scale(0.5);
-	transform: scale(0.5);
-}
-
-.x6 {
-    -webkit-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	
-	left: 50%;
-	top: 0;
-	
-	-webkit-transform: scale(0.8);
-	-moz-transform: scale(0.8);
-	transform: scale(0.8);
-}
-
-.x7 {
-    -webkit-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	
-	left: 65%;
-	top: 70%;
-	
-	-webkit-transform: scale(0.4);
-	-moz-transform: scale(0.4);
-	transform: scale(0.4);
-}
-
-.x8 {
-    -webkit-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
-	
-	left: 80%;
-	top: 10%;
-	
-	-webkit-transform: scale(0.3);
-	-moz-transform: scale(0.3);
-	transform: scale(0.3);
-}
-
-.x9 {
-    -webkit-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
-	
-	left: 90%;
-	top: 50%;
-	
-	-webkit-transform: scale(0.6);
-	-moz-transform: scale(0.6);
-	transform: scale(0.6);
-}
-
-.x10 {
-    -webkit-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	-moz-animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
-	
-	left: 80%;
-	top: 80%;
-	
-	-webkit-transform: scale(0.3);
-	-moz-transform: scale(0.3);
-	transform: scale(0.3);
-}
-
-.bubble {
-    -webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-    opacity: 0.7;	
-    height: 200px;
-	position: absolute;
-	width: 200px;
-}
-
-.bubble:after {
-    background: -moz-radial-gradient(center, ellipse cover,  rgba(217,181,81) 0%, rgba(217,181,81) 70%); /* FF3.6+ */
-    /* background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(217,181,81,0.5)), color-stop(70%,rgba(217,181,81))); 
-    background: -webkit-radial-gradient(center, ellipse cover,  rgba(217,181,81) 0%,rgba(217,181,81) 70%); 
-    background: -o-radial-gradient(center, ellipse cover,  rgba(217,181,81) 0%,rgba(217,181,81) 70%);
-    background: -ms-radial-gradient(center, ellipse cover,  rgba(217,181,81) 0%,rgba(217,181,81) 70%);
-    background: radial-gradient(ellipse at center,  rgba(217,181,81) 0%,rgba(217,181,81) 70%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9b551', endColorstr='#00ffffff',GradientType=1 );
-
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-	
-    -webkit-box-shadow: inset 0 20px 30px rgba(0,0,0.3);
-	-moz-box-shadow: inset 0 20px 30px rgba(0,0,0,0.3);
-	box-shadow: inset 0 20px 30px rgba(0,0,0,0.3);
-	
-	content: "";
-    height: 180px;
-	left: 10px;
-	position: absolute;
-	width: 180px;
-}   */
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -2305,33 +2091,147 @@ to { transform:  rotateY(360deg); }
 
 }
 
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+#about-section{
+    margin-top: 15%;
+}
 
-    #register_main_page{
-        font-size: 9px !important;
-        left: 50% !important;
-        top: 45% !important;
+#every {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+
+#homecard > .card-body{
+    background: url('https://i.pinimg.com/564x/66/3f/a0/663fa0aa147e4993ab942bc497ecdfa0.jpg');
+    background-position: center;
+    background-size: contain;
+    border-top-right-radius: 20% !important;
+}
+
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+    #text_color{
+        margin-left: 100px;
     }
 
-    .smart{
-        top: 75% !important;
+    #background_color{
+        margin-left: 100px;
     }
 }
 
-@media only screen and (max-width: 900px), 
-(height: 1024px) and (width: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: landscape), 
-(width: 1024px) and (height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) and (orientation: portrait)  {
+@media (max-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    #text_color{
+        margin-left: 110px;
+    }
 
-     /* // insert mobile and iPad Pro 12.9" CSS here     */
-     #register_main_page{
-        font-size: 5px !important;
+    #background_color{
+        margin-left: 110px;
+    }
+
+    .smart {
+        top: 80%;
+    }
+
+      .color_black{
+        font-size: 15px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 50px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 118px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 70px;
     }
 }
 
-@media(max-width: 320px){ 
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3){
+    #text_color{
+        margin-left: 105px;
+    }
+
+    #background_color{
+        margin-left: 105px;
+    }
+
+    .color_black{
+        font-size: 11px;
+    }
+
+
+    #setting_bg > #background_color{
+        margin-left: 50px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 70px !important;
+    }
+    
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-height: 823px){
+    .color_black{
+        font-size: 13px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 40px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+}
+
+@media only screen and (min-device-width: 414px) and (max-device-height: 736px){
+    #setting_hc > #text_highlight_color {
+        margin-left: 40px !important;
+    }
+}
+
+@media only screen and (min-device-width: 411px) and (max-device-height: 731px){
+    #text_color{
+        margin-left: 122px;
+    }
+
+    #background_color{
+        margin-left: 122px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 40px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 40px !important;
+    }
+
+}
+
+
+@media (max-width: 320px) and (max-device-height: 568px){ 
+    #text_color {
+        margin-left: 80px;
+    }
+
+    #background_color {
+        margin-left: 80px;
+    }
+
     #register_main_page{
         font-size: 5px !important;
         left: 50% !important;
@@ -2339,17 +2239,92 @@ to { transform:  rotateY(360deg); }
     }
 
     .smart{
-        top: 71% !important;
+        top: 80%;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 20px !important;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 80px !important;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 40px !important;
+    }
+
+}
+
+@media  only screen and (max-width: 360px) and (max-device-height: 640px) {
+    #text_color {
+        margin-left: 50px;
+    }
+
+    #background_color {
+        margin-left: 100px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 40px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 65px;
+    }
+
+    .color_black{
+        font-size: 10px;
+    }
+
+    .c_s{
+        font-size: 10px;
+        height: 20px;
     }
 }
 
-@media (max-width: 361px) {
+@media  only screen and (max-width: 361px) {
     .smart{
-        margin-top: 20% !important;
+        margin-top: 20%;
+    }
+}
+
+@media  only screen and (max-width: 280px) and (max-device-height: 653px){
+    .color_black{
+        font-size: 5px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: -20px !important;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 40px !important;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: -5px !important;
     }
 }
 
 
+/* @media  only screen and (max-width: 540px) and (max-device-height: 720px) {
+    #setting_bg > #background_color{
+        margin-left: 105px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 105px;
+    }
+} */
 
 @media all and (device-width: 768px) {
   /* i pad only */
@@ -2362,21 +2337,44 @@ to { transform:  rotateY(360deg); }
     font-size: 9px !important;
     left: 70% !important;
     top: 65% !important;
-}
+    }
+
+    #text_color {
+        margin-left: 295px;
+    }
+
+    .navli{
+        font-size: 7px !important;
+    }
+
+    #background_color {
+        margin-left: 295px;
+    }
+
+    .color_black{
+        font-size: 11px;
+    }
+
+    #setting_bg > #background_color{
+        margin-left: 40px;
+    }
+
+    #setting_text > #text_color{
+        margin-left: 110px;
+    }
+
+    #setting_hc > #text_highlight_color {
+        margin-left: 70px !important;
+    }
 }
 
 @media only screen and (max-width: 425px) {
-
     /* pixel/iphone7/8/9/plus */
     #register_main_page{
         font-size: 10px !important;
         left: 65% !important;
     }
-
-    .smart{
-        margin-top: 5% !important;
-    }
-
+    
     #about-section{
         margin-top: 0 !important;
     }
@@ -2458,18 +2456,6 @@ to { transform:  rotateY(360deg); }
         transform: rotateX(-35deg) rotateY(20deg);
     }
 
-    #background_color{
-        margin-left: 60px !important;
-    }
-
-    #text_highlight_color{
-        margin-left: 60px !important;
-    }
-
-    #text_color{
-        margin-left: 125px !important;
-    }
-
 
     .text-margin{
         margin-top: 20px;
@@ -2499,9 +2485,9 @@ to { transform:  rotateY(360deg); }
 
 
   @supports (-webkit-touch-callout: none) {
-    .about_ios{
+    /* .about_ios{
         margin-top: 20% !important;
-    }
+    } */
 
     .navli {
         letter-spacing: none !important;

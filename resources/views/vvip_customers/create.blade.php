@@ -45,7 +45,7 @@
             <div class="col">
                 <button type="button" id="link_tree" class="btn btn-dark btn-block create_content">
                     <img src="https://i.ibb.co/4JrcrZ9/link-tree.png" class="mt-3" alt="" width="50" height="50">
-                    <p class="color_black">Links Tree</p>
+                    <p class="color_black link_t">Links Tree</p>
                 </button>
             </div>
         </div>
@@ -461,31 +461,12 @@
         </form>
     </div>
 </div>
-<!-- <div class="modal fade" id="deep_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body" id="modal_url_input">
-            <h3 class="text" id="url_text"></h3>
-            <input type="text" name="deep_url" class="form-control" id="url_input" > 
-            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
-      </div>
-      <div class="modal-footer">
-        <button class="btn btn-dark mt-2 btn-block justsave" id="just_save">Active</button>
-        <button class="btn btn-dark mt-2 btn-block urlform" id="url_form">Save</button>     
-        <button type="button" class="btn btn-secondary btn-block" data-bs-dismiss="modal">Close</button> 
-    </div>
-    </div>
-  </div>
-</div> -->
 
 <div id="modal_section">
 </div>
 
 <div class="modal fade deep" id="save_modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" style="border-bottom: none !important;">
         <!-- <h5 class="modal-title" id="exampleModalLabel">Modal title</h5> -->
@@ -503,6 +484,7 @@
     </div>
   </div>
 </div>
+
 @section('script')
 <script src="../js/create_action.js"></script>
 <script>

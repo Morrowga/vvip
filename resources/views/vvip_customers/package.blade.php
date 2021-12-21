@@ -30,7 +30,7 @@
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $normal->package_name }}</h3>
-                                    <img src="../images/Normal_001.png" id="normal_img" alt="" width="340" height="250">
+                                    <img src="../images/Normal_001.png" id="normal_img" alt="" width="270" height="250">
                                     <h4 class="package">GOLD</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
@@ -58,7 +58,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $standard->package_name }}</h3>
-                                    <img src="../images/Standard_001.png" id="standard_img" alt="" width="300" height="250">
+                                    <img src="../images/Standard_001.png" id="standard_img" alt="" width="270" height="250">
                                     <h4 class="package">DIAMOND</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
@@ -88,7 +88,7 @@
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h3 class="package">{{ $luxury->package_name }}</h3>
-                                    <img src="../images/Luxury_001.png" alt="" id="luxury_img" width="300" height="250">
+                                    <img src="../images/Luxury_001.png" alt="" id="luxury_img" width="270" height="250">
                                     <h3 class="package">RUBY</h3>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         

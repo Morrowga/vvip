@@ -26,17 +26,17 @@ $(function() {
 
     let bg_colorInput = document.getElementById('background_color');
     bg_colorInput.addEventListener('input', () => {
-        $('#card_appear').attr('style', 'background-color:' + bg_colorInput.value + '!important;');
+        $('#card_appear').attr('style', 'background-color: ' + bg_colorInput.value + '!important;');
     });
 
     let text_colorInput = document.getElementById('text_color');
     text_colorInput.addEventListener('input', () => {
-        $('.appear').attr('style', 'color:' + text_colorInput.value + '!important');
+        $('.appear').attr('style', 'color: ' + text_colorInput.value + '!important');
     });
 
     let text_hl_colorInput = document.getElementById('text_highlight_color');
     text_hl_colorInput.addEventListener('input', () => {
-        $('.appear').attr('style', 'text-shadow: 0px 3px 10px' +
+        $('.appear').attr('style', 'text-shadow: 0px 3px 10px ' +
             text_hl_colorInput.value + '!important;');
     });
 
@@ -51,10 +51,10 @@ $(function() {
             $('#background_color').val(response.data['background_color']);
             $('#text_color').val(response.data['text_color']);
             $('#text_highlight_color').val(response.data['text_highlight_color']);
-            $('#card_appear').attr('style', 'background-color:' + response.data[
+            $('#card_appear').attr('style', 'background-color: ' + response.data[
                 'background_color'] + '!important;');
             $('.appear').attr('style', 'color:' + response.data['text_color'] +
-                '!important; text-shadow: 0px 3px 10px' + response.data[
+                '!important; text-shadow: 0px 3px 10px ' + response.data[
                 'text_highlight_color'] + '!important;');
         }
     });

@@ -8,21 +8,21 @@
                     <div class="item">
                     <!-- <h1 class="logo-text">VVIP NINE</h1> -->
                         <video loop autoplay muted height="250" class="text-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4" playsinline></video>
-                        <p class="main_text" id="bgblack">{{__('website.Everything')}}</p>
-                        <div class="extra-space-l" id="bgblack"></div>
+                        <!-- <p class="main_text" id="every">{{__('website.Everything')}}</p> -->
+                        <!-- <div class="extra-space-l" id="bgblack"></div> -->
                         <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button"><i class="fas fa-shopping-cart" style="padding-right: 4px;"></i>{{__('website.Register')}}</a>
                     </div>
                     <div class="item">
                         <video loop autoplay muted height="250" class="text-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4" playsinline></video>
-                        <p id="bgblack">{{__('website.Everything')}}</p>
-                        <div class="extra-space-l" id="bgblack"></div>
-                        <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button">{{__('website.Register')}}</a>
+                        <!-- <p id="bgblack">{{__('website.Everything')}}</p> -->
+                        <!-- <div class="extra-space-l" id="bgblack"></div> -->
+                        <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button"><i class="fas fa-shopping-cart" style="padding-right: 4px;"></i>{{__('website.Register')}}</a>
                     </div>
                     <div class="item">
                         <video loop autoplay muted height="250" class="text-center" id="video_one"  src="../images/VVIP 9 Still 4 sec.mp4"  type="video/mp4" playsinline></video>
-                        <p id="bgblack">{{__('website.Everything')}}</p>
+                        <!-- <p id="bgblack">{{__('website.Everything')}}</p> -->
                         <div class="extra-space-l" id="bgblack"></div>
-                        <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button">{{__('website.Register')}}</a>
+                        <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button"><i class="fas fa-shopping-cart" style="padding-right: 4px;"></i>{{__('website.Register')}}</a>
                     </div>
                 </div>
             </div> 
