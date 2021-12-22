@@ -296,6 +296,21 @@ $('#front_move_left').on('click', function(){
     $('.front_card_name').attr('style', 'right: 30% !important; color:' + $('#text_color').val() + '!important;');
     $('#logo_view').attr('style', 'left: 13% !important');
     $('#catch_click').text('left');
+    if (window.matchMedia('(max-width: 360px)').matches) {
+        $('#logo_view').attr('style', 'left: 8%;');
+    } else if(window.matchMedia('(max-width: 411px)').matches){
+        $('#logo_view').attr('style', 'left: 10%;');
+    } else if(window.matchMedia('(max-width: 320px)').matches){
+        $('#logo_view').attr('style', 'left: 7%;');
+    } else if(window.matchMedia('(max-width: 375px)').matches){
+        $('#logo_view').attr('style', 'left: 9%;');
+    } else if(window.matchMedia('(max-width: 414px)').matches){
+        $('#logo_view').attr('style', 'left: 10%;');
+    } else if(window.matchMedia('(max-width: 768px)').matches){
+        $('#logo_view').attr('style', 'left: 15%;');
+    } else if(window.matchMedia('(max-width: 540px)').matches){
+        $('#logo_view').attr('style', 'left: 13%;');
+    }
     console.log($('#catch_click').text());
 });
 
@@ -309,8 +324,6 @@ $('#front_move_center').on('click', function(){
     } else if(window.matchMedia('(max-width: 411px)').matches) {
         $('#logo_view').attr('style', 'left: 40%;');
     } else if(window.matchMedia('(max-width: 320px)').matches){
-        alert('s');
-        // $('#frontcard').find('[id*="logo_view"]').first().attr('style', 'left: 36%;');
         $('#logo_view').attr('style', 'left: 36%;');
     } else if(window.matchMedia('(max-width: 414px)').matches){
         $('#logo_view').attr('style', 'left: 40%;');
@@ -325,6 +338,17 @@ $('#front_move_right').on('click', function(){
     $('.front_card_name').attr('style', 'left: 25% !important;color:' + $('#text_color').val() + '!important;');
     $('#logo_view').attr('style', 'left: 67% !important;');
     $('#catch_click').text('right');
+    if (window.matchMedia('(max-width: 375px)').matches) {
+        $('#logo_view').attr('style', 'left: 65%;');
+    } else if(window.matchMedia('(max-width: 411px)').matches) {
+        $('#logo_view').attr('style', 'left: 65%;');
+    } else if(window.matchMedia('(max-width: 320px)').matches){
+        $('#logo_view').attr('style', 'left: 62%;');
+    } else if(window.matchMedia('(max-width: 414px)').matches){
+        $('#logo_view').attr('style', 'left: 65%%;');
+    } else if(window.matchMedia('(max-width: 768px)').matches){
+        $('#logo_view').attr('style', 'left: 70%;');
+    } 
     console.log($('#catch_click').text());
 });
 
@@ -454,6 +478,7 @@ $('#url').on("keyup",function(){
         });    
     } 
 });
+
 
 //submit_disabled
 $('#password').on('keyup', function(){
@@ -624,8 +649,11 @@ function packageClick(e){
 }  
 
 
+
+
 //add_upload_logo_on_card
 $('.uploadLogo').on('change', function(){
+    console.log('s');
     var logo = window.URL.createObjectURL(this.files[0]);
     $('#logo_view').attr('src',logo);
     $('#logoModal').modal('hide');

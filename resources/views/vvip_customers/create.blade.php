@@ -282,7 +282,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mt-3" id="cns_main_card">
+                    <div class="card mt-3 homeadd" id="cns_main_card">
                         <div class="card-header text-center">
                             Home Address
                         </div>  

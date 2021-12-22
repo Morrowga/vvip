@@ -2118,6 +2118,19 @@ to { transform:  rotateY(360deg); }
     border: 2px solid #000 !important;
 } */
 
+#cns_treecardbg{
+    border: none !important;
+}
+
+
+#cns_cardbg{
+    border: none !important;
+}
+
+
+.labelcns{
+    color: rgb(217,181,81) !important;
+}
 
 #homecard > .card-body{
     background: url('https://i.pinimg.com/564x/66/3f/a0/663fa0aa147e4993ab942bc497ecdfa0.jpg');
@@ -2197,6 +2210,14 @@ to { transform:  rotateY(360deg); }
 }
 
 @media only screen and (min-device-width: 411px) and (max-device-height: 823px){
+    #text_color {
+        margin-left: 130px;
+    }
+
+    #background_color {
+        margin-left: 130px;
+    }
+
     .color_black{
         font-size: 13px;
     }
@@ -2276,7 +2297,7 @@ to { transform:  rotateY(360deg); }
 
 @media  only screen and (max-width: 360px) and (max-device-height: 640px) {
     #text_color {
-        margin-left: 50px;
+        margin-left: 100px;
     }
 
     #background_color {
@@ -2331,17 +2352,14 @@ to { transform:  rotateY(360deg); }
 
 
 /* @media  only screen and (max-width: 540px) and (max-device-height: 720px) {
-    #setting_bg > #background_color{
-        margin-left: 105px;
+    .about_margin{
+        margin-top: 100px;
     }
 
-    #setting_text > #text_color{
-        margin-left: 110px;
+    #text_color {
+        margin-left: 190px;
     }
-
-    #setting_hc > #text_highlight_color {
-        margin-left: 105px;
-    }
+    
 } */
 
 @media all and (device-width: 768px) {
@@ -2405,7 +2423,7 @@ to { transform:  rotateY(360deg); }
     }
 
     .about_margin{
-        margin-top: 60px !important;
+        margin-top: 110px !important;
     }
     
     .product_margin{

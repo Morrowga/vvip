@@ -172,6 +172,7 @@ $.ajax({
                 $('#web_three').hide();
             }
         } else if(response.request == "deep_link"){
+            $('#dpluse').attr('style', 'margin-top: 200px;');
             data_view = response.deep_link;
             $.each(data_view, function(i,value){ 
                 if(value['active'] == 1){
@@ -410,6 +411,7 @@ $.ajax({
                 if($('#self_request').val() == "url_active"){
                    window.location = "https://" + response.data['url'];
                 } else if($('#self_request').val() == "email_active"){
+                    $('#dpluse').attr('style', 'margin-top: 200px;');
                     var email_address = response.data['email_address'];
                     var email_subject = response.data['email_subject'];
                     var email_body = response.data['email_body'];
@@ -479,48 +481,51 @@ $.ajax({
                 $('#image_hide').hide();
                 var image_display = response.contact['image'].replace('https://vvip9.co/','../');
                 $('.cns_contact').append(`<div class="d-flex justify-content-center row">
-                <div class="col-md-6" style="text-align:center;">
+                <div class="col-md-12" style="text-align:center;">
                     <img src="`+ image_display +`" alt="" width="200"  height="200" style="border-radius: 50%">
                 </div>
+            </div>
+            <div class="d-flex justify-content-center row">
                 <div class="col-md-6 text-center mt-2">
-                    <p class="text_color" id="cns_fn">First Name :`+ response.contact['personal']['first_name'] +` </p>
-                    <p class="text_color" id="cns_ln">Last Name : `+ response.contact['personal']['last_name'] +`</p>
-                    <p class="text_color" id="cns_company">Company : `+ response.contact['personal']['company'] +`</p>
-                    <p class="text_color" id="cns_position">Position : `+ response.contact['personal']['position'] +`</p>
-                    <p class="text_color" id="cns_birthday">Birthday : `+ response.contact['personal']['birthday'] +`</p>
+                    <p class="text_color" id="cns_fn"><strong class="labelcns">First Name</strong>`+ `<br>` + response.contact['personal']['first_name'] +` </p>
+                    <p class="text_color" id="cns_ln"><strong class="labelcns">Last Name</strong>`+ `<br>` + response.contact['personal']['last_name'] +`</p>
                 </div>
-                <hr>
-            </div>
-            <div class="d-flex justify-content-center row">
-                <div class="col-md-6 text-center">
-                    <p class="text_color" id="cns_str_one">Home Street One`+ `<br>` + response.contact['home_address']['street_one'] +`</p>
-                    <p class="text_color" id="cns_str_two">Home Street Two`+ `<br>` + response.contact['home_address']['street_two'] +`</p>
-                    <p class="text_color" id="cns_postal_code">Home Postal Code`+ `<br>` + response.contact['home_address']['postal_code'] +`</p>
-                    <p class="text_color" id="cns_city">Home City`+ `<br>` + response.contact['home_address']['city'] +`</p>
-                    <p class="text_color" id="cns_state">Home State`+ `<br>` + response.contact['home_address']['state'] +`</p>
-                    <p class="text_color" id="cns_country">Home Country`+ `<br>` + response.contact['home_address']['country'] +`</p>
-                </div>
-                <div class="col-md-6 text-center">
-                    <p class="text_color" id="cns_work_str_one">Work Street One`+ `<br>` + response.contact['work_address']['street_one'] +`</p>
-                    <p class="text_color" id="cns_work_str_two">Work Street Two`+ `<br>` + response.contact['work_address']['street_two'] +`</p>
-                    <p class="text_color" id="cns_work_postal_code">Work Postal Code`+ `<br>` + response.contact['work_address']['postal_code'] +`</p>
-                    <p class="text_color" id="cns_work_city">Work City`+ `<br>` + response.contact['work_address']['city'] +`</p>
-                    <p class="text_color" id="cns_work_state">Work State`+ `<br>` + response.contact['work_address']['state'] +`</p>
-                    <p class="text_color" id="cns_work_country">Work Country`+ `<br>` + response.contact['work_address']['country'] +`</p>
+                <div class="col-md-6 text-center mt-2">
+                    <p class="text_color" id="cns_company"><strong class="labelcns">Company</strong>`+ `<br>` + response.contact['personal']['company'] +`</p>
+                    <p class="text_color" id="cns_position"><strong class="labelcns">Position</strong>`+ `<br>` + response.contact['personal']['position'] +`</p>
+                    <p class="text_color" id="cns_birthday"><strong class="labelcns">Birthday</strong>`+ `<br>` + response.contact['personal']['birthday'] +`</p>
                 </div>
             </div>
             <div class="d-flex justify-content-center row">
-                <div class="col-md-12 text-center">
-                    <p class="text_color" id="cns_mobile">Mobile : `+ response.contact['mobile']['mobile'] +`</p>
-                    <p class="text_color" id="cns_phone_no">Phone : `+ response.contact['mobile']['phone'] +`</p>
-                    <p class="text_color" id="cns_office">Office : `+ response.contact['mobile']['office'] +`</p>
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_str_one"> <strong class="labelcns"> Home Street One </strong>`+ `<br>` + response.contact['home_address']['street_one'] +`</p>
+                    <p class="text_color" id="cns_str_two"><strong class="labelcns"> Home Street Two </strong>`+ `<br>` + response.contact['home_address']['street_two'] +`</p>
+                    <p class="text_color" id="cns_postal_code"><strong class="labelcns"> Home Postal Code </strong>`+ `<br>` + response.contact['home_address']['postal_code'] +`</p>
+                    <p class="text_color" id="cns_city"><strong class="labelcns"> Home City </strong>`+ `<br>` + response.contact['home_address']['city'] +`</p>
+                    <p class="text_color" id="cns_state"><strong class="labelcns"> Home State </strong>`+ `<br>` + response.contact['home_address']['state'] +`</p>
+                    <p class="text_color" id="cns_country"><strong class="labelcns"> Home Country </strong>`+ `<br>` + response.contact['home_address']['country'] +`</p>
                 </div>
-                <div class="col-md-12 text-center">
-                    <p class="text_color" id="cns_email">Personal Email`+ `<br>` +response.contact['email_and_internet']['personalemail'] +`</p>
-                    <p class="text_color" id="cns_office_email">Office Email` + `<br>` + response.contact['email_and_internet']['office_email'] +`</p>
-                    <p class="text_color" id="cns_web_one">Website One`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_one'] +`" target="_blank">`+ response.contact['email_and_internet']['website_one'] +`</a></p>
-                    <p class="text_color" id="cns_web_two">Website Two`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_two'] +`" target="_blank">`+ response.contact['email_and_internet']['website_two'] +`</a></p>
-                    <p class="text_color" id="cns_web_three">Website Three`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_three'] +`" target="_blank">`+ response.contact['email_and_internet']['website_three'] +`</a></p>
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_work_str_one"><strong class="labelcns"> Work Street One </strong>`+ `<br>` + response.contact['work_address']['street_one'] +`</p>
+                    <p class="text_color" id="cns_work_str_two"><strong class="labelcns"> Work Street Two </strong>`+ `<br>` + response.contact['work_address']['street_two'] +`</p>
+                    <p class="text_color" id="cns_work_postal_code"><strong class="labelcns"> Work Postal Code </strong>`+ `<br>` + response.contact['work_address']['postal_code'] +`</p>
+                    <p class="text_color" id="cns_work_city"><strong class="labelcns"> Work City </strong>`+ `<br>` + response.contact['work_address']['city'] +`</p>
+                    <p class="text_color" id="cns_work_state"><strong class="labelcns"> Work State </strong>`+ `<br>` + response.contact['work_address']['state'] +`</p>
+                    <p class="text_color" id="cns_work_country"><strong class="labelcns"> Work Country </strong>`+ `<br>` + response.contact['work_address']['country'] +`</p>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_mobile"><strong class="labelcns">  Mobile </strong>`+ `<br>` + response.contact['mobile']['mobile'] +`</p>
+                    <p class="text_color" id="cns_phone_no"><strong class="labelcns"> Phone </strong>`+ `<br>` + response.contact['mobile']['phone'] +`</p>
+                    <p class="text_color" id="cns_office"><strong class="labelcns"> Office </strong>`+ `<br>` +response.contact['mobile']['office'] +`</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <p class="text_color" id="cns_email"><strong class="labelcns"> Personal Email </strong>`+ `<br>` +response.contact['email_and_internet']['personalemail'] +`</p>
+                    <p class="text_color" id="cns_office_email"><strong class="labelcns"> Office Email </strong>` + `<br>` + response.contact['email_and_internet']['office_email'] +`</p>
+                    <p class="text_color" id="cns_web_one"><strong class="labelcns">Website One </strong>`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_one'] +`" target="_blank">`+ response.contact['email_and_internet']['website_one'] +`</a></p>
+                    <p class="text_color" id="cns_web_two"><strong class="labelcns">Website Two </strong>`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_two'] +`" target="_blank">`+ response.contact['email_and_internet']['website_two'] +`</a></p>
+                    <p class="text_color" id="cns_web_three"><strong class="labelcns">Website Three </strong>`+ `<br>` +`<a href="https://`+ response.contact['email_and_internet']['website_three'] +`" target="_blank">`+ response.contact['email_and_internet']['website_three'] +`</a></p>
                 </div>
             </div>`);
 

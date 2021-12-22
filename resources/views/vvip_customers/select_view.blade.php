@@ -15,7 +15,7 @@
 <a href="" id="phone_call" hidden></a>
 <a href="" id="send_sms" hidden></a>
 <a href="" id="send_email" hidden></a>
-<div class="col-md-12 text-center" style="margin-top: 200px;">
+<div class="col-md-12 text-center" id="dpluse">
     <a href="" id="deeplink" class="text btn btn-dark">Click the Link</a>
     <a href="" id="email_click" class="text btn btn-dark">Click the Link</a>
 </div>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="container" id="cns_backbg">
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center row">
         <div class="col-md-6">
             <div class="card" id="cns_cardbg">
                 <div class="card-body">
