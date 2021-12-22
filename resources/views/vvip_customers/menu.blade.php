@@ -47,7 +47,7 @@
                         <a href="/create_data" class="btn btn-light btn-block menu_button"><i class="far fa-plus-square mr-2 menu-icon"></i>{{ __('website.create_content') }}<i class="fas fa-caret-right menu_arrow"></i></a>
                         <a href="/action" class="btn btn-light btn-block menu_button"><i class="fas fa-exchange-alt mr-2 menu-icon"></i>{{ __('website.change_action') }}<i class="fas fa-caret-right menu_arrow"></i></a>
                         <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-power-off mr-2 menu-icon"></i>{{ __('website.active_my_card') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>{{ __('website.lucky_draw') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>{{ __('website.lucky_draw') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
                         <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-chart-pie mr-2 menu-icon"></i>{{ __('website.statistic') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
                         <button class="btn btn-light btn-block menu_button"><i class="fas fa-share-alt-square mr-2 menu-icon"></i>{{ __('website.share') }}<i class="fas fa-caret-right menu_arrow"></i></button>
                         <a href="/setting" class="btn btn-light btn-block menu_button"><i class="fas fa-cog mr-2 menu-icon"></i>{{ __('website.setting') }}<i class="fas fa-caret-right menu_arrow"></i></a>

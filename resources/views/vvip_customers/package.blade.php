@@ -10,7 +10,7 @@
                     <div class="devider"></div>
                     @foreach(['danger', 'warning', 'success', 'info'] as $msg)
                         @if(Session::has('alert-' . $msg))
-                        <div class="col-md-12 text-center" style="background-color: #fff !important;">
+                        <div class="col-md-12 text-center">
                             <p class="alert alert-{{ $msg }}" id="alert_message" style="margin-top: 20px !important;">{{ Session::get('alert-' . $msg ) }} <a href="https://mail.google.com/">Mail</a> <a href="#" class="close" data-dismiss="alert" aria-label="close" >&times;</a></p>
                         </div>
                         @endif

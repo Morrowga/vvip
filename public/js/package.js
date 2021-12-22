@@ -653,7 +653,6 @@ function packageClick(e){
 
 //add_upload_logo_on_card
 $('.uploadLogo').on('change', function(){
-    console.log('s');
     var logo = window.URL.createObjectURL(this.files[0]);
     $('#logo_view').attr('src',logo);
     $('#logoModal').modal('hide');
