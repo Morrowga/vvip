@@ -1627,15 +1627,10 @@ transition-duration: 1s;
 
 #video_one{
 	width: 100% !important;
-	height: 400px;
+	height: auto;
 	border: none !important;
 	box-shadow: none !important;
 	outline: none !important;
-	/* background-color: transparent; */
-	/* object-fit: cover; */
-	/* border: 2px solid #d9b551 !important; */
-	/* border-bottom-left-radius: 05% !important; */
-	/* border-top-right-radius: 10% !important; */
 }
 
 #video_one:focus{
