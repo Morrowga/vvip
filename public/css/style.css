@@ -1628,15 +1628,12 @@ transition-duration: 1s;
 #video_one{
 	width: 100% !important;
 	height: auto;
-	border: none !important;
-	box-shadow: none !important;
-	outline: none !important;
 }
 
-#video_one:focus{
+/* #video_one:focus{
 	outline: none !important;
 	box-shadow: none !important;
-}
+} */
 
 
 #dia {
