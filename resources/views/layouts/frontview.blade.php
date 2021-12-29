@@ -104,10 +104,10 @@
             <!--===========================================script========================================================-->
             @yield('script')
             <script>
-                // let setT = setTimeout(function(){ 
-                //     document.getElementById("loading").style.display = "none";
-                //     document.getElementById("main-body").style.display = "block";
-                // }, 2500);
+                let setT = setTimeout(function(){ 
+                    document.getElementById("loading").style.display = "none";
+                    document.getElementById("main-body").style.display = "block";
+                }, 2500);
 
                 $(function(){
                 $(window).on('load', function(){
