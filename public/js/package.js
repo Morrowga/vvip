@@ -25,7 +25,7 @@ $(function(){
             navigateTo(curIndex()+1);
             
             if(curIndex() == 2){
-                $(this).attr('disabled', true);
+                // $(this).attr('disabled', true);
                 var url_value =  document.getElementById("url").value;
                 $.ajax({
                     url: 'api/qr_generate',
@@ -386,7 +386,6 @@ $("#name").on("keyup", function(event) {
 $("#phone").on('keyup', function(event) {
     if($(this).val().length == ""){
         $('#error_phone').show().text(enter_phone);
-        $('.next').attr('disabled', true);
     } else if($(this).val().length < 8){
         $('#error_phone').show().text(phone_no_need_digit);
         $('.next').attr('disabled', true);
