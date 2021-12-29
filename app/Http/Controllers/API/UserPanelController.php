@@ -669,7 +669,7 @@ class UserPanelController extends Controller
             $link_exist = LinkTree::where('user_id', $check_user->id)->first();
 
             if($link_exist !== null){
-                $link_exist->link_one = json_encode($result);
+                $link_exist->links = json_encode($result);
                 if($request->hasfile('link_image')){
                     $imageName = $image->getClientOriginalName();
                     $file_save = $image->storeAs('link_tree_images', $imageName, 'public');
@@ -682,7 +682,7 @@ class UserPanelController extends Controller
                 $final_data = [
                   "user_id"  => $link_exist->user_id,
                   "link_image" => $link_exist->link_image,
-                  "link_data" => json_decode($link_exist->link_one),
+                  "link_data" => json_decode($link_exist->links),
                 ];
 
                 $messages = [
@@ -694,7 +694,7 @@ class UserPanelController extends Controller
                  return $messages;
             } else {
                 $new_link = new LinkTree();
-                $new_link->link_one = json_encode($result);
+                $new_link->links = json_encode($result);
                 $new_link->user_id = $user_id;
                 if($request->hasfile('link_image')){
                     $imageName = $image->getClientOriginalName();
@@ -710,7 +710,7 @@ class UserPanelController extends Controller
                 $final_data = [
                     "user_id"  => $new_link->user_id,
                     "link_image" => $new_link->link_image,
-                    "link_data" => json_decode($new_link->link_one),
+                    "link_data" => json_decode($new_link->links),
                   ];
 
                 $messages = [

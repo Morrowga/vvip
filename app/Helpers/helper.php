@@ -255,7 +255,7 @@ class Helper{
                         $final_data = [
                           "user_id"  => $link_tree->user_id,
                           "link_image" => $link_img,
-                          "link_data" => json_decode($link_tree->link_one),
+                          "link_data" => json_decode($link_tree->links),
                           "background_color" => $link_tree->background_color,
                           "text_color" => $link_tree->text_color,
                           "text_highlight_color" => $link_tree->text_highlight_color
