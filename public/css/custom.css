@@ -2263,7 +2263,14 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
     }
+    
+    #loading{
+        margin-top: 50%;
+    }
 
+    .smart{
+        margin-top: 50%;
+    }
 }
 
 
