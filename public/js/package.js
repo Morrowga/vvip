@@ -556,7 +556,7 @@ function packageClick(e){
 
             //select_card
             $('.select-card').on('click', function(e) {
-                $('.next').attr('disabled', false);
+                // $('.next').attr('disabled', false);
                 var target = e.target.id;
                 console.log(target);
                 $('#card_design_id').val(target);
