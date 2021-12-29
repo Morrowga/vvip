@@ -27,8 +27,6 @@ class AddVerificationCodeToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('verification_code');
-            $table->dropColumn('is_verified');
         });
     }
 }
