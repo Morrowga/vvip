@@ -2462,7 +2462,7 @@ to { transform:  rotateY(360deg); }
     }
 }
 
-@media only screen and (max-width: 1024px) and (max-height: 1366px) {
+/* @media only screen and (max-width: 1024px) and (max-height: 1366px) {
     #loading{
         margin-top: 70%;
     }
@@ -2471,7 +2471,7 @@ to { transform:  rotateY(360deg); }
     .smart{
         margin-top: 15%;
     }
-}
+} */
 
 @media only screen and (max-width: 425px) {
     /* pixel/iphone7/8/9/plus */
