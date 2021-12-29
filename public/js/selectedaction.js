@@ -2,6 +2,7 @@ $('#deeplink').hide();
 $('#email_click').hide();
 $('#link_tree_display').hide();
 $('#contact_display').hide();
+$('#cns_backbg').hide();
 var request_url = 'api/get_datas';
 var userid = $('#user_id').val();
 var request_name = $('#request').val();
@@ -478,6 +479,7 @@ $.ajax({
 
                console.log(response.data);
             } else if(response.request == "get_cns"){
+                $('#cns_backbg').show();
                 $('#image_hide').hide();
                 var image_display = response.contact['image'].replace('https://vvip9.co/','../');
                 $('.cns_contact').append(`<div class="d-flex justify-content-center row">
