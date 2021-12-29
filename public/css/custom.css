@@ -2147,6 +2147,10 @@ to { transform:  rotateY(360deg); }
     border-top-right-radius: 20% !important;
 }
 
+.nor_stand{
+    margin-top: 275px;
+}
+
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     #text_color{

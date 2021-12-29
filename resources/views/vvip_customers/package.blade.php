@@ -47,7 +47,7 @@
                                 <!-- <div class="panel-body text-center">
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
                                 </div> -->
-                                <div class="panel-footer text-center">
+                                <div class="panel-footer text-center nor_stand">
                                     <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
                                     <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }}, {{ __('website.order_now') }}</button>
                                 </div>
@@ -77,7 +77,7 @@
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>30 Card Template</li>
                                     </ul>                                    
                                 </div>
-                                <div class="panel-footer text-center">
+                                <div class="panel-footer text-center nor_stand">
                                     <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
                                     <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }}, {{ __('website.order_now') }}</button>
                                 </div>
