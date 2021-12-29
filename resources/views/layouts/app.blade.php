@@ -100,7 +100,7 @@
         @endif
         
     </div>
-    <div id="loading" style="display:block;">
+    <div id="load_user" style="display:block;">
         <input type="text" id="text_color" hidden>
         <div class="container justify-content-center d-flex">
             <div class="loader">
@@ -121,7 +121,7 @@
     @yield('script')
     <script>
         let setT = setTimeout(function(){ 
-            document.getElementById("loading").style.display = "none";
+            document.getElementById("load_user").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 1000);
     
