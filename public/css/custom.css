@@ -16,9 +16,9 @@ body {
 }
 
 
-#loading{
+/* #loading{
     height: 1000px;
-}
+} */
 
 .loader {
     width: 20em;
@@ -106,7 +106,7 @@ body {
     background-size: 80%;
     animation: shine 3s linear infinite;
     position: absolute;
-    margin-top: 35%;
+    /* margin-top: 35%; */
     left: 50% !important;
     transform: translate(-50%, -50%);
   }
