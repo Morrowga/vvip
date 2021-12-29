@@ -714,7 +714,7 @@ height: 250px;
 
 #qr_scan{
     position: absolute;
-    top: 75% !important;
+    top: 70% !important;
     left: 41% !important;
 }
 
@@ -2538,6 +2538,11 @@ to { transform:  rotateY(360deg); }
     .smart{
         margin-top: 50%;
     }
+
+    .nor_stand{
+        margin-top: -275px;
+    }
+    
   }
 
 
@@ -2569,5 +2574,5 @@ to { transform:  rotateY(360deg); }
 
     .social{
         line-height: 55px !important;
-    }
+    }    
  }

@@ -151,7 +151,7 @@
         <div class="col-md-12">
             <div class="d-flex justify-content-center">
                 <div class="col-md-6">
-                    <img src="https://www.pngitem.com/pimgs/m/201-2012305_receptionist-girl-receptionist-transparent-hd-png-download.png" alt="" width="380" height="260">
+                    <img src="https://www.pngitem.com/pimgs/m/201-2012305_receptionist-girl-receptionist-transparent-hd-png-download.png" alt="" width="300" height="230">
                 </div>   
                 <div class="col-md-6">
                     <h3 class="text" style="padding-top: 35px !important;">Personal Assistant</h3>
