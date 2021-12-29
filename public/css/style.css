@@ -13,18 +13,18 @@ Master Stylesheet
 
 
 html {
-	height: 100% !important;
+	height: auto !important;
 	font-family: 'Kudryashev Display' !important;
 }
 body {
 	position: relative;
-	height: 100%;
+	height: auto;
 	font-size: 14px;
 	color: #363940;
 	font-family: 'Kudryashev Display' !important;
 }
 body .body {
-	height: 100%;
+	height: auto;
 	font-family: 'Kudryashev Display' !important;
 }
 .cover {
