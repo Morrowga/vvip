@@ -2183,14 +2183,6 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 70px;
     }
-
-    #loading{
-        margin-top: 50%;
-    }
-    
-    .smart{
-        margin-top: 50%;
-    }
 }
 
 
@@ -2219,15 +2211,6 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 70px !important;
     }
-
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
-    }
     
 }
 
@@ -2251,29 +2234,11 @@ to { transform:  rotateY(360deg); }
     #setting_text > #text_color{
         margin-left: 110px;
     }
-
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
-    }
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-height: 736px){
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
-    }
-
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 
 }
@@ -2297,15 +2262,6 @@ to { transform:  rotateY(360deg); }
 
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
-    }
-
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 
 }
@@ -2336,15 +2292,6 @@ to { transform:  rotateY(360deg); }
 
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
-    }
-
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 
 }
@@ -2391,13 +2338,6 @@ to { transform:  rotateY(360deg); }
 
 @media  only screen and (max-width: 361px) {
 
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
-    }
 }
 
 @media  only screen and (max-width: 280px) and (max-device-height: 653px){
@@ -2415,14 +2355,6 @@ to { transform:  rotateY(360deg); }
 
     #setting_hc > #text_highlight_color {
         margin-left: -5px !important;
-    }
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 }
 
@@ -2478,14 +2410,6 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 70px !important;
     }
-
-    /* #loading{
-        margin-top: 50%;
-    }
-    
-    .smart{
-        margin-top: 20%;
-    } */
 
 }
 
