@@ -2263,14 +2263,7 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
     }
-    
-    #loading{
-        margin-top: 50%;
-    }
 
-    .smart{
-        margin-top: 50%;
-    }
 }
 
 
@@ -2331,14 +2324,6 @@ to { transform:  rotateY(360deg); }
     .c_s{
         font-size: 10px;
         height: 20px;
-    }
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 
 }
@@ -2542,6 +2527,13 @@ to { transform:  rotateY(360deg); }
           margin-top: 90%;
       } */
 
+      #loading{
+        margin-top: 50%;
+    }
+
+    .smart{
+        margin-top: 50%;
+    }
   }
 
 
