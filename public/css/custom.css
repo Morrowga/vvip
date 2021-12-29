@@ -2157,13 +2157,6 @@ to { transform:  rotateY(360deg); }
         margin-left: 100px;
     }
 
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
-    }
 }
 
 @media (max-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
@@ -2189,14 +2182,6 @@ to { transform:  rotateY(360deg); }
 
     #setting_hc > #text_highlight_color {
         margin-left: 70px;
-    }
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
     }
 }
 
@@ -2226,14 +2211,6 @@ to { transform:  rotateY(360deg); }
     #setting_hc > #text_highlight_color {
         margin-left: 70px !important;
     }
-
-    #loading{
-        margin-top: 50%;
-    }
-
-    .smart{
-        margin-top: 50%;
-    }
     
 }
 
@@ -2258,7 +2235,7 @@ to { transform:  rotateY(360deg); }
         margin-left: 110px;
     }
 
-    #loading{
+     #loading{
         margin-top: 50%;
     }
 
