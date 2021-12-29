@@ -2540,7 +2540,7 @@ to { transform:  rotateY(360deg); }
     }
 
     .nor_stand{
-        margin-top: -275px;
+        margin-top: 0px;
     }
     
   }
