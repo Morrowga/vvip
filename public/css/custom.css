@@ -2157,14 +2157,6 @@ to { transform:  rotateY(360deg); }
         margin-left: 100px;
     }
 
-    #loading{
-        margin-top: 80%;
-    }
-
-
-    .smart{
-        margin-top: 50% !important;
-    }
 }
 
 @media (max-width: 375px) and (max-device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
@@ -2190,15 +2182,6 @@ to { transform:  rotateY(360deg); }
 
     #setting_hc > #text_highlight_color {
         margin-left: 70px;
-    }
-
-    #loading{
-        margin-top: 80%;
-    }
-
-
-    .smart{
-        margin-top: 50% !important;
     }
 }
 
@@ -2251,29 +2234,11 @@ to { transform:  rotateY(360deg); }
     #setting_text > #text_color{
         margin-left: 110px;
     }
-
-    #loading{
-        margin-top: 80%;
-    }
-
-
-    .smart{
-        margin-top: 50% !important;
-    }
 }
 
 @media only screen and (min-device-width: 414px) and (max-device-height: 736px){
     #setting_hc > #text_highlight_color {
         margin-left: 40px !important;
-    }
-
-    #loading{
-        margin-top: 80%;
-    }
-
-
-    .smart{
-        margin-top: 50% !important;
     }
 
 }
@@ -2315,10 +2280,6 @@ to { transform:  rotateY(360deg); }
         font-size: 5px !important;
         left: 50% !important;
         top: 35% !important;
-    }
-
-    .smart{
-        top: 80%;
     }
 
     #setting_bg > #background_color{
@@ -2365,20 +2326,10 @@ to { transform:  rotateY(360deg); }
         height: 20px;
     }
 
-    #loading{
-        margin-top: 80%;
-    }
-
-
-    .smart{
-        margin-top: 50% !important;
-    }
 }
 
 @media  only screen and (max-width: 361px) {
-    .smart{
-        margin-top: 20%;
-    }
+
 }
 
 @media  only screen and (max-width: 280px) and (max-device-height: 653px){
@@ -2452,14 +2403,6 @@ to { transform:  rotateY(360deg); }
         margin-left: 70px !important;
     }
 
-    #loading{
-        margin-top: 50%;
-    }
-
-
-    .smart{
-        margin-top: 20%;
-    }
 }
 
 /* @media only screen and (max-width: 1024px) and (max-height: 1366px) {
@@ -2580,9 +2523,9 @@ to { transform:  rotateY(360deg); }
           height: 120px !important;
       }
 
-      .loading-text{
+      /* .loading-text{
           margin-top: 90%;
-      }
+      } */
 
   }
 
