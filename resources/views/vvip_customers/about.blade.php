@@ -35,8 +35,8 @@
     <h3 class="text text-center teampurpose">{{ __('website.useful')}}</h3>
     <div class="col-md-12">
         <video class="about_video" loop autoplay muted>
-            <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/mp4">
-            <source src="../images/$NOT - Whipski ft. Lil Skies (Directed by Cole Bennett).mp4" type="video/ogg">
+            <source src="../images/Ekster 3.0 - The World's Slimmest Smart Wallet.mp4" type="video/mp4">
+            <source src="../images/Ekster 3.0 - The World's Slimmest Smart Wallet.mp4" type="video/ogg">
         </video>
     </div>
     <div class="col-md-12">
@@ -64,12 +64,8 @@
         </div>
     </div>
 </div>
-
-<div class="devider" style="margin-top: 25px;"></div>
-
-<div class="container">
+<!-- <div class="container">
     <h3 class="text text-center teampurpose">{{ __('website.our_team') }}</h3>
-    <!-- <p class="text text-center" style="font-weight:bold; font-size: 18px;">Htut Company</p> -->
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-3 team_div_one text-center">
@@ -102,7 +98,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="devider" style="margin-top: 25px;"></div>
 

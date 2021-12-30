@@ -29,9 +29,9 @@
                         <div class="price-box col-sm-6 col-md-4 wow" data-wow-delay="0.3s">
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
-                                    <h3 class="package">{{ $normal->package_name }}</h3>
+                                    <h1 class="package">GOLD</h1>
+                                    <h5 class="package">{{ $normal->package_name }}</h5>
                                     <img src="../images/Normal_001.png" id="normal_img" alt="" width="270" height="250">
-                                    <h4 class="package">GOLD</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
@@ -48,7 +48,7 @@
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
                                 </div> -->
                                 <div class="panel-footer text-center nor_stand">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button class="btn btn-dark moreinfo_package" id="{{ $normal->package_name }}">{{ __('website.more_info') }}</button>
                                     <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
@@ -57,9 +57,9 @@
                         <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.7s">
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
-                                    <h3 class="package">{{ $standard->package_name }}</h3>
+                                    <h1 class="package">DIAMOND</h1>
+                                    <h5 class="package">{{ $standard->package_name }}</h5>
                                     <img src="../images/Standard_001.png" id="standard_img" alt="" width="270" height="250">
-                                    <h4 class="package">DIAMOND</h4>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
@@ -78,7 +78,7 @@
                                     </ul>                                    
                                 </div>
                                 <div class="panel-footer text-center nor_stand">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button class="btn btn-dark moreinfo_package" id="{{ $standard->package_name }}">{{ __('website.more_info') }}</button>
                                     <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
@@ -87,9 +87,9 @@
                         <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.9s">
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
-                                    <h3 class="package">{{ $luxury->package_name }}</h3>
+                                    <h1 class="package">RUBY</h1>
+                                    <h5 class="package">{{ $luxury->package_name }}</h5>
                                     <img src="../images/Luxury_001.png" alt="" id="luxury_img" width="270" height="250">
-                                    <h3 class="package">RUBY</h3>
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
@@ -110,7 +110,7 @@
                                     </ul>                                    
                                 </div>                    
                                 <div class="panel-footer text-center">
-                                    <a href="/feature" class="btn btn-dark moreinfo_package">{{ __('website.more_info') }}</a>
+                                    <button class="btn btn-dark moreinfo_package" id="{{ $luxury->package_name }}">{{ __('website.more_info') }}</button>
                                     <button type="button" id="{{ $luxury->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $luxury->token }}">{{ $luxury->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
@@ -120,6 +120,86 @@
             </div>
             <!-- End prices -->
             <div class="extra-space-l"></div>
+    </section>
+
+    <section id="info_section" class="page" style="margin-top: 65px !important;" hidden>
+        <div class="col-md-6 col-md-offset-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 text-center" id="info_contact" hidden>
+                            <h4 class="text">Contact</h4>
+                            <img src="https://media4.giphy.com/media/MXA8QkWdYxgE2dWZ1I/200.webp?cid=ecf05e47jx4cmhnnorp8h4qt3yjb5z5drjnos7ap6r53g2gy&rid=200.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_linktree" hidden>
+                            <h4 class="text">Link Tree</h4>
+                            <img src="https://media4.giphy.com/media/72hH8nyYwRG7iy8JPQ/200w.webp?cid=ecf05e47uvm01rtjwe251xwf7kbd71cqdgzo00xt0kcwi92w&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_deeplink" hidden>
+                            <h4 class="text">Deep Link</h4>
+                            <img src="https://media0.giphy.com/media/fq7knICEV08fh1iuO2/200.webp?cid=ecf05e47rty1syihn7imholrxwgrv8t92ult62wetx5xy7rp&rid=200.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 text-center" id="info_url" hidden>
+                            <h4 class="text">URL</h4>
+                            <img src="https://media2.giphy.com/media/rERg78R6dLB7rwDc7u/200w.webp?cid=ecf05e476uzmwv49qv9h970figgzkoblny2ajx7swtte3rk3&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_call" hidden>
+                            <h4 class="text">Call</h4>
+                            <img src="https://media3.giphy.com/media/MEjG5NXKKS68LvGIP2/giphy.webp?cid=ecf05e47hwdenb9vtbs1k8ao82mtvr9k8tnmher5f31ykh0d&rid=giphy.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_email" hidden>
+                            <h4 class="text">Email</h4>
+                            <img src="https://media2.giphy.com/media/aOften89vRbG/200w.webp?cid=ecf05e47a2oq6grxwd7b4ccaouc5ed8fif8hogha8vh982dx&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 text-center" id="info_cns" hidden>
+                            <h4 class="text">Contact & Social</h4>
+                            <img src="https://media0.giphy.com/media/3ohzdZ44Q62CJ2ekla/200.webp?cid=ecf05e47k7aj4ihplc7gv5mziuj21ir2dzj7r1fximv6ubt7&rid=200.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_sms" hidden>
+                            <h4 class="text">SMS</h4>
+                            <img src="https://media2.giphy.com/media/65AYg17GQmvTVtIwBO/200w.webp?cid=ecf05e47dpknvkbbe7nvzz2h8nj0zv7xlx717d1vvgj5cx42&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_events" hidden>
+                            <h4 class="text">Events</h4>
+                            <img src="https://media1.giphy.com/media/mDMOkkXWQZvEJMnvTW/200.webp?cid=ecf05e474a9xuo4so2pxxnz7zjo3adeb2h6diqqsgh8qeqnh&rid=200.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 text-center" id="info_bank" hidden>
+                            <h4 class="text">Bank/Pay Info</h4>
+                            <img src="https://media2.giphy.com/media/TDyxBGZcViZnoye8iN/200w.webp?cid=ecf05e47liu4m03qmor1wpibuu2dpvf9phhrxh8umw2janfs&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_assistant" hidden>
+                            <h4 class="text">Personal Assistant</h4>
+                            <img src="https://media1.giphy.com/media/l2SqbeXi79su4V9ni/200w.webp?cid=ecf05e47zpeml1eeaz46opor8pk3j7ufyxtkfnlotdc1eqgg&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                        <div class="col-md-4 text-center" id="info_metal" hidden>
+                            <h4 class="text">Metal Card</h4>
+                            <img src="https://media0.giphy.com/media/dLHdCsnjf1xtK/200w.webp?cid=ecf05e476ye818gxj1abtdwaeyxufipn7i0aaxafwykgrorg&rid=200w.webp&ct=g" alt="" width="300" height="250">
+                            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem porro facere placeat.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-md-offset-3">
+                        <button class="btn btn-outlint-light packinfo_btn btn-block">Close Tab</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -154,6 +234,9 @@
                                 <button class="btn btn-dark save-user">{{ __('website.next') }}</button>
                             </div>
                         </div>
+                        <div class="col-md-8 col-md-offset-2">
+                            <p class="packagetxtforuser"></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -170,30 +253,6 @@
                         <div class="col-md-12">
                             <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
-                                <div class="form-section">
-                                    <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div> 
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
-                                        <div class="devider"></div>
-                                        <div class="form-group row pay-border">
-                                            <div class="col-md-3" style="margin-top: 10px !important;">
-                                                <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt="">
-                                            </div>
-                                            <input type="text" name="package" id="package_name" hidden>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="form-section">
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
@@ -275,6 +334,30 @@
                                                    <label for="css">Public</label><br>
                                                 </div>
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
+                                        <div class="devider"></div>
+                                        <div class="form-group row pay-border">
+                                            <div class="col-md-3" style="margin-top: 10px !important;">
+                                                <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150">
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt="">
+                                            </div>
+                                            <input type="text" name="package" id="package_name" hidden>
                                         </div>
                                     </div>
                                 </div>
@@ -398,7 +481,7 @@
         </div>
     </section>
     <div class="col-md-12" style="height: 80px;">
-        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://htut.com" class="theme-author">Htut Media</a></p>
+        <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://htut.com" class="theme-author">MHH</a></p>
     </div>
 
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
@@ -560,6 +643,8 @@ var email_exist = '{{ __('website.email_exist')  }}';
 var zoom_card = '{{ __('website.zoom')  }}';
 var select_card = '{{ __('website.select_card')  }}';
 var select_success = '{{ __('website.select_success')  }}';
+var packagetextforuser_one = '{{ __('website.packtext_first') }}';
+var packagetextforuser_two = '{{ __('website.packtext_second') }}';
 </script>
 @endsection
 @endsection

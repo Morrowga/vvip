@@ -181,6 +181,7 @@ footer{
   .text{
       color: rgb(217,181,81) !important;
       font-weight: bold;
+      line-height: 2;
       text-shadow: 2px 2px 10px rgb(255,255,255,0.2);
       margin-top: 15px !important;
       font-family: 'Kudryashev Display' !important;
@@ -1748,6 +1749,21 @@ button.spin:focus{
     font-size: 15px !important;
 }
 
+
+.packinfo_btn{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    font-weight: bold;
+    margin-top: 25px;
+    color: rgb(255,255,255);
+}
+
+.packinfo_btn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 1s !important;
+}
+
+
 .moreinfo_package{
     border: 2px solid rgb(217,181,81) !important;
     background-color: rgb(0,0,0) !important;
@@ -1839,6 +1855,14 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.packagetxtforuser{
+    color: rgb(217,181,81);
+    font-weight: bold;
+    font-family: 'Pushster', cursive;
+    font-size: 17px;
+    line-height: 2;
+    margin-top: 19px;
+}
 
 .main_text{
     color: #000 !important;
@@ -2113,9 +2137,9 @@ to { transform:  rotateY(360deg); }
 
 }
 
-#about-section{
+/* #about-section{
     margin-top: 15%;
-}
+} */
 
 #every {
     background-color: #000 !important;
@@ -2151,6 +2175,41 @@ to { transform:  rotateY(360deg); }
     margin-top: 275px;
 }
 
+
+.c_pack{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    color: rgb(255,255,255);
+    font-family: 'Kudryashev Display' !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.c_pack:hover{
+    background-color: rgb(217,181,81) !important; 
+    transition-duration: 1s !important;
+}
+
+
+.feature_check{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    color: rgb(255,255,255);
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px !important;
+}
+
+.feature_check:hover{
+    background-color: rgb(217,181,81) !important; 
+    transition-duration: 1s !important;
+}
+
+.fa-hand-pointer{
+    margin-left: 10px;
+}
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     #text_color{
@@ -2443,7 +2502,7 @@ to { transform:  rotateY(360deg); }
     }
     
     .product_margin{
-        margin-top: 60px !important;
+        margin-top: 20px !important;
     }
 
     #home_height{

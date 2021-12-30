@@ -1,19 +1,18 @@
 @extends('layouts.frontview')
 
 @section('content')
-    <section id="services-section" class="page text-center" style="margin-top: 35px !important;">
-        <div class="col-md-12" id="text_section_product">
-            <div class="page-header-wrapper">
-                <div class="container">
-                    <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
-                        <h2 class="service product_margin">{{ __('website.Features') }}</h2>
-                        <div class="devider"></div>
-                    </div>
-                </div>
+    <div class="col-md-12" id="text_section_product"  style="margin-top: 120px !important;">
+        <div class="container">
+            <div class="page-header text-center wow fadeInDown" data-wow-delay="0.4s">
+                <h2 class="service product_margin">{{ __('website.Features') }}</h2>
+                <div class="devider"></div>
             </div>
         </div>
-    </section>
+    </div>
 
+    <div class="container text-center">
+        <button class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i></button>
+    </div>
     <div class="container">
         <div class="col-md-12">
             <div class="d-flex justify-content-center">
@@ -196,8 +195,14 @@
         </div>
     </div>
 
+    <div class="devider"></div>
+
+    <div class="container text-center" style="margin-top: 20px;">
+        <button class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i>{</button>
+    </div>
+
     <div class="col-md-12" style="height: 80px;">
-        <p class="copyright text-center" style="padding-top: 25px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+        <p class="copyright text-center" style="padding-top: 25px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">MHH</a></p>
     </div>
 @endsection
 

@@ -8,9 +8,10 @@ return [
     'login' => "Login",
     'Register' => "REGISTER",
     'have_account' => "Do You Have Account ?",
-    'Everything' => "Everything is smart",
+    'Everything' => "EVERYTHING IS SMART",
     'more' => "More Info",
-    'whatisvvip' => "What is VVIP9 ?",
+    'whatisvvip' => "What is VVIP9 Smart Card ?",
+    'checkpackage' => "Check Now !",
     'whatvvip_para' => "VVIP9 SMART CARD is a very useful card that incorporates the latest technology that came
     into business around 2021.
     With just one card and a smartphone, you can exchange information and create the fastest,
@@ -186,6 +187,9 @@ return [
     "sms_body" => "Enter the text what you want to describe.",
     "phonecallnumber" => "Enter phone number who want you to call.",
     "purpose" => "PURPOSE",
-    "our_team" => "Our Team"
+    "our_team" => "Our Team",
+    "packtext_first" => "Dear Customer, You selected ",
+    "packtext_second" => "Package. You need to fill completely the rest of our register form. Have a good day.",
+    "useservices" => "Use these Services",
 ]
 ?>

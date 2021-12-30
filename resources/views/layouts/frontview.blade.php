@@ -18,7 +18,11 @@
         <link rel="stylesheet" href="https://rvera.github.io/image-picker/image-picker/image-picker.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
         <link rel="stylesheet" href="../font/stylesheet.css">
-    
+        <link href="https://fonts.googleapis.com/css2?family=Pushster&display=swap" rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+        />
         <link rel="stylesheet" href="../css/reset.css">
         <link rel="stylesheet" href="../css/custom.css">
 		<link rel="stylesheet" href="../css/style.css">
@@ -83,7 +87,7 @@
                         </div> -->
                         <img src="../images/logo.jpeg" alt="" width="130" height="130" class="main_logo mt-4">
                     </div>
-                    <p class="smart">EVERYTHING IS SMART</p>
+                    <p class="smart">{{__('website.Everything') }}</p>
                 </div>
             </div>
             <!--===========================================Loading========================================================-->
@@ -125,6 +129,7 @@
                             $('.url_text').attr('style', 'letter-spacing: 3px !important;');
                             $('.url').attr('style', 'letter-spacing: 3px !important;');
                             $('.select-card').attr('style', 'letter-spacing: 2px !important;');
+                            $('.save-user-back').attr('style', 'letter-spacing: 2px !important;');
                             $('.zoom').attr('style', 'letter-spacing: 2px !important;');
                             $('.text').attr('style', 'letter-spacing: 2px !important; font-size: 18px !important;');
                             $('.btn-place').attr('style', 'letter-spacing: 2px !important;');

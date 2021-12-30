@@ -108,6 +108,52 @@ $(function(){
     navigateTo(0);
 });
 
+//package_info
+$('.moreinfo_package').on('click', function(e){
+    $('#prices-section').hide().fadeOut("slow");
+    $('#info_section').show().fadeIn("slow");
+
+    var pack_value = e.target.id;
+
+    if(pack_value == "normal"){
+        $('#info_contact').show();
+        $('#info_deeplink').show();
+        $('#info_linktree').show();
+        $('#info_url').show();
+        $('#info_call').show();
+    } else if(pack_value == "standard"){
+        $('#info_contact').show();
+        $('#info_deeplink').show();
+        $('#info_linktree').show();
+        $('#info_url').show();
+        $('#info_call').show();
+        $('#info_email').show();
+        $('#info_events').show();
+        $('#info_cns').show();
+        $('#info_bank').show();
+        $('#info_sms').show();
+    } else if(pack_value == "luxury"){
+        $('#info_contact').show();
+        $('#info_deeplink').show();
+        $('#info_linktree').show();
+        $('#info_url').show();
+        $('#info_call').show();
+        $('#info_email').show();
+        $('#info_events').show();
+        $('#info_cns').show();
+        $('#info_bank').show();
+        $('#info_sms').show();
+        $('#info_assistant').show();
+        $('#info_metal').show();
+    }
+});
+
+$('.packinfo_btn').on('click', function(){
+    $('#prices-section').show().fadeIn("slow");
+    $('#info_section').hide().fadeOut("slow");
+})
+
+
 //popover
 $('[data-toggle="popover"]').popover();
 
@@ -491,6 +537,14 @@ function packageClick(e){
     document.getElementById('prices-section-two').style.display = "none";
     var targetValue = e.target.value;
     document.getElementById('package_name').value = targetValue;
+
+    if(targetValue == '12345'){
+        $('.packagetxtforuser').text(packagetextforuser_one + '  “ Gold  Package ”  ' + packagetextforuser_two);
+    } else if(targetValue == '678910'){
+        $('.packagetxtforuser').text(packagetextforuser_one + ' “ Diamond Package ” ' + packagetextforuser_two);
+    } else if(targetValue == '11121314'){
+        $('.packagetxtforuser').text(packagetextforuser_one + ' “ Ruby Package ” ' + packagetextforuser_two);
+    }
     //card_api
     $.ajax({
     url: 'api/cards/' + targetValue,

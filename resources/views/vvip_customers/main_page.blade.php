@@ -10,6 +10,7 @@
                         <video loop autoplay muted class="text-center" id="video_one"  src="../images/VVIP 9 Second video (7 sec).mp4"  type="video/mp4" playsinline></video>
                         <!-- <p class="main_text" id="every">{{__('website.Everything')}}</p> -->
                         <!-- <div class="extra-space-l" id="bgblack"></div> -->
+                        
                         <a class="btn-blank page-scroll navbarbtn" id="register_main_page" href="#services-section" role="button"><i class="fas fa-shopping-cart" style="padding-right: 4px;"></i>{{__('website.Register')}}</a>
                     </div>
                     <div class="item">
@@ -30,6 +31,23 @@
         <!--===========================================Video-Slider========================================================-->
     </section>
         <!--===========================================Intro_section========================================================-->
+
+    <section id="android_section">
+        <div class="page-header-wrapper">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/get-it-on-google-play-google-play-badge-png-logos-23.png" alt="" class="text-center img-fluid">
+                            <img src="https://www.pc-xp.com/wp-content/uploads/2019/01/iPhone-Repairs.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-9">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
 
     <section id="about-section" class="page bg-style1 about_ios">
         <div class="page-header-wrapper">
@@ -55,18 +73,6 @@
                             </div>
                         </a>
                     </div>
-
-                    <div class="col-md-4 col-sm-6">
-                        <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
-                            <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
-                            <div class="rotate-box-info">
-                                <h4 class="about-text" id="head_about_text">{{__('website.whatissmartcard')}}</h4>
-                                <img src="../images/What-Smart-Card.png" class="aboutimg" alt="" width="300" height="400">
-                                <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }}
-                                </p>
-                            </div>
-                        </a>
-                    </div>
                     <div class="col-md-4 col-sm-6">
                         <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.4s">
                             <span class="rotate-box-icon"><i class="fa fa-heart about-icon"></i></span>
@@ -74,6 +80,18 @@
                                 <h4 class="about-text" id="head_about_text">{{__('website.useful')}}</h4>
                                 <img src="../images/Useful-VVIP9.png" class="aboutimg" alt="" width="300" height="400">
                                 <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.useful_para'), 130, '...') }}
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <a href="#" class="rotate-box-1 square-icon wow zoomIn" data-wow-delay="0.2s">
+                            <span class="rotate-box-icon"><i class="fas fa-credit-card about-icon"></i></span>
+                            <div class="rotate-box-info">
+                                <h4 class="about-text" id="head_about_text">{{__('website.Packages') }}</h4>
+                                <img src="../images/What-Smart-Card.png" class="aboutimg" alt="" width="300" height="400">
+                                <button class="btn btn-light btn-block c_pack">{{__('website.checkpackage')}}</button>
+                                <!-- <p class="about-text">{{ \Illuminate\Support\Str::limit(__('website.whatsmartcard_para'), 100, '...') }} -->
                                 </p>
                             </div>
                         </a>
@@ -195,7 +213,7 @@
 
     <!--===========================================cotnact-form========================================================-->
     <div class="col-md-12" style="height: 80px;">
-        <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+        <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">MHH</a></p>
     </div>
     <!--===========================================Copyright========================================================-->
     <div class="modal fade deep" id="submit_contact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -235,7 +253,7 @@
         var message = $('#m_name').val();
 
             $.ajax({
-            url: "http://admin.vvip9.co/api/contact_info",
+            url: "https://admin.vvip9.co/api/contact_info",
             method:'POST',
             headers: {
                 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
