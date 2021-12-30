@@ -18,7 +18,7 @@ class CreateActionsTable extends Migration
             $table->string('name')->nullable();
             $table->string('action_image')->nullable();
             $table->string('request_name')->nullable();
-            $table->integer('self_request_name')->nullable();
+            $table->string('self_request_name')->nullable();
             $table->timestamps();
         });
     }
