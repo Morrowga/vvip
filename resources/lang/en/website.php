@@ -191,5 +191,17 @@ return [
     "packtext_first" => "Dear Customer, You selected ",
     "packtext_second" => "Package. You need to fill completely the rest of our register form. Have a good day.",
     "useservices" => "Use these Services",
+    "e_title" => "Event Title",
+    "e_description" => "Event Description",
+    "e_start_date" => "Event Start Date",
+    "e_end_date" => "Event End Date",
+    "e_time" => "Event Time",
+    "e_lists" => "Event Lists",
+    "e_create" => "Create",
+    "from" => "From",
+    "to" => "To",
+    // "e_show" => "Show",
+    // "e_hide" => "Hide၊",
+    // "e_delete" => "Delete"
 ]
 ?>

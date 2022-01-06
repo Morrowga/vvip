@@ -51,13 +51,25 @@
                     <button class="btn btn-dark btn-block action-btn" id="contact_active" value="get_contacts" data-id="contact_active">Contact</button>
                     <button class="btn btn-dark btn-block action-btn" id="link_tree_active" value="get_link_trees" data-id="link_tree_active">Link Tree</button>
                     <button class="btn btn-dark btn-block action-btn" id="deep_link_active" value="get_deep_links" data-id="deep_link_active">Deep Link</button>
+                    <button class="btn btn-dark btn-block action-btn" id="call_active" value="get_eusp" data-id="call_active">Call</button>
                     <button class="btn btn-dark btn-block action-btn" id="url_active" value="get_eusp" data-id="url_active">URL</button>
+                    @can('isStandard')
                     <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active">Email</button>
                     <button class="btn btn-dark btn-block action-btn" id="cns_active" value="get_cns" data-id="cns_active">Contact Social</button>
                     <button class="btn btn-dark btn-block action-btn" id="sms_active" value="get_eusp" data-id="sms_active">SMS</button>
-                    <button class="btn btn-dark btn-block action-btn" id="call_active" value="get_eusp" data-id="call_active">Call</button>
-                    <button class="btn btn-dark btn-block action-btn" id="event">Event</button>
-                    <button class="btn btn-dark btn-block action-btn" id="personal">Personal</button>
+                    <button class="btn btn-dark btn-block action-btn" id="event_active" value="get_events" data-id="event_active">Event</button>
+                    @elsecan('isLuxury')
+                    <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active">Email</button>
+                    <button class="btn btn-dark btn-block action-btn" id="cns_active" value="get_cns" data-id="cns_active">Contact Social</button>
+                    <button class="btn btn-dark btn-block action-btn" id="sms_active" value="get_eusp" data-id="sms_active">SMS</button>
+                    <button class="btn btn-dark btn-block action-btn" id="event_active" value="get_events" data-id="event_active">Event</button>
+                    @else 
+                    <button class="btn btn-dark btn-block action-btn" id="email_active" value="get_eusp" data-id="email_active" disabled>Email</button>
+                    <button class="btn btn-dark btn-block action-btn" id="cns_active" value="get_cns" data-id="cns_active" disabled>Contact Social</button>
+                    <button class="btn btn-dark btn-block action-btn" id="sms_active" value="get_eusp" data-id="sms_active" disabled>SMS</button>
+                    <button class="btn btn-dark btn-block action-btn" id="event_active" value="get_events" data-id="event_active" disabled>Event</button>
+                    @endcan
+                    <!-- <button class="btn btn-dark btn-block action-btn" id="personal">Personal</button> -->
                     </div>
                 </div>
             </div>

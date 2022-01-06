@@ -18,6 +18,7 @@ $(function() {
     $('#sms_section').hide();
     $('#email_section').hide();
     $('#phone_section').hide();
+    $('#event_section').hide();
     $('#link_tree_section').hide();
     $('#disappear_cns').hide();
     // $('#link_three').hide();
@@ -730,5 +731,165 @@ $(function() {
                 });
             }
         });  
+    });
+
+    $('.event_upload').on('change',function(){
+        var event_url = window.URL.createObjectURL(this.files[0]);
+        $('.event_image').attr('style',`background-image: url('` + event_url + `'); background-size: cover; background-position: center;`);
+    });
+
+    $('#event').on('click', function(){
+        $('#create_section').hide();
+        $('#event_section').show();
+        $('#e-display').hide();
+    });
+
+    $('#eventlists').on('click', function() {
+        $('#e-display').show();
+        $('#e-create').hide();
+
+        var userid = $('#e-userid').val();
+
+
+        $.ajax({
+            url: 'api/get_datas',
+            method: 'POST',
+            data: {
+                user_id:userid,
+                request_name: "get_events"
+            },
+            success:function(response){
+                $('#e-list-group').empty();
+                var data = response.data;
+                $.each(data, function(i,e_val) {
+                    $('#e-list-group').append(`
+                        <li class="list-group-item" id="`+ e_val['id'] +`">
+                            <div class="d-flex justify-content-center row">
+                                <div class="col-md-7">
+                                    <p class="event_text_date"><i class="fas fa-calendar-alt ml-2 mr-2"></i>`+ e_val['start_date'] +` to `+ e_val['end_date'] +`</p> 
+                                    <p class="event_text_date"><i class="far fa-clock mr-2 ml-2"></i>` + e_val['time'] +`</p>
+                                    <p class="event_text ml-2">`+ e_val['title'] +`</p>
+                                    <p class="event_text ml-2">`+ e_val['description'] +`</p>
+                                    <div class="d-flex justify-content-right">
+                                        <button class="btn btn-success event_show" id="`+ e_val['id'] +`">Show</button>
+                                        <button class="btn btn-warning ml-2 event_hide" id="`+ e_val['id'] +`" disabled>Hide</button>
+                                        <button class="btn btn-danger ml-2 event_delete" id="`+ e_val['id'] +`">Delete</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-5 text-center">
+                                    <img class="mt-4" src="../`+ e_val['image'] +`" width="150" height="150">
+                                </div>
+                            </div>
+                        </li>
+                    `);
+                    if(e_val['is_displayed'] == 1){
+                        $('.event_show[id="'+ e_val['id'] +'"]').attr('disabled', true);
+                        $('.event_hide[id="'+ e_val['id'] +'"]').attr('disabled', false);
+                    } 
+                });
+
+                $('.event_show').on('click', function(e){
+                    var current_id = e.target.id;
+                    var event_action = $(this).text();
+                    console.log(current_id);
+                    console.log($(this).text());
+            
+                    var userid = $('#e-userid').val();
+            
+                    $.ajax({
+                        url: 'api/action_event_by_id',
+                        method: "POST",
+                        data: {
+                            id: current_id,
+                            eventaction: event_action,
+                            user_id: userid
+                        },
+                        success:function(response){
+                            console.log(response);
+                            $('.event_show[id='+ response.id +']').attr('disabled', true);
+                            $('.event_hide[id='+ response.id +']').attr('disabled', false);
+                        }
+                    });
+                });
+
+                $('.event_hide').on('click', function(e){
+                    var current_id = e.target.id;
+                    var event_action = $(this).text();
+                    console.log(current_id);
+                    console.log($(this).text());
+            
+                    var userid = $('#e-userid').val();
+            
+                    $.ajax({
+                        url: 'api/action_event_by_id',
+                        method: "POST",
+                        data: {
+                            id: current_id,
+                            eventaction: event_action,
+                            user_id: userid
+                        },
+                        success:function(response){
+                            console.log(response);
+                                $('.event_show[id='+ response.id +']').attr('disabled', false);
+                                $('.event_hide[id='+ response.id +']').attr('disabled', true);
+                        }
+                    });
+                });
+
+                $('.event_delete').on('click', function(e){
+                    var current_id = e.target.id;
+                    var event_action = $(this).text();
+                    console.log(current_id);
+                    console.log($(this).text());
+            
+                    var userid = $('#e-userid').val();
+            
+                    $.ajax({
+                        url: 'api/action_event_by_id',
+                        method: "POST",
+                        data: {
+                            id: current_id,
+                            eventaction: event_action,
+                            user_id: userid
+                        },
+                        success:function(response){
+                            console.log(response);
+                            $('.list-group-item[id='+ response.id +']').remove();
+                        }
+                    });
+                });
+            }
+        })
+    });
+
+    $('#close_eventlist').on('click', function(){
+        $('#e-create').show();
+        $('#e-display').hide();
+    });
+
+    $('#event_form').on('submit', function(e){
+        e.preventDefault();
+        var create_event = 'api/create_event';
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+
+        $.ajax({
+            url: create_event,
+            method:'POST',
+            contentType: false,
+            processData: false,
+            headers: {
+                    'X-CSRF-Token': token 
+            },
+            data: formData,
+            success:function(response){
+                $('#save_text').text('Event ' + savethetext);
+                $('#save_modal').modal('show');
+                $('#event_section').hide();
+                $('#ok').on('click', function(){
+                    $('#create_section').show();
+                })
+            }
+        });
     });
 });

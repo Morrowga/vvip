@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Action;
 use App\Models\Contact;
 use App\Models\DeepLink;
+use App\Models\Event;
 use App\Models\LinkTree;
 use App\Models\UserStat;
 use App\Models\ViewCount;
@@ -67,7 +68,7 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "contacts",
+                        "request" => "get_contacts",
                         "data" => $data
                     ];
                     return $messages;
@@ -112,10 +113,11 @@ class Helper{
                         ],
                     ];
 
+
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "contacts",
+                        "request" => "get_contacts",
                         "text" => "no data available",
                         "data" => $data
                     ];
@@ -153,7 +155,7 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "deep_link",
+                        "request" => "get_deep_link",
                         "deep_link" => $get_array
                     ];
                     return $messages;
@@ -170,7 +172,7 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "eusp",
+                        "request" => "get_eusp",
                         "data" => $eusp
                     ];
                     return $messages;
@@ -380,6 +382,43 @@ class Helper{
                 ];
 
                 return $messages;
+            } else if($request_name === "get_events"){
+                $user_check = User::where('id', $user_id)->first();
+                if ($user_check !== null) {
+                    $events = Event::where('user_id', $user_id)->get();
+                    $event_array = [];
+                    foreach($events as $event){
+                        $data = [
+                            "id" => $event->id,
+                            "is_displayed" => $event->is_displayed,
+                            "title" => $event->title,
+                            "description" => $event->description,
+                            "image" => "storage/event_images/". $event->image,
+                            "time" => date('h:i A', strtotime($event->time)),
+                            "start_date" => date("m-d-Y", strtotime($event->start_date)),
+                            "end_date" => date("m-d-Y", strtotime($event->end_date))
+                        ];
+
+                        array_push($event_array, $data);
+                    }
+
+                    $messages = [
+                        "status" => "200",
+                        "message" => "success",
+                        "data" => $event_array,
+                        "request" => "get_events"
+                    ];
+
+                    return $messages;
+                } else {
+                    $messages = [
+                        "status" => "412",
+                        "message" => "User does not exist",
+                        "request" => "get_events",
+                    ];
+
+                    return $messages;
+                }
             }
         }
     }

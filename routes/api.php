@@ -63,7 +63,9 @@ Route::post('create_appearance', [App\Http\Controllers\API\UserPanelController::
 
 Route::post('create_link_tree', [App\Http\Controllers\API\UserPanelController::class, 'create_link_tree']);
 
-Route::post('secure', [App\Http\Controllers\API\UserPanelController::class, 'secure_status']);
+Route::post('create_event', [App\Http\Controllers\API\UserPanelController::class, 'create_event']);
+
+Route::post('action_event_by_id', [App\Http\Controllers\API\UserPanelController::class, 'action_event_by_id']);
 
 Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::class, 'qr_generate']);
 

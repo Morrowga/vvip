@@ -57,10 +57,9 @@
                 </button>
             </div>
             <div class="col-md-6">
-                <button type="button" id="cands" class="btn btn-dark btn-block create_content">
-                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" class="mt-3" alt="" width="50"
-                        height="50">
-                    <p class="color_black c_s">Contact & Social</p>
+                <button type="button" id="call" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/2WdRt2B/call.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Call</p>
                 </button>
             </div>
         </div>
@@ -71,34 +70,102 @@
                     <p class="color_black">URL</p>
                 </button>
             </div>
+            @can('isStandard')
             <div class="col-md-6">
                 <button type="button" id="email_send" class="btn btn-dark btn-block create_content">
                     <img src="https://i.ibb.co/2kVtmRV/email.png" class="mt-3" alt="" width="50" height="50">
                     <p class="color_black">Email</p>
                 </button>
             </div>
+            @elsecan('isLuxury')
+            <div class="col-md-6">
+                <button type="button" id="email_send" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/2kVtmRV/email.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Email</p>
+                </button>
+            </div>
+            @else 
+            <div class="col-md-6">
+                <button type="button" id="email_send" class="btn btn-dark btn-block create_content" disabled>
+                    <img src="https://i.ibb.co/2kVtmRV/email.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Email</p>
+                </button>
+            </div>
+            @endcan
         </div>
         <div class="d-flex justify-content-center mt-4 text-center">
+            @can('isStandard')
             <div class="col-md-6">
                 <button type="button" id="sms" class="btn btn-dark btn-block create_content">
                     <img src="https://i.ibb.co/W5jcVJL/sms.png" class="mt-3" alt="" width="50" height="50">
                     <p class="color_black">SMS</p>
                 </button>
             </div>
+            @elsecan('isLuxury')
             <div class="col-md-6">
-                <button type="button" id="call" class="btn btn-dark btn-block create_content">
-                    <img src="https://i.ibb.co/2WdRt2B/call.png" class="mt-3" alt="" width="50" height="50">
-                    <p class="color_black">Call</p>
+                <button type="button" id="sms" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/W5jcVJL/sms.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">SMS</p>
                 </button>
             </div>
+            @else
+            <div class="col-md-6">
+                <button type="button" id="sms" class="btn btn-dark btn-block create_content" disabled>
+                    <img src="https://i.ibb.co/W5jcVJL/sms.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">SMS</p>
+                </button>
+            </div>
+            @endcan
+
+            @can('isStandard')
+            <div class="col-md-6">
+                <button type="button" id="cands" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" class="mt-3" alt="" width="50"
+                        height="50">
+                    <p class="color_black c_s">Contact & Social</p>
+                </button>
+            </div>
+            @elsecan('isLuxury')
+            <div class="col-md-6">
+                <button type="button" id="cands" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" class="mt-3" alt="" width="50"
+                        height="50">
+                    <p class="color_black c_s">Contact & Social</p>
+                </button>
+            </div>
+            @else
+            <div class="col-md-6">
+                <button type="button" id="cands" class="btn btn-dark btn-block create_content" disabled>
+                    <img src="https://i.ibb.co/pypdbgC/contactandsocial.png" class="mt-3" alt="" width="50"
+                        height="50">
+                    <p class="color_black c_s">Contact & Social</p>
+                </button>
+            </div>
+            @endcan
         </div>
         <div class="d-flex justify-content-center mt-4 text-center">
+            @can('isStandard')
             <div class="col-md-6">
-                <!-- <button type="button" id="event" class="btn btn-dark btn-block create_content">
+                <button type="button" id="event" class="btn btn-dark btn-block create_content">
                     <img src="https://i.ibb.co/YcD8dkz/event.png" class="mt-3" alt="" width="50" height="50">
                     <p class="color_black">Events</p>
-                </button> -->
+                </button>
             </div>
+            @elsecan('isLuxury')
+            <div class="col-md-6">
+                <button type="button" id="event" class="btn btn-dark btn-block create_content">
+                    <img src="https://i.ibb.co/YcD8dkz/event.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Events</p>
+                </button>
+            </div>
+            @else
+            <div class="col-md-6">
+                <button type="button" id="event" class="btn btn-dark btn-block create_content" disabled>
+                    <img src="https://i.ibb.co/YcD8dkz/event.png" class="mt-3" alt="" width="50" height="50">
+                    <p class="color_black">Events</p>
+                </button>
+            </div>
+            @endcan
             <div class="col-md-6">
                 <!-- <button type="button" id="personal" class="btn btn-dark btn-block">
                     <div class="card create_content">
@@ -112,6 +179,7 @@
             </div>
         </div>
     </div>
+    <!-- contact -->
     <div class="col-md-6 col-md-offset-3" id="contact_section" style="height: 2150px;">
         <h3 class="text">Contacts</h3>
         <form method="POST" id="upload-contact-form" enctype="multipart/form-data">
@@ -180,12 +248,14 @@
         </form>
         <button class="btn btn-light mt-3 btn-block" id="section_cancel">{{ __('website.cancel') }}</button>
     </div>
+    <!-- deep_link -->
     <div class="col-md-6 col-md-offset-3" id="deep_link_section" style="height:  830px;">
         <div class="d-flex justify-content-center">
             <div class="row" id="platform_col">
             </div>
         </div>
     </div>
+    <!-- cands -->
     <div class="col-md-12" id="cands_section" style="height: 2100px;">
         <div class="col-md-6 col-md-offset-3">
             <h3 class="text text-center">Contacts & Social</h3>
@@ -369,6 +439,7 @@
             </div>
         </div>
     </div>
+    <!-- link_tree -->
     <div class="col-md-6 col-md-offset-3" id="link_tree_section" style="height: 1500px;">
         <form method="POST" id="link_tree_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -409,6 +480,7 @@
         </div>
         </form>
     </div>
+    <!-- url -->
     <div class="col-md-6 col-md-offset-3" id="url_section">
         <form action="" method="POST" id="get_url_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -421,6 +493,7 @@
         </div>
         </form>
     </div>
+    <!-- email -->
     <div class="col-md-6 col-md-offset-3" id="email_section">
         <form action="" method="POST" id="email_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -435,6 +508,7 @@
         </div>
         </form>
     </div>
+    <!-- sms -->
     <div class="col-md-6 col-md-offset-3" id="sms_section">
         <form action="" method="POST" id="sms_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -448,6 +522,7 @@
         </div>
         </form>
     </div>
+    <!-- phone -->
     <div class="col-md-6 col-md-offset-3" id="phone_section">
         <form action="" method="POST" id="phone_form">
         <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
@@ -460,7 +535,65 @@
         </div>
         </form>
     </div>
+    <!-- event -->
+    <div class="col-md-6 col-md-offset-3" id="event_section">
+        <div class="card" id="e-create">
+            <div class="card-body">
+                <div class="d-flex justify-content-center">
+                    <div class="col">
+                        <h3 class="text text-left">Event</h3>
+                    </div>
+                    <div class="col text-right">
+                        <button class="btn btn-dark mt-4" id="eventlists"><i class="fas fa-th-list mr-2"></i>{{ __('website.e_lists') }}</button>
+                    </div>
+                </div>
+                <form action="POST" id="event_form">
+                    <input type="text" id="e-userid" name="userid" value="{{ Auth::user()->id }}" hidden>
+                    <div class="mt-2">
+                        <input type="text" class="form-control eventinput" placeholder="{{ __('website.e_title') }}" name="title">
+                    </div>
+                    <div class="mt-2">
+                        <textarea type="text" rows="5" class="form-control eventinput" placeholder="{{ __('website.e_description') }}" name="description"></textarea>
+                    </div>
+                    <input data-provide="datepicker" class="form-control eventinput mt-2" placeholder="{{ __('website.e_start_date') }}" name="start_date">
+                    <p class="text text-center">{{ __('website.from') }}</p>
+                    <input data-provide="datepicker" class="form-control eventinput mt-2" placeholder="{{ __('website.e_end_date') }}" id="end_date">
+                    <p class="text text-center">{{ __('website.to') }}</p>
+                    <div class="md-form md-outline">
+                        <input type="time" id="default-picker" class="form-control mt-2" placeholder="Select time" name="time">
+                        <label for="" class="text">{{ __('website.e_time') }}</label>
+                    </div>
+                    <div class="card event_image mt-2">
+                        <div class="card-body text-center">
+                            <span class="hiddenFileInput">
+                                <input type="file" name="event_image" class="event_upload"/>
+                            </span>
+                        </div>
+                    </div>
+                    <!-- <div class="mt-2">
+                        <div id="location_pick" style="width: 100%; height: auto;"></div>
+                    </div> -->
+                    <button class="btn btn-dark mt-2 btn-block eventbtn">{{ __('website.e_create') }}</button>
+                </form>
+            </div>
+        </div>
+        <div class="card" id="e-display">
+            <div class="card-body">
+                <h3 class="text">{{ __('website.e_lists') }}</h3>
+                <ul class="list-group" id="e-list-group">
+                    
+                </ul>
+                <div class="d-flex justify-content-center">
+                    <div class="col-md-8 col-md-offset-2">
+                        <button class="btn btn-light btn-block mt-4" id="close_eventlist">{{ __('website.close') }}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+<div class="space-lift"></div>
 
 <div id="modal_section">
 </div>

@@ -182,7 +182,7 @@ footer{
       color: rgb(217,181,81) !important;
       font-weight: bold;
       line-height: 2;
-      text-shadow: 2px 2px 10px rgb(255,255,255,0.2);
+      text-shadow: 2px 2px 10px rgb(0,0,0, 0.1) !important;
       margin-top: 15px !important;
       font-family: 'Kudryashev Display' !important;
   }
@@ -1352,7 +1352,7 @@ label.label_file {
     letter-spacing: 3px;
   }
 
-  .dropdown-menu:hover{
+  /* .dropdown-menu:hover{
     background-color: rgb(0,0,0) !important;
     transition-duration: 1s !important;
   }
@@ -1360,6 +1360,10 @@ label.label_file {
   .dropdown-menu{
     background-color: rgb(217,181,81) !important;
     font-weight: bold;
+  } */
+
+  .datepicker-days{
+      padding: 25px;
   }
 
   .lang_drop{
@@ -2137,9 +2141,125 @@ to { transform:  rotateY(360deg); }
 
 }
 
-/* #about-section{
-    margin-top: 15%;
-} */
+#map {
+    width: 100%;
+    height: 480px;
+}
+
+.event_image{
+    width: 100%;
+    height: auto;
+    border: 2px solid rgb(0,0,0,0.5) !important;
+}
+
+.eventinput:focus{
+    box-shadow: 2px 2px 10px #d9b551 !important;
+}
+
+
+.hiddenFileInput > input{
+    height: 100%;
+    width: 100;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .hiddenFileInput{
+    width: 90px;
+    height: 90px;
+    display: inline-block;
+    overflow: hidden;
+    cursor: pointer;
+    
+    /*for the background, optional*/
+    background: center center no-repeat;
+    background-size: 75% 75%;
+    background-image:  url('https://cdn-icons.flaticon.com/png/128/3913/premium/3913272.png?token=exp=1641355200~hmac=7542162805cbbb8b74e819faa4919995');
+  }
+
+.datepicker table tr td span {
+    color: rgb(0,0,0) !important;
+    font-size: 15px !important;
+}
+
+.event_text_date{
+    opacity: 0.6;
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+    color: rgb(217,181,81);
+}
+
+
+#eventlists{
+    border: 2px solid rgb(217,181,81);
+    background-color: rgb(255,255,255);
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(0,0,0);
+}
+
+#eventlists:hover{
+    background-color: rgb(217,181,81);
+    transition-duration: 0.8s;
+    color: rgb(255,255,255);
+}
+
+.eventbtn{
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(255,255,255) !important;
+}
+
+.eventbtn:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color: rgb(0,0,0) !important;
+}
+
+.event_show,.event_hide, .event_delete{
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    border-radius: 50% !important;
+}
+
+#close_eventlist{
+    border: 2px solid rgb(217,181,81);
+    background-color: rgb(0,0,0);
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(255,255,255) !important;
+}
+
+#close_eventlist:hover{
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+    color: rgb(0,0,0) !important; 
+}
+
+.space-lift{
+   margin-bottom: 130px !important;
+}
+
+.event_text{
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+    color: rgb(217,181,81);
+}
+
+#e-display {
+    background-color: rgb(0,0,0) !important;
+}
+
+#e-display > .card-body{
+    background-color: rgb(0,0,0) !important;
+}
+
+.list-group-item{
+    margin-top: 5px;
+    border: 2px solid rgb(217,181,81) !important;
+    background-color: rgb(0,0,0) !important;
+}
 
 #every {
     background-color: #000 !important;

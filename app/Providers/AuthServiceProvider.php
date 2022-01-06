@@ -25,6 +25,16 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('isNormal', function($user) {
+            return $user->package == 'normal';
+         });
+        
+        Gate::define('isStandard', function($user) {
+             return $user->package == 'standard';
+         });
+       
+        Gate::define('isLuxury', function($user) {
+             return $user->package == 'luxury';
+         });
     }
 }

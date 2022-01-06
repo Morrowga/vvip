@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use Auth;
 use App\Models\Eusp;
 use App\Models\User;
+use App\Models\Event;
 use App\Models\Action;
 use App\Helpers\Helper;
 use App\Models\Contact;
@@ -750,239 +751,79 @@ class UserPanelController extends Controller
     }
 
 
+    public function create_event(Request $request){
+        $userid = $request->userid;
+        $title = $request->title;
+        $description = $request->description;
+        $time = $request->time;
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+        $image = $request->event_image;
+        $event = new Event;
+        $event->user_id = $userid;
+        $event->title = $title;
+        $event->description = $description;
+        $event->time = $time;
+        $event->start_date = Carbon::parse($start_date);
+        $event->end_date = Carbon::parse($end_date);
+        if($request->hasfile('event_image')){
+            $imageName = $image->getClientOriginalName();
+            $file_save = $image->storeAs('event_images', $imageName, 'public');
+            $event->image = $imageName;
+        } 
+        $event->save();
+
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "data" => $event
+        ];
+
+        return $messages;
+    }
+
+    public function action_event_by_id(Request $request){
+        $user_id = $request->userid;
+        $event_id = $request->id;
+        if($request->eventaction == "Show"){
+            $event = Event::where('id', $event_id)->first();
+            $event->is_displayed = 1;
+            $event->save();
+
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "id" => $event->id
+            ];
+
+        } else if ($request->eventaction == "Hide"){
+            $event = Event::where('id', $event_id)->first();
+            $event->is_displayed = 0;
+            $event->save();
+
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "id" => $event->id
+            ];
+
+        } else if($request->eventaction == "Delete"){
+            $event = Event::where('id', $event_id)->first();
+            $event->delete();
+
+            $messages = [
+                "status" => "200",
+                "message" => "success",
+                "id" => $event_id
+            ];
+        }
+    
+
+        return $messages;
+    }
 
     public function privateConnection($user_id = null){
         return view('vvip_customers.private_connection');
     }
 }
 
-
-// $ip = "103.135.217.174";
-                    // //$request->visitor()->ip()
-                    // $agent = new Agent;
-                    // $mobile = $agent->isMobile();
-                    // $desktop = $agent->isDesktop();
-                    // $tablet = $agent->isTablet();
-                    // $phone = $agent->isPhone();
-                    // if($mobile){
-                    //     $image = 'fa-mobile';
-                    //     $result = 'Mobile';
-                    // } else if($desktop) {
-                    //     $image = 'fa-desktop';
-                    //     $result = 'Desktop';
-                    // } else if($tablet){
-                    //     $image = 'fa-tablet';
-                    //     $result = 'Tablet';
-                    // } else {
-                    //     $image = 'fa-question';
-                    //     $result = 'Unknown Device';
-                    // }
-                    // $platform = $request->visitor()->platform();
-                    // $browser  = $request->visitor()->browser();
-                    // $client = new \GuzzleHttp\Client();
-                    // $request = $client->get('https://api.freegeoip.app/json/'. $ip . '?apikey=bceff300-5899-11ec-a974-61401516c2e1');
-                    // $d = $request->getBody();
-                    // $data = json_decode($d);
-                    // $country =  $data->country_name;
-                    // $region = $data->region_name;
-                    // $city = $data->city;
-                    // $timezone = Carbon::now();
-                    // $time_format = $timezone->toDateTimeString();
-                    // $store_stat = new UservisitorCheck();
-                    // $store_stat->user_id = $user->id;
-                    // $store_stat->ip = $ip;
-                    // $store_stat->device_image = $image;
-                    // $store_stat->device_name = $result;
-                    // $store_stat->platform = $platform;
-                    // $store_stat->browser = $browser;
-                    // $store_stat->country_name = $country;
-                    // $store_stat->region_name = $region;
-                    // $store_stat->city_name = $city;
-                    // $store_stat->time = $time_format;
-                    // $store_stat->save();
-
-                    // $pusher = new Pusher(
-                    //     config('broadcasting.connections.pusher.key'),
-                    //     config('broadcasting.connections.pusher.secret'),
-                    //     config('broadcasting.connections.pusher.app_id'),
-                    //     config('broadcasting.connections.pusher.options')
-                    // );
-
-                    // $data = ['text' => 'Visitor enter your private page.'];
-
-                    // $pusher->trigger( 'notification', 'visitor-notification', $data);
-                    
-                    // return view('vvip_customers.private_connection', compact('user'));
-
-
-// public function getUserVisitor($userid = null){
-    //     if($userid !== null){
-    //         $visitor_check = UservisitorCheck::where('user_id', $userid)->where('verify_visitor', 0)->latest('time')->get();
-    //         $total_count = $visitor_check->count();
-    //         if($total_count > 0){
-    //             $visitor_array = [];
-    //             foreach($visitor_check as $visitor){
-    //                 $data = [
-    //                     'id' => $visitor['id'],
-    //                     'user_id' => $visitor['user_id'],
-    //                     'ip' => $visitor['ip'],
-    //                     'device_image' => $visitor['device_image'],
-    //                     'device_name' => $visitor['device_name'],
-    //                     'platform' => $visitor['platform'],
-    //                     'browser' => $visitor['browser'],
-    //                     'country' => $visitor['country_name'],
-    //                     'region' => $visitor['region_name'],
-    //                     'city' => $visitor['city_name'],
-    //                     'time' => $visitor['time'],    
-    //                     'verify_status' => $visitor['verify_visitor']
-    //                 ];
-    //                 array_push($visitor_array, $data);
-    //             }
-    
-    //             $messages = [
-    //                 "status" => "200",
-    //                 "message" => "success",
-    //                 "data" => $visitor_array,
-    //                 "total_count" => $total_count
-    //             ];  
-    
-    //             return $messages;
-    //         } else {
-    //             $messages = [
-    //                 "status" => "412",
-    //                 "message" => "No Data Available.",
-    //             ];  
-    
-    //             return $messages;
-    //         }
-            
-    //     } else {
-    //         $messages = [
-    //             "status" => "400",
-    //             "message" => "userid is essential",
-    //         ];  
-
-    //         return $messages;
-    //     }
-    // }
-
-    // public function lastestVisitor($userid = null){
-    //     if($userid !== null){
-    //         $all = UservisitorCheck::where('user_id', $userid)->where('verify_visitor', 0)->count();
-    //         $lastest = UservisitorCheck::where('user_id', $userid)->latest('time')->first();
-    //         $data = [
-    //             'id' => $lastest['id'],
-    //             'user_id' => $lastest['user_id'],
-    //             'ip' => $lastest['ip'],
-    //             'device_image' => $lastest['device_image'],
-    //             'device_name' => $lastest['device_name'],
-    //             'platform' => $lastest['platform'],
-    //             'browser' => $lastest['browser'],
-    //             'country' => $lastest['country_name'],
-    //             'region' => $lastest['region_name'],
-    //             'city' => $lastest['city_name'],
-    //             'time' => $lastest['time'],
-    //             'verify_visitor' => $lastest['verify_visitor']
-    //         ];
-    //         $messages = [
-    //             "status" => "200",
-    //             "message" => "success",
-    //             "data" => $data,
-    //             "total_count" => $all
-    //         ];  
-
-    //         return $messages;
-    //     }
-    // }
-
-
-    // public function verify_visitor(Request $request){
-    //     $check_verify = $request->status;
-    //     $visitor_id = $request->visitor_id;
-    //     $userid = $request->user_id;
-    //     if($check_verify == 1){
-    //         if($visitor_id !== null){
-    //             $allow_visitor = UservisitorCheck::where('user_id', $userid)
-    //             ->where('id', $visitor_id)
-    //             ->first();
-
-    //             $count = UservisitorCheck::where('user_id', $allow_visitor->user_id)
-    //             ->where('browser', $allow_visitor->browser)
-    //             ->where('ip', $allow_visitor->ip)
-    //             ->where('device_name', $allow_visitor->device_name)
-    //             ->where('platform', $allow_visitor->platform)
-    //             ->where('verify_visitor', '0')
-    //             ->count();
-                
-    //             $allow_visitor_devices = UservisitorCheck::where('user_id', $allow_visitor->user_id)
-    //             ->where('browser', $allow_visitor->browser)
-    //             ->where('ip', $allow_visitor->ip)
-    //             ->where('device_name', $allow_visitor->device_name)
-    //             ->where('platform', $allow_visitor->platform)
-    //             ->where('verify_visitor', '0')
-    //             ->get();
-
-    //             foreach($allow_visitor_devices as $allow_device){
-    //                 $allow_device->verify_visitor = $check_verify;
-    //                 $allow_device->save();
-    //             }
-
-    //             $pusher = new Pusher(
-    //                 config('broadcasting.connections.pusher.key'),
-    //                 config('broadcasting.connections.pusher.secret'),
-    //                 config('broadcasting.connections.pusher.app_id'),
-    //                 config('broadcasting.connections.pusher.options')
-    //             );
-
-    //             $data = ['text' => 'Now this visitor is verified.'];
-
-    //             $pusher->trigger( 'verify', 'verified-visitor', $data);
-                
-               
-    //             $messages = [
-    //                 'status' => "200",
-    //                 'message' => "success",
-    //                 'count' => $count
-    //             ];
-
-    //             return $messages;
-    //         }  else {
-    //             $messages = [
-    //                 'status' => "400",
-    //                 'message' => "required field is wrong",
-    //             ];
-
-    //             return $messages;
-    //         }
-    //     } else {
-    //         $disallow = UservisitorCheck::where('user_id', $userid)
-    //         ->where('id', $visitor_id)
-    //         ->first();
-
-
-    //         $count = UservisitorCheck::where('user_id', $disallow->user_id)
-    //         ->where('browser', $disallow->browser)
-    //         ->where('ip', $disallow->ip)
-    //         ->where('device_name', $disallow->device_name)
-    //         ->where('platform', $disallow->platform)
-    //         ->where('verify_visitor', '0')
-    //         ->count();
-
-    //         $remove_visitor = UservisitorCheck::where('user_id', $disallow->user_id)
-    //         ->where('browser', $disallow->browser)
-    //         ->where('ip', $disallow->ip)
-    //         ->where('device_name', $disallow->device_name)
-    //         ->where('platform', $disallow->platform)
-    //         ->where('verify_visitor', '0')
-    //         ->delete();
-
-            
-    //         $messages = [
-    //             'status' => "200",
-    //             'message' => "success",
-    //             'count' => $count
-    //         ];
-
-    //         return $messages;
-    //     }
-    // }

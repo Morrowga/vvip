@@ -17,7 +17,7 @@ $(function() {
                 },
            success:function(response){
                console.log(response);
-               var id_value = ['contact_active', 'deep_link_active','link_tree_active', 'url_active', 'email_active', 'sms_active', 'call_active', 'cns_active'];
+               var id_value = ['contact_active', 'deep_link_active','link_tree_active', 'url_active', 'email_active', 'sms_active', 'call_active', 'cns_active', 'event_active'];
                $.each(id_value, function(i,value){
                    var check = $('#' + value);
                    if(check.attr('data-id') == response.data['self_request_name']){
