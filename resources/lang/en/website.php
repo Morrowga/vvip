@@ -200,8 +200,8 @@ return [
     "e_create" => "Create",
     "from" => "From",
     "to" => "To",
-    // "e_show" => "Show",
-    // "e_hide" => "Hide၊",
-    // "e_delete" => "Delete"
+    "normal_text" => "You have chosen the Normal Package and it will cost 80,000 Kyats.Once you have made your payment, take a screenshot of the transfer and click the button below to send it and fill out the remaining forms. Your remittance receipt will be reviewed and verified within 24 hours.You will be able to activate your account within 48 hours of creating your account and your VVIP Smart Card will be sent to your door.",
+    "standard_text" => "You have chosen the Standard Package and it will cost 120,000 Kyats.Once you have made your payment, take a screenshot of the transfer and click the button below to send it and fill out the remaining forms. Your remittance receipt will be reviewed and verified within 24 hours.You will be able to activate your account within 48 hours of creating your account and your VVIP Smart Card will be sent to your door.",
+    "luxury_text" => "You have chosen the Luxury Package and it will cost 150,000 Kyats.Once you have made your payment, take a screenshot of the transfer and click the button below to send it and fill out the remaining forms. Your remittance receipt will be reviewed and verified within 24 hours.You will be able to activate your account within 48 hours of creating your account and your VVIP Smart Card will be sent to your door."
 ]
 ?>

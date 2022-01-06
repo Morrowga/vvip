@@ -516,6 +516,7 @@
             <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
                 <div class="modal-body">
                     <img id="payment-title" src="" width="50" height="50">
+                    <p class="text" id="amount_text"></p>
                     <p class="text" id="payment-account"></p>
                     <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
                     <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
@@ -527,10 +528,10 @@
                 </div>
                 <hr>
                 <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
-                    <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" title="Screenshot Tip For Kpay" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" title="Screenshot Tip For WavePay" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" title="Screenshot Tip For KBZ Banking" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" title="Screenshot Tip For AYA Banking" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
                     <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-dark paymentbtn">Confirm</button>
                 </div>
@@ -674,6 +675,9 @@ var select_card = '{{ __('website.select_card')  }}';
 var select_success = '{{ __('website.select_success')  }}';
 var packagetextforuser_one = '{{ __('website.packtext_first') }}';
 var packagetextforuser_two = '{{ __('website.packtext_second') }}';
+var normaltext = '{{ __('website.normal_text') }}';
+var standardtext = '{{ __('website.standard_text') }}';
+var luxurytext = '{{ __('website.luxury_text') }}';
 </script>
 @endsection
 @endsection

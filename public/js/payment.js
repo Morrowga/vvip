@@ -7,7 +7,16 @@ $(function(){
     $('.payment_link').on('click', function(e){
         var payment = $(this).attr('data-value');
         $('#payment_modal').modal('show');
+        console.log($('#package_name').val());
+        if($('#package_name').val() == '12345'){
+            $('#amount_text').text(normaltext);
+        } else if($('#package_name').val() == '678910'){
+            $('#amount_text').text(standardtext);
+        } else if($('#package_name').val() == '11121314'){
+            $('#amount_text').text(luxurytext);
+        }
         if(payment == 'kpay'){
+            $('#amount_text')
             $('#payment-title').attr('src', 'https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 09795684194');
             $('#kpop').show();
