@@ -257,6 +257,30 @@
                                     <div class="d-flex justify-content-center">
                                         <img src="../images/logo.jpeg" alt="" class="register_image">
                                     </div> 
+                                    <div class="col-md-8 col-md-offset-2">
+                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
+                                        <div class="devider"></div>
+                                        <div class="form-group row pay-border">
+                                            <div class="col-md-3" style="margin-top: 10px !important;">
+                                                <a class="payment_link" id="kpay" data-value="kpay"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150"></a>
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <a class="payment_link" id="wavemoney" data-value="wavemoney"><img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <a class="payment_link" id="kbzbanking" data-value="kbzbanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
+                                            </div>
+                                            <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                <a class="payment_link" id="ayabanking" data-value="ayabanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt=""></a>
+                                            </div>
+                                            <input type="text" name="package" id="package_name" hidden>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-section">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="../images/logo.jpeg" alt="" class="register_image">
+                                    </div> 
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <span id="error_name" class="error_texts" role="alert">{{ __('website.enter_name') }}</span>
@@ -334,30 +358,6 @@
                                                    <label for="css">Public</label><br>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-section">
-                                    <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div> 
-                                    <div class="col-md-8 col-md-offset-2">
-                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
-                                        <div class="devider"></div>
-                                        <div class="form-group row pay-border">
-                                            <div class="col-md-3" style="margin-top: 10px !important;">
-                                                <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt="">
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt="">
-                                            </div>
-                                            <input type="text" name="package" id="package_name" hidden>
                                         </div>
                                     </div>
                                 </div>
@@ -508,7 +508,35 @@
         </div>
     </div>
 
-
+    <div class="modal fade" id="payment_modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-header" style="border: none !important; margin-top: 10%;">
+                <!-- <h4 class="text">Card Logo</h4> -->
+            </div>
+            <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
+                <div class="modal-body">
+                    <img id="payment-title" src="" width="50" height="50">
+                    <p class="text" id="payment-account"></p>
+                    <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
+                    <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
+                        <input type="file" name="payment_image" class="paymentload" accept="image/*">
+                        Upload Screenshot
+                    </label>
+                </div>
+                <div class="text-center" id="screenshot">
+                </div>
+                <hr>
+                <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
+                    <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" title="Screenshot Tip For Kpay" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" title="Screenshot Tip For WavePay" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" title="Screenshot Tip For KBZ Banking" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" title="Screenshot Tip For AYA Banking" data-content="<img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%><img src='../images/kpay.jpg' width=50% height=50%>">Need Help <i class="far fa-question-circle"></i></button>
+                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-dark paymentbtn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="logoModal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-header" style="border: none !important;">
@@ -625,6 +653,7 @@
     </div>
 @section('script')
 <script src="../js/package.js"></script>
+<script src="../js/payment.js"></script>
 
 <script>
 

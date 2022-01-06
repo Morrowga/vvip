@@ -965,6 +965,10 @@ label.label_file {
     display: none !important;
 }
 
+.paymentload{
+    display: none !important;
+}
+
 .link_file_upload{
     display: none !important;
 }
@@ -973,6 +977,49 @@ label.label_file {
     color: #000 !important;
 	font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.fa-address-card{
+    margin-right: 5px;
+}
+
+.helpcenter{
+    font-size: 18px;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    color: rgb(217,181,81);
+    padding-top: 10px;
+    letter-spacing: 2px;
+}
+#payment-title {
+    text-align: center;
+    border-radius: 50% !important;
+}
+
+.paymentbtn{
+    border: 2px solid rgb(217,181,81) !important;
+    color: rgb(255,255,255) !important;
+    background-color: rgb(0,0,0) !important;
+    font-family: 'Kudryashev Display' !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.paymentbtn:hover{
+    color: rgb(0,0,0) !important;
+    background-color: rgb(217,181,81) !important;
+    transition-duration: 0.8s !important;
+}
+
+.payment-screenshot{
+    border: 0 !important;
+}
+
+#payment-account{
+    /* text-align: center; */
+    font-size: 20px;
     letter-spacing: 2px;
 }
 
@@ -1865,7 +1912,7 @@ input[type=number] {
     font-family: 'Pushster', cursive;
     font-size: 17px;
     line-height: 2;
-    margin-top: 19px;
+    margin-top: 40px;
 }
 
 .main_text{
@@ -2330,6 +2377,7 @@ to { transform:  rotateY(360deg); }
 .fa-hand-pointer{
     margin-left: 10px;
 }
+
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
     #text_color{
