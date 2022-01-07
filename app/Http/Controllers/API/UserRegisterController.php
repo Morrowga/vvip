@@ -467,7 +467,7 @@ class UserRegisterController extends Controller
         $payment->ip_address = $ip;
         $payment->status  = $status;
         $payment->payment_amount = $payment_amount;
-        $payment->encrypt_phone = Crypt::encryptString($phone);
+        $payment->encrypt_phone = sha1($phone);
         $payment->save();
 
         $time = $payment->created_at->diffForHumans();
@@ -521,11 +521,6 @@ class UserRegisterController extends Controller
         return response()->json($payment);
     }
 
-    public function payment_by_id($phone){
-        $payment = Payment::where('encrypt_phone', $phone)->first();
-
-        return response()->json($payment);
-    }
     
    
     /**
