@@ -481,13 +481,6 @@ class UserRegisterController extends Controller
                 "time" => $time,
                 "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
                 ],
-                "notification" => [
-                    "phone" => $payment->phone,
-                    "payment_type" => $payment->payment_type,
-                    "location" => $payment->location,
-                    "time" => $time,
-                    "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
-                ]
             ];
 
             $json = json_encode($noti_data);
