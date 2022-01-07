@@ -75,6 +75,9 @@ $(function(){
             data: formData,
             success:function(response){
                console.log(response);
+               if(response.message == 'success'){
+                   $('#payment_modal').modal('hide');
+               }
             }
         });
     });
