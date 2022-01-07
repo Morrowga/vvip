@@ -8,14 +8,15 @@ use App\Models\User;
 use GuzzleHttp\Client;
 use App\Helpers\Helper;
 use App\Models\Package;
+use App\Models\Payment;
 use App\Models\UserLog;
 use App\Models\DeepLink;
 use App\Models\HomeInfo;
 use App\Models\WaitingTime;
+use App\Models\CustomerCard;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Models\SmartCardDesign;
-use Spatie\Browsershot\Browsershot;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +24,6 @@ use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Storage;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use App\Http\Controllers\Mail\MailController;
-use App\Models\CustomerCard;
 use Intervention\Image\Facades\Image as Image;
 
 class UserRegisterController extends Controller
@@ -436,6 +436,87 @@ class UserRegisterController extends Controller
 
         return $save_card;
 
+    }
+
+    public function payment_upload(Request $request){
+        $screenshot = $request->screenshot_image;
+        $phone = $request->phone;
+        $payment_type = $request->payment_type;
+        $payment_amount = $request->payment_amount;
+        $package = $request->package;
+        $ip = $request->ip();
+        $locationData = \Location::get('103.135.217.166');
+        $place = $locationData->countryName . ',' . $locationData->regionName . ',' . $locationData->cityName;
+        $check_exist = Payment::where('phone', $phone)->first();
+        if($check_exist === null){
+            $status = 'New';
+        } else {
+            $status = 'Update';
+        }
+        $payment = new Payment();
+        $payment->phone = $phone;
+        $payment->payment_type = $payment_type;
+        $payment->screenshot_image = $screenshot;
+        $payment->package = $package;
+        if($request->hasfile('screenshot_image')){
+            $imageName = $screenshot->getClientOriginalName();
+            $file_save = $screenshot->storeAs('payment_screenshots', $imageName, 'public');
+            $payment->screenshot_image = $imageName;
+        } 
+        $payment->location = $place;
+        $payment->ip_address = $ip;
+        $payment->status  = $status;
+        $payment->payment_amount = $payment_amount;
+        $payment->save();
+
+        $time = $payment->created_at->diffForHumans();
+
+        $noti_url = 'https://fcm.googleapis.com/fcm/send';
+        $noti_data = [
+            "to" => "/topics/general",
+            "data" => [
+                "phone" => $payment->phone,
+                "payment_type" => $payment->payment_type,
+                "location" => $payment->location,
+                "time" => $time,
+                "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
+                ],
+                "notification" => [
+                    "phone" => $payment->phone,
+                    "payment_type" => $payment->payment_type,
+                    "location" => $payment->location,
+                    "time" => $time,
+                    "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
+                ]
+            ];
+
+            $json = json_encode($noti_data);
+
+        $noti_headers = [
+            'Authorization: key= AAAAqHafR0Q:APA91bGqxTVBXDNCsOTTb_FRhEViNVHuASEWuDIz_jXmg7g25vawVzs5qjwsaHUBiPqSoWiTBqD7wnDf8R54jwIXIDbiJGm5KGsstfahDfD1nj1yQCLTEsgaqI9GYu5zZzFGp9CkU_7d',
+            'Accept: application/json',
+            'Content-Type: application/json',
+        ];
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $noti_url);
+        curl_setopt($curl, CURLOPT_POST, 1);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $json);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $noti_headers);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HEADER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+
+        $response = curl_exec($curl);
+        $http_code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        curl_close($curl);
+
+        $messages = [
+            'status' => "200",
+            'message' => "success"
+        ];
+
+        return $messages;
     }
     
    

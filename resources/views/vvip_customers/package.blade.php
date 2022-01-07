@@ -519,21 +519,27 @@
                     <p class="text" id="amount_text"></p>
                     <p class="text" id="payment-account"></p>
                     <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
-                    <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
-                        <input type="file" name="payment_image" class="paymentload" accept="image/*">
-                        Upload Screenshot
-                    </label>
+                    <form action="" id="payment_form">
+                        <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
+                            <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
+                            Upload Screenshot
+                        </label>
+                        <input type="text" name="payment_type" id="p_type" hidden>
+                        <input type="text" name="payment_amount" id="p_amount" hidden>
+                        <input type="text" name="package" id="p_package" hidden>
+                        <input type="text" name="phone" id="p_phone" hidden>
                 </div>
                 <div class="text-center" id="screenshot">
                 </div>
                 <hr>
                 <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
-                    <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-dark paymentbtn">Confirm</button>
+                        <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
+                        <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-dark paymentbtn">Confirm</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -259,6 +259,8 @@ $.ajax({
         document.getElementById('name').value = response.name;
         $('.front_card_name').text(response.name);
         document.getElementById('phone').value = response.phone_number;
+        $('#p_phone').val(response.phone_number);
+        
         console.log(response.message);
       }else if(response.message == "Phone Number is invalid"){
             $('#error_text').html(invalid_error);

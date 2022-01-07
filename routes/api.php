@@ -71,6 +71,8 @@ Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::clas
 
 Route::post('user_exists', [App\Http\Controllers\API\UserRegisterController::class, 'user_exists']);
 
+Route::post('pymt', [App\Http\Controllers\API\UserRegisterController::class, 'payment_upload']);
+
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 
 Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'view_count']);

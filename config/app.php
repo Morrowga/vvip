@@ -167,7 +167,7 @@ return [
         Shetabit\Visitor\Provider\VisitorServiceProvider::class,
         Stevebauman\Location\LocationServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
-        
+        Stevebauman\Location\LocationServiceProvider::class,
 
 
         /*
@@ -242,6 +242,7 @@ return [
         'Visitor' => Shetabit\Visitor\Facade\Visitor::class,
         'Location' => Stevebauman\Location\Facades\Location::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
+        'Location' => 'Stevebauman\Location\Facades\Location',
     ],
 
 ];

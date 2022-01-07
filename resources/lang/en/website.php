@@ -78,7 +78,7 @@ return [
     "secure_popover_body" => "Public allow who can view your profile url from anywhere. Private allow close your profile url and url can only get from smart card .",
     "phone_need_digit" => "Phone No. need between 8 & 11 digits",
     "phonenumber_exist" => "Your phone number is exist.",
-    "speical_char" => "Does not allow special charactors",
+    "special_char" => "Does not allow special charactors",
     "url_need_char" => "Url need at least 4 charactors",
     "email_invalid" => "Email is invalid",
     "email_exist" => "Your email adddress is exist.",

@@ -17,12 +17,14 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->uuid('user_id')->nullable();
             $table->string('phone')->nullable();
-            $table->string('name')->nullable();
+            $table->string('package')->nullable();
             $table->string('payment_type')->nullable();
             $table->string('payment_amount')->nullable();
+            $table->string('location')->nullable();
             $table->string('screenshot_image')->nullable();
             $table->integer('is_valid')->default(0);
             $table->string('status')->nullable();
+            $table->string('ip_address')->nullable();
             $table->timestamps();
         });
     }

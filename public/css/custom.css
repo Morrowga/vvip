@@ -997,6 +997,10 @@ label.label_file {
     border-radius: 50% !important;
 }
 
+.fa-headset,.fa-address-card{
+    opacity: 0.5;
+}
+
 .paymentbtn{
     border: 2px solid rgb(217,181,81) !important;
     color: rgb(255,255,255) !important;
