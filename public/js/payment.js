@@ -7,6 +7,7 @@ $(function(){
     $('.payment_link').on('click', function(e){
         var payment = $(this).attr('data-value');
         $('#payment_modal').modal('show');
+        console.log(payment);
         console.log($('#package_name').val());
         if($('#package_name').val() == '12345'){
             $('#p_package').val('normal');
@@ -37,7 +38,7 @@ $(function(){
             $('#kpop').hide();
             $('#kbzpop').hide();
             $('#ayapop').hide();
-        } else if(payment == 'kbz'){
+        } else if(payment == 'kbzbanking'){
             $('#p_type').val('kbzbanking');
             $('#payment-title').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 1312443534554545454544');
@@ -45,7 +46,7 @@ $(function(){
             $('#kpop').hide();
             $('#wpop').hide();
             $('#ayapop').hide();
-        } else if(payment == 'aya'){
+        } else if(payment == 'ayabanking'){
             $('#p_type').val('ayabanking');
             $('#payment-title').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 82423742384738473834343');

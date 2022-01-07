@@ -518,6 +518,13 @@ class UserRegisterController extends Controller
 
         return $messages;
     }
+
+
+    public function payment_lists(){
+        $payment = Payment::orderBy('created_at', 'DESC')->get();
+        
+        return response()->json($payment);
+    }
     
    
     /**
