@@ -467,6 +467,7 @@ class UserRegisterController extends Controller
         $payment->ip_address = $ip;
         $payment->status  = $status;
         $payment->payment_amount = $payment_amount;
+        $payment->encrypt_phone = Crypt::encryptString($phone);
         $payment->save();
 
         $time = $payment->created_at->diffForHumans();
@@ -479,6 +480,7 @@ class UserRegisterController extends Controller
                 "payment_type" => $payment->payment_type,
                 "location" => $payment->location,
                 "time" => $time,
+                "encrypt" => $payment->encrypt_phone,
                 "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
                 ],
             ];
@@ -516,6 +518,12 @@ class UserRegisterController extends Controller
     public function payment_lists(){
         $payment = Payment::orderBy('created_at', 'DESC')->get();
         
+        return response()->json($payment);
+    }
+
+    public function payment_by_id($phone){
+        $payment = Payment::where('encrypt_phone', $phone)->first();
+
         return response()->json($payment);
     }
     

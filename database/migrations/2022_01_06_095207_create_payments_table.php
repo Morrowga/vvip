@@ -17,6 +17,7 @@ class CreatePaymentsTable extends Migration
             $table->id();
             $table->uuid('user_id')->nullable();
             $table->string('phone')->nullable();
+            $table->string('encrypt_phone')->nullable();
             $table->string('package')->nullable();
             $table->string('payment_type')->nullable();
             $table->string('payment_amount')->nullable();

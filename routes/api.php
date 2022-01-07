@@ -39,6 +39,8 @@ Route::group(['middleware' => 'apiKey'], function() {
     Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);    
 
     Route::get('pay_lists', [App\Http\Controllers\API\UserRegisterController::class, 'payment_lists']);
+
+    Route::get('payby/{phone}', [App\Http\Controllers\API\UserRegisterController::class, 'payment_by_id']);
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
