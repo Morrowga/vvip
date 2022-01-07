@@ -480,7 +480,7 @@ class UserRegisterController extends Controller
                 "payment_type" => $payment->payment_type,
                 "location" => $payment->location,
                 "time" => $time,
-                "encrypt" => $payment->encrypt_phone,
+                "web_link" => "https://admin.vvip9.co/" . $payment->encrypt_phone,
                 "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
                 ],
             ];
