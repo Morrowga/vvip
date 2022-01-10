@@ -2,6 +2,7 @@ $('#deeplink').hide();
 $('#email_click').hide();
 $('#link_tree_display').hide();
 $('#contact_display').hide();
+$('#event_display').hide();
 $('#cns_backbg').hide();
 var request_url = 'api/get_datas';
 var userid = $('#user_id').val();
@@ -662,30 +663,57 @@ $.ajax({
                     $('#cnstree_img').attr('src', '../' + response.linktree['link_image']);
                 }
             } else if(response.request == "get_events"){
+                $('#event_display').show();
                 var data_active = response.event_active;
-                $.each(data_active, function(i,e_active){
-                    var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-                    var isAndroid = /android/i.test(navigator.userAgent);  
-                    if(isAndroid){
-                        //https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] 
-                        var url = `intent://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] +` + "#Intent;package=com.google.android.calendar;scheme=https;end`;
-                        $('#e_body').append(`
-                        <div class="col-md-6">
-                            <div class="card" style="background-image: url(`+ e_active['image'] +`); background-size:cover; border-raidus: 10% !important; border: 2px solid rgb(217,181,81);">
-                                <div class="card-body">
-                                    <div class="info_section_event">
-                                        <h3 class="event_title">`+ e_active['title'] +`</h3>
-                                        <p class="event_description">`+ e_active['description'] +`</p>
-                                        <p class="event_location"><i class="fas fa-location-arrow mr-2"></i>`+ e_active['location'] +`</p>
-                                        <p class="event_datetime"><i class="far fa-clock mr-2"></i>`+ e_active['start_time'] + ' - ' + e_active['end_time'] +`, <i class="fas fa-calendar-alt mr-2"></i>`+ e_active['start_date'] +` to `+ e_active['end_date'] +`</p>
+                if(data_active.length > 1){
+                    $.each(data_active, function(i,e_active){
+                        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        var isAndroid = /android/i.test(navigator.userAgent);  
+                        if(isAndroid){
+                            //https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] 
+                            var url = `intent://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] +` + "#Intent;package=com.google.android.calendar;scheme=https;end`;
+                                $('#e_body').append(`
+                                <div class="col-md-6">
+                                    <div class="card" style="background-image: url(`+ e_active['image'] +`); background-size:cover; border-raidus: 10% !important; border: 2px solid rgb(217,181,81);">
+                                        <div class="card-body">
+                                            <div class="info_section_event">
+                                                <h3 class="event_title">`+ e_active['title'] +`</h3>
+                                                <p class="event_description">`+ e_active['description'] +`</p>
+                                                <p class="event_location"><i class="fas fa-location-arrow mr-2"></i>`+ e_active['location'] +`</p>
+                                                <p class="event_datetime"><i class="far fa-clock mr-2"></i>`+ e_active['start_time'] + ' - ' + e_active['end_time'] +`, <i class="fas fa-calendar-alt mr-2"></i>`+ e_active['start_date'] +` to `+ e_active['end_date'] +`</p>
+                                            </div>
+                                            <a href="`+ url +`" class="btn btn-success mt-3 add_calendar">Add to Calendar</a>
+                                        </div>
                                     </div>
-                                    <a href="`+ url +`" class="btn btn-success mt-3 add_calendar">Add to Calendar</a>
                                 </div>
-                            </div>
-                        </div>
-                        `);
-                    }
-                });
+                                `);
+                        }
+                    });
+                } else {
+                    $.each(data_active, function(i,e_active){
+                        var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+                        var isAndroid = /android/i.test(navigator.userAgent);  
+                        if(isAndroid){
+                            //https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] 
+                            var url = `intent://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] +` + "#Intent;package=com.google.android.calendar;scheme=https;end`;
+                                $('#e_body').append(`
+                                <div class="col-md-12">
+                                    <div class="card" style="background-image: url(`+ e_active['image'] +`); background-size:cover; border-raidus: 10% !important; border: 2px solid rgb(217,181,81);">
+                                        <div class="card-body">
+                                            <div class="info_section_event">
+                                                <h3 class="event_title">`+ e_active['title'] +`</h3>
+                                                <p class="event_description">`+ e_active['description'] +`</p>
+                                                <p class="event_location"><i class="fas fa-location-arrow mr-2"></i>`+ e_active['location'] +`</p>
+                                                <p class="event_datetime"><i class="far fa-clock mr-2"></i>`+ e_active['start_time'] + ' - ' + e_active['end_time'] +`, <i class="fas fa-calendar-alt mr-2"></i>`+ e_active['start_date'] +` to `+ e_active['end_date'] +`</p>
+                                            </div>
+                                            <a href="`+ url +`" class="btn btn-success mt-3 add_calendar">Add to Calendar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                `);
+                        }
+                    });
+                }
             }
         }
     });
