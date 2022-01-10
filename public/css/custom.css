@@ -1010,6 +1010,20 @@ label.label_file {
 
 }
 
+.geton_app{
+    transform: perspective(800px) rotateY(45deg);
+}
+
+.geton_android{
+    margin-top: 40px;
+    transform: perspective(800px) rotateY(45deg);
+}
+
+.geton_ios{
+    margin-top: 40px;
+    transform: perspective(800px) rotateY(-45deg);
+}
+
 .paymentbtn{
     border: 2px solid rgb(217,181,81) !important;
     color: rgb(255,255,255) !important;

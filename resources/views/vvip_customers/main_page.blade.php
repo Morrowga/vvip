@@ -31,22 +31,23 @@
         <!--===========================================Video-Slider========================================================-->
     </section>
         <!--===========================================Intro_section========================================================-->
-    <!-- <section id="android_section">
+    <section id="android_section">
         <div class="page-header-wrapper">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <img src="https://www.freepnglogos.com/uploads/google-play-png-logo/get-it-on-google-play-google-play-badge-png-logos-23.png" alt="" class="text-center img-fluid">
-                            <img src="https://www.pc-xp.com/wp-content/uploads/2019/01/iPhone-Repairs.png" alt="" class="img-fluid">
+                    <div class="row text-center">
+                        <div class="col-md-7 text-center">
+                            <img src="../images/screen1.png" alt="" class="text-center img-fluid geton_app">
                         </div>
-                        <div class="col-md-9">
-
+                        <div class="col-md-5 text-center" style="margin-top: 10%;">
+                            <img src="https://icon-library.com/images/google-play-icon-vector/google-play-icon-vector-3.jpg" alt="" class="text-center img-fluid geton_android">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/640px-Download_on_the_App_Store_Badge.svg.png" alt="" class="text-center img-fluid geton_ios">
+                            <!-- <img src="https://www.pc-xp.com/wp-content/uploads/2019/01/iPhone-Repairs.png" alt="" class="img-fluid"> -->
                         </div>
                     </div>
                 </div>
             </div>
-    </section> -->
+    </section>
 
     <section id="about-section" class="page bg-style1 about_ios">
         <div class="page-header-wrapper">
