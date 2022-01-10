@@ -667,6 +667,7 @@ $.ajax({
                     var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                     var isAndroid = /android/i.test(navigator.userAgent);  
                     if(isAndroid){
+                        //https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] 
                         var url = `intent://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] +` + "#Intent;package=com.google.android.calendar;scheme=https;end`;
                         $('#e_body').append(`
                         <div class="col-md-6">

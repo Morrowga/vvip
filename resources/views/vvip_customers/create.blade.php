@@ -654,6 +654,7 @@
 
 @section('script')
 <script src="../js/create_action.js"></script>
+<script src="//geodata.solutions/includes/countrystatecity.js"></script>
 <script>
     var app_label = '{{ __('website.enter_app_label') }}';
     var app_link = '{{ __('website.enter_app_link') }}';
