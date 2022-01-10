@@ -697,7 +697,7 @@ $.ajax({
                             var url = `com.google.calendar://?action=create&title=`+ e_active['title'] +`&description=`+ e_active['description'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&location=`+ e_active['location'];
                             var store_url = "https://itunes.apple.com/app/google-calendar-get-organised/id909319292";
                             // window.location = url;// fb://method/call..
-                            window.location = url;
+                            // window.location = url;
                             setTimeout(function(){
                                 if(confirm('Do you already have Amazon or do you want to go download it?')){
                                 window.location = store_url;
