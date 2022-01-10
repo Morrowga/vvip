@@ -706,7 +706,7 @@ $.ajax({
                                 }
                             }, 300); 
                         } else if(isAndroid){
-                            var url = `intent://calendar.google.com?action=TEMPLATE&text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] + `#Intent;package=com.google.android.calendar;scheme=https;end`;
+                            var url = `intent://www.google.com/calendar?action=TEMPLATE&text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] + `#Intent;package=com.google.android.calendar;scheme=https;end`;
                         } else {
                             var url = `https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'];
                         }
