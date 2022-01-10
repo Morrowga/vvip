@@ -694,8 +694,8 @@ $.ajax({
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                         var isAndroid = /android/i.test(navigator.userAgent);  
                         if(isIOS){
-                            var url = "com.amazon.mobile.shopping.web://amazon.com/" + host;
-                            var store_url = "https://itunes.apple.com/app/amazon-shopping/id297606951";
+                            var url = `com.google.calendar://?action=create&title=`+ e_active['title'] +`&description=`+ e_active['description'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&location=`+ e_active['location'];
+                            var store_url = "https://itunes.apple.com/app/google-calendar-get-organised/id909319292";
                             // window.location = url;// fb://method/call..
                             window.location = url;
                             setTimeout(function(){
@@ -706,7 +706,7 @@ $.ajax({
                                 }
                             }, 300); 
                         } else if(isAndroid){
-                            var url = `https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'];
+                            var url = `intent://www.google.com/calendar?action=TEMPLATE&text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] + `#Intent;package=com.google.android.calendar;scheme=https;end`;
                         } else {
                             var url = `https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'];
                         }
