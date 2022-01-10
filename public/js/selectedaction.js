@@ -693,8 +693,20 @@ $.ajax({
                     $.each(data_active, function(i,e_active){
                         var isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
                         var isAndroid = /android/i.test(navigator.userAgent);  
-                        if(isAndroid){
-                            var url = `intent://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] + `#Intent;package=com.google.android.calendar;scheme=https;end`;
+                        if(isIOS){
+                            var url = "com.amazon.mobile.shopping.web://amazon.com/" + host;
+                            var store_url = "https://itunes.apple.com/app/amazon-shopping/id297606951";
+                            // window.location = url;// fb://method/call..
+                            window.location = url;
+                            setTimeout(function(){
+                                if(confirm('Do you already have Amazon or do you want to go download it?')){
+                                window.location = store_url;
+                                } else {
+                                    alert('refresh the page to see the resut again.');
+                                }
+                            }, 300); 
+                        } else if(isAndroid){
+                            var url = `intent://www.google.com/calendar/event?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'] + `#Intent;package=com.google.android.calendar;scheme=https;end`;
                         } else {
                             var url = `https://calendar.google.com/calendar/r/eventedit?text=`+ e_active['title'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&details=`+ e_active['description'] +`&location=`+ e_active['location'];
                         }
