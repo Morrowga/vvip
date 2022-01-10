@@ -767,7 +767,7 @@ $(function() {
                             <div class="d-flex justify-content-center row">
                                 <div class="col-md-7">
                                     <p class="event_text_date"><i class="fas fa-calendar-alt ml-2 mr-2"></i>`+ e_val['start_date'] +` to `+ e_val['end_date'] +`</p> 
-                                    <p class="event_text_date"><i class="far fa-clock mr-2 ml-2"></i>` + e_val['time'] +`</p>
+                                    <p class="event_text_date"><i class="far fa-clock mr-2 ml-2"></i>` + e_val['start_time'] + ' - ' + e_val['end_time'] +`<i class="fas fa-location-arrow ml-2 mr-2"></i>`+ e_val['location'] +`</p>
                                     <p class="event_text ml-2">`+ e_val['title'] +`</p>
                                     <p class="event_text ml-2">`+ e_val['description'] +`</p>
                                     <div class="d-flex justify-content-right">
@@ -862,12 +862,34 @@ $(function() {
         })
     });
 
+
+    $("#countryId").bind("change keyup", function(event){
+        //Code here
+        $('#country_id').val($(this).val());
+     });
+
+     $("#stateId").bind("change keyup", function(event){
+        //Code here
+        $('#state_id').val($(this).val());
+     });
+
+     $("#cityId").bind("change keyup", function(event){
+        //Code here
+        $('#city_id').val($(this).val());
+     });
+
+     $("#detail_location").on("keyup", function(event){
+        //Code here
+        $('#detaillocate').val($(this).val());
+     });
+
     $('#close_eventlist').on('click', function(){
         $('#e-create').show();
         $('#e-display').hide();
     });
 
     $('#event_form').on('submit', function(e){
+        $('#location').val($('#detaillocate').val()+ ' , ' + $('#city_id').val() + ' , ' + $('#country_id').val());
         e.preventDefault();
         var create_event = 'api/create_event';
         var token =  $('#token').val();

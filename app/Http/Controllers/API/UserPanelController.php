@@ -754,8 +754,10 @@ class UserPanelController extends Controller
     public function create_event(Request $request){
         $userid = $request->userid;
         $title = $request->title;
+        $location = $request->location;
         $description = $request->description;
-        $time = $request->time;
+        $start_time = $request->start_time;
+        $end_time = $request->end_time;
         $start_date = $request->start_date;
         $end_date = $request->end_date;
         $image = $request->event_image;
@@ -763,9 +765,11 @@ class UserPanelController extends Controller
         $event->user_id = $userid;
         $event->title = $title;
         $event->description = $description;
-        $event->time = $time;
+        $event->start_time = $start_time;
+        $event->end_time = $end_time;
         $event->start_date = Carbon::parse($start_date);
         $event->end_date = Carbon::parse($end_date);
+        $event->location = $location;
         if($request->hasfile('event_image')){
             $imageName = $image->getClientOriginalName();
             $file_save = $image->storeAs('event_images', $imageName, 'public');

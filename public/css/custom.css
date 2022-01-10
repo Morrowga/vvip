@@ -2250,12 +2250,39 @@ to { transform:  rotateY(360deg); }
     /*for the background, optional*/
     background: center center no-repeat;
     background-size: 75% 75%;
-    background-image:  url('https://cdn-icons.flaticon.com/png/128/3913/premium/3913272.png?token=exp=1641355200~hmac=7542162805cbbb8b74e819faa4919995');
+    background-image:  url('https://img.icons8.com/cotton/2x/upload-to-cloud.png');
+  }
+
+  .locate_option{
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
   }
 
 .datepicker table tr td span {
     color: rgb(0,0,0) !important;
     font-size: 15px !important;
+}
+
+.event_title, .event_description, .event_location, .event_datetime{
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+    text-shadow: 2px 2px 10px rgb(217,181,81);
+    text-transform: capitalize;
+}
+
+.info_section_event{
+    background-color: rgb(217,181,81,0.5);
+    border-top-left-radius: 15% !important; 
+    border-bottom-left-radius: 15% !important; 
+    border-top-right-radius: 15% !important; 
+    border-bottom-right-radius: 15% !important; 
+    border: 2px solid rgb(217,181,81) !important;
+}
+
+.add_calendar{
+    border: 2px solid rgb(217,181,81) !important;
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
 }
 
 .event_text_date{

@@ -25,6 +25,7 @@
     rel="stylesheet"
     href="../css/animate.min.css"
   />
+  
 </head>
 <body>
     <div id="app" style="display:none; width:100%; height: auto; flex-direction: column;">
@@ -94,7 +95,7 @@
                 <div class="col-md-4">
                     <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4"> 
                     <a href="/list" class="text-center"><i class="fas fa-th-list fa-2x menu_list"></i></a>
                 </div>
             </div>
@@ -121,6 +122,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
     <script src="../js/Winwheel.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <script src="//geodata.solutions/includes/countrystatecity.js"></script>
 
     @yield('script')
     <script>

@@ -18,7 +18,8 @@ class CreateEventsTable extends Migration
             $table->uuid('user_id');
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
-            $table->time('time')->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
             $table->string('location')->nullable();
             $table->string('description')->nullable();
             $table->string('title')->nullable();

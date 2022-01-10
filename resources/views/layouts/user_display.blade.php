@@ -29,16 +29,16 @@
             @yield('content')
         </main>
     </div>
-    <div id="loading" style="display:block;">
+    <div id="load_user" style="display:block;">
         <input type="text" id="text_color" hidden>
         <div class="container justify-content-center d-flex">
             <div class="loader">
                 <div class="face">
                     <div class="circle"></div>
-                </div>                
+                </div>
                 <img src="../images/logo.jpeg" alt="" width="130" height="130" class="main_logo mt-4">
             </div>
-            <p class="smart">EVERYTHING IS SMART</p>
+            <!-- <p class="smart">EVERYTHING IS SMART</p> -->
         </div>
     </div>
         
@@ -48,7 +48,7 @@
     @yield('script')
     <script>
         let setT = setTimeout(function(){ 
-            document.getElementById("loading").style.display = "none";
+            document.getElementById("load_user").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 2500);
     </script>

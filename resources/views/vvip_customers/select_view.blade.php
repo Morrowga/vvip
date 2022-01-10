@@ -69,6 +69,13 @@
         </div>
     </div>
 </div>
-@endsection
 
+<div class="container" id="event_display">
+    <div class="col-md-12">
+        <div class="row text-center"  id="e_body">
+
+        </div>
+    </div>
+</div>
+@endsection
 

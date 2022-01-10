@@ -205,6 +205,10 @@ return [
     "luxury_text" => "You have chosen the Luxury Package and it will cost 150,000 Kyats.Once you have made your payment, take a screenshot of the transfer and click the button below to send it and fill out the remaining forms. Your remittance receipt will be reviewed and verified within 24 hours.You will be able to activate your account within 48 hours of creating your account and your VVIP Smart Card will be sent to your door.",
     "upload_screenshot" => "Upload Screenshot",
     "screenshot_warn" => "You have to upload your paid screnshot before you confirm.",
-    "needhelp" => "Need Help"
+    "needhelp" => "Need Help",
+    "select_country" => "Country",
+    "select_state" => "State",
+    "select_city" => "City",
+    "address_event" => "Address"
 ]
 ?>

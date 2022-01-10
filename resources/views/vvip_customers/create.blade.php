@@ -556,12 +556,46 @@
                         <textarea type="text" rows="5" class="form-control eventinput" placeholder="{{ __('website.e_description') }}" name="description"></textarea>
                     </div>
                     <input data-provide="datepicker" class="form-control eventinput mt-2" placeholder="{{ __('website.e_start_date') }}" name="start_date">
-                    <p class="text text-center">{{ __('website.from') }}</p>
-                    <input data-provide="datepicker" class="form-control eventinput mt-2" placeholder="{{ __('website.e_end_date') }}" id="end_date">
-                    <p class="text text-center">{{ __('website.to') }}</p>
+                    <input data-provide="datepicker" class="form-control eventinput mt-2" placeholder="{{ __('website.e_end_date') }}" name="end_date">
                     <div class="md-form md-outline">
-                        <input type="time" id="default-picker" class="form-control mt-2" placeholder="Select time" name="time">
-                        <label for="" class="text">{{ __('website.e_time') }}</label>
+                        <input type="time" id="default-picker" class="form-control mt-2" placeholder="Select Start time" name="start_time">
+                        <label for="" class="text">{{ __('website.e_start_time') }}</label>
+                    </div>
+                    <div class="md-form md-outline">
+                        <input type="time" id="default-picker" class="form-control mt-2" placeholder="Select End time" name="end_time">
+                        <label for="" class="text">{{ __('website.e_end_time') }}</label>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-4">
+                            <h3 class="text">{{ __('website.select_country') }}</h3>
+                            <select name="country" class="countries form-control" id="countryId">
+                            <option value="" class="locate_option">Select Country</option>
+                        </select>
+
+                            </div>
+                            <div class="col-sm-4">
+                            <h3 class="text">{{ __('website.select_state') }}</h3>
+                            <select name="state" class="states form-control" id="stateId">
+                            <option value="" class="locate_option">Select State</option>
+                        </select>
+                            </div>
+                            <div class="col-sm-4">
+                            <h3 class="text">{{ __('website.select_city') }}</h3>        
+                            <select name="city" class="cities form-control" id="cityId">
+                            <option value="" class="locate_option">Select City</option>
+                        </select>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <label for="" class="text">{{ __('website.address_event') }}</label>
+                            <input type="text" class="form-control" id="detail_location">
+                        </div>
+                        <input type="text" id="country_id" hidden>
+                        <input type="text" id="state_id" hidden>
+                        <input type="text" id="city_id" hidden>
+                        <input type="text" id="detaillocate" hidden>
+                        <input type="text" id="location" name="location" hidden>
                     </div>
                     <div class="card event_image mt-2">
                         <div class="card-body text-center">

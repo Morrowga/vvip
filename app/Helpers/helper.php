@@ -386,7 +386,8 @@ class Helper{
                 $user_check = User::where('id', $user_id)->first();
                 if ($user_check !== null) {
                     $events = Event::where('user_id', $user_id)->get();
-                    $event_array = [];
+                    $event_active = Event::where('is_displayed', 1)->get();
+                    $event_array = $e_active_array = [];
                     foreach($events as $event){
                         $data = [
                             "id" => $event->id,
@@ -394,19 +395,47 @@ class Helper{
                             "title" => $event->title,
                             "description" => $event->description,
                             "image" => "storage/event_images/". $event->image,
-                            "time" => date('h:i A', strtotime($event->time)),
+                            "start_time" => date('h:i A', strtotime($event->start_time)),
+                            "end_time" => date('h:i A', strtotime($event->end_time)),
                             "start_date" => date("m-d-Y", strtotime($event->start_date)),
-                            "end_date" => date("m-d-Y", strtotime($event->end_date))
+                            "end_date" => date("m-d-Y", strtotime($event->end_date)),
+                            "location" => str_replace(',', ' , ', $event->location),
                         ];
 
                         array_push($event_array, $data);
+                    }
+                    
+
+                    foreach($event_active as $e_active){
+                        $start = preg_split('/ +/', $e_active->start_date);
+                        $start_timeplusdate = $start[0] . ' ' . $e_active->start_time;
+                        $end = preg_split('/ +/', $e_active->end_date);
+                        $end_timeplusdate = $end[0] . ' ' . $e_active->end_time;
+
+                        $data_active = [
+                            "id" => $e_active->id,
+                            "is_displayed" => $e_active->is_displayed,
+                            "title" => $e_active->title,
+                            "description" => $e_active->description,
+                            "image" => "storage/event_images/". $e_active->image,
+                            "start_time" => date('h:i A', strtotime($e_active->start_time)),
+                            "end_time" => date('h:i A', strtotime($e_active->end_time)),
+                            "start_date" => date("m-d-Y", strtotime($e_active->start_date)),
+                            "end_date" => date("m-d-Y", strtotime($e_active->end_date)),
+                            "location" => str_replace(',', ' , ', $event->location),
+                            "utc_start" => date("Ymd\THi",strtotime($start_timeplusdate)),
+                            "utc_end" => date("Ymd\THi",strtotime($end_timeplusdate))
+                        ];
+
+                        array_push($e_active_array, $data_active);
                     }
 
                     $messages = [
                         "status" => "200",
                         "message" => "success",
                         "data" => $event_array,
-                        "request" => "get_events"
+                        "request" => "get_events",
+                        "event_active" => $e_active_array
                     ];
 
                     return $messages;
