@@ -467,7 +467,7 @@
                                 <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
                                     <div class="form-group row">
                                         <div class="col-md-12">
-                                            <button type="button" class="next btn btn-info" style="margin-top: 10px !important;">{{ __('website.next') }}</button>
+                                            <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
                                             <button type="submit" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
@@ -522,8 +522,13 @@
                     <form action="" id="payment_form">
                         <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
                             <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
-                            Upload Screenshot
+                            {{ __('website.upload_screenshot') }}
                         </label>
+                        <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
+                        <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
                         <input type="text" name="payment_type" id="p_type" hidden>
                         <input type="text" name="payment_amount" id="p_amount" hidden>
                         <input type="text" name="package" id="p_package" hidden>
@@ -533,12 +538,8 @@
                 </div>
                 <hr>
                 <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
-                        <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">Need Help <i class="far fa-question-circle"></i></button>
-                        <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-dark paymentbtn">Confirm</button>
+                        <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
+                        <button type="submit" class="btn btn-dark paymentbtn" disabled>{{ __('website.confirm') }}</button>
                     </form>
                 </div>
             </div>

@@ -57,30 +57,37 @@ $(function(){
         }
     });
 
-
-    $('#payment_form').on('submit', function(e){
-        e.preventDefault();
-        var create_payment = 'api/pymt';
-        var token =  $('#token').val();
-        let formData = new FormData(this);
-
-        $.ajax({
-            url: create_payment,
-            method:'POST',
-            contentType: false,
-            processData: false,
-            headers: {
-                    'X-CSRF-Token': token 
-            },
-            data: formData,
-            success:function(response){
-               console.log(response);
-               if(response.message == 'success'){
-                   $('#payment_modal').modal('hide');
-               }
-            }
-        });
+    $('.paymentload').on('change', function(e){
+        if($(this).val()){
+            $('.paymentbtn').attr('disabled', false);
+        } 
     });
+        $('#payment_form').on('submit', function(e){
+                e.preventDefault();
+                var create_payment = 'api/pymt';
+                var token =  $('#token').val();
+                let formData = new FormData(this);
+        
+                $.ajax({
+                    url: create_payment,
+                    method:'POST',
+                    contentType: false,
+                    processData: false,
+                    headers: {
+                            'X-CSRF-Token': token 
+                    },
+                    data: formData,
+                    success:function(response){
+                    console.log(response);
+                    if(response.message == 'success'){
+                        $('#payment_modal').modal('hide');
+                        $('.next').attr('disabled', false);
+                    }
+                    }
+                });
+        });
+
+   
     // $('[data-toggle="popover"]').popover();
     $('[data-rel=popover]').popover({
         html: true,

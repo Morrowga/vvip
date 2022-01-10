@@ -128,8 +128,10 @@
                             $('.input-lg').attr('style', 'letter-spacing: 3px !important;');
                             $('.url_text').attr('style', 'letter-spacing: 3px !important;');
                             $('.url').attr('style', 'letter-spacing: 3px !important;');
+                            $('.screenshot_warn').attr('style', 'letter-spacing: 2px !important;');
                             $('.select-card').attr('style', 'letter-spacing: 2px !important;');
                             $('.save-user-back').attr('style', 'letter-spacing: 2px !important;');
+                            $('.paymentbtn').attr('style', 'letter-spacing: 2px !important;');
                             $('.zoom').attr('style', 'letter-spacing: 2px !important;');
                             $('.text').attr('style', 'letter-spacing: 2px !important; font-size: 18px !important;');
                             $('.btn-place').attr('style', 'letter-spacing: 2px !important;');
