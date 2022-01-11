@@ -82,6 +82,7 @@ $(function(){
                     if(response.message == 'success'){
                         $('#payment_modal').modal('hide');
                         $('.next').attr('disabled', false);
+                        $('.next')[0].click(); 
                     }
                     }
                 });

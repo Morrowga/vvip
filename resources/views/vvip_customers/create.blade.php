@@ -567,20 +567,20 @@
                     </div>
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                             <h3 class="text">{{ __('website.select_country') }}</h3>
                             <select name="country" class="countries form-control" id="countryId">
                             <option value="" class="locate_option">Select Country</option>
                         </select>
 
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-6">
                             <h3 class="text">{{ __('website.select_state') }}</h3>
                             <select name="state" class="states form-control" id="stateId">
                             <option value="" class="locate_option">Select State</option>
                         </select>
                             </div>
-                            <div class="col-sm-4">
+                            <div class="col-sm-4" hidden>
                             <h3 class="text">{{ __('website.select_city') }}</h3>        
                             <select name="city" class="cities form-control" id="cityId">
                             <option value="" class="locate_option">Select City</option>

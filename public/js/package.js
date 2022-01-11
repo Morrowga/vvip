@@ -460,6 +460,7 @@ $("#phone").on('keyup', function(event) {
             }
         });       
     }
+    // console.log($(this).val());
 });
 
 //email_validate
@@ -703,8 +704,28 @@ function packageClick(e){
 });
 }  
 
+//verify-options
+$('.sub-btn').on('click', function(){
+    $('#submit-verify').modal('show');
+    $('.phone-verify').html(`
+    SMS Verify <i class="far fa-comment-alt"></i>
+    <p class="padding-send">We will send verify code to <br> `+ $('#phone').val() +`</p>
+    `);
+    console.log($('#email').val());
+    $('.email-verify').html(`
+    Email Verify <i class="far fa-envelope"></i>
+    <p class="padding-send">We will send verify link to <br> `+ $('#email').val() +`</p>
+    `);
+});
 
 
+$('.verifybtn').on('click', function(e){
+    var value = $(this).attr('id');
+    $('#verify-type').val(value);   
+    $('.sub-regi[type="submit"]')[0].click();
+
+    console.log(value);
+})
 
 //add_upload_logo_on_card
 $('.uploadLogo').on('change', function(){

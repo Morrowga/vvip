@@ -481,7 +481,7 @@ class UserRegisterController extends Controller
                 "location" => $payment->location,
                 "time" => $time,
                 "web_link" => "https://admin.vvip9.co/pymt_by/" . $payment->encrypt_phone,
-                "sound" => "https://www.mboxdrive.com/Eta%20GG.mp3"
+                "sound" => "https://www.mboxdrive.com/Worms%20Sms%20Tone.mp3"
                 ],
             ];
 

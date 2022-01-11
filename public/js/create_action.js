@@ -889,7 +889,7 @@ $(function() {
     });
 
     $('#event_form').on('submit', function(e){
-        $('#location').val($('#detaillocate').val()+ ' , ' + $('#city_id').val() + ' , ' + $('#country_id').val());
+        $('#location').val($('#detaillocate').val()+ ' , ' + $('#state_id').val() + ' , ' + $('#country_id').val());
         e.preventDefault();
         var create_event = 'api/create_event';
         var token =  $('#token').val();

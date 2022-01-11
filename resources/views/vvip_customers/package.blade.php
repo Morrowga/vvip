@@ -226,7 +226,7 @@
                                 <p id="error_text" style="padding: 5px; color: rgb(184, 28, 41);"></p>
                                 <input id="save-phone" type="number"
                                     class="form-control register-input" placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px; margin-top: 5px !important;"
-                                    value="{{ old('phone_number') }}" required autocomplete="phone_number">
+                                    value="{{ old('phone_number') }}" required onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
                             </div>
                         </div>
                         <div class="form-group mt-5">
@@ -449,7 +449,7 @@
                                     </div> 
                                     <div class="form-group row" style="margin-top: 10px;">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="password" type="password" placeholder="{{ __('website.new_pin') }}" pattern="[0-9]+" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required autocomplete="new-password">
+                                            <input id="password" type="number" placeholder="{{ __('website.new_pin') }}" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
                                             <p class="text pass_allow" style="margin-top: 10px !important;">{{ __('website.pass_allow') }}</p>
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -460,7 +460,8 @@
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
-                                            <input id="password-confirm" pattern="[0-9]+" type="password" placeholder="{{ __('website.confirm_pin') }}" class="form-control web_pin" name="password_confirmation" required autocomplete="new-password">
+                                            <input id="password-confirm" type="number" placeholder="{{ __('website.confirm_pin') }}" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57" class="form-control web_pin" name="password_confirmation">
+                                            <input type="text" id="verify-type"  name="verifytype" hidden>
                                         </div>
                                     </div>
                                 </div>
@@ -469,8 +470,34 @@
                                         <div class="col-md-12">
                                             <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
-                                            <button type="submit" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
+                                            <button type="button" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal fade" id="submit-verify" role="dialog">
+                                    <div class="modal-dialog">
+                                        <div class="modal-header" style="border: none !important; margin-top: 10%;">
+                                            <!-- <h4 class="text">Card Logo</h4> -->
+                                        </div>
+                                        <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
+                                            <div class="modal-body">
+                                               <div class="col-md-12">
+                                                   <h3 class="text text-center">Choose Options</h3>
+                                                   <div class="row">
+                                                        <div class="col-md-6 btn btn-dark verifybtn phone-verify" id="smsverify">
+                                                            
+                                                        </div>
+                                                        <div class="col-md-6 btn btn-dark verifybtn email-verify" id="emailverify">
+
+                                                        </div>
+                                                    </div>
+                                               </div>
+                                            </div>
+                                            <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
+                                                <button type="button" class="btn btn-secondary sub-regi-cancel" data-dismiss="modal">{{ __('website.close') }}</button>
+                                                <button type="submit" class="btn btn-dark paymentbtn sub-regi" hidden>{{ __('website.confirm') }}</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -487,7 +514,7 @@
     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header" style="border: none !important;">
+                <div class="modal-header" style="border: none !important; margin-top: 10%;">
                     <!-- <h4 class="text">Smart Card</h4> -->
                 </div>
                 <div class="modal-body" style="margin-top: 60px !important;">
@@ -547,7 +574,7 @@
     </div>
     <div class="modal fade" id="logoModal" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-header" style="border: none !important;">
+            <div class="modal-header" style="border: none !important; margin-top: 10%;">
                 <!-- <h4 class="text">Card Logo</h4> -->
             </div>
             <div class="modal-content" style="background-color: #fff !important;">
@@ -570,7 +597,7 @@
 
     <div class="modal fade" id="nameTextModal" role="dialog">
         <div class="modal-dialog">
-            <div class="modal-header" style="border: none !important;">
+            <div class="modal-header" style="border: none !important; margin-top: 10%;">
                 <!-- <h4 class="text">Card  Name</h4> -->
             </div>
             <div class="modal-content" style="background-color: #fff !important;">
@@ -590,7 +617,7 @@
 
     <div class="modal fade" id="descriptionTextModal"  role="dialog">
         <div class="modal-dialog">
-            <div class="modal-header" style="border: none !important;">
+            <div class="modal-header" style="border: none !important; margin-top: 10%;">
                 <!-- <h4 class="text">Card Description</h4> -->
             </div>
             <div class="modal-content" style="background-color: #fff !important;">
@@ -612,7 +639,7 @@
     <div class="modal fade bd-example-modal-lg" id="confirm_modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" id="modal_pdf">
-                <div class="modal-header" style="border: none !important;">
+                <div class="modal-header" style="border: none !important; margin-top: 10%;">
                     <!-- <h4 class="text">Please Confirm</h4> -->
                 </div>
                 <div class="modal-body  text-center" style="margin-top: 60px !important;">

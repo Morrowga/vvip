@@ -106,12 +106,15 @@ class RegisterController extends Controller
         }
 
 
-        if($user != null){
-            MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
-            return redirect()->back()->with(session()->flash('alert-success', 'Your Account has been created.Please check email for verification link.'));
+        if($request->verifytype == 'emailverify'){
+            if($user != null){
+                MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
+                return redirect()->back()->with(session()->flash('alert-success', 'Your Account has been created.Please check email for verification link.'));
+            }
+            return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
+        } else {
+            return view('vvip_customers.sms_code', compact('user'));
         }
-
-        return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
     }
 
 
