@@ -470,8 +470,6 @@ class UserRegisterController extends Controller
         $payment->encrypt_phone = sha1($phone);
         $payment->save();
 
-        $time = $payment->created_at->diffForHumans();
-
         $noti_url = 'https://fcm.googleapis.com/fcm/send';
         $noti_data = [
             "to" => "/topics/general",
@@ -479,7 +477,7 @@ class UserRegisterController extends Controller
                 "phone" => $payment->phone,
                 "payment_type" => $payment->payment_type,
                 "location" => $payment->location,
-                "time" => $time,
+                "time" => $payment->created_at,
                 "web_link" => "https://admin.vvip9.co/pymt_by/" . $payment->encrypt_phone,
                 "sound" => "https://www.mboxdrive.com/Worms%20Sms%20Tone.mp3"
                 ],

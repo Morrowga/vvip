@@ -635,7 +635,6 @@
         </div>
     </div>
 
-
     <div class="modal fade bd-example-modal-lg" id="confirm_modal" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content" id="modal_pdf">
