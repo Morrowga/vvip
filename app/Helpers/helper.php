@@ -386,7 +386,7 @@ class Helper{
                 $user_check = User::where('id', $user_id)->first();
                 if ($user_check !== null) {
                     $events = Event::where('user_id', $user_id)->get();
-                    $event_active = Event::where('is_displayed', 1)->get();
+                    $event_active = Event::where('is_displayed', 1)->where('user_id', $user_id)->get();
                     $event_array = $e_active_array = [];
                     foreach($events as $event){
                         $data = [
