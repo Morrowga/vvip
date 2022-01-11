@@ -714,7 +714,7 @@ $.ajax({
                             // window.location = url;
         
                         } else if(isAndroid){
-                            var url = `intent://www.google.com/calendar/event?action=create&title=`+ e_active['title'] + `&description=`+ e_active['description'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&location=`+ e_active['location'] + `#Intent;scheme=https;package=com.google.android.calendar;end`;
+                            var url = `intent://www.google.com/calendar?action=create&title=`+ e_active['title'] + `&description=`+ e_active['description'] +`&dates=`+ e_active['utc_start'] + `/`+ e_active['utc_end'] +`&location=`+ e_active['location'] + `#Intent;scheme=https;package=com.google.android.calendar;end`;
                             $('#e_body').append(`
                             <div class="col-md-12">
                                 <div class="card" style="background-image: url(`+ e_active['image'] +`); background-size:cover; border-raidus: 10% !important; border: 2px solid rgb(217,181,81);">
