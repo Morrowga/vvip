@@ -190,7 +190,7 @@ return [
     "our_team" => "Our Team",
     "packtext_first" => "Dear Customer, You selected ",
     "packtext_second" => "Package. You need to fill completely the rest of our register form. Have a good day.",
-    "useservices" => "Use these Services",
+    "useservices" => "Use These Services",
     "e_title" => "Event Title",
     "e_description" => "Event Description",
     "e_start_date" => "Event Start Date",

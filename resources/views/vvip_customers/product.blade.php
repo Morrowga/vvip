@@ -11,7 +11,7 @@
     </div>
 
     <div class="container text-center">
-        <button class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i></button>
+        <a href="/package" class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i></a>
     </div>
     <div class="container">
         <div class="col-md-12">
@@ -198,7 +198,7 @@
     <div class="devider"></div>
 
     <div class="container text-center" style="margin-top: 20px;">
-        <button class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i>{</button>
+        <a href="/package" class="btn btn-light feature_check">{{ __('website.useservices') }}<i class="fas fa-hand-pointer"></i></a>
     </div>
 
     <div class="col-md-12" style="height: 80px;">

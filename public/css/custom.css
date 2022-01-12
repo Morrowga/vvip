@@ -1465,17 +1465,40 @@ label.label_file {
       padding: 25px;
   }
 
+  .mm_bg:hover{
+    background-image: url('../images/mm.png');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    transition-duration: 0.9s !important;
+  }
+
+  .us_bg:hover{
+    background-image: url('../images/us.png');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 25px !important;
+    border-bottom-left-radius: 25px !important;
+    border-top-right-radius: 25px !important;
+    border-bottom-right-radius: 25px !important;
+    transition-duration: 0.9s !important;
+  }
+
   .lang_drop{
       color: #fff;
       font-weight: bold;
       text-align: center;
       font-family: 'Kudryashev Display' !important;
       letter-spacing: 2px;
+      /* background-color: #d9b551 !important; */
   }
   
 
   .drop_link{
-    color: #fff !important;
+    color: #000 !important;
     font-weight: bold !important;
     font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px !important;
@@ -1483,6 +1506,7 @@ label.label_file {
     text-align: center;
     text-decoration: none !important;
   }
+
 
   .dropdown_logout{
     font-family: 'Kudryashev Display' !important;

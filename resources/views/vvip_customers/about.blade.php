@@ -105,7 +105,7 @@
 <div class="container">
     <!-- <h3 class="text text-center">Other Products</h3> -->
     <div class="col-md-12 text-center">
-        <a href="http://htut.com/" target="_blank"><img src="../images/HTUT_LogoNew.png" alt="" width="150" height="90"></a>
+        <a href="" target="_blank"><img src="../images/mhh.png" alt="" width="200" height="70"></a>
     </div>
     <div class="col-md-12" style="margin-top: 20px;">
         <div class="d-flex justify-content-center">
@@ -150,7 +150,7 @@
 </div>
 
 <div class="col-md-12" style="height: 80px;">
-    <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="https://www.behance.net/poljakova" class="theme-author">Htut Media</a></p>
+    <p class="copyright text-center" style="padding-top: 35px !important;">Copyright &copy; 2021 <a href="" class="theme-author">Htut Media</a></p>
 </div>     
 
 @section('script')

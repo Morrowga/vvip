@@ -114,7 +114,7 @@
                 }, 2500);
 
                 $(function(){
-                $(window).on('load', function(){
+                    $(window).on('load', function(){
                         var drop =  $('#droplang').text();
                         if(drop == 'MYANMAR'){
                             $('.navli').attr('style', 'letter-spacing: 4px !important;');
@@ -145,6 +145,12 @@
                             $('.zoom').attr('style', 'font-size: 17px !important;');       
                         }
                     })
+
+                    if($('.drop_link').text() == 'MYANMAR'){
+                        $('.lang_drop').addClass('mm_bg');
+                    } else {
+                        $('.lang_drop').addClass('us_bg');
+                    }
                 })
             </script>
     </body> 
