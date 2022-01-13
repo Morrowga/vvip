@@ -2543,6 +2543,10 @@ to { transform:  rotateY(360deg); }
     color: rgb(255,255,255);
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
     font-size: 20px;
     padding: 10px !important;
 }

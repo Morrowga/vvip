@@ -26,8 +26,8 @@ class CreateCustomerCardsTable extends Migration
             $table->string('name')->nullable();
             $table->string('position')->nullable();
             $table->string('qr_position')->nullable();
-            $table->string('finish_card')->default();
-            $table->string('user_recieve')->default(0);
+            $table->integer('finish_card')->default(0);
+            $table->integer('user_recieve')->default(0);
             $table->string('package_name')->nullable();
             $table->timestamps();
         });

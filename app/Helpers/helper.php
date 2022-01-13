@@ -397,8 +397,8 @@ class Helper{
                             "image" => "storage/event_images/". $event->image,
                             "start_time" => date('h:i A', strtotime($event->start_time)),
                             "end_time" => date('h:i A', strtotime($event->end_time)),
-                            "start_date" => date("m-d-Y", strtotime($event->start_date)),
-                            "end_date" => date("m-d-Y", strtotime($event->end_date)),
+                            "start_date" => date("F-d-Y", strtotime($event->start_date)),
+                            "end_date" => date("F-d-Y", strtotime($event->end_date)),
                             "location" => str_replace(',', ' , ', $event->location),
                         ];
 
@@ -420,8 +420,8 @@ class Helper{
                             "image" => "storage/event_images/". $e_active->image,
                             "start_time" => date('h:i A', strtotime($e_active->start_time)),
                             "end_time" => date('h:i A', strtotime($e_active->end_time)),
-                            "start_date" => date("m-d-Y", strtotime($e_active->start_date)),
-                            "end_date" => date("m-d-Y", strtotime($e_active->end_date)),
+                            "start_date" => date("F-d-Y", strtotime($e_active->start_date)),
+                            "end_date" => date("F-d-Y", strtotime($e_active->end_date)),
                             "location" => str_replace(',', ' , ', $event->location),
                             "utc_start" => date("Ymd\THi",strtotime($start_timeplusdate)),
                             "utc_end" => date("Ymd\THi",strtotime($end_timeplusdate))
