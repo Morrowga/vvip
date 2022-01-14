@@ -39,6 +39,9 @@ Route::group(['middleware' => 'apiKey'], function() {
     Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);    
 
     Route::get('pay_lists', [App\Http\Controllers\API\UserRegisterController::class, 'payment_lists']);
+
+    Route::post('pymt', [App\Http\Controllers\API\UserRegisterController::class, 'payment_upload']);
+
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
@@ -72,8 +75,6 @@ Route::post('action_event_by_id', [App\Http\Controllers\API\UserPanelController:
 Route::get('qr_generate', [App\Http\Controllers\API\UserRegisterController::class, 'qr_generate']);
 
 Route::post('user_exists', [App\Http\Controllers\API\UserRegisterController::class, 'user_exists']);
-
-Route::post('pymt', [App\Http\Controllers\API\UserRegisterController::class, 'payment_upload']);
 
 Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::class,'get_device_info']);
 

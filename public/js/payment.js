@@ -74,8 +74,9 @@ $(function(){
                     contentType: false,
                     processData: false,
                     headers: {
-                            'X-CSRF-Token': token 
-                    },
+                            'X-CSRF-Token': token ,
+                            'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+                        },
                     data: formData,
                     success:function(response){
                     console.log(response);
