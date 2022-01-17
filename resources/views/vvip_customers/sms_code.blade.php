@@ -18,6 +18,8 @@
               <input class="otp" name="code2" type="text" oninput='digitValidate(this)' onkeyup='tabChange(2)' maxlength=1 >
               <input class="otp" name="code3" type="text" oninput='digitValidate(this)' onkeyup='tabChange(3)' maxlength=1 >
               <input class="otp" name="code4" type="text" oninput='digitValidate(this)'onkeyup='tabChange(4)' maxlength=1 >
+              <input class="otp" name="code5" type="text" oninput='digitValidate(this)'onkeyup='tabChange(5)' maxlength=1 >
+              <input class="otp" name="code6" type="text" oninput='digitValidate(this)'onkeyup='tabChange(6)' maxlength=1 >
             <hr class="mt-4">
             <button type="submit" class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify Account</button>
             </form>
