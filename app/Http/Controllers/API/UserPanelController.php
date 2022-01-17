@@ -775,7 +775,7 @@ class UserPanelController extends Controller
             $file_save = $image->storeAs('event_images', $imageName, 'public');
             $event->image = $imageName;
         } else {
-            $event->image = 'storage/event_images/eve.jpeg';
+            $event->image = 'eve.jpeg';
         }
         $event->save();
 
