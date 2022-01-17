@@ -123,6 +123,9 @@ class RegisterController extends Controller
         $result = curl_exec($ch); // This is the result from the API
         curl_close($ch);
 
+
+        return json_decode($result);
+
         
         // if($request->verifytype == 'emailverify'){
         //     if($user != null){
