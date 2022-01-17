@@ -64,6 +64,9 @@ let tabChange = function(val){
     data: formData,
     success: function(response){
       console.log(response);
+      if(response == "success"){
+        window.location.href = "{{ URL::to('login') }}"
+      }
     }
   });
  });
