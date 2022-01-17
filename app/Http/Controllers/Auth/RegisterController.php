@@ -106,12 +106,12 @@ class RegisterController extends Controller
         $hash = "2564861082022776597e279f8912eba8428a4a7f";
 
         // Config variables. Consult http://api.txtlocal.com/docs for more info.
-        $test = $user->verification_code;
+        $test = "0";
 
         // Data for text message. This is the text message data.
         $sender = "VVIP9"; // This is who the message appears to be from.
-        $numbers = "09958643647"; // A single number or a comma-seperated list of numbers
-        $message = "This is a otp code from VVIP9";
+        $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+        $message = "Your OTP Code is" . $user->verification_code . ". Don't Share with anyone.";
         // 612 chars or less
         // A single number or a comma-seperated list of numbers
         $message = urlencode($message);
@@ -124,7 +124,7 @@ class RegisterController extends Controller
         curl_close($ch);
 
 
-        return json_decode($result);
+        // return   ($result);
 
         
         // if($request->verifytype == 'emailverify'){
