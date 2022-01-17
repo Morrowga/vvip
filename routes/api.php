@@ -42,6 +42,8 @@ Route::group(['middleware' => 'apiKey'], function() {
 
     Route::post('pymt', [App\Http\Controllers\API\UserRegisterController::class, 'payment_upload']);
 
+    Route::post('verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
+
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);

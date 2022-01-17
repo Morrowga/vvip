@@ -83,11 +83,8 @@ class RegisterController extends Controller
         $user->encryption_url = $request->encryption;
         $user->secure_status = $request->secure_status;
         $user->password = Hash::make($request->pin);
-        $user->verification_code = sha1(time());
-        $user->save();
-
-        // Helper::user_stats('register', 'create', 'users', $user->id);
-        
+        $user->verification_code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 4);
+        $user->save();        
 
         $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
         ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png','com.pinterest'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png','com.linkedin.android'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png','com.tripadvisor.tripadvisor'],
@@ -102,34 +99,55 @@ class RegisterController extends Controller
             $deep_link->app_package = $link[2];
             $deep_link->active = 0;
             $deep_link->save();
-            // Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
         }
 
+        // Authorisation details.
+        $username = "kotoe@htut.com";
+        $hash = "2564861082022776597e279f8912eba8428a4a7f";
 
-        if($request->verifytype == 'emailverify'){
-            if($user != null){
-                MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
-                return redirect()->back()->with(session()->flash('alert-success', 'Your Account has been created.Please check email for verification link.'));
-            }
-            return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
-        } else {
-            return view('vvip_customers.sms_code', compact('user'));
-        }
+        // Config variables. Consult http://api.txtlocal.com/docs for more info.
+        $test = $user->verification_code;
+
+        // Data for text message. This is the text message data.
+        $sender = "VVIP 9"; // This is who the message appears to be from.
+        $numbers = "09958643647"; // A single number or a comma-seperated list of numbers
+        $message = "This is a otp code from VVIP9";
+        // 612 chars or less
+        // A single number or a comma-seperated list of numbers
+        $message = urlencode($message);
+        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+        $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        $result = curl_exec($ch); // This is the result from the API
+        curl_close($ch);
+
+        
+        // if($request->verifytype == 'emailverify'){
+        //     if($user != null){
+        //         MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);
+        //         return redirect()->back()->with(session()->flash('alert-success', 'Your Account has been created.Please check email for verification link.'));
+        //     }
+        //     return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
+        // } else {
+            return redirect()->route('otp.user', sha1($user->verification_code));
+        // }
     }
 
 
     public function verifyUser(Request $request){
-        $verification_code =  \Illuminate\Support\Facades\Request::get('code');
-        $user = User::where('verification_code', '=', $verification_code)->first();
+        $otp_code = $request->code1 . $request->code2 . $request->code3 . $request->code4;
+        $user = User::where('verification_code', '=', $otp_code)->first();
         if($user != null){
             $user->is_verified = 1;
             $user->save();
-
-            // Helper::user_stats('verify_user', 'create', 'users', $user->id);
-
-            return redirect()->route('login')->with(session()->flash('alert-success', 'Your Account is verified. Please Login.'));
+            return response()->json('success');
         }
+        return response()->json('failed');
+    }
 
-        return redirect()->route('login')->with(session()->flash('alert-danger', 'Invalid Code'));
+    public function otp_view($code){
+        return view('vvip_customers.sms_code');
     }
 }

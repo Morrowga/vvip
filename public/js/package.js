@@ -705,18 +705,18 @@ function packageClick(e){
 }  
 
 //verify-options
-$('.sub-btn').on('click', function(){
-    $('#submit-verify').modal('show');
-    $('.phone-verify').html(`
-    SMS Verify <i class="far fa-comment-alt"></i>
-    <p class="padding-send">We will send verify code to <br> `+ $('#phone').val() +`</p>
-    `);
-    console.log($('#email').val());
-    $('.email-verify').html(`
-    Email Verify <i class="far fa-envelope"></i>
-    <p class="padding-send">We will send verify link to <br> `+ $('#email').val() +`</p>
-    `);
-});
+// $('.sub-btn').on('click', function(){
+//     $('#submit-verify').modal('show');
+//     $('.phone-verify').html(`
+//     SMS Verify <i class="far fa-comment-alt"></i>
+//     <p class="padding-send">We will send verify code to <br> `+ $('#phone').val() +`</p>
+//     `);
+//     console.log($('#email').val());
+//     $('.email-verify').html(`
+//     Email Verify <i class="far fa-envelope"></i>
+//     <p class="padding-send">We will send verify link to <br> `+ $('#email').val() +`</p>
+//     `);
+// });
 
 
 $('.verifybtn').on('click', function(e){

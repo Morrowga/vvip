@@ -470,15 +470,14 @@
                                         <div class="col-md-12">
                                             <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
                                             <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
-                                            <button type="button" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
+                                            <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="modal fade" id="submit-verify" role="dialog">
+                                <!-- <div class="modal fade" id="submit-verify" role="dialog">
                                     <div class="modal-dialog">
                                         <div class="modal-header" style="border: none !important; margin-top: 10%;">
-                                            <!-- <h4 class="text">Card Logo</h4> -->
                                         </div>
                                         <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
                                             <div class="modal-body">
@@ -500,7 +499,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </form>
                         </div>
                     </div>
