@@ -22,6 +22,7 @@
               <input class="otp" name="code6" type="text" oninput='digitValidate(this)'onkeyup='tabChange(6)' maxlength=1 >
             <hr class="mt-4">
             <button type="submit" class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify Account</button>
+            <p class="text" style="margin-top: 10px;" id="otp_text"></p>
             </form>
           </div>
         </div>
@@ -66,6 +67,8 @@ let tabChange = function(val){
       console.log(response);
       if(response == "success"){
         window.location.href = "{{ URL::to('login') }}"
+      } else {
+        $('#otp_text').text('Your OTP Code is Invalid.Try Again!')
       }
     }
   });
