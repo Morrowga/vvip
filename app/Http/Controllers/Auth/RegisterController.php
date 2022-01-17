@@ -83,7 +83,7 @@ class RegisterController extends Controller
         $user->encryption_url = $request->encryption;
         $user->secure_status = $request->secure_status;
         $user->password = Hash::make($request->pin);
-        $user->verification_code = substr(str_shuffle("0123456789abcdefghijklmnopqrstvwxyz"), 0, 6);
+        $user->verification_code = random_int(100000, 999999);
         $user->save();        
 
         $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
