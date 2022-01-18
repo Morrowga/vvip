@@ -56,7 +56,7 @@ class UserRegisterController extends Controller
                     $user->package_status = "active";
                     $user->smart_card_design_id = $smart_card_design_id;
                     $user->encryption_url = $encryption_url;
-                    $user->verification_code = sha1(time());
+                    $user->verification_code = random_int(100000, 999999);
                     // $user->package_start_date = Carbon::now();
                     // $user->package_end_date = Carbon::now()->addYear(1);
                     // $remain = $user->package_end_date->diffIndays($user->package_start_date);
@@ -86,8 +86,29 @@ class UserRegisterController extends Controller
                         // Helper::user_stats('register', 'create', 'deep_links', $deep_link->id);
                     }
 
+                     // Authorisation details.
+                        $username = "kotoe@htut.com";
+                        $hash = "2564861082022776597e279f8912eba8428a4a7f";
 
-                    MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
+                        // Config variables. Consult http://api.txtlocal.com/docs for more info.
+                        $test = "0";
+
+                        // Data for text message. This is the text message data.
+                        $sender = "VVIP9"; // This is who the message appears to be from.
+                        $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+                        $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
+                        // 612 chars or less
+                        // A single number or a comma-seperated list of numbers
+                        $message = urlencode($message);
+                        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                        $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+                        curl_setopt($ch, CURLOPT_POST, true);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        $result = curl_exec($ch); // This is the result from the API
+                        curl_close($ch);
+
+                    // MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
                     
                     
                     $messages = [
@@ -118,6 +139,27 @@ class UserRegisterController extends Controller
                 "message" => 'Something went wrong'
             ];
             return $messages;
+        }
+    }
+
+    public function otp_modile(Request $request){
+        $code = $request->code;
+        $verify = User::where('verification_code', $code)->first();
+        if($verify !== null){
+            $verify->is_verified = 1;
+            $verify->save();
+            
+            $messages = [
+                "status" => "200",
+                "message" => "success"
+            ];
+
+            return $messages;
+        } else {
+            $messages = [
+                "status" => "200",
+                "message" => "failed"
+            ];
         }
     }
 
