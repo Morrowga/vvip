@@ -46,6 +46,8 @@ Route::group(['middleware' => 'apiKey'], function() {
 
     Route::post('verify_mobile', [App\Http\Controllers\API\UserRegisterController::class, 'otp_mobile']);
 
+    Route::post('sendagain', [App\Http\Controllers\API\UserRegisterController::class, 'sendAgain']);
+
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);

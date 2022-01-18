@@ -551,10 +551,10 @@
                             {{ __('website.upload_screenshot') }}
                         </label>
                         <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
-                        <button class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button type="button" class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button type="button" class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button type="button" class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
+                        <button type="button" class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
                         <input type="text" name="payment_type" id="p_type" hidden>
                         <input type="text" name="payment_amount" id="p_amount" hidden>
                         <input type="text" name="package" id="p_package" hidden>

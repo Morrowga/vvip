@@ -24,6 +24,11 @@
             <button type="submit" class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify Account</button>
             <p class="text" style="margin-top: 10px;" id="otp_text"></p>
             </form>
+            <form action="" method="POST" id="s-again">
+              <input type="hidden" id="token_code" name="_token" value="{{ csrf_token() }}">
+              <input type="text" id="encrypt" name="encrypt_code" hidden> 
+              <button type="submit" class="btn btn-dark text-left send-again mb-4" style="text-align: right !important; float: right !important;"></button>
+            </form>
           </div>
         </div>
       </div>
@@ -47,33 +52,98 @@ let tabChange = function(val){
  }
 
  $(function(){
-  $('#otp_form').on('submit', function(e){
-  e.preventDefault();
-  var token =  $('#token').val();
-  let formData = new FormData(this);
-  var token =  $('#token').val();
 
-  $.ajax({
-    url: '/api/verify',
-    method:'POST',
-    contentType: false,
-    processData: false,
-    headers: {
-        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
-        'X-CSRF-Token': token 
-    },
-    data: formData,
-    success: function(response){
-      console.log(response);
-      if(response == "success"){
-        window.location.href = "{{ URL::to('login') }}"
-      } else {
-        $('#otp_text').text('Your OTP Code is Invalid.Try Again!')
-      }
-    }
+  $(window).on('load', function() {
+    $('.send-again').attr('disabled', true)
+    var counter = 60;
+    var interval = setInterval(function() {
+        counter--;
+        // Display 'counter' wherever you want to display it.
+        if (counter == 0) {
+            clearInterval(interval);
+            $('.send-again').attr('disabled', false);
+            $('.send-again').html('<i class="fas fa-hourglass-half mr-2"></i>Send Again');
+            return;
+        }else{
+          $('.send-again').html('<i class="fas fa-hourglass-half mr-2"></i>Send Again ' + counter + 's');
+          // console.log("Timer --> " + counter);
+        }
+    }, 1000);
   });
- });
- })
+
+  $('#s-again').on('submit', function(e){
+      e.preventDefault()
+      var current = window.location.pathname;
+      var result = current.split('/');  
+      var code_value = $('#encrypt').val(result[2]);
+      var token =  $('#token_code').val();
+      let formDataCode = new FormData(this);
+
+      $.ajax({
+      url: '/api/sendagain',
+      method:'POST',
+      contentType: false,
+      processData: false,
+      headers: {
+          'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
+          'X-CSRF-Token': token 
+      },
+      data: formDataCode,
+      success: function(response){
+        console.log(response);
+        if(response['message'] == "success"){
+          window.location.href = "{{ URL::to('login') }}"
+        } else {
+          $('#otp_text').text('Your OTP Code is Invalid.Try Again!')
+        }
+      }
+    });
+
+
+    $(this).attr('disabled', true);
+    var counter = 60;
+    var interval = setInterval(function() {
+        counter--;
+        // Display 'counter' wherever you want to display it.
+        if (counter == 0) {
+            clearInterval(interval);
+            $('.send-again').attr('disabled', false);
+            $('.send-again').html('<i class="fas fa-hourglass-half mr-2"></i>Send Again');
+            return;
+        }else{
+          $('.send-again').html('<i class="fas fa-hourglass-half mr-2"></i>Send Again ' + counter + 's');
+          // console.log("Timer --> " + counter);
+        }
+    }, 1000);
+  });
+
+  $('#otp_form').on('submit', function(e){
+    e.preventDefault();
+    var token =  $('#token').val();
+    let formData = new FormData(this);
+    var token =  $('#token').val();
+
+    $.ajax({
+      url: '/api/verify',
+      method:'POST',
+      contentType: false,
+      processData: false,
+      headers: {
+          'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
+          'X-CSRF-Token': token 
+      },
+      data: formData,
+      success: function(response){
+        console.log(response);
+        if(response == "success"){
+          window.location.href = "{{ URL::to('login') }}"
+        } else {
+          $('#otp_text').text('Your OTP Code is Invalid.Try Again!')
+        }
+      }
+    });
+  });
+})
 </script>
 @endsection
 @endsection

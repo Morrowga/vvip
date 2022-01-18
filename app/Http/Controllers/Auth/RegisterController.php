@@ -134,7 +134,7 @@ class RegisterController extends Controller
         //     }
         //     return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
         // } else {
-            return redirect()->route('otp.user', sha1($user->verification_code));
+            return redirect()->route('otp.user', Crypt::encryptString($user->verification_code));
         // }
     }
 

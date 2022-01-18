@@ -157,9 +157,55 @@ class UserRegisterController extends Controller
             return $messages;
         } else {
             $messages = [
-                "status" => "200",
+                "status" => "424",
                 "message" => "failed"
             ];
+        }
+    }
+
+
+    public function sendAgain(Request $request){
+        $code = $request->encrypt_code;
+        $decrypt = Crypt::decryptString($code);
+        $code_check = User::where('verification_code', $decrypt)->first();
+        if($code_check !== null){
+            $code_check->verification_code = random_int(100000, 999999);
+            $code_check->save();
+
+            $username = "kotoe@htut.com";
+            $hash = "2564861082022776597e279f8912eba8428a4a7f";
+    
+            // Config variables. Consult http://api.txtlocal.com/docs for more info.
+            $test = "0";
+    
+            // Data for text message. This is the text message data.
+            $sender = "VVIP9"; // This is who the message appears to be from.
+            $numbers = $code_check->phone_number; // A single number or a comma-seperated list of numbers
+            $message = "Hi Welcome from VVIP9. Your OTP Code is " . $code_check->verification_code;
+            // 612 chars or less
+            // A single number or a comma-seperated list of numbers
+            $message = urlencode($message);
+            $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+            $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $result = curl_exec($ch); // This is the result from the API
+            curl_close($ch);
+
+
+            $messages = [
+                "status" => "200",
+                "message" => "success"
+            ]; 
+            return $messages;
+
+        } else {
+            $messages = [
+                "status" => "424",
+                "message" => "failed"
+            ]; 
+            return $messages;
         }
     }
 
