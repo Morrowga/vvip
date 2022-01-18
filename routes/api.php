@@ -44,6 +44,8 @@ Route::group(['middleware' => 'apiKey'], function() {
 
     Route::post('verify', [App\Http\Controllers\Auth\RegisterController::class, 'verifyUser'])->name('verify.user');
 
+    Route::post('verify_mobile', [App\Http\Controllers\API\UserRegisterController::class, 'otp_mobile']);
+
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);

@@ -142,7 +142,7 @@ class UserRegisterController extends Controller
         }
     }
 
-    public function otp_modile(Request $request){
+    public function otp_mobile(Request $request){
         $code = $request->code;
         $verify = User::where('verification_code', $code)->first();
         if($verify !== null){
