@@ -15,7 +15,7 @@ $.ajax({
     },  
     type: 'POST',
     success: function(response){
-        if(response.request == "contacts"){
+        if(response.request == "get_contacts"){
                 $('#image_hide').hide();
                 $('#contact_display').show();
                 var image_display = response.data['image'].replace('https://vvip9.co/','../');
@@ -173,7 +173,7 @@ $.ajax({
             if(response.data['email_and_internet']['website_three'] == null){
                 $('#web_three').hide();
             }
-        } else if(response.request == "deep_link"){
+        } else if(response.request == "get_deep_link"){
             $('#dpluse').attr('style', 'margin-top: 200px;');
             data_view = response.deep_link;
             $.each(data_view, function(i,value){ 
@@ -409,7 +409,7 @@ $.ajax({
                 // window.location.replace("facebook://" + host);
                 }
             });
-        } else if(response.request == "eusp"){
+        } else if(response.request == "get_eusp"){
                 if($('#self_request').val() == "url_active"){
                    window.location = "https://" + response.data['url'];
                 } else if($('#self_request').val() == "email_active"){

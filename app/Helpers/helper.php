@@ -180,7 +180,7 @@ class Helper{
                     $messages = [
                         "status" => "200",
                         "message" => "success",
-                        "request" => "eusp",
+                        "request" => "get_eusp",
                         "data" => [
                             "email" => "",
                             "email_subject" => "",
