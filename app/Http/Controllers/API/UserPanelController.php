@@ -312,7 +312,7 @@ class UserPanelController extends Controller
                     return view('vvip_customers.select_view', compact('data_module'));
                 }
             } else if($normal !== null){
-                if ($normal->secure_status !== 'private') {
+                if ($normal->secure_status !== 'Private') {
                     $data_module = SelectedView::where('user_id', $normal->id)->first();
                     if(empty($data_module->request_name)){
                         $messages = [
