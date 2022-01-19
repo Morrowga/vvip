@@ -77,10 +77,6 @@
         </div>
     </div>
 </div>
-
-@section('script')
-<script src="../js/selectedaction.js"></script>
-@endsection
 @endsection
 
 
