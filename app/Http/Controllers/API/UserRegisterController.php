@@ -114,8 +114,9 @@ class UserRegisterController extends Controller
                     $messages = [
                         "status" => '200',
                         "message" => 'Success',
+                        "encrypt_code" => $user->verification_code,
                         "user_id" => $user->id,
-                        "verify" => 'Your Accoutn has been created. Please check Email for verify.'
+                        "verify" => 'Register Successful'
                     ];
                     return $messages;
                 } else {
@@ -151,7 +152,7 @@ class UserRegisterController extends Controller
             
             $messages = [
                 "status" => "200",
-                "message" => "success"
+                "message" => "success",
             ];
 
             return $messages;
@@ -196,7 +197,8 @@ class UserRegisterController extends Controller
 
             $messages = [
                 "status" => "200",
-                "message" => "success"
+                "message" => "success",
+                "encrypt_code" => Crypt::encryptString($code_check->verification_code)
             ]; 
             return $messages;
 
