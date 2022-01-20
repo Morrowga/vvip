@@ -43,15 +43,17 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="card" id="menu_list_card">
                     <div class="card-body">
-                        <a href="/profile" class="btn btn-light btn-block menu_button"><i class="menu-icon fas fa-user-circle mr-2"></i>{{ __('website.profile') }}<i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/create_data" class="btn btn-light btn-block menu_button"><i class="far fa-plus-square mr-2 menu-icon"></i>{{ __('website.create_content') }}<i class="fas fa-caret-right menu_arrow"></i></a>
-                        <a href="/action" class="btn btn-light btn-block menu_button"><i class="fas fa-exchange-alt mr-2 menu-icon"></i>{{ __('website.change_action') }}<i class="fas fa-caret-right menu_arrow"></i></a>
+                        <a href="/profile" class="btn btn-light btn-block menu_button"><img src="../images/profile.png" class="mr-3" width="30" height="30" alt="">{{ __('website.profile') }} <img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></a>
+                        <a href="/create_data" class="btn btn-light btn-block menu_button"><img src="../images/contact.png" class="mr-3" width="30" height="30" alt="">{{ __('website.create_content') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></a>
+                        <a href="/action" class="btn btn-light btn-block menu_button"><img src="../images/action.png" class="mr-3" width="30" height="30" alt="">{{ __('website.change_action') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></a>
+                        <button class="btn btn-light btn-block menu_button"><img src="../images/card2.png" class="mr-3" width="30" height="30" alt="">{{ __('website.support') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></button>
+                        <button class="btn btn-light btn-block menu_button"><img src="../images/lucky_draw.png" class="mr-3" width="30" height="30" alt="">{{ __('website.support') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></button>
                         <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-power-off mr-2 menu-icon"></i>{{ __('website.active_my_card') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
                         <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-ticket-alt mr-2 menu-icon"></i>{{ __('website.lucky_draw') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
                         <!-- <button class="btn btn-light btn-block menu_button"><i class="fas fa-chart-pie mr-2 menu-icon"></i>{{ __('website.statistic') }}<i class="fas fa-caret-right menu_arrow"></i></button> -->
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-share-alt-square mr-2 menu-icon"></i>{{ __('website.share') }}<i class="fas fa-caret-right menu_arrow"></i></button>
-                        <a href="/setting" class="btn btn-light btn-block menu_button"><i class="fas fa-cog mr-2 menu-icon"></i>{{ __('website.setting') }}<i class="fas fa-caret-right menu_arrow"></i></a>
-                        <button class="btn btn-light btn-block menu_button"><i class="fas fa-headset mr-2 menu-icon"></i>{{ __('website.support') }}<i class="fas fa-caret-right menu_arrow"></i></button>
+                        <button class="btn btn-light btn-block menu_button"><img src="../images/share.png" class="mr-3" width="30" height="30" alt="">{{ __('website.share') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></button>
+                        <a href="/setting" class="btn btn-light btn-block menu_button"><img src="../images/setting.png" class="mr-3" width="30" height="30" alt="">{{ __('website.setting') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></a>
+                        <button class="btn btn-light btn-block menu_button"><img src="../images/technical-support.png" class="mr-3" width="30" height="30" alt="">{{ __('website.support') }}<img src="../images/right_arrow.png" class="menu_arrow" width="30" height="30" alt=""></button>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="background-color: #000 !important;">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/home') }}">
-            <img src="../images/logo.jpeg" alt="" width="100" height="100">
+            <img src="../images/logo.jpeg" alt="" width="80" height="80">
         </a>
         <!-- <a href="/spin_wheel" id="spinwheel" class="lucky">LUCKY DRAW DAILY <img src="https://www.pngall.com/wp-content/uploads/10/Spinning-Wheel-Vector-PNG-Photos.png" class="pl-2" alt="" width="50" height="50"></a> -->
     <ul class="navbar-nav ml-auto">
@@ -49,7 +49,7 @@
         </div>
     </div>
 </div> -->
-<div class="container" id="home_height" style="height: 500px;">
+<div class="container" id="home_height">
     <div class="col-md-12">
         <div class="d-flex justify-content-between">
             <h1 class="text">{{ __('website.welcome') }}</h1>
@@ -60,59 +60,38 @@
     </div>
     <div class="col-md-12 menu mt-3">
         <div class="d-flex justify-content-center">
-            <div class="col text-right home-col">
-                <div class="col-md-12 text-center">
-                    <div class="card" id="homecard">
-                        <div class="card-body">
-                            <a href="/action" class="btn btn-dark action"><i class="fas fa-exchange-alt pr-2"></i>{{ __('website.action') }}</a>
-                        </div>
+            <div class="col-md-6 col-md-offset-3">
+                <div class="row">
+                    <div class="col home-col text-center">
+                        <a class="homelink" href="/action"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <p class="home_text">Action</p>
+                    </div>
+                    <div class="col home-col text-center">
+                        <a class="homelink" href="/create"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <p class="home_text">Create</p>
                     </div>
                 </div>
-                <!-- <div class="col-md-12 mt-4 text-center">
-                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="action" width="350" height="280">
-                </div> -->
-            </div>
-            <div class="col text-left home-col">
-                <div class="col-md-12 text-center">
-                    <div class="card" id="homecard">
-                        <div class="card-body">
-                            <a href="/create_data" class="btn btn-dark create"><i class="fas fa-plus-square pr-2"></i>{{ __('website.create') }}</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- <div class="col-md-12 mt-4 text-center">
-                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="create" width="350" height="280">
-                </div> -->
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            <div class="col text-right home-col" style="margin-top: 25px !important;">
-                <div class="col-md-12 text-center">
-                    <div class="card" id="homecard">
-                        <div class="card-body">
-                            <a href="/profile" class="btn btn-dark profile"><i class="fas fa-user-circle pr-2"></i>{{ __('website.profile') }}</a>
-                        </div>
+            <div class="col-md-6 col-md-offset-3 mt-3">
+                <div class="row">
+                    <div class="col home-col text-center">
+                        <a class="homelink" href="/profile"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <p class="home_text">Profile</p>
                     </div>
-                </div>  
-                <!-- <div class="col-md-12 mt-4 text-center">
-                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="profile" width="350" height="280">
-                </div> -->
-            </div>
-            <div class="col text-left home-col" style="margin-top: 25px !important;">
-                <div class="col-md-12 text-center">
-                    <div class="card" id="homecard">
-                        <div class="card-body">
-                            <a href="/setting" class="btn btn-dark setting"><i class="fas fa-cog pr-1"></i>{{ __('website.setting') }}</a>
-                        </div>
+                    <div class="col home-col text-center">
+                        <a class="homelink" href="/setting"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <p class="home_text">Settings</p>
                     </div>
                 </div>
-                <!-- <div class="col-md-12 mt-4 text-center">
-                    <img src="https://i.pinimg.com/originals/98/85/79/988579fea8473f5dd48741d6321c2571.jpg" alt="" id="setting" width="350" height="280">
-                </div> -->
             </div>
         </div>
     </div>
 </div>
+
+<div class="space-lift"></div>
+
 @endsection
 
 
