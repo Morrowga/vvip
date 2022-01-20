@@ -23,7 +23,7 @@ $(function() {
                    var display = check.attr('data-text');
                    if(check.attr('data-id') == response.data['self_request_name']){
                        check.attr('style', 'background-color: rgb(217,181,81) !important');
-                        check.html('<img src="../images/star.png" class="star_left mt-1" width="20" height="20" alt="">' + display + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
+                        check.html('<img src="../images/star.png" class="star_left mt-2" width="20" height="20" alt="">' + display + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
                    } else {
                        check.attr('style', 'background-color: rgb(0,0,0) !important');
                        check.html(display + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
@@ -52,7 +52,7 @@ $(function() {
             } else {
                 $('#' + response.data['self_request_name']).attr('style', 'background-color: rgb(217,181,81) !important');
                 var text_dis = $('#' + response.data['self_request_name']).attr('data-text');
-                $('#' + response.data['self_request_name']).html('<img src="../images/star.png" class="star_left mt-1" width="20" height="20" alt="">' + text_dis + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
+                $('#' + response.data['self_request_name']).html('<img src="../images/star.png" class="star_left mt-2" width="20" height="20" alt="">' + text_dis + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
             }
         }
     });

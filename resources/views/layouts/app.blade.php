@@ -96,7 +96,7 @@
                     <a href="/home" class="text-center"><img src="../images/logo.jpeg"  class="home_route" alt=""></a>
                 </div>
                 <div class="col-md-4"> 
-                    <a href="/list" class="text-center"><img src="../images/menuu.png" style="background-color: #fff;" alt="" width="90" height="90"></a>
+                    <a href="/list" class="text-center"><i class="fas fa-th-large fa-2x create_content_icon"></i></a>
                 </div>
             </div>
         </div>

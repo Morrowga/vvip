@@ -96,7 +96,7 @@ class UserRegisterController extends Controller
                         // Data for text message. This is the text message data.
                         $sender = "VVIP9"; // This is who the message appears to be from.
                         $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
-                        $message = "VVIP9ကိုအသုံးပြုရန်".$user->verification_code."ကိုOTPကုဒ်နေရာတွင်ဖြည့်သွင်းပါ။လေးစားစွာဖြင့်";
+                        $message = "Thanks for interesting our VVIP9.Please enter".$user->verification_code." in the OTP Code for our service.Regards,.................................................................";
                         $encode_message = Helper::unicodeMessageEncode($message);
                         // 612 chars or less
                         // A single number or a comma-seperated list of numbers

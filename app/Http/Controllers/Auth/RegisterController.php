@@ -111,7 +111,7 @@ class RegisterController extends Controller
         // Data for text message. This is the text message data.
         $sender = "VVIP9"; // This is who the message appears to be from.
         $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
-        $message = "Thanks for interesting our VVIP9.Please enter".$user->verification_code." in the OTP Code for our service.Regards,.................................................................";
+        $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
         // 612 chars or less
         // A single number or a comma-seperated list of numbers
         $message = urlencode($message);
