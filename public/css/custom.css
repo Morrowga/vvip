@@ -1324,6 +1324,12 @@ label.label_file {
     margin-top: 3px;
   }
 
+  .star_left{
+    text-align:left; 
+    float:left; 
+    margin-top: 3px;
+  }
+
   .menu_button{
     background-color: rgb(255,255,255, 0.8) !important;
     color: #000 !important;
