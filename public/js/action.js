@@ -23,6 +23,7 @@ $(function() {
                    var display = check.attr('data-text');
                    if(check.attr('data-id') == response.data['self_request_name']){
                        check.attr('style', 'background-color: rgb(217,181,81) !important');
+                        check.html('<img src="../images/star.png" class="mr-2" width="30" height="30" alt="">' + display + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
                    } else {
                        check.attr('style', 'background-color: rgb(0,0,0) !important');
                    }
@@ -49,6 +50,8 @@ $(function() {
                 console.log('no data');
             } else {
                 $('#' + response.data['self_request_name']).attr('style', 'background-color: rgb(217,181,81) !important');
+                var text_dis = $('#' + response.data['self_request_name']).attr('data-text');
+                $('#' + response.data['self_request_name']).html('<img src="../images/star.png" class="mr-2" width="30" height="30" alt="">' + text_dis + '<img src="../images/right_arrow.png" width="30" height="30" class="menu_arrow" alt="">');
             }
         }
     });
