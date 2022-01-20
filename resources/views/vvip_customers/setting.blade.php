@@ -33,7 +33,7 @@
     </div>
 </nav>
 
-<div class="container" style="height: 800px !important;">
+<div class="container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3">
             <h3 class="text">{{ __('website.setting') }}</h3>
@@ -52,14 +52,14 @@
     </div>
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3 mt-4">
-            <h4 class="text text-center">{{ __('website.language') }}</h4>
+            <h4 class="text text-center"><img src="../images/langg.jpeg" class="mr-2" width="50" height="50" alt="">{{ __('website.language') }}</h4>
             <div class="card text-center" id="card_lang">
                 <div class="card-body text-center">
                     <div class="d-flex justify-content-center">
                         <div class="col" id="">
                             @foreach (Config::get('languages') as $lang => $language)
                                 @if ($lang != App::getLocale())
-                                    <a class="drop_link" id="lang_setting" href="{{ route('lang.switch', $lang) }}" disabled>{{$language['display']}}</a>
+                                    <a class="drop_link" id="lang_setting" href="{{ route('lang.switch', $lang) }}">{{$language['display']}}</a>
                                     <!-- <span class="flag-icon flag-icon-{{$language['flag-icon']}}"></span> -->
                                 @endif
                             @endforeach
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="text text-center">{{ __('website.color_appearance') }}</h4>
+            <h4 class="text text-center"><img src="../images/appear.jpeg" class="mr-2" width="50" height="50" alt="">{{ __('website.color_appearance') }}</h4>
             <div class="card" id="card_appear">
                 <div class="card-body">
                     <form method="POST" id="appearance" enctype="multipart/form-data">
@@ -111,6 +111,8 @@
         </div>
     </div>
 </div>
+
+<div class="space-lift"></div>
 
 <div class="modal fade deep" id="save_setting" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

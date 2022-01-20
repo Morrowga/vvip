@@ -1,4 +1,7 @@
 $(function() {
+
+    // $('#lang_setting').attr('disabled', true);
+
     var get_appearance = 'api/get_datas';
     var userid = $('#userid').val();
     $('#appearance').on('submit', function(e) {
@@ -56,7 +59,7 @@ $(function() {
             $('.appear').attr('style', 'color:' + response.data['text_color'] +
                 '!important; text-shadow: 0px 3px 10px ' + response.data[
                 'text_highlight_color'] + '!important;');
-        }
+        } 
     });
 
     $('#lang_btn').on('click', function(){
