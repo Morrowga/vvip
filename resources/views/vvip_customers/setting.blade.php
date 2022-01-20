@@ -52,7 +52,7 @@
     </div>
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-3 mt-4">
-            <h4 class="text text-center"><img src="../images/langg.jpeg" class="mr-2" width="50" height="50" alt="">{{ __('website.language') }}</h4>
+            <h4 class="text text-center"><img src="../images/lang.png" class="mr-2" width="50" height="50" alt="">{{ __('website.language') }}</h4>
             <div class="card text-center" id="card_lang">
                 <div class="card-body text-center">
                     <div class="d-flex justify-content-center">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </div>
-            <h4 class="text text-center"><img src="../images/appear.jpeg" class="mr-2" width="50" height="50" alt="">{{ __('website.color_appearance') }}</h4>
+            <h4 class="text text-center"><img src="../images/appear.png" class="mr-2" width="50" height="50" alt="">{{ __('website.color_appearance') }}</h4>
             <div class="card" id="card_appear">
                 <div class="card-body">
                     <form method="POST" id="appearance" enctype="multipart/form-data">
