@@ -90,7 +90,7 @@
     </div>
 </div>
 
-<div class="space-lift"></div>
+<div class="space-lift-home"></div>
 
 @endsection
 

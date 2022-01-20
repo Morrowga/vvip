@@ -97,11 +97,11 @@ class UserRegisterController extends Controller
                         $sender = "VVIP9"; // This is who the message appears to be from.
                         $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
                         $message = "Thanks for interesting our VVIP9.Please enter".$user->verification_code." in the OTP Code for our service.Regards,.................................................................";
-                        $encode_message = Helper::unicodeMessageEncode($message);
+                        // $encode_message = Helper::unicodeMessageEncode($message);
                         // 612 chars or less
                         // A single number or a comma-seperated list of numbers
                         $message = urlencode($message);
-                        $data = "username=".$username."&hash=".$hash."&message=".$encode_message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
                         $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
                         curl_setopt($ch, CURLOPT_POST, true);
                         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

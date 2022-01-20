@@ -1321,7 +1321,7 @@ label.label_file {
   .menu_arrow{
     text-align:right; 
     float:right; 
-    margin-top: 3px;
+margin-top: 3px;
   }
   .star_left{
     text-align:left; 
@@ -2383,6 +2383,11 @@ to { transform:  rotateY(360deg); }
 .space-lift{
    margin-bottom: 130px !important;
 }
+
+.space-lift-home{
+    margin-bottom: 80px !important;
+ }
+ 
 
 .event_text{
     font-weight: bold;
