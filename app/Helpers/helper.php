@@ -662,4 +662,8 @@ class Helper{
         }
 
     }
+
+    public static function unicodeMessageEncode($message){
+        return '@U' . strtoupper(bin2hex(mb_convert_encoding($message, 'UCS-2','auto')));
+    }
 }

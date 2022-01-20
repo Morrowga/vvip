@@ -20,6 +20,7 @@ $(function() {
                var id_value = ['contact_active', 'deep_link_active','link_tree_active', 'url_active', 'email_active', 'sms_active', 'call_active', 'cns_active', 'event_active'];
                $.each(id_value, function(i,value){
                    var check = $('#' + value);
+                   var display = check.attr('data-text');
                    if(check.attr('data-id') == response.data['self_request_name']){
                        check.attr('style', 'background-color: rgb(217,181,81) !important');
                    } else {
