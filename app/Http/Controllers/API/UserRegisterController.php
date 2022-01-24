@@ -248,7 +248,7 @@ class UserRegisterController extends Controller
 
     public function saveUser(Request $request){
         if(!empty($request)){
-            $username = $request->name;
+            $username = null;
             $phone = $request->phone_number;
             $phone_count = strlen($phone);
             $user = User::where('phone_number', '=', $phone)->first();
