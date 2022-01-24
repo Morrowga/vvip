@@ -341,7 +341,7 @@ class UserPanelController extends Controller
                         $new_active = new SelectedView();
                         $new_active->user_id = $userid;
                         $new_active->request_name = $request_name;
-                        $new_active->self_request;
+                        $new_active->self_request = $self_request;
                         $new_active->save();
             
                         // Helper::user_stats('change_action', 'create', 'selected_views', $new_active->id);
