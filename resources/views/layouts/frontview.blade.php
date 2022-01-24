@@ -27,6 +27,8 @@
         <link rel="stylesheet" href="../css/custom.css">
 		<link rel="stylesheet" href="../css/style.css">
 		<link rel="stylesheet" href="../css/mobile.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick-theme.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
         <link href="https://www.dafontfree.net/embed/YnJpdGFubmljLWJvbGQtcmVndWxhciZkYXRhLzEzL2IvNjQ1MzAvQlJJVEFOSUMuVFRG" rel="stylesheet" type="text/css"/>
         <link rel="stylesheet" href="../css/skin/cool-gray.css">
@@ -94,7 +96,7 @@
         
             <script src="../js/jquery/jquery-1.11.1.min.js"></script>
             <script src="../js/bootstrap/js/bootstrap.min.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
             <script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
             <script src="../js/stellar/js/jquery.stellar.min.js"></script>

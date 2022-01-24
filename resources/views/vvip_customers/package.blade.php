@@ -254,9 +254,70 @@
                             <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf   
                                 <div class="form-section">
-                                    <!-- <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div>  -->
+                                    <div class="hp-fp-section">
+                                        <div class="container">
+                                            <div class="fp-wrapper">
+                                            <div class="fp-slider-items">
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Normal_001.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Normal_002.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a  class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                        <img src="../images/Normal_003.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Standard_001.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Standard_002.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Standard_003.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Luxury_001.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="fp-slider-wrapper">
+                                                    <a class="gallery-a" href="#">
+                                                        <div class="fp-img">
+                                                            <img src="../images/Luxury_002.png" alt="Featured Property" />
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
                                     <div class="col-md-8 col-md-offset-2">
                                         <h3 class="payment-text">{{ __('website.payment') }}</h3>
                                         <div class="devider"></div>
@@ -710,6 +771,44 @@ var packagetextforuser_two = '{{ __('website.packtext_second') }}';
 var normaltext = '{{ __('website.normal_text') }}';
 var standardtext = '{{ __('website.standard_text') }}';
 var luxurytext = '{{ __('website.luxury_text') }}';
+
+
+jQuery('.fp-slider-items').slick({
+    dots: false,
+    infinite: true,
+    speed: 10000,
+    slidesToShow: 4,
+    slidesToScroll: 2,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 100,
+    responsive: [
+    {
+    breakpoint: 992,
+    settings: {
+    slidesToShow: 2,
+    slidesToScroll: 2
+    }
+    },
+    {
+    breakpoint: 600,
+    settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+    }
+    },
+    {
+    breakpoint: 480,
+    settings: {
+    slidesToShow: 1,
+    slidesToScroll: 1
+    }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+    ]
+});
 </script>
 @endsection
 @endsection

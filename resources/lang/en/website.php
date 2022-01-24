@@ -65,7 +65,7 @@ return [
     'sure' => "Sure",
     'close' => "Close",
     'confirm' => "Confirm",
-    'payment' => "Select Payment",
+    'payment' => "SELECT PAYMENT",
     'email' => "Enter Your Email Address",
     'url' => "URL",
     'url_popover_title' => "Your Own URL",
