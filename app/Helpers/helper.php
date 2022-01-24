@@ -217,57 +217,60 @@ class Helper{
             } else if($request_name === "get_user_profile"){
                 $user_check = User::where('id', $user_id)->first();
                 $user_image = Contact::where('user_id', $user_id)->first();
-                return $user_image;
-                if($user_check !== null){
-                    if($user_image->image !== null){
-                        $data = [
-                            "user_id" => $user_check->id,
-                            "user_image" => 'storage/contact_images/' . $user_image->image,
-                            "name" => $user_check->name,
-                            "email" => $user_check->email,
-                            "phone_number" => $user_check->phone_number,
-                            "url" => "https://vvip9.co/" . $user_check->url,
-                            "encryption_url" => $user_check->encryption_url,
-                            "profile_image" => $user_check->profile_image,
-                            "secure_status" => $user_check->secure_status,
-                            "package" => $user_check->package,
-                            "package_status" => $user_check->package_status,
-                            "remaining_days" => $user_check->remaining_days,
-                        ];
-                    } else {
-                        $data = [
-                            "user_id" => $user_check->id,
-                            "user_image" => 'images/logo.jpeg',
-                            "name" => $user_check->name,
-                            "email" => $user_check->email,
-                            "phone_number" => $user_check->phone_number,
-                            "url" => "https://vvip9.co/" . $user_check->url,
-                            "encryption_url" => $user_check->encryption_url,
-                            "profile_image" => $user_check->profile_image,
-                            "secure_status" => $user_check->secure_status,
-                            "package" => $user_check->package,
-                            "package_status" => $user_check->package_status,
-                            "remaining_days" => $user_check->remaining_days,
-                        ];
-                    }
-
-                    $messages = [
-                        "status" => "200",
-                        "message" => "success",
-                        "request" => "get_user_profile",
-                        "data" => $data
-                    ];
-
-                    return $messages;
-                } else {
-                    $messages = [
-                        "status" => "412",
-                        "message" => "User does not exist",
-                        "request" => "get_user_profile",
-                    ];
-
-                    return $messages;
+                if($user_image->image === null){
+                    return "true";
                 }
+                // if($user_check !== null){
+                //     if($user_image !== null){
+                //         if($user_image->image)
+                //         $data = [
+                //             "user_id" => $user_check->id,
+                //             "user_image" => 'storage/contact_images/' . $user_image->image,
+                //             "name" => $user_check->name,
+                //             "email" => $user_check->email,
+                //             "phone_number" => $user_check->phone_number,
+                //             "url" => "https://vvip9.co/" . $user_check->url,
+                //             "encryption_url" => $user_check->encryption_url,
+                //             "profile_image" => $user_check->profile_image,
+                //             "secure_status" => $user_check->secure_status,
+                //             "package" => $user_check->package,
+                //             "package_status" => $user_check->package_status,
+                //             "remaining_days" => $user_check->remaining_days,
+                //         ];
+                //     } else {
+                //         $data = [
+                //             "user_id" => $user_check->id,
+                //             "user_image" => 'images/logo.jpeg',
+                //             "name" => $user_check->name,
+                //             "email" => $user_check->email,
+                //             "phone_number" => $user_check->phone_number,
+                //             "url" => "https://vvip9.co/" . $user_check->url,
+                //             "encryption_url" => $user_check->encryption_url,
+                //             "profile_image" => $user_check->profile_image,
+                //             "secure_status" => $user_check->secure_status,
+                //             "package" => $user_check->package,
+                //             "package_status" => $user_check->package_status,
+                //             "remaining_days" => $user_check->remaining_days,
+                //         ];
+                //     }
+
+                //     $messages = [
+                //         "status" => "200",
+                //         "message" => "success",
+                //         "request" => "get_user_profile",
+                //         "data" => $data
+                //     ];
+
+                //     return $messages;
+                // } else {
+                //     $messages = [
+                //         "status" => "412",
+                //         "message" => "User does not exist",
+                //         "request" => "get_user_profile",
+                //     ];
+
+                //     return $messages;
+                // }
             } else if($request_name === "get_link_trees"){
                 $user_check = User::where('id', $user_id)->first();
                 if($user_check !== null){
