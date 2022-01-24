@@ -33,7 +33,7 @@
     </div>
 </nav>
 
-<div class="container" style="height: 1000px;" id="profile_container">
+<div class="container" id="profile_container">
     <div class="d-flex justify-content-center">
         <div class="col-md-6 col-md-offset-3">
             <input type="text" value="{{ Auth::user()->id }}" id="userid" hidden>
@@ -42,7 +42,7 @@
     </div>
     <div class="col-md-12 mt-5">
         <div class="d-flex justify-content-center">
-            <img src="https://i.pinimg.com/236x/4c/bd/43/4cbd43a2e345adda7dd7f75848c95db7.jpg" class="profile_img" alt="" width="200" height="200">
+            <img id="profileimage" alt="" width="200" height="200">
         </div>
         <div class="row d-flex justify-content-center">
             <div class="col-md-6">
@@ -141,6 +141,7 @@
         </div> -->
     </div>
 </div>
+<div class="space-lift-home"></div>
 @section('script')
 <script src="../js/profile.js"></script>
 @endsection

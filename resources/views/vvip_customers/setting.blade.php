@@ -101,9 +101,9 @@
                                     name="text_highlight_color">
                             </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 mt-5">
                             <button class="btn btn-light appear-btn page-scroll" type="submit"
-                                style="float:right; margin-top: 20px;">{{ __('website.confirm') }}</button>
+                                style="float:right;">{{ __('website.confirm') }}</button>
                         </div>
                     </form>
                 </div>

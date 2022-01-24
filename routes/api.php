@@ -52,6 +52,8 @@ Route::group(['middleware' => 'apiKey'], function() {
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 
+Route::post('secure', [App\Http\Controllers\API\UserPanelController::class, 'secure_status']);
+
 Route::post('create_contact', [App\Http\Controllers\API\UserPanelController::class, 'create_contact']);
 
 Route::post('get_datas', [App\Http\Controllers\API\UserPanelController::class, 'getRequestData']);

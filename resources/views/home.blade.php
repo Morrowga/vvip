@@ -67,7 +67,7 @@
                         <p class="home_text">Action</p>
                     </div>
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/create"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/create_data"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
                         <p class="home_text">Create</p>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         <p class="home_text">Profile</p>
                     </div>
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/setting"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/list"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
                         <p class="home_text">Settings</p>
                     </div>
                 </div>

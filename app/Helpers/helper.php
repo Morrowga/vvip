@@ -216,9 +216,11 @@ class Helper{
                 }
             } else if($request_name === "get_user_profile"){
                 $user_check = User::where('id', $user_id)->first();
+                $user_image = Contact::where('user_id', $user_id)->first();
                 if($user_check !== null){
                     $data = [
                         "user_id" => $user_check->id,
+                        "user_image" => 'storage/contact_images/' . $user_image->image,
                         "name" => $user_check->name,
                         "email" => $user_check->email,
                         "phone_number" => $user_check->phone_number,

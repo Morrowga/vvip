@@ -1,5 +1,10 @@
 $(function() {
-
+        $(window).on('load', function(){
+            var drop =  $('#lang_setting').text();
+            if(drop == 'MYANMAR'){
+                $('.appear-btn').attr('style', 'letter-spacing: 2px; float:right;');
+            } 
+        })
     // $('#lang_setting').attr('disabled', true);
 
     var get_appearance = 'api/get_datas';
