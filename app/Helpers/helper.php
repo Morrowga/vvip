@@ -217,6 +217,7 @@ class Helper{
             } else if($request_name === "get_user_profile"){
                 $user_check = User::where('id', $user_id)->first();
                 $user_image = Contact::where('user_id', $user_id)->first();
+                return $user_image;
                 if($user_check !== null){
                     if($user_image->image !== null){
                         $data = [
