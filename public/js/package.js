@@ -260,7 +260,10 @@ $.ajax({
         $('.front_card_name').text(response.name);
         document.getElementById('phone').value = response.phone_number;
         $('#p_phone').val(response.phone_number);
-        
+        setInterval(function(){ 
+            $('.hp-fp-section').show();
+            $('.load-section').hide();
+        }, 2000);
         console.log(response.message);
       }else if(response.message == "Phone Number is invalid"){
             $('#error_text').html(invalid_error);
