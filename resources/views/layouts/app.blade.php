@@ -9,7 +9,7 @@
     <title>VVIP NINE</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -29,56 +29,6 @@
 </head>
 <body>
     <div id="app" style="display:none; width:100%; height: auto; flex-direction: column;">
-        <!-- <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <ul class="navbar-nav ml-auto">
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
 
         <main class="py-4" style="flex: 1 !important; overflow-y:scroll !important;">
             @yield('content')
@@ -118,28 +68,41 @@
         
     <script src="../js/jquery/jquery-1.11.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
-    <script src="../js/browser-deeplink.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/js/bootstrap-timepicker.min.js"></script>
-    <script src="../js/Winwheel.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     @yield('script')
     <script>
+        var invalid_error = '{{ __('website.phone_invalid') }}';
+        var exist_active = '{{ __('website.exist_active') }}';
+        var exist_expired = '{{ __('website.exist_expired') }}';
+        var enter_phone = '{{ __('website.enter_phone') }}';
+        var phone_exist = '{{ __('website.phonenumber_exist') }}';
+        var phone_no_need_digit = '{{ __('website.phone_need_digit') }}';
+        var enter_email = '{{ __('website.email') }}';
+        var enter_url = '{{ __('website.enter_url') }}';
+        var special_char = '{{ __('website.special_char') }}';
+        var url_need_char = '{{ __('website.url_need_char') }}';
+        var email_invalid = '{{ __('website.email_invalid') }}';
+        var email_exist = '{{ __('website.email_exist')  }}';
+        var zoom_card = '{{ __('website.zoom')  }}';
+        var select_card = '{{ __('website.select_card')  }}';
+        var select_success = '{{ __('website.select_success')  }}';
+        var packagetextforuser_one = '{{ __('website.packtext_first') }}';
+        var packagetextforuser_two = '{{ __('website.packtext_second') }}';
+        var normaltext = '{{ __('website.normal_text') }}';
+        var standardtext = '{{ __('website.standard_text') }}';
+        var luxurytext = '{{ __('website.luxury_text') }}';
+
         let setT = setTimeout(function(){ 
             document.getElementById("load_user").style.display = "none";
             document.getElementById("app").style.display = "block";
         }, 1000);
     
-        // $(function(){
-        //     $(".spin").on("click", function(){
-        //         $('#wheel_modal').modal('show');
-        //     });
-        // });
-         
         if(window.location.pathname != '/login'){
-            var text_url = '{{ url('api/get_datas') }}';
+            var text_url = 'api/get_datas';
             var userid = $('#userid').val();
-            console.log(userid);
             $.ajax({
             url:text_url,
             method:'POST',
@@ -149,8 +112,10 @@
                     },
             success:function(response){
                 console.log(response);
-                $('#welcome_text').text(response.data['text']);
-                $('#profile_img').attr('src', response.data['profile_img']);
+                if(response.message == 'success'){
+                    $('#welcome_text').text(response.data['text']);
+                    $('#profile_img').attr('src', response.data['profile_img']);
+                }
             }
             });   
         }

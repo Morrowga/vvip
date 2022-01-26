@@ -88,6 +88,7 @@ Route::post('/get_device_info',[App\Http\Controllers\API\UserStatController::cla
 
 Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'view_count']);
 
+Route::post('/register_update/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'register_second_step']);
 
 // Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);
 

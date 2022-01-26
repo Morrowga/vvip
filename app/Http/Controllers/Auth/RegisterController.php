@@ -71,17 +71,19 @@ class RegisterController extends Controller
 
         $user = new User;
         $user->name = $request->name;
-        $user->email = $request->email;
+        $user->profile_image = "logo.jpeg";
+        $user->step_one = 1;
+        // $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         foreach($packages as $package){
             if($package->token === $request->package){
                 $user->package = $package->package_name;
             }
         }
-        $user->smart_card_design_id = $request->smart_card_design_id;
-        $user->url = $request->url;
-        $user->encryption_url = $request->encryption;
-        $user->secure_status = $request->secure_status;
+        // $user->smart_card_design_id = $request->smart_card_design_id;
+        // $user->url = $request->url;
+        // $user->encryption_url = $request->encryption;
+        $user->secure_status = "public";
         $user->password = Hash::make($request->pin);
         $user->verification_code = random_int(100000, 999999);
         $user->save();        

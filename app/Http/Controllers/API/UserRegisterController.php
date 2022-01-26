@@ -34,41 +34,24 @@ class UserRegisterController extends Controller
         if(!empty($request)){
             $name = $request->name;
             $phone_number = $request->phone_number;
-            $email = $request->email;
             $package_name = $request->package_name;
-            $country_number = $request->country_number;
-            $url = $request->url;
-            $encryption_url = $request->encryption_url;
-            $secure_status = $request->secure_status;
-            $phone = $country_number . $phone_number;
             $pin = $request->pin;
-            $smart_card_design_id = $request->smart_card_design_id;
 
-            $user_exist_phone = User::where('phone_number', '=', $phone)->first();
-            $user_exist_url = User::where('url', '=', $url)->first();
+            $user_exist_phone = User::where('phone_number', '=', $phone_number)->first();
             if($user_exist_phone === null){
-                if($user_exist_url === null){
                     $user = new User;
                     $user->name = $name;
-                    $user->phone_number = $phone;
-                    $user->email = $email;
+                    $user->step_one = 1;
+                    $user->phone_number = $phone_number;
                     $user->package = $package_name;
                     $user->package_status = "active";
-                    $user->smart_card_design_id = $smart_card_design_id;
-                    $user->encryption_url = $encryption_url;
                     $user->verification_code = random_int(100000, 999999);
-                    // $user->package_start_date = Carbon::now();
-                    // $user->package_end_date = Carbon::now()->addYear(1);
-                    // $remain = $user->package_end_date->diffIndays($user->package_start_date);
-                    // $user->remaining_days = $remain;
-                    $user->url = $url;
-                    $user->secure_status = $secure_status;
+                    $user->secure_status = "public";
                     $user->password = Hash::make($pin);
                     $user->save();
                     
                     // Helper::user_stats('register', 'create', 'users', $user->id);
                     
-                    // $links = ['Facebook', 'Instagram', 'Youtube', 'Tiktok', 'Pinterest', 'LinkedIn', 'Tripadvisor','Zoom','Google Maps','Vimeo','Amazon'];
                     $link_datas = [ "links" => [['Facebook','https://i.ibb.co/pW7BTT4/facebook.png','com.facebook.kanata'],['Instagram','https://i.ibb.co/hF5vVDD/instagram.png','com.instagram.android'],['Youtube','https://i.ibb.co/QNvRKRw/youtube.png','com.google.android.youtube'],['Tiktok','https://i.ibb.co/X2D9Vv3/tiktok.png','com.ss.android.ugc.trill'],
                     ['Pinterest','https://i.ibb.co/SKGs1CW/pinterest.png','com.pinterest'],['LinkedIn','https://i.ibb.co/Qjpm8w6/linkedin.png','com.linkedin.android'],['Tripadvisor','https://i.ibb.co/cYgyxQ6/tripadvisor.png','com.tripadvisor.tripadvisor'],
                     ['Zoom','https://i.ibb.co/N74Prr2/zoom-meeting.png','us.zoom.videomeetings'], ['Google Maps','https://i.ibb.co/xSxcbhT/google-map.png','com.google.android.apps.mapslite'],['Vimeo','https://i.ibb.co/NSxKKZ2/vimeo.png','com.vimeocreate.videoeditor.moviemaker'],['Amazon','https://i.ibb.co/QdrNqJn/amazon.png','amazon&c=apps']]];
@@ -120,13 +103,6 @@ class UserRegisterController extends Controller
                         "verify" => 'Register Successful'
                     ];
                     return $messages;
-                } else {
-                    $messages = [
-                        "status" => '500',
-                        "message" => 'URL Exist',
-                    ];
-                    return $messages;
-                }
             }  else {
                 $messages = [
                     "status" => '500',
@@ -142,6 +118,42 @@ class UserRegisterController extends Controller
             ];
             return $messages;
         }
+    }
+
+    public function register_second_step(Request $request, $id){
+        $name = $request->name;
+        $email = $request->email;
+        $url = $request->url;
+        $encryption_url = $request->encryption;
+        $secure_status = $request->secure_status;
+        $smart_card_id = $request->smart_card_id;
+
+        $user = User::where('id', $id)->first();
+        if(!empty($user)){
+            $user->name = $name;
+            $user->email = $email;
+            $user->step_two = 1;
+            $user->url = $url;
+            $user->encryption_url = $encryption_url;
+            $user->secure_status = $secure_status;
+            $user->smart_card_design_id = $smart_card_id;
+            $user->save();
+    
+            $messages = [
+                "status" => "200",
+                "message" => "success"
+            ];
+    
+            return $messages; 
+        } else {
+            $messages = [
+                "status" => "400",
+                "message" => "User Not Found."
+            ];
+    
+            return $messages; 
+        }
+          
     }
 
     public function otp_mobile(Request $request){
@@ -248,8 +260,8 @@ class UserRegisterController extends Controller
 
     public function saveUser(Request $request){
         if(!empty($request)){
-            $username = "null";
             $phone = $request->phone_number;
+            $username = $request->name;
             $phone_count = strlen($phone);
             $user = User::where('phone_number', '=', $phone)->first();
             
