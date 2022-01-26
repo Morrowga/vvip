@@ -1757,7 +1757,13 @@ label.label_file {
 }
 
 .gohome{
-    
+    background-color: #000 !important;
+    font-weight: bold;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+    font-family: 'Kudryashev Display' !important;
 }
 
 .warn-count{

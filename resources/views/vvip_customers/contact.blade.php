@@ -20,7 +20,6 @@
             <div class="contact wow bounceInRight" data-wow-delay="0.4s">
                 <div class="container">
                     <div class="row">
-                        <iframe width="1280" height="720" src="https://www.youtube.com/embed/DOn9AmSIkT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         <div class="col-sm-6">
                             <div class="contact-info">
                                 <h4 class="contact">{{ __('website.our_address') }}</h4>

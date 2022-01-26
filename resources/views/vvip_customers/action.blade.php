@@ -90,7 +90,7 @@
             <div class="modal-body text-center" style="background-color: #fff !important;">
                 <p class="count_display text text-center" id="countTime"></p>
                 <p class="warn-count"><i class="fas fa-exclamation-triangle tri-count mr-2"></i>{{ __('website.warncount') }}</p>
-                <a href="" class="btn btn-info ml-2 mb-2 text-center gohome">Go Back To Home</a>
+                <a href="" class="btn btn-success ml-2 mb-2 text-center gohome">Go Back</a>
                 <img src="https://i.pinimg.com/564x/df/ec/8a/dfec8ab8544383fff306ff22c385f6d2.jpg" alt="" class="img-fluid lock_img">
             </div>
         </div>
