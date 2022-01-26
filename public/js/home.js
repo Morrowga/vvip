@@ -369,12 +369,6 @@ $('#url').on("keyup",function(){
 });
 
 
-//submit_disabled
-$('#password').on('keyup', function(){
-    $('.sub-btn').attr('disabled', false);
-});
-
-
 //verify-options
 // $('.sub-btn').on('click', function(){
 //     $('#submit-verify').modal('show');

@@ -153,6 +153,11 @@ $('.packinfo_btn').on('click', function(){
     $('#info_section').hide().fadeOut("slow");
 })
 
+//submit_disabled
+$('#password').on('keyup', function(){
+    $('.sub-btn').attr('disabled', false);
+});
+
 
 //popover
 $('[data-toggle="popover"]').popover();
