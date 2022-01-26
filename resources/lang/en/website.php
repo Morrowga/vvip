@@ -209,6 +209,7 @@ return [
     "select_country" => "Country",
     "select_state" => "State",
     "select_city" => "City",
-    "address_event" => "Address"
+    "address_event" => "Address",
+    "warncount" => "This section can't use without smart card. That's why you need to wait your smart card. We will deliver your card withing 48hours."
 ]
 ?>

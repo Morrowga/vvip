@@ -1741,6 +1741,35 @@ label.label_file {
     color: #fff !important;
 }
 
+.count_display{
+    font-size: 40px;
+}
+
+#locked, #locked > .modal-body{
+    border: 5px solid #d9b551 !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.lock_img{
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.gohome{
+    
+}
+
+.warn-count{
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.tri-count{
+    color: #000 !important;
+}
 
 #modal_pdf{
     background-color: rgb(0,0,0) !important;

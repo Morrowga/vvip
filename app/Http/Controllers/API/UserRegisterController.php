@@ -70,27 +70,26 @@ class UserRegisterController extends Controller
                     }
 
                      // Authorisation details.
-                        $username = "kotoe@htut.com";
-                        $hash = "2564861082022776597e279f8912eba8428a4a7f";
-
-                        // Config variables. Consult http://api.txtlocal.com/docs for more info.
-                        $test = "0";
-
-                        // Data for text message. This is the text message data.
-                        $sender = "VVIP9"; // This is who the message appears to be from.
-                        $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
-                        $message = "Thanks for interesting our VVIP9.Please enter".$user->verification_code."in the OTP Code for our service.Regards,...............................................................";
-                        // $encode_message = Helper::unicodeMessageEncode($message);
-                        // 612 chars or less
-                        // A single number or a comma-seperated list of numbers
-                        $message = urlencode($message);
-                        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-                        $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
-                        curl_setopt($ch, CURLOPT_POST, true);
-                        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                        $result = curl_exec($ch); // This is the result from the API
-                        curl_close($ch);
+                     $username = "kotoe@htut.com";
+                     $hash = "2564861082022776597e279f8912eba8428a4a7f";
+             
+                     // Config variables. Consult http://api.txtlocal.com/docs for more info.
+                     $test = "0";
+             
+                     // Data for text message. This is the text message data.
+                     $sender = "VVIP9"; // This is who the message appears to be from.
+                     $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+                     $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
+                     // 612 chars or less
+                     // A single number or a comma-seperated list of numbers
+                     $message = urlencode($message);
+                     $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                     $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+                     curl_setopt($ch, CURLOPT_POST, true);
+                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                     $result = curl_exec($ch); // This is the result from the API
+                     curl_close($ch);
 
                     // MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
                     
@@ -130,10 +129,13 @@ class UserRegisterController extends Controller
 
         $user = User::where('id', $id)->first();
         if(!empty($user)){
+            $now = date('Y-m-d H:i:s');
+            // $expire_date = strtotime($now."+2 days");
             $user->name = $name;
             $user->email = $email;
             $user->step_two = 1;
             $user->url = $url;
+            $user->expired_date = date('Y-m-d H:i:s',strtotime('+48 hour',strtotime($now)));
             $user->encryption_url = $encryption_url;
             $user->secure_status = $secure_status;
             $user->smart_card_design_id = $smart_card_id;
@@ -141,7 +143,8 @@ class UserRegisterController extends Controller
     
             $messages = [
                 "status" => "200",
-                "message" => "success"
+                "message" => "success",
+                "data" => $user
             ];
     
             return $messages; 

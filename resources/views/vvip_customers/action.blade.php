@@ -14,6 +14,7 @@
                 <img width="50" height="50" id="profile_img" alt=""> {{ Auth::user()->name }}
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
+            <input type="text" id="exp_date" value="{{ Auth::user()->expired_date }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
@@ -33,7 +34,7 @@
     </div>
 </nav>
 
-<div class="container" style="height: 700px;">
+<div class="container" id="action_area">
     <div class="col-md-12">
         <div class="d-flex justify-content-center">
             <div class="col-md-4 col-md-offset-4">
@@ -77,23 +78,24 @@
     </div>
 </div>
 
-<!-- <footer>
-        <div class="d-flex justify-content-center text-center">
-            <div class="col-md-6 col-md-offset-3">
-                <div class="d-flex justfiy-content-center">
-                <div class="col">
-                    <a href="#home" class="text-center">Home</a> 
-                </div>
-                <div class="col">
-                    <a href="#home" class="text-center">Home</a> 
-                </div>
-                <div class="col">
-                    <a href="#home" class="text-center">Home</a> 
-                </div>
-                </div>
+<div class="space-lift-home"></div>
+
+
+
+<div class="modal fade" id="countDown" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-header" style="border: none !important; margin-top: 10%;">
+        </div>
+        <div class="modal-content" id="locked" style="backgtokenround-color: #fff !important;">
+            <div class="modal-body text-center" style="background-color: #fff !important;">
+                <p class="count_display text text-center" id="countTime"></p>
+                <p class="warn-count"><i class="fas fa-exclamation-triangle tri-count mr-2"></i>{{ __('website.warncount') }}</p>
+                <a href="" class="btn btn-info ml-2 mb-2 text-center gohome">Go Back To Home</a>
+                <img src="https://i.pinimg.com/564x/df/ec/8a/dfec8ab8544383fff306ff22c385f6d2.jpg" alt="" class="img-fluid lock_img">
             </div>
-        </div>  
-</footer> -->
+        </div>
+    </div>
+</div>
 
 
 @section('script')

@@ -49,5 +49,3 @@ Route::get('contact', 'App\Http\Controllers\API\WebUserJourneyController@contact
 
 Route::get('{url}',[App\Http\Controllers\API\UserPanelController::class, 'displayUserWant'])->name('user_url');
 
-
-
