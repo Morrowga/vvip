@@ -143,7 +143,8 @@ class RegisterController extends Controller
 
     public function verifyUser(Request $request){
         $otp_code = $request->code1 . $request->code2 . $request->code3 . $request->code4 . $request->code5 . $request->code6;
-        $user = User::where('verification_code', '=', $otp_code)->first();
+        $userid = $request->userid;
+        $user = User::where('verification_code', '=', $otp_code)->where('id', $userid)->first();
         if($user != null){
             $user->is_verified = 1;
             $user->save();

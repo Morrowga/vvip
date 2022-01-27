@@ -21,6 +21,7 @@
               <input class="otp" name="code5" type="text" oninput='digitValidate(this)'onkeyup='tabChange(5)' maxlength=1 >
               <input class="otp" name="code6" type="text" oninput='digitValidate(this)'onkeyup='tabChange(6)' maxlength=1 >
             <hr class="mt-4">
+            <input class="otp_userid" name="userid" type="text" hidden>
             <button type="submit" class='btn btn-primary btn-block mt-4 mb-4 customBtn'>Verify Account</button>
             <p class="text" style="margin-top: 10px;" id="otp_text"></p>
             </form>
@@ -118,6 +119,10 @@ let tabChange = function(val){
   });
 
   $('#otp_form').on('submit', function(e){
+    var current = window.location.pathname;
+    var result = current.split('/');  
+    var userid = result[2];
+    $('.otp_userid').val(result[2]);
     e.preventDefault();
     var token =  $('#token').val();
     let formData = new FormData(this);

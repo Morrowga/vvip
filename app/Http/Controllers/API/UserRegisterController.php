@@ -97,7 +97,7 @@ class UserRegisterController extends Controller
                     $messages = [
                         "status" => '200',
                         "message" => 'Success',
-                        "encrypt_code" => $user->verification_code,
+                        "code" => $user->verification_code,
                         "user_id" => $user->id,
                         "verify" => 'Register Successful'
                     ];
@@ -160,8 +160,9 @@ class UserRegisterController extends Controller
     }
 
     public function otp_mobile(Request $request){
+        $userid = $request->userid;
         $code = $request->code;
-        $verify = User::where('verification_code', $code)->first();
+        $verify = User::where('verification_code', $code)->where('id', $userid)->first();
         if($verify !== null){
             $verify->is_verified = 1;
             $verify->save();
