@@ -32,7 +32,7 @@ class AddStepToUsersTable extends Migration
             $table->dropColumn('step_one');
             $table->dropColumn('step_two');
             $table->dropColumn('expired_date');
-            $table->dropColumn('payment_listen_date');  
+            $table->dropColumn('payment_approve');  
         });
     }
 }
