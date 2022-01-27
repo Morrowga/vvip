@@ -182,9 +182,8 @@ class UserRegisterController extends Controller
 
 
     public function sendAgain(Request $request){
-        $code = $request->encrypt_code;
-        $decrypt = Crypt::decryptString($code);
-        $code_check = User::where('verification_code', $decrypt)->first();
+        $user_id = $request->userid;
+        $code_check = User::where('id', $user_id)->first();
         if($code_check !== null){
             $code_check->verification_code = random_int(100000, 999999);
             $code_check->save();
@@ -214,7 +213,7 @@ class UserRegisterController extends Controller
             $messages = [
                 "status" => "200",
                 "message" => "success",
-                "encrypt_code" => Crypt::encryptString($code_check->verification_code)
+                "user_id" => $code_check->id
             ]; 
             return $messages;
 
@@ -270,12 +269,46 @@ class UserRegisterController extends Controller
             
             if($user !== null){
                 if($user->package_status === 'active'){
-                    $messages = [
-                        'status' => '500',
-                        'message' => 'Phone Number Exist & Active',
-                        'Package' => '1'
-                    ];
-                    return $messages;
+                    if($user->is_verified === 0){
+                        $user->verification_code = random_int(100000, 999999);
+                        $user->save();
+                        // Authorisation details.
+                        $username = "kotoe@htut.com";
+                        $hash = "2564861082022776597e279f8912eba8428a4a7f";
+                
+                        // Config variables. Consult http://api.txtlocal.com/docs for more info.
+                        $test = "0";
+                
+                        // Data for text message. This is the text message data.
+                        $sender = "VVIP9"; // This is who the message appears to be from.
+                        $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+                        $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
+                        // 612 chars or less
+                        // A single number or a comma-seperated list of numbers
+                        $message = urlencode($message);
+                        $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                        $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+                        curl_setopt($ch, CURLOPT_POST, true);
+                        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                        $result = curl_exec($ch); // This is the result from the API
+                        curl_close($ch);
+
+                        $messages = [
+                            'status' => '500',
+                            'message' => 'Need OTP',
+                            'Package' => '1',
+                            'userid' => $user->id
+                        ];
+                        return $messages;
+                    } else {
+                        $messages = [
+                            'status' => '500',
+                            'message' => 'Phone Number Exist & Active',
+                            'Package' => '1'
+                        ];
+                        return $messages;
+                    }
                 } else {
                     $messages = [
                         'status' => '500',
@@ -297,26 +330,27 @@ class UserRegisterController extends Controller
                 ];
                 return $messages;
             }else {
-                // $phone_log = UserLog::where('phone_number', $phone)->orderBy('created_at', 'DESC')->first();
-                
-                // if($phone_log === null){
                     $save_user = new UserLog;
                     $save_user->name = $username;
                     $save_user->phone_number = $phone;
                     $save_user->save();
+
+                    $messages = [
+                        'status' => '200',
+                        'message' => 'success',
+                        'name' => $save_user->name,
+                        'phone_number' => $save_user->phone_number
+                    ];
+                    return $messages;
+                // $phone_log = UserLog::where('phone_number', $phone)->orderBy('created_at', 'DESC')->first();
+                
+                // if($phone_log === null){
+
                 // } else {
 
                 // }
                     
                 // Helper::user_stats('save_user', 'create', 'user_logs', $save_user->id);
-
-                $messages = [
-                    'status' => '200',
-                    'message' => 'success',
-                    'name' => $save_user->name,
-                    'phone_number' => $save_user->phone_number
-                ];
-                return $messages;
             }
         } else {
             $messages = [

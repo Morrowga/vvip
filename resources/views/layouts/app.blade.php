@@ -98,7 +98,7 @@
         let setT = setTimeout(function(){ 
             document.getElementById("load_user").style.display = "none";
             document.getElementById("app").style.display = "block";
-        }, 1000);
+        }, 1500);
     
         if(window.location.pathname != '/login'){
             var text_url = 'api/get_datas';

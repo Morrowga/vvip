@@ -54,7 +54,6 @@
                             <li><a class="page-scroll navli" href="{{ route('view_packages') }}">{{__('website.Packages')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
                             <li><a class="page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
                             <li class="dropdown">
                                 <a class="nav-link dropdown-toggle navli" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
@@ -67,6 +66,11 @@
                                 @endforeach
                                 </div>
                             </li>
+                            @if(Auth::user())
+                            <li><a class="page-scroll navli" href="/home">{{ Auth::user()->name }}</a></li>
+                            @else
+                            <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
+                            @endif
                         </ul>
                     </div>
                   </div>

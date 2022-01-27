@@ -1486,12 +1486,14 @@ label.label_file {
       text-align: center;
       font-family: 'Kudryashev Display' !important;
       letter-spacing: 2px;
+      background-color: rgb(217,181,81) !important;
+      border: 2px solid rgb(217,181,81) !important;
       /* background-color: #d9b551 !important; */
   }
   
 
   .drop_link{
-    color: #fff !important;
+    color: #000 !important;
     font-weight: bold !important;
     font-family: 'Kudryashev Display' !important;
     letter-spacing: 2px !important;
@@ -2509,12 +2511,23 @@ to { transform:  rotateY(360deg); }
     border-radius:0px;
     border: 2px solid rgb(217,181,81) !important;
     background-color: rgb(0,0,0) !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important; 
+    border-bottom-left-radius: 20px !important; 
+    border-bottom-right-radius: 20px !important;
     padding:10px;
   }
 
   .customBtn:hover{
       background-color: rgb(217,181,81) !important;
       transition-duration: 0.8s !important;
+  }
+
+  .send-again, .btn-dark:disabled{
+      font-weight: bold;
+      color: #000 !important;
+      background-color: #fff !important;
+      font-family: 'Kudryashev Display' !important;
   }
   
   #otp_form > input{
@@ -2787,6 +2800,12 @@ to { transform:  rotateY(360deg); }
 	display: inherit;
 }
 
+.homeimg{
+    border-bottom-left-radius: 20px !important;
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
 
 
 @media only screen and (min-device-width: 375px) and (max-device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
@@ -3082,6 +3101,7 @@ to { transform:  rotateY(360deg); }
     .product_margin{
         margin-top: 20px !important;
     }
+    
 /* 
     #home_height{
         height: 500px !important;

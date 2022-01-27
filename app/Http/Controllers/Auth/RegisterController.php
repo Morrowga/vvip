@@ -136,7 +136,7 @@ class RegisterController extends Controller
         //     }
         //     return redirect()->back()->with(session()->flash('alert-danger', 'Something went wrong'));
         // } else {
-            return redirect()->route('otp.user', Crypt::encryptString($user->verification_code));
+            return redirect()->route('otp.user', $user->id);
         // }
     }
 
@@ -152,7 +152,7 @@ class RegisterController extends Controller
         return response()->json('failed');
     }
 
-    public function otp_view($code){
+    public function otp_view($userid){
         return view('vvip_customers.sms_code');
     }
 }

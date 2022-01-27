@@ -1310,7 +1310,12 @@ p.subtitle {
 .navbarbtn{
 	background-color: rgb(0,0,0) !important;
 	font-weight: bold !important;
+	border-bottom-left-radius: 20px !important;
+	border-bottom-right-radius: 20px !important;
+	border-top-left-radius: 20px !important;
+	border-top-right-radius: 20px !important;
 }
+
 
 .package {
 	padding-top: 10px !important;
@@ -1489,6 +1494,11 @@ p.subtitle {
 
   .navli{
 	  font-size: 18px;
+  }
+
+  .navli:hover{
+	  transform: scale(1.2);
+	  transition-duration: 1s;
   }
 
 

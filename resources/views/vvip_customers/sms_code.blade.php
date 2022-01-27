@@ -26,7 +26,7 @@
             </form>
             <form action="" method="POST" id="s-again">
               <input type="hidden" id="token_code" name="_token" value="{{ csrf_token() }}">
-              <input type="text" id="encrypt" name="encrypt_code" hidden> 
+              <input type="text" id="encrypt" name="userid" hidden> 
               <button type="submit" class="btn btn-dark text-left send-again mb-4" style="text-align: right !important; float: right !important;"></button>
             </form>
           </div>
@@ -75,7 +75,7 @@ let tabChange = function(val){
       e.preventDefault()
       var current = window.location.pathname;
       var result = current.split('/');  
-      var code_value = $('#encrypt').val(result[2]);
+      var userid_value = $('#encrypt').val(result[2]);
       var token =  $('#token_code').val();
       let formDataCode = new FormData(this);
 
@@ -92,7 +92,7 @@ let tabChange = function(val){
       success: function(response){
         console.log(response);
         if(response['message'] == "success"){
-          window.location.href = "{{ URL::to('login') }}"
+          $('#otp_text').text('Please check the code in your sms!')
         } else {
           $('#otp_text').text('Your OTP Code is Invalid.Try Again!')
         }

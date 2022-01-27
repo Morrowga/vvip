@@ -243,7 +243,8 @@ $.ajax({
         'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
     },  
    success:function(response){
-      if(response.message == "success"){
+      if(response.message == "200"){
+          console.log('ss');
         document.getElementById('prices-section').style.display = "none";
         document.getElementById('prices-section-save').style.display = "none";
         document.getElementById('prices-section-two').style.display = "block";
@@ -256,21 +257,23 @@ $.ajax({
             $('.hp-fp-section').show();
             $('.load-section').hide();
         }, 2000);
-        console.log(response.message);
-      }else if(response.message == "Phone Number is invalid"){
+      }else if(response.status == "400"){
             $('#error_text').html(invalid_error);
-      } else if(response.message == "Phone Number Exist & Active"){
-        $('.user_warning_text').text(exist_active);
-        $('#saveuser_check').modal('show');
-        $('#useractive').show();
-        $('#userexpired').hide();
-      } else if (response.message == "Phone Number Exist & Expired") {
+      } else if(response.status == "500"){
+          if(response.message == "Phone Number Exist & Active"){
+            $('.user_warning_text').text(exist_active);  
+            $('#saveuser_check').modal('show');
+            $('#useractive').show();
+            $('#userexpired').hide();
+          } else if(response.message == "Phone Number Exist & Expired"){
             $('.user_warning_text').text(exist_expired);
             $('#saveuser_check').modal('show');
             $('#useractive').hide();
             $('#userexpired').show();
-      } else {
-        console.log(response.message);
+          } else {
+            var uid = response.userid;
+            window.location = "otp/" + uid;
+          }     
       }
    },
    error:function(error){

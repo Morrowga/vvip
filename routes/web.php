@@ -35,7 +35,7 @@ Route::get('/create_data', [App\Http\Controllers\HomeController::class, 'createD
 
 Route::get('/list', [App\Http\Controllers\HomeController::class, 'listView'])->name('list');
 
-Route::get('/otp/{code}', [App\Http\Controllers\Auth\RegisterController::class, 'otp_view'])->name('otp.user');
+Route::get('/otp/{userid}', [App\Http\Controllers\Auth\RegisterController::class, 'otp_view'])->name('otp.user');
 
 Route::get('/', [App\Http\Controllers\API\WebUserJourneyController::class, 'main_view'])->name('main');
 

@@ -91,5 +91,3 @@ Route::post('/view_count',[App\Http\Controllers\API\UserStatController::class,'v
 Route::post('/register_update/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'register_second_step']);
 
 // Route::get('render', [App\Http\Controllers\API\UserRegisterController::class, 'renderImage']);
-Route::get('txt', [App\Http\Controllers\API\UserRegisterController::class, 'testt']);
-

@@ -226,11 +226,11 @@
             <div class="col-md-6 col-md-offset-3">
                 <div class="row">
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/action"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/action"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid homeimg"></a>
                         <p class="home_text">Action</p>
                     </div>
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/create_data"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/create_data"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid homeimg"></a>
                         <p class="home_text">Create</p>
                     </div>
                 </div>
@@ -240,11 +240,11 @@
             <div class="col-md-6 col-md-offset-3 mt-3">
                 <div class="row">
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/profile"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/profile"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid homeimg"></a>
                         <p class="home_text">Profile</p>
                     </div>
                     <div class="col home-col text-center">
-                        <a class="homelink" href="/list"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid"></a>
+                        <a class="homelink" href="/list"><img src="https://i.ibb.co/4gBD13g/create.jpg" alt="" class="img-fluid homeimg"></a>
                         <p class="home_text">Settings</p>
                     </div>
                 </div>
