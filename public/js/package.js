@@ -249,9 +249,10 @@ $.ajax({
         document.getElementById('prices-section-two').style.display = "block";
         document.getElementById('ph_name').value = response.phone_number;
         document.getElementById('username').value = response.name;
+
         // $('.front_card_name').text(response.name);
         // document.getElementById('phone').value = response.phone_number;
-        // $('#p_phone').val(response.phone_number);
+        $('#p_phone').val(response.phone_number);
         setInterval(function(){ 
             $('.hp-fp-section').show();
             $('.load-section').hide();
@@ -275,6 +276,7 @@ $.ajax({
                 document.getElementById('prices-section-save').style.display = "none";
                 document.getElementById('prices-section-two').style.display = "block";
                 $('#saveuser_check').modal('hide');
+                $('#p_phone').val(response.phone_number);
             });
             $('#useractive').hide();
             $('#userexpired').show();
