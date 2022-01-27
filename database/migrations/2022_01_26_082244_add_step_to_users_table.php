@@ -17,6 +17,7 @@ class AddStepToUsersTable extends Migration
             $table->integer('step_one')->default(0);
             $table->integer('step_two')->default(0);
             $table->dateTime('expired_date')->nullable();
+            $table->dateTime('payment_listen_date')->nullable();
         });
     }
 
@@ -28,7 +29,10 @@ class AddStepToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('step_one');
+            $table->dropColumn('step_two');
+            $table->dropColumn('expired_date');
+            $table->dropColumn('payment_listen_date');  
         });
     }
 }

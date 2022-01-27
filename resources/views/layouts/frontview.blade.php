@@ -162,7 +162,7 @@
     </body> 
     <!--===========================================Body========================================================-->
     <div class="modal fade bd-example-modal-lg" id="saveuser_check" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog">
             <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
                 <div class="modal-header" style="border: none !important; margin-top: 10%;">
                  <h5 class="modal-title text-center text" id="exampleModalLabel">WARNING</h5>

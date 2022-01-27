@@ -2084,8 +2084,8 @@ to { transform:  rotateY(360deg); }
 }
 
 #cancel_confirm{
-    border:2px solid rgb(217,181,81) !important;
     color: rgb(0,0,0) !important;
+    background-color: #fff !important;
     font-weight: bold;
 }
 

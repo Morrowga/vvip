@@ -15,6 +15,7 @@
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             <input type="text" id="step_two" value="{{ Auth::user()->step_two }}" hidden>
+            <input type="text" id="pay_exp_date" value="{{ Auth::user()->payment_listen_date }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
@@ -360,6 +361,20 @@
         </div>
     </div>
 
+
+    <div class="modal fade" id="countDownHome" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-header" style="border: none !important; margin-top: 10%;">
+        </div>
+        <div class="modal-content" id="locked" style="backgtokenround-color: #fff !important;">
+            <div class="modal-body text-center" style="background-color: #fff !important;">
+                <p class="count_display text text-center" id="countTimeHome"></p>
+                <p class="warn-count"><i class="fas fa-exclamation-triangle tri-count mr-2"></i>{{ __('website.warncountHome') }}</p>
+                <img src="https://i.pinimg.com/564x/df/ec/8a/dfec8ab8544383fff306ff22c385f6d2.jpg" alt="" class="img-fluid lock_img">
+            </div>
+        </div>
+    </div>
+</div>
 @section('script')
 <script src="../js/home.js"></script>
 

@@ -210,6 +210,7 @@ return [
     "select_state" => "State",
     "select_city" => "City",
     "address_event" => "Address",
-    "warncount" => "This section can't use without smart card. That's why you need to wait your smart card. We will deliver your card withing 48hours."
+    "warncount" => "This section can't use without smart card. That's why you need to wait your smart card. We will deliver your card withing 48hours.",
+    "warncountHome" => "This section can't use without smart card. We will contact you that success or fail your paid info within 24hours."
 ]
 ?>

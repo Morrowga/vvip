@@ -27,8 +27,18 @@ class User extends Authenticatable
         'package',
         'url',
         'secure_status',
-        'smart_card_design',
-        'encryption_url'
+        'smart_card_design_id',
+        'encryption_url',
+        'payment_listen_date',
+        'expired_date',
+        'step_one',
+        'step_two',
+        'package_status',
+        'package_start_date',
+        'package_end_date',
+        'remaining_days',
+        'is_verified',
+        'verification_code',
     ];
 
     /**

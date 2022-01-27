@@ -136,6 +136,7 @@ class UserRegisterController extends Controller
             $user->step_two = 1;
             $user->url = $url;
             $user->expired_date = date('Y-m-d H:i:s',strtotime('+48 hour',strtotime($now)));
+            $user->payment_listen_date = date('Y-m-d H:i:s',strtotime('+24 hour',strtotime($now)));
             $user->encryption_url = $encryption_url;
             $user->secure_status = $secure_status;
             $user->smart_card_design_id = $smart_card_id;

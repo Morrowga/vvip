@@ -334,7 +334,8 @@ class Helper{
                         "user_name" => $user->name,
                         "text" => "Hello " . ucfirst($user->name) . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP.",
                         "profile_img" => '../user_images/'. $user->profile_image,
-                        "expired_date" => $user->expired_date
+                        "expired_date" => $user->expired_date,
+                        "payment_expired_date" => $user->payment_listen_date,             
                     ];
 
                     $messages = [

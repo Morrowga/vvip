@@ -243,8 +243,7 @@ $.ajax({
         'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
     },  
    success:function(response){
-      if(response.message == "200"){
-          console.log('ss');
+      if(response.status == "200"){
         document.getElementById('prices-section').style.display = "none";
         document.getElementById('prices-section-save').style.display = "none";
         document.getElementById('prices-section-two').style.display = "block";
@@ -263,11 +262,20 @@ $.ajax({
           if(response.message == "Phone Number Exist & Active"){
             $('.user_warning_text').text(exist_active);  
             $('#saveuser_check').modal('show');
+            $('.u_exp').on('click', function(){
+                window.location('login');
+            });
             $('#useractive').show();
             $('#userexpired').hide();
           } else if(response.message == "Phone Number Exist & Expired"){
             $('.user_warning_text').text(exist_expired);
             $('#saveuser_check').modal('show');
+            $('.u_exp').on('click', function(){
+                document.getElementById('prices-section').style.display = "none";
+                document.getElementById('prices-section-save').style.display = "none";
+                document.getElementById('prices-section-two').style.display = "block";
+                $('#saveuser_check').modal('hide');
+            });
             $('#useractive').hide();
             $('#userexpired').show();
           } else {
