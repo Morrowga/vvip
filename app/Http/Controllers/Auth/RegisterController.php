@@ -127,7 +127,7 @@ class RegisterController extends Controller
         curl_close($ch);
 
 
-        return   ($result);
+        // return   ($result);
 
         
         // if($request->verifytype == 'emailverify'){
