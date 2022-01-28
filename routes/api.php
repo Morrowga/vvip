@@ -48,6 +48,8 @@ Route::group(['middleware' => 'apiKey'], function() {
 
     Route::post('sendagain', [App\Http\Controllers\API\UserRegisterController::class, 'sendAgain']);
 
+    Route::get('approve', [App\Http\Controllers\API\UserRegisterController::class, 'approve_payment']);
+
 });
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);

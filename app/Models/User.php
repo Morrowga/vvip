@@ -34,9 +34,6 @@ class User extends Authenticatable
         'step_one',
         'step_two',
         'package_status',
-        'package_start_date',
-        'package_end_date',
-        'remaining_days',
         'is_verified',
         'verification_code',
     ];

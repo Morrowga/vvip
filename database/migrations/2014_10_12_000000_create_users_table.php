@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->string('smart_card_design_id')->nullable();
             $table->string('package')->nullable();
             $table->string('package_status')->nullable();
-            $table->string('remaining_days')->nullable();
             $table->dateTime('package_start_date')->nullable();
             $table->dateTime('package_end_date')->nullable();
             $table->timestamp('email_verified_at')->nullable();

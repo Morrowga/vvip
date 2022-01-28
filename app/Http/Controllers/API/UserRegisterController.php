@@ -77,19 +77,19 @@ class UserRegisterController extends Controller
                      $test = "0";
              
                      // Data for text message. This is the text message data.
-                    //  $sender = "VVIP9"; // This is who the message appears to be from.
-                    //  $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
-                    //  $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
-                    //  // 612 chars or less
-                    //  // A single number or a comma-seperated list of numbers
-                    //  $message = urlencode($message);
-                    //  $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-                    //  $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
-                    //  curl_setopt($ch, CURLOPT_POST, true);
-                    //  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                    //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                    //  $result = curl_exec($ch); // This is the result from the API
-                    //  curl_close($ch);
+                     $sender = "VVIP9"; // This is who the message appears to be from.
+                     $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+                     $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
+                     // 612 chars or less
+                     // A single number or a comma-seperated list of numbers
+                     $message = urlencode($message);
+                     $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                     $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+                     curl_setopt($ch, CURLOPT_POST, true);
+                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                     $result = curl_exec($ch); // This is the result from the API
+                     curl_close($ch);
 
                     // MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
                     
@@ -588,43 +588,75 @@ class UserRegisterController extends Controller
         $ip = $request->ip();
         $locationData = \Location::get('103.135.217.166');
         $place = $locationData->countryName . ',' . $locationData->regionName . ',' . $locationData->cityName;
-        $check_exist = Payment::where('phone', $phone)->first();
-        if($check_exist === null){
-            $status = 'New';
-        } else {
-            $status = 'Update';
-        }
-        $payment = new Payment();
-        $payment->phone = $phone;
-        $payment->payment_type = $payment_type;
-        $payment->screenshot_image = $screenshot;
-        $payment->package = $package;
-        if($request->hasfile('screenshot_image')){
-            $imageName = $screenshot->getClientOriginalName();
-            $file_save = $screenshot->storeAs('payment_screenshots', $imageName, 'public');
-            $payment->screenshot_image = $imageName;
-        } 
-        $payment->location = $place;
-        $payment->ip_address = $ip;
-        $payment->status  = $status;
-        $payment->payment_amount = $payment_amount;
-        $payment->encrypt_phone = sha1($phone);
-        $payment->save();
-
         $noti_url = 'https://fcm.googleapis.com/fcm/send';
-        $noti_data = [
-            "to" => "/topics/general",
-            "data" => [
-                "phone" => $payment->phone,
-                "payment_type" => $payment->payment_type,
-                "location" => $payment->location,
-                "time" => $payment->created_at,
-                "web_link" => "https://admin.vvip9.co/pymt_by/" . $payment->encrypt_phone,
-                "sound" => "https://www.mboxdrive.com/notification.mp3"
-                ],
-            ];
+        $noti_data = [];
+        
+        $check_exist = Payment::where('phone', $phone)->first();
+        
+        if($check_exist === null){
+            $payment = new Payment();
+            $payment->phone = $phone;
+            $status = 'New';
+            $payment->payment_type = $payment_type;
+            $payment->screenshot_image = $screenshot;
+            $payment->package = $package;
+            if($request->hasfile('screenshot_image')){
+                $imageName = $screenshot->getClientOriginalName();
+                $file_save = $screenshot->storeAs('payment_screenshots', $imageName, 'public');
+                $payment->screenshot_image = $imageName;
+            } 
+            $payment->location = $place;
+            $payment->ip_address = $ip;
+            $payment->status  = $status;
+            $payment->is_valid = "pending";
+            $payment->payment_amount = $payment_amount;
+            $payment->encrypt_phone = sha1($phone);
+            $payment->save();
+            
+            $noti_data = [
+                "to" => "/topics/general",
+                "data" => [
+                    "phone" => $payment->phone,
+                    "payment_type" => $payment->payment_type,
+                    "location" => $payment->location,
+                    "time" => $payment->created_at,
+                    "web_link" => "https://admin.vvip9.co/pymt_by/" . $payment->encrypt_phone,
+                    "sound" => "https://www.mboxdrive.com/notification.mp3"
+                    ],
+                ];
 
-            $json = json_encode($noti_data);
+            $messages = [
+                'status' => "200",
+                'message' => "success",
+                'data' => "new record"
+            ];
+    
+        } else {
+            if($check_exist->is_valid === "pending"){
+                $messages = [
+                    'status' => "200",
+                    'message' => "pending",
+                    'data' => "Payment Already Sent. No More Request payment before approve from VVIP9 Team.",
+                ];
+        
+            } else if($check_exist->is_valid === "approve"){
+                $messages = [
+                    'status' => "200",
+                    'message' => "approve",
+                    'data' => "Your Account Subscription is already active. Come back again after expired subscription.",
+                ];
+        
+            } else if($check_exist->is_valid === "expire"){
+                $messages = [
+                    'status' => "200",
+                    'message' => "expire",
+                    'link' => "https://google.com"
+                ];
+            }
+        }
+       
+
+        $json = json_encode($noti_data);
 
         $noti_headers = [
             'Authorization: key= AAAAqHafR0Q:APA91bGqxTVBXDNCsOTTb_FRhEViNVHuASEWuDIz_jXmg7g25vawVzs5qjwsaHUBiPqSoWiTBqD7wnDf8R54jwIXIDbiJGm5KGsstfahDfD1nj1yQCLTEsgaqI9GYu5zZzFGp9CkU_7d',
@@ -645,12 +677,8 @@ class UserRegisterController extends Controller
 
         curl_close($curl);
 
-        $messages = [
-            'status' => "200",
-            'message' => "success"
-        ];
-
         return $messages;
+
     }
 
 
@@ -658,6 +686,13 @@ class UserRegisterController extends Controller
         $payment = Payment::orderBy('created_at', 'DESC')->get();
         
         return response()->json($payment);
+    }
+
+    public function approve_payment(Request $request){
+        //0 unseen //1 approve //2 reject
+        $phone = $request->header('phone');
+        $payment = Payment::where('phone', $phone)->orderby('created_at', 'DESC')->first();
+        return $payment;
     }
 
     

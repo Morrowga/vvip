@@ -70,13 +70,18 @@ $(function(){
                         },
                     data: formData,
                     success:function(response){
-                    console.log(response);
                     if(response.message == 'success'){
                         $('#payment_modal').modal('hide');
                         $('.next').attr('disabled', false);
                         $('.next')[0].click(); 
+                    } else if(response.message == 'pending'){
+                        $('.payment-warntext').text(response.data);
+                    } else if(response.message == 'approve'){
+                        $('.payment-warntext').text(response.data);
+                    }  else if(response.message == 'expire') {
+                        $('.payment-warntext').html('Account is exist and expired. Click <a href="'+ response.link +'">Renew Link</a>to renew subscription');
                     }
-                    }
+                }
                 });
         });
 

@@ -23,7 +23,7 @@ class CreatePaymentsTable extends Migration
             $table->string('payment_amount')->nullable();
             $table->string('location')->nullable();
             $table->string('screenshot_image')->nullable();
-            $table->integer('is_valid')->default(0);
+            $table->string('is_valid')->nullable();
             $table->string('status')->nullable();
             $table->string('ip_address')->nullable();
             $table->timestamps();

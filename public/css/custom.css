@@ -1020,6 +1020,13 @@ label.label_file {
     margin-top: 10% !important;
 }
 
+.payment-warntext{
+    font-weight: bold;
+    font-family: 'Kudryashev Display' !important;
+    color: rgb(228,73,24) !important;
+    letter-spacing: 3px;
+}
+
 .sub-regi{
     margin-top: 5%;
 }

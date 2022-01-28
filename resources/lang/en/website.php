@@ -211,6 +211,7 @@ return [
     "select_city" => "City",
     "address_event" => "Address",
     "warncount" => "This section can't use without smart card. That's why you need to wait your smart card. We will deliver your card withing 48hours.",
-    "warncountHome" => "This section can't use without smart card. We will contact you that success or fail your paid info within 24hours."
+    "warncountHome" => "This section can't use without smart card. We will contact you that success or fail your paid info within 24hours.",
+    "pymt_expire" => "We recieved your payment info. We will contact you back within 1 hour. Have a nice day."
 ]
 ?>

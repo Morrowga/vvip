@@ -350,6 +350,7 @@
                                         <div class="form-group row pay-border pyment-from">
                                             <img id="payment-title" src="" width="50" height="50">
                                             <div class="devider"></div>
+                                            <h5 class="payment-warntext"></h5>
                                             <div class="col-md-6">
                                                 <p class="text" id="amount_text"></p>
                                                 <p class="text" id="payment-account"></p>
@@ -473,6 +474,7 @@ var packagetextforuser_two = '{{ __('website.packtext_second') }}';
 var normaltext = '{{ __('website.normal_text') }}';
 var standardtext = '{{ __('website.standard_text') }}';
 var luxurytext = '{{ __('website.luxury_text') }}';
+var pymt_expire = '{{ __('website.pymt_expire') }}';
 
 
 jQuery('.fp-slider-items').slick({

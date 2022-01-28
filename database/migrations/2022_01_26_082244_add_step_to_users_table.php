@@ -17,6 +17,8 @@ class AddStepToUsersTable extends Migration
             $table->integer('step_one')->default(0);
             $table->integer('step_two')->default(0);
             $table->dateTime('expired_date')->nullable();
+            $table->dateTime('last_expired_date')->nullable();
+            $table->string('subscription_times')->default(0);
         });
     }
 
@@ -31,6 +33,8 @@ class AddStepToUsersTable extends Migration
             $table->dropColumn('step_one');
             $table->dropColumn('step_two');
             $table->dropColumn('expired_date');
+            $table->dropColumn('last_expired_date');
+            $table->dropColumn('subscription_times');
         });
     }
 }
