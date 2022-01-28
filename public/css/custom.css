@@ -1017,7 +1017,7 @@ label.label_file {
     background-color: rgb(0,0,0) !important;
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
-    margin-top: 5px;
+    margin-top: 10% !important;
 }
 
 .sub-regi{

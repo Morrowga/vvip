@@ -1,12 +1,15 @@
 $(function(){
-    $('#kpop').hide();
-    $('#wpop').hide();
-    $('#kbzpop').hide();
-    $('#ayapop').hide();
+    $('.next').hide();
+    $('.pyment-from').hide();
+    $('.pyback').on('click', function(){
+        $('.pyment-from').hide();
+        $('.pyment-step-one').show();
+    });
 
     $('.payment_link').on('click', function(e){
         var payment = $(this).attr('data-value');
-        $('#payment_modal').modal('show');
+        $('.pyment-from').show();
+        $('.pyment-step-one').hide();
         console.log(payment);
         console.log($('#package_name').val());
         if($('#package_name').val() == '12345'){
@@ -26,34 +29,22 @@ $(function(){
             $('#p_type').val('kpay');
             $('#payment-title').attr('src', 'https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 09795684194');
-            $('#kpop').show();
-            $('#wpop').hide();
-            $('#kbzpop').hide();
-            $('#ayapop').hide();
+            $('#popover-payment').attr('data-content', `<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>`);
         } else if(payment == 'wavemoney'){
             $('#p_type').val('wavemoney');
             $('#payment-title').attr('src', 'https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 09266331136');
-            $('#wpop').show();
-            $('#kpop').hide();
-            $('#kbzpop').hide();
-            $('#ayapop').hide();
+            $('#popover-payment').attr('data-content', `<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>`);
         } else if(payment == 'kbzbanking'){
             $('#p_type').val('kbzbanking');
             $('#payment-title').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 1312443534554545454544');
-            $('#kbzpop').show();
-            $('#kpop').hide();
-            $('#wpop').hide();
-            $('#ayapop').hide();
+            $('#popover-payment').attr('data-content', `<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>`);
         } else if(payment == 'ayabanking'){
             $('#p_type').val('ayabanking');
             $('#payment-title').attr('src', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU');
             $('#payment-account').html('<i class="far fa-address-card"></i>' + 'Account No - 82423742384738473834343');
-            $('#ayapop').show();
-            $('#kpop').hide();
-            $('#wpop').hide();
-            $('#kbzpop').hide();
+            $('#popover-payment').attr('data-content', `<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>`);
         }
     });
 
@@ -90,7 +81,6 @@ $(function(){
         });
 
    
-    // $('[data-toggle="popover"]').popover();
     $('[data-rel=popover]').popover({
         html: true,
         trigger: "hover"

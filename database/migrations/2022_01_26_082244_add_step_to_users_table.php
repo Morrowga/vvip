@@ -17,7 +17,6 @@ class AddStepToUsersTable extends Migration
             $table->integer('step_one')->default(0);
             $table->integer('step_two')->default(0);
             $table->dateTime('expired_date')->nullable();
-            $table->integer('payment_approve')->default(0);
         });
     }
 

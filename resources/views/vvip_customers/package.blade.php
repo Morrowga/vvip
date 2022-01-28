@@ -250,8 +250,6 @@
                 <div class="row d-flex justify-content-center text-center">
                         <!-- <div class="col-md-4"></div> -->
                         <div class="col-md-12">
-                            <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
-                                @csrf   
                                 <div class="form-section">
                                     <div class="load-section">
                                     <svg id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
@@ -332,9 +330,9 @@
                                         </div>
                                     </div>
                                     <div class="col-md-8 col-md-offset-2" style="margin-top: 20px !important;">
-                                        <h3 class="payment-text">{{ __('website.payment') }}</h3>
-                                        <div class="devider"></div>
-                                        <div class="form-group row pay-border">
+                                        <div class="form-group row pay-border pyment-step-one">
+                                            <h3 class="payment-text">{{ __('website.payment') }}</h3>
+                                            <div class="devider"></div>
                                             <div class="col-md-3" style="margin-top: 10px !important;">
                                                 <a class="payment_link" id="kpay" data-value="kpay"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150"></a>
                                             </div>
@@ -347,174 +345,38 @@
                                             <div class="col-md-3"  style="margin-top: 10px !important;">
                                                 <a class="payment_link" id="ayabanking" data-value="ayabanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt=""></a>
                                             </div>
-                                            <input type="text" name="package" id="package_name" hidden>
-                                            <input type="text" name="phone_number" id="ph_name" hidden>
-                                            <input type="text" name="name" id="username" hidden>
                                         </div>
-                                    </div>
-                                </div>
-                                <!-- <div class="form-section">
-                                    <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div> 
-                                    <div class="form-group row">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <span id="error_name" class="error_texts" role="alert">{{ __('website.enter_name') }}</span>
-                                            <input id="name" type="text" placeholder="{{ __('website.enter_name') }}"
-                                                class="form-control register-input" name="name" style="font-size: 17px; margin-top: 5px !important;" required autocomplete="name" autofocus>
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group row mt-5">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <span id="error_phone" class="error_texts" role="alert"></span>
-                                            <input id="phone" type="tel"
-                                                class="form-control register-input"  placeholder="{{ __('website.enter_phone') }}" name="phone_number" style="font-size: 17px; margin-top: 5px !important;"
-                                                 required autocomplete="phone_number">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <div class="col-md-4 col-md-offset-4">
-                                            <span id="error_email" class="error_texts" role="alert"></span>
-                                            <input id="email" type="email" placeholder="{{ __('website.email') }}"
-                                                class="form-control register-input" name="email" style="font-size: 17px; margin-top: 5px !important;"
-                                                required autocomplete="email">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-md-offset-4 hr" style="margin-top: 15px !important;">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
-                                        <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
-                                             <p class="url_text text-left">{{ __('website.url') }}</p>
-                                            <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="{{ __('website.url_popover_title') }}" data-content="{{ __('website.url_popover_body') }}"><i class="fas fa-question"></i></button>
-                                        </div>
-                                            <div class="row" style="margin-top: 15px !important;">
-                                                <div class="col-md-6 url">
-                                                    <input type="radio" name="url_radio" onchange="getCheckedName()" value="" id="url_name" checked>
-                                                    <label for="html" class="own_url">{{ __('website.name_url') }}</label><br>
-                                                </div>
-                                                <div class="col-md-6 url">
-                                                    <input type="radio" name="url_radio" onchange="getCheckedSystem()" value="" id="url_system">
-                                                    <label for="css">{{ __('website.system_url') }}</label><br>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-4 col-md-offset-4" style="margin-top: 20px !important;">
-                                            <span id="error_url" class="error_texts" role="alert"></span>
-                                            <input type="text" value="1" id="total_input" hidden>
-                                            <div class="row" style="display: flex; justify-content: center;">
-                                                <div class="col url vvip_link">
-                                                    <p class="vvip_text">https://vvip9.co/</p>
-                                                </div>
-                                                <div class="col">
-                                                    <input type="text" id="url" class="form-control url_input" name="url" placeholder="{{ __('website.enter_url') }}">
-                                                    <input type="text" id="encrypt_url" name="encryption" hidden>
-                                                </div>
+                                        <div class="form-group row pay-border pyment-from">
+                                            <img id="payment-title" src="" width="50" height="50">
+                                            <div class="devider"></div>
+                                            <div class="col-md-6">
+                                                <p class="text" id="amount_text"></p>
+                                                <p class="text" id="payment-account"></p>
+                                                <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 col-md-offset-4 hr_bottom mt-2" style="margin-top: 30px !important;">
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-4 col-md-offset-4" style="margin-top: 5px !important;">
-                                            <div class="d-flex justify-content-center" style="display:flex; text-align:left !important;">
-                                                <p class="pt-2 url_text">{{ __('website.secure') }}</p>
-                                                <button style="margin-left: 5px !important;" type="button" class="btn btn-light span_question" data-toggle="popover" title="{{ __('website.secure_popover_title') }}" data-content="{{ __('website.secure_popover_body') }}"><i class="fas fa-question"></i></button>
-                                            </div>
-                                            <div class="row" style="margin-top: 15px !important;">
-                                                <div class="col-md-6 url">
-                                                    <input type="radio" name="secure_status" value="private">
-                                                   <label for="html">Private</label><br>
-                                                </div>
-                                                <div class="col-md-6 url">
-                                                    <input type="radio" name="secure_status" value="public" checked>
-                                                   <label for="css">Public</label><br>
-                                                </div>
+                                            <div class="col-md-6">
+                                                <form action="" id="payment_form">
+                                                    <div class="text-center" id="screenshot">
+                                                    </div>
+                                                    <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
+                                                        <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
+                                                        {{ __('website.upload_screenshot') }}
+                                                    </label>
+                                                    <input type="text" name="payment_type" id="p_type" hidden>
+                                                    <input type="text" name="payment_amount" id="p_amount" hidden>
+                                                    <input type="text" name="package" id="p_package" hidden>
+                                                    <input type="text" name="phone" id="p_phone" hidden>
+                                                    <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
+                                                    <button type="button" class="btn btn-light paymentbtn pyback">{{ __('website.pre') }}</button>
+                                                    <button type="submit" class="btn btn-light paymentbtn" disabled>{{ __('website.next') }}</button>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-section">
-                                    <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                    </div> 
-                                    <div class="form-group">
-                                        <div class="row d-flex justify-content-center" id="column-image">
-                                        </div>
-                                    </div>
-                                </div>       
-                                <div class="form-section">
-                                    <div class="form-group">
-                                        <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
-                                            <div class="row">
-                                                <div class="col-md-6 text-center">
-                                                    <div class="front_theme">
-                                                        <h3 class="text text-margin">{{ __('website.Front Theme') }}</h3>
-                                                        <div class="front_theme_div" style="display:flex; justify-content: center !important;">
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="back_theme">
-                                                        <h3 class="text text-margin">{{ __('website.Back Theme') }}</h3>
-                                                        <div class="back_theme_div" style="display:flex; justify-content: center !important;">
-
-                                                        </div>
-                                                    </div>
-                                                    <div id="bg_div">
-                                                    <h3 class="text">{{ __('website.background_color') }}</h3>
-                                                        <input type="color" class="form-control text-center" id="background_color">
-                                                    </div>
-                                                    <div id="text_div">
-                                                        <h3 class="text text-margin">{{ __('website.text_color') }}</h3>
-                                                        <input type="color" class="form-control" id="text_color">
-                                                        <p id="catch_click" hidden></p>
-                                                    </div>
-                                                    <div class="col-md-12" style="margin-top: 20px;">
-                                                        <p class="text" style="font-size: 20px !important;">{{ __('website.icon_up') }}</p>
-                                                        <button type="button" id="upload_logo" class="btn btn-dark btn-place btn-block"><i class="fas fa-camera-retro custom-case"></i>{{ __('website.upload_logo') }}</button>
-                                                    </div>
-                                                    <div class="col-md-12 mt-2">
-                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.editname') }}</p>
-                                                        <button type="button" id="editName" class="btn btn-dark btn-place btn-block"><i class="fas fa-pen-nib custom-case"></i>{{ __('website.edit_name') }}</button>
-                                                    </div>
-                                                    <div class="col-md-12">
-                                                        <p class="text"  style="font-size: 21px !important; margin-top: 15px">{{ __('website.description') }}</p>
-                                                        <button type="button"  id="editDescription" class="btn btn-dark btn-place btn-block"><i class="fas fa-font custo"></i>{{ __('website.edit_descript') }}</button>                    
-                                                    </div>
-                                                    <div class="col-md-12 mt-2" id="positioning">
-                                                        <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.position') }}</p>
-                                                        <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
-                                                        <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
-                                                        <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>   
-                                                    </div>
-                                                    <div class="col-md-12 mt-3" id="qr_div">
-                                                        <p class="text" style="font-size: 20px !important; margin-top:15px;">{{ __('website.qr_scan') }}</p>
-                                                        <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
-                                                        <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
-                                                        <button type="button" id="move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>
-                                                        <input type="text" id="qrposition" hidden>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 text-center custom_card" id="bl_front">
-                                                    <div id="card_blank_front" style="text-align:center;">
-                                                        <img  alt="" id="card_front">
-                                                        <img src="../images/logo.jpeg" class="customlogo" id="logo_view" alt="" width="70" height="70">
-                                                        <p class="front_card_name text-center">Your Name</p>
-                                                        <p class="card_description text-center" style="margin-top: 20px !important;" >Your Description</p>
-                                                    </div>
-                                                    <div id="card_blank_back">
-                                                        <img  id="card_back" alt="" height="250">
-                                                        <img  id="qr_scan" alt="" width="70" height="70">
-                                                    </div>
-                                                    <input type="text" id="card_design_id" name="smart_card_design_id" hidden>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>       -->
+                                <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
+                                @csrf  
                                 <div class="form-section" id="pin_section">
                                     <div class="col-md-12" id="uu">
                                         <p class="text"></p>
@@ -537,45 +399,21 @@
                                     <div class="form-group row">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="password-confirm" type="number" placeholder="{{ __('website.confirm_pin') }}" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57" class="form-control web_pin" name="password_confirmation">
-                                            <input type="text" id="verify-type"  name="verifytype" hidden>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
                                     <div class="form-group row">
                                         <div class="col-md-12">
+                                            <input type="text" name="package" id="package_name" hidden>
+                                            <input type="text" name="phone_number" id="ph_name" hidden>
+                                            <input type="text" name="name" id="username" hidden>
                                             <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
-                                            <!-- <button type="button" class="previous btn btn-info" style="margin-top: 10px !important;">{{ __('website.pre') }}</button> -->
                                             <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
                                             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="modal fade" id="submit-verify" role="dialog">
-                                    <div class="modal-dialog">
-                                        <div class="modal-header" style="border: none !important; margin-top: 10%;">
-                                        </div>
-                                        <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
-                                            <div class="modal-body">
-                                               <div class="col-md-12">
-                                                   <h3 class="text text-center">Choose Options</h3>
-                                                   <div class="row">
-                                                        <div class="col-md-6 btn btn-dark verifybtn phone-verify" id="smsverify">
-                                                            
-                                                        </div>
-                                                        <div class="col-md-6 btn btn-dark verifybtn email-verify" id="emailverify">
-
-                                                        </div>
-                                                    </div>
-                                               </div>
-                                            </div>
-                                            <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
-                                                <button type="button" class="btn btn-secondary sub-regi-cancel" data-dismiss="modal">{{ __('website.close') }}</button>
-                                                <button type="submit" class="btn btn-dark paymentbtn sub-regi" hidden>{{ __('website.confirm') }}</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </form>
                         </div>
                     </div>
@@ -608,45 +446,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="modal fade" id="payment_modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-header" style="border: none !important; margin-top: 10%;">
-            </div>
-            <div class="modal-content" style="background-color: #000 !important; border: 2px solid #fff;">
-                <div class="modal-body">
-                    <img id="payment-title" src="" width="50" height="50">
-                    <p class="text" id="amount_text"></p>
-                    <p class="text" id="payment-account"></p>
-                    <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
-                    <form action="" id="payment_form">
-                        <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
-                            <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
-                            {{ __('website.upload_screenshot') }}
-                        </label>
-                        <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
-                        <button type="button" class="btn btn-primary paymentbtn" id="kpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button type="button" class="btn btn-primary paymentbtn" id="wpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button type="button" class="btn btn-primary paymentbtn" id="kbzpop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <button type="button" class="btn btn-primary paymentbtn" id="ayapop" data-rel="popover" data-content="<img src='../images/kpay.jpg' width=100% height=100%><img src='../images/kpay.jpg' width=100% height=100%>">{{ __('website.needhelp') }}<i class="far fa-question-circle"></i></button>
-                        <input type="text" name="payment_type" id="p_type" hidden>
-                        <input type="text" name="payment_amount" id="p_amount" hidden>
-                        <input type="text" name="package" id="p_package" hidden>
-                        <input type="text" name="phone" id="p_phone" hidden>
-                </div>
-                <div class="text-center" id="screenshot">
-                </div>
-                <hr>
-                <div class="modal-footer" style="border-bottom: 2px solid #fff;"> 
-                        <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
-                        <button type="submit" class="btn btn-dark paymentbtn" disabled>{{ __('website.confirm') }}</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    
+    </div>   
 @section('script')
 <script src="../js/package.js"></script>
 <script src="../js/payment.js"></script>

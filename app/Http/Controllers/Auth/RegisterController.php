@@ -72,6 +72,7 @@ class RegisterController extends Controller
         $user = new User;
         $user->name = $request->name;
         $user->profile_image = "logo.jpeg";
+        $user->package_status = "pending";
         $user->step_one = 1;
         // $user->email = $request->email;
         $user->phone_number = $request->phone_number;
@@ -126,7 +127,7 @@ class RegisterController extends Controller
         curl_close($ch);
 
 
-        // return   ($result);
+        return   ($result);
 
         
         // if($request->verifytype == 'emailverify'){
