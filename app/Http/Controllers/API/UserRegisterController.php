@@ -77,19 +77,19 @@ class UserRegisterController extends Controller
                      $test = "0";
              
                      // Data for text message. This is the text message data.
-                     $sender = "VVIP9"; // This is who the message appears to be from.
-                     $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
-                     $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
-                     // 612 chars or less
-                     // A single number or a comma-seperated list of numbers
-                     $message = urlencode($message);
-                     $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
-                     $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
-                     curl_setopt($ch, CURLOPT_POST, true);
-                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-                     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                     $result = curl_exec($ch); // This is the result from the API
-                     curl_close($ch);
+                    //  $sender = "VVIP9"; // This is who the message appears to be from.
+                    //  $numbers = $user->phone_number; // A single number or a comma-seperated list of numbers
+                    //  $message = "Hi Welcome from VVIP9. Your OTP Code is " . $user->verification_code;
+                    //  // 612 chars or less
+                    //  // A single number or a comma-seperated list of numbers
+                    //  $message = urlencode($message);
+                    //  $data = "username=".$username."&hash=".$hash."&message=".$message."&sender=".$sender."&numbers=".$numbers."&test=".$test;
+                    //  $ch = curl_init('https://control.ooredoo.com.mm/api2/send/?');
+                    //  curl_setopt($ch, CURLOPT_POST, true);
+                    //  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                    //  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                    //  $result = curl_exec($ch); // This is the result from the API
+                    //  curl_close($ch);
 
                     // MailController::registerVerifyEmail($user->name, $user->email, $user->verification_code);        
                     
