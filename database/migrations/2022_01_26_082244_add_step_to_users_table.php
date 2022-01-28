@@ -28,9 +28,9 @@ class AddStepToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('step_one');
-            $table->dropColumn('step_two');
-            $table->dropColumn('expired_date');
+            // $table->dropColumn('step_one');
+            // $table->dropColumn('step_two');
+            // $table->dropColumn('expired_date');
         });
     }
 }
