@@ -44,7 +44,7 @@ class UserRegisterController extends Controller
                     $user->step_one = 1;
                     $user->phone_number = $phone_number;
                     $user->package = $package_name;
-                    $user->package_status = "active";
+                    $user->package_status = "pending";
                     $user->verification_code = random_int(100000, 999999);
                     $user->secure_status = "public";
                     $user->password = Hash::make($pin);
