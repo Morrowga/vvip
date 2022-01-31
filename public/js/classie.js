@@ -53,22 +53,22 @@ else {
   };
 }
 
-function toggleClass( elem, c ) {
-  var fn = hasClass( elem, c ) ? removeClass : addClass;
-  fn( elem, c );
-}
+// function toggleClass( elem, c ) {
+//   var fn = hasClass( elem, c ) ? removeClass : addClass;
+//   fn( elem, c );
+// }
 
 var classie = {
   // full names
   hasClass: hasClass,
   addClass: addClass,
   removeClass: removeClass,
-  toggleClass: toggleClass,
+  // toggleClass: toggleClass,
   // short names
   has: hasClass,
   add: addClass,
   remove: removeClass,
-  toggle: toggleClass
+  // toggle: toggleClass
 };
 
 // transport
