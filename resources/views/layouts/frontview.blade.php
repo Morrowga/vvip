@@ -102,10 +102,10 @@
             <script src="../js/animations/js/wow.min.js"></script>
             <script src="../js/waypoints.min.js"></script>
             <script src="../js/isotope.pkgd.min.js"></script>
-            <!-- <script src="../js/classie.js"></script> -->
+            <script src="../js/classie.js"></script>
             <script src="../js/jquery.easing.min.js"></script>
             <script src="../js/jquery.counterup.min.js"></script>
-            <!-- <script src="../js/theme.js"></script> -->
+            <script src="../js/theme.js"></script>
             <!--===========================================script========================================================-->
             @yield('script')
             <script>
