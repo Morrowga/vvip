@@ -163,6 +163,7 @@ class UserRegisterController extends Controller
         $userid = $request->userid;
         $code = $request->code;
         $verify = User::where('verification_code', $code)->where('id', $userid)->first();
+        return $verify;
         if($verify !== null){
             $verify->is_verified = 1;
             $verify->save();
@@ -462,14 +463,14 @@ class UserRegisterController extends Controller
 
     public function cards($token){
         $client = new Client();
-        $request = $client->get('http://admin.vvip9.co/api/get_card/' . $token);
+        $request = $client->get('http://admin.vvip9.co/api/card_design/');
         $response = $request->getBody();
        
         $data = json_decode($response);
 
         $loot = [];
 
-        // return $data;
+        return $data;
         foreach($data->preview_design as $d){
             $pre_front = $d->front_image;
             $pre_back = $d->back_image;
