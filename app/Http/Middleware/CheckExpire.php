@@ -40,7 +40,7 @@ class CheckExpire
                             return response()->json('Subscription is expired.');
                         }
                         Auth::logout();
-                        return redirect()->to('/login')->with('warning', 'Your session has expired because your subscription is over.Top up your new subscription.');
+                        return redirect()->to('/login');
                     }
                 }                
             }
