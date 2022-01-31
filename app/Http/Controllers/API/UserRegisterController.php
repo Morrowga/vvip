@@ -163,7 +163,6 @@ class UserRegisterController extends Controller
         $userid = $request->userid;
         $code = $request->code;
         $verify = User::where('verification_code', $code)->where('id', $userid)->first();
-        return $verify;
         if($verify !== null){
             $verify->is_verified = 1;
             $verify->save();
