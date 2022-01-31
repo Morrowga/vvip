@@ -462,17 +462,16 @@ class UserRegisterController extends Controller
 
     public function cards($token){
         $client = new Client();
-        $request = $client->get('http://admin.vvip9.co/api/card_design/');
+        $request = $client->get('https://admin.vvip9.co/api/card_designs?type=' . $token );
         $response = $request->getBody();
        
         $data = json_decode($response);
 
         $loot = [];
 
-        return $data;
-        foreach($data->preview_design as $d){
-            $pre_front = $d->front_image;
-            $pre_back = $d->back_image;
+        foreach($data->data as $key => $d){
+            $pre_front = $d[0]->preview_front_image;
+            $pre_back = $d[0]->preview_back_image;
             $front_preview = file_get_contents($pre_front);
             $pre_front_name = substr($pre_front, strrpos($pre_front, '/') + 1);
             $front = Storage::put('public/cards/' . $pre_front_name, $front_preview);
@@ -482,7 +481,7 @@ class UserRegisterController extends Controller
             $back = Storage::put('public/cards/' . $pre_back_name, $back_preview);
 
             $cut_path = [
-                    "id" => $d->id,
+                    "id" => $d[0]->card_id,
                     "front_image" => $pre_front_name,
                     "back_image" => $pre_back_name
             ];
@@ -502,22 +501,36 @@ class UserRegisterController extends Controller
 
     public function card_by_id($id = null){
         $client = new Client();
-        $request = $client->get('http://admin.vvip9.co/api/getCardbyId/' . $id);
+        $request = $client->get('https://admin.vvip9.co/api/card_designs?card_id=' . $id);
         $response = $request->getBody();
 
         $data = json_decode($response);
 
-        foreach($data->package_design[0]->front_trans as $front_tran){
-            $get_front_tran = file_get_contents($front_tran->front_image);
-            $f_tran_name = substr($front_tran->front_image, strrpos($front_tran->front_image, '/') + 1);
-            $ftran = Storage::put('public/cards/' . $f_tran_name, $get_front_tran);
-        }
+        foreach($data->data as $d){
+           foreach($d[0]->transparent_images as $tran){
+                $get_front_tran = file_get_contents($tran->front_image);
+                $f_tran_name = substr($tran->front_image, strrpos($tran->front_image, '/') + 1);
+                $ftran = Storage::put('public/cards/' . $f_tran_name, $get_front_tran);
 
-        foreach($data->package_design[0]->back_trans as $back_tran){
-            $get_back_tran = file_get_contents($back_tran->back_image);
-            $b_tran_name = substr($back_tran->back_image, strrpos($back_tran->back_image, '/') + 1);
-            $btran = Storage::put('public/cards/' . $b_tran_name, $get_back_tran);
+
+                if($d[0]->package !== 'normal'){
+                    $get_back_tran = file_get_contents($tran->back_image);
+                    $b_tran_name = substr($tran->back_image, strrpos($tran->back_image, '/') + 1);
+                    $btran = Storage::put('public/cards/' . $b_tran_name, $get_back_tran);
+                }
+           };
         }
+        // foreach($data->package_design[0]->front_trans as $front_tran){
+        //     $get_front_tran = file_get_contents($front_tran->front_image);
+        //     $f_tran_name = substr($front_tran->front_image, strrpos($front_tran->front_image, '/') + 1);
+        //     $ftran = Storage::put('public/cards/' . $f_tran_name, $get_front_tran);
+        // }
+
+        // foreach($data->package_design[0]->back_trans as $back_tran){
+        //     $get_back_tran = file_get_contents($back_tran->back_image);
+        //     $b_tran_name = substr($back_tran->back_image, strrpos($back_tran->back_image, '/') + 1);
+        //     $btran = Storage::put('public/cards/' . $b_tran_name, $get_back_tran);
+        // }
 
         return $data;
     }

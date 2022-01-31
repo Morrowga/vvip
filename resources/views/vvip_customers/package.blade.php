@@ -364,7 +364,7 @@
                                                 <div class="col-md-6">
                                                     <form action="" id="payment_form">
                                                         <div class="text-center" id="screenshot">
-                                                        </div>
+                                                        </div>\
                                                         <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
                                                             <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
                                                             {{ __('website.upload_screenshot') }}
@@ -433,31 +433,7 @@
     </section>
     <div class="col-md-12" style="height: 80px;">
         <p class="copyright text-center" style="padding-top: 15px !important;">Copyright &copy; 2021 <a href="https://htut.com" class="theme-author">MHH</a></p>
-    </div>
-
-    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header" style="border: none !important; margin-top: 10%;">
-                    <!-- <h4 class="text">Smart Card</h4> -->
-                </div>
-                <div class="modal-body" style="margin-top: 60px !important;">
-                    <div class="row" style="margin-top: 60px !important;">
-                        <div class="col-md-6 text-center">
-                            <img src="" id="front_img" alt="" with="400" height="400">
-                        </div>
-                        <div class="col-md-6 text-center">
-                            <img src="" id="back_img" alt="" with="400" height="400">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
-                    <!-- <button type="button" class="btn btn-primary" id="select_card">Select Card</button> -->
-                </div>
-            </div>
-        </div>
-    </div>   
+    </div>  
 @section('script')
 <script src="../js/package.js"></script>
 <script src="../js/payment.js"></script>

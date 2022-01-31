@@ -715,8 +715,8 @@ height: 250px;
 
 #qr_scan{
     position: absolute;
-    top: 37% !important;
-    left: 44% !important;
+    top: 33% !important;
+    left: 43% !important;
 }
 
 #card_blank_front > #logo_view{

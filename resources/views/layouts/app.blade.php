@@ -30,7 +30,7 @@
 <body>
     <div id="app" style="display:none; width:100%; height: auto; flex-direction: column;">
 
-        <main class="py-4" style="flex: 1 !important; overflow-y:scroll !important;">
+        <main class="py-4" style="flex: 1 !important; overflow-y:scroll !important; overflow-x: hidden;">
             @yield('content')
         </main>
 

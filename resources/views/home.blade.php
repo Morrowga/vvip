@@ -15,6 +15,7 @@
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             <input type="text" id="step_two" value="{{ Auth::user()->step_two }}" hidden>
+            <input type="text" id="pack" value="{{ Auth::user()->package }}" hidden>
             <input type="text" id="pack_status" value="{{ Auth::user()->package_status }}" hidden>
             @else
             <a href="" hidden></a>
@@ -363,17 +364,41 @@
 
 
     <div class="modal fade" id="countDownHome" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-header" style="border: none !important; margin-top: 10%;">
-        </div>
-        <div class="modal-content" id="locked" style="backgtokenround-color: #fff !important;">
-            <div class="modal-body text-center" style="background-color: #fff !important;">
-                <p class="warn-count"><i class="fas fa-exclamation-triangle tri-count mr-2"></i>{{ __('website.warncountHome') }}</p>
-                <img src="http://www.bigcatcarolinas.com/Shared/Images/Product/Please-Wait-Here-decal/Stop-Wait-Here-01.png" alt="" class="img-fluid lock_img">
+        <div class="modal-dialog">
+            <div class="modal-header" style="border: none !important; margin-top: 10%;">
+            </div>
+            <div class="modal-content" id="locked" style="backgtokenround-color: #fff !important;">
+                <div class="modal-body text-center" style="background-color: #fff !important;">
+                    <p class="warn-count"><i class="fas fa-exclamation-triangle tri-count mr-2"></i>{{ __('website.warncountHome') }}</p>
+                    <img src="http://www.bigcatcarolinas.com/Shared/Images/Product/Please-Wait-Here-decal/Stop-Wait-Here-01.png" alt="" class="img-fluid lock_img">
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="border: none !important;">
+                    <!-- <h4 class="text">Smart Card</h4> -->
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <img src="" id="front_img" alt="" with="400" height="400">
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <img src="" id="back_img" alt="" with="400" height="400">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancel" data-dismiss="modal">{{ __('website.close') }}</button>
+                    <!-- <button type="button" class="btn btn-primary" id="select_card">Select Card</button> -->
+                </div>
+            </div>
+        </div>
+    </div> 
 @section('script')
 <script src="../js/home.js"></script>
 <script>

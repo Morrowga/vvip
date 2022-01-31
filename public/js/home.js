@@ -43,7 +43,7 @@ $(function(){
                 });
             }
 
-            if(curIndex() == 2){
+            if(curIndex() == 3){
                 $('#input-1').val($('#image_data').attr('src'));
                 $('#input-2').val($('#card_front').attr('src'));
                 $('#input-3').val($('#card_back').attr('src'));
@@ -486,4 +486,233 @@ $(window).on('load', function() {
         $('#home_height').hide();
         $('#reg-section').show();
    }
+});
+
+var pack = $('#pack').val();
+console.log(pack);
+var cardurl;
+if(pack == 'normal'){
+    cardurl = 'api/cards/1';
+} else if(pack == 'standard') {
+    cardurl = 'api/cards/2';
+} else {
+    var cardurl = 'api/cards/3';
+}
+$.ajax({
+    url: cardurl,
+    crossDomain: true,
+    contentType: 'application/x-www-form-urlencoded', 
+    type: 'get',
+    headers: {
+        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+    }, 
+    success: function(response){
+        console.log(response);
+        data = response.preview_design;
+        $.each(data, function(i, value) {
+                //loop_card_designs
+                $('#column-image').append(`<div class="col-md-4">
+                <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="270" height="200">
+                <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
+                    <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
+                    <button type="button" class="btn btn-success select-card ml-2" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
+                </div>
+                <div class="col-md-6 col-md-offset-3">
+                    <p id="success_p"  class="success_text`+ value['id'] +`"></p>
+                </div>`);
+            
+            //add_color_to_name&description
+            $('.front_card_name').attr('style', 'color:' + $('#text_color').val() + ';');
+            $('.card_description').attr('style', 'color:' + $('#text_color').val() + ';');
+
+            //normal_package_condition
+            if(pack == "normal"){
+                $('#bg_div').hide();
+                $('#qr_div').hide();
+                $('#card_blank_back').attr('style', 'margin-top: 100px !important;');
+            } 
+
+            //add_bg_color
+            let colorInput = document.getElementById('background_color');
+            colorInput.addEventListener('input', () =>{
+                if(pack == "normal"){
+                    $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
+                } else {
+                    $('#card_blank_front').attr('style', 'background-color:' + colorInput.value + ';');
+                    $('#card_blank_back').attr('style', 'background-color:' + colorInput.value + ';');
+                }
+            });
+
+            //zoom_card
+            $('.zoom').on('click', function(e) {
+                let id = e.target.id;
+                if(id == value['id']){
+                    // console.log(value['preview_design']['back_image']);
+                        $('#front_img').attr('src', "../storage/cards/" + value['front_image']);
+                    if(pack == "normal"){
+                        $('#back_img').attr('src', "../images/Back.png");
+                    } else {
+                        $('#back_img').attr('src', "../storage/cards/" + value['back_image']);
+                    }
+                    $('#exampleModal').modal('show');
+                }
+            });
+
+            //select_card
+            $('.select-card').on('click', function(e) {
+                // $('.next').attr('disabled', false);
+                var target = e.target.id;
+                console.log(target);
+                $('#card_design_id').val(target);
+                $.ajax({
+                    url: 'api/card_by_id/' + target,
+                    crossDomain: true,
+                    contentType: 'application/x-www-form-urlencoded', 
+                    type: 'get',
+                    headers: {
+                        'Authorization' : 'dnZpcDk=aHR1dG1lZGlh'
+                    }, 
+                    success: function(response){
+                        // console.log(response['data']);
+                        
+                        var tran_data = response['data'][0];
+                        $.each(tran_data,function(i,va){
+                            var ve = va['transparent_images'][0];
+                            var frontposition = ve['front_position'];
+                            var backposition = ve['back_position'];
+                            $('#background_color').val(ve['front_backcolor']);
+                            $('#text_color').val(ve['front_text_color']);
+                            $('#card_blank_front').attr('style', 'background-color:'+ ve['front_backcolor'] +'!important;');
+                            $('#frontcard').attr('style', 'background-color:'+ ve['front_backcolor'] +'!important;');
+                            $('.front_card_name').attr('style', 'color:' + ve['front_text_color'] + '!important;');
+                            $('.card_description').attr('style', 'color:' + ve['front_text_color'] + '!important;');
+                            $('#catch_click').text(ve['front_position']);
+                            var tran_front_img = ve['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                            $('#card_front').attr('src', tran_front_img);
+                            $('#front_move_' + frontposition).trigger('click');
+
+                             if(pack != 'normal'){
+                                var tran_back_img = ve['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                                $('#card_back').attr('src', tran_back_img);
+                                $('#move_' + backposition).trigger('click');
+                                $('.back_theme').show();
+                                $('#backcard').attr('style', 'background-color:'+ ve['front_backcolor'] +'!important;');
+                                } else {
+                                    $('#qrposition').text(ve['back_position']);
+                                    $('.back_theme').hide();
+                              }
+                              $('#qrposition').val(ve['back_position']);
+                                $('#exampleModal').modal('hide');
+                                $('.success_text' + target).text(select_success).delay(5000).fadeOut();
+
+
+                            $.each(va['transparent_images'], function(i,ve_theme){
+                                var fronttheme = ve_theme['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                                console.log(ve_theme['front_image']);
+                                $('.front_theme_div').append(`
+                                    <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                                        <img src="`+ fronttheme +`" alt="" width="60" height="60" class="theme_img_front" id="`+ ve_theme['image_id'] +`" data-property="`+ ve_theme['front_property'] +`" data-position="`+ ve_theme['front_position'] +`">
+                                    </div>
+                                `)
+
+                                var backtheme = ve_theme['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                                $('.back_theme_div').append(`
+                                    <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                                        <img src="`+ backtheme +`" alt="" width="60" height="60" class="theme_img_back" id="`+ ve_theme['image_id'] +`" data-property="`+ ve_theme['back_property'] +`" data-position="`+ ve_theme['back_position'] +`">
+                                    </div>
+                                `)
+
+                                 $('.theme_img_front').on('click', function(e){
+                                    $('#card_front').attr('src', e.target.id);
+                                    if(e.target.getAttribute('data-property') == "0"){
+                                        $('#front_move_' + e.target.getAttribute('data-position')).trigger('click');
+                                        $('#positioning').hide();
+                                    } else {
+                                        $('#positioning').show();
+                                    }
+                                });
+
+                                $('.theme_img_back').on('click', function(e){
+                                    $('#card_back').attr('src', e.target.id);
+
+                                    if(e.target.getAttribute('data-property') == "0"){
+                                        $('#move_' + e.target.getAttribute('data-position')).trigger('click');
+                                        $('#positioning').hide();
+                                    } else {
+                                        $('#positioning').show();
+                                    }
+                                });
+                            })
+                        });
+                        // var frontposition = tran_front_data['front_position'];
+                        // var backposition = tran_back_data['back_position'];
+                        // $('#background_color').val(tran_data['']);
+                        // $('#text_color').val(txt_color);
+                        // $('#card_blank_front').attr('style', 'background-color:'+ tran_front_data['bg_color'] +'!important;');
+                        // $('#frontcard').attr('style', 'background-color:'+ tran_front_data['bg_color'] +'!important;');
+                        // $('.front_card_name').attr('style', 'color:' + txt_color + '!important;');
+                        // $('.card_description').attr('style', 'color:' + txt_color + '!important;');
+                        // $('#catch_click').text(tran_front_data['front_position']);
+                        // var tran_front_img = tran_front_data['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                        // $('#card_front').attr('src', tran_front_img);
+                        // $('#front_move_' + frontposition).trigger('click');
+                        // if(pack != '12345'){
+                        //     var tran_back_img = tran_back_data['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                        //     $('#card_back').attr('src', tran_back_data);
+                        //     $('#move_' + backposition).trigger('click');
+                        //     $('.back_theme').show();
+                        //     $('#backcard').attr('style', 'background-color:'+ tran_back_data['bg_color'] +'!important;');
+                        // } else {
+                        //     $('#qrposition').text(tran_back_data['back_position']);
+                        //     $('.back_theme').hide();
+                        // }
+                        // $('#qrposition').val(tran_back_data['back_position']);
+                        // $('#exampleModal').modal('hide');
+                        // $('.success_text' + target).text(select_success).delay(5000).fadeOut();
+
+
+                        // $.each(front_theme, function(i,front_theme_val){
+                        //     var fronttheme = front_theme_val['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                        //     console.log(fronttheme);
+                        //     $('.front_theme_div').append(`
+                        //         <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                        //             <img src="`+ fronttheme +`" alt="" width="60" height="60" class="theme_img_front" id="`+ fronttheme +`" data-property="`+ front_theme_val['front_property'] +`" data-position="`+ front_theme_val['front_position'] +`">
+                        //         </div>
+                        //     `)
+                        // })
+
+                        // $.each(back_theme, function(i,back_theme_val){
+                        //     var backtheme = back_theme_val['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
+                        //     $('.back_theme_div').append(`
+                        //         <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
+                        //             <img src="`+ backtheme +`" alt="" width="60" height="60" class="theme_img_back" id="`+ backtheme +`" data-property="`+ back_theme_val['back_property'] +`" data-position="`+ back_theme_val['back_position'] +`">
+                        //         </div>
+                        //     `)
+                        // })
+
+                        // $('.theme_img_front').on('click', function(e){
+                        //     $('#card_front').attr('src', e.target.id);
+                        //     if(e.target.getAttribute('data-property') == "unactive"){
+                        //         $('#front_move_' + e.target.getAttribute('data-position')).trigger('click');
+                        //         $('#positioning').hide();
+                        //     } else {
+                        //         $('#positioning').show();
+                        //     }
+                        // });
+
+                        // $('.theme_img_back').on('click', function(e){
+                        //     $('#card_back').attr('src', e.target.id);
+
+                        //     if(e.target.getAttribute('data-property') == "unactive"){
+                        //         $('#move_' + e.target.getAttribute('data-position')).trigger('click');
+                        //         $('#positioning').hide();
+                        //     } else {
+                        //         $('#positioning').show();
+                        //     }
+                        // });
+                    }
+                });
+            });  
+        });
+    },
 });
