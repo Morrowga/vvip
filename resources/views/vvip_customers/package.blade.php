@@ -1,7 +1,7 @@
 @extends('layouts.frontview')
 
 @section('content')
-    <section id="prices-section" class="page"  style="margin-top: 65px !important;">
+    <section id="prices-section" class="page">
         <!-- Begin page header-->
         <div class="page-header-wrapper">
             <div class="container">
@@ -26,7 +26,7 @@
             <div class="prices">
                 <div class="container">
                     <div class="row">
-                        <div class="price-box col-sm-6 col-md-4 wow" data-wow-delay="0.3s">
+                        <div class="price-box col-md-4">
                             <div class="panel panel-default first-price-box">
                                 <div class="panel-heading text-center">
                                     <h1 class="package">GOLD</h1>
@@ -35,7 +35,7 @@
                                     <h5 class="package" style="font-size: 14px !important;">{{ $normal->plan_name }}</h5>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
-                                    <ul class="d-flex justify-content-center">
+                                    <ul>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
@@ -47,14 +47,14 @@
                                 <!-- <div class="panel-body text-center">
                                     <p class="lead"><strong>{{ $normal->price }}</strong></p>
                                 </div> -->
-                                <div class="panel-footer text-center nor_stand">
+                                <div class="panel-footer text-center nor">
                                     <button class="btn btn-dark moreinfo_package" id="{{ $normal->package_name }}">{{ __('website.more_info') }}</button>
                                     <button type="button" id="{{ $normal->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $normal->token }}">{{ $normal->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
                         </div>
                         
-                        <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.7s">
+                        <div class="price-box col-md-4">
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h1 class="package">DIAMOND</h1>
@@ -63,7 +63,7 @@
                                     <h5 class="package" style="font-size: 14px !important;">{{ $standard->plan_name }}</h5>
                                 </div>
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
-                                    <ul class="d-flex justify-content-center">
+                                    <ul>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
@@ -77,14 +77,14 @@
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>30 Card Template</li>
                                     </ul>                                    
                                 </div>
-                                <div class="panel-footer text-center nor_stand">
+                                <div class="panel-footer text-center stan">
                                     <button class="btn btn-dark moreinfo_package" id="{{ $standard->package_name }}">{{ __('website.more_info') }}</button>
                                     <button type="button" id="{{ $standard->id }}" class="btn btn-default price-btn-one" onclick="packageClick(event)" value="{{ $standard->token }}">{{ $standard->price }}, {{ __('website.order_now') }}</button>
                                 </div>
                             </div>										
                         </div>
                         
-                        <div class="price-box col-sm-6 col-md-4 wow ml-3" data-wow-delay="0.9s">
+                        <div class="price-box col-md-4" >
                             <div class="panel panel-default">
                                 <div class="panel-heading text-center">
                                     <h1 class="package">RUBY</h1>
@@ -93,7 +93,7 @@
                                     <h5 class="package" style="font-size: 14px !important;">{{ $luxury->plan_name }}</h5>
                                 </div>         
                                 <div class="col-md-12" style="margin-top: 10px; display:flex; justify-content: center;">
-                                    <ul class="d-flex justify-content-center">
+                                    <ul>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Contact</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Link Tree</li>
                                         <li class="package_text"><i class="fas fa-check" style="padding-right: 5px; color: rgb(217,181,81) !important;"></i>Deep Link</li>
@@ -212,7 +212,7 @@
                         <div class="d-flex justify-content-center">
                             <img src="../images/logo.jpeg" alt="" class="register_image">
                         </div>
-                        <div class="form-group row">
+                        <div class="form-group row d-flex justify-content-center">
                             <div class="col-md-4 col-md-offset-4">
                                 <input id="save-name" type="text" placeholder="{{ __('website.enter_name') }}"
                                     class="form-control register-input" name="name" style="font-size: 17px;"
@@ -220,7 +220,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-group row d-flex justify-content-center">
                             <div class="col-md-4 col-md-offset-4">
                                 <p id="error_text" style="padding: 5px; color: rgb(184, 28, 41);"></p>
                                 <input id="save-phone" type="number"
@@ -228,13 +228,15 @@
                                     value="{{ old('phone_number') }}" required onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
                             </div>
                         </div>
-                        <div class="form-group mt-5">
+                        <div class="form-group mt-5 d-flex justify-content-center">
                             <div class="col-md-4 col-md-offset-4">
                                 <button class="btn btn-dark save-user">{{ __('website.next') }}</button>
                             </div>
                         </div>
-                        <div class="col-md-8 col-md-offset-2">
-                            <p class="packagetxtforuser"></p>
+                        <div class="form-group d-flex justify-content-center">
+                            <div class="col-md-8 col-md-offset-2">
+                                <p class="packagetxtforuser"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -265,7 +267,7 @@
                                         <circle cx="35.81" cy="7.86" r="1.3" fill="#fcdb86"/>
                                     </svg>
                                     </div>
-                                    <div class="hp-fp-section" hidden>
+                                    <div class="hp-fp-section">
                                         <div class="container">
                                             <div class="fp-wrapper">
                                             <div class="fp-slider-items">
@@ -329,49 +331,53 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-8 col-md-offset-2" style="margin-top: 20px !important;">
-                                        <div class="form-group row pay-border pyment-step-one">
-                                            <h3 class="payment-text">{{ __('website.payment') }}</h3>
-                                            <div class="devider"></div>
-                                            <div class="col-md-3" style="margin-top: 10px !important;">
-                                                <a class="payment_link" id="kpay" data-value="kpay"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150"></a>
+                                    <div class="form-group d-flex justify-content-center">
+                                        <div class="col-md-8 col-md-offset-2" style="margin-top: 20px !important;">
+                                            <div class="form-group row pay-border pyment-step-one d-flex justify-content-center">
+                                                <h3 class="payment-text text-center">{{ __('website.payment') }}</h3>
+                                                <div class="devider"></div>
+                                                <div class="col-md-3" style="margin-top: 10px !important;">
+                                                    <a class="payment_link" id="kpay" data-value="kpay"><img src="https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/7e/a2/79/7ea2799e-feae-79ec-1fd6-b9f20cb1ed34/source/512x512bb.jpg" style="margin-left: 15px !important;" class="payment" alt="" width="170" height="150"></a>
+                                                </div>
+                                                <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                    <a class="payment_link" id="wavemoney" data-value="wavemoney"><img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
+                                                </div>
+                                                <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                    <a class="payment_link" id="kbzbanking" data-value="kbzbanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
+                                                </div>
+                                                <div class="col-md-3"  style="margin-top: 10px !important;">
+                                                    <a class="payment_link" id="ayabanking" data-value="ayabanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt=""></a>
+                                                </div>
                                             </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <a class="payment_link" id="wavemoney" data-value="wavemoney"><img src="https://pbs.twimg.com/profile_images/1041604335543627776/REZJdo09_400x400.jpg"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <a class="payment_link" id="kbzbanking" data-value="kbzbanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJIGpWUpbBiv0ms_OSlbsr0PWx1Ep6RCJmYfVvjq_R1hjG0n7hLd3P4WdBytwD16gSSmE&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="170" height="150" alt=""></a>
-                                            </div>
-                                            <div class="col-md-3"  style="margin-top: 10px !important;">
-                                                <a class="payment_link" id="ayabanking" data-value="ayabanking"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtWYCKM4fAMo9zl4kFRNcRE_aW5Mw79xJZoTZbSaPxdJruHcR28dKo_4HwxrS_gPlRFcg&usqp=CAU"  style="margin-left: 15px !important;" class="payment" width="160" height="150" alt=""></a>
-                                            </div>
-                                        </div>
 
-                                        <div class="form-group row pay-border pyment-from">
-                                            <img id="payment-title" src="" width="50" height="50">
-                                            <div class="devider"></div>
-                                            <h5 class="payment-warntext"></h5>
-                                            <div class="col-md-6">
-                                                <p class="text" id="amount_text"></p>
-                                                <p class="text" id="payment-account"></p>
-                                                <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <form action="" id="payment_form">
-                                                    <div class="text-center" id="screenshot">
-                                                    </div>
-                                                    <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
-                                                        <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
-                                                        {{ __('website.upload_screenshot') }}
-                                                    </label>
-                                                    <input type="text" name="payment_type" id="p_type" hidden>
-                                                    <input type="text" name="payment_amount" id="p_amount" hidden>
-                                                    <input type="text" name="package" id="p_package" hidden>
-                                                    <input type="text" name="phone" id="p_phone" hidden>
-                                                    <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
-                                                    <button type="button" class="btn btn-light paymentbtn pyback">{{ __('website.pre') }}</button>
-                                                    <button type="submit" class="btn btn-light paymentbtn" disabled>{{ __('website.next') }}</button>
-                                                </form>
+                                            <div class="form-group row pay-border pyment-from">
+                                                <div class="col-md-12">
+                                                <img id="payment-title" src="" width="50" height="50">
+                                                </div>
+                                                <div class="devider"></div>
+                                                <h5 class="payment-warntext"></h5>
+                                                <div class="col-md-6">
+                                                    <p class="text" id="amount_text"></p>
+                                                    <p class="text" id="payment-account"></p>
+                                                    <p class="helpcenter"> <i class="fas fa-headset"></i> Call Center - 09791642548, 09767834959</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <form action="" id="payment_form">
+                                                        <div class="text-center" id="screenshot">
+                                                        </div>
+                                                        <label class="btn btn-dark btn-block" id="up_load_btn" style="margin-top: 20px;"> 
+                                                            <input type="file" name="screenshot_image" class="paymentload" accept="image/*">
+                                                            {{ __('website.upload_screenshot') }}
+                                                        </label>
+                                                        <input type="text" name="payment_type" id="p_type" hidden>
+                                                        <input type="text" name="payment_amount" id="p_amount" hidden>
+                                                        <input type="text" name="package" id="p_package" hidden>
+                                                        <input type="text" name="phone" id="p_phone" hidden>
+                                                        <p class="screenshot_warn">{{ __('website.screenshot_warn') }}</p>
+                                                        <button type="button" class="btn btn-light paymentbtn pyback">{{ __('website.pre') }}</button>
+                                                        <button type="submit" class="btn btn-light paymentbtn" disabled>{{ __('website.next') }}</button>
+                                                    </form>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -379,14 +385,16 @@
                                 <form action="{{ route('register') }}"  id="register-form" method="POST" class="contact-form text-center">
                                 @csrf  
                                 <div class="form-section" id="pin_section">
-                                    <div class="col-md-12" id="uu">
+                                    <div class="col-md-12 text-center" id="uu">
                                         <p class="text"></p>
                                     </div>
-                                    <div class="d-flex justify-content-center">
-                                        <img src="../images/logo.jpeg" alt="" class="register_image">
-                                        <h3 class="text"  style="margin-top: 20px !important;">{{ __('website.create_login_pin') }}</h3>
+                                    <div class="form-group d-flex justify-content-center">
+                                        <div class="col-md-4 col-offset-md-4">
+                                            <img src="../images/logo.jpeg" alt="" class="register_image">
+                                            <h3 class="text"  style="margin-top: 20px !important;">{{ __('website.create_login_pin') }}</h3>
+                                        </div>
                                     </div> 
-                                    <div class="form-group row" style="margin-top: 10px;">
+                                    <div class="form-group row d-flex justify-content-center" style="margin-top: 10px;">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="password" type="number" placeholder="{{ __('website.new_pin') }}" class="form-control @error('password') is-invalid @enderror web_pin" name="pin" required onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57">
                                             <p class="text pass_allow" style="margin-top: 10px !important;">{{ __('website.pass_allow') }}</p>
@@ -397,21 +405,23 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="form-group row">
+                                    <div class="form-group row d-flex justify-content-center">
                                         <div class="col-md-4 col-md-offset-4">
                                             <input id="password-confirm" type="number" placeholder="{{ __('website.confirm_pin') }}" onkeypress="return event.keyCode === 8 || event.charCode >= 48 && event.charCode <= 57" class="form-control web_pin" name="password_confirmation">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
-                                    <div class="form-group row">
-                                        <div class="col-md-12">
-                                            <input type="text" name="package" id="package_name" hidden>
-                                            <input type="text" name="phone_number" id="ph_name" hidden>
-                                            <input type="text" name="name" id="username" hidden>
-                                            <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
-                                            <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
-                                            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                <div class="form-group d-flex justify-content-center">
+                                    <div class="form-navigation col-md-6 col-md-offset-3" style="margin-top: 25px !important;">
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <input type="text" name="package" id="package_name" hidden>
+                                                <input type="text" name="phone_number" id="ph_name" hidden>
+                                                <input type="text" name="name" id="username" hidden>
+                                                <button type="button" class="next btn btn-info" style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
+                                                <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn" style="margin-top: 10px !important;" disabled>{{ __('website.submit_register') }}</button>
+                                                <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -453,6 +463,7 @@
 <script src="../js/payment.js"></script>
 
 <script>
+$('.hp-fp-section').hide();
 
 var invalid_error = '{{ __('website.phone_invalid') }}';
 var exist_active = '{{ __('website.exist_active') }}';
@@ -475,44 +486,6 @@ var normaltext = '{{ __('website.normal_text') }}';
 var standardtext = '{{ __('website.standard_text') }}';
 var luxurytext = '{{ __('website.luxury_text') }}';
 var pymt_expire = '{{ __('website.pymt_expire') }}';
-
-
-jQuery('.fp-slider-items').slick({
-    dots: false,
-    infinite: true,
-    speed: 10000,
-    slidesToShow: 4,
-    slidesToScroll: 2,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 100,
-    responsive: [
-    {
-    breakpoint: 992,
-    settings: {
-    slidesToShow: 2,
-    slidesToScroll: 2
-    }
-    },
-    {
-    breakpoint: 600,
-    settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-    }
-    },
-    {
-    breakpoint: 480,
-    settings: {
-    slidesToShow: 1,
-    slidesToScroll: 1
-    }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
-});
 </script>
 @endsection
 @endsection

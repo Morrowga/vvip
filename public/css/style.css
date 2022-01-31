@@ -251,7 +251,7 @@ video::-webkit-media-controls-panel{
 
 
 /* Navbar brand (logo) */
-.navbar-brand {
+/* .navbar-brand {
 	background-repeat: no-repeat;
 	background-position: left center;
 	width: 150px;
@@ -267,8 +267,8 @@ video::-webkit-media-controls-panel{
 	-o-transition: all 0.2s ease-in-out;
 	-ms-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
-}
-.navbar-default .navbar-brand {
+} */
+/* .navbar-default .navbar-brand {
 	background-image: url(../images/logo.jpeg);
 	background-position: center;
 	background-size: cover;
@@ -283,15 +283,15 @@ video::-webkit-media-controls-panel{
 }
 .navbar-inverse .navbar-brand {
 	background-image: url(../images/logo.jpeg);
-}
+} */
 
 /* Navbar links */
-.navbar-nav > li > a {
+/* .navbar-nav > li > a {
 	padding: 37px 0;
 	margin-left: 25px;
 	text-transform: uppercase;
 	font-weight: 600;
-}
+} */
 
 /* Navbar dropdown */
 .dropdown-left {
@@ -1497,7 +1497,7 @@ p.subtitle {
   }
 
   .navli:hover{
-	  transform: scale(1.2);
+	  transform: scale(1.1);
 	  transition-duration: 1s;
   }
 

@@ -2574,8 +2574,12 @@ to { transform:  rotateY(360deg); }
     border-top-right-radius: 20% !important;
 }
 
-.nor_stand{
-    margin-top: 275px;
+.nor{
+    margin-top: 154px;
+}
+
+.stan{
+    margin-top: 45px;
 }
 
 
@@ -2601,10 +2605,10 @@ to { transform:  rotateY(360deg); }
     color: rgb(255,255,255);
     font-family: 'Kudryashev Display' !important;
     font-weight: bold;
-    border-top-left-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-top-right-radius: 25px;
-    border-bottom-right-radius: 25px;
+    border-top-left-radius: 20px !important;
+    border-bottom-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
     font-size: 20px;
     padding: 10px !important;
 }

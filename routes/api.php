@@ -20,20 +20,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['middleware' => 'apiKey'], function() {
-    Route::get('cards/{token}', [App\Http\Controllers\API\UserRegisterController::class, 'cards']);
-
-    Route::get('card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'card_by_id']);
-
-    Route::post('save_customer_card', [App\Http\Controllers\API\UserRegisterController::class, 'save_customer_card']);
-    
-    Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
 
     Route::post('register_user', [App\Http\Controllers\API\UserRegisterController::class, 'registerUser']);
     
     Route::post('customer/login', [App\Http\Controllers\Auth\LoginController::class, 'loginApi']);
-    
-    Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
-    
+        
     Route::get('packages', [App\Http\Controllers\API\UserRegisterController::class, 'package']);
     
     Route::post('save-user', [App\Http\Controllers\API\UserRegisterController::class, 'saveUser']);    
@@ -51,6 +42,16 @@ Route::group(['middleware' => 'apiKey'], function() {
     Route::get('approve', [App\Http\Controllers\API\UserRegisterController::class, 'approve_payment']);
 
 });
+
+Route::get('generate_code', [App\Http\Controllers\API\UserRegisterController::class, 'generateCode']);
+
+Route::post('/get_encrypt', [App\Http\Controllers\API\UserRegisterController::class, 'encryptionUrlMobile']);
+
+Route::post('save_customer_card', [App\Http\Controllers\API\UserRegisterController::class, 'save_customer_card']);
+
+Route::get('cards/{token}', [App\Http\Controllers\API\UserRegisterController::class, 'cards']);
+
+Route::get('card_by_id/{id}', [App\Http\Controllers\API\UserRegisterController::class, 'card_by_id']);
 
 Route::post('get_home', [App\Http\Controllers\API\UserRegisterController::class, 'countDown']);
 

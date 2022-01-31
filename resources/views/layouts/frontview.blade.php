@@ -11,7 +11,7 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         
-		<link rel="stylesheet" href="../js/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 		<link rel="stylesheet" href="../js/animations/css/animate.min.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.carousel.css">
 		<link rel="stylesheet" href="../js/owl-carousel/css/owl.theme.css">
@@ -35,27 +35,22 @@
 	</head>
     <body data-spy="scroll" data-target="#main-navbar">
     	<div class="body" id="main-body" style="display:none;">
-            <header id="header" class="header-main">
-                <nav id="main-navbar" class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: rgb(0,0,0) !important;"> 
-                  <div class="container">
-                    <div class="navbar-header">
-                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar" style="margin-top: 13px !important;"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                      </button>
-                      <a class="navbar-brand page-scroll" href="{{ route('main', app()->getLocale()) }}">VVIP</a>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a class="page-scroll navli" href="/">{{ __('website.Home') }}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('about') }}">{{ __('website.About') }}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_packages') }}">{{__('website.Packages')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
-                            <li><a class="page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
-                            <li class="dropdown">
-                                <a class="nav-link dropdown-toggle navli" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                    <a class="navbar-brand" href="/"><img src="../images/logo.jpeg" width="100" width="100" alt=""></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item active"><a class="nav-link page-scroll navli" href="/">{{ __('website.Home') }}</a></li>
+                            <li class="nav-item active"><a class="nav-link page-scroll navli" href="{{ route('about') }}">{{ __('website.About') }}</a></li>
+                            <li class="nav-item active"><a class="nav-link page-scroll navli" href="{{ route('view_packages') }}">{{__('website.Packages')}}</a></li>
+                            <li class="nav-item active"><a class="nav-link page-scroll navli" href="{{ route('view_product') }}">{{__('website.Features')}}</a></li>
+                            <li class="nav-item active"><a class="nav-link page-scroll navli" href="{{ route('contact') }}">{{__('website.Contact')}}</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle navli" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="flag-icon flag-icon-{{Config::get('languages')[App::getLocale()]['flag-icon']}}"></span> {{ Config::get('languages')[App::getLocale()]['display'] }}
                                 </a>
                                 <div class="dropdown-menu text-center lang_drop" aria-labelledby="navbarDropdownMenuLink">
@@ -67,15 +62,15 @@
                                 </div>
                             </li>
                             @if(Auth::user())
-                            <li><a class="page-scroll navli" href="/home">{{ Auth::user()->name }}</a></li>
+                            <li class="nav-item dropdown"><a class="page-scroll navli nav-link" href="/home">{{ Auth::user()->name }}</a></li>
                             @else
-                            <li><a class="page-scroll navli" href="{{ route('login') }}">{{__('website.login')}}</a></li>
+                            <li class="nav-item dropdown"><a class="page-scroll navli nav-link" href="{{ route('login') }}">{{__('website.login')}}</a></li>
                             @endif
                         </ul>
                     </div>
-                  </div>
                 </nav>
-            </header>
+            </div>
+            <!-- </header> -->
             <!--===========================================Header========================================================-->
             
             @yield('content') 
@@ -99,7 +94,7 @@
             <!--===========================================Loading========================================================-->
         
             <script src="../js/jquery/jquery-1.11.1.min.js"></script>
-            <script src="../js/bootstrap/js/bootstrap.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.8/slick.min.js"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.min.js"></script>
             <script src="../js/owl-carousel/js/owl.carousel.min.js"></script>
@@ -107,10 +102,10 @@
             <script src="../js/animations/js/wow.min.js"></script>
             <script src="../js/waypoints.min.js"></script>
             <script src="../js/isotope.pkgd.min.js"></script>
-            <script src="../js/classie.js"></script>
+            <!-- <script src="../js/classie.js"></script> -->
             <script src="../js/jquery.easing.min.js"></script>
             <script src="../js/jquery.counterup.min.js"></script>
-            <script src="../js/theme.js"></script>
+            <!-- <script src="../js/theme.js"></script> -->
             <!--===========================================script========================================================-->
             @yield('script')
             <script>
