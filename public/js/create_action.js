@@ -1,5 +1,5 @@
 $(function() {
-    
+    var userId = $('#userid').val();
     //button_hide_show_play
     $('.file_upload').on('change',function(){
         var url = window.URL.createObjectURL(this.files[0]);
@@ -317,6 +317,9 @@ $(function() {
     $.ajax({
            url:data_url,
            method:'POST',
+           headers:{
+            'userId': userId
+            },
            data:{
                 user_id: user_id,  
                 request_name: "get_deep_links"
@@ -451,6 +454,9 @@ $(function() {
     $.ajax({
         url:data_url,
         method:'POST',
+        headers:{
+            'userId': userId
+        },
         data:{
             user_id: user_id,  
             request_name: "get_contacts"
@@ -513,7 +519,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){
@@ -563,7 +570,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                'X-CSRF-Token' : token
+                'X-CSRF-Token' : token,
+                'userId': userId
             },
             data: formData,
             success:function(response){
@@ -579,6 +587,9 @@ $(function() {
     $.ajax({
         url:get_link_tree,
         method:'POST',
+        headers:{
+            'userId': userId
+        },
         data:{
             user_id: user_id,  
             request_name: "get_link_trees"
@@ -605,6 +616,9 @@ $(function() {
     $.ajax({
         url:data_url,
         method:'POST',
+        headers:{
+            'userId': userId
+        },
         data:{
             user_id: user_id,  
             request_name: "get_eusp"
@@ -637,7 +651,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){
@@ -664,7 +679,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){
@@ -691,7 +707,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){
@@ -718,7 +735,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){
@@ -754,6 +772,9 @@ $(function() {
         $.ajax({
             url: 'api/get_datas',
             method: 'POST',
+            headers:{
+                'userId': userId
+            },
             data: {
                 user_id:userid,
                 request_name: "get_events"
@@ -799,6 +820,9 @@ $(function() {
                     $.ajax({
                         url: 'api/action_event_by_id',
                         method: "POST",
+                        headers:{
+                            'userId': userId
+                        },
                         data: {
                             id: current_id,
                             eventaction: event_action,
@@ -901,7 +925,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                    'X-CSRF-Token': token 
+                    'X-CSRF-Token': token,
+                    'userId': userId
             },
             data: formData,
             success:function(response){

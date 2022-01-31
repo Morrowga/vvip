@@ -689,11 +689,45 @@ class UserRegisterController extends Controller
     }
 
     public function approve_payment(Request $request){
-        //0 unseen //1 approve //2 reject
+        $today = date('Y-m-d');
+        $total = 0;
         $phone = $request->header('phone');
         $payment = Payment::where('phone', $phone)->orderby('created_at', 'DESC')->first();
-        return $payment;
+        if($payment !== null){
+            $user_check = User::where('phone_number', '=', $payment->phone)->first();
+            if($user_check !== null){
+                $total++;
+                $user_check->package_status = "active";
+                $user_check->package_start_date = $today;
+                $user_check->package_end_date = date ("Y-m-d", strtotime ($today ."+367 days"));
+                $user_check->last_expired_date = $payment->package_end_date;
+                $user_check->subscription_times = $total;
+                // return  $payment->subscription_times;
+                $user_check->save();  
+
+
+                $messages = [
+                    "status" => "200",
+                    "message" => "success",
+                ];
+
+                return response()->json($messages);
+            }
+                $messages = [
+                    "status" => "403",
+                    "message" => "User does not exist."
+                ];
+
+                return response()->json($messages);
+        }
+        $messages = [
+            "status" => "403",
+            "message" => "Something went wrong."
+        ];
+
+        return response()->json($messages);
     }
+
 
     
    

@@ -106,6 +106,9 @@
             $.ajax({
             url:text_url,
             method:'POST',
+            headers:{
+                'userId': userid
+            },
             data:{
                     user_id: userid, 
                     request_name:"get_welcome"

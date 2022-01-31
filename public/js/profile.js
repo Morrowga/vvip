@@ -4,6 +4,9 @@ $(function() {
     $.ajax({
         url:profile_url,
            method:'POST',
+           headers:{
+            'userId': user_id
+            },
            data:{
                 user_id: user_id,
                 request_name: "get_user_profile"
@@ -41,6 +44,9 @@ $(function() {
             $.ajax({
                 url: 'api/secure',
                    method:'POST',
+                   headers:{
+                    'userId': user_id
+                    },
                    data:{
                         user_id: user_id,
                         secure_status: "private"
@@ -55,6 +61,9 @@ $(function() {
             $.ajax({
                 url: 'api/secure',
                    method:'POST',
+                   headers:{
+                    'userId': user_id
+                    },
                    data:{
                         user_id: user_id,
                         secure_status: "public"

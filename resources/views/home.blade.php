@@ -15,7 +15,7 @@
             </a>
             <input type="text" id="userid" value="{{ Auth::user()->id }}" hidden>
             <input type="text" id="step_two" value="{{ Auth::user()->step_two }}" hidden>
-            <input type="text" id="payment-approve" value="{{ Auth::user()->payment_approve }}" hidden>
+            <input type="text" id="pack_status" value="{{ Auth::user()->package_status }}" hidden>
             @else
             <a href="" hidden></a>
             @endif
@@ -376,7 +376,11 @@
 </div>
 @section('script')
 <script src="../js/home.js"></script>
+<script>
+    var image = '{{ Auth::user()->profile_image }}';
 
+    $('#profile_img').attr('src', '../images/' + image);
+</script>
 @endsection
 @endsection
 

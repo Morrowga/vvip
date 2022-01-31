@@ -271,7 +271,7 @@ class Helper{
                         "status" => "200",
                         "message" => "success",
                         "request" => "get_user_profile",
-                        "data" => $data
+                        "data" => $data,
                     ];
 
                     return $messages;
@@ -330,12 +330,18 @@ class Helper{
             } else if($request_name === "get_welcome"){
                 $user  = User::where('id', $user_id)->first();
                 if($user !== null){
+                    if($user->remaining_days <= 3){
+                        $pop_up_text = "Subscription will be expire soon.";
+                    }
+                    $pop_up_text = "Subscription still active.";
+
                     $data  = [
                         "user_name" => $user->name,
                         "text" => "Hello " . ucfirst($user->name) . ",Welcome from VVIP9.co. You can create smart content right now! You are my VVIP.",
                         "profile_img" => '../user_images/'. $user->profile_image,
                         "expired_date" => $user->expired_date,
-                        "payment_expired_date" => $user->payment_listen_date,             
+                        "payment_expired_date" => $user->payment_listen_date,
+                        "pop_up_text" => $pop_up_text
                     ];
 
                     $messages = [

@@ -21,7 +21,8 @@ $(function() {
             contentType: false,
             processData: false,
             headers: {
-                'X-CSRF-Token': token
+                'X-CSRF-Token': token,
+                'userId': userid
             },
             data: formData,
             success: function(response) {
@@ -51,6 +52,9 @@ $(function() {
     $.ajax({
         url: get_appearance,
         method: 'POST',
+        headers:{
+            'userId': userid
+        },
         data: {
             user_id: userid,
             request_name: "get_contacts"

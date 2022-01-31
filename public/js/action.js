@@ -7,7 +7,8 @@ $(function() {
         $.ajax({
            url:action_url,
            headers: {
-                'X-CSRF-Token': token 
+                'X-CSRF-Token': token,
+                'userId': user_id
             },
            method:'POST',
            data:{
@@ -38,7 +39,8 @@ $(function() {
     $.ajax({
         url: get_action,
         headers: {
-            'X-CSRF-Token': token
+            'X-CSRF-Token': token,
+            'userId': user_id
         },
         method: 'POST',
         data:{

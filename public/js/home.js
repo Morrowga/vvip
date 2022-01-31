@@ -471,13 +471,14 @@ $(window).on('load', function() {
    if($('#step_two').val() == 1){
         $('#home_height').show();
         $('#reg-section').hide();
-
-        setInterval(function(){ 
-            $('#countDownHome').modal({
-                backdrop: 'static',
-                keyboard: false 
-            });
-        }, 2000);
+        if($('#pack_status').val() != "active"){
+            setInterval(function(){ 
+                $('#countDownHome').modal({
+                    backdrop: 'static',
+                    keyboard: false 
+                });
+            }, 2000);
+        } 
         if($('#payment-approve').val() == 1){
             $('#countDownHome').modal('hide');
         }
