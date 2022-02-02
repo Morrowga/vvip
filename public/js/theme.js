@@ -23,14 +23,14 @@ var cbpAnimatedHeader = (function() {
         didScroll = false,
         changeHeaderOn = 10;
 
-    function init() {
-        window.addEventListener( 'scroll', function( event ) {
-            if( !didScroll ) {
-                didScroll = true;
-                setTimeout( scrollPage, 250 );
-            }
-        }, false );
-    }
+    // function init() {
+    //     window.addEventListener( 'scroll', function( event ) {
+    //         if( !didScroll ) {
+    //             didScroll = true;
+    //             setTimeout( scrollPage, 250 );
+    //         }
+    //     }, false );
+    // }
 
     // function scrollPage() {
     //     var sy = scrollY();
@@ -47,7 +47,7 @@ var cbpAnimatedHeader = (function() {
         return window.pageYOffset || docElem.scrollTop;
     }
 
-    init();
+    // init();
 
 })();
 

@@ -252,37 +252,37 @@ $("#phone").on('keyup', function(event) {
 
 var checkexist = 0;
 
-//email_validate
-$("#email").on('keyup', function(event) {
-    checkexist = 1;
-    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
-    var data = $(this).val();
-    if($(this).val().length < 0){
-        $('#error_email').show().text(enter_email);
-        $('.next').attr('disabled', true);
-    } else if(!emailReg.test($(this).val())){
-        $('#error_email').show().text(email_invalid);
-        $('.next').attr('disabled', true);
-    } else  if (data.indexOf('.com') >= 0) {
-        $.ajax({
-            url: '/api/user_exists',
-            data: {
-                'email_exist': $(this).val()
-            },
-            type: 'post',
-            success:function(response){
-                console.log(response);
-                if(response.status == '403'){
-                    $('#error_email').show().text(email_exist);
-                    $('.next').attr('disabled', true);
-                } else {
-                    $('#error_email').hide();
-                    $('.next').attr('disabled', false);
-                }
-            }
-        });       
-    } 
-});
+// //email_validate
+// $("#email").on('keyup', function(event) {
+//     checkexist = 1;
+//     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
+//     var data = $(this).val();
+//     if($(this).val().length < 0){
+//         $('#error_email').show().text(enter_email);
+//         $('.next').attr('disabled', true);
+//     } else if(!emailReg.test($(this).val())){
+//         $('#error_email').show().text(email_invalid);
+//         $('.next').attr('disabled', true);
+//     } else  if (data.indexOf('.com') >= 0) {
+//         $.ajax({
+//             url: '/api/user_exists',
+//             data: {
+//                 'email_exist': $(this).val()
+//             },
+//             type: 'post',
+//             success:function(response){
+//                 console.log(response);
+//                 if(response.status == '403'){
+//                     $('#error_email').show().text(email_exist);
+//                     $('.next').attr('disabled', true);
+//                 } else {
+//                     $('#error_email').hide();
+//                     $('.next').attr('disabled', false);
+//                 }
+//             }
+//         });       
+//     } 
+// });
 
 //url_validate
 $('#url').on("keyup",function(){
@@ -311,9 +311,7 @@ $('#url').on("keyup",function(){
                 } else {
                     $('#error_url').hide();
                     console.log(checkexist);
-                    if(checkexist == 1){
-                        $('.next').attr('disabled', false);
-                    }
+                    $('.next').attr('disabled', false);
                 }
             }
         });    

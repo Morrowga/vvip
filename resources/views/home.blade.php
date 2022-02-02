@@ -50,13 +50,13 @@
                         class="form-control register-input reg-name" name="name" style="font-size: 17px; margin-top: 5px !important;" required autocomplete="name" autofocus>
                 </div>
             </div>
-            <div class="form-group row d-flex justify-content-center">
+            <!-- <div class="form-group row d-flex justify-content-center">
                 <div class="col-md-4 col-md-offset-4">
                     <span id="error_email" class="error_texts" role="alert"></span>
                     <input id="email" type="email" placeholder="{{ __('website.email') }}"
                         class="form-control register-input" name="email" style="font-size: 17px; margin-top: 5px !important;">
                 </div>
-            </div>
+            </div> -->
             <div class="form-group row d-flex justify-content-center">
                 <div class="col-md-4 col-md-offset-4 hr" style="margin-top: 15px !important;">
             </div> 

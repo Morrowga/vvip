@@ -753,6 +753,10 @@ height: 250px;
     border-top-right-radius: 15px !important;
 }
 
+.navbar-dark .navbar-nav .nav-link{
+    color: rgb(217,181,81) !important;
+}
+
 
 .edit_description{
     background-color: rgb(0,0,0) !important; 
@@ -766,6 +770,7 @@ height: 250px;
     border-top-left-radius: 15px !important;
     border-top-right-radius: 15px !important;
 }
+
 
 .btn-place{
     margin-top: 5px !important;
@@ -1511,6 +1516,10 @@ label.label_file {
     font-size: 16px;
     text-align: center;
     text-decoration: none !important;
+  }
+
+  .drop_link:hover{
+      background: none !important;
   }
 
 
