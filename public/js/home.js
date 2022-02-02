@@ -86,9 +86,7 @@ function getCheckedSystem() {
             document.getElementById("url").value = document.getElementById('url_system').value;
             // document.getElementById("url").disabled = true;
             $('#error_url').hide();
-            if(checkexist == 1){
-                $('.next').attr('disabled', false)
-            }
+            $('.next').attr('disabled', false)
         } else {
         console.log(false);
     }
