@@ -588,7 +588,13 @@ class UserRegisterController extends Controller
         $save_card->save();
 
 
-        return $save_card;
+        $messages = [
+            "status" => "200",
+            "message" => "success",
+            "data" => $save_card
+        ];
+
+        return response()->json($messages);
 
     }
 

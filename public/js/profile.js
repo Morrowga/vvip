@@ -15,6 +15,7 @@ $(function() {
                console.log(response);
                if(response.data != null){
                 $('#profileimage').attr('src', response.data['user_image']);
+                $('#bod').text(response.data['bod']);
                 $('#username').text(response.data['name']);
                 $('#email_name').text(response.data['email']);
                 $('#mobile').text(response.data['phone_number']);

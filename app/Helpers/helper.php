@@ -223,6 +223,7 @@ class Helper{
                             $data = [
                                 "user_id" => $user_check->id,
                                 "user_image" => 'images/logo.jpeg' . $user_image->image,
+                                "bod" => $user_image->birthday,
                                 "name" => $user_check->name,
                                 "email" => $user_check->email,
                                 "phone_number" => $user_check->phone_number,

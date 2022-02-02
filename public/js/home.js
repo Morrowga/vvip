@@ -24,7 +24,7 @@ $(function(){
             navigateTo(curIndex()+1);
             
             if(curIndex() == 1){
-                // $(this).attr('disabled', true);
+                $(this).attr('disabled', true);
                 var url_value =  document.getElementById("url").value;
                 $.ajax({
                     url: 'api/qr_generate',
@@ -42,66 +42,10 @@ $(function(){
                     }
                 });
             }
-
-            if(curIndex() == 3){
-                $('#input-1').val($('#image_data').attr('src'));
-                $('#input-2').val($('#card_front').attr('src'));
-                $('#input-3').val($('#card_back').attr('src'));
-                $('#input-4').prop("files",$(".uploadLogo").prop("files"));
-                console.log($('#input-4').prop("files",$(".uploadLogo").prop("files")));
-                $('#input-5').val($('#text_color').val());
-                $('#input-6').val($('#background_color').val());
-                $('#input-7').val($('#card_blank_front').find('[class*="front_card_name"]').text());
-                $('#input-8').val($('#card_blank_front').find('[class*="card_description"]').text());
-                $('#input-9').val($('#catch_click').text());
-                $('#input-10').val($('#qrposition').val());
-                $('#input-11').val($('#package_name').val());
-                $('#input-12').val($('#url').val());
-                $('#frontcard').html($('#card_blank_front').html());
-                $('#backcard').html($('#card_blank_back').html());
-                $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
-                $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
-                $('#confirm_modal').modal('show');
-                $('#form_save').on('submit', function(e){
-                    e.preventDefault();
-                    $('#confirm_modal').modal('hide');
-                    var token =  $('#token').val();
-                    let formData = new FormData(this);
-                    // var previewimg = $('#input-1').val();
-                    // var fronttranimg = $('#input-2').val();
-                    // var backtranimg = $('#input-3').val();
-                    // var logo = $('#input-4').val();
-                    // var txt_color = $('#input-5').val();
-                    // var bg_color = $('#input-6').val();
-                    // var cardname = $('#input-7').val();
-                    // var description = $('#input-8').val();
-                    // var position = $('#input-9').val();
-                    // var qr_position = $('#input-10').val();
-                    // var pack = $('#input-11').val();
-                    // var userurl = $('#input-12').val();
-                    
-                    $.ajax({
-                        url: 'api/save_customer_card',
-                        method:'POST',
-                        dataType: 'json',
-                        data: formData,
-                        processData: false, //add this
-                        contentType: false, //and this
-                        headers: {
-                                'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
-                                'X-CSRF-Token': token 
-                        },
-                        
-                        success:function(response){
-                            console.log(response);
-                        }
-                    });
-                });
                    
                 $('#cancel_confirm').on('click', function(){
                     navigateTo(curIndex()-1);
                 })
-            }
     });
     
     navigateTo(0);
@@ -142,7 +86,9 @@ function getCheckedSystem() {
             document.getElementById("url").value = document.getElementById('url_system').value;
             // document.getElementById("url").disabled = true;
             $('#error_url').hide();
-            $('.next').attr('disabled', false)
+            if(checkexist == 1){
+                $('.next').attr('disabled', false)
+            }
         } else {
         console.log(false);
     }
@@ -304,8 +250,11 @@ $("#phone").on('keyup', function(event) {
     // console.log($(this).val());
 });
 
+var checkexist = 0;
+
 //email_validate
 $("#email").on('keyup', function(event) {
+    checkexist = 1;
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;  
     var data = $(this).val();
     if($(this).val().length < 0){
@@ -361,12 +310,74 @@ $('#url').on("keyup",function(){
                     $('.next').attr('disabled', true);
                 } else {
                     $('#error_url').hide();
-                    $('.next').attr('disabled', false);
+                    console.log(checkexist);
+                    if(checkexist == 1){
+                        $('.next').attr('disabled', false);
+                    }
                 }
             }
         });    
     } 
 });
+
+$('#remind').on('click', function(){
+    $('#input-1').val($('#image_data').attr('src'));
+    $('#input-2').val($('#card_front').attr('src'));
+    $('#input-3').val($('#card_back').attr('src'));
+    $('#input-4').prop("files",$(".uploadLogo").prop("files"));
+    console.log($('#input-4').prop("files",$(".uploadLogo").prop("files")));
+    $('#input-5').val($('#text_color').val());
+    $('#input-6').val($('#background_color').val());
+    $('#input-7').val($('#card_blank_front').find('[class*="front_card_name"]').text());
+    $('#input-8').val($('#card_blank_front').find('[class*="card_description"]').text());
+    $('#input-9').val($('#catch_click').text());
+    $('#input-10').val($('#qrposition').val());
+    $('#input-11').val($('#package_name').val());
+    $('#input-12').val($('#url').val());
+    $('#frontcard').html($('#card_blank_front').html());
+    $('#backcard').html($('#card_blank_back').html());
+    $('#backcard').find('[id*="card_blank_back"]').first().removeAttr('style');
+    $('#backcard').find('[id*="qr_scan"]').first().attr('style', 'position: absolute;top: 38% !important;left: 41% !important;');
+    $('#confirm_modal').modal('show');
+    $('#form_save').on('submit', function(e){
+        e.preventDefault();
+        $('#confirm_modal').modal('hide');
+        var token =  $('#token').val();
+        let formData = new FormData(this);
+        // var previewimg = $('#input-1').val();
+        // var fronttranimg = $('#input-2').val();
+        // var backtranimg = $('#input-3').val();
+        // var logo = $('#input-4').val();
+        // var txt_color = $('#input-5').val();
+        // var bg_color = $('#input-6').val();
+        // var cardname = $('#input-7').val();
+        // var description = $('#input-8').val();
+        // var position = $('#input-9').val();
+        // var qr_position = $('#input-10').val();
+        // var pack = $('#input-11').val();
+        // var userurl = $('#input-12').val();
+        
+        $.ajax({
+            url: 'api/save_customer_card',
+            method:'POST',
+            dataType: 'json',
+            data: formData,
+            processData: false, //add this
+            contentType: false, //and this
+            headers: {
+                    'Authorization' : 'dnZpcDk=aHR1dG1lZGlh',
+                    'X-CSRF-Token': token 
+            },
+            
+            success:function(response){
+                console.log(response);
+                if(response['message'] == "success"){
+                      $('#submit-register')[0].click();
+                }
+            }
+        });
+    });
+})
 
 
 //verify-options
@@ -511,15 +522,17 @@ $.ajax({
         data = response.preview_design;
         $.each(data, function(i, value) {
                 //loop_card_designs
-                $('#column-image').append(`<div class="col-md-4">
-                <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="270" height="200">
-                <div class="col-md-6 col-md-offset-3" style="display: flex; justify-content: center;">
-                    <button type="button" class="btn btn-success zoom" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
-                    <button type="button" class="btn btn-success select-card ml-2" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
+                $('#column-image').append(`<div class="col-md-4 text-center">
+                    <img src="../storage/cards/` + value['front_image'] + `" id="image_data" alt="" width="270" height="200">
+                    <div class="col-md-12 text-center" style="display: flex; justify-content: center;">
+                        <button type="button" class="btn btn-success zoom mt-2" id="` + value['id']  + `" data-id="` + value['id'] + `">` + zoom_card + `</button>
+                        <button type="button" class="btn btn-success select-card mt-2 ml-2" id="` + value['id']  + `" data-id="` + value['id'] + `">`+ select_card  +`</button>
+                    </div>
+                    <div class="col-md-12 col-md-offset-3 text-center">
+                        <p id="success_p"  class="success_text`+ value['id'] +`"></p>
+                    </div>
                 </div>
-                <div class="col-md-6 col-md-offset-3">
-                    <p id="success_p"  class="success_text`+ value['id'] +`"></p>
-                </div>`);
+                `);
             
             //add_color_to_name&description
             $('.front_card_name').attr('style', 'color:' + $('#text_color').val() + ';');
@@ -560,7 +573,7 @@ $.ajax({
 
             //select_card
             $('.select-card').on('click', function(e) {
-                // $('.next').attr('disabled', false);
+                $('.next').attr('disabled', false);
                 var target = e.target.id;
                 console.log(target);
                 $('#card_design_id').val(target);
@@ -610,15 +623,13 @@ $.ajax({
                                 var fronttheme = ve_theme['front_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
                                 console.log(ve_theme['front_image']);
                                 $('.front_theme_div').append(`
-                                    <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
-                                        <img src="`+ fronttheme +`" alt="" width="60" height="60" class="theme_img_front" id="`+ ve_theme['image_id'] +`" data-property="`+ ve_theme['front_property'] +`" data-position="`+ ve_theme['front_position'] +`">
-                                    </div>
+                                        <img src="`+ fronttheme +`" alt="" width="60" height="60" class="theme_img_front ml-2" id="`+ fronttheme +`" data-property="`+ ve_theme['front_property'] +`" data-position="`+ ve_theme['front_position'] +`">
                                 `)
 
                                 var backtheme = ve_theme['back_image'].replace('http://admin.vvip9.co/card_collection/', '../storage/cards/');
                                 $('.back_theme_div').append(`
                                     <div class="col" style="margin-right: 5px !important; margin-top: 5px !important;">
-                                        <img src="`+ backtheme +`" alt="" width="60" height="60" class="theme_img_back" id="`+ ve_theme['image_id'] +`" data-property="`+ ve_theme['back_property'] +`" data-position="`+ ve_theme['back_position'] +`">
+                                        <img src="`+ backtheme +`" alt="" width="60" height="60" class="theme_img_back" id="`+ backtheme +`" data-property="`+ ve_theme['back_property'] +`" data-position="`+ ve_theme['back_position'] +`">
                                     </div>
                                 `)
 

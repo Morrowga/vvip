@@ -54,8 +54,7 @@
                 <div class="col-md-4 col-md-offset-4">
                     <span id="error_email" class="error_texts" role="alert"></span>
                     <input id="email" type="email" placeholder="{{ __('website.email') }}"
-                        class="form-control register-input" name="email" style="font-size: 17px; margin-top: 5px !important;"
-                        required autocomplete="email">
+                        class="form-control register-input" name="email" style="font-size: 17px; margin-top: 5px !important;">
                 </div>
             </div>
             <div class="form-group row d-flex justify-content-center">
@@ -132,53 +131,55 @@
         <div class="form-group d-flex justify-content-center">
             <div class="col-md-10 col-md-offset-1"  style="margin-top: 15px !important;">
                 <div class="row">
-                    <div class="col-md-8 text-center">
+                    <div class="col-md-4 text-center">
                         <div class="front_theme">
                             <h3 class="text text-margin">{{ __('website.Front Theme') }}</h3>
                             <div class="front_theme_div" style="display:flex; justify-content: center !important;">
 
                             </div>
                         </div>
-                        <div class="back_theme">
+                        <!-- <div class="back_theme">
                             <h3 class="text text-margin">{{ __('website.Back Theme') }}</h3>
                             <div class="back_theme_div" style="display:flex; justify-content: center !important;">
 
                             </div>
-                        </div>
+                        </div> -->
                         <div id="bg_div">
-                        <h3 class="text">{{ __('website.background_color') }}</h3>
-                            <input type="color" class="form-control text-center" id="background_color">
-                        </div>
-                        <div id="text_div">
-                            <h3 class="text text-margin">{{ __('website.text_color') }}</h3>
-                            <input type="color" class="form-control" id="text_color">
-                            <p id="catch_click" hidden></p>
-                        </div>
-                        <div class="col-md-12" style="margin-top: 20px;">
-                            <p class="text" style="font-size: 20px !important;">{{ __('website.icon_up') }}</p>
-                            <button type="button" id="upload_logo" class="btn btn-dark btn-place"><i class="fas fa-camera-retro custom-case"></i>{{ __('website.upload_logo') }}</button>
-                        </div>
-                        <div class="col-md-12 mt-2">
-                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.editname') }}</p>
-                            <button type="button" id="editName" class="btn btn-dark btn-place"><i class="fas fa-pen-nib custom-case"></i>{{ __('website.edit_name') }}</button>
-                        </div>
-                        <div class="col-md-12">
-                            <p class="text"  style="font-size: 21px !important; margin-top: 15px">{{ __('website.description') }}</p>
-                            <button type="button"  id="editDescription" class="btn btn-dark btn-place"><i class="fas fa-font custo"></i>{{ __('website.edit_descript') }}</button>                    
-                        </div>
-                        <div class="col-md-12 mt-2" id="positioning">
-                            <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.position') }}</p>
-                            <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
-                            <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
-                            <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>   
-                        </div>
-                        <div class="col-md-12 mt-3" id="qr_div">
-                            <p class="text" style="font-size: 20px !important; margin-top:15px;">{{ __('website.qr_scan') }}</p>
-                            <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
-                            <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
-                            <button type="button" id="move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>
-                            <input type="text" id="qrposition" hidden>
-                        </div>
+                            <h3 class="text">{{ __('website.background_color') }}</h3>
+                                <input type="color" class="form-control text-center" id="background_color">
+                            </div>
+                            <div id="text_div">
+                                <h3 class="text text-margin">{{ __('website.text_color') }}</h3>
+                                <input type="color" class="form-control" id="text_color">
+                                <p id="catch_click" hidden></p>
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                            <div class="col-md-12" style="margin-top: 20px;">
+                                <p class="text" style="font-size: 20px !important;">{{ __('website.icon_up') }}</p>
+                                <button type="button" id="upload_logo" class="btn btn-dark btn-place"><i class="fas fa-camera-retro custom-case"></i>{{ __('website.upload_logo') }}</button>
+                            </div>
+                            <div class="col-md-12 mt-2">
+                                <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.editname') }}</p>
+                                <button type="button" id="editName" class="btn btn-dark btn-place"><i class="fas fa-pen-nib custom-case"></i>{{ __('website.edit_name') }}</button>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="text"  style="font-size: 21px !important; margin-top: 15px">{{ __('website.description') }}</p>
+                                <button type="button"  id="editDescription" class="btn btn-dark btn-place"><i class="fas fa-font custo"></i>{{ __('website.edit_descript') }}</button>                    
+                            </div>
+                            <div class="col-md-12 mt-2" id="positioning">
+                                <p class="text"  style="font-size: 20px !important; margin-top: 15px;">{{ __('website.position') }}</p>
+                                <button type="button" id="front_move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
+                                <button type="button" id="front_move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
+                                <button type="button" id="front_move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>   
+                            </div>
+                            <div class="col-md-12 mt-3" id="qr_div">
+                                <p class="text" style="font-size: 20px !important; margin-top:15px;">{{ __('website.qr_scan') }}</p>
+                                <button type="button" id="move_left" class="btn btn-dark btn-place position_place"><i class="fas fa-caret-left position-icon"></i>{{ __('website.left') }}</button>
+                                <button type="button" id="move_center" class="btn btn-dark btn-place position_place"><i class="fas fa-arrows-alt"></i>{{ __('website.center') }}</button>
+                                <button type="button" id="move_right" class="btn btn-dark btn-place position_place">{{ __('website.right') }}<i class="fas fa-caret-right position-icon"></i></button>
+                                <input type="text" id="qrposition" hidden>
+                            </div>
                     </div>
                     <div class="col-md-4 text-center custom_card" id="bl_front">
                         <div id="card_blank_front" style="text-align:center;">
@@ -204,7 +205,8 @@
                 <div class="col-md-12">
                     <button type="button" class="next btn btn-success float-right btn-block"  style="margin-top: 10px !important;" disabled>{{ __('website.next') }}</button>
                     <button type="button" class="previous btn btn-danger btn-block" style="margin-top: 10px !important;">{{ __('website.pre') }}</button>
-                    <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn btn-block" style="margin-top: 10px !important;">{{ __('website.submit_register') }}</button>
+                    <button type="button" id="remind" class="btn btn-info float-right sub-btn btn-block" style="margin-top: 10px !important;">{{ __('website.submit_register') }}</button>
+                    <button type="submit" id="submit-register" class="btn btn-info float-right sub-btn btn-block" style="margin-top: 10px !important;" hidden>{{ __('website.submit_register') }}</button>
                     <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
                 </div>
             </div>
@@ -271,8 +273,8 @@
                         </label>
                     </div>
                 </div>
-                <div class="modal-footer"> 
-
+                <div class="modal-footer de-modal">
+                    <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -289,7 +291,7 @@
                         <input type="text" class="form-control btn-block edit_name" placeholder="{{ __('website.enter_card_name') }}">
                     </div>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer de-modal">
                     <button type="button" class="btn btn-secondary mt-2" id="cancel" data-dismiss="modal">Close</button>
                 </div>
             </div>
